@@ -1,11 +1,11 @@
 {
-  "aggregate_sha256": "42e6414efef397d4ca233fb81d44d88a62c37ddc24642efd9658110f48326200",
+  "aggregate_sha256": "098cd3fce239d4fb2a72e9705ef9d6e72c0e6de584277b32a059ecf3fab195ce",
   "file_count": 124,
   "files": [
     {
-      "bytes": 2237,
+      "bytes": 2391,
       "path": ".github/workflows/ci.yml",
-      "sha256": "8a22ce09305ecf36ad02f30e95f6829f5260b9a050c41c09d26e5852e3f4cad2"
+      "sha256": "1d9ec98c99c6756ac551d43f617c103c6ee64524691603b31673e401514c2e19"
     },
     {
       "bytes": 112,
@@ -18,9 +18,9 @@
       "sha256": "751e89988c114a3c9df9f4c067c044c8e5052d05cf6d5dab90144d5c13ca9136"
     },
     {
-      "bytes": 5990,
+      "bytes": 6316,
       "path": "CHANGELOG.md",
-      "sha256": "084cc7fa3bfa70a2dede1096141af0363a72dbcf4f5792e43ee618716ed6e325"
+      "sha256": "0468fcc23b7aec557c7501b2473c0ffe15195d9ee562fa4d6d6bb5be67376c99"
     },
     {
       "bytes": 5695,

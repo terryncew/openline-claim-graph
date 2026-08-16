@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0.dev1 CI correction — 2026-08-16
+
+- Seed the clean GitHub Actions specimen directory with the checked-in, independently produced PLOS upstream-verification record before building Evidence Recall. The prior local release run reused that record in-place, while a clean runner correctly exposed the missing copy step.
+
 ## 0.2.0.dev1 — 2026-08-16
 
 - Added content-addressed `CORRECTED`, `RETRACTED`, `WITHDRAWN`, `SUPERSEDED`, and `REVOKED` source-status events with exact byte scopes and exact notice anchors.

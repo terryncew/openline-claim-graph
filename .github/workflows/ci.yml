@@ -35,6 +35,8 @@ jobs:
       - name: Build and independently verify evidence recall
         run: |
           python examples/build_plos_correction_case.py --output "${{ runner.temp }}/plos-correction-case"
+          cp artifacts/plos-correction-case/upstream-verification.json \
+            "${{ runner.temp }}/plos-correction-case/upstream-verification.json"
           python examples/build_plos_correction_impact.py \
             --base "${{ runner.temp }}/plos-correction-case" \
             --output "${{ runner.temp }}/plos-correction-impact"
