@@ -86,6 +86,18 @@ The fixture public key is also recorded in `artifacts/demo/fixture-public-key.js
 
 Those are mechanical results. The controlled fixture was designed here, so it is not evidence that the graph improves decisions on natural material.
 
+## Decision-value pilot
+
+`experiments/receiver_discovery_pilot/` contains the push-ready protocol and custody templates for the first human receiver pilot. It separates three effects:
+
+- ordinary summarization;
+- claim-level extraction rendered as prose;
+- the same extraction rendered as a graph.
+
+Condition is assigned between receivers, case selection is locked before mapping, positive keys require an explicit external anchor, and no-conflict cases measure false discovery. Stage 1 is an effect-size and operations pilot only; it cannot promote or archive the value claim.
+
+The case pack is intentionally empty. No cases, human trials, or decision-value results exist yet.
+
 ## Promotion status
 
 `UNPROMOTED_EXTERNAL_VALUE_UNTESTED`

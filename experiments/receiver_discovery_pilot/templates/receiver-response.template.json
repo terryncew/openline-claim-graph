@@ -1,0 +1,25 @@
+{
+  "answers": [
+    {
+      "answer_type": "DISAGREEMENT_OR_MISSING_PREMISE_OR_NO_CONSEQUENTIAL_FAULT_LINE",
+      "explanation": "RECEIVER_TEXT",
+      "rank": 1,
+      "source_locations": [
+        {
+          "document_id": "DOC_1",
+          "paragraph_ids": [
+            "P001"
+          ]
+        }
+      ]
+    }
+  ],
+  "case_id": "CASE_ID",
+  "case_opened_at": "RFC3339_TIMESTAMP",
+  "final_submitted_at": "RFC3339_TIMESTAMP",
+  "first_answer_submitted_at": "RFC3339_TIMESTAMP",
+  "receiver_id": "BLINDED_RECEIVER_ID",
+  "schema": "openline.claim-graph.receiver-pilot.response.v1",
+  "technical_interruption": false,
+  "timed_out": false
+}

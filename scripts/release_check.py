@@ -109,6 +109,9 @@ def main() -> int:
 
     verification = json.loads((ROOT / "artifacts/demo/verification.json").read_text(encoding="utf-8"))
     scaling = json.loads((ROOT / "artifacts/scaling-probe.json").read_text(encoding="utf-8"))
+    pilot_contract = json.loads(
+        (ROOT / "experiments/receiver_discovery_pilot/pilot-contract.json").read_text(encoding="utf-8")
+    )
     checks = {
         "compileall": True,
         "python_3_11_grammar_parse": len(grammar_files),
@@ -122,6 +125,10 @@ def main() -> int:
         "demo_source_disclosure_valid": verification["source_disclosure"]["valid"],
         "demo_bundle_disposition": verification["bundle"]["disposition"],
         "demo_wallet_dispositions": [item["disposition"] for item in verification["wallet_admissions"]],
+        "pilot_case_pack_empty": pilot_contract["status"] == "PROTOCOL_READY_CASE_PACK_EMPTY",
+        "pilot_condition_unit": pilot_contract["assignment"]["condition_unit"],
+        "pilot_stage_1_promotion_allowed": pilot_contract["analysis"]["stage_1_promotion_allowed"],
+        "pilot_target_receiver_type": pilot_contract["target_receiver_type"],
         "scaling_probe_claim_counts": [item["claim_count"] for item in scaling["results"]],
     }
     if not all(
@@ -132,6 +139,10 @@ def main() -> int:
             checks["demo_source_disclosure_valid"],
             checks["demo_bundle_disposition"] == "ADMIT",
             checks["deterministic_tamper_misses"] == 0,
+            checks["pilot_case_pack_empty"],
+            checks["pilot_condition_unit"] == "receiver",
+            checks["pilot_stage_1_promotion_allowed"] is False,
+            checks["pilot_target_receiver_type"] == "human",
         ]
     ):
         raise RuntimeError(f"release checks failed: {checks}")

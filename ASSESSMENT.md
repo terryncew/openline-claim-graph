@@ -44,4 +44,6 @@ The wallet is therefore not a truth ledger. It is custody for evolving represent
 
 `DO_NOT_ADD_RDF_OR_STANDARDS_INFRASTRUCTURE_YET`
 
-No API calls, paid executions, outside publishing, repository pushes, or model-based grading were performed during this build.
+The receiver-discovery pilot protocol is now included, but its case pack is empty and it has not been run. It fixes the case-admission, custody, three-arm estimand, between-receiver assignment, scoring, and Stage 1/Stage 2 boundaries before any result exists. That is experimental discipline, not evidence of value.
+
+No experiment API calls, paid executions, receiver trials, or model-based grading were performed during this build.
