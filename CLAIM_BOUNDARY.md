@@ -12,6 +12,7 @@ It demonstrates that a receiver can verify:
 - bounded graph projections and source-manifest inclusion proofs;
 - append-only custody of branches and merges.
 - fail-closed rendering of a verified bundle as a static human-readable review.
+- sealed automated receiver packs with answer-key separation, deterministic plans, fresh-process execution, resumable budget enforcement, and code-only scoring.
 
 It does **not** demonstrate:
 
@@ -20,10 +21,17 @@ It does **not** demonstrate:
 - completeness or neutrality of a selected graph projection;
 - ontology neutrality;
 - improved human or agent decisions versus a source bundle or ordinary summary;
+- validity of any future benchmark whose gold leaks into mapper or receiver context;
 - RDF, JSON-LD, JCS, W3C Data Integrity, or PROV-O conformance;
 - truth, coherence, reputation, consciousness, safety, or authorization.
 
 The graph records representations and relations among representations. Reality remains outside the receipt.
+
+## Automated receiver benchmark
+
+Version `0.1.0.dev4` adds a provider-neutral harness for a narrower machine-receiver claim. A public A/B/C pack is hashed; the separate gold file binds to that exact hash; each receiver process sees one arm of one case; and strict labels and evidence IDs are scored by code. Missing or invalid trials remain in the denominator. A machine-readable gate blocks development-only packs, incomplete runs, insufficient datasets or receiver families, absent negative controls, weak effects, non-positive confidence bounds, and false-conflict regressions.
+
+The checked-in ARCT pack is intentionally ineligible for promotion. It is public, previously used in development, multiple-choice, one dataset, and has no negative-control label. No receiver command has been run and no graph-versus-prose result exists. The harness can support a narrow machine-receiver result only after an independently keyed, validation-eligible pack is run. It cannot support a human-comprehension claim.
 
 ## Natural-material contact
 

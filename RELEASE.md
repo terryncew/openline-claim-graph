@@ -1,6 +1,6 @@
 # Push status
 
-Version: `0.1.0.dev3`
+Version: `0.1.0.dev4`
 
 Disposition: `READY_TO_PUSH_AS_EXPERIMENTAL_PROTOTYPE`
 
@@ -13,7 +13,7 @@ It is **not** ready to be described as a production OpenLine component, knowledg
 Verified locally before packaging:
 
 - Python source compilation
-- 36 unit/adversarial/protocol/development tests
+- 43 unit/adversarial/protocol/development/benchmark tests
 - 10,000 deterministic tamper mutations with zero misses
 - controlled branch/merge demo
 - composed bundle verification
@@ -28,7 +28,9 @@ Verified locally before packaging:
 - 24/24 gold-oracle and 0/24 inverted-warrant controls across 72 mechanically valid graph states
 - fail-closed static HTML rendering with tamper, wrong-pin, deterministic-output, and HTML-injection tests
 - one real PLOS ONE abstract/main-text inconsistency rendered from a verified bundle and confirmed by a later explicit correction
+- sealed automated pack/gold validation, deterministic full-factorial planning, fresh-process execution, strict response validation, resumable budget enforcement, and deterministic scoring
+- a 24-case, 144-trial ARCT development plan that contains no receiver output and cannot pass the validation gate
 
 The GitHub Actions matrix explicitly installs the declared build backend before exercising no-build-isolation wheel construction. It does not rely on Python runner images to bundle `setuptools`.
 
-The decision-value pilot has not been run. Its analyzed case pack is empty, and there are no receivers or efficacy results. The ARCT check is a development positive control only. It used one interactive model mapping pass, no programmatic experiment API calls, and no incremental experiment charges.
+No automated receiver benchmark has been run. The ARCT automated pack is a development fixture only and contains no responses or efficacy result. The human decision-value pilot also remains unrun with an empty analyzed case pack. The earlier ARCT check used one interactive model mapping pass, no programmatic experiment API calls, and no incremental experiment charges.

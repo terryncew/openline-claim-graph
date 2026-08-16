@@ -8,6 +8,8 @@ The durable correction to Coherence Dynamics is architectural:
 
 > Do not compress reasoning into a sender-certified scalar. Preserve its typed structure, version it, and let a receiver decide what that structure earns.
 
+Version `0.1.0.dev4` turns the next value question into executable evaluation infrastructure rather than a human-recruitment dependency. The public pack, private gold, surface builder, receiver process, and scorer have separate authority. The receiver never sees gold; the scorer never asks a model to interpret free-form prose; and missing or malformed trials cannot disappear from the denominator.
+
 ## What the implementation established
 
 The prototype can create a small signed commitment to a larger graph state; reproduce its deterministic root; bind it to source commitments; disclose and verify a bounded graph/source slice; retain branches; expose incompatible slots; and prevent a merge from silently deleting or reconciling conflicting claims.
@@ -58,6 +60,12 @@ The wallet is therefore not a truth ledger. It is custody for evolving represent
 
 `DO_NOT_ADD_RDF_OR_STANDARDS_INFRASTRUCTURE_YET`
 
+`AUTOMATED_BENCHMARK_HARNESS_READY_NO_RECEIVER_RESULT`
+
+The immediate external-value path now targets machine receivers. The checked-in ARCT pack exercises pack/gold binding, arm parity, planning, and scoring but is `DEVELOPMENT_ONLY` and cannot pass its own gate. A validating result requires at least two independent datasets, two frozen receiver families, negative controls, complete strict outputs, predeclared effect bars, and no false-conflict regression. Provider API adapters remain outside the trusted core; the harness accepts any command that reads one trial from stdin and writes the strict answer schema to stdout.
+
+The human receiver protocol remains a dormant branch for any future claim about human comprehension. A machine-receiver win cannot be laundered into that claim.
+
 The receiver-discovery pilot protocol is included, but its analyzed case pack is empty and it has not been run. The ARCT fixture is a development positive control and is structurally barred from being counted as Stage 1. The protocol fixes case admission, custody, the three-arm estimand, between-receiver assignment, scoring, and Stage 1/Stage 2 boundaries before any receiver result exists. That is experimental discipline, not evidence of value.
 
-No paid experiment API calls or receiver trials were performed. One interactive model mapping pass was scored against the withheld ARCT labels; its three errors remain disclosed.
+No paid experiment API calls or automated receiver trials were performed. One interactive model mapping pass from the earlier ARCT development check was scored against withheld labels; its three errors remain disclosed.

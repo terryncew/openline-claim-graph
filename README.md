@@ -26,6 +26,7 @@ Status: `EXPERIMENTAL_RECEIVER_REVIEW_PROTOTYPE`. It is not a promoted product, 
 - Deterministic branch comparison and disagreement reports without ranking a branch as true.
 - A composed receiver verifier that checks every layer before returning `ADMIT`, `QUARANTINE`, or `DENY`.
 - A fail-closed, self-contained HTML Decision Review that makes represented fault lines, exact source anchors, lineage, and verification limits readable without exposing raw graph JSON.
+- A sealed automated receiver benchmark harness with gold/pack separation, deterministic full-factorial planning, fresh-process execution, resumable spend caps, strict identifier responses, and code-only scoring.
 
 ## The important trust split
 
@@ -55,6 +56,8 @@ PYTHONPATH=src python -m unittest discover -s tests -v
 PYTHONPATH=src python examples/build_demo.py --output artifacts/demo
 PYTHONPATH=src python examples/build_plos_correction_case.py --output artifacts/plos-correction-case
 PYTHONPATH=src python scripts/scaling_probe.py
+PYTHONPATH=src python scripts/build_arct_automated_receiver_pack.py \
+  --output artifacts/automated-receiver-benchmark
 ```
 
 The demo creates a base policy state, two incompatible status branches, an explicit merge that preserves both conflicts, signed receipts, a receiver-scoped projection, source inclusion proofs, and an append-only wallet.
@@ -95,7 +98,7 @@ Rendering fails closed when the source, receipt, graph, projection, policy bindi
 
 ## Evidence generated here
 
-- 36 offline unit/adversarial/protocol/development tests.
+- 43 offline unit/adversarial/protocol/development/benchmark tests.
 - 10,000 deterministic tamper mutations detected with zero misses.
 - Exact-quote mislabeling is rejected.
 - Paraphrase/inference labels remain admitted only as disclosed, semantically unverified mappings.
@@ -126,7 +129,78 @@ The executable check builds the blind mapping, the upstream gold mapping, and th
 
 This is a positive control for source-to-structure signal, not evidence of receiver value. It is multiple-choice, small, potentially exposed in model pretraining, and lacks an independent public prediction precommit. It does not enter the human pilot.
 
-## Decision-value pilot
+## Automated receiver benchmark
+
+`experiments/automated_receiver_benchmark/` defines the immediate external-value
+test for machine receivers. It preserves three arms:
+
+- ordinary summarization;
+- one frozen claim inventory rendered as prose; and
+- the identical inventory rendered as verified structured state.
+
+The public pack never contains the answer key. The separately stored gold file
+is bound to the exact pack hash. Each trial starts a fresh receiver process,
+passes one case and one arm on stdin, and requires strict JSON identifiers on
+stdout. The deterministic scorer counts missing, malformed, timed-out, and
+skipped trials as misses. No LLM judge is involved.
+
+The common source packet and extracted inventory are included in the public
+case. Their roots are recomputed. Arm B must equal the harness's deterministic
+prose rendering of that inventory; Arm C must equal the inventory itself. This
+closes accidental B/C content drift while leaving the honest remaining limit:
+no hash can prove that the case author included every relevant fact.
+
+Build and validate the checked-in development pack:
+
+```bash
+PYTHONPATH=src python scripts/build_arct_automated_receiver_pack.py \
+  --output artifacts/automated-receiver-benchmark
+
+PYTHONPATH=src python -m openline_claim_graph benchmark-validate \
+  --pack artifacts/automated-receiver-benchmark/pack.json \
+  --gold artifacts/automated-receiver-benchmark/gold.private.json
+```
+
+Create a plan, then run each frozen receiver command separately:
+
+```bash
+PYTHONPATH=src python -m openline_claim_graph benchmark-plan \
+  --pack artifacts/automated-receiver-benchmark/pack.json \
+  --receiver model-family-a@version \
+  --receiver model-family-b@version \
+  --output /tmp/receiver-plan.json
+
+PYTHONPATH=src python -m openline_claim_graph benchmark-run \
+  --pack artifacts/automated-receiver-benchmark/pack.json \
+  --plan /tmp/receiver-plan.json \
+  --receiver-id model-family-a@version \
+  --output /tmp/model-a-responses.json \
+  --max-cost-microusd 5000000 \
+  -- python path/to/receiver_adapter.py
+```
+
+The receiver command is deliberately provider-neutral. It receives one trial
+document on stdin and emits the strict answer schema on stdout. API keys and
+provider SDKs stay outside the trusted core.
+
+Finally, score all receiver files against the bound key:
+
+```bash
+PYTHONPATH=src python -m openline_claim_graph benchmark-score \
+  --pack artifacts/automated-receiver-benchmark/pack.json \
+  --gold artifacts/automated-receiver-benchmark/gold.private.json \
+  --plan /tmp/receiver-plan.json \
+  --responses /tmp/model-a-responses.json \
+  --responses /tmp/model-b-responses.json \
+  --output /tmp/receiver-score.json
+```
+
+The checked-in ARCT pack is `DEVELOPMENT_ONLY`. It is one public,
+multiple-choice dataset with possible pretraining contamination and no negative
+controls. It validates the harness and cannot pass the promotion gate. No
+automated receiver result exists yet.
+
+## Dormant human receiver protocol
 
 `experiments/receiver_discovery_pilot/` contains the push-ready protocol and custody templates for the first human receiver pilot. It separates three effects:
 
@@ -138,14 +212,18 @@ Condition is assigned between receivers, case selection is locked before mapping
 
 The analyzed pilot case pack is intentionally empty. The ARCT development fixture is not an admitted Stage 1 case pack. No human trials or decision-value results exist yet.
 
+This human protocol is not the immediate roadmap. It becomes relevant only if
+a later claim concerns human comprehension; machine-receiver evidence cannot
+inherit that claim.
+
 ## Promotion status
 
-`UNPROMOTED_EXTERNAL_VALUE_UNTESTED`
+`AUTOMATED_BENCHMARK_HARNESS_READY_EXTERNAL_VALUE_UNTESTED`
 
 The existing DSM “Same Word, Different Rules” example is structurally useful but cannot serve as extraction-fidelity evidence: it explicitly paraphrases an anonymized exchange and does not include the raw source spans needed for independent recovery.
 
 The unresolved claim is the only one that matters commercially or intellectually:
 
-> Does a source-anchored argument graph help an independent receiver locate a consequential disagreement, revision, or missing premise better than the original sources plus an ordinary summary?
+> Under a fixed task, model, context, and budget, does verified structured state help an isolated machine receiver recover the right decision and external evidence better than ordinary or extracted prose?
 
 Nothing in this repository answers that yet.

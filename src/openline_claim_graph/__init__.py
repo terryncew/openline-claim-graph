@@ -1,6 +1,17 @@
 """OpenLine claim-graph receipt prototype."""
 
 from .analysis import compare_snapshots, disagreement_report
+from .benchmark import (
+    build_plan,
+    build_trial_payload,
+    render_inventory_as_prose,
+    run_receiver_command,
+    score_responses,
+    validate_gold,
+    validate_inventory,
+    validate_pack,
+    validate_plan,
+)
 from .bundle import verify_bundle
 from .graph import (
     CORE_PROFILE,
@@ -34,6 +45,8 @@ __all__ = [
     "ClaimGraphWallet",
     "GraphValidationError",
     "build_source",
+    "build_plan",
+    "build_trial_payload",
     "compare_snapshots",
     "create_claim",
     "create_projection",
@@ -45,13 +58,20 @@ __all__ = [
     "provenance_anchor",
     "public_key_hex",
     "render_review",
+    "render_inventory_as_prose",
     "ReviewRenderError",
     "sign_snapshot",
     "source_commitment",
     "source_span",
+    "score_responses",
     "validate_snapshot",
     "verify_projection",
     "verify_receipt",
     "verify_source_disclosure",
     "verify_bundle",
+    "run_receiver_command",
+    "validate_gold",
+    "validate_inventory",
+    "validate_pack",
+    "validate_plan",
 ]

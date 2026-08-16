@@ -1,11 +1,11 @@
 {
-  "aggregate_sha256": "5f437e2f4eaf03c234e154df6a4a9437721eb07c6a1c85056f4e61223f73a11c",
-  "file_count": 88,
+  "aggregate_sha256": "9597ee3de15bf3a6829d081f39fcb85d63ace01d77cad2c4a72fe68529ae1317",
+  "file_count": 97,
   "files": [
     {
-      "bytes": 1231,
+      "bytes": 1667,
       "path": ".github/workflows/ci.yml",
-      "sha256": "f389e329c4d3ed68f3a10a75672062ab32268f8252d964650f9aa96d11f0822c"
+      "sha256": "7f68ba9a1560c3731622e216593e12c3b7f39ca5282b74d156d46e60c1e892f2"
     },
     {
       "bytes": 112,
@@ -13,19 +13,19 @@
       "sha256": "6e328070b6749987b63470925c9b8ed781af5cbcf6987150f818f628e3ff5ebe"
     },
     {
-      "bytes": 5818,
+      "bytes": 7051,
       "path": "ASSESSMENT.md",
-      "sha256": "4e87a004e5360799d3005b38fd78818aef80aaf0981a497bf0f4ddd5a1cf8909"
+      "sha256": "7417b66493967d116d0aa23a70d1833d4de0797ee97f20394098e4fb481ba5c2"
     },
     {
-      "bytes": 3243,
+      "bytes": 4415,
       "path": "CHANGELOG.md",
-      "sha256": "d772aa014a4ed0a35d78ef8b788d0d3a5ad5b276d6b3b565fcbbd0559fbcb953"
+      "sha256": "c786e4a06d2411320bf4df9b4c5fd86b0123cc2449fa57634762de9538ecd0df"
     },
     {
-      "bytes": 2953,
+      "bytes": 4207,
       "path": "CLAIM_BOUNDARY.md",
-      "sha256": "6d27746de395114edc8350c5e0282dce7821e980686598f39d0d84bf2b712e45"
+      "sha256": "9a2c618efa3bfb6c1649ef6aadd6c6b7f5ede55e53eb5fd8ae2402ffc28c1e89"
     },
     {
       "bytes": 1071,
@@ -33,19 +33,39 @@
       "sha256": "07674dfa9960dff5128d0cdcce58fee7543c26ff47e58e07ae6ac0254a0f58b1"
     },
     {
-      "bytes": 9823,
+      "bytes": 13329,
       "path": "README.md",
-      "sha256": "b3f606d2751c5f96af62d5ec39cba2df34e12f10fc426e1bc5c2985a5f36b412"
+      "sha256": "439727acd19aa678f41e37cada6fece51dd15e3fee3a5816faf2ea51713070c1"
     },
     {
-      "bytes": 2149,
+      "bytes": 2533,
       "path": "RELEASE.md",
-      "sha256": "8320493e1a3d67081532fb5ef739269300bc72b37265209f8700b74577fcf97b"
+      "sha256": "e1a83e76f4fc457a34d222ff23e7c4bfe8add395defdeef665b799d6bf38138b"
     },
     {
       "bytes": 15678,
       "path": "artifacts/arct-development-check/report.json",
       "sha256": "b5058e5c72e6e6b5b156bff0276230934252bc64250a5703cc896b5a259bbf37"
+    },
+    {
+      "bytes": 3696,
+      "path": "artifacts/automated-receiver-benchmark/gold.private.json",
+      "sha256": "b70eee1f054f1789ba675a102a65d2a45924cab282234ceb57e3c23b25a601d6"
+    },
+    {
+      "bytes": 139907,
+      "path": "artifacts/automated-receiver-benchmark/pack.json",
+      "sha256": "bef804e64b09e83d037af303340fbb2c0adc57b7ef53ed621160ccc9dbf3ebea"
+    },
+    {
+      "bytes": 55053,
+      "path": "artifacts/automated-receiver-benchmark/plan.json",
+      "sha256": "8d207a2d0b35f907f5d2ec75d9c9ebec3bef72bcb33c3258c4088c69fb7153f2"
+    },
+    {
+      "bytes": 578,
+      "path": "artifacts/automated-receiver-benchmark/report.json",
+      "sha256": "ada9dd732558b144bdc32ca418ad3216413e3ddedd96938dd954210dc0ca96ea"
     },
     {
       "bytes": 1534,
@@ -208,6 +228,16 @@
       "sha256": "39a4c11b80f75bfae403f01290fd0f9bc09f1116d17f93d6f8998132d923c4f6"
     },
     {
+      "bytes": 4815,
+      "path": "experiments/automated_receiver_benchmark/PROTOCOL.md",
+      "sha256": "85d26070deddc9f9df706809e1817978da97ff987825a86f068611a98c0c9025"
+    },
+    {
+      "bytes": 1020,
+      "path": "experiments/automated_receiver_benchmark/README.md",
+      "sha256": "baee2fc4e71997ac9f34340be86764260237cb06fa9a5671d90b4e3cf78e4d36"
+    },
+    {
       "bytes": 11357,
       "path": "experiments/development_benchmarks/arct/LICENSE-ARCT-APACHE-2.0.txt",
       "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
@@ -323,14 +353,19 @@
       "sha256": "d9ccaabdfecac8f19721f1d11a4c9e500745ec19640487bd8db270a07cdaaa23"
     },
     {
-      "bytes": 2811,
+      "bytes": 3128,
       "path": "product-hypotheses/ASSUMPTION_MONITOR.md",
-      "sha256": "6486068b3d6a656451c9ed41882575a16ddc4d2970d88a258b03b75ed09e1514"
+      "sha256": "9e488919d0934bcda58516a63dc405dbfb1903b2bc6b2c25793f727f02fe16cb"
     },
     {
       "bytes": 572,
       "path": "pyproject.toml",
-      "sha256": "0d0c0373e41f2c61858f82c6039a4800bf987772deaebcf8d7194065a271d145"
+      "sha256": "b5df53fccc98123f99c14bdaccdd6783c8ba43bf7c35113a5faf350c300f37e9"
+    },
+    {
+      "bytes": 8042,
+      "path": "scripts/build_arct_automated_receiver_pack.py",
+      "sha256": "6e905c9d81a474b3b8f529a3b470da4d99315777f0a0041682ab06d54b73cce6"
     },
     {
       "bytes": 7569,
@@ -338,9 +373,9 @@
       "sha256": "2b7347a942878826c4753103b5111f12615c7a7380c7c31085105c51145ea04a"
     },
     {
-      "bytes": 14665,
+      "bytes": 17531,
       "path": "scripts/release_check.py",
-      "sha256": "c8012ab140994e38ea5fa57670ed48bd2062cc1351b1899bd4fed0a8a6b0f976"
+      "sha256": "6c633ce84cb030456687f7af8f4cddc1a3a2537bb8cfc7be39ce51d2b2501d42"
     },
     {
       "bytes": 10871,
@@ -363,9 +398,9 @@
       "sha256": "fbbe592f3bf110306d6e33fe7dd0cdc7f24150db6e4b97d32112a9ca0370f3bc"
     },
     {
-      "bytes": 1311,
+      "bytes": 1756,
       "path": "src/openline_claim_graph/__init__.py",
-      "sha256": "9dde68bdf31bc14792f0294202fe27a380f3c8ba204ece1aa95772f5fc50937a"
+      "sha256": "716fea81d2b77e23b7678f8e022081e025723b7ade86602dfdccc21e5548634b"
     },
     {
       "bytes": 49,
@@ -378,6 +413,11 @@
       "sha256": "0bd40f1d1a97ec67ecd50c6fff079c4746f535c255d6dded7029107e43e7ec63"
     },
     {
+      "bytes": 41137,
+      "path": "src/openline_claim_graph/benchmark.py",
+      "sha256": "2a53c18e36998d64eb6c4be20f8ae79a908c1bcf527de9296e103371d2a769be"
+    },
+    {
       "bytes": 4118,
       "path": "src/openline_claim_graph/bundle.py",
       "sha256": "70f5f02180890f45497b41479b19e640ea053cf6effb080ce5b08276840944c1"
@@ -388,9 +428,9 @@
       "sha256": "f03bbededc76bf4ba136ca1395bac3ca575808aeda027ed799c43fc79ed53657"
     },
     {
-      "bytes": 5584,
+      "bytes": 9743,
       "path": "src/openline_claim_graph/cli.py",
-      "sha256": "0ae207f72233708d95de89a38ea93368199d35d739392e002fa834982d165e7c"
+      "sha256": "5d01f7fd07e0d52474016acd3c436f6faf1d5782765b59a73ddc51ae5fbb75f8"
     },
     {
       "bytes": 31025,
@@ -421,6 +461,11 @@
       "bytes": 2495,
       "path": "tests/test_arct_development_check.py",
       "sha256": "5659b40e673d332364112b479dfc1c64bc453809b0b0fecd527cef380b35e3ac"
+    },
+    {
+      "bytes": 10835,
+      "path": "tests/test_automated_receiver_benchmark.py",
+      "sha256": "16f37437326c5b8e66b57a0b368ae4d259bc59a4c868f066852f5eeb3705dba4"
     },
     {
       "bytes": 19279,

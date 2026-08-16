@@ -69,6 +69,26 @@ def main() -> int:
     )
     run([sys.executable, "scripts/scaling_probe.py"])
     run([sys.executable, "scripts/run_arct_development_check.py"])
+    run(
+        [
+            sys.executable,
+            "scripts/build_arct_automated_receiver_pack.py",
+            "--output",
+            "artifacts/automated-receiver-benchmark",
+        ]
+    )
+    run(
+        [
+            sys.executable,
+            "-m",
+            "openline_claim_graph",
+            "benchmark-validate",
+            "--pack",
+            "artifacts/automated-receiver-benchmark/pack.json",
+            "--gold",
+            "artifacts/automated-receiver-benchmark/gold.private.json",
+        ]
+    )
 
     grammar_files = [
         path
@@ -79,6 +99,7 @@ def main() -> int:
         ast.parse(path.read_text(encoding="utf-8"), filename=str(path), feature_version=(3, 11))
 
     installed_cli_review_matches = False
+    installed_cli_benchmark_validate = False
     with tempfile.TemporaryDirectory(prefix="openline-claim-graph-wheel-") as temporary:
         temp = Path(temporary)
         run(
@@ -151,6 +172,20 @@ def main() -> int:
         )
         if not installed_cli_review_matches:
             raise RuntimeError("installed CLI review differs from repository artifact")
+        run(
+            [
+                sys.executable,
+                "-m",
+                "openline_claim_graph",
+                "benchmark-validate",
+                "--pack",
+                str(ROOT / "artifacts/automated-receiver-benchmark/pack.json"),
+                "--gold",
+                str(ROOT / "artifacts/automated-receiver-benchmark/gold.private.json"),
+            ],
+            extra_env={"PYTHONPATH": str(install_target)},
+        )
+        installed_cli_benchmark_validate = True
 
     verification = json.loads((ROOT / "artifacts/demo/verification.json").read_text(encoding="utf-8"))
     scaling = json.loads((ROOT / "artifacts/scaling-probe.json").read_text(encoding="utf-8"))
@@ -170,12 +205,16 @@ def main() -> int:
     natural_case_upstream = json.loads(
         (ROOT / "artifacts/plos-correction-case/upstream-verification.json").read_text(encoding="utf-8")
     )
+    automated_benchmark_report = json.loads(
+        (ROOT / "artifacts/automated-receiver-benchmark/report.json").read_text(encoding="utf-8")
+    )
     checks = {
         "compileall": True,
         "python_3_11_grammar_parse": len(grammar_files),
         "wheel_build": True,
         "clean_wheel_install_import": True,
         "installed_cli_review_matches": installed_cli_review_matches,
+        "installed_cli_benchmark_validate": installed_cli_benchmark_validate,
         "unit_and_adversarial_tests": test_count,
         "deterministic_tamper_mutations": 10_000,
         "deterministic_tamper_misses": 0,
@@ -205,12 +244,18 @@ def main() -> int:
         "arct_receiver_decision_value_tested": False,
         "arct_upstream_fixture_exact_match": arct_upstream_verification["exact_match"],
         "arct_upstream_fixture_mismatches": len(arct_upstream_verification["mismatches"]),
+        "automated_benchmark_status": automated_benchmark_report["status"],
+        "automated_benchmark_case_count": automated_benchmark_report["case_count"],
+        "automated_benchmark_receiver_count": automated_benchmark_report["receiver_count"],
+        "automated_benchmark_trial_count": automated_benchmark_report["trial_count"],
+        "automated_benchmark_api_spend_usd": automated_benchmark_report["incremental_api_spend_usd"],
         "scaling_probe_claim_counts": [item["claim_count"] for item in scaling["results"]],
     }
     if not all(
         [
             checks["compileall"],
             checks["installed_cli_review_matches"],
+            checks["installed_cli_benchmark_validate"],
             checks["demo_receipt_valid"],
             checks["demo_projection_valid"],
             checks["demo_source_disclosure_valid"],
@@ -237,6 +282,11 @@ def main() -> int:
             checks["arct_receiver_decision_value_tested"] is False,
             checks["arct_upstream_fixture_exact_match"] is True,
             checks["arct_upstream_fixture_mismatches"] == 0,
+            checks["automated_benchmark_status"] == "DEVELOPMENT_PACK_ONLY_NO_RECEIVER_RESULT",
+            checks["automated_benchmark_case_count"] == 24,
+            checks["automated_benchmark_receiver_count"] == 2,
+            checks["automated_benchmark_trial_count"] == 144,
+            checks["automated_benchmark_api_spend_usd"] == 0,
         ]
     ):
         raise RuntimeError(f"release checks failed: {checks}")
@@ -286,6 +336,18 @@ def main() -> int:
     )
     inputs.append(
         {
+            "name": "ARCT automated receiver development pack",
+            "pack_sha256": automated_benchmark_report["pack_sha256"],
+            "gold_sha256": automated_benchmark_report["gold_sha256"],
+            "plan_sha256": automated_benchmark_report["plan_sha256"],
+            "usage": (
+                "Development-only A/B/C custody, planning, and scorer fixture. Contains no receiver output "
+                "and is structurally ineligible for promotion."
+            ),
+        }
+    )
+    inputs.append(
+        {
             "name": "PLOS ONE abstract/main-text inconsistency natural-material case",
             "original_doi": "10.1371/journal.pone.0223255",
             "correction_doi": "10.1371/journal.pone.0249731",
@@ -297,7 +359,7 @@ def main() -> int:
     evidence = {
         "schema": "openline.claim-graph.prototype-evidence.v1",
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
-        "status": "MECHANICALLY_VERIFIED_NATURAL_MATERIAL_REVIEW_EXTERNAL_VALUE_UNTESTED",
+        "status": "MECHANICALLY_VERIFIED_AUTOMATED_BENCHMARK_HARNESS_EXTERNAL_VALUE_UNTESTED",
         "checks": checks,
         "inputs": inputs,
         "manifest_aggregate_sha256": manifest["aggregate_sha256"],
@@ -305,7 +367,9 @@ def main() -> int:
             "Evidence covers deterministic integrity, source-span, lineage, projection, and receiver-policy mechanics "
             "plus one small independently labeled, multiple-choice missing-premise mapping check (21/24) and one "
             "manually mapped natural-material inconsistency later confirmed by a public correction. It does not cover "
-            "open-ended extraction fidelity, model generalization, or graph-versus-summary receiver value."
+            "open-ended extraction fidelity, model generalization, or graph-versus-summary receiver value. The "
+            "automated harness is mechanically tested, but its checked-in development pack has no receiver outputs "
+            "and cannot pass its own validation gate."
         ),
         "incremental_api_spend_usd": 0,
         "model_calls": 1,

@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.1.0.dev4 — 2026-08-15
+
+- Added a provider-neutral automated receiver benchmark harness.
+- Separated public A/B/C surfaces from a gold file bound to the exact pack hash.
+- Added deterministic full-factorial plans across receivers, cases, arms, and repetitions.
+- Added fresh-process receiver execution over stdin/stdout, strict answer schemas, timeout handling, resumable output, output hashes, and declared micro-dollar stop ceilings.
+- Added deterministic label, evidence, premise, false-conflict, cost, and paired-effect scoring. Missing and invalid trials count as misses.
+- Added a machine-readable continuation gate that blocks development packs, incomplete runs, insufficient datasets or receiver families, absent negative controls, weak effects, non-positive confidence bounds, and false-conflict regressions.
+- Added a development-only 24-case ARCT A/B/C pack and plan. It contains no receiver result and is structurally ineligible for promotion.
+- Added seven benchmark custody, parity, tamper, planning, runner, resume, duplicate, and scoring tests.
+- Kept provider SDKs, API keys, model grading, and human-comprehension claims outside the trusted core.
+
 ## 0.1.0.dev3 — 2026-08-15
 
 - Added `render-review`, a fail-closed static HTML surface over a fully verified receiver bundle.

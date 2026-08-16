@@ -53,4 +53,6 @@ The receiver-discovery pilot, not preference:
 
 ## Next evidence dependency
 
-The next product-relevant evidence is an independently staffed, E1-anchored human receiver pilot under `experiments/receiver_discovery_pilot/`. The natural-material example proves only that the mechanics can render one externally confirmed fault line. It does not replace the pilot.
+The next product-relevant evidence is the sealed automated machine-receiver benchmark under `experiments/automated_receiver_benchmark/`. It must use independent gold, isolated receiver processes, matched A/B/C surfaces, deterministic scoring, and a spend cap. A result can support machine-receiver value only. The dormant human protocol under `experiments/receiver_discovery_pilot/` is still required before making any claim about human comprehension.
+
+The natural-material example proves only that the mechanics can render one externally confirmed fault line. It does not replace either value test.

@@ -6,6 +6,13 @@ import json
 from pathlib import Path
 from typing import Any
 
+from .benchmark import (
+    build_plan,
+    run_receiver_command,
+    score_responses,
+    validate_gold,
+    validate_pack,
+)
 from .bundle import verify_bundle
 from .graph import verify_projection
 from .receipts import verify_receipt, verify_source_disclosure
@@ -19,6 +26,12 @@ def _load(path: str) -> Any:
 def _emit(value: Any) -> int:
     print(json.dumps(value, indent=2, sort_keys=True))
     return 0 if value.get("valid") else 1
+
+
+def _write(path: str, value: Any) -> None:
+    output = Path(path)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -63,7 +76,99 @@ def main(argv: list[str] | None = None) -> int:
     review.add_argument("--output", required=True)
     review.add_argument("--title", default="Decision Review")
 
+    benchmark_validate = sub.add_parser(
+        "benchmark-validate",
+        help="validate a sealed automated receiver pack and optional gold key",
+    )
+    benchmark_validate.add_argument("--pack", required=True)
+    benchmark_validate.add_argument("--gold")
+
+    benchmark_plan = sub.add_parser(
+        "benchmark-plan",
+        help="build a deterministic full-factorial automated receiver plan",
+    )
+    benchmark_plan.add_argument("--pack", required=True)
+    benchmark_plan.add_argument("--receiver", action="append", required=True)
+    benchmark_plan.add_argument("--repetitions", type=int, default=1)
+    benchmark_plan.add_argument("--output", required=True)
+
+    benchmark_run = sub.add_parser(
+        "benchmark-run",
+        help="run one isolated receiver command across its planned trials",
+    )
+    benchmark_run.add_argument("--pack", required=True)
+    benchmark_run.add_argument("--plan", required=True)
+    benchmark_run.add_argument("--receiver-id", required=True)
+    benchmark_run.add_argument("--output", required=True)
+    benchmark_run.add_argument("--timeout-seconds", type=int, default=120)
+    benchmark_run.add_argument("--max-cost-microusd", type=int, default=0)
+    benchmark_run.add_argument(
+        "receiver_command",
+        nargs=argparse.REMAINDER,
+        help="receiver argv after '--'; one fresh process is used per trial",
+    )
+
+    benchmark_score = sub.add_parser(
+        "benchmark-score",
+        help="deterministically score receiver outputs against bound external gold",
+    )
+    benchmark_score.add_argument("--pack", required=True)
+    benchmark_score.add_argument("--gold", required=True)
+    benchmark_score.add_argument("--plan", required=True)
+    benchmark_score.add_argument("--responses", action="append", required=True)
+    benchmark_score.add_argument("--output", required=True)
+
     args = parser.parse_args(argv)
+    if args.command == "benchmark-validate":
+        pack = _load(args.pack)
+        result = validate_gold(_load(args.gold), pack) if args.gold else validate_pack(pack)
+        return _emit(result)
+    if args.command == "benchmark-plan":
+        plan = build_plan(_load(args.pack), args.receiver, args.repetitions)
+        _write(args.output, plan)
+        return _emit(
+            {
+                "valid": True,
+                "output": args.output,
+                "plan_sha256": hashlib.sha256(
+                    json.dumps(plan, sort_keys=True, separators=(",", ":")).encode("utf-8")
+                ).hexdigest(),
+                "trial_count": len(plan["trials"]),
+            }
+        )
+    if args.command == "benchmark-run":
+        receiver_command = list(args.receiver_command)
+        if receiver_command and receiver_command[0] == "--":
+            receiver_command = receiver_command[1:]
+        if not receiver_command:
+            parser.error("benchmark-run requires a receiver command after '--'")
+        result = run_receiver_command(
+            _load(args.pack),
+            _load(args.plan),
+            receiver_id=args.receiver_id,
+            command=receiver_command,
+            output_path=Path(args.output),
+            timeout_seconds=args.timeout_seconds,
+            max_cost_microusd=args.max_cost_microusd,
+        )
+        return _emit(
+            {
+                "valid": True,
+                "output": args.output,
+                "status": result["status"],
+                "responses": len(result["responses"]),
+                "cumulative_cost_microusd": result["cumulative_cost_microusd"],
+            }
+        )
+    if args.command == "benchmark-score":
+        result = score_responses(
+            _load(args.pack),
+            _load(args.gold),
+            _load(args.plan),
+            [_load(path) for path in args.responses],
+        )
+        _write(args.output, result)
+        return _emit(result)
     if args.command == "verify-receipt":
         sources_doc = _load(args.sources)
         sources = {item["source_id"]: item for item in sources_doc["sources"]}

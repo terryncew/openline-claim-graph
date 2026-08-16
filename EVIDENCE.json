@@ -10,6 +10,11 @@
     "arct_status": "EXPLORATORY_INDEPENDENT_GOLD_POSITIVE_CONTROL",
     "arct_upstream_fixture_exact_match": true,
     "arct_upstream_fixture_mismatches": 0,
+    "automated_benchmark_api_spend_usd": 0,
+    "automated_benchmark_case_count": 24,
+    "automated_benchmark_receiver_count": 2,
+    "automated_benchmark_status": "DEVELOPMENT_PACK_ONLY_NO_RECEIVER_RESULT",
+    "automated_benchmark_trial_count": 144,
     "clean_wheel_install_import": true,
     "compileall": true,
     "demo_bundle_disposition": "ADMIT",
@@ -24,6 +29,7 @@
     ],
     "deterministic_tamper_misses": 0,
     "deterministic_tamper_mutations": 10000,
+    "installed_cli_benchmark_validate": true,
     "installed_cli_review_matches": true,
     "natural_case_bundle_valid": true,
     "natural_case_conflict_count": 5,
@@ -35,20 +41,20 @@
     "pilot_condition_unit": "receiver",
     "pilot_stage_1_promotion_allowed": false,
     "pilot_target_receiver_type": "human",
-    "python_3_11_grammar_parse": 24,
+    "python_3_11_grammar_parse": 27,
     "scaling_probe_claim_counts": [
       1,
       10,
       100,
       1000
     ],
-    "unit_and_adversarial_tests": 36,
+    "unit_and_adversarial_tests": 43,
     "wheel_build": true
   },
-  "claim_boundary": "Evidence covers deterministic integrity, source-span, lineage, projection, and receiver-policy mechanics plus one small independently labeled, multiple-choice missing-premise mapping check (21/24) and one manually mapped natural-material inconsistency later confirmed by a public correction. It does not cover open-ended extraction fidelity, model generalization, or graph-versus-summary receiver value.",
+  "claim_boundary": "Evidence covers deterministic integrity, source-span, lineage, projection, and receiver-policy mechanics plus one small independently labeled, multiple-choice missing-premise mapping check (21/24) and one manually mapped natural-material inconsistency later confirmed by a public correction. It does not cover open-ended extraction fidelity, model generalization, or graph-versus-summary receiver value. The automated harness is mechanically tested, but its checked-in development pack has no receiver outputs and cannot pass its own validation gate.",
   "compile_output": "",
   "external_publication_or_push": false,
-  "generated_at": "2026-08-16T04:43:56Z",
+  "generated_at": "2026-08-16T05:28:33Z",
   "incremental_api_spend_usd": 0,
   "inputs": [
     {
@@ -68,6 +74,13 @@
       "usage": "Independent-gold, multiple-choice missing-premise development check; not a receiver pilot."
     },
     {
+      "gold_sha256": "088e7825536c977a87172b5029fb4631a100711b60bfaea50c93a118b60bf923",
+      "name": "ARCT automated receiver development pack",
+      "pack_sha256": "ce045a2aabb119fe919cd72b82baa2c99349b028a8a74f346d29853939dc25b3",
+      "plan_sha256": "1087769ef26e4a7cb8201f8fadca7ecc441691280fdbde29fb8c8e4b147fbc3a",
+      "usage": "Development-only A/B/C custody, planning, and scorer fixture. Contains no receiver output and is structurally ineligible for promotion."
+    },
+    {
       "correction_doi": "10.1371/journal.pone.0249731",
       "external_anchor_sha256": "4536c1a99b7b1b1ef6581342f1f4ee0a71937463f28054e2657ce4144198ba6d",
       "name": "PLOS ONE abstract/main-text inconsistency natural-material case",
@@ -77,9 +90,9 @@
     }
   ],
   "interactive_model_mapping_passes": 1,
-  "manifest_aggregate_sha256": "5f437e2f4eaf03c234e154df6a4a9437721eb07c6a1c85056f4e61223f73a11c",
+  "manifest_aggregate_sha256": "9597ee3de15bf3a6829d081f39fcb85d63ace01d77cad2c4a72fe68529ae1317",
   "model_calls": 1,
   "programmatic_experiment_api_calls": 0,
   "schema": "openline.claim-graph.prototype-evidence.v1",
-  "status": "MECHANICALLY_VERIFIED_NATURAL_MATERIAL_REVIEW_EXTERNAL_VALUE_UNTESTED"
+  "status": "MECHANICALLY_VERIFIED_AUTOMATED_BENCHMARK_HARNESS_EXTERNAL_VALUE_UNTESTED"
 }

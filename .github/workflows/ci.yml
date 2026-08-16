@@ -34,6 +34,12 @@ jobs:
         run: python examples/build_plos_correction_case.py --output "${{ runner.temp }}/plos-correction-case"
       - name: Run scaling probe
         run: python scripts/scaling_probe.py
+      - name: Build and validate automated receiver development pack
+        run: |
+          python scripts/build_arct_automated_receiver_pack.py --output "${{ runner.temp }}/automated-receiver-benchmark"
+          python -m openline_claim_graph benchmark-validate \
+            --pack "${{ runner.temp }}/automated-receiver-benchmark/pack.json" \
+            --gold "${{ runner.temp }}/automated-receiver-benchmark/gold.private.json"
       - name: Build wheel
         run: python -m pip wheel . --no-deps --no-build-isolation -w "${{ runner.temp }}/wheel"
       - name: CLI smoke
