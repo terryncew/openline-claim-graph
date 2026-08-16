@@ -2,7 +2,7 @@
 
 ## Verdict
 
-The idea survives as a working integrity, lineage, and deterministic source-impact mechanism. A small independent-gold development check shows that one source-to-graph mapping pass can recover signal on a constrained missing-premise task. A separate natural-material case produces a readable review of five published abstract/main-text conflicts later confirmed by an independent correction. Version `0.2.0.dev1` now applies that real correction to an accepted dependency specimen and computes the downstream evidence blast radius without an LLM judge.
+The idea survives as a working integrity, lineage, and deterministic source-impact mechanism. A small independent-gold development check shows that one source-to-graph mapping pass can recover signal on a constrained missing-premise task. A separate natural-material case produces a readable review of five published abstract/main-text conflicts later confirmed by an independent correction. Version `0.2.0.dev1` applies that real correction to an accepted dependency specimen and computes the downstream evidence blast radius without an LLM judge. Version `0.3.0.dev0` adds a second native operation: reproduce narrowly typed framing devices from exact text while preventing model interpretation from self-promoting into a verdict.
 
 The durable correction to Coherence Dynamics is architectural:
 
@@ -22,6 +22,8 @@ The new Decision Review renderer adds no semantic judgment. It verifies the comp
 
 The Evidence Recall engine likewise adds no semantic judgment. A receiver explicitly names hard, advisory, and unadmitted dependency relations. The engine computes a least fixed point of grounded surviving support, then classifies only event-touched claims. This prevents an ungrounded support cycle from rescuing itself and prevents one corrected source from poisoning a claim that retains an admitted alternative basis.
 
+Frame Ledger separates mechanical devices from semantic interpretations. Exact lexical, local-grammar, and declared scoped-absence findings reproduce under one content-addressed ruleset. An AI may propose higher-level interpretations, but exact-quote import, signed execution identities, non-self-review, distinct declared-family quorum, challenge blocking, and receiver-selected human mode control admission. Even an admitted semantic finding remains advisory. Truth, lying, intent, fairness, rationalization, propaganda, and reader effect are prohibited verdicts rather than hidden scores.
+
 ## What remains outside the instrument
 
 The prototype cannot verify that:
@@ -34,6 +36,10 @@ The prototype cannot verify that:
 - the admitted dependency graph is complete;
 - the event-to-affected-span mapping is semantically correct;
 - maintaining the dependency state saves enough review cost to justify adoption.
+- the Frame Ledger ruleset is complete, politically neutral, or superior to existing framing taxonomies;
+- separately named model families are actually independent;
+- any current frontier or open-weight model can perform the advisory task reliably;
+- the one-headline surface represents the article body.
 
 An extraction-process receipt containing a model ID, prompt digest, and source digest would improve reproducibility. It would **not** prove semantic fidelity. It identifies the machine that made the translation; it does not make the translation correct.
 
@@ -57,6 +63,12 @@ An independent verifier that does not import the impact engine reproduces the gr
 
 This is real mechanism contact, not independent dependency discovery. The article and correction are natural material; the downstream accepted-state graph is authored for the specimen. The earned claim is conditional correctness: given that exact state, event, and receiver policy, the impact report is exact and reproducible.
 
+## What Frame Ledger adds
+
+The checked-in Washington Post specimen audits only the supplied headline. Seven findings reproduce: one conflict lexeme, one co-occurrence cue, two issue-frame lexemes, one narrow local-attribution-pattern absence, and two receiver-declared term-set absences. A stdlib-only verifier that does not import the candidate implementation reproduces 20 content, span, rule, policy, classification, and rendered-output checks.
+
+This is a successful mechanism test and nothing larger. The article body is absent. The ruleset has not been validated against Media Frames Corpus or NewsWCL50. No frontier/open-weight model was called, and the model registry is an unrun candidate list. The autonomous path is nevertheless complete and tested with controlled endpoint fixtures: proposal, exact quote import, signature, two-family review, challenge handling, receiver-policy admission, and fail-closed rendering can run without a mandatory human action.
+
 ## Relation to the prior work
 
 DSM already contained the useful beginning: explicit nodes and edges, temporal graph hashes, previous-state references, and separate provenance channels. Its scalar stress/coherence layer did not survive external testing. The prototype keeps the graph and custody ideas and removes the scores.
@@ -74,6 +86,10 @@ The wallet is therefore not a truth ledger. It is custody for evolving represent
 `DO_NOT_ADD_RDF_OR_STANDARDS_INFRASTRUCTURE_YET`
 
 `SOURCE_IMPACT_MECHANISM_VERIFIED_ON_REAL_EVENT_AUTHORED_DEPENDENCIES`
+
+`FRAME_DEVICE_MECHANISM_REPRODUCED_ON_ONE_NATURAL_HEADLINE`
+
+`AUTONOMOUS_REVIEW_CONTRACT_IMPLEMENTED_MODEL_EFFICACY_UNTESTED`
 
 The immediate useful path is bounded evidence recall: signed accepted state, an externally grounded source-status event, explicit receiver admission of dependency edges, deterministic exposure, and a proposed review that cannot mutate accepted state. The next external-value test is operational rather than cognitive: on a real maintained state, does the mechanism catch required reconsideration that direct source lookup misses without creating unacceptable review volume?
 

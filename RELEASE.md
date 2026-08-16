@@ -1,12 +1,12 @@
 # Push status
 
-Version: `0.2.0.dev1`
+Version: `0.3.0.dev0`
 
 Disposition: `READY_TO_PUSH_AS_EXPERIMENTAL_PROTOTYPE`
 
 This is suitable for a public source repository only if the repository description preserves the same boundary:
 
-> Dependency-aware provenance for accepted claim states. When admitted evidence changes, compute exactly what must be reconsidered, what still has an admitted alternative basis, and why. Experimental; no truth, completeness, extraction-accuracy, adoption, or decision-value claim.
+> Dependency-aware provenance for accepted claim states. Compute what breaks when evidence changes, and reproduce exact framing devices without turning them into a truth or bias score. Experimental; no truth, completeness, extraction-accuracy, political-neutrality, adoption, or decision-value claim.
 
 It is **not** ready to be described as a production OpenLine component, knowledge standard, truth system, legal-proof system, or validated decision aid.
 
@@ -37,7 +37,15 @@ Verified locally before packaging:
 - an independent verifier with 21 reproduced checks, including Ed25519 state binding and witness paths
 - 2,000 randomized differential cases with zero oracle mismatches
 - fail-closed static Evidence Recall rendering reproduced from the installed wheel
+- 7 exact Frame Ledger findings on one supplied natural headline
+- content-addressed framing rules, findings, receiver policy, and reproduced report
+- a 20-check independent specimen verifier that does not import the candidate Frame Ledger implementation
+- signed AI proposal/review records with non-self-review, distinct declared-family quorum, challenge blocking, and optional human confirmation
+- a tested fully unattended proposal → review → receiver-policy admission path
+- strict exact-quote import that rejects model-invented source text
+- tested OpenAI-compatible and official Responses API Structured Outputs adapters
+- a current open-weight candidate registry split into local/workstation and datacenter tiers, with every candidate explicitly unrun
 
 The GitHub Actions matrix explicitly installs the declared build backend before exercising no-build-isolation wheel construction. It does not rely on Python runner images to bundle `setuptools`.
 
-No adoption or saved-review-cost test has been run. The real correction is external, but the downstream dependency state is an authored specimen. No completed automated receiver efficacy result is included in this repository; the ARCT pack remains a development fixture only. The human decision-value pilot remains unrun with an empty analyzed case pack. No paid programmatic experiment API calls or incremental experiment charges were used for this release.
+No adoption or saved-review-cost test has been run. The real correction is external, but the downstream dependency state is an authored specimen. The Frame Ledger specimen contains only one supplied headline, not the article body, and the ruleset has not been validated against a framing corpus. No frontier or open-weight model was called; the model registry contains candidates, not winners. No completed automated receiver efficacy result is included in this repository; the ARCT pack remains a development fixture only. The human decision-value pilot remains unrun with an empty analyzed case pack. No paid programmatic experiment API calls or incremental experiment charges were used for this release.

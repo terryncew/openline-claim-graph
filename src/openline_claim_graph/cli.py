@@ -14,6 +14,8 @@ from .benchmark import (
     validate_pack,
 )
 from .bundle import verify_bundle
+from .frame import FrameValidationError, evaluate_frame_ledger, verify_frame_report
+from .frame_review import FrameReviewError, render_frame_ledger
 from .graph import verify_projection
 from .impact import ImpactValidationError, analyze_source_impact, verify_impact_bundle
 from .impact_review import ImpactReviewError, render_impact_review
@@ -34,6 +36,17 @@ def _write(path: str, value: Any) -> None:
     output = Path(path)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def _collection(path: str | None, key: str) -> list[Any]:
+    if path is None:
+        return []
+    value = _load(path)
+    if isinstance(value, list):
+        return value
+    if isinstance(value, dict) and isinstance(value.get(key), list):
+        return value[key]
+    raise ValueError(f"{path} must be a JSON array or an object containing {key!r}")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -158,7 +171,109 @@ def main(argv: list[str] | None = None) -> int:
     impact_render.add_argument("--output", required=True)
     impact_render.add_argument("--title", default="Evidence Recall")
 
+    frame = sub.add_parser(
+        "frame-audit",
+        help="apply receiver policy to exact framing-device findings",
+    )
+    frame.add_argument("--source", required=True)
+    frame.add_argument("--findings", required=True)
+    frame.add_argument("--policy", required=True)
+    frame.add_argument("--finding-attestations")
+    frame.add_argument("--reviews")
+    frame.add_argument("--review-attestations")
+    frame.add_argument("--output", required=True)
+
+    frame_verify = sub.add_parser(
+        "verify-frame",
+        help="reproduce and verify a Frame Ledger report",
+    )
+    frame_verify.add_argument("--report", required=True)
+    frame_verify.add_argument("--source", required=True)
+    frame_verify.add_argument("--findings", required=True)
+    frame_verify.add_argument("--policy", required=True)
+    frame_verify.add_argument("--finding-attestations")
+    frame_verify.add_argument("--reviews")
+    frame_verify.add_argument("--review-attestations")
+
+    frame_render = sub.add_parser(
+        "render-frame",
+        help="render a reproduced Frame Ledger as self-contained HTML",
+    )
+    frame_render.add_argument("--report", required=True)
+    frame_render.add_argument("--source", required=True)
+    frame_render.add_argument("--findings", required=True)
+    frame_render.add_argument("--policy", required=True)
+    frame_render.add_argument("--finding-attestations")
+    frame_render.add_argument("--reviews")
+    frame_render.add_argument("--review-attestations")
+    frame_render.add_argument("--output", required=True)
+    frame_render.add_argument("--title", default="Frame Ledger")
+
     args = parser.parse_args(argv)
+    if args.command in {"frame-audit", "verify-frame", "render-frame"}:
+        source = _load(args.source)
+        findings = _collection(args.findings, "findings")
+        policy = _load(args.policy)
+        finding_attestations = _collection(args.finding_attestations, "attestations")
+        reviews = _collection(args.reviews, "reviews")
+        review_attestations = _collection(args.review_attestations, "attestations")
+        if args.command == "frame-audit":
+            try:
+                result = evaluate_frame_ledger(
+                    source,
+                    findings,
+                    policy,
+                    finding_attestations=finding_attestations,
+                    reviews=reviews,
+                    review_attestations=review_attestations,
+                )
+            except FrameValidationError as exc:
+                return _emit({"valid": False, "errors": [str(exc)]})
+            _write(args.output, result)
+            return _emit(
+                {
+                    "valid": True,
+                    "output": args.output,
+                    "report_id": result["report_id"],
+                    "summary": result["summary"],
+                }
+            )
+        report = _load(args.report)
+        if args.command == "verify-frame":
+            return _emit(
+                verify_frame_report(
+                    report,
+                    source,
+                    findings,
+                    policy,
+                    finding_attestations=finding_attestations,
+                    reviews=reviews,
+                    review_attestations=review_attestations,
+                )
+            )
+        try:
+            rendered = render_frame_ledger(
+                report=report,
+                source=source,
+                findings=findings,
+                policy=policy,
+                finding_attestations=finding_attestations,
+                reviews=reviews,
+                review_attestations=review_attestations,
+                title=args.title,
+            )
+        except FrameReviewError as exc:
+            return _emit({"valid": False, "errors": [str(exc)]})
+        output = Path(args.output)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(rendered, encoding="utf-8")
+        return _emit(
+            {
+                "valid": True,
+                "output": str(output),
+                "sha256": hashlib.sha256(rendered.encode("utf-8")).hexdigest(),
+            }
+        )
     if args.command == "benchmark-validate":
         pack = _load(args.pack)
         result = validate_gold(_load(args.gold), pack) if args.gold else validate_pack(pack)

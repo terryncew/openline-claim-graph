@@ -1,0 +1,66 @@
+{
+  "claim_boundary": "Mechanical findings reproduce declared textual patterns. Advisory findings record a receiver-policy admission by pinned reviewers. Neither layer establishes truth, intent, fairness, propaganda, rationalization, completeness, or causal effect on readers.",
+  "classifications": {
+    "advisory": [],
+    "blocked": [],
+    "established": [
+      {
+        "disposition": "ESTABLISHED_MECHANICAL",
+        "finding_id": "frame-finding:sha256:0dc41f947b3cc46d04e5a6cf37a42e9028b8d5cac274e0d5e2dbf94f2117bd6b",
+        "reason": "The finding reproduced from exact source bytes under the pinned ruleset."
+      },
+      {
+        "disposition": "ESTABLISHED_MECHANICAL",
+        "finding_id": "frame-finding:sha256:30f427cdaaa786ba9e5b9763fa500f8629aa2a043cd822659b26059884089ca3",
+        "reason": "The finding reproduced from exact source bytes under the pinned ruleset."
+      },
+      {
+        "disposition": "ESTABLISHED_MECHANICAL",
+        "finding_id": "frame-finding:sha256:441d2737b199775532244f7686ae5ae0d9cfdcf8fbefd3ebb677a2bded8997fe",
+        "reason": "The finding reproduced from exact source bytes under the pinned ruleset."
+      },
+      {
+        "disposition": "ESTABLISHED_MECHANICAL",
+        "finding_id": "frame-finding:sha256:4ec68976b353688fb8eda5449ab3b5149b1d0e58b3be181f0b5b8277e14707f2",
+        "reason": "The finding reproduced from exact source bytes under the pinned ruleset."
+      },
+      {
+        "disposition": "ESTABLISHED_MECHANICAL",
+        "finding_id": "frame-finding:sha256:5d7e2a96ba4ebaca60116df6212e80d651509b6cfc6f7632ebebfd07c3bc3afc",
+        "reason": "The finding reproduced from exact source bytes under the pinned ruleset."
+      },
+      {
+        "disposition": "ESTABLISHED_MECHANICAL",
+        "finding_id": "frame-finding:sha256:c2b4a2ebcdbb99751d58807424d025b2adbdf3eab7b9aac62c5530dcf83c57d0",
+        "reason": "The finding reproduced from exact source bytes under the pinned ruleset."
+      },
+      {
+        "disposition": "ESTABLISHED_MECHANICAL",
+        "finding_id": "frame-finding:sha256:cc38216ac1a9fc79bff54ac3603fad32d1623baba4fac2c7e6139833ffd2a95f",
+        "reason": "The finding reproduced from exact source bytes under the pinned ruleset."
+      }
+    ],
+    "unadmitted": []
+  },
+  "finding_ids": [
+    "frame-finding:sha256:0dc41f947b3cc46d04e5a6cf37a42e9028b8d5cac274e0d5e2dbf94f2117bd6b",
+    "frame-finding:sha256:30f427cdaaa786ba9e5b9763fa500f8629aa2a043cd822659b26059884089ca3",
+    "frame-finding:sha256:441d2737b199775532244f7686ae5ae0d9cfdcf8fbefd3ebb677a2bded8997fe",
+    "frame-finding:sha256:4ec68976b353688fb8eda5449ab3b5149b1d0e58b3be181f0b5b8277e14707f2",
+    "frame-finding:sha256:5d7e2a96ba4ebaca60116df6212e80d651509b6cfc6f7632ebebfd07c3bc3afc",
+    "frame-finding:sha256:c2b4a2ebcdbb99751d58807424d025b2adbdf3eab7b9aac62c5530dcf83c57d0",
+    "frame-finding:sha256:cc38216ac1a9fc79bff54ac3603fad32d1623baba4fac2c7e6139833ffd2a95f"
+  ],
+  "human_mode": "OPTIONAL",
+  "policy_id": "frame-policy:sha256:968f3717cd0d3d4a513cc1d70125d08dcdd646561f8f254ced378b9a813c4c42",
+  "report_id": "frame-ledger-report:sha256:04f9668dee5daaa4d57ecda9fe64bc78d650b730afa1438963b7375945fc2dfb",
+  "ruleset_hash": "51ebb8f3676f5c8698b1edf36bd7f4f0292135ae0183da26ff6adf8b2b1187b1",
+  "schema": "openline.frame-ledger-report.v1",
+  "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2",
+  "summary": {
+    "advisory": 0,
+    "blocked": 0,
+    "established": 7,
+    "unadmitted": 0
+  }
+}

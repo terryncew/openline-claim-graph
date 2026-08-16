@@ -18,6 +18,10 @@ It demonstrates that a receiver can verify:
 - separation of hard, advisory, and unadmitted edge authority;
 - preservation of claims with an admitted alternative basis and rejection of ungrounded support-cycle self-rescue;
 - exact witness paths and fail-closed rendering of a reproduced impact report.
+- exact lexical, local-grammar, and receiver-declared scoped-absence findings under a content-addressed Frame Ledger ruleset;
+- signed model proposal/review records, non-self-review, heterogeneous declared-family quorum, challenge blocking, and explicit optional/required/disabled human confirmation;
+- strict exact-quote import after schema-constrained model output and a provider-neutral autonomous execution boundary;
+- fail-closed reproduction and rendering of a Frame Ledger report.
 
 It does **not** demonstrate:
 
@@ -33,6 +37,17 @@ It does **not** demonstrate:
 - semantic correctness of the asserted source-status scope;
 - automatic authority to mutate an accepted graph;
 - adoption, saved review cost, or commercial value.
+- correctness or completeness of the Frame Ledger ruleset as a general media-bias taxonomy;
+- semantic correctness of model-proposed agency, evidence-asymmetry, fact-status, or causal-context findings;
+- proof that declared model families are actually independent;
+- truth, lying, deception intent, fairness, rationalization, propaganda, political neutrality, or reader effect;
+- competence of any frontier or open-weight model named as an unrun candidate.
+
+## Frame Ledger
+
+Version `0.3.0.dev0` adds a second conditional mechanism. Mechanical findings mean only that an exact lexical, local grammatical, or declared scoped-absence rule reproduced from the committed UTF-8 surface under the pinned ruleset. Advisory findings mean only that a signed quorum configured by the receiver admitted a model interpretation as advisory. A proposer cannot review itself; distinct declared families are required; challenges can block; and human confirmation is an explicit receiver-policy option rather than a hidden requirement.
+
+The checked-in Washington Post specimen audits only the supplied headline. Seven mechanical findings and 20 independent checks reproduce. The article body was not included. No frontier/open-weight model was called, and the candidate registry is not a performance result.
 
 The graph records representations and relations among representations. Reality remains outside the receipt.
 

@@ -119,6 +119,24 @@ def main() -> int:
             "artifacts/automated-receiver-benchmark/gold.private.json",
         ]
     )
+    run(
+        [
+            sys.executable,
+            "examples/build_wapo_frame_ledger.py",
+            "--output",
+            "artifacts/wapo-headline-frame-ledger",
+        ]
+    )
+    run(
+        [
+            sys.executable,
+            "scripts/verify_wapo_frame_ledger.py",
+            "--artifact",
+            "artifacts/wapo-headline-frame-ledger",
+            "--output",
+            "artifacts/wapo-headline-frame-ledger/independent-verification.json",
+        ]
+    )
 
     grammar_files = [
         path
@@ -132,6 +150,8 @@ def main() -> int:
     installed_cli_benchmark_validate = False
     installed_cli_impact_verifies = False
     installed_cli_impact_review_matches = False
+    installed_cli_frame_verifies = False
+    installed_cli_frame_review_matches = False
     with tempfile.TemporaryDirectory(prefix="openline-claim-graph-wheel-") as temporary:
         temp = Path(temporary)
         run(
@@ -277,6 +297,50 @@ def main() -> int:
         installed_cli_impact_review_matches = sha256_file(installed_impact_review) == sha256_file(
             impact_dir / "review.html"
         )
+        frame_dir = ROOT / "artifacts/wapo-headline-frame-ledger"
+        run(
+            [
+                sys.executable,
+                "-m",
+                "openline_claim_graph",
+                "verify-frame",
+                "--report",
+                str(frame_dir / "report.json"),
+                "--source",
+                str(frame_dir / "source.json"),
+                "--findings",
+                str(frame_dir / "findings.json"),
+                "--policy",
+                str(frame_dir / "policy.json"),
+            ],
+            extra_env={"PYTHONPATH": str(install_target)},
+        )
+        installed_cli_frame_verifies = True
+        installed_frame_review = temp / "installed-frame-review.html"
+        run(
+            [
+                sys.executable,
+                "-m",
+                "openline_claim_graph",
+                "render-frame",
+                "--report",
+                str(frame_dir / "report.json"),
+                "--source",
+                str(frame_dir / "source.json"),
+                "--findings",
+                str(frame_dir / "findings.json"),
+                "--policy",
+                str(frame_dir / "policy.json"),
+                "--output",
+                str(installed_frame_review),
+                "--title",
+                "Frame Ledger — one headline, no verdict",
+            ],
+            extra_env={"PYTHONPATH": str(install_target)},
+        )
+        installed_cli_frame_review_matches = sha256_file(installed_frame_review) == sha256_file(
+            frame_dir / "review.html"
+        )
 
     verification = json.loads((ROOT / "artifacts/demo/verification.json").read_text(encoding="utf-8"))
     scaling = json.loads((ROOT / "artifacts/scaling-probe.json").read_text(encoding="utf-8"))
@@ -310,6 +374,17 @@ def main() -> int:
     impact_differential = json.loads(
         (ROOT / "artifacts/impact-differential-probe.json").read_text(encoding="utf-8")
     )
+    frame_specimen = json.loads(
+        (ROOT / "artifacts/wapo-headline-frame-ledger/REPORT.json").read_text(encoding="utf-8")
+    )
+    frame_independent = json.loads(
+        (ROOT / "artifacts/wapo-headline-frame-ledger/independent-verification.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    model_candidates = json.loads(
+        (ROOT / "docs/open-model-candidates.json").read_text(encoding="utf-8")
+    )
     checks = {
         "compileall": True,
         "python_3_11_grammar_parse": len(grammar_files),
@@ -319,6 +394,8 @@ def main() -> int:
         "installed_cli_benchmark_validate": installed_cli_benchmark_validate,
         "installed_cli_impact_verifies": installed_cli_impact_verifies,
         "installed_cli_impact_review_matches": installed_cli_impact_review_matches,
+        "installed_cli_frame_verifies": installed_cli_frame_verifies,
+        "installed_cli_frame_review_matches": installed_cli_frame_review_matches,
         "unit_and_adversarial_tests": test_count,
         "deterministic_tamper_mutations": 10_000,
         "deterministic_tamper_misses": 0,
@@ -370,6 +447,22 @@ def main() -> int:
         "impact_differential_status": impact_differential["status"],
         "impact_differential_iterations": impact_differential["iterations"],
         "impact_differential_mismatches": impact_differential["mismatch_count"],
+        "frame_specimen_status": frame_specimen["status"],
+        "frame_specimen_report_valid": frame_specimen["report_valid"],
+        "frame_specimen_findings": frame_specimen["finding_count"],
+        "frame_specimen_human_mode": frame_specimen["human_mode"],
+        "frame_specimen_model_calls": frame_specimen["frontier_or_open_model_calls_run"],
+        "frame_specimen_review_hash_matches": sha256_file(
+            ROOT / "artifacts/wapo-headline-frame-ledger/review.html"
+        )
+        == frame_specimen["review_sha256"],
+        "frame_independent_verification": frame_independent["status"],
+        "frame_independent_checks": frame_independent["check_count"],
+        "open_model_registry_status": model_candidates["status"],
+        "open_model_candidate_count": len(model_candidates["candidates"]),
+        "open_model_candidates_all_unrun": all(
+            item["status"] == "UNRUN_CANDIDATE" for item in model_candidates["candidates"]
+        ),
         "scaling_probe_claim_counts": [item["claim_count"] for item in scaling["results"]],
     }
     if not all(
@@ -379,6 +472,8 @@ def main() -> int:
             checks["installed_cli_benchmark_validate"],
             checks["installed_cli_impact_verifies"],
             checks["installed_cli_impact_review_matches"],
+            checks["installed_cli_frame_verifies"],
+            checks["installed_cli_frame_review_matches"],
             checks["demo_receipt_valid"],
             checks["demo_projection_valid"],
             checks["demo_source_disclosure_valid"],
@@ -426,6 +521,18 @@ def main() -> int:
             checks["impact_differential_status"] == "PASS",
             checks["impact_differential_iterations"] == 2000,
             checks["impact_differential_mismatches"] == 0,
+            checks["frame_specimen_status"]
+            == "MECHANICAL_DEVICES_REPRODUCED_ON_ONE_HEADLINE_NO_BIAS_VERDICT",
+            checks["frame_specimen_report_valid"],
+            checks["frame_specimen_findings"] == 7,
+            checks["frame_specimen_human_mode"] == "OPTIONAL",
+            checks["frame_specimen_model_calls"] == 0,
+            checks["frame_specimen_review_hash_matches"],
+            checks["frame_independent_verification"] == "PASS",
+            checks["frame_independent_checks"] >= 20,
+            checks["open_model_registry_status"] == "UNRUN_CANDIDATES_NOT_BENCHMARK_RESULTS",
+            checks["open_model_candidate_count"] == 7,
+            checks["open_model_candidates_all_unrun"],
         ]
     ):
         raise RuntimeError(f"release checks failed: {checks}")
@@ -517,10 +624,27 @@ def main() -> int:
             "usage": "Real published material with a later explicit correction; manual extraction and not a receiver-value test.",
         }
     )
+    inputs.append(
+        {
+            "name": "Washington Post headline Frame Ledger specimen",
+            "locator": json.loads(
+                (ROOT / "artifacts/wapo-headline-frame-ledger/source.json").read_text(
+                    encoding="utf-8"
+                )
+            )["locator"],
+            "source_id": frame_specimen["source_id"],
+            "report_id": frame_specimen["report_id"],
+            "usage": (
+                "User-supplied natural headline used to reproduce seven exact lexical, local-grammar, "
+                "and receiver-declared scoped-absence findings. The article body is not included and "
+                "no bias, truth, intent, rationalization, propaganda, or model-performance claim is made."
+            ),
+        }
+    )
     evidence = {
         "schema": "openline.claim-graph.prototype-evidence.v1",
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
-        "status": "SOURCE_IMPACT_MECHANISM_VERIFIED_ON_REAL_EVENT_AUTHORED_DEPENDENCIES_VALUE_UNTESTED",
+        "status": "IMPACT_AND_FRAME_MECHANISMS_REPRODUCED_ON_NATURAL_MATERIAL_VALUE_UNTESTED",
         "checks": checks,
         "inputs": inputs,
         "manifest_aggregate_sha256": manifest["aggregate_sha256"],
@@ -532,7 +656,10 @@ def main() -> int:
             "beyond direct source lookup were found, one alternative-supported claim was preserved, and one "
             "advisory-edge exposure remained unresolved. The dependency state is explicitly authored. This does not "
             "cover open-ended extraction fidelity, historical completeness, user demand, market value, model "
-            "generalization, or graph-versus-summary receiver value."
+            "generalization, or graph-versus-summary receiver value. It also covers seven deterministic Frame "
+            "Ledger findings on one supplied headline and a signed autonomous heterogeneous-review contract. "
+            "The headline specimen does not include the article body and makes no bias, truth, intent, "
+            "rationalization, propaganda, reader-effect, or model-competence claim."
         ),
         "incremental_api_spend_usd": 0,
         "model_calls": 1,

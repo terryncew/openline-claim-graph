@@ -1,0 +1,12 @@
+{
+  "advisory_min_confirmations": 2,
+  "advisory_min_distinct_families": 2,
+  "challenge_blocks": true,
+  "human_mode": "OPTIONAL",
+  "mechanical_auto_admit": true,
+  "policy_id": "frame-policy:sha256:968f3717cd0d3d4a513cc1d70125d08dcdd646561f8f254ced378b9a813c4c42",
+  "proposers": [],
+  "reviewers": [],
+  "ruleset_hash": "51ebb8f3676f5c8698b1edf36bd7f4f0292135ae0183da26ff6adf8b2b1187b1",
+  "schema": "openline.frame-policy.v1"
+}

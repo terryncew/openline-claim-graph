@@ -1,0 +1,20 @@
+{
+  "claim_boundary": "This specimen reproduces exact lexical, local-grammar, and declared scoped-absence findings on one supplied headline. It does not audit the article body, validate the ruleset against a framing corpus, or establish truth, deception, fairness, intent, rationalization, propaganda, reader effect, product value, or model competence.",
+  "device_counts": {
+    "CONTEXT_CUE": 1,
+    "DECLARED_TERM_SET_ABSENCE": 2,
+    "EPISTEMIC_LEXEME": 1,
+    "ISSUE_FRAME_LEXEME": 2,
+    "LOCAL_ATTRIBUTION_PATTERN_ABSENCE": 1
+  },
+  "finding_count": 7,
+  "frontier_or_open_model_calls_run": 0,
+  "human_mode": "OPTIONAL",
+  "incremental_api_spend_usd": 0,
+  "report_id": "frame-ledger-report:sha256:04f9668dee5daaa4d57ecda9fe64bc78d650b730afa1438963b7375945fc2dfb",
+  "report_valid": true,
+  "review_sha256": "096cb2868912fe0b8fda5cb85590c4fcc012c1c1ac2b3517acf965e6b63408a8",
+  "schema": "openline.frame-ledger-specimen-report.v1",
+  "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2",
+  "status": "MECHANICAL_DEVICES_REPRODUCED_ON_ONE_HEADLINE_NO_BIAS_VERDICT"
+}

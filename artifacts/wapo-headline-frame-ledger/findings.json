@@ -1,0 +1,191 @@
+{
+  "findings": [
+    {
+      "anchors": [
+        {
+          "quote_sha256": "edb9c9197cd60ded7d4b77c398f3fee29440c97aa257583969a6c029b0196c9f",
+          "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2",
+          "span": {
+            "end": 31,
+            "start": 0
+          }
+        }
+      ],
+      "asserted_by": "openline:frame-ruleset-v1",
+      "device_type": "LOCAL_ATTRIBUTION_PATTERN_ABSENCE",
+      "finding_id": "frame-finding:sha256:0dc41f947b3cc46d04e5a6cf37a42e9028b8d5cac274e0d5e2dbf94f2117bd6b",
+      "layer": "MECHANICAL",
+      "observation": "No explicit speaker matched the declared possessive/by/from grammar inside the local comma-delimited clause. This says nothing about the full article.",
+      "parameters": {
+        "attribution_noun": "public statements"
+      },
+      "rule_id": "LOCAL_ATTRIBUTION_GRAMMAR.v1",
+      "ruleset_hash": "51ebb8f3676f5c8698b1edf36bd7f4f0292135ae0183da26ff6adf8b2b1187b1",
+      "schema": "openline.frame-finding.v1",
+      "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2"
+    },
+    {
+      "anchors": [
+        {
+          "quote_sha256": "69dabc67d286f871c6be4d86f224a3f1b0a8cde0e7290c5429b7984f49a7165a",
+          "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2",
+          "span": {
+            "end": 74,
+            "start": 70
+          }
+        }
+      ],
+      "asserted_by": "openline:frame-ruleset-v1",
+      "device_type": "CONTEXT_CUE",
+      "finding_id": "frame-finding:sha256:30f427cdaaa786ba9e5b9763fa500f8629aa2a043cd822659b26059884089ca3",
+      "layer": "MECHANICAL",
+      "observation": "CO_OCCURRENCE context cue present. The token does not by itself establish causation.",
+      "parameters": {
+        "category": "CO_OCCURRENCE",
+        "term": "amid"
+      },
+      "rule_id": "LEXICAL_CONTEXT_CUE.v1",
+      "ruleset_hash": "51ebb8f3676f5c8698b1edf36bd7f4f0292135ae0183da26ff6adf8b2b1187b1",
+      "schema": "openline.frame-finding.v1",
+      "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2"
+    },
+    {
+      "anchors": [
+        {
+          "quote_sha256": "8710d4c217efc867ad8d2fcd28fd6dc1baed2869480116c2277b0580ea90ebb0",
+          "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2",
+          "span": {
+            "end": 13,
+            "start": 0
+          }
+        }
+      ],
+      "asserted_by": "openline:frame-ruleset-v1",
+      "device_type": "EPISTEMIC_LEXEME",
+      "finding_id": "frame-finding:sha256:441d2737b199775532244f7686ae5ae0d9cfdcf8fbefd3ebb677a2bded8997fe",
+      "layer": "MECHANICAL",
+      "observation": "CONFLICT lexeme present in the audited surface.",
+      "parameters": {
+        "category": "CONFLICT",
+        "term": "contradicting"
+      },
+      "rule_id": "LEXICAL_EPISTEMIC_MARKER.v1",
+      "ruleset_hash": "51ebb8f3676f5c8698b1edf36bd7f4f0292135ae0183da26ff6adf8b2b1187b1",
+      "schema": "openline.frame-finding.v1",
+      "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2"
+    },
+    {
+      "anchors": [
+        {
+          "quote_sha256": "2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2",
+          "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2",
+          "span": {
+            "end": 89,
+            "start": 0
+          }
+        }
+      ],
+      "asserted_by": "openline:frame-ruleset-v1",
+      "device_type": "DECLARED_TERM_SET_ABSENCE",
+      "finding_id": "frame-finding:sha256:4ec68976b353688fb8eda5449ab3b5149b1d0e58b3be181f0b5b8277e14707f2",
+      "layer": "MECHANICAL",
+      "observation": "None of the receiver-declared terms appears in the exact audited surface. Absence does not establish motive, falsity, or omission from a larger document.",
+      "parameters": {
+        "set_id": "falsity_or_deception_terms",
+        "terms": [
+          "false",
+          "falsely",
+          "lie",
+          "lied",
+          "lying",
+          "misleading"
+        ]
+      },
+      "rule_id": "DECLARED_TERM_SET_ABSENCE.v1",
+      "ruleset_hash": "51ebb8f3676f5c8698b1edf36bd7f4f0292135ae0183da26ff6adf8b2b1187b1",
+      "schema": "openline.frame-finding.v1",
+      "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2"
+    },
+    {
+      "anchors": [
+        {
+          "quote_sha256": "2bb80d537b1da3e38bd30361aa855686bde0eacd7162fef6a25fe97bf527a25b",
+          "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2",
+          "span": {
+            "end": 50,
+            "start": 44
+          }
+        }
+      ],
+      "asserted_by": "openline:frame-ruleset-v1",
+      "device_type": "ISSUE_FRAME_LEXEME",
+      "finding_id": "frame-finding:sha256:5d7e2a96ba4ebaca60116df6212e80d651509b6cfc6f7632ebebfd07c3bc3afc",
+      "layer": "MECHANICAL",
+      "observation": "SECRECY lexeme present. One lexeme is not a complete frame classification.",
+      "parameters": {
+        "category": "SECRECY",
+        "term": "secret"
+      },
+      "rule_id": "DECLARED_ISSUE_FRAME_LEXICON.v1",
+      "ruleset_hash": "51ebb8f3676f5c8698b1edf36bd7f4f0292135ae0183da26ff6adf8b2b1187b1",
+      "schema": "openline.frame-finding.v1",
+      "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2"
+    },
+    {
+      "anchors": [
+        {
+          "quote_sha256": "a569b9b2250fe3236367f969902d9521f576fc970556912b064ea0bdc13e17d3",
+          "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2",
+          "span": {
+            "end": 89,
+            "start": 83
+          }
+        }
+      ],
+      "asserted_by": "openline:frame-ruleset-v1",
+      "device_type": "ISSUE_FRAME_LEXEME",
+      "finding_id": "frame-finding:sha256:c2b4a2ebcdbb99751d58807424d025b2adbdf3eab7b9aac62c5530dcf83c57d0",
+      "layer": "MECHANICAL",
+      "observation": "SECURITY_THREAT lexeme present. One lexeme is not a complete frame classification.",
+      "parameters": {
+        "category": "SECURITY_THREAT",
+        "term": "threat"
+      },
+      "rule_id": "DECLARED_ISSUE_FRAME_LEXICON.v1",
+      "ruleset_hash": "51ebb8f3676f5c8698b1edf36bd7f4f0292135ae0183da26ff6adf8b2b1187b1",
+      "schema": "openline.frame-finding.v1",
+      "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2"
+    },
+    {
+      "anchors": [
+        {
+          "quote_sha256": "2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2",
+          "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2",
+          "span": {
+            "end": 89,
+            "start": 0
+          }
+        }
+      ],
+      "asserted_by": "openline:frame-ruleset-v1",
+      "device_type": "DECLARED_TERM_SET_ABSENCE",
+      "finding_id": "frame-finding:sha256:cc38216ac1a9fc79bff54ac3603fad32d1623baba4fac2c7e6139833ffd2a95f",
+      "layer": "MECHANICAL",
+      "observation": "None of the receiver-declared terms appears in the exact audited surface. Absence does not establish motive, falsity, or omission from a larger document.",
+      "parameters": {
+        "set_id": "named_institutional_attribution_terms",
+        "terms": [
+          "administration",
+          "officials",
+          "spokesperson",
+          "White House"
+        ]
+      },
+      "rule_id": "DECLARED_TERM_SET_ABSENCE.v1",
+      "ruleset_hash": "51ebb8f3676f5c8698b1edf36bd7f4f0292135ae0183da26ff6adf8b2b1187b1",
+      "schema": "openline.frame-finding.v1",
+      "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2"
+    }
+  ],
+  "schema": "openline.frame-findings.v1"
+}

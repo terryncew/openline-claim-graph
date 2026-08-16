@@ -1,0 +1,107 @@
+{
+  "schema": "openline.frame-model-candidates.v1",
+  "checked_at": "2026-08-16",
+  "status": "UNRUN_CANDIDATES_NOT_BENCHMARK_RESULTS",
+  "selection_dimensions": [
+    "strict structured-output support",
+    "exact quote recovery",
+    "abstention on insufficient evidence",
+    "long-context capacity",
+    "distinct training family for independent review",
+    "deployability at the stated hardware tier"
+  ],
+  "recommended_lanes": {
+    "local_three_family": {
+      "proposer": "Qwen/Qwen3.8-27B",
+      "reviewers": [
+        "meta-models/Muse-Glimmer-30B",
+        "google/gemma-4-12B-it"
+      ],
+      "status": "UNRUN_RECOMMENDATION",
+      "reason": "Three separately declared model families that are plausible on local or workstation-class deployments. Receiver policy must still require signed reviews and score them on held-out material."
+    },
+    "server_three_family": {
+      "proposer": "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "reviewers": [
+        "moonshotai/Kimi-K3",
+        "zai-org/GLM-5.2"
+      ],
+      "alternate_reviewer": "mistralai/Mistral-Medium-3.5-128B",
+      "status": "UNRUN_RECOMMENDATION",
+      "reason": "Current high-capability open-weight candidates from distinct organizations. These are datacenter-scale systems, not phone or ordinary laptop models."
+    }
+  },
+  "candidates": [
+    {
+      "model_id": "Qwen/Qwen3.8-27B",
+      "organization": "Qwen",
+      "hardware_tier": "WORKSTATION_OR_HOSTED",
+      "role_fit": ["PROPOSER", "REVIEWER"],
+      "card_claims": ["27B parameters", "262144-token native context", "vLLM and SGLang compatibility"],
+      "fit_inference": "Best first practical open-weight proposer to test because it combines current generation, manageable scale relative to frontier MoE releases, long context, and standard serving support.",
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "status": "UNRUN_CANDIDATE"
+    },
+    {
+      "model_id": "meta-models/Muse-Glimmer-30B",
+      "organization": "Meta",
+      "hardware_tier": "SINGLE_HIGH_MEMORY_GPU_OR_HOSTED",
+      "role_fit": ["REVIEWER", "PROPOSER"],
+      "card_claims": ["30B parameters", "agentic task tuning", "tool use", "failure recovery", "Apache-2.0 license"],
+      "fit_inference": "Strong local challenger candidate because the card specifically targets autonomous agentic work and failure recovery, while belonging to a different declared family from Qwen.",
+      "source": "https://huggingface.co/meta-models/Muse-Glimmer-30B",
+      "status": "UNRUN_CANDIDATE"
+    },
+    {
+      "model_id": "google/gemma-4-12B-it",
+      "organization": "Google DeepMind",
+      "hardware_tier": "CONSUMER_OR_WORKSTATION",
+      "role_fit": ["REVIEWER", "ABSTENTION_SENTINEL"],
+      "card_claims": ["12B parameters", "256K context", "multimodal input", "local deployment focus"],
+      "fit_inference": "Useful third-family local reviewer and cost sentinel. It should not be assumed competent until it passes exact-anchor, abstention, and false-positive controls.",
+      "source": "https://huggingface.co/google/gemma-4-12B-it",
+      "status": "UNRUN_CANDIDATE"
+    },
+    {
+      "model_id": "mistralai/Mistral-Medium-3.5-128B",
+      "organization": "Mistral AI",
+      "hardware_tier": "MULTI_GPU_SERVER_OR_HOSTED",
+      "role_fit": ["PROPOSER", "REVIEWER"],
+      "card_claims": ["128B dense parameters", "256K context", "reasoning", "instruction following", "JSON output"],
+      "fit_inference": "Most straightforward server-class alternative where dense-model behavior and structured output are valued more than local cost.",
+      "source": "https://huggingface.co/mistralai/Mistral-Medium-3.5-128B",
+      "status": "UNRUN_CANDIDATE"
+    },
+    {
+      "model_id": "zai-org/GLM-5.2",
+      "organization": "Z.ai",
+      "hardware_tier": "DATACENTER_OR_HOSTED",
+      "role_fit": ["REVIEWER", "LONG_CONTEXT_REVIEWER"],
+      "card_claims": ["753B parameters", "1M-token context", "long-horizon task focus"],
+      "fit_inference": "High-capacity cross-family reviewer candidate when very long laws, dockets, or article corpora matter. Infrastructure cost makes it a server lane, not the default local lane.",
+      "source": "https://huggingface.co/zai-org/GLM-5.2",
+      "status": "UNRUN_CANDIDATE"
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "organization": "DeepSeek",
+      "hardware_tier": "DATACENTER_OR_HOSTED",
+      "role_fit": ["PROPOSER", "REVIEWER"],
+      "card_claims": ["official V4 Pro release", "1.7T-class model", "enhanced agentic capabilities", "vLLM and SGLang serving"],
+      "fit_inference": "High-capability open-weight proposer candidate, but deployment requirements make it inappropriate to describe as a local model.",
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813",
+      "status": "UNRUN_CANDIDATE"
+    },
+    {
+      "model_id": "moonshotai/Kimi-K3",
+      "organization": "Moonshot AI",
+      "hardware_tier": "DATACENTER_OR_HOSTED",
+      "role_fit": ["REVIEWER", "MULTIMODAL_REVIEWER"],
+      "card_claims": ["2.8T total parameters", "104B active parameters", "1M-token context", "native multimodality"],
+      "fit_inference": "Frontier-scale cross-family reviewer for long or multimodal source packs. It is not a practical local dependency despite being open-weight.",
+      "source": "https://huggingface.co/moonshotai/Kimi-K3",
+      "status": "UNRUN_CANDIDATE"
+    }
+  ],
+  "claim_boundary": "Model-card capabilities and fit rationales select candidates; they are not evidence that any candidate can perform Frame Ledger extraction or review. Promotion requires held-out exact-anchor, abstention, challenge, and false-positive results produced by the checked-in adapter contract."
+}

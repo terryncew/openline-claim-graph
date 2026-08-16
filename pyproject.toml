@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "openline-claim-graph"
-version = "0.2.0.dev1"
-description = "Dependency-aware provenance and deterministic source-impact reports for versioned claim graphs."
+version = "0.3.0.dev0"
+description = "Dependency-aware provenance, deterministic source impact, and receiver-owned framing-device ledgers."
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}

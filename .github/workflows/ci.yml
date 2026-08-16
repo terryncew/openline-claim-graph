@@ -51,6 +51,12 @@ jobs:
           python -m openline_claim_graph benchmark-validate \
             --pack "${{ runner.temp }}/automated-receiver-benchmark/pack.json" \
             --gold "${{ runner.temp }}/automated-receiver-benchmark/gold.private.json"
+      - name: Build and independently verify Frame Ledger specimen
+        run: |
+          python examples/build_wapo_frame_ledger.py \
+            --output "${{ runner.temp }}/wapo-headline-frame-ledger"
+          python scripts/verify_wapo_frame_ledger.py \
+            --artifact "${{ runner.temp }}/wapo-headline-frame-ledger"
       - name: Build wheel
         run: python -m pip wheel . --no-deps --no-build-isolation -w "${{ runner.temp }}/wheel"
       - name: CLI smoke

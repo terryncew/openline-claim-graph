@@ -1,6 +1,6 @@
-# OpenLine Claim Graph — Evidence Recall prototype
+# OpenLine Claim Graph — Evidence Recall + Frame Ledger
 
-> Something you relied on changed. Here is exactly what must be reconsidered—and why.
+> Something you relied on changed. Or a surface framed it in a consequential way. Show the exact mechanism, its source, and the receiver policy—without pretending the machine settled truth.
 
 This prototype tests one narrow idea from the earlier OLP/DSM work:
 
@@ -8,7 +8,7 @@ This prototype tests one narrow idea from the earlier OLP/DSM work:
 
 It does **not** put truth in a receipt. It records representations, their declared relations, their source anchors, and their history.
 
-Status: `SOURCE_IMPACT_MECHANISM_VERIFIED_ON_REAL_EVENT_AUTHORED_DEPENDENCIES_VALUE_UNTESTED`. It is not a promoted product, standard, or scientific result.
+Status: `IMPACT_AND_FRAME_MECHANISMS_REPRODUCED_ON_NATURAL_MATERIAL_VALUE_UNTESTED`. It is not a promoted product, standard, bias oracle, or scientific result.
 
 ## What works now
 
@@ -24,6 +24,12 @@ Input is one accepted graph state, one exact source-status event, and one receiv
 The model cannot directly mutate accepted state. It may propose claims and edges; the receiver decides which relation IDs have hard authority, which are advisory, and which are ignored. The deterministic engine then computes the consequences of that admitted state.
 
 See [the Evidence Recall contract](docs/EVIDENCE_RECALL.md) and open [`artifacts/plos-correction-impact/review.html`](artifacts/plos-correction-impact/review.html) for the checked-in real-event specimen.
+
+The second native job is `Frame Ledger`: reproduce narrow framing devices from exact text, then keep any semantic interpretation under an explicit receiver-owned admission policy. The checked-in headline specimen identifies the exact conflict word, context cue, secrecy/security lexemes, a narrow local-attribution pattern, and two declared scoped absences. It refuses to convert those observations into a truth, intent, fairness, propaganda, rationalization, or bias verdict.
+
+Models can run the advisory layer autonomously. A proposer emits exact-quote-anchored candidates; distinct receiver-pinned reviewers independently confirm, challenge, or abstain; signed heterogeneous-family quorum controls admission; and a proposer can never approve itself. Human confirmation is an explicit `OPTIONAL`, `REQUIRED`, or `DISABLED` receiver-policy choice.
+
+See [the Frame Ledger contract](docs/FRAME_LEDGER.md) and open [`artifacts/wapo-headline-frame-ledger/review.html`](artifacts/wapo-headline-frame-ledger/review.html).
 
 ## What is implemented
 
@@ -48,6 +54,11 @@ See [the Evidence Recall contract](docs/EVIDENCE_RECALL.md) and open [`artifacts
 - Receiver-owned hard/advisory edge authority; unadmitted relations are ignored and disclosed.
 - Deterministic, cycle-safe support-path propagation with admitted-alternative preservation.
 - Reproducible downstream witness paths and a fail-closed Evidence Recall HTML surface.
+- A content-addressed Frame Ledger ruleset for exact epistemic lexemes, context cues, declared issue-frame lexemes, narrow local-attribution patterns, and scoped term-set absences.
+- Signed AI proposal and review records with receiver-pinned keys, non-self-review, distinct-family quorum, challenge blocking, and optional/required/disabled human confirmation.
+- Strict exact-quote import for model proposals; invented source text is rejected after schema-constrained generation.
+- Provider-neutral OpenAI-compatible adapters for vLLM, SGLang, llama.cpp, and hosted open models, plus an official Responses API adapter using Structured Outputs with storage disabled.
+- A fully unattended proposal → independent review → receiver-policy admission pipeline.
 
 ## The important trust split
 
@@ -85,6 +96,10 @@ PYTHONPATH=src python scripts/impact_differential_probe.py --iterations 2000
 PYTHONPATH=src python scripts/scaling_probe.py
 PYTHONPATH=src python scripts/build_arct_automated_receiver_pack.py \
   --output artifacts/automated-receiver-benchmark
+PYTHONPATH=src python examples/build_wapo_frame_ledger.py \
+  --output artifacts/wapo-headline-frame-ledger
+PYTHONPATH=src python scripts/verify_wapo_frame_ledger.py \
+  --artifact artifacts/wapo-headline-frame-ledger
 ```
 
 The demo creates a base policy state, two incompatible status branches, an explicit merge that preserves both conflicts, signed receipts, a receiver-scoped projection, source inclusion proofs, and an append-only wallet.
@@ -146,9 +161,28 @@ openline-claim-graph render-impact \
 
 Impact computation fails closed on invalid graph, source, event, or policy commitments. Verification and rendering additionally require the signed accepted-state receipt and receiver-pinned key. Rendering does not mutate the accepted graph.
 
+Reproduce and render the Frame Ledger specimen:
+
+```bash
+openline-claim-graph verify-frame \
+  --report artifacts/wapo-headline-frame-ledger/report.json \
+  --source artifacts/wapo-headline-frame-ledger/source.json \
+  --findings artifacts/wapo-headline-frame-ledger/findings.json \
+  --policy artifacts/wapo-headline-frame-ledger/policy.json
+
+openline-claim-graph render-frame \
+  --report artifacts/wapo-headline-frame-ledger/report.json \
+  --source artifacts/wapo-headline-frame-ledger/source.json \
+  --findings artifacts/wapo-headline-frame-ledger/findings.json \
+  --policy artifacts/wapo-headline-frame-ledger/policy.json \
+  --output /tmp/frame-ledger.html
+```
+
+The autonomous model lane is optional and unrun in this release. `scripts/run_autonomous_frame_pipeline.py` can call an official frontier endpoint or three separately served open-weight families, sign every proposal/review under configured execution keys, apply the receiver policy, and render the result without a mandatory human tap. Model-card candidates and their honest deployment tiers are recorded in [`docs/open-model-candidates.json`](docs/open-model-candidates.json); none is labeled as a benchmark winner.
+
 ## Evidence generated here
 
-- 57 offline unit/adversarial/protocol/development/benchmark tests.
+- 73 offline unit/adversarial/protocol/development/benchmark tests.
 - 10,000 deterministic tamper mutations detected with zero misses.
 - Exact-quote mislabeling is rejected.
 - Paraphrase/inference labels remain admitted only as disclosed, semantically unverified mappings.
@@ -157,6 +191,12 @@ Impact computation fails closed on invalid graph, source, event, or policy commi
 - A 1,000-claim controlled graph produced a roughly 1.4 KB signed state receipt and a roughly 3.7 KB one-claim projection. The full snapshot was roughly 643 KB.
 
 Those are mechanical results. The controlled fixture was designed here, so it is not evidence that the graph improves decisions on natural material.
+
+### Frame Ledger on one natural headline
+
+`artifacts/wapo-headline-frame-ledger/` audits the exact headline supplied by the maintainer. Seven findings reproduce: one conflict lexeme, one co-occurrence cue, two issue-frame lexemes, one local-attribution-pattern absence, and two receiver-declared term-set absences. An independent verifier that does not import the candidate Frame Ledger code reproduces 20 content, span, rule, policy, classification, and rendered-output checks.
+
+The specimen includes only the headline, not the article body. It validates a deterministic mechanism on natural text. It does not validate the general ruleset against Media Frames Corpus or NewsWCL50, model competence, political neutrality, author intent, fairness, factual truth, rationalization, propaganda, reader effect, usefulness, or demand. No frontier/open-model call or incremental API spend was used to create it.
 
 ### Evidence Recall on a real correction event
 

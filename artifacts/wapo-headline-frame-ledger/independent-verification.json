@@ -1,0 +1,29 @@
+{
+  "check_count": 20,
+  "checks": {
+    "anchors_exact": true,
+    "checked_in_verification_passes": true,
+    "co_occurrence_cue": true,
+    "conflict_lexeme": true,
+    "declared_absences_reproduced": true,
+    "device_counts": true,
+    "finding_content_addresses": true,
+    "headline_exact": true,
+    "issue_lexemes": true,
+    "local_attribution_pattern_absent": true,
+    "no_model_result_claimed": true,
+    "no_prohibited_verdict": true,
+    "policy_content_address": true,
+    "receiver_policy_autonomy": true,
+    "report_content_address": true,
+    "report_exact_set": true,
+    "review_hash": true,
+    "ruleset_hash_bound": true,
+    "source_content_address": true,
+    "source_length": true
+  },
+  "claim_boundary": "This independently reproduces the checked-in one-headline mechanical specimen. It does not validate the general ruleset, model performance, article fairness, truth, intent, rationalization, propaganda, or effects on readers.",
+  "failures": [],
+  "schema": "openline.frame-ledger-independent-verification.v1",
+  "status": "PASS"
+}

@@ -1,0 +1,81 @@
+{
+  "allowed_device_types": [
+    "AGENCY_SUPPRESSION",
+    "ASYMMETRIC_EVIDENCE_PRESENTATION",
+    "CAUSAL_CONTEXT_IMPLICATION",
+    "FACT_STATUS_OMISSION"
+  ],
+  "instructions": [
+    "Return only findings anchored to a verbatim quote from the supplied surface.",
+    "Abstain when the surface is insufficient.",
+    "Do not issue truth, bias-score, fairness, propaganda, rationalization, or intent verdicts.",
+    "A finding is a proposal for independent review, not an accepted conclusion."
+  ],
+  "output_schema": {
+    "additionalProperties": false,
+    "properties": {
+      "abstained": {
+        "type": "boolean"
+      },
+      "findings": {
+        "items": {
+          "additionalProperties": false,
+          "properties": {
+            "device_type": {
+              "enum": [
+                "AGENCY_SUPPRESSION",
+                "ASYMMETRIC_EVIDENCE_PRESENTATION",
+                "CAUSAL_CONTEXT_IMPLICATION",
+                "FACT_STATUS_OMISSION"
+              ],
+              "type": "string"
+            },
+            "observation": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "occurrence": {
+              "minimum": 1,
+              "type": "integer"
+            },
+            "quote": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "device_type",
+            "quote",
+            "occurrence",
+            "observation"
+          ],
+          "type": "object"
+        },
+        "maxItems": 8,
+        "type": "array"
+      },
+      "role": {
+        "const": "PROPOSER",
+        "type": "string"
+      },
+      "schema": {
+        "const": "openline.frame-agent-output.v1",
+        "type": "string"
+      }
+    },
+    "required": [
+      "schema",
+      "role",
+      "abstained",
+      "findings"
+    ],
+    "type": "object"
+  },
+  "role": "PROPOSER",
+  "schema": "openline.frame-agent-task.v1",
+  "source": {
+    "content": "Contradicting public statements, Trump took secret flight from Turkey amid Iranian threat",
+    "locator": "https://www.washingtonpost.com/national-security/2026/08/10/trump-flew-secrecy-amid-iran-threat-air-force-one-became-decoy/",
+    "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2"
+  }
+}

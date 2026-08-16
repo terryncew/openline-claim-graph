@@ -29,6 +29,14 @@
     ],
     "deterministic_tamper_misses": 0,
     "deterministic_tamper_mutations": 10000,
+    "frame_independent_checks": 20,
+    "frame_independent_verification": "PASS",
+    "frame_specimen_findings": 7,
+    "frame_specimen_human_mode": "OPTIONAL",
+    "frame_specimen_model_calls": 0,
+    "frame_specimen_report_valid": true,
+    "frame_specimen_review_hash_matches": true,
+    "frame_specimen_status": "MECHANICAL_DEVICES_REPRODUCED_ON_ONE_HEADLINE_NO_BIAS_VERDICT",
     "impact_accepted_receipt_valid": true,
     "impact_bundle_valid": true,
     "impact_decisions_touched": 1,
@@ -45,6 +53,8 @@
     "impact_unresolved_count": 1,
     "impact_upstream_exact_match": true,
     "installed_cli_benchmark_validate": true,
+    "installed_cli_frame_review_matches": true,
+    "installed_cli_frame_verifies": true,
     "installed_cli_impact_review_matches": true,
     "installed_cli_impact_verifies": true,
     "installed_cli_review_matches": true,
@@ -54,24 +64,27 @@
     "natural_case_review_hash_matches": true,
     "natural_case_status": "MECHANISM_WORKS_ON_ONE_EXTERNALLY_ANCHORED_NATURAL_CASE_VALUE_UNTESTED",
     "natural_case_upstream_exact_match": true,
+    "open_model_candidate_count": 7,
+    "open_model_candidates_all_unrun": true,
+    "open_model_registry_status": "UNRUN_CANDIDATES_NOT_BENCHMARK_RESULTS",
     "pilot_case_pack_empty": true,
     "pilot_condition_unit": "receiver",
     "pilot_stage_1_promotion_allowed": false,
     "pilot_target_receiver_type": "human",
-    "python_3_11_grammar_parse": 33,
+    "python_3_11_grammar_parse": 42,
     "scaling_probe_claim_counts": [
       1,
       10,
       100,
       1000
     ],
-    "unit_and_adversarial_tests": 57,
+    "unit_and_adversarial_tests": 73,
     "wheel_build": true
   },
-  "claim_boundary": "Evidence covers deterministic integrity, source-span, lineage, projection, and receiver-policy mechanics plus one small independently labeled, multiple-choice missing-premise mapping check (21/24) and one manually mapped natural-material inconsistency later confirmed by a public correction. It additionally covers deterministic source-impact propagation on that real correction event: two downstream claims beyond direct source lookup were found, one alternative-supported claim was preserved, and one advisory-edge exposure remained unresolved. The dependency state is explicitly authored. This does not cover open-ended extraction fidelity, historical completeness, user demand, market value, model generalization, or graph-versus-summary receiver value.",
+  "claim_boundary": "Evidence covers deterministic integrity, source-span, lineage, projection, and receiver-policy mechanics plus one small independently labeled, multiple-choice missing-premise mapping check (21/24) and one manually mapped natural-material inconsistency later confirmed by a public correction. It additionally covers deterministic source-impact propagation on that real correction event: two downstream claims beyond direct source lookup were found, one alternative-supported claim was preserved, and one advisory-edge exposure remained unresolved. The dependency state is explicitly authored. This does not cover open-ended extraction fidelity, historical completeness, user demand, market value, model generalization, or graph-versus-summary receiver value. It also covers seven deterministic Frame Ledger findings on one supplied headline and a signed autonomous heterogeneous-review contract. The headline specimen does not include the article body and makes no bias, truth, intent, rationalization, propaganda, reader-effect, or model-competence claim.",
   "compile_output": "",
   "external_publication_or_push": false,
-  "generated_at": "2026-08-16T12:22:20Z",
+  "generated_at": "2026-08-16T13:32:27Z",
   "incremental_api_spend_usd": 0,
   "inputs": [
     {
@@ -108,12 +121,19 @@
       "original_doi": "10.1371/journal.pone.0223255",
       "source_bundle_sha256": "be2e262df6d403dc3f98c8147a9560f588441fa58ce6020d5ea523b62ef2e448",
       "usage": "Real published material with a later explicit correction; manual extraction and not a receiver-value test."
+    },
+    {
+      "locator": "https://www.washingtonpost.com/national-security/2026/08/10/trump-flew-secrecy-amid-iran-threat-air-force-one-became-decoy/",
+      "name": "Washington Post headline Frame Ledger specimen",
+      "report_id": "frame-ledger-report:sha256:04f9668dee5daaa4d57ecda9fe64bc78d650b730afa1438963b7375945fc2dfb",
+      "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2",
+      "usage": "User-supplied natural headline used to reproduce seven exact lexical, local-grammar, and receiver-declared scoped-absence findings. The article body is not included and no bias, truth, intent, rationalization, propaganda, or model-performance claim is made."
     }
   ],
   "interactive_model_mapping_passes": 1,
-  "manifest_aggregate_sha256": "098cd3fce239d4fb2a72e9705ef9d6e72c0e6de584277b32a059ecf3fab195ce",
+  "manifest_aggregate_sha256": "ae59abfbcc366764d75ffa85fb5605db309cc309efa979313193861ca62d960b",
   "model_calls": 1,
   "programmatic_experiment_api_calls": 0,
   "schema": "openline.claim-graph.prototype-evidence.v1",
-  "status": "SOURCE_IMPACT_MECHANISM_VERIFIED_ON_REAL_EVENT_AUTHORED_DEPENDENCIES_VALUE_UNTESTED"
+  "status": "IMPACT_AND_FRAME_MECHANISMS_REPRODUCED_ON_NATURAL_MATERIAL_VALUE_UNTESTED"
 }

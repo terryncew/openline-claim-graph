@@ -1,0 +1,72 @@
+{
+  "attribution_grammar": [
+    "possessive_before_noun",
+    "by_or_from_after_noun"
+  ],
+  "attribution_nouns": [
+    "claim",
+    "claims",
+    "statement",
+    "statements"
+  ],
+  "boundary": "Rules report exact lexical or local grammatical patterns. A match is not a truth, intent, fairness, propaganda, or rationalization verdict. An absence is scoped only to the exact surface and declared term set recorded in the finding.",
+  "context_cues": {
+    "CAUSE": [
+      "because",
+      "because of",
+      "due to"
+    ],
+    "CONCESSION": [
+      "despite",
+      "although"
+    ],
+    "CO_OCCURRENCE": [
+      "amid",
+      "as",
+      "while"
+    ],
+    "SEQUENCE": [
+      "after",
+      "before",
+      "following"
+    ]
+  },
+  "epistemic_lexemes": {
+    "CONFLICT": [
+      "contradict",
+      "contradicted",
+      "contradicting",
+      "conflict",
+      "conflicting",
+      "inconsistent"
+    ],
+    "DECEPTION": [
+      "deception",
+      "lie",
+      "lied",
+      "lying"
+    ],
+    "FALSITY": [
+      "false",
+      "falsely",
+      "inaccurate",
+      "incorrect",
+      "misleading"
+    ]
+  },
+  "issue_frame_lexemes": {
+    "SECRECY": [
+      "covert",
+      "secret",
+      "secretly"
+    ],
+    "SECURITY_THREAT": [
+      "danger",
+      "security",
+      "threat"
+    ]
+  },
+  "ruleset_id": "openline.frame-mechanical-ruleset.v1",
+  "schema": "openline.frame-mechanical-ruleset.v1",
+  "span_unit": "utf8_byte_offset_half_open"
+}

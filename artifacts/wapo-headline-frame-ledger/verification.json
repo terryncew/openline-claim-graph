@@ -1,0 +1,8 @@
+{
+  "errors": [],
+  "valid": true,
+  "warnings": [
+    "semantic_device_interpretation_not_mechanically_verified",
+    "reviewer_family_independence_is_receiver_declared"
+  ]
+}

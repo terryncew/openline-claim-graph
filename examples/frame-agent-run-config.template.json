@@ -1,0 +1,40 @@
+{
+  "schema": "openline.frame-agent-run-config.v1",
+  "issued_at": "2026-08-16T00:00:00Z",
+  "absence_sets": [],
+  "proposer": {
+    "actor_id": "agent:qwen-proposer",
+    "family": "qwen",
+    "kind": "AI",
+    "api_style": "chat",
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "Qwen/Qwen3.8-27B",
+    "api_key_env": "QWEN_API_KEY",
+    "private_key_env": "QWEN_EXECUTION_ED25519_PRIVATE_KEY",
+    "timeout_seconds": 180
+  },
+  "reviewers": [
+    {
+      "actor_id": "agent:muse-reviewer",
+      "family": "meta-muse",
+      "kind": "AI",
+      "api_style": "chat",
+      "base_url": "http://127.0.0.1:8001/v1",
+      "model": "meta-models/Muse-Glimmer-30B",
+      "api_key_env": "MUSE_API_KEY",
+      "private_key_env": "MUSE_EXECUTION_ED25519_PRIVATE_KEY",
+      "timeout_seconds": 180
+    },
+    {
+      "actor_id": "agent:gemma-reviewer",
+      "family": "google-gemma",
+      "kind": "AI",
+      "api_style": "chat",
+      "base_url": "http://127.0.0.1:8002/v1",
+      "model": "google/gemma-4-12B-it",
+      "api_key_env": "GEMMA_API_KEY",
+      "private_key_env": "GEMMA_EXECUTION_ED25519_PRIVATE_KEY",
+      "timeout_seconds": 180
+    }
+  ]
+}

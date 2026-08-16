@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.3.0.dev0 — 2026-08-16
+
+- Added `Frame Ledger`, a content-addressed ruleset and report for exact epistemic lexemes, context cues, declared issue-frame lexemes, narrow local-attribution patterns, and receiver-declared term-set absences.
+- Added strict UTF-8 span reproduction for positive matches and full-scope binding for declared absences.
+- Prohibited truth, bias-score, fairness, deception-intent, rationalization, and propaganda verdicts from the typed finding layer.
+- Added signed model proposals and reviews with receiver-pinned Ed25519 execution identities.
+- Enforced non-self-review, unique reviewers, distinct declared-family quorum, optional challenge blocking, and `OPTIONAL` / `REQUIRED` / `DISABLED` human confirmation.
+- Added a fully unattended proposer → multi-reviewer → receiver-policy pipeline; model endpoints cannot mutate accepted state or promote their own output.
+- Added strict exact-quote import and an eight-finding cap for model proposals. Schema-valid invented quotes fail closed.
+- Added standard-library adapters for OpenAI-compatible chat-completions servers (including vLLM, SGLang, and llama.cpp deployments) and the official Responses API with Structured Outputs and `store: false`.
+- Added a current, machine-readable open-weight candidate registry split into practical local/workstation and datacenter tiers. Every model remains explicitly unrun.
+- Added one natural Washington Post headline specimen with seven reproduced mechanical findings, a fail-closed HTML surface, and a 20-check independent verifier that does not import the Frame Ledger implementation.
+- Added 16 unit/adversarial/adapter/autonomy tests; full suite now contains 73 tests.
+- Kept the boundary explicit: the specimen contains only the headline; the ruleset lacks corpus validation; no model was run; no claim is made about article fairness, truth, intent, rationalization, propaganda, reader effect, usefulness, or demand.
+
 ## 0.2.0.dev1 CI correction — 2026-08-16
 
 - Seed the clean GitHub Actions specimen directory with the checked-in, independently produced PLOS upstream-verification record before building Evidence Recall. The prior local release run reused that record in-place, while a clean runner correctly exposed the missing copy step.
