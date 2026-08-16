@@ -21,4 +21,6 @@ Verified locally before packaging:
 - wheel build
 - clean target-directory install and import
 
+The GitHub Actions matrix explicitly installs the declared build backend before exercising no-build-isolation wheel construction. It does not rely on Python runner images to bundle `setuptools`.
+
 No model calls, API charges, pushes, releases, or external publication occurred during construction.

@@ -27,7 +27,7 @@
   "claim_boundary": "Evidence covers deterministic integrity, source-span, lineage, projection, and receiver-policy mechanics on controlled fixtures. It does not cover natural-language extraction fidelity or decision value.",
   "compile_output": "",
   "external_publication_or_push": false,
-  "generated_at": "2026-08-15T12:22:43Z",
+  "generated_at": "2026-08-16T01:38:30Z",
   "incremental_api_spend_usd": 0,
   "inputs": [
     {
@@ -36,7 +36,7 @@
       "usage": "Read-only architecture and claim-boundary inspection; no source code copied."
     }
   ],
-  "manifest_aggregate_sha256": "59e2742f88e006bf5b2d917c3bacfcd7da40be2c5e332f4f012c2e2df5dc767a",
+  "manifest_aggregate_sha256": "8a83d15945dfe7317e9df4812d2f76f5aebeda2382dd8981195da6e0b0055284",
   "model_calls": 0,
   "schema": "openline.claim-graph.prototype-evidence.v1",
   "status": "MECHANICALLY_VERIFIED_EXTERNAL_VALUE_UNTESTED"

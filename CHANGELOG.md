@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.0.dev0 CI correction — 2026-08-15
+
+- Install the declared `setuptools` and `wheel` build requirements explicitly before using `--no-build-isolation` in GitHub Actions. Python 3.12 and 3.13 runner environments do not guarantee that `setuptools` is preinstalled.
+
 ## 0.1.0.dev0 — 2026-08-15
 
 Initial mechanical prototype.
