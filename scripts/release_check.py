@@ -67,6 +67,36 @@ def main() -> int:
             "artifacts/plos-correction-case",
         ]
     )
+    run(
+        [
+            sys.executable,
+            "examples/build_plos_correction_impact.py",
+            "--base",
+            "artifacts/plos-correction-case",
+            "--output",
+            "artifacts/plos-correction-impact",
+        ]
+    )
+    run(
+        [
+            sys.executable,
+            "scripts/verify_plos_correction_impact.py",
+            "--artifact",
+            "artifacts/plos-correction-impact",
+            "--output",
+            "artifacts/plos-correction-impact/independent-verification.json",
+        ]
+    )
+    run(
+        [
+            sys.executable,
+            "scripts/impact_differential_probe.py",
+            "--iterations",
+            "2000",
+            "--output",
+            "artifacts/impact-differential-probe.json",
+        ]
+    )
     run([sys.executable, "scripts/scaling_probe.py"])
     run([sys.executable, "scripts/run_arct_development_check.py"])
     run(
@@ -100,6 +130,8 @@ def main() -> int:
 
     installed_cli_review_matches = False
     installed_cli_benchmark_validate = False
+    installed_cli_impact_verifies = False
+    installed_cli_impact_review_matches = False
     with tempfile.TemporaryDirectory(prefix="openline-claim-graph-wheel-") as temporary:
         temp = Path(temporary)
         run(
@@ -186,6 +218,65 @@ def main() -> int:
             extra_env={"PYTHONPATH": str(install_target)},
         )
         installed_cli_benchmark_validate = True
+        impact_dir = ROOT / "artifacts/plos-correction-impact"
+        impact_public_key = json.loads(
+            (impact_dir / "public-key.json").read_text(encoding="utf-8")
+        )["public_key"]
+        run(
+            [
+                sys.executable,
+                "-m",
+                "openline_claim_graph",
+                "verify-impact",
+                "--report",
+                str(impact_dir / "impact-report.json"),
+                "--snapshot",
+                str(impact_dir / "accepted.snapshot.json"),
+                "--sources",
+                str(impact_dir / "sources.json"),
+                "--event",
+                str(impact_dir / "source-status-event.json"),
+                "--policy",
+                str(impact_dir / "impact-policy.json"),
+                "--receipt",
+                str(impact_dir / "accepted.receipt.json"),
+                "--public-key",
+                impact_public_key,
+            ],
+            extra_env={"PYTHONPATH": str(install_target)},
+        )
+        installed_cli_impact_verifies = True
+        installed_impact_review = temp / "installed-impact-review.html"
+        run(
+            [
+                sys.executable,
+                "-m",
+                "openline_claim_graph",
+                "render-impact",
+                "--report",
+                str(impact_dir / "impact-report.json"),
+                "--snapshot",
+                str(impact_dir / "accepted.snapshot.json"),
+                "--sources",
+                str(impact_dir / "sources.json"),
+                "--event",
+                str(impact_dir / "source-status-event.json"),
+                "--policy",
+                str(impact_dir / "impact-policy.json"),
+                "--receipt",
+                str(impact_dir / "accepted.receipt.json"),
+                "--public-key",
+                impact_public_key,
+                "--output",
+                str(installed_impact_review),
+                "--title",
+                "Evidence Recall — PLOS correction",
+            ],
+            extra_env={"PYTHONPATH": str(install_target)},
+        )
+        installed_cli_impact_review_matches = sha256_file(installed_impact_review) == sha256_file(
+            impact_dir / "review.html"
+        )
 
     verification = json.loads((ROOT / "artifacts/demo/verification.json").read_text(encoding="utf-8"))
     scaling = json.loads((ROOT / "artifacts/scaling-probe.json").read_text(encoding="utf-8"))
@@ -208,6 +299,17 @@ def main() -> int:
     automated_benchmark_report = json.loads(
         (ROOT / "artifacts/automated-receiver-benchmark/report.json").read_text(encoding="utf-8")
     )
+    impact_report = json.loads(
+        (ROOT / "artifacts/plos-correction-impact/report.json").read_text(encoding="utf-8")
+    )
+    impact_independent = json.loads(
+        (ROOT / "artifacts/plos-correction-impact/independent-verification.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    impact_differential = json.loads(
+        (ROOT / "artifacts/impact-differential-probe.json").read_text(encoding="utf-8")
+    )
     checks = {
         "compileall": True,
         "python_3_11_grammar_parse": len(grammar_files),
@@ -215,6 +317,8 @@ def main() -> int:
         "clean_wheel_install_import": True,
         "installed_cli_review_matches": installed_cli_review_matches,
         "installed_cli_benchmark_validate": installed_cli_benchmark_validate,
+        "installed_cli_impact_verifies": installed_cli_impact_verifies,
+        "installed_cli_impact_review_matches": installed_cli_impact_review_matches,
         "unit_and_adversarial_tests": test_count,
         "deterministic_tamper_mutations": 10_000,
         "deterministic_tamper_misses": 0,
@@ -249,6 +353,23 @@ def main() -> int:
         "automated_benchmark_receiver_count": automated_benchmark_report["receiver_count"],
         "automated_benchmark_trial_count": automated_benchmark_report["trial_count"],
         "automated_benchmark_api_spend_usd": automated_benchmark_report["incremental_api_spend_usd"],
+        "impact_status": impact_report["status"],
+        "impact_accepted_receipt_valid": impact_report["accepted_receipt_valid"],
+        "impact_report_valid": impact_report["impact_report_valid"],
+        "impact_bundle_valid": impact_report["impact_bundle_valid"],
+        "impact_upstream_exact_match": impact_report["upstream_exact_match"],
+        "impact_direct_only_transitive_misses": impact_report["direct_only_baseline"][
+            "transitive_quarantine_missed"
+        ],
+        "impact_quarantine_count": impact_report["summary"]["quarantine"],
+        "impact_survivor_count": impact_report["summary"]["survives"],
+        "impact_unresolved_count": impact_report["summary"]["affected_unresolved"],
+        "impact_decisions_touched": impact_report["summary"]["decisions_touched"],
+        "impact_independent_verification": impact_independent["status"],
+        "impact_independent_checks": len(impact_independent["checks"]),
+        "impact_differential_status": impact_differential["status"],
+        "impact_differential_iterations": impact_differential["iterations"],
+        "impact_differential_mismatches": impact_differential["mismatch_count"],
         "scaling_probe_claim_counts": [item["claim_count"] for item in scaling["results"]],
     }
     if not all(
@@ -256,6 +377,8 @@ def main() -> int:
             checks["compileall"],
             checks["installed_cli_review_matches"],
             checks["installed_cli_benchmark_validate"],
+            checks["installed_cli_impact_verifies"],
+            checks["installed_cli_impact_review_matches"],
             checks["demo_receipt_valid"],
             checks["demo_projection_valid"],
             checks["demo_source_disclosure_valid"],
@@ -287,6 +410,22 @@ def main() -> int:
             checks["automated_benchmark_receiver_count"] == 2,
             checks["automated_benchmark_trial_count"] == 144,
             checks["automated_benchmark_api_spend_usd"] == 0,
+            checks["impact_status"]
+            == "MECHANISM_WORKS_ON_REAL_CORRECTION_AUTHORED_DEPENDENCIES_VALUE_UNTESTED",
+            checks["impact_accepted_receipt_valid"],
+            checks["impact_report_valid"],
+            checks["impact_bundle_valid"],
+            checks["impact_upstream_exact_match"],
+            checks["impact_direct_only_transitive_misses"] == 2,
+            checks["impact_quarantine_count"] == 7,
+            checks["impact_survivor_count"] == 1,
+            checks["impact_unresolved_count"] == 1,
+            checks["impact_decisions_touched"] == 1,
+            checks["impact_independent_verification"] == "PASS",
+            checks["impact_independent_checks"] >= 20,
+            checks["impact_differential_status"] == "PASS",
+            checks["impact_differential_iterations"] == 2000,
+            checks["impact_differential_mismatches"] == 0,
         ]
     ):
         raise RuntimeError(f"release checks failed: {checks}")
@@ -336,6 +475,28 @@ def main() -> int:
     )
     inputs.append(
         {
+            "name": "PLOS correction evidence-recall specimen",
+            "original_doi": "10.1371/journal.pone.0223255",
+            "correction_doi": "10.1371/journal.pone.0249731",
+            "accepted_state_root": json.loads(
+                (ROOT / "artifacts/plos-correction-impact/accepted.snapshot.json").read_text(
+                    encoding="utf-8"
+                )
+            )["state_root"],
+            "event_id": json.loads(
+                (ROOT / "artifacts/plos-correction-impact/source-status-event.json").read_text(
+                    encoding="utf-8"
+                )
+            )["event_id"],
+            "report_id": impact_report["report_id"],
+            "usage": (
+                "Real correction applied to an explicitly authored accepted-state dependency specimen; "
+                "tests deterministic blast radius, alternative admitted support, and advisory-edge handling."
+            ),
+        }
+    )
+    inputs.append(
+        {
             "name": "ARCT automated receiver development pack",
             "pack_sha256": automated_benchmark_report["pack_sha256"],
             "gold_sha256": automated_benchmark_report["gold_sha256"],
@@ -359,17 +520,19 @@ def main() -> int:
     evidence = {
         "schema": "openline.claim-graph.prototype-evidence.v1",
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
-        "status": "MECHANICALLY_VERIFIED_AUTOMATED_BENCHMARK_HARNESS_EXTERNAL_VALUE_UNTESTED",
+        "status": "SOURCE_IMPACT_MECHANISM_VERIFIED_ON_REAL_EVENT_AUTHORED_DEPENDENCIES_VALUE_UNTESTED",
         "checks": checks,
         "inputs": inputs,
         "manifest_aggregate_sha256": manifest["aggregate_sha256"],
         "claim_boundary": (
             "Evidence covers deterministic integrity, source-span, lineage, projection, and receiver-policy mechanics "
             "plus one small independently labeled, multiple-choice missing-premise mapping check (21/24) and one "
-            "manually mapped natural-material inconsistency later confirmed by a public correction. It does not cover "
-            "open-ended extraction fidelity, model generalization, or graph-versus-summary receiver value. The "
-            "automated harness is mechanically tested, but its checked-in development pack has no receiver outputs "
-            "and cannot pass its own validation gate."
+            "manually mapped natural-material inconsistency later confirmed by a public correction. It additionally "
+            "covers deterministic source-impact propagation on that real correction event: two downstream claims "
+            "beyond direct source lookup were found, one alternative-supported claim was preserved, and one "
+            "advisory-edge exposure remained unresolved. The dependency state is explicitly authored. This does not "
+            "cover open-ended extraction fidelity, historical completeness, user demand, market value, model "
+            "generalization, or graph-versus-summary receiver value."
         ),
         "incremental_api_spend_usd": 0,
         "model_calls": 1,

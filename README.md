@@ -1,4 +1,6 @@
-# OpenLine Claim Graph — verified Decision Review prototype
+# OpenLine Claim Graph — Evidence Recall prototype
+
+> Something you relied on changed. Here is exactly what must be reconsidered—and why.
 
 This prototype tests one narrow idea from the earlier OLP/DSM work:
 
@@ -6,7 +8,22 @@ This prototype tests one narrow idea from the earlier OLP/DSM work:
 
 It does **not** put truth in a receipt. It records representations, their declared relations, their source anchors, and their history.
 
-Status: `EXPERIMENTAL_RECEIVER_REVIEW_PROTOTYPE`. It is not a promoted product, standard, or scientific result.
+Status: `SOURCE_IMPACT_MECHANISM_VERIFIED_ON_REAL_EVENT_AUTHORED_DEPENDENCIES_VALUE_UNTESTED`. It is not a promoted product, standard, or scientific result.
+
+## What works now
+
+The graph now has a native computational job: deterministic blast-radius analysis when accepted evidence is corrected, retracted, withdrawn, superseded, or revoked.
+
+Input is one accepted graph state, one exact source-status event, and one receiver-owned edge policy. Output is a content-addressed report that separates:
+
+- claims proposed for `QUARANTINE` because no admitted basis survives;
+- claims that `SURVIVE` because an admitted alternative basis remains;
+- claims that are `AFFECTED_UNRESOLVED` because the path includes an advisory edge; and
+- claims outside the event's admitted blast radius.
+
+The model cannot directly mutate accepted state. It may propose claims and edges; the receiver decides which relation IDs have hard authority, which are advisory, and which are ignored. The deterministic engine then computes the consequences of that admitted state.
+
+See [the Evidence Recall contract](docs/EVIDENCE_RECALL.md) and open [`artifacts/plos-correction-impact/review.html`](artifacts/plos-correction-impact/review.html) for the checked-in real-event specimen.
 
 ## What is implemented
 
@@ -27,6 +44,10 @@ Status: `EXPERIMENTAL_RECEIVER_REVIEW_PROTOTYPE`. It is not a promoted product, 
 - A composed receiver verifier that checks every layer before returning `ADMIT`, `QUARANTINE`, or `DENY`.
 - A fail-closed, self-contained HTML Decision Review that makes represented fault lines, exact source anchors, lineage, and verification limits readable without exposing raw graph JSON.
 - A sealed automated receiver benchmark harness with gold/pack separation, deterministic full-factorial planning, fresh-process execution, resumable spend caps, strict identifier responses, and code-only scoring.
+- Content-addressed source-status events with exact affected byte scopes and exact notice anchors.
+- Receiver-owned hard/advisory edge authority; unadmitted relations are ignored and disclosed.
+- Deterministic, cycle-safe support-path propagation with admitted-alternative preservation.
+- Reproducible downstream witness paths and a fail-closed Evidence Recall HTML surface.
 
 ## The important trust split
 
@@ -55,6 +76,12 @@ Python 3.11+ and `cryptography` are required.
 PYTHONPATH=src python -m unittest discover -s tests -v
 PYTHONPATH=src python examples/build_demo.py --output artifacts/demo
 PYTHONPATH=src python examples/build_plos_correction_case.py --output artifacts/plos-correction-case
+PYTHONPATH=src python examples/build_plos_correction_impact.py \
+  --base artifacts/plos-correction-case \
+  --output artifacts/plos-correction-impact
+PYTHONPATH=src python scripts/verify_plos_correction_impact.py \
+  --artifact artifacts/plos-correction-impact
+PYTHONPATH=src python scripts/impact_differential_probe.py --iterations 2000
 PYTHONPATH=src python scripts/scaling_probe.py
 PYTHONPATH=src python scripts/build_arct_automated_receiver_pack.py \
   --output artifacts/automated-receiver-benchmark
@@ -96,9 +123,32 @@ PYTHONPATH=src python -m openline_claim_graph render-review \
 
 Rendering fails closed when the source, receipt, graph, projection, policy binding, or receiver key pin is invalid. `ADMIT` means only that the verified bundle satisfies the declared receiver policy; the page states this beside the disposition.
 
+Compute and render source impact from an accepted state:
+
+```bash
+openline-claim-graph impact \
+  --snapshot artifacts/plos-correction-impact/accepted.snapshot.json \
+  --sources artifacts/plos-correction-impact/sources.json \
+  --event artifacts/plos-correction-impact/source-status-event.json \
+  --policy artifacts/plos-correction-impact/impact-policy.json \
+  --output /tmp/impact-report.json
+
+openline-claim-graph render-impact \
+  --report /tmp/impact-report.json \
+  --snapshot artifacts/plos-correction-impact/accepted.snapshot.json \
+  --sources artifacts/plos-correction-impact/sources.json \
+  --event artifacts/plos-correction-impact/source-status-event.json \
+  --policy artifacts/plos-correction-impact/impact-policy.json \
+  --receipt artifacts/plos-correction-impact/accepted.receipt.json \
+  --public-key d759793bbc13a2819a827c76adb6fba8a49aee007f49f2d0992d99b825ad2c48 \
+  --output /tmp/evidence-recall.html
+```
+
+Impact computation fails closed on invalid graph, source, event, or policy commitments. Verification and rendering additionally require the signed accepted-state receipt and receiver-pinned key. Rendering does not mutate the accepted graph.
+
 ## Evidence generated here
 
-- 43 offline unit/adversarial/protocol/development/benchmark tests.
+- 57 offline unit/adversarial/protocol/development/benchmark tests.
 - 10,000 deterministic tamper mutations detected with zero misses.
 - Exact-quote mislabeling is rejected.
 - Paraphrase/inference labels remain admitted only as disclosed, semantically unverified mappings.
@@ -107,6 +157,14 @@ Rendering fails closed when the source, receipt, graph, projection, policy bindi
 - A 1,000-claim controlled graph produced a roughly 1.4 KB signed state receipt and a roughly 3.7 KB one-claim projection. The full snapshot was roughly 643 KB.
 
 Those are mechanical results. The controlled fixture was designed here, so it is not evidence that the graph improves decisions on natural material.
+
+### Evidence Recall on a real correction event
+
+`artifacts/plos-correction-impact/` starts from a signed accepted-state specimen and admits the later PLOS correction as a source-status event. Direct source lookup finds 5 exposed abstract claims. Dependency propagation proposes 7 claims for quarantine, including 2 downstream claims direct lookup misses. It preserves 1 related claim with an admitted alternative main-text basis, routes 1 advisory-edge exposure to unresolved review rather than hard quarantine, leaves 6 claims untouched, and identifies 1 accepted decision to reopen.
+
+An independent verifier that does not import the impact engine reproduces the content hashes, accepted-state root, Ed25519 binding, event/policy/report IDs, classification sets, witness paths, and review hash. A separate 2,000-case randomized differential probe covers cycles, alternative support, required dependencies, advisory paths, and exact affected spans with zero oracle mismatches.
+
+The PLOS article and correction are real. The downstream accepted-state dependencies are explicitly authored for the specimen. This earns a mechanical claim: **given this admitted graph, event, and policy, the blast radius is exact and reproducible.** It does not earn claims about extraction accuracy, historical completeness, scientific truth, user demand, or commercial value.
 
 ### Natural-material review check
 
@@ -198,7 +256,7 @@ PYTHONPATH=src python -m openline_claim_graph benchmark-score \
 The checked-in ARCT pack is `DEVELOPMENT_ONLY`. It is one public,
 multiple-choice dataset with possible pretraining contamination and no negative
 controls. It validates the harness and cannot pass the promotion gate. No
-automated receiver result exists yet.
+completed receiver efficacy result is included in this branch.
 
 ## Dormant human receiver protocol
 
@@ -213,17 +271,17 @@ Condition is assigned between receivers, case selection is locked before mapping
 The analyzed pilot case pack is intentionally empty. The ARCT development fixture is not an admitted Stage 1 case pack. No human trials or decision-value results exist yet.
 
 This human protocol is not the immediate roadmap. It becomes relevant only if
-a later claim concerns human comprehension; machine-receiver evidence cannot
+a later claim concerns human comprehension; source-impact correctness does not
 inherit that claim.
 
 ## Promotion status
 
-`AUTOMATED_BENCHMARK_HARNESS_READY_EXTERNAL_VALUE_UNTESTED`
+`SOURCE_IMPACT_MECHANISM_VERIFIED_ON_REAL_EVENT_AUTHORED_DEPENDENCIES_VALUE_UNTESTED`
 
 The existing DSM “Same Word, Different Rules” example is structurally useful but cannot serve as extraction-fidelity evidence: it explicitly paraphrases an anonymized exchange and does not include the raw source spans needed for independent recovery.
 
-The unresolved claim is the only one that matters commercially or intellectually:
+The deterministic source-impact mechanism now stands independently of the unresolved presentation claim:
 
-> Under a fixed task, model, context, and budget, does verified structured state help an isolated machine receiver recover the right decision and external evidence better than ordinary or extracted prose?
+> Given an accurate enough accepted dependency state, does catching downstream exposure after real corrections save enough missed-review cost to justify maintaining that state?
 
-Nothing in this repository answers that yet.
+Nothing in this repository answers adoption or economic value yet. It does answer the narrower engineering question: the graph can perform exact, receiver-policy-bound evidence recall that a direct source lookup misses, without over-quarantining a branch with an admitted alternative basis.

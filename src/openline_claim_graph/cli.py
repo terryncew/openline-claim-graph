@@ -15,6 +15,8 @@ from .benchmark import (
 )
 from .bundle import verify_bundle
 from .graph import verify_projection
+from .impact import ImpactValidationError, analyze_source_impact, verify_impact_bundle
+from .impact_review import ImpactReviewError, render_impact_review
 from .receipts import verify_receipt, verify_source_disclosure
 from .review import ReviewRenderError, render_review
 
@@ -118,6 +120,44 @@ def main(argv: list[str] | None = None) -> int:
     benchmark_score.add_argument("--responses", action="append", required=True)
     benchmark_score.add_argument("--output", required=True)
 
+    impact = sub.add_parser(
+        "impact",
+        help="compute downstream exposure from a source-status event under receiver policy",
+    )
+    impact.add_argument("--snapshot", required=True)
+    impact.add_argument("--sources", required=True)
+    impact.add_argument("--event", required=True)
+    impact.add_argument("--policy", required=True)
+    impact.add_argument("--output", required=True)
+
+    impact_verify = sub.add_parser(
+        "verify-impact",
+        help="independently reproduce and verify a claim-impact report",
+    )
+    impact_verify.add_argument("--report", required=True)
+    impact_verify.add_argument("--snapshot", required=True)
+    impact_verify.add_argument("--sources", required=True)
+    impact_verify.add_argument("--event", required=True)
+    impact_verify.add_argument("--policy", required=True)
+    impact_verify.add_argument("--receipt", required=True)
+    impact_verify.add_argument("--public-key", required=True)
+    impact_verify.add_argument("--parent", action="append", default=[])
+
+    impact_render = sub.add_parser(
+        "render-impact",
+        help="render a verified claim-impact report as self-contained HTML",
+    )
+    impact_render.add_argument("--report", required=True)
+    impact_render.add_argument("--snapshot", required=True)
+    impact_render.add_argument("--sources", required=True)
+    impact_render.add_argument("--event", required=True)
+    impact_render.add_argument("--policy", required=True)
+    impact_render.add_argument("--receipt", required=True)
+    impact_render.add_argument("--public-key", required=True)
+    impact_render.add_argument("--parent", action="append", default=[])
+    impact_render.add_argument("--output", required=True)
+    impact_render.add_argument("--title", default="Evidence Recall")
+
     args = parser.parse_args(argv)
     if args.command == "benchmark-validate":
         pack = _load(args.pack)
@@ -169,6 +209,69 @@ def main(argv: list[str] | None = None) -> int:
         )
         _write(args.output, result)
         return _emit(result)
+    if args.command == "impact":
+        sources_doc = _load(args.sources)
+        sources = {item["source_id"]: item for item in sources_doc["sources"]}
+        try:
+            result = analyze_source_impact(
+                _load(args.snapshot),
+                sources,
+                _load(args.event),
+                _load(args.policy),
+            )
+        except ImpactValidationError as exc:
+            return _emit({"valid": False, "errors": [str(exc)]})
+        _write(args.output, result)
+        return _emit(
+            {
+                "valid": True,
+                "output": args.output,
+                "report_id": result["report_id"],
+                "summary": result["summary"],
+            }
+        )
+    if args.command == "verify-impact":
+        sources_doc = _load(args.sources)
+        sources = {item["source_id"]: item for item in sources_doc["sources"]}
+        return _emit(
+            verify_impact_bundle(
+                _load(args.report),
+                _load(args.snapshot),
+                sources,
+                _load(args.event),
+                _load(args.policy),
+                _load(args.receipt),
+                pinned_public_key=args.public_key,
+                parent_snapshots=[_load(path) for path in args.parent],
+            )
+        )
+    if args.command == "render-impact":
+        sources_doc = _load(args.sources)
+        sources = {item["source_id"]: item for item in sources_doc["sources"]}
+        try:
+            rendered = render_impact_review(
+                report=_load(args.report),
+                snapshot=_load(args.snapshot),
+                sources=sources,
+                event=_load(args.event),
+                policy=_load(args.policy),
+                accepted_receipt=_load(args.receipt),
+                pinned_public_key=args.public_key,
+                parent_snapshots=[_load(path) for path in args.parent],
+                title=args.title,
+            )
+        except ImpactReviewError as exc:
+            return _emit({"valid": False, "errors": [str(exc)]})
+        output = Path(args.output)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(rendered, encoding="utf-8")
+        return _emit(
+            {
+                "valid": True,
+                "output": str(output),
+                "sha256": hashlib.sha256(rendered.encode("utf-8")).hexdigest(),
+            }
+        )
     if args.command == "verify-receipt":
         sources_doc = _load(args.sources)
         sources = {item["source_id"]: item for item in sources_doc["sources"]}

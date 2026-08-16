@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.2.0.dev1 — 2026-08-16
+
+- Added content-addressed `CORRECTED`, `RETRACTED`, `WITHDRAWN`, `SUPERSEDED`, and `REVOKED` source-status events with exact byte scopes and exact notice anchors.
+- Added receiver-owned hard, advisory, and unadmitted relation authority. Only `SUPPORTS`, `DEPENDS_ON`, and `DERIVED_FROM` have impact semantics in v1.
+- Added deterministic, cycle-safe blast-radius analysis using grounded surviving support rather than citation counts.
+- Preserved claims with an admitted alternative basis; ungrounded support cycles cannot self-rescue.
+- Added exact downstream witness paths and a fail-closed Evidence Recall HTML renderer.
+- Added `impact`, `verify-impact`, and `render-impact` CLI commands.
+- Added a real PLOS correction specimen over an explicitly authored accepted dependency state: 5 direct exposures, 7 quarantines, 2 downstream claims beyond direct lookup, 1 alternative-basis survivor, 1 advisory review, and 1 accepted decision touched.
+- Added an independent verifier that does not import the impact engine and reproduces the state, receipt, event, policy, classifications, paths, and review hash.
+- Added a 2,000-case randomized differential probe with zero oracle mismatches.
+- Added 14 focused authority, receipt-binding, tamper, exact-span, alternative-support, cycle, witness-path, and fail-closed rendering tests; full suite now contains 57 tests.
+- Kept the boundary explicit: the real correction is external; the downstream dependency state is authored; extraction, completeness, adoption, and economic value remain untested.
+
 ## 0.1.0.dev4 — 2026-08-15
 
 - Added a provider-neutral automated receiver benchmark harness.

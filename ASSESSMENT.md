@@ -2,13 +2,13 @@
 
 ## Verdict
 
-The idea survives as a working integrity, lineage, and receiver-review mechanism. A small independent-gold development check shows that one source-to-graph mapping pass can recover signal on a constrained missing-premise task. A separate natural-material case produces a readable review of five published abstract/main-text conflicts later confirmed by an independent correction. It has not earned standing as a superior receiver-facing decision system.
+The idea survives as a working integrity, lineage, and deterministic source-impact mechanism. A small independent-gold development check shows that one source-to-graph mapping pass can recover signal on a constrained missing-premise task. A separate natural-material case produces a readable review of five published abstract/main-text conflicts later confirmed by an independent correction. Version `0.2.0.dev1` now applies that real correction to an accepted dependency specimen and computes the downstream evidence blast radius without an LLM judge.
 
 The durable correction to Coherence Dynamics is architectural:
 
 > Do not compress reasoning into a sender-certified scalar. Preserve its typed structure, version it, and let a receiver decide what that structure earns.
 
-Version `0.1.0.dev4` turns the next value question into executable evaluation infrastructure rather than a human-recruitment dependency. The public pack, private gold, surface builder, receiver process, and scorer have separate authority. The receiver never sees gold; the scorer never asks a model to interpret free-form prose; and missing or malformed trials cannot disappear from the denominator.
+The graph has now earned one additional job that does not depend on proving it is easier to comprehend than prose: when an admitted source changes, it can mechanically identify downstream claims whose admitted basis no longer survives, preserve claims with an admitted alternative basis, and route inferred-edge exposure to review rather than hard quarantine.
 
 ## What the implementation established
 
@@ -20,6 +20,8 @@ The receipt-size design initially contained every source commitment and every wa
 
 The new Decision Review renderer adds no semantic judgment. It verifies the composed bundle first and fails closed on a broken key pin, signature, source, graph, projection, disclosure, or binding. For an admitted bundle it renders the declared conflicts, exact source spans, policy limits, and lineage as one static HTML file. It escapes source content rather than executing it.
 
+The Evidence Recall engine likewise adds no semantic judgment. A receiver explicitly names hard, advisory, and unadmitted dependency relations. The engine computes a least fixed point of grounded surviving support, then classifies only event-touched claims. This prevents an ungrounded support cycle from rescuing itself and prevents one corrected source from poisoning a claim that retains an admitted alternative basis.
+
 ## What remains outside the instrument
 
 The prototype cannot verify that:
@@ -29,6 +31,9 @@ The prototype cannot verify that:
 - the ontology divides the subject fairly;
 - a bounded projection did not omit decisive context;
 - the resulting map improves a real receiver's judgment.
+- the admitted dependency graph is complete;
+- the event-to-affected-span mapping is semantically correct;
+- maintaining the dependency state saves enough review cost to justify adoption.
 
 An extraction-process receipt containing a model ID, prompt digest, and source digest would improve reproducibility. It would **not** prove semantic fidelity. It identifies the machine that made the translation; it does not make the translation correct.
 
@@ -43,6 +48,14 @@ This is useful evidence against the claim that the mapping step can only echo a 
 The PLOS ONE example uses the original article's published abstract and main-results passages without showing the later correction to the receiver bundle. The graph represents five conflicting quantities, the signed bundle verifies, and the HTML review reproduces those fault lines with exact spans. The later correction explicitly identifies the same abstract/main-text inconsistency.
 
 That is evidence of contact with natural material and an external veto, but not of product value. The extraction was manual, only one case was used, and no blinded receiver comparison was run. The honest result is: the mechanism and surface work on this case; superiority remains untested.
+
+## What Evidence Recall adds
+
+The PLOS correction is admitted as a content-addressed source-status event against a signed accepted-state specimen. Direct source lookup exposes five abstract claims. The dependency engine proposes seven claims for quarantine, reaching two downstream claims that direct lookup misses. It preserves one related claim with an admitted alternative main-text basis, routes one advisory-edge path to unresolved review, leaves six claims untouched, and identifies one accepted decision to reopen.
+
+An independent verifier that does not import the impact engine reproduces the graph and event commitments, Ed25519 receipt binding, classification sets, witness paths, and rendered review hash. A separate 2,000-case randomized differential probe covers cycles, exact affected spans, required dependencies, alternative support, and advisory paths with zero mismatches.
+
+This is real mechanism contact, not independent dependency discovery. The article and correction are natural material; the downstream accepted-state graph is authored for the specimen. The earned claim is conditional correctness: given that exact state, event, and receiver policy, the impact report is exact and reproducible.
 
 ## Relation to the prior work
 
@@ -60,9 +73,11 @@ The wallet is therefore not a truth ledger. It is custody for evolving represent
 
 `DO_NOT_ADD_RDF_OR_STANDARDS_INFRASTRUCTURE_YET`
 
-`AUTOMATED_BENCHMARK_HARNESS_READY_NO_RECEIVER_RESULT`
+`SOURCE_IMPACT_MECHANISM_VERIFIED_ON_REAL_EVENT_AUTHORED_DEPENDENCIES`
 
-The immediate external-value path now targets machine receivers. The checked-in ARCT pack exercises pack/gold binding, arm parity, planning, and scoring but is `DEVELOPMENT_ONLY` and cannot pass its own gate. A validating result requires at least two independent datasets, two frozen receiver families, negative controls, complete strict outputs, predeclared effect bars, and no false-conflict regression. Provider API adapters remain outside the trusted core; the harness accepts any command that reads one trial from stdin and writes the strict answer schema to stdout.
+The immediate useful path is bounded evidence recall: signed accepted state, an externally grounded source-status event, explicit receiver admission of dependency edges, deterministic exposure, and a proposed review that cannot mutate accepted state. The next external-value test is operational rather than cognitive: on a real maintained state, does the mechanism catch required reconsideration that direct source lookup misses without creating unacceptable review volume?
+
+The machine-receiver harness remains available for any future presentation/comprehension claim. It does not gate the source-impact mechanism and cannot inherit its result.
 
 The human receiver protocol remains a dormant branch for any future claim about human comprehension. A machine-receiver win cannot be laundered into that claim.
 

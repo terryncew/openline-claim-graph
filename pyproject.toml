@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "openline-claim-graph"
-version = "0.1.0.dev4"
-description = "Experimental signed receipts for versioned, source-anchored claim graphs."
+version = "0.2.0.dev1"
+description = "Dependency-aware provenance and deterministic source-impact reports for versioned claim graphs."
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}

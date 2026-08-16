@@ -1,4 +1,4 @@
-"""OpenLine claim-graph receipt prototype."""
+"""OpenLine dependency-aware provenance and source-impact prototype."""
 
 from .analysis import compare_snapshots, disagreement_report
 from .benchmark import (
@@ -28,6 +28,20 @@ from .graph import (
     validate_snapshot,
     verify_projection,
 )
+from .impact import (
+    IMPACT_POLICY_SCHEMA,
+    IMPACT_REPORT_SCHEMA,
+    SOURCE_STATUS_EVENT_SCHEMA,
+    ImpactValidationError,
+    analyze_source_impact,
+    create_impact_policy,
+    create_source_status_event,
+    validate_impact_policy,
+    validate_source_status_event,
+    verify_impact_bundle,
+    verify_impact_report,
+)
+from .impact_review import ImpactReviewError, render_impact_review
 from .receipts import (
     create_source_disclosure,
     private_key_from_hex,
@@ -44,20 +58,29 @@ __all__ = [
     "PROFILE_HASH",
     "ClaimGraphWallet",
     "GraphValidationError",
+    "IMPACT_POLICY_SCHEMA",
+    "IMPACT_REPORT_SCHEMA",
+    "ImpactValidationError",
+    "ImpactReviewError",
+    "SOURCE_STATUS_EVENT_SCHEMA",
+    "analyze_source_impact",
     "build_source",
     "build_plan",
     "build_trial_payload",
     "compare_snapshots",
     "create_claim",
+    "create_impact_policy",
     "create_projection",
     "create_relation",
     "create_snapshot",
+    "create_source_status_event",
     "create_source_disclosure",
     "disagreement_report",
     "private_key_from_hex",
     "provenance_anchor",
     "public_key_hex",
     "render_review",
+    "render_impact_review",
     "render_inventory_as_prose",
     "ReviewRenderError",
     "sign_snapshot",
@@ -72,6 +95,10 @@ __all__ = [
     "run_receiver_command",
     "validate_gold",
     "validate_inventory",
+    "validate_impact_policy",
     "validate_pack",
     "validate_plan",
+    "validate_source_status_event",
+    "verify_impact_report",
+    "verify_impact_bundle",
 ]

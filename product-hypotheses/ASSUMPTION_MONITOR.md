@@ -53,6 +53,8 @@ The receiver-discovery pilot, not preference:
 
 ## Next evidence dependency
 
-The next product-relevant evidence is the sealed automated machine-receiver benchmark under `experiments/automated_receiver_benchmark/`. It must use independent gold, isolated receiver processes, matched A/B/C surfaces, deterministic scoring, and a spend cap. A result can support machine-receiver value only. The dormant human protocol under `experiments/receiver_discovery_pilot/` is still required before making any claim about human comprehension.
+This monitor remains dormant. Version `0.2.0.dev1` implements a separate deterministic operation, Evidence Recall: a known source-status event is applied to an already accepted dependency state. That operation does not search for new material, decide materiality, or authorize a state transition, so it does not quietly instantiate this monitor hypothesis.
 
-The natural-material example proves only that the mechanics can render one externally confirmed fault line. It does not replace either value test.
+The next product-relevant evidence for a monitor is an operational test on a maintained bounded state: does it catch required reconsideration that direct source lookup misses without creating unacceptable review volume? The dormant human protocol remains required before making any claim about human comprehension.
+
+The PLOS evidence-recall specimen proves conditional propagation on one real correction event over authored dependencies. It does not establish continuous monitoring, automated extraction, adoption, or economic value.

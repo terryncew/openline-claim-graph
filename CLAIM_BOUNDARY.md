@@ -1,6 +1,6 @@
 # Claim boundary
 
-This is an experimental receiver-review prototype, not a promoted OpenLine product.
+This is an experimental dependency-aware provenance and source-impact prototype, not a promoted OpenLine product.
 
 It demonstrates that a receiver can verify:
 
@@ -13,6 +13,11 @@ It demonstrates that a receiver can verify:
 - append-only custody of branches and merges.
 - fail-closed rendering of a verified bundle as a static human-readable review.
 - sealed automated receiver packs with answer-key separation, deterministic plans, fresh-process execution, resumable budget enforcement, and code-only scoring.
+- content-addressed source-status events with exact affected byte ranges and exact notice anchors;
+- deterministic downstream propagation over receiver-admitted `SUPPORTS`, `DEPENDS_ON`, and `DERIVED_FROM` relations;
+- separation of hard, advisory, and unadmitted edge authority;
+- preservation of claims with an admitted alternative basis and rejection of ungrounded support-cycle self-rescue;
+- exact witness paths and fail-closed rendering of a reproduced impact report.
 
 It does **not** demonstrate:
 
@@ -24,8 +29,18 @@ It does **not** demonstrate:
 - validity of any future benchmark whose gold leaks into mapper or receiver context;
 - RDF, JSON-LD, JCS, W3C Data Integrity, or PROV-O conformance;
 - truth, coherence, reputation, consciousness, safety, or authorization.
+- completeness or correctness of the dependency edges admitted by a receiver;
+- semantic correctness of the asserted source-status scope;
+- automatic authority to mutate an accepted graph;
+- adoption, saved review cost, or commercial value.
 
 The graph records representations and relations among representations. Reality remains outside the receipt.
+
+## Evidence Recall
+
+Version `0.2.0.dev1` makes one conditional claim: given an exact accepted graph, an exact source-status event, and an exact receiver-owned edge policy, the reported downstream exposure is reproducible. `QUARANTINE` means the admitted graph no longer contains a grounded surviving basis under that event. `SURVIVES` means an admitted alternative basis remains. `AFFECTED_UNRESOLVED` means the path contains advisory authority and cannot cause hard quarantine.
+
+The checked-in PLOS specimen uses a real article and correction notice. Its downstream review and decision dependencies are explicitly authored. The result validates deterministic propagation on a real event, not automated extraction or historical completeness.
 
 ## Automated receiver benchmark
 
