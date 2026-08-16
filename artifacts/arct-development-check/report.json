@@ -1,0 +1,414 @@
+{
+  "checks": {
+    "blind_mapping_hits": 21,
+    "blind_mapping_total": 24,
+    "gold_oracle_hits": 24,
+    "gold_vs_inverted_roots_distinct": 24,
+    "inverted_control_hits": 0,
+    "mechanically_valid_graphs": 72
+  },
+  "claim_boundary": "This small, multiple-choice development check shows that one blinded model mapping pass recovered 21 of 24 independently annotated implicit warrants and that the graph commitment distinguishes the gold choice from its decoy. It does not test graph-versus-summary receiver value, open-ended extraction, generalization, or Stage 1 continuation.",
+  "details": [
+    {
+      "blind_correct": true,
+      "case_id": "14102517_999_A3TKD7EJ6BM0M5",
+      "gold_warrant_index": 1,
+      "predicted_warrant_index": 1,
+      "roots": {
+        "blind_prediction": "158f4805aac138a478323351fa3b1b085ef080fd6c2683a27b4612456847d888",
+        "gold_oracle": "158f4805aac138a478323351fa3b1b085ef080fd6c2683a27b4612456847d888",
+        "inverted_control": "ff016f6afe4b0fc3f076d2eb3f15f43adc025926dc0f6df9393ab6c86f01ec69"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "14164520_0_A3GNQDFPZALU92",
+      "gold_warrant_index": 0,
+      "predicted_warrant_index": 0,
+      "roots": {
+        "blind_prediction": "a82d48cdf3ead34f40368afb8e46d50ef133fc289bc1fa558c3e4e6fab9ce781",
+        "gold_oracle": "a82d48cdf3ead34f40368afb8e46d50ef133fc289bc1fa558c3e4e6fab9ce781",
+        "inverted_control": "efbd4c97c149d0f8f9d49df72463858f8b9b3a5bc60401e54641e6dd99ebd899"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "14166276_298_A104V8NZIQFN2F",
+      "gold_warrant_index": 1,
+      "predicted_warrant_index": 1,
+      "roots": {
+        "blind_prediction": "62fc0609042f8cde8144c2348b74bb9e83db1adc6cce4b05eac5267b75008477",
+        "gold_oracle": "62fc0609042f8cde8144c2348b74bb9e83db1adc6cce4b05eac5267b75008477",
+        "inverted_control": "1d9f9be77da5774520ea219487bfd1d8ec6831e7e2eb7daf59f585598c786988"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": false,
+      "case_id": "14228063_268_AB98SGS280TY5",
+      "gold_warrant_index": 1,
+      "predicted_warrant_index": 0,
+      "roots": {
+        "blind_prediction": "fb0fbc897ae8392f5f522567c621ba0a0afc4e1fc05ba5acbbd402d0292c1e6a",
+        "gold_oracle": "67af1976f3b8ed3f1274be2747d8bf21c829d042fb2aae6d19c135773fcaddb0",
+        "inverted_control": "fb0fbc897ae8392f5f522567c621ba0a0afc4e1fc05ba5acbbd402d0292c1e6a"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "14367579_566_AE861G0AY5RGT",
+      "gold_warrant_index": 1,
+      "predicted_warrant_index": 1,
+      "roots": {
+        "blind_prediction": "c79ed65f01ea17a84c3a74a532f4feedb3cf85ca0c852fc619da06745e72eca0",
+        "gold_oracle": "c79ed65f01ea17a84c3a74a532f4feedb3cf85ca0c852fc619da06745e72eca0",
+        "inverted_control": "1e03b85aa2152a1ff276bcdb14e7144a905f3b1c3117990480f8b93b61ee54fc"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "14383502_355_A34QZDSTKZ3JO9",
+      "gold_warrant_index": 1,
+      "predicted_warrant_index": 1,
+      "roots": {
+        "blind_prediction": "18271118db7a4bad4aca36f62c8fff7a55491643fcebc382472c23487b616d48",
+        "gold_oracle": "18271118db7a4bad4aca36f62c8fff7a55491643fcebc382472c23487b616d48",
+        "inverted_control": "3964ba7d9f55a6a0657457df92be79564af1547c228c917197d122538b50886c"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "15165585_20_AA7ASGQEOMKEZ",
+      "gold_warrant_index": 0,
+      "predicted_warrant_index": 0,
+      "roots": {
+        "blind_prediction": "ebe3dcae08b10377d5d5e51455e4830697de8410545663e7d776e1f3522a058b",
+        "gold_oracle": "ebe3dcae08b10377d5d5e51455e4830697de8410545663e7d776e1f3522a058b",
+        "inverted_control": "ef0c62bd3a26b0efac3bbe153643a74851308f47a8cd13fdea1ebf9b46dca322"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "15416860_74_A1I4CYG5YDFTYM",
+      "gold_warrant_index": 0,
+      "predicted_warrant_index": 0,
+      "roots": {
+        "blind_prediction": "7f8d8b04fcfd55f0e02525e723df5d952a2fd52b018c2360612fb99a1552bd5e",
+        "gold_oracle": "7f8d8b04fcfd55f0e02525e723df5d952a2fd52b018c2360612fb99a1552bd5e",
+        "inverted_control": "bbf58dc5e3825d38b12da31785f7f18a008a5bba9e2f9bd9dcdb46e67099765b"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "15419119_299_APW9F8OTJ4KXO",
+      "gold_warrant_index": 1,
+      "predicted_warrant_index": 1,
+      "roots": {
+        "blind_prediction": "b7da212a29b2be480b0d8e125647f1f4fec7bb015bd86b49cc632cf4051609ef",
+        "gold_oracle": "b7da212a29b2be480b0d8e125647f1f4fec7bb015bd86b49cc632cf4051609ef",
+        "inverted_control": "db21af9e0f9173a27a2c6d6b4fcc2b3417ae39cc974e50be1fcbf60f8e23eef4"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "15885882_232_AE861G0AY5RGT",
+      "gold_warrant_index": 1,
+      "predicted_warrant_index": 1,
+      "roots": {
+        "blind_prediction": "ff9609a576381e067a2b096b9a8fbdcf8167ec00c1d26fe6357fdd1448efb243",
+        "gold_oracle": "ff9609a576381e067a2b096b9a8fbdcf8167ec00c1d26fe6357fdd1448efb243",
+        "inverted_control": "e33f7979ebf63ab3159d8137c6d6ceb6c827a82f9083571362cb55c35081021c"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": false,
+      "case_id": "15885882_649_A104V8NZIQFN2F",
+      "gold_warrant_index": 0,
+      "predicted_warrant_index": 1,
+      "roots": {
+        "blind_prediction": "dbdc2cbd446df2a36249dcb352ea3b08075c0c9b015d93d595da2495ebcadee0",
+        "gold_oracle": "be7536ce40c645440d8c453a98231c89d8e64bca118251d50a6a2ba76eb1460e",
+        "inverted_control": "dbdc2cbd446df2a36249dcb352ea3b08075c0c9b015d93d595da2495ebcadee0"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "15978831_359_AE861G0AY5RGT",
+      "gold_warrant_index": 0,
+      "predicted_warrant_index": 0,
+      "roots": {
+        "blind_prediction": "1f1b9cb724280b0a65e3d1632c6c4fc9615bf00f9d08feb08cfbdc0185892ac9",
+        "gold_oracle": "1f1b9cb724280b0a65e3d1632c6c4fc9615bf00f9d08feb08cfbdc0185892ac9",
+        "inverted_control": "57e975169d37f51448fbc3e4dc7306c666d958ce16718ed4d7f7c20dfb211645"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "16104793_87_A1OYYWJ2B7OQTD",
+      "gold_warrant_index": 0,
+      "predicted_warrant_index": 0,
+      "roots": {
+        "blind_prediction": "44056515d114e16bdf2d9eb94fb433b2a6aa5fac6b464408705e95ea14a6c6c2",
+        "gold_oracle": "44056515d114e16bdf2d9eb94fb433b2a6aa5fac6b464408705e95ea14a6c6c2",
+        "inverted_control": "ac160627f8285eb23ca73f7f5d6e4e3e6f47ece1bf5619c5945568ce5ffec782"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": false,
+      "case_id": "16175182_252_AE861G0AY5RGT",
+      "gold_warrant_index": 1,
+      "predicted_warrant_index": 0,
+      "roots": {
+        "blind_prediction": "2b66e89a27e9e15f04b803e78f20b170d8dab78c864fb6f6ca775046ece31b9a",
+        "gold_oracle": "1f25957366edb893ced6fcddbb29806e5303788f6b3a9164891a204e26079dab",
+        "inverted_control": "2b66e89a27e9e15f04b803e78f20b170d8dab78c864fb6f6ca775046ece31b9a"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "16325513_0_A1I4CYG5YDFTYM",
+      "gold_warrant_index": 1,
+      "predicted_warrant_index": 1,
+      "roots": {
+        "blind_prediction": "1fd692e8967aae62afe52c59da2af1c81f7d23239e8f29d46d2f0f227205a8fe",
+        "gold_oracle": "1fd692e8967aae62afe52c59da2af1c81f7d23239e8f29d46d2f0f227205a8fe",
+        "inverted_control": "f04e06bd2fcc045486fb4bc7564a0ce688fe5b5d4a8b9b6f339fda5d1280c293"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "16625502_544_A1CF6U3GF7DZEJ",
+      "gold_warrant_index": 0,
+      "predicted_warrant_index": 0,
+      "roots": {
+        "blind_prediction": "30168d93729ef3c9979103592fc5f2bbbaa2886c2d6d8c2302030d3948eb8175",
+        "gold_oracle": "30168d93729ef3c9979103592fc5f2bbbaa2886c2d6d8c2302030d3948eb8175",
+        "inverted_control": "6a254349190cb0772882848cf742695937b71768f1c63a068f99641f9f657b54"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "16628414_277_A247LJDZOGXJK6",
+      "gold_warrant_index": 0,
+      "predicted_warrant_index": 0,
+      "roots": {
+        "blind_prediction": "fbb55880fbb20ab3924ed70d24fee655a4063665d8e8a07378a3343948dc81a3",
+        "gold_oracle": "fbb55880fbb20ab3924ed70d24fee655a4063665d8e8a07378a3343948dc81a3",
+        "inverted_control": "522ccbfd66fb6a17dc22b70e42553c8ed4b9bfc4c708ddcd07304a6bff97953e"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "16628932_437_A1CF6U3GF7DZEJ",
+      "gold_warrant_index": 0,
+      "predicted_warrant_index": 0,
+      "roots": {
+        "blind_prediction": "6cff14969250f1f5665a1eda8437bb7f497ac37aa454bacca97b057c64ea9ad0",
+        "gold_oracle": "6cff14969250f1f5665a1eda8437bb7f497ac37aa454bacca97b057c64ea9ad0",
+        "inverted_control": "88fb66ff59d39639d6bd52d87e23225e8ad1fcaf2ee7c1ff49a1187c6827b235"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "16630140_37_A2QVMCGDLTWV9",
+      "gold_warrant_index": 0,
+      "predicted_warrant_index": 0,
+      "roots": {
+        "blind_prediction": "e48993e7aa806adbf1d6645e7f193f222ad355b9514c95f3ec8d4e09cbe5ccf2",
+        "gold_oracle": "e48993e7aa806adbf1d6645e7f193f222ad355b9514c95f3ec8d4e09cbe5ccf2",
+        "inverted_control": "ac5574cd70fb8df645c75dd43a86522c048750146b06c092b4083dd63507d685"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "16630140_37_A34QZDSTKZ3JO9",
+      "gold_warrant_index": 0,
+      "predicted_warrant_index": 0,
+      "roots": {
+        "blind_prediction": "3550ac3f0522d77d6cb0139b041b133914ffcf2e634e5f1cab358fb30b918594",
+        "gold_oracle": "3550ac3f0522d77d6cb0139b041b133914ffcf2e634e5f1cab358fb30b918594",
+        "inverted_control": "f7ada29dd0d9effdf7861c20c48f8777654d7b8eeb24f7debe2c0416788be7cc"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "16803626_23_A3PILUAB7LZGWQ",
+      "gold_warrant_index": 0,
+      "predicted_warrant_index": 0,
+      "roots": {
+        "blind_prediction": "52735fb86df1f6d0d86a561e3cbec9b7b669f55bb70d8dd0b7f8f8bf752a0247",
+        "gold_oracle": "52735fb86df1f6d0d86a561e3cbec9b7b669f55bb70d8dd0b7f8f8bf752a0247",
+        "inverted_control": "e9da59269a2b05702da357d38e7d9838678bc874bda0d770afbfc730e8bf1eaa"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "16967643_582_A1DJNUJZN8FE7N",
+      "gold_warrant_index": 1,
+      "predicted_warrant_index": 1,
+      "roots": {
+        "blind_prediction": "f2673891b74305e0c59032db272e049c3dc25e044900a45fdff3b7211e1095d6",
+        "gold_oracle": "f2673891b74305e0c59032db272e049c3dc25e044900a45fdff3b7211e1095d6",
+        "inverted_control": "10fe7daa107a4993fbfca4c6902616963f7a89f543e7686ce849df5181bec607"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "17009879_146_AA7ASGQEOMKEZ",
+      "gold_warrant_index": 0,
+      "predicted_warrant_index": 0,
+      "roots": {
+        "blind_prediction": "11fb162db54d6afc0bb6703b4500e2c171907a813911b15e12c000d7dd0bc9e4",
+        "gold_oracle": "11fb162db54d6afc0bb6703b4500e2c171907a813911b15e12c000d7dd0bc9e4",
+        "inverted_control": "43f6b9b3711e5fa4d2a3acfbdd236a5563d4b99c9373bd3f7c25d8f88a60e49e"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    },
+    {
+      "blind_correct": true,
+      "case_id": "17015769_0_A34QZDSTKZ3JO9",
+      "gold_warrant_index": 0,
+      "predicted_warrant_index": 0,
+      "roots": {
+        "blind_prediction": "a1253e72a7579d4fcd5de09a1b96f5ad57b7cdb6307c4bb2968577137701c00b",
+        "gold_oracle": "a1253e72a7579d4fcd5de09a1b96f5ad57b7cdb6307c4bb2968577137701c00b",
+        "inverted_control": "f010c76f6b913f69779200ca249a7b5ea813cbf231c2fd5f3cb85cc93982d6e6"
+      },
+      "validation_warning_counts": {
+        "blind_prediction": 2,
+        "gold_oracle": 2,
+        "inverted_control": 2
+      }
+    }
+  ],
+  "schema": "openline.claim-graph.arct-development-report.v1",
+  "selection": {
+    "algorithm": "lowest 24 unsigned FNV-1a-32(seed + '|' + case_id), tie-break case_id ascending",
+    "gold_labels_hidden_from_mapper": true,
+    "seed": "openline-claim-graph-arct-dev-v1|929f5847487e28036e60803f72e26a82c638db43",
+    "selected_rows": 24,
+    "upstream_rows": 316
+  },
+  "source": {
+    "commit": "929f5847487e28036e60803f72e26a82c638db43",
+    "git_blob_sha": "f2a591421d1d61f16e8e5b54e28e9f71d41ba1f5",
+    "license": "Apache-2.0",
+    "paper_doi": "10.18653/v1/N18-1175",
+    "path": "experiments/src/main/python/data/dev.tsv",
+    "repository": "UKPLab/argument-reasoning-comprehension-task"
+  },
+  "status": "EXPLORATORY_INDEPENDENT_GOLD_POSITIVE_CONTROL"
+}

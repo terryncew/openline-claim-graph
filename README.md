@@ -76,7 +76,7 @@ The fixture public key is also recorded in `artifacts/demo/fixture-public-key.js
 
 ## Evidence generated here
 
-- 23 offline unit/adversarial tests.
+- 33 offline unit/adversarial/protocol/development tests.
 - 10,000 deterministic tamper mutations detected with zero misses.
 - Exact-quote mislabeling is rejected.
 - Paraphrase/inference labels remain admitted only as disclosed, semantically unverified mappings.
@@ -85,6 +85,14 @@ The fixture public key is also recorded in `artifacts/demo/fixture-public-key.js
 - A 1,000-claim controlled graph produced a roughly 1.4 KB signed state receipt and a roughly 3.7 KB one-claim projection. The full snapshot was roughly 643 KB.
 
 Those are mechanical results. The controlled fixture was designed here, so it is not evidence that the graph improves decisions on natural material.
+
+### Independent-gold development check
+
+`experiments/development_benchmarks/arct/` adds a constrained real-data check against the independently annotated Argument Reasoning Comprehension Task. A deterministic 24-case subset was selected before labels were shown to the mapper. One frozen interactive pass chose the correct implicit warrant in 21 cases. The three errors are retained.
+
+The executable check builds the blind mapping, the upstream gold mapping, and the opposite-warrant control for every case. All 72 graph states verify; the gold and opposite controls score 24/24 and 0/24; and the chosen warrant changes the committed root in every case.
+
+This is a positive control for source-to-structure signal, not evidence of receiver value. It is multiple-choice, small, potentially exposed in model pretraining, and lacks an independent public prediction precommit. It does not enter the human pilot.
 
 ## Decision-value pilot
 
@@ -96,7 +104,7 @@ Those are mechanical results. The controlled fixture was designed here, so it is
 
 Condition is assigned between receivers, case selection is locked before mapping, positive keys require an explicit external anchor, and no-conflict cases measure false discovery. Stage 1 is an effect-size and operations pilot only; it cannot promote or archive the value claim.
 
-The case pack is intentionally empty. No cases, human trials, or decision-value results exist yet.
+The analyzed pilot case pack is intentionally empty. The ARCT development fixture is not an admitted Stage 1 case pack. No human trials or decision-value results exist yet.
 
 ## Promotion status
 

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0.dev2 — 2026-08-15
+
+- Added a deterministic 24-case development subset of the independently annotated ARCT missing-premise benchmark, with upstream commit, blob, license, selection rule, and attribution fixed in the repository.
+- Recorded one label-blind interactive mapping pass before revealing the upstream gold labels: 21/24 correct. All three misses remain visible.
+- Added executable gold-oracle and inverted-warrant controls: 24/24 and 0/24, respectively.
+- Built and validated 72 graph states across blind, oracle, and inverted mappings; the selected warrant changes the committed state in every case.
+- Added four real-data development tests and a source-tamper check.
+- Kept the result outside the receiver pilot. It does not test graph-versus-summary value, open-ended extraction, or Stage 1 continuation.
+
 ## 0.1.0.dev1 — 2026-08-15
 
 - Added the unrun, human receiver decision-value pilot protocol.

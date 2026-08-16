@@ -1,6 +1,6 @@
 # Push status
 
-Version: `0.1.0.dev1`
+Version: `0.1.0.dev2`
 
 Disposition: `READY_TO_PUSH_AS_EXPERIMENTAL_PROTOTYPE`
 
@@ -13,7 +13,7 @@ It is **not** ready to be described as a production OpenLine component, knowledg
 Verified locally before packaging:
 
 - Python source compilation
-- 29 unit/adversarial/protocol tests
+- 33 unit/adversarial/protocol/development tests
 - 10,000 deterministic tamper mutations with zero misses
 - controlled branch/merge demo
 - composed bundle verification
@@ -22,7 +22,11 @@ Verified locally before packaging:
 - clean target-directory install and import
 - deterministic between-receiver pilot assignment checks
 - machine-readable pilot contract and empty case-pack templates
+- deterministic 24-case ARCT development fixture with upstream attribution and Apache-2.0 license
+- exact field-and-label comparison of the frozen fixture against the pinned upstream Git blob, plus a reproduction script
+- one label-blind mapping pass scoring 21/24 against independently produced missing-premise labels
+- 24/24 gold-oracle and 0/24 inverted-warrant controls across 72 mechanically valid graph states
 
 The GitHub Actions matrix explicitly installs the declared build backend before exercising no-build-isolation wheel construction. It does not rely on Python runner images to bundle `setuptools`.
 
-The decision-value pilot has not been run. No cases, receivers, efficacy results, model API calls, or experiment charges are included in this release.
+The decision-value pilot has not been run. Its analyzed case pack is empty, and there are no receivers or efficacy results. The ARCT check is a development positive control only. It used one interactive model mapping pass, no programmatic experiment API calls, and no incremental experiment charges.

@@ -1,6 +1,6 @@
 {
-  "aggregate_sha256": "b86cbf74be7969eb84aa06cf485e07c099736a60317ecb099b8a973eb9a18796",
-  "file_count": 59,
+  "aggregate_sha256": "ee98398956cffbf3d717ff823e739664f2af568c9325fbd4430a0815444704f3",
+  "file_count": 70,
   "files": [
     {
       "bytes": 1077,
@@ -13,19 +13,19 @@
       "sha256": "6e328070b6749987b63470925c9b8ed781af5cbcf6987150f818f628e3ff5ebe"
     },
     {
-      "bytes": 3253,
+      "bytes": 4550,
       "path": "ASSESSMENT.md",
-      "sha256": "2dfd2a956ccde7fc383bc5eaeba186e329adaf89e0d4e9a0918a44d73b922a8c"
+      "sha256": "b5171d5f166d2f26e205c2bd9ec86028ac5f732e3f8c63ae8bcc994ff0f04060"
     },
     {
-      "bytes": 1735,
+      "bytes": 2563,
       "path": "CHANGELOG.md",
-      "sha256": "ccf8bdfb6fae485b56f71acbd3225fd75781827da7ee7dbd9bdc614458968bf1"
+      "sha256": "30b6018f4b6379c8a65e0cf15bcb0f66d8b2ec50e26f6751d711102f8b5ea1a0"
     },
     {
-      "bytes": 1173,
+      "bytes": 2185,
       "path": "CLAIM_BOUNDARY.md",
-      "sha256": "fcaea78b5db865c0adca8c6570a3478b0a3e9947519aff6dd3eeccc38633f4a8"
+      "sha256": "d3b96dfc25d6563fe399bdaaf294ab1f2a90039ea26ee88ce70fcdd8d06e6ba9"
     },
     {
       "bytes": 1071,
@@ -33,14 +33,19 @@
       "sha256": "07674dfa9960dff5128d0cdcce58fee7543c26ff47e58e07ae6ac0254a0f58b1"
     },
     {
-      "bytes": 6580,
+      "bytes": 7583,
       "path": "README.md",
-      "sha256": "33aba0d4699ec816c45fdb10087d11e4991e2dca341b9020579257b2bb477ff8"
+      "sha256": "4971033774952d03d6429ff91375466ae29c533172f232746a69a209c1de2282"
     },
     {
-      "bytes": 1305,
+      "bytes": 1882,
       "path": "RELEASE.md",
-      "sha256": "473cf181f89d8dcd38f6493546c6842d2fe9e6a00e312fe0722bd1a99684d652"
+      "sha256": "3932aacc34287a4a223f59a32b8dad4bf26a7ad6f5cccdb518b009746268a761"
+    },
+    {
+      "bytes": 15678,
+      "path": "artifacts/arct-development-check/report.json",
+      "sha256": "b5058e5c72e6e6b5b156bff0276230934252bc64250a5703cc896b5a259bbf37"
     },
     {
       "bytes": 1534,
@@ -133,6 +138,41 @@
       "sha256": "44b4641c5a64dd0621420d83339d94946b93bc262f1dc68ac3ff820fa4374b53"
     },
     {
+      "bytes": 11357,
+      "path": "experiments/development_benchmarks/arct/LICENSE-ARCT-APACHE-2.0.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "bytes": 3793,
+      "path": "experiments/development_benchmarks/arct/README.md",
+      "sha256": "fd975a3741d899322e0aaee847de5f255d4fac6ad58c6c02e9ed69f64bd770e6"
+    },
+    {
+      "bytes": 795,
+      "path": "experiments/development_benchmarks/arct/THIRD_PARTY_NOTICE.md",
+      "sha256": "b6c9493dda98e937d46885c26f7db3adee084427b1d3ec59b2f58d1124991253"
+    },
+    {
+      "bytes": 14111,
+      "path": "experiments/development_benchmarks/arct/cases.blind.json",
+      "sha256": "964fb861d48af8e038c56ad810378805f2fd22c3b44f411387e9c036a82bd5c6"
+    },
+    {
+      "bytes": 2118,
+      "path": "experiments/development_benchmarks/arct/codex-predictions.pre-reveal.json",
+      "sha256": "8557a2303c87cb25ffcafc3fb7a1d043aafacf7500af80f319cdc6850b798035"
+    },
+    {
+      "bytes": 1819,
+      "path": "experiments/development_benchmarks/arct/gold.revealed.json",
+      "sha256": "e02fc17f9a0b8451208630b57c1e7b9eed7c333af37b416810bc761f26b73e74"
+    },
+    {
+      "bytes": 744,
+      "path": "experiments/development_benchmarks/arct/upstream-verification.json",
+      "sha256": "3d276a4bdc2f44bfef7baffd616887a6bd0fc81b55ee61d1d831a9d63f386049"
+    },
+    {
       "bytes": 4040,
       "path": "experiments/receiver_discovery_pilot/ANALYSIS_PLAN.md",
       "sha256": "855d82fb974fd896b43f0b8bf23aa3e01099a72dc753353df50a569546c30e86"
@@ -215,7 +255,7 @@
     {
       "bytes": 518,
       "path": "pyproject.toml",
-      "sha256": "b8c6a15a77bcaee108bea362b43f6a18aa229224f504819d464240a75f9a7ae2"
+      "sha256": "ac4ebce9f3afa4cf47ecc101261862baaad6ff44897bbb98ad1e2ff58091d054"
     },
     {
       "bytes": 7569,
@@ -223,14 +263,24 @@
       "sha256": "2b7347a942878826c4753103b5111f12615c7a7380c7c31085105c51145ea04a"
     },
     {
-      "bytes": 7792,
+      "bytes": 10837,
       "path": "scripts/release_check.py",
-      "sha256": "f522bb6e3f05c69a4d74a28b65d5f989b93236014af6cde6eddc79fcb48db2f6"
+      "sha256": "af4f78152a40b4e4bccc20e72478f771cefc4304e7d927ed376c41fae775418f"
+    },
+    {
+      "bytes": 10871,
+      "path": "scripts/run_arct_development_check.py",
+      "sha256": "27a1cfef0ce9e99e3d19a032a405e3deab071b41a52b7facb72eb62cdfa2d99e"
     },
     {
       "bytes": 2754,
       "path": "scripts/scaling_probe.py",
       "sha256": "071a97d31de24589d62b09061abcf7b7ebced5d2a7c48b96ba6728f31887c17b"
+    },
+    {
+      "bytes": 4025,
+      "path": "scripts/verify_arct_upstream.py",
+      "sha256": "cfb1bf3bf2693b9f3c6408f3ed379ae90255ba322fa3db021593a4535f11bb9d"
     },
     {
       "bytes": 1212,
@@ -281,6 +331,11 @@
       "bytes": 3675,
       "path": "src/openline_claim_graph/wallet.py",
       "sha256": "c773637c2e4ed56803a3e056f7416c34676c0e89732416e647dc6fb04607c1c1"
+    },
+    {
+      "bytes": 2495,
+      "path": "tests/test_arct_development_check.py",
+      "sha256": "5659b40e673d332364112b479dfc1c64bc453809b0b0fecd527cef380b35e3ac"
     },
     {
       "bytes": 19279,

@@ -14,7 +14,7 @@ It demonstrates that a receiver can verify:
 
 It does **not** demonstrate:
 
-- automated extraction accuracy on natural material;
+- open-ended automated extraction accuracy on natural material;
 - semantic fidelity of paraphrases, inferences, or relation labels;
 - completeness or neutrality of a selected graph projection;
 - ontology neutrality;
@@ -23,3 +23,9 @@ It does **not** demonstrate:
 - truth, coherence, reputation, consciousness, safety, or authorization.
 
 The graph records representations and relations among representations. Reality remains outside the receipt.
+
+## Independent-gold development check
+
+Version `0.1.0.dev2` adds one narrow outside-labeled positive control. A single interactive model pass chose between two proposed missing premises for 24 deterministically selected ARCT arguments while the gold labels were withheld. It matched 21/24 upstream labels. The graph code then committed the chosen premise, reproduced the 21/24 score, made the upstream oracle score 24/24, made the opposite-warrant control score 0/24, and produced distinct gold/decoy roots for every case.
+
+That result shows non-random signal in one small multiple-choice source-to-structure check. It does not establish open-ended extraction fidelity, model generalization, graph usefulness to a receiver, or any claim in the unrun three-arm pilot. ARCT is public and old enough that model-training contamination cannot be excluded. The prediction vector was ordered before label reveal in the build conversation, but it did not receive an independent public timestamped precommit.

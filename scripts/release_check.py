@@ -60,6 +60,7 @@ def main() -> int:
     test_count = int(match.group(1))
     run([sys.executable, "examples/build_demo.py", "--output", "artifacts/demo"])
     run([sys.executable, "scripts/scaling_probe.py"])
+    run([sys.executable, "scripts/run_arct_development_check.py"])
 
     grammar_files = [
         path
@@ -112,6 +113,12 @@ def main() -> int:
     pilot_contract = json.loads(
         (ROOT / "experiments/receiver_discovery_pilot/pilot-contract.json").read_text(encoding="utf-8")
     )
+    arct_report = json.loads(
+        (ROOT / "artifacts/arct-development-check/report.json").read_text(encoding="utf-8")
+    )
+    arct_upstream_verification = json.loads(
+        (ROOT / "experiments/development_benchmarks/arct/upstream-verification.json").read_text(encoding="utf-8")
+    )
     checks = {
         "compileall": True,
         "python_3_11_grammar_parse": len(grammar_files),
@@ -129,6 +136,16 @@ def main() -> int:
         "pilot_condition_unit": pilot_contract["assignment"]["condition_unit"],
         "pilot_stage_1_promotion_allowed": pilot_contract["analysis"]["stage_1_promotion_allowed"],
         "pilot_target_receiver_type": pilot_contract["target_receiver_type"],
+        "arct_status": arct_report["status"],
+        "arct_blind_mapping_hits": arct_report["checks"]["blind_mapping_hits"],
+        "arct_blind_mapping_total": arct_report["checks"]["blind_mapping_total"],
+        "arct_gold_oracle_hits": arct_report["checks"]["gold_oracle_hits"],
+        "arct_inverted_control_hits": arct_report["checks"]["inverted_control_hits"],
+        "arct_mechanically_valid_graphs": arct_report["checks"]["mechanically_valid_graphs"],
+        "arct_gold_vs_inverted_roots_distinct": arct_report["checks"]["gold_vs_inverted_roots_distinct"],
+        "arct_receiver_decision_value_tested": False,
+        "arct_upstream_fixture_exact_match": arct_upstream_verification["exact_match"],
+        "arct_upstream_fixture_mismatches": len(arct_upstream_verification["mismatches"]),
         "scaling_probe_claim_counts": [item["claim_count"] for item in scaling["results"]],
     }
     if not all(
@@ -143,6 +160,16 @@ def main() -> int:
             checks["pilot_condition_unit"] == "receiver",
             checks["pilot_stage_1_promotion_allowed"] is False,
             checks["pilot_target_receiver_type"] == "human",
+            checks["arct_status"] == "EXPLORATORY_INDEPENDENT_GOLD_POSITIVE_CONTROL",
+            checks["arct_blind_mapping_hits"] == 21,
+            checks["arct_blind_mapping_total"] == 24,
+            checks["arct_gold_oracle_hits"] == 24,
+            checks["arct_inverted_control_hits"] == 0,
+            checks["arct_mechanically_valid_graphs"] == 72,
+            checks["arct_gold_vs_inverted_roots_distinct"] == 24,
+            checks["arct_receiver_decision_value_tested"] is False,
+            checks["arct_upstream_fixture_exact_match"] is True,
+            checks["arct_upstream_fixture_mismatches"] == 0,
         ]
     ):
         raise RuntimeError(f"release checks failed: {checks}")
@@ -165,25 +192,47 @@ def main() -> int:
     ).hexdigest()
 
     dsm_source = WORKSPACE / "upload/dynamic-sentience-maps-v0.2.0rc6-graphify-label-blind-root-ready(2).zip"
-    evidence = {
-        "schema": "openline.claim-graph.prototype-evidence.v1",
-        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
-        "status": "MECHANICALLY_VERIFIED_EXTERNAL_VALUE_UNTESTED",
-        "checks": checks,
-        "inputs": [
+    arct_cases = ROOT / "experiments/development_benchmarks/arct/cases.blind.json"
+    arct_gold = ROOT / "experiments/development_benchmarks/arct/gold.revealed.json"
+    arct_predictions = ROOT / "experiments/development_benchmarks/arct/codex-predictions.pre-reveal.json"
+    inputs = []
+    if dsm_source.exists():
+        inputs.append(
             {
                 "name": dsm_source.name,
                 "sha256": sha256_file(dsm_source),
                 "usage": "Read-only architecture and claim-boundary inspection; no source code copied.",
             }
-        ] if dsm_source.exists() else [],
+        )
+    inputs.append(
+        {
+            "name": "ARCT dev subset and revealed key",
+            "upstream_repository": "UKPLab/argument-reasoning-comprehension-task",
+            "upstream_commit": "929f5847487e28036e60803f72e26a82c638db43",
+            "upstream_path": "experiments/src/main/python/data/dev.tsv",
+            "upstream_git_blob_sha": "f2a591421d1d61f16e8e5b54e28e9f71d41ba1f5",
+            "cases_sha256": sha256_file(arct_cases),
+            "gold_sha256": sha256_file(arct_gold),
+            "predictions_sha256": sha256_file(arct_predictions),
+            "usage": "Independent-gold, multiple-choice missing-premise development check; not a receiver pilot.",
+        }
+    )
+    evidence = {
+        "schema": "openline.claim-graph.prototype-evidence.v1",
+        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
+        "status": "MECHANICALLY_VERIFIED_INDEPENDENT_GOLD_DEVELOPMENT_CHECK_EXTERNAL_VALUE_UNTESTED",
+        "checks": checks,
+        "inputs": inputs,
         "manifest_aggregate_sha256": manifest["aggregate_sha256"],
         "claim_boundary": (
             "Evidence covers deterministic integrity, source-span, lineage, projection, and receiver-policy mechanics "
-            "on controlled fixtures. It does not cover natural-language extraction fidelity or decision value."
+            "plus one small independently labeled, multiple-choice missing-premise mapping check (21/24). It does not "
+            "cover open-ended extraction fidelity, model generalization, or graph-versus-summary receiver value."
         ),
         "incremental_api_spend_usd": 0,
-        "model_calls": 0,
+        "model_calls": 1,
+        "interactive_model_mapping_passes": 1,
+        "programmatic_experiment_api_calls": 0,
         "external_publication_or_push": False,
         "compile_output": compile_output.strip(),
     }
