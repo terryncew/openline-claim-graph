@@ -1,0 +1,34 @@
+{
+  "custody": "Expected classifications were authored with the specimen topology. They test deterministic implementation fidelity, not independent discovery of the dependency edges.",
+  "expected": {
+    "affected_unresolved": [
+      "claim:sha256:e0dba46f71acad4358ab9cde67d498155881a1198f06fbbe87886fc12ebf994d"
+    ],
+    "decision_claim_ids_touched": [
+      "claim:sha256:0056fca46714576870c52cae36ad84d394c6c0c3e93f4e03c3588158edacce53"
+    ],
+    "quarantine": [
+      "claim:sha256:0056fca46714576870c52cae36ad84d394c6c0c3e93f4e03c3588158edacce53",
+      "claim:sha256:09d18d57737be4c580e31a79b83e1a73b9077d7fa0865cfa3b9db2bc38b714ed",
+      "claim:sha256:390e35fdc0f5c97b77482baead810e923646b1203b95c79c79c39f8d42691105",
+      "claim:sha256:4cea459edc9cee087549869e11c814b972b34016d24ec2b5a3ec9676221282d0",
+      "claim:sha256:77388f43e6335602981b7b0c2abb9b8d37e2a849b2c7d12c082071d2b67bc56c",
+      "claim:sha256:8d5bea6d66ca1437b31effa2ad31ce11bd1f9478250f0d3ac626564e9c62b43c",
+      "claim:sha256:a2d84439f34b015f9c773b9e4d4bdfd2864973f7e31fb6273870c77ab23bea2a"
+    ],
+    "survives": [
+      "claim:sha256:b8259546395efb02803202580a360cd9250c81024bf0a5064646ce535989a586"
+    ]
+  },
+  "labels": {
+    "abstract.sample.mdd": "claim:sha256:a2d84439f34b015f9c773b9e4d4bdfd2864973f7e31fb6273870c77ab23bea2a",
+    "accepted.abstract_interpretation": "claim:sha256:77388f43e6335602981b7b0c2abb9b8d37e2a849b2c7d12c082071d2b67bc56c",
+    "accepted.approximate_sample": "claim:sha256:b8259546395efb02803202580a360cd9250c81024bf0a5064646ce535989a586",
+    "accepted.denominator_decision": "claim:sha256:0056fca46714576870c52cae36ad84d394c6c0c3e93f4e03c3588158edacce53",
+    "accepted.summary_review": "claim:sha256:e0dba46f71acad4358ab9cde67d498155881a1198f06fbbe87886fc12ebf994d",
+    "accepted.unaffected_cost_decision": "claim:sha256:d14f3b5beeebd36bcc2e59b0860612455b6b018ec5bf52100d5ab3b0067d283c",
+    "main.cost.non_mdd": "claim:sha256:5275216650b06d9d79b9f358ab87f5740bfa2f13e37094547c0ad708641aa28f",
+    "main.sample.mdd": "claim:sha256:5bd63219b19b3eabbbbb6dd2cab13d7e98509f76d6903386443786243e3bb33f"
+  },
+  "schema": "openline.claim-impact.specimen-expectation.v1"
+}

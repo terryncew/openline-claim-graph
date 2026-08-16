@@ -1,0 +1,55 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install build and runtime dependencies
+        run: |
+          python -m pip install "setuptools>=68" wheel
+          python -m pip install --no-build-isolation .
+      - name: Unit and hostile tests
+        run: python -m unittest discover -s tests -v
+      - name: Build controlled demo
+        run: python examples/build_demo.py --output "${{ runner.temp }}/claim-graph-demo"
+      - name: Build natural-material review
+        run: python examples/build_plos_correction_case.py --output "${{ runner.temp }}/plos-correction-case"
+      - name: Build and independently verify evidence recall
+        run: |
+          python examples/build_plos_correction_case.py --output "${{ runner.temp }}/plos-correction-case"
+          python examples/build_plos_correction_impact.py \
+            --base "${{ runner.temp }}/plos-correction-case" \
+            --output "${{ runner.temp }}/plos-correction-impact"
+          python scripts/verify_plos_correction_impact.py \
+            --artifact "${{ runner.temp }}/plos-correction-impact"
+          python scripts/impact_differential_probe.py --iterations 2000
+      - name: Run scaling probe
+        run: python scripts/scaling_probe.py
+      - name: Build and validate automated receiver development pack
+        run: |
+          python scripts/build_arct_automated_receiver_pack.py --output "${{ runner.temp }}/automated-receiver-benchmark"
+          python -m openline_claim_graph benchmark-validate \
+            --pack "${{ runner.temp }}/automated-receiver-benchmark/pack.json" \
+            --gold "${{ runner.temp }}/automated-receiver-benchmark/gold.private.json"
+      - name: Build wheel
+        run: python -m pip wheel . --no-deps --no-build-isolation -w "${{ runner.temp }}/wheel"
+      - name: CLI smoke
+        run: python -m openline_claim_graph --help

@@ -1,0 +1,67 @@
+{
+  "disclosure_id": "source-disclosure:sha256:80480451adb53c5efa3352e8c4f40b3b9f05b30e79902f8e6c28e0b90072ed53",
+  "graph_state_root": "2ae36197753c3c0dc22adc797b9124208387298d9d9e5762de60fcf1b0279a40",
+  "omission_disclosure": "only_sources_referenced_by_the_bounded_projection_are_disclosed",
+  "projection_id": "projection:sha256:f4af3a36ef2f461c15e446b631c2ceef13e929a94d136b30faba4838c9101eb8",
+  "schema": "openline.claim-graph.source-disclosure.v1",
+  "source_manifest_root": "a8ae46656de00c096d58599ad5eb74c5d34b08ee5e61abfdb160d7dcb7209542",
+  "sources": [
+    {
+      "commitment": {
+        "byte_length": 672,
+        "encoding": "utf-8",
+        "locator": "https://doi.org/10.1371/journal.pone.0223255#abstract-results",
+        "media_type": "text/plain",
+        "source_id": "source:sha256:1923034795beb939144ee4fe2e0fde83823f1096a8ed54f69306b93ecdc5e94d"
+      },
+      "proof": [
+        {
+          "sha256": "84723e421653605ac67d1a6c4283723c08e8b8ab02e82578c22f6dbe81228565",
+          "side": "right"
+        },
+        {
+          "sha256": "68efab32c4784f54d8446f032b6f787b1b8d8a185ed7cd69eea7ab751306979f",
+          "side": "right"
+        }
+      ]
+    },
+    {
+      "commitment": {
+        "byte_length": 445,
+        "encoding": "utf-8",
+        "locator": "https://doi.org/10.1371/journal.pone.0223255#results-costs",
+        "media_type": "text/plain",
+        "source_id": "source:sha256:5de6563e6ce5a4642a31da72731251882877771cbcd4196ccb4d383f9c369f02"
+      },
+      "proof": [
+        {
+          "sha256": "f3828f9ce875870df54ca6ca50e3e0239b9be7392234903754a7740f00f1464c",
+          "side": "left"
+        },
+        {
+          "sha256": "68efab32c4784f54d8446f032b6f787b1b8d8a185ed7cd69eea7ab751306979f",
+          "side": "right"
+        }
+      ]
+    },
+    {
+      "commitment": {
+        "byte_length": 311,
+        "encoding": "utf-8",
+        "locator": "https://doi.org/10.1371/journal.pone.0223255#results-sample",
+        "media_type": "text/plain",
+        "source_id": "source:sha256:c9bdf4df2de02e5bb31fade0e76d1221df607e50fdd37b884a32e8b57987358e"
+      },
+      "proof": [
+        {
+          "sha256": "308a0d5d55538d06a023a02bd41bd23e21d7e1d35752eccd91bc8be22f18b2ef",
+          "side": "right"
+        },
+        {
+          "sha256": "d78733405f58e5596807d5650df63e8ba1d334a677a1c6715eade09ded609a29",
+          "side": "left"
+        }
+      ]
+    }
+  ]
+}

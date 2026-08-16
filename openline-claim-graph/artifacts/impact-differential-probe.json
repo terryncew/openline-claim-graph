@@ -1,0 +1,14 @@
+{
+  "claim_boundary": "Randomized differential testing validates implementation agreement with a separate oracle. It does not validate real-world dependency-edge accuracy or product value.",
+  "coverage": {
+    "cases_with_advisory": 1902,
+    "cases_with_backup_anchor": 1504,
+    "cases_with_transitive_quarantine": 1221
+  },
+  "iterations": 2000,
+  "mismatch_count": 0,
+  "mismatches": [],
+  "schema": "openline.claim-impact.differential-probe.v1",
+  "seed": 236839196,
+  "status": "PASS"
+}

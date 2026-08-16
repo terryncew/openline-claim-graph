@@ -1,0 +1,229 @@
+{
+  "accepted_state_root": "4486fb3f7333b9cc29003066be6aa4a0ee633e392529190527b21c96ef2f072c",
+  "claim_boundary": "Given this exact accepted graph, source-status event, and receiver-owned edge policy, these are the mechanically implied exposures. The report does not certify the semantic truth or completeness of any claim, edge, event scope, or source. It proposes review; it does not mutate the accepted graph.",
+  "classifications": {
+    "affected_unresolved": [
+      {
+        "claim_id": "claim:sha256:e0dba46f71acad4358ab9cde67d498155881a1198f06fbbe87886fc12ebf994d",
+        "classification": "AFFECTED_UNRESOLVED",
+        "kind": "UNRESOLVED_QUESTION",
+        "reason": "PATH_INCLUDES_ADVISORY_EDGE",
+        "text": "Does the executive summary require revision after the numerical correction?",
+        "witness_path": {
+          "origin_claim_id": "claim:sha256:a2d84439f34b015f9c773b9e4d4bdfd2864973f7e31fb6273870c77ab23bea2a",
+          "steps": [
+            {
+              "authority": "HARD",
+              "from_claim_id": "claim:sha256:a2d84439f34b015f9c773b9e4d4bdfd2864973f7e31fb6273870c77ab23bea2a",
+              "relation": "DERIVED_FROM",
+              "relation_id": "relation:sha256:221be4a8fd779760b1186b316cf2356f44a34688405a5cfa1707bfbd6aab9fe5",
+              "to_claim_id": "claim:sha256:77388f43e6335602981b7b0c2abb9b8d37e2a849b2c7d12c082071d2b67bc56c"
+            },
+            {
+              "authority": "ADVISORY",
+              "from_claim_id": "claim:sha256:77388f43e6335602981b7b0c2abb9b8d37e2a849b2c7d12c082071d2b67bc56c",
+              "relation": "DERIVED_FROM",
+              "relation_id": "relation:sha256:560e344487f31ba1cc12507866f4d93af3d19de07dcd22af79617db083d87dd0",
+              "to_claim_id": "claim:sha256:e0dba46f71acad4358ab9cde67d498155881a1198f06fbbe87886fc12ebf994d"
+            }
+          ]
+        }
+      }
+    ],
+    "quarantine": [
+      {
+        "claim_id": "claim:sha256:0056fca46714576870c52cae36ad84d394c6c0c3e93f4e03c3588158edacce53",
+        "classification": "QUARANTINE",
+        "kind": "ASSUMPTION",
+        "reason": "REQUIRED_DEPENDENCY_LOST",
+        "text": "Downstream rate calculations use 29,543 as the eligible MDD denominator.",
+        "witness_path": {
+          "origin_claim_id": "claim:sha256:a2d84439f34b015f9c773b9e4d4bdfd2864973f7e31fb6273870c77ab23bea2a",
+          "steps": [
+            {
+              "from_claim_id": "claim:sha256:a2d84439f34b015f9c773b9e4d4bdfd2864973f7e31fb6273870c77ab23bea2a",
+              "relation": "DERIVED_FROM",
+              "relation_id": "relation:sha256:221be4a8fd779760b1186b316cf2356f44a34688405a5cfa1707bfbd6aab9fe5",
+              "to_claim_id": "claim:sha256:77388f43e6335602981b7b0c2abb9b8d37e2a849b2c7d12c082071d2b67bc56c"
+            },
+            {
+              "from_claim_id": "claim:sha256:77388f43e6335602981b7b0c2abb9b8d37e2a849b2c7d12c082071d2b67bc56c",
+              "relation": "DEPENDS_ON",
+              "relation_id": "relation:sha256:0eb2201ddada4a1c48966dd71287b95a32f2e572eda05b303c693b6f96433f22",
+              "to_claim_id": "claim:sha256:0056fca46714576870c52cae36ad84d394c6c0c3e93f4e03c3588158edacce53"
+            }
+          ]
+        }
+      },
+      {
+        "claim_id": "claim:sha256:09d18d57737be4c580e31a79b83e1a73b9077d7fa0865cfa3b9db2bc38b714ed",
+        "classification": "QUARANTINE",
+        "kind": "MEASUREMENT",
+        "reason": "SOURCE_BASIS_LOST",
+        "text": "$25,517 vs. $20,425, adjusted cost difference = $3,385",
+        "witness_path": {
+          "origin_claim_id": "claim:sha256:09d18d57737be4c580e31a79b83e1a73b9077d7fa0865cfa3b9db2bc38b714ed",
+          "steps": []
+        }
+      },
+      {
+        "claim_id": "claim:sha256:390e35fdc0f5c97b77482baead810e923646b1203b95c79c79c39f8d42691105",
+        "classification": "QUARANTINE",
+        "kind": "MEASUREMENT",
+        "reason": "SOURCE_BASIS_LOST",
+        "text": "157,611 were included in the non-MDD cohort.",
+        "witness_path": {
+          "origin_claim_id": "claim:sha256:390e35fdc0f5c97b77482baead810e923646b1203b95c79c79c39f8d42691105",
+          "steps": []
+        }
+      },
+      {
+        "claim_id": "claim:sha256:4cea459edc9cee087549869e11c814b972b34016d24ec2b5a3ec9676221282d0",
+        "classification": "QUARANTINE",
+        "kind": "MEASUREMENT",
+        "reason": "SOURCE_BASIS_LOST",
+        "text": "3,225 (10.9%) met the study definition of TRD",
+        "witness_path": {
+          "origin_claim_id": "claim:sha256:4cea459edc9cee087549869e11c814b972b34016d24ec2b5a3ec9676221282d0",
+          "steps": []
+        }
+      },
+      {
+        "claim_id": "claim:sha256:77388f43e6335602981b7b0c2abb9b8d37e2a849b2c7d12c082071d2b67bc56c",
+        "classification": "QUARANTINE",
+        "kind": "INFERENCE",
+        "reason": "REQUIRED_DEPENDENCY_LOST",
+        "text": "The eligible MDD cohort size is 29,543.",
+        "witness_path": {
+          "origin_claim_id": "claim:sha256:a2d84439f34b015f9c773b9e4d4bdfd2864973f7e31fb6273870c77ab23bea2a",
+          "steps": [
+            {
+              "from_claim_id": "claim:sha256:a2d84439f34b015f9c773b9e4d4bdfd2864973f7e31fb6273870c77ab23bea2a",
+              "relation": "DERIVED_FROM",
+              "relation_id": "relation:sha256:221be4a8fd779760b1186b316cf2356f44a34688405a5cfa1707bfbd6aab9fe5",
+              "to_claim_id": "claim:sha256:77388f43e6335602981b7b0c2abb9b8d37e2a849b2c7d12c082071d2b67bc56c"
+            }
+          ]
+        }
+      },
+      {
+        "claim_id": "claim:sha256:8d5bea6d66ca1437b31effa2ad31ce11bd1f9478250f0d3ac626564e9c62b43c",
+        "classification": "QUARANTINE",
+        "kind": "MEASUREMENT",
+        "reason": "SOURCE_BASIS_LOST",
+        "text": "$25,517 vs. $14,542, adjusted cost difference = $4,015",
+        "witness_path": {
+          "origin_claim_id": "claim:sha256:8d5bea6d66ca1437b31effa2ad31ce11bd1f9478250f0d3ac626564e9c62b43c",
+          "steps": []
+        }
+      },
+      {
+        "claim_id": "claim:sha256:a2d84439f34b015f9c773b9e4d4bdfd2864973f7e31fb6273870c77ab23bea2a",
+        "classification": "QUARANTINE",
+        "kind": "MEASUREMENT",
+        "reason": "SOURCE_BASIS_LOST",
+        "text": "Of 29,543 patients with MDD",
+        "witness_path": {
+          "origin_claim_id": "claim:sha256:a2d84439f34b015f9c773b9e4d4bdfd2864973f7e31fb6273870c77ab23bea2a",
+          "steps": []
+        }
+      }
+    ],
+    "survives": [
+      {
+        "claim_id": "claim:sha256:b8259546395efb02803202580a360cd9250c81024bf0a5064646ce535989a586",
+        "classification": "SURVIVES",
+        "kind": "INFERENCE",
+        "reason": "ADMITTED_ALTERNATIVE_BASIS_REMAINS",
+        "retained_source_ids": [],
+        "retained_support_claim_ids": [
+          "claim:sha256:5bd63219b19b3eabbbbb6dd2cab13d7e98509f76d6903386443786243e3bb33f"
+        ],
+        "text": "The eligible MDD cohort was approximately 29.5 thousand patients."
+      }
+    ],
+    "unaffected": [
+      {
+        "claim_id": "claim:sha256:19f65d8a75e6ffce6278a3156888bda13e9cbf7396ee03c167f36149a07b33aa",
+        "kind": "MEASUREMENT",
+        "text": "3,224 (10.9%) met the study definition of TRD."
+      },
+      {
+        "claim_id": "claim:sha256:5275216650b06d9d79b9f358ab87f5740bfa2f13e37094547c0ad708641aa28f",
+        "kind": "MEASUREMENT",
+        "text": "adjusted cost difference = $3,675, P <0.001"
+      },
+      {
+        "claim_id": "claim:sha256:5bd63219b19b3eabbbbb6dd2cab13d7e98509f76d6903386443786243e3bb33f",
+        "kind": "MEASUREMENT",
+        "text": "29,540 were pharmacologically-treated patients with MDD who qualified for inclusion."
+      },
+      {
+        "claim_id": "claim:sha256:711ddfaf9dfabb9dc3377753129a0170b98ecb971c7022a30a0c0bc38d0821ec",
+        "kind": "MEASUREMENT",
+        "text": "Patients with non-TRD MDD (N = 26,316) or non-MDD (N = 157,590) were all matched 1:1 to patients with TRD."
+      },
+      {
+        "claim_id": "claim:sha256:b29cd263e96ba5f62a39bd6200e4f4f197bb0410a3ee6a6dbce3f8c5625e2432",
+        "kind": "MEASUREMENT",
+        "text": "adjusted cost difference = $3,377, P <0.001"
+      },
+      {
+        "claim_id": "claim:sha256:d14f3b5beeebd36bcc2e59b0860612455b6b018ec5bf52100d5ab3b0067d283c",
+        "kind": "ASSUMPTION",
+        "text": "Use $3,675 as the adjusted TRD versus non-MDD cost difference in downstream planning."
+      }
+    ]
+  },
+  "decision_claim_ids_touched": [
+    "claim:sha256:0056fca46714576870c52cae36ad84d394c6c0c3e93f4e03c3588158edacce53"
+  ],
+  "event_id": "source-status-event:sha256:d49971d40209a6539622106430e9bdf47b5f2af59a8b868a0b0671fc1be3f8fc",
+  "ignored_relation_ids": [
+    "relation:sha256:2ed56f6fcb194ed3228e19d62f5401ab1825eb5a19a36cebf45e974025a9098b",
+    "relation:sha256:6ccaba6099cc6e0aabac67a09deaceb23e4dd836ffb995b7b3e08fc8d652e673",
+    "relation:sha256:9d91ddf59ad45d8614606bd8b2bd0b863e746d985d59647cf521420eeecebf52",
+    "relation:sha256:b1df1de2925827b7f8663d7e320d4c0ff1bf35e66c3377d218d68e105c592400",
+    "relation:sha256:fae4c4ec7f428838e95d3787a0dceb02fb7775c818644395357437f175884cfd"
+  ],
+  "policy_id": "claim-impact-policy:sha256:40938147890bfda88c7126a4e6d1e6f20312deea8be085f9d7b4c878524cfbf9",
+  "report_id": "claim-impact-report:sha256:67fc15a96446717ee1c46233672b91538849f5612d441321cac9dd8d1e6d8319",
+  "schema": "openline.claim-impact-report.v1",
+  "source_exposed_claim_ids": [
+    "claim:sha256:09d18d57737be4c580e31a79b83e1a73b9077d7fa0865cfa3b9db2bc38b714ed",
+    "claim:sha256:390e35fdc0f5c97b77482baead810e923646b1203b95c79c79c39f8d42691105",
+    "claim:sha256:4cea459edc9cee087549869e11c814b972b34016d24ec2b5a3ec9676221282d0",
+    "claim:sha256:8d5bea6d66ca1437b31effa2ad31ce11bd1f9478250f0d3ac626564e9c62b43c",
+    "claim:sha256:a2d84439f34b015f9c773b9e4d4bdfd2864973f7e31fb6273870c77ab23bea2a"
+  ],
+  "status": "IMPACT_COMPUTED_CONDITIONALLY",
+  "summary": {
+    "affected_unresolved": 1,
+    "decisions_touched": 1,
+    "quarantine": 7,
+    "source_exposed": 5,
+    "survives": 1,
+    "unaffected": 6
+  },
+  "valid": true,
+  "warnings": [
+    "claim_unanchored:claim:sha256:0056fca46714576870c52cae36ad84d394c6c0c3e93f4e03c3588158edacce53",
+    "claim_unanchored:claim:sha256:77388f43e6335602981b7b0c2abb9b8d37e2a849b2c7d12c082071d2b67bc56c",
+    "claim_unanchored:claim:sha256:b8259546395efb02803202580a360cd9250c81024bf0a5064646ce535989a586",
+    "claim_unanchored:claim:sha256:d14f3b5beeebd36bcc2e59b0860612455b6b018ec5bf52100d5ab3b0067d283c",
+    "claim_unanchored:claim:sha256:e0dba46f71acad4358ab9cde67d498155881a1198f06fbbe87886fc12ebf994d",
+    "event_scope_mapping_asserted_not_mechanically_adjudicated",
+    "impact_policy_relations_not_admitted:5",
+    "relation_unanchored:relation:sha256:0eb2201ddada4a1c48966dd71287b95a32f2e572eda05b303c693b6f96433f22",
+    "relation_unanchored:relation:sha256:221be4a8fd779760b1186b316cf2356f44a34688405a5cfa1707bfbd6aab9fe5",
+    "relation_unanchored:relation:sha256:560e344487f31ba1cc12507866f4d93af3d19de07dcd22af79617db083d87dd0",
+    "relation_unanchored:relation:sha256:b769a244b483960b5da7fd610798c5b0ffd0632b55bb21cef681cbc9680cc1f0",
+    "relation_unanchored:relation:sha256:cc31190dc620e694b8deec7fb6e412d6c5fb52ecf7935a8d686ddff8a4568c11",
+    "relation_unanchored:relation:sha256:cc666aa3a0a0945b51ba3079fc8b1e2b70a6f2a344f8ae4e676e8e97d57576ea",
+    "semantic_mapping_unverified:inference:relation:sha256:2ed56f6fcb194ed3228e19d62f5401ab1825eb5a19a36cebf45e974025a9098b",
+    "semantic_mapping_unverified:inference:relation:sha256:6ccaba6099cc6e0aabac67a09deaceb23e4dd836ffb995b7b3e08fc8d652e673",
+    "semantic_mapping_unverified:inference:relation:sha256:9d91ddf59ad45d8614606bd8b2bd0b863e746d985d59647cf521420eeecebf52",
+    "semantic_mapping_unverified:inference:relation:sha256:b1df1de2925827b7f8663d7e320d4c0ff1bf35e66c3377d218d68e105c592400",
+    "semantic_mapping_unverified:inference:relation:sha256:fae4c4ec7f428838e95d3787a0dceb02fb7775c818644395357437f175884cfd"
+  ]
+}

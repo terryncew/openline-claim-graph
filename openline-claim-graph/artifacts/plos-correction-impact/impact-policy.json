@@ -1,0 +1,22 @@
+{
+  "accepted_state_root": "4486fb3f7333b9cc29003066be6aa4a0ee633e392529190527b21c96ef2f072c",
+  "advisory_relation_ids": [
+    "relation:sha256:560e344487f31ba1cc12507866f4d93af3d19de07dcd22af79617db083d87dd0"
+  ],
+  "decision_claim_ids": [
+    "claim:sha256:0056fca46714576870c52cae36ad84d394c6c0c3e93f4e03c3588158edacce53",
+    "claim:sha256:d14f3b5beeebd36bcc2e59b0860612455b6b018ec5bf52100d5ab3b0067d283c"
+  ],
+  "hard_provenance_modes": [
+    "QUOTE"
+  ],
+  "hard_relation_ids": [
+    "relation:sha256:0eb2201ddada4a1c48966dd71287b95a32f2e572eda05b303c693b6f96433f22",
+    "relation:sha256:221be4a8fd779760b1186b316cf2356f44a34688405a5cfa1707bfbd6aab9fe5",
+    "relation:sha256:b769a244b483960b5da7fd610798c5b0ffd0632b55bb21cef681cbc9680cc1f0",
+    "relation:sha256:cc31190dc620e694b8deec7fb6e412d6c5fb52ecf7935a8d686ddff8a4568c11",
+    "relation:sha256:cc666aa3a0a0945b51ba3079fc8b1e2b70a6f2a344f8ae4e676e8e97d57576ea"
+  ],
+  "policy_id": "claim-impact-policy:sha256:40938147890bfda88c7126a4e6d1e6f20312deea8be085f9d7b4c878524cfbf9",
+  "schema": "openline.claim-impact-policy.v1"
+}

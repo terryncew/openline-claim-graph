@@ -1,0 +1,47 @@
+{
+  "affected": [
+    {
+      "source_id": "source:sha256:1923034795beb939144ee4fe2e0fde83823f1096a8ed54f69306b93ecdc5e94d",
+      "spans": [
+        {
+          "end": 27,
+          "start": 0
+        },
+        {
+          "end": 74,
+          "start": 29
+        },
+        {
+          "end": 120,
+          "start": 76
+        },
+        {
+          "end": 581,
+          "start": 527
+        },
+        {
+          "end": 657,
+          "start": 603
+        }
+      ]
+    }
+  ],
+  "asserted_by": "example:plos-correction-admission-v1",
+  "effective_at": "2021-04-01T00:00:00Z",
+  "event_id": "source-status-event:sha256:d49971d40209a6539622106430e9bdf47b5f2af59a8b868a0b0671fc1be3f8fc",
+  "evidence": [
+    {
+      "asserted_by": "example:plos-correction-admission-v1",
+      "mode": "QUOTE",
+      "quote_sha256": "4536c1a99b7b1b1ef6581342f1f4ee0a71937463f28054e2657ce4144198ba6d",
+      "source_id": "source:sha256:4536c1a99b7b1b1ef6581342f1f4ee0a71937463f28054e2657ce4144198ba6d",
+      "span": {
+        "end": 121,
+        "start": 0
+      }
+    }
+  ],
+  "reason": "The PLOS correction explicitly reports numerical inconsistency between the abstract and main text. This admitted scope maps that notice to the five represented abstract values.",
+  "schema": "openline.source-status-event.v1",
+  "status": "CORRECTED"
+}

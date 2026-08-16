@@ -1,0 +1,52 @@
+{
+  "accepted_receipt": {
+    "claim_boundary": "Authenticity, integrity, anchor, and lineage checks only; no truth claim.",
+    "errors": [],
+    "valid": true,
+    "warnings": [
+      "claim_unanchored:claim:sha256:0056fca46714576870c52cae36ad84d394c6c0c3e93f4e03c3588158edacce53",
+      "claim_unanchored:claim:sha256:77388f43e6335602981b7b0c2abb9b8d37e2a849b2c7d12c082071d2b67bc56c",
+      "claim_unanchored:claim:sha256:b8259546395efb02803202580a360cd9250c81024bf0a5064646ce535989a586",
+      "claim_unanchored:claim:sha256:d14f3b5beeebd36bcc2e59b0860612455b6b018ec5bf52100d5ab3b0067d283c",
+      "claim_unanchored:claim:sha256:e0dba46f71acad4358ab9cde67d498155881a1198f06fbbe87886fc12ebf994d",
+      "relation_unanchored:relation:sha256:0eb2201ddada4a1c48966dd71287b95a32f2e572eda05b303c693b6f96433f22",
+      "relation_unanchored:relation:sha256:221be4a8fd779760b1186b316cf2356f44a34688405a5cfa1707bfbd6aab9fe5",
+      "relation_unanchored:relation:sha256:560e344487f31ba1cc12507866f4d93af3d19de07dcd22af79617db083d87dd0",
+      "relation_unanchored:relation:sha256:b769a244b483960b5da7fd610798c5b0ffd0632b55bb21cef681cbc9680cc1f0",
+      "relation_unanchored:relation:sha256:cc31190dc620e694b8deec7fb6e412d6c5fb52ecf7935a8d686ddff8a4568c11",
+      "relation_unanchored:relation:sha256:cc666aa3a0a0945b51ba3079fc8b1e2b70a6f2a344f8ae4e676e8e97d57576ea",
+      "semantic_mapping_unverified:inference:relation:sha256:2ed56f6fcb194ed3228e19d62f5401ab1825eb5a19a36cebf45e974025a9098b",
+      "semantic_mapping_unverified:inference:relation:sha256:6ccaba6099cc6e0aabac67a09deaceb23e4dd836ffb995b7b3e08fc8d652e673",
+      "semantic_mapping_unverified:inference:relation:sha256:9d91ddf59ad45d8614606bd8b2bd0b863e746d985d59647cf521420eeecebf52",
+      "semantic_mapping_unverified:inference:relation:sha256:b1df1de2925827b7f8663d7e320d4c0ff1bf35e66c3377d218d68e105c592400",
+      "semantic_mapping_unverified:inference:relation:sha256:fae4c4ec7f428838e95d3787a0dceb02fb7775c818644395357437f175884cfd"
+    ]
+  },
+  "claim_boundary": "Authenticates the accepted state and reproduces impact under the declared event and policy. It does not certify truth, semantic completeness, or authority to mutate that state.",
+  "disposition": "ADMIT_IMPACT_REVIEW",
+  "errors": [],
+  "impact_report": {
+    "disposition": "ADMIT_REPORT",
+    "errors": [],
+    "valid": true
+  },
+  "valid": true,
+  "warnings": [
+    "accepted_receipt:claim_unanchored:claim:sha256:0056fca46714576870c52cae36ad84d394c6c0c3e93f4e03c3588158edacce53",
+    "accepted_receipt:claim_unanchored:claim:sha256:77388f43e6335602981b7b0c2abb9b8d37e2a849b2c7d12c082071d2b67bc56c",
+    "accepted_receipt:claim_unanchored:claim:sha256:b8259546395efb02803202580a360cd9250c81024bf0a5064646ce535989a586",
+    "accepted_receipt:claim_unanchored:claim:sha256:d14f3b5beeebd36bcc2e59b0860612455b6b018ec5bf52100d5ab3b0067d283c",
+    "accepted_receipt:claim_unanchored:claim:sha256:e0dba46f71acad4358ab9cde67d498155881a1198f06fbbe87886fc12ebf994d",
+    "accepted_receipt:relation_unanchored:relation:sha256:0eb2201ddada4a1c48966dd71287b95a32f2e572eda05b303c693b6f96433f22",
+    "accepted_receipt:relation_unanchored:relation:sha256:221be4a8fd779760b1186b316cf2356f44a34688405a5cfa1707bfbd6aab9fe5",
+    "accepted_receipt:relation_unanchored:relation:sha256:560e344487f31ba1cc12507866f4d93af3d19de07dcd22af79617db083d87dd0",
+    "accepted_receipt:relation_unanchored:relation:sha256:b769a244b483960b5da7fd610798c5b0ffd0632b55bb21cef681cbc9680cc1f0",
+    "accepted_receipt:relation_unanchored:relation:sha256:cc31190dc620e694b8deec7fb6e412d6c5fb52ecf7935a8d686ddff8a4568c11",
+    "accepted_receipt:relation_unanchored:relation:sha256:cc666aa3a0a0945b51ba3079fc8b1e2b70a6f2a344f8ae4e676e8e97d57576ea",
+    "accepted_receipt:semantic_mapping_unverified:inference:relation:sha256:2ed56f6fcb194ed3228e19d62f5401ab1825eb5a19a36cebf45e974025a9098b",
+    "accepted_receipt:semantic_mapping_unverified:inference:relation:sha256:6ccaba6099cc6e0aabac67a09deaceb23e4dd836ffb995b7b3e08fc8d652e673",
+    "accepted_receipt:semantic_mapping_unverified:inference:relation:sha256:9d91ddf59ad45d8614606bd8b2bd0b863e746d985d59647cf521420eeecebf52",
+    "accepted_receipt:semantic_mapping_unverified:inference:relation:sha256:b1df1de2925827b7f8663d7e320d4c0ff1bf35e66c3377d218d68e105c592400",
+    "accepted_receipt:semantic_mapping_unverified:inference:relation:sha256:fae4c4ec7f428838e95d3787a0dceb02fb7775c818644395357437f175884cfd"
+  ]
+}

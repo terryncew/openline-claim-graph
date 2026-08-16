@@ -1,0 +1,12 @@
+{
+  "adjudicated": false,
+  "case_id": "CASE_ID",
+  "false_candidate_ranks": [],
+  "notes": "BLIND_SCORING_NOTES",
+  "receiver_id": "BLINDED_RECEIVER_ID",
+  "schema": "openline.claim-graph.receiver-pilot.score.v1",
+  "scorer_id": "BLINDED_SCORER_ID",
+  "top_ranked_classification": "HIT_OR_PARTIAL_OR_MISS",
+  "top_ranked_target_match": false,
+  "top_two_hit": false
+}

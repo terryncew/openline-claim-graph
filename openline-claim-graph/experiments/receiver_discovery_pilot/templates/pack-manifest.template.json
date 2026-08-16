@@ -1,0 +1,36 @@
+{
+  "candidate_universe": {
+    "end_date": "YYYY-MM-DD",
+    "name": "REPRODUCIBLE_UNIVERSE",
+    "screening_log_sha256": "SHA256_HEX",
+    "start_date": "YYYY-MM-DD",
+    "uri": "STABLE_UNIVERSE_URI"
+  },
+  "case_ids": [],
+  "domain": "ONE_DECLARED_DOMAIN",
+  "eligible_list_sha256": "SHA256_HEX",
+  "future_randomness": {
+    "derivation": "DECLARED_DERIVATION",
+    "event": "FUTURE_PUBLIC_EVENT",
+    "observed_value": null
+  },
+  "pack_status": "EMPTY_TEMPLATE_NOT_RUN",
+  "private_key_hashes": {},
+  "protocol_contract_sha256": "SHA256_HEX",
+  "receiver_population": {
+    "exclusions": [],
+    "inclusions": [],
+    "name": "DECLARED_POPULATION"
+  },
+  "schema": "openline.claim-graph.receiver-pilot.pack-manifest.v1",
+  "source_packet_word_count_max": 0,
+  "source_packet_word_count_min": 0,
+  "surface_generation": {
+    "arm_a_prompt_sha256": "SHA256_HEX",
+    "arm_bc_extraction_prompt_sha256": "SHA256_HEX",
+    "budget_record_sha256": "SHA256_HEX",
+    "information_parity_receipts": {},
+    "model_and_tool_record_sha256": "SHA256_HEX"
+  },
+  "time_limit_seconds_per_case": 0
+}

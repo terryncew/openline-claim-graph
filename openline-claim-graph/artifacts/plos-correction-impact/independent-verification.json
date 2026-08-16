@@ -1,0 +1,36 @@
+{
+  "checks": {
+    "accepted_receipt_signature_and_binding": true,
+    "accepted_snapshot_reproduced": true,
+    "accepted_state_root_bound_by_policy": true,
+    "advisory_edge_yields_review_not_quarantine": true,
+    "all_sources_content_addressed": true,
+    "current_plos_api_excerpt_check": true,
+    "direct_only_baseline_reproduced": true,
+    "event_evidence_span_exact": true,
+    "event_id_reproduced": true,
+    "exactly_one_accepted_decision_reopened": true,
+    "independent_support_prevents_over_quarantine": true,
+    "oracle_matches_predeclared_specimen_expectation": true,
+    "oracle_matches_report": true,
+    "original_doi_present": true,
+    "policy_id_reproduced": true,
+    "real_correction_anchor_exact": true,
+    "rendered_review_hash_bound": true,
+    "report_id_reproduced": true,
+    "summary_matches_oracle": true,
+    "two_transitive_claims_found_beyond_direct_lookup": true,
+    "witness_paths_valid": true
+  },
+  "claim_boundary": "Independent code reproduced the conditional graph result and cryptographic bindings. It does not independently validate the authored dependency edges, extraction completeness, scientific truth, or market value.",
+  "schema": "openline.claim-impact.independent-verification.v1",
+  "status": "PASS",
+  "summary": {
+    "affected_unresolved": 1,
+    "decisions_touched": 1,
+    "quarantine": 7,
+    "source_exposed": 5,
+    "survives": 1,
+    "unaffected": 6
+  }
+}

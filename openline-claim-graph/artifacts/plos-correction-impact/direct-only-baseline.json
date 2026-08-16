@@ -1,0 +1,19 @@
+{
+  "claim_boundary": "This is a deterministic capability comparison on an authored dependency graph, not a user study or evidence that ordinary prose can never convey the same facts.",
+  "direct_claim_ids": [
+    "claim:sha256:09d18d57737be4c580e31a79b83e1a73b9077d7fa0865cfa3b9db2bc38b714ed",
+    "claim:sha256:390e35fdc0f5c97b77482baead810e923646b1203b95c79c79c39f8d42691105",
+    "claim:sha256:4cea459edc9cee087549869e11c814b972b34016d24ec2b5a3ec9676221282d0",
+    "claim:sha256:8d5bea6d66ca1437b31effa2ad31ce11bd1f9478250f0d3ac626564e9c62b43c",
+    "claim:sha256:a2d84439f34b015f9c773b9e4d4bdfd2864973f7e31fb6273870c77ab23bea2a"
+  ],
+  "direct_count": 5,
+  "graph_quarantine_count": 7,
+  "method": "Flag only claims with admitted provenance spans overlapping the corrected source scope.",
+  "schema": "openline.claim-impact.direct-only-baseline.v1",
+  "transitive_quarantine_claim_ids_missed": [
+    "claim:sha256:0056fca46714576870c52cae36ad84d394c6c0c3e93f4e03c3588158edacce53",
+    "claim:sha256:77388f43e6335602981b7b0c2abb9b8d37e2a849b2c7d12c082071d2b67bc56c"
+  ],
+  "transitive_quarantine_missed": 2
+}

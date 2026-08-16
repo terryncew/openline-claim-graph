@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openline-claim-graph"
+version = "0.2.0.dev1"
+description = "Dependency-aware provenance and deterministic source-impact reports for versioned claim graphs."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Terrynce White"}]
+dependencies = ["cryptography>=42"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+openline-claim-graph = "openline_claim_graph.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

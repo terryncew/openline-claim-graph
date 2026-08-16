@@ -1,0 +1,19 @@
+{
+  "accept_bounded_projection": true,
+  "allow_unanchored_relations": false,
+  "allowed_provenance_modes": [
+    "QUOTE",
+    "INFERENCE"
+  ],
+  "deny_unanchored_claims": true,
+  "required_relations": [
+    "CONTRADICTS"
+  ],
+  "required_slots": [
+    "cost.trd_vs_non_mdd_adjusted_difference",
+    "cost.trd_vs_non_trd_adjusted_difference",
+    "sample.mdd",
+    "sample.non_mdd",
+    "sample.trd"
+  ]
+}

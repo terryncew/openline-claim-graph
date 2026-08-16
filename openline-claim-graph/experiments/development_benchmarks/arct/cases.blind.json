@@ -1,0 +1,236 @@
+{
+  "schema": "openline.claim-graph.arct-development-cases.v1",
+  "source": {
+    "repository": "UKPLab/argument-reasoning-comprehension-task",
+    "commit": "929f5847487e28036e60803f72e26a82c638db43",
+    "path": "experiments/src/main/python/data/dev.tsv",
+    "git_blob_sha": "f2a591421d1d61f16e8e5b54e28e9f71d41ba1f5",
+    "paper_doi": "10.18653/v1/N18-1175",
+    "license": "Apache-2.0"
+  },
+  "selection": {
+    "algorithm": "lowest 24 unsigned FNV-1a-32(seed + '|' + case_id), tie-break case_id ascending",
+    "seed": "openline-claim-graph-arct-dev-v1|929f5847487e28036e60803f72e26a82c638db43",
+    "upstream_rows": 316,
+    "selected_rows": 24,
+    "gold_labels_hidden_from_mapper": true
+  },
+  "cases": [
+    {
+      "case_id": "16625502_544_A1CF6U3GF7DZEJ",
+      "premise": "If it isn't in a companies best interest, we cannot rely on them to be honest.",
+      "claim": "Companies can't be trusted",
+      "warrant_0": "it may be argued dishonesty is actually a capitalist virtue",
+      "warrant_1": "it may be argued honesty is actually a capitalist virtue",
+      "debate_title": "Can Companies Be Trusted?",
+      "debate_info": "Volkswagen's vast cheating on emissions tests has been called proof that stronger regulation is needed."
+    },
+    {
+      "case_id": "16175182_252_AE861G0AY5RGT",
+      "premise": "Too many lawyers are getting through law school and the can't find jobs.",
+      "claim": "The bar is too low to get into law school",
+      "warrant_0": "finding a job is not a problem for the talented and knowledgeable",
+      "warrant_1": "finding a job shouldn't be a problem for the talented and knowledgeable",
+      "debate_title": "Is the Bar Too Low to Get Into Law School?",
+      "debate_info": "An increasing number of law students have failed the bar exam in recent years."
+    },
+    {
+      "case_id": "16628414_277_A247LJDZOGXJK6",
+      "premise": "Unless death rates rise to a certain level and potential law suits are attention-grabbing enough, law firms won't file class action suits against companies.",
+      "claim": "Companies can't be trusted",
+      "warrant_0": "companies create products that kill people",
+      "warrant_1": "companies try to create products that don't kill people",
+      "debate_title": "Can Companies Be Trusted?",
+      "debate_info": "Volkswagen's vast cheating on emissions tests has been called proof that stronger regulation is needed."
+    },
+    {
+      "case_id": "14164520_0_A3GNQDFPZALU92",
+      "premise": "It is dangerous to our future to destroy more natural area.",
+      "claim": "The Atlantic coast should not be opened to drilling",
+      "warrant_0": "our need for resources should not outweigh the \"future\" concern",
+      "warrant_1": "our need for resources tends to outweigh the \"future\" concern",
+      "debate_title": "Resuming Drilling in the Atlantic",
+      "debate_info": "Should the Atlantic coast be opened to off-shore oil and gas drilling?"
+    },
+    {
+      "case_id": "16325513_0_A1I4CYG5YDFTYM",
+      "premise": "Being a student of history I have learned you cannot apply today's societal norms to the ones of past generations.",
+      "claim": "Former colonial powers should not pay reparations",
+      "warrant_0": "the slave trade led to the current season of racism and unfairness",
+      "warrant_1": "it wasn't the slave trade led to the current season of racism and unfairness",
+      "debate_title": "Are Trans-Atlantic Slave Trade Reparations Due?",
+      "debate_info": "Should former colonial powers pay reparations for the Atlantic slave trade?"
+    },
+    {
+      "case_id": "14102517_999_A3TKD7EJ6BM0M5",
+      "premise": "New buildings generate tax revenue and economic activity.",
+      "claim": "Helping condo developers help the city",
+      "warrant_0": "tax revenue is usually siphoned by corrupt politicians",
+      "warrant_1": "tax revenue is not usually siphoned by corrupt politicians",
+      "debate_title": "Does Helping Condo Developers Hurt the City?",
+      "debate_info": "Have tax breaks, zoning and other policies that have fueled condo development unfairly benefited the rich at the expense of other residents?"
+    },
+    {
+      "case_id": "15416860_74_A1I4CYG5YDFTYM",
+      "premise": "The Supreme Court is only 9 people, and does not represent all US citizens.",
+      "claim": "Supreme court is too powerful",
+      "warrant_0": "they don't vary in their political and moral standings making them a fair representation of the country as a whole",
+      "warrant_1": "they vary in their political and moral standings making them a fair representation of the country as a whole",
+      "debate_title": "Is the Supreme Court Too Powerful?",
+      "debate_info": "Is judicial review the best way to avoid political influence? Or is change best accomplished legislatively?"
+    },
+    {
+      "case_id": "15978831_359_AE861G0AY5RGT",
+      "premise": "Illegal immigrants take advantage of the freebies America has to offer without paying into the system.",
+      "claim": "Immigration is really a problem",
+      "warrant_0": "immigrants don't pay into the system",
+      "warrant_1": "Americans don't want immigrants to pay into the system",
+      "debate_title": "Is Immigration Really a Problem?",
+      "debate_info": "Is unauthorized immigration as much of a problem for the U.S. as some claim?"
+    },
+    {
+      "case_id": "16630140_37_A2QVMCGDLTWV9",
+      "premise": "Corporations have only one goal: to make a profit.",
+      "claim": "Companies can't be trusted",
+      "warrant_0": "profit does not require trust on the part of customers",
+      "warrant_1": "profit requires trust on the part of customers",
+      "debate_title": "Can Companies Be Trusted?",
+      "debate_info": "Volkswagen's vast cheating on emissions tests has been called proof that stronger regulation is needed."
+    },
+    {
+      "case_id": "14228063_268_AB98SGS280TY5",
+      "premise": "Home birth is safe for healthy women.",
+      "claim": "Women should be encouraged to have kids at home",
+      "warrant_0": "Hospitals have higher mortality rates.",
+      "warrant_1": "hospitals can have higher mortality rates",
+      "debate_title": "Is Home Birth Ever a Safe Choice?",
+      "debate_info": "Should more women be encouraged to have kids at home?"
+    },
+    {
+      "case_id": "15165585_20_AA7ASGQEOMKEZ",
+      "premise": "Resource production can increase exponentially to match population growth.",
+      "claim": "Overcrowding is not a legitimate threat",
+      "warrant_0": "not all of those resources take up space",
+      "warrant_1": "all of those resources take up space",
+      "debate_title": "Is Overcrowding a Legitimate Threat?",
+      "debate_info": "Do we still need to worry about Paul Ehrlich's predictions of an overcrowded planet?"
+    },
+    {
+      "case_id": "14166276_298_A104V8NZIQFN2F",
+      "premise": "Solar and wind power along with conservation are the answer.",
+      "claim": "The Atlantic coast should not be opened to drilling",
+      "warrant_0": "renewable energy needs oil to be manufactured",
+      "warrant_1": "renewable energy doesn't need oil to be manufactured",
+      "debate_title": "Resuming Drilling in the Atlantic",
+      "debate_info": "Should the Atlantic coast be opened to off-shore oil and gas drilling?"
+    },
+    {
+      "case_id": "15885882_232_AE861G0AY5RGT",
+      "premise": "Citizenship should be earned by people through their investment in the culture and economy.",
+      "claim": "Abolish Birthright Citizenship",
+      "warrant_0": "a child born in the US has the ability to provide much more to the country than it cost to raise them",
+      "warrant_1": "a child born in the US doesn not have the ability to provide much more to the country than it cost to raise them",
+      "debate_title": "Should 'Birthright Citizenship' Be Abolished?",
+      "debate_info": "Several G.O.P. candidates are calling for an end to the constitutional rule that a child born in the U.S. is a U.S. citizen. Is this a good idea?"
+    },
+    {
+      "case_id": "14367579_566_AE861G0AY5RGT",
+      "premise": "Single-sex education may be beneficial to some.",
+      "claim": "Same-sex colleges are still relevant",
+      "warrant_0": "we need to be concerned with the hole and not the few",
+      "warrant_1": "we need to be concerned with the few and not the whole",
+      "debate_title": "Are Same-Sex Colleges Still Relevant?",
+      "debate_info": "Do same-sex colleges play an important role in education, or are they outdated?"
+    },
+    {
+      "case_id": "15419119_299_APW9F8OTJ4KXO",
+      "premise": "Without the Supreme Court, the US would be in the dark ages.",
+      "claim": "Supreme court is not too powerful",
+      "warrant_0": "many Americans would prefer to still live in those less civilized times, it is their right to do so",
+      "warrant_1": "many Americans would not prefer to still live in those less civilized times, it is their right to become advanced",
+      "debate_title": "Is the Supreme Court Too Powerful?",
+      "debate_info": "Is judicial review the best way to avoid political influence? Or is change best accomplished legislatively?"
+    },
+    {
+      "case_id": "16967643_582_A1DJNUJZN8FE7N",
+      "premise": "Forums allow professors to be called out on bad methods.",
+      "claim": "It is fair to rate professors online",
+      "warrant_0": "one should never question their professor",
+      "warrant_1": "one should always question their professor",
+      "debate_title": "Is It Fair to Rate Professors Online?",
+      "debate_info": "As students finish their finals and plan for next semester, should they turn to RateMyProfessor.com to offer advice and seek guidance?"
+    },
+    {
+      "case_id": "17009879_146_AA7ASGQEOMKEZ",
+      "premise": "My mom's cat nicked his eye when scratching his face and her vet advised he be declawed.",
+      "claim": "It should be legal to declaw your cat",
+      "warrant_0": "being declawed increased his quality of life",
+      "warrant_1": "being declawed decreased his quality of life",
+      "debate_title": "Should It Be Illegal to Declaw Your Cat?",
+      "debate_info": "With legislation pending, New York could become the first state to make removing the claws of a cat a crime."
+    },
+    {
+      "case_id": "16104793_87_A1OYYWJ2B7OQTD",
+      "premise": "Equality among the sexes is moving ahead and people will have to learn that this is simply how the world works right now.",
+      "claim": "Fraternities and sororities should be co-ed",
+      "warrant_0": "individuals cannot learn a lot in same-sex organizations",
+      "warrant_1": "individuals can still learn a lot in same-sex organizations",
+      "debate_title": "Should Fraternities and Sororities Be Coed?",
+      "debate_info": "Making Greek brothers and sisters one big family on campus."
+    },
+    {
+      "case_id": "15885882_649_A104V8NZIQFN2F",
+      "premise": "Birthright citizenship is too easy to take advantage of.",
+      "claim": "Abolish Birthright Citizenship",
+      "warrant_0": "my family members are planning to come here legally",
+      "warrant_1": "my family members are planning to come here illegally",
+      "debate_title": "Should 'Birthright Citizenship' Be Abolished?",
+      "debate_info": "Several G.O.P. candidates are calling for an end to the constitutional rule that a child born in the U.S. is a U.S. citizen. Is this a good idea?"
+    },
+    {
+      "case_id": "16803626_23_A3PILUAB7LZGWQ",
+      "premise": "Polls results create a public narrative rather than reality.",
+      "claim": "Pollings undermine democracy",
+      "warrant_0": "Public narrative has effect on politicians",
+      "warrant_1": "Public narrative has virtually no effect on politicians",
+      "debate_title": "Does Polling Undermine Democracy?",
+      "debate_info": "Have public opinion surveys been given too great a role in American politics? Are they measuring public opinion, or creating it?"
+    },
+    {
+      "case_id": "16630140_37_A34QZDSTKZ3JO9",
+      "premise": "Corporations have only one goal: to make a profit.",
+      "claim": "Companies can't be trusted",
+      "warrant_0": "profits do not benefit workers, shareholders and the community",
+      "warrant_1": "profits benefit workers, shareholders and the community",
+      "debate_title": "Can Companies Be Trusted?",
+      "debate_info": "Volkswagen's vast cheating on emissions tests has been called proof that stronger regulation is needed."
+    },
+    {
+      "case_id": "16628932_437_A1CF6U3GF7DZEJ",
+      "premise": "Businesses have proven they cannot self regulate over time.",
+      "claim": "Companies can't be trusted",
+      "warrant_0": "people seem to not like that",
+      "warrant_1": "people seem ok with that",
+      "debate_title": "Can Companies Be Trusted?",
+      "debate_info": "Volkswagen's vast cheating on emissions tests has been called proof that stronger regulation is needed."
+    },
+    {
+      "case_id": "17015769_0_A34QZDSTKZ3JO9",
+      "premise": "My compromised immune system means I can only adopt declawed cats.",
+      "claim": "It should be legal to declaw your cat",
+      "warrant_0": "people with compromised immune systems should have cats too",
+      "warrant_1": "people with immune systems shouldn't have cats",
+      "debate_title": "Should It Be Illegal to Declaw Your Cat?",
+      "debate_info": "With legislation pending, New York could become the first state to make removing the claws of a cat a crime."
+    },
+    {
+      "case_id": "14383502_355_A34QZDSTKZ3JO9",
+      "premise": "Miraculous healing doesn't replace medicine.",
+      "claim": "Parents' religious beliefs should not allow them to refuse medical care for their children",
+      "warrant_0": "the healing is miraculous to those that believe",
+      "warrant_1": "the healing is only miraculous to those that believe",
+      "debate_title": "Parents' Beliefs vs. Their Children's Health",
+      "debate_info": "Should parents' religious beliefs allow them to refuse medical care for their children or avoid standard medical practices?"
+    }
+  ]
+}

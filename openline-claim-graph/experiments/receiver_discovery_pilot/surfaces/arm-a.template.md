@@ -1,0 +1,13 @@
+# Source Review
+
+## Summary
+
+{{ORDINARY_SUMMARY_FROM_SOURCE_PACKET}}
+
+## Sources
+
+{{COMMON_NUMBERED_SOURCE_PACKET}}
+
+## Response
+
+{{COMMON_RESPONSE_FORM}}
