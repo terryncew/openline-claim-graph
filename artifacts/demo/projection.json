@@ -1,0 +1,356 @@
+{
+  "claims": [
+    {
+      "proof": [
+        {
+          "sha256": "65b21f6baf56174884af3cce5d471032a76f155b3ad97f605119e0b4b8351f3b",
+          "side": "right"
+        },
+        {
+          "sha256": "eefe80459627f9c8e8d62031703810c659a0556472d6cc998c834acc877a8462",
+          "side": "right"
+        },
+        {
+          "sha256": "5e5655995928fe4da19365323d6928905650f61b22f78ea605c3b50e5e47c5df",
+          "side": "right"
+        },
+        {
+          "sha256": "3220892bc14b86c95e3cc682987ea74cd7e0b046f298f59782e80a71a4da46bc",
+          "side": "right"
+        }
+      ],
+      "record": {
+        "asserted_by": "fixture:independent-extractor-v1",
+        "claim_id": "claim:sha256:1d8fb1c25d725182d046c93f7f4870489763c89a5282efd4424a69b74af8e9a8",
+        "kind": "SOURCE_ASSERTION",
+        "provenance": [
+          {
+            "asserted_by": "fixture:independent-extractor-v1",
+            "mode": "QUOTE",
+            "quote_sha256": "1c67817e29da16b27a3fb333b46869f39b174196e163511fb2b599f876cab72f",
+            "source_id": "source:sha256:1c67817e29da16b27a3fb333b46869f39b174196e163511fb2b599f876cab72f",
+            "span": {
+              "end": 28,
+              "start": 0
+            }
+          }
+        ],
+        "schema": "openline.claim.v1",
+        "slot": "environment.outage_declared",
+        "text": "An outage has been declared.",
+        "value": true
+      }
+    },
+    {
+      "proof": [
+        {
+          "sha256": "ac6fe29bc1c1177689281f36e51c92d03676dc2e4047fde47cb0f232e7fad3c1",
+          "side": "left"
+        },
+        {
+          "sha256": "b2b22cc20c9b341e3f4eb996cc3c3ee26f7a9f37926014a347c22d96eb2a0f73",
+          "side": "left"
+        },
+        {
+          "sha256": "5e5655995928fe4da19365323d6928905650f61b22f78ea605c3b50e5e47c5df",
+          "side": "right"
+        },
+        {
+          "sha256": "3220892bc14b86c95e3cc682987ea74cd7e0b046f298f59782e80a71a4da46bc",
+          "side": "right"
+        }
+      ],
+      "record": {
+        "asserted_by": "fixture:independent-extractor-v1",
+        "claim_id": "claim:sha256:56ac60086d44a221e597d16fae5883480b6675fc076cd948dfbaa5ce001e4f9d",
+        "kind": "SOURCE_ASSERTION",
+        "provenance": [
+          {
+            "asserted_by": "fixture:independent-extractor-v1",
+            "mode": "QUOTE",
+            "quote_sha256": "281a20e5219e3c77e841a9cce166d06f49fb11208ec3f76b108f2b9d6685295a",
+            "source_id": "source:sha256:281a20e5219e3c77e841a9cce166d06f49fb11208ec3f76b108f2b9d6685295a",
+            "span": {
+              "end": 28,
+              "start": 0
+            }
+          }
+        ],
+        "schema": "openline.claim.v1",
+        "slot": "environment.outage_declared",
+        "text": "No outage has been declared.",
+        "value": false
+      }
+    },
+    {
+      "proof": [
+        {
+          "sha256": "9e2a3e3f5e4d844993b0afd3452ce73f3f9f07ba76a36cf0b137bd63e6c54590",
+          "side": "right"
+        },
+        {
+          "sha256": "e74bb819ab94fe9a6a396dde9c38f8b3cb742ce6ec4a34e39168022f773d42b1",
+          "side": "right"
+        },
+        {
+          "sha256": "69af681b837d4c7b3f1fd4d25de9ca55d4ec76273939a383b3cc945293e6cc61",
+          "side": "left"
+        },
+        {
+          "sha256": "3220892bc14b86c95e3cc682987ea74cd7e0b046f298f59782e80a71a4da46bc",
+          "side": "right"
+        }
+      ],
+      "record": {
+        "asserted_by": "fixture:independent-extractor-v1",
+        "claim_id": "claim:sha256:a1cbc9036c887c141bf0823eefd2b451e5e86e5394e78102e50fc0bd817e8e17",
+        "kind": "INFERENCE",
+        "provenance": [
+          {
+            "asserted_by": "fixture:independent-extractor-v1",
+            "mode": "INFERENCE",
+            "quote_sha256": "e442ce57fbf4ad1919b74ba7428e56d196934a8da2b5f120aa80d9c6c3af69d7",
+            "source_id": "source:sha256:1c0e4a1ea44fe85543d7e226209260dd0a8680de930c7df7c0443b40abf1858a",
+            "span": {
+              "end": 49,
+              "start": 0
+            }
+          },
+          {
+            "asserted_by": "fixture:independent-extractor-v1",
+            "mode": "INFERENCE",
+            "quote_sha256": "281a20e5219e3c77e841a9cce166d06f49fb11208ec3f76b108f2b9d6685295a",
+            "source_id": "source:sha256:281a20e5219e3c77e841a9cce166d06f49fb11208ec3f76b108f2b9d6685295a",
+            "span": {
+              "end": 28,
+              "start": 0
+            }
+          }
+        ],
+        "schema": "openline.claim.v1",
+        "slot": "decision.required_approvals",
+        "text": "The current change requires 2 approvals.",
+        "value": 2
+      }
+    },
+    {
+      "proof": [
+        {
+          "sha256": "8e5dbf0d2b2a6c7c8c2afc2950c0db6f9b4c3d2f3bf5f35f368a088ee48ad0cd",
+          "side": "left"
+        },
+        {
+          "sha256": "e74bb819ab94fe9a6a396dde9c38f8b3cb742ce6ec4a34e39168022f773d42b1",
+          "side": "right"
+        },
+        {
+          "sha256": "69af681b837d4c7b3f1fd4d25de9ca55d4ec76273939a383b3cc945293e6cc61",
+          "side": "left"
+        },
+        {
+          "sha256": "3220892bc14b86c95e3cc682987ea74cd7e0b046f298f59782e80a71a4da46bc",
+          "side": "right"
+        }
+      ],
+      "record": {
+        "asserted_by": "fixture:independent-extractor-v1",
+        "claim_id": "claim:sha256:affdd94493f2ab146bcd0cdbfad445fbf55111a5c73596d4212e3ac44b96dd10",
+        "kind": "INFERENCE",
+        "provenance": [
+          {
+            "asserted_by": "fixture:independent-extractor-v1",
+            "mode": "INFERENCE",
+            "quote_sha256": "d24cfe89d70ec4a137ecbb0fb512bf86bd4cfb85a49853d4cebefb606ffbb45c",
+            "source_id": "source:sha256:1c0e4a1ea44fe85543d7e226209260dd0a8680de930c7df7c0443b40abf1858a",
+            "span": {
+              "end": 103,
+              "start": 50
+            }
+          },
+          {
+            "asserted_by": "fixture:independent-extractor-v1",
+            "mode": "INFERENCE",
+            "quote_sha256": "1c67817e29da16b27a3fb333b46869f39b174196e163511fb2b599f876cab72f",
+            "source_id": "source:sha256:1c67817e29da16b27a3fb333b46869f39b174196e163511fb2b599f876cab72f",
+            "span": {
+              "end": 28,
+              "start": 0
+            }
+          }
+        ],
+        "schema": "openline.claim.v1",
+        "slot": "decision.required_approvals",
+        "text": "The current change requires 1 approval.",
+        "value": 1
+      }
+    }
+  ],
+  "graph_content_root": "37daf74832fa7d59ff1d2a6cbbe36fc06217474ce6d794df6c20b2907cf07750",
+  "graph_state_root": "3900abc574535a9931178d22f264965284e572552bddc3bec44fc3393d6c9da4",
+  "omission_disclosure": "bounded_projection_not_a_completeness_proof",
+  "profile": {
+    "proof": [
+      {
+        "sha256": "ea80ad347b415496d4ef6eb84f1ca990950eea44d94ad2eee267e4f6131f69f4",
+        "side": "right"
+      },
+      {
+        "sha256": "b948786ed7b8f3459792b2b975f496988069f65fabc66192685afcfd2e7ff8a6",
+        "side": "left"
+      },
+      {
+        "sha256": "69af681b837d4c7b3f1fd4d25de9ca55d4ec76273939a383b3cc945293e6cc61",
+        "side": "left"
+      },
+      {
+        "sha256": "3220892bc14b86c95e3cc682987ea74cd7e0b046f298f59782e80a71a4da46bc",
+        "side": "right"
+      }
+    ],
+    "record": {
+      "canonicalization": "openline.restricted-canonical-json.v1",
+      "claim_boundary": "This profile preserves typed claims, relations, source anchors, and state lineage. It does not certify semantic fidelity, completeness, truth, or decision wisdom.",
+      "claim_kinds": [
+        "OBSERVATION",
+        "MEASUREMENT",
+        "SOURCE_ASSERTION",
+        "DEFINITION",
+        "ASSUMPTION",
+        "INFERENCE",
+        "CAUSAL_HYPOTHESIS",
+        "PREDICTION",
+        "VALUE_JUDGMENT",
+        "ADJUDICATION",
+        "OUTCOME",
+        "UNRESOLVED_QUESTION"
+      ],
+      "profile_id": "openline.claim-graph.core.v1",
+      "provenance_modes": [
+        "QUOTE",
+        "PARAPHRASE",
+        "INFERENCE",
+        "AMBIGUOUS"
+      ],
+      "relations": [
+        "SUPPORTS",
+        "CONTRADICTS",
+        "DEPENDS_ON",
+        "DEFINES",
+        "DERIVED_FROM",
+        "PREDICTS",
+        "SUPERSEDES",
+        "QUALIFIES",
+        "ADJUDICATED_BY",
+        "UNRESOLVED_BY"
+      ],
+      "schema": "openline.claim-graph.profile.v1",
+      "span_unit": "utf8_byte_offset_half_open"
+    }
+  },
+  "projection_id": "projection:sha256:b21616437c861a94b2d2b86ea3a909f3d76ae4d8cfdef2b74c29af6fd21ea68e",
+  "purpose": "Expose the unresolved premise before applying an approval rule.",
+  "relations": [
+    {
+      "proof": [
+        {
+          "sha256": "361499f5ac08d778a5e1f4c18ea881c484fdaee1f987c44fc5411048f718377a",
+          "side": "left"
+        },
+        {
+          "sha256": "b948786ed7b8f3459792b2b975f496988069f65fabc66192685afcfd2e7ff8a6",
+          "side": "left"
+        },
+        {
+          "sha256": "69af681b837d4c7b3f1fd4d25de9ca55d4ec76273939a383b3cc945293e6cc61",
+          "side": "left"
+        },
+        {
+          "sha256": "3220892bc14b86c95e3cc682987ea74cd7e0b046f298f59782e80a71a4da46bc",
+          "side": "right"
+        }
+      ],
+      "record": {
+        "asserted_by": "fixture:independent-extractor-v1",
+        "provenance": [
+          {
+            "asserted_by": "fixture:independent-extractor-v1",
+            "mode": "INFERENCE",
+            "quote_sha256": "1c67817e29da16b27a3fb333b46869f39b174196e163511fb2b599f876cab72f",
+            "source_id": "source:sha256:1c67817e29da16b27a3fb333b46869f39b174196e163511fb2b599f876cab72f",
+            "span": {
+              "end": 28,
+              "start": 0
+            }
+          },
+          {
+            "asserted_by": "fixture:independent-extractor-v1",
+            "mode": "INFERENCE",
+            "quote_sha256": "281a20e5219e3c77e841a9cce166d06f49fb11208ec3f76b108f2b9d6685295a",
+            "source_id": "source:sha256:281a20e5219e3c77e841a9cce166d06f49fb11208ec3f76b108f2b9d6685295a",
+            "span": {
+              "end": 28,
+              "start": 0
+            }
+          }
+        ],
+        "relation": "CONTRADICTS",
+        "relation_id": "relation:sha256:1e8a7a9affca21463628e9c20843d8158bd0c269558bc99fdc13caaa80c4becf",
+        "schema": "openline.claim-relation.v1",
+        "source_claim_id": "claim:sha256:a1cbc9036c887c141bf0823eefd2b451e5e86e5394e78102e50fc0bd817e8e17",
+        "target_claim_id": "claim:sha256:affdd94493f2ab146bcd0cdbfad445fbf55111a5c73596d4212e3ac44b96dd10"
+      }
+    },
+    {
+      "proof": [
+        {
+          "sha256": "7e16ea1d8156b124ab80c83f478b598f0ae96ab4bc7edab0afc1237ae54ba5a7",
+          "side": "right"
+        },
+        {
+          "sha256": "170ebb7797ad862d29539ebcf13ffd95409807453b9d58847323180328631f82",
+          "side": "right"
+        },
+        {
+          "sha256": "2777b5f5e45264b63592867bdfdd3dabc8429890f2da8d7e8e2a329e0c4fad49",
+          "side": "right"
+        },
+        {
+          "sha256": "d119e8a8d871b9f7333f32136610b56a2bf5d2798dee193e8fcf7c2ed6c1c4e6",
+          "side": "left"
+        }
+      ],
+      "record": {
+        "asserted_by": "fixture:independent-extractor-v1",
+        "provenance": [
+          {
+            "asserted_by": "fixture:independent-extractor-v1",
+            "mode": "INFERENCE",
+            "quote_sha256": "1c67817e29da16b27a3fb333b46869f39b174196e163511fb2b599f876cab72f",
+            "source_id": "source:sha256:1c67817e29da16b27a3fb333b46869f39b174196e163511fb2b599f876cab72f",
+            "span": {
+              "end": 28,
+              "start": 0
+            }
+          },
+          {
+            "asserted_by": "fixture:independent-extractor-v1",
+            "mode": "INFERENCE",
+            "quote_sha256": "281a20e5219e3c77e841a9cce166d06f49fb11208ec3f76b108f2b9d6685295a",
+            "source_id": "source:sha256:281a20e5219e3c77e841a9cce166d06f49fb11208ec3f76b108f2b9d6685295a",
+            "span": {
+              "end": 28,
+              "start": 0
+            }
+          }
+        ],
+        "relation": "CONTRADICTS",
+        "relation_id": "relation:sha256:d1ca32ac378d4a00a06e541fa6c5c50cbb7709861e6e4765e2fb2a1a0586f6d4",
+        "schema": "openline.claim-relation.v1",
+        "source_claim_id": "claim:sha256:56ac60086d44a221e597d16fae5883480b6675fc076cd948dfbaa5ce001e4f9d",
+        "target_claim_id": "claim:sha256:1d8fb1c25d725182d046c93f7f4870489763c89a5282efd4424a69b74af8e9a8"
+      }
+    }
+  ],
+  "schema": "openline.claim-graph.projection.v1",
+  "selected_by": "fixture:receiver-policy-v1"
+}

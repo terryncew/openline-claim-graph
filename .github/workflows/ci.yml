@@ -1,0 +1,36 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install
+        run: python -m pip install .
+      - name: Unit and hostile tests
+        run: python -m unittest discover -s tests -v
+      - name: Build controlled demo
+        run: python examples/build_demo.py --output "${{ runner.temp }}/claim-graph-demo"
+      - name: Run scaling probe
+        run: python scripts/scaling_probe.py
+      - name: Build wheel
+        run: python -m pip wheel . --no-deps --no-build-isolation -w "${{ runner.temp }}/wheel"
+      - name: CLI smoke
+        run: python -m openline_claim_graph --help

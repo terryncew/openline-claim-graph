@@ -1,0 +1,15 @@
+{
+  "accept_bounded_projection": true,
+  "allowed_provenance_modes": [
+    "QUOTE",
+    "INFERENCE"
+  ],
+  "deny_unanchored_claims": true,
+  "required_relations": [
+    "CONTRADICTS"
+  ],
+  "required_slots": [
+    "environment.outage_declared",
+    "decision.required_approvals"
+  ]
+}

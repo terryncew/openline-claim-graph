@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openline-claim-graph"
+version = "0.1.0.dev0"
+description = "Experimental signed receipts for versioned, source-anchored claim graphs."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Terrynce White"}]
+dependencies = ["cryptography>=42"]
+
+[project.scripts]
+openline-claim-graph = "openline_claim_graph.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

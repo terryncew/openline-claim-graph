@@ -1,0 +1,32 @@
+{
+  "canonicalization": "openline.restricted-canonical-json.v1",
+  "claim_boundary": "The signer commits to this graph state and its declared source anchors. The receipt does not certify truth, semantic fidelity, completeness, or signer identity.",
+  "claim_count": 4,
+  "delta_root": "c221aafc40c35d8f5b5d38458c6be9cb2a4e58a3d0ed6a9837ab9e43352dc04d",
+  "graph_content_root": "4980315e676caacb9d83cc1d2b5401ec15866f3bddbdca4e7edc81980671e2e5",
+  "graph_state_root": "b4250dc1d216562a5965b9e5127b0e133cc64af1582f8515527c1d65caafb498",
+  "issued_at": "2026-08-15T08:00:00Z",
+  "issuer": "fixture:openline-claim-graph",
+  "parent_state_roots": [
+    "c2f2482aa249c886fe95c4c63b320e55367762b7e2803556dd1df03219773d69"
+  ],
+  "payload_hash": "121eec001616f57411ee6f5b922cb3f0b8795776a3b2ddae1419e07932ea123f",
+  "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+  "proof": {
+    "signature": "37544f85bdb4ed5a3aa6889d2df1926d083cb4722dd4aa5f0f970e285080044d4298f52b0d77604faa50e7f84bd8f6dc833c3eabce3573ffa241d0a981fbdb0b"
+  },
+  "proof_options": {
+    "algorithm": "Ed25519",
+    "public_key": "d04ab232742bb4ab3a1368bd4615e4e6d0224ab71a016baf8520a332c9778737",
+    "trust": "receiver_must_pin_or_resolve_public_key"
+  },
+  "relation_count": 0,
+  "schema": "openline.claim-graph.receipt.v1",
+  "source_count": 2,
+  "source_manifest_root": "dc4a3a352ece63051943b29a8f0dafd84e32f77346795429e89b11a88fc4379e",
+  "validation_warning_categories": {
+    "semantic_mapping_unverified:inference": 1
+  },
+  "validation_warning_count": 1,
+  "validation_warning_root": "0b1a6f191c64d3325b9a486f12ff17c6b56ab83eb432f29a11c314683637d3ed"
+}
