@@ -30,6 +30,8 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Build controlled demo
         run: python examples/build_demo.py --output "${{ runner.temp }}/claim-graph-demo"
+      - name: Build natural-material review
+        run: python examples/build_plos_correction_case.py --output "${{ runner.temp }}/plos-correction-case"
       - name: Run scaling probe
         run: python scripts/scaling_probe.py
       - name: Build wheel

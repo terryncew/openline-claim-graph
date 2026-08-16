@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "abstract_excerpt_exact": true,
+    "correction_anchor_exact": true,
+    "main_cost_excerpt_exact": true,
+    "main_sample_excerpt_exact": true
+  },
+  "claim_boundary": "This verifies exact excerpt presence in the current PLOS API record. It does not validate the manual claim mapping or the decision value of the rendered review.",
+  "correction_doi": "10.1371/journal.pone.0249731",
+  "correction_query": "https://api.plos.org/search?q=id%3A%2210.1371%2Fjournal.pone.0249731%22&fl=id%2Ctitle%2Cabstract%2Cbody&rows=1&wt=json",
+  "exact_match": true,
+  "local_excerpt_hashes": {
+    "abstract_sha256": "1923034795beb939144ee4fe2e0fde83823f1096a8ed54f69306b93ecdc5e94d",
+    "correction_anchor_sha256": "4536c1a99b7b1b1ef6581342f1f4ee0a71937463f28054e2657ce4144198ba6d",
+    "main_cost_sha256": "5de6563e6ce5a4642a31da72731251882877771cbcd4196ccb4d383f9c369f02",
+    "main_sample_sha256": "c9bdf4df2de02e5bb31fade0e76d1221df607e50fdd37b884a32e8b57987358e"
+  },
+  "original_doi": "10.1371/journal.pone.0223255",
+  "original_query": "https://api.plos.org/search?q=id%3A%2210.1371%2Fjournal.pone.0223255%22&fl=id%2Ctitle%2Cabstract%2Cbody&rows=1&wt=json",
+  "schema": "openline.claim-graph.plos-upstream-verification.v1",
+  "upstream_field_hashes": {
+    "correction_body_sha256": "c27b96959acb17376d99c74f629a3331f08132f4b76bd9473d567ff44e0babe1",
+    "original_abstract_sha256": "120aea8a43d59e4ace7c71bf9d30efad7646b89d93e64369a359040ee888d8af",
+    "original_body_sha256": "9fb5debead11da77c4b34909483b3e2171432fb1cc3600d63fcc6282b313e3bf"
+  },
+  "verified_at": "2026-08-16T04:41:30Z"
+}

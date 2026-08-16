@@ -1,0 +1,22 @@
+{
+  "bundle_valid": true,
+  "claim_boundary": "This demonstrates a review generated from real published material and an externally confirmed fault line. It does not establish extraction accuracy, completeness, or decision-value superiority.",
+  "claim_count": 10,
+  "conflict_count": 5,
+  "disposition": "ADMIT",
+  "external_anchor": {
+    "anchor_class": "E1_EXPLICIT_EXTERNAL_ANCHOR",
+    "anchor_sha256": "4536c1a99b7b1b1ef6581342f1f4ee0a71937463f28054e2657ce4144198ba6d",
+    "anchor_text": "In the Results subsection of the Abstract. there are numbers reported which are inconsistent with those of the main text.",
+    "claim_boundary": "The correction confirms the inconsistency, not that this review surface improves human decisions.",
+    "correction_doi": "10.1371/journal.pone.0249731",
+    "correction_locator": "https://doi.org/10.1371/journal.pone.0249731",
+    "original_doi": "10.1371/journal.pone.0223255",
+    "schema": "openline.claim-graph.external-anchor.v1",
+    "use": "Post-hoc confirmation that the represented fault line existed; excluded from the receiver bundle."
+  },
+  "manual_extraction": true,
+  "review_sha256": "159e39d3c555df0abdeb320aee0d0650f371d1f418cef1839e325426d78d2be9",
+  "schema": "openline.claim-graph.natural-material-report.v1",
+  "status": "MECHANISM_WORKS_ON_ONE_EXTERNALLY_ANCHORED_NATURAL_CASE_VALUE_UNTESTED"
+}

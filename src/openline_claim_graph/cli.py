@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 from typing import Any
@@ -8,6 +9,7 @@ from typing import Any
 from .bundle import verify_bundle
 from .graph import verify_projection
 from .receipts import verify_receipt, verify_source_disclosure
+from .review import ReviewRenderError, render_review
 
 
 def _load(path: str) -> Any:
@@ -49,6 +51,18 @@ def main(argv: list[str] | None = None) -> int:
     bundle.add_argument("--public-key", required=True)
     bundle.add_argument("--parent", action="append", default=[])
 
+    review = sub.add_parser("render-review", help="render a verified bundle as self-contained HTML")
+    review.add_argument("--snapshot", required=True)
+    review.add_argument("--receipt", required=True)
+    review.add_argument("--sources", required=True)
+    review.add_argument("--projection", required=True)
+    review.add_argument("--disclosure", required=True)
+    review.add_argument("--policy", required=True)
+    review.add_argument("--public-key", required=True)
+    review.add_argument("--parent", action="append", default=[])
+    review.add_argument("--output", required=True)
+    review.add_argument("--title", default="Decision Review")
+
     args = parser.parse_args(argv)
     if args.command == "verify-receipt":
         sources_doc = _load(args.sources)
@@ -80,6 +94,39 @@ def main(argv: list[str] | None = None) -> int:
                 parent_snapshots=[_load(path) for path in args.parent],
             )
         )
+    if args.command == "render-review":
+        sources_doc = _load(args.sources)
+        sources = {item["source_id"]: item for item in sources_doc["sources"]}
+        try:
+            rendered = render_review(
+                snapshot=_load(args.snapshot),
+                receipt=_load(args.receipt),
+                sources=sources,
+                projection=_load(args.projection),
+                source_disclosure=_load(args.disclosure),
+                receiver_policy=_load(args.policy),
+                pinned_public_key=args.public_key,
+                parent_snapshots=[_load(path) for path in args.parent],
+                title=args.title,
+            )
+        except ReviewRenderError as exc:
+            print(json.dumps({"valid": False, "errors": [str(exc)]}, indent=2, sort_keys=True))
+            return 1
+        output = Path(args.output)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(rendered, encoding="utf-8")
+        print(
+            json.dumps(
+                {
+                    "valid": True,
+                    "output": str(output),
+                    "sha256": hashlib.sha256(rendered.encode("utf-8")).hexdigest(),
+                },
+                indent=2,
+                sort_keys=True,
+            )
+        )
+        return 0
     return _emit(
         verify_source_disclosure(
             _load(args.disclosure),

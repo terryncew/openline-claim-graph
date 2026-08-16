@@ -25,6 +25,7 @@ from .receipts import (
     verify_receipt,
     verify_source_disclosure,
 )
+from .review import ReviewRenderError, render_review
 from .wallet import ClaimGraphWallet
 
 __all__ = [
@@ -43,6 +44,8 @@ __all__ = [
     "private_key_from_hex",
     "provenance_anchor",
     "public_key_hex",
+    "render_review",
+    "ReviewRenderError",
     "sign_snapshot",
     "source_commitment",
     "source_span",

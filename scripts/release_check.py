@@ -41,7 +41,7 @@ def included_files() -> list[Path]:
         if not path.is_file():
             continue
         relative = path.relative_to(ROOT)
-        if any(part in {"__pycache__", "build", "dist", ".git"} for part in relative.parts):
+        if any(part in {"__pycache__", ".pytest_cache", "build", "dist", ".git"} for part in relative.parts):
             continue
         if any(part.endswith(".egg-info") for part in relative.parts):
             continue
@@ -59,6 +59,14 @@ def main() -> int:
         raise RuntimeError("could not recover unittest count")
     test_count = int(match.group(1))
     run([sys.executable, "examples/build_demo.py", "--output", "artifacts/demo"])
+    run(
+        [
+            sys.executable,
+            "examples/build_plos_correction_case.py",
+            "--output",
+            "artifacts/plos-correction-case",
+        ]
+    )
     run([sys.executable, "scripts/scaling_probe.py"])
     run([sys.executable, "scripts/run_arct_development_check.py"])
 
@@ -70,6 +78,7 @@ def main() -> int:
     for path in grammar_files:
         ast.parse(path.read_text(encoding="utf-8"), filename=str(path), feature_version=(3, 11))
 
+    installed_cli_review_matches = False
     with tempfile.TemporaryDirectory(prefix="openline-claim-graph-wheel-") as temporary:
         temp = Path(temporary)
         run(
@@ -107,6 +116,41 @@ def main() -> int:
             [sys.executable, "-c", "import openline_claim_graph; print(openline_claim_graph.PROFILE_HASH)"],
             extra_env={"PYTHONPATH": str(install_target)},
         )
+        natural_dir = ROOT / "artifacts/plos-correction-case"
+        public_key = json.loads((natural_dir / "public-key.json").read_text(encoding="utf-8"))["public_key"]
+        installed_review = temp / "installed-review.html"
+        run(
+            [
+                sys.executable,
+                "-m",
+                "openline_claim_graph",
+                "render-review",
+                "--snapshot",
+                str(natural_dir / "snapshot.json"),
+                "--receipt",
+                str(natural_dir / "receipt.json"),
+                "--sources",
+                str(natural_dir / "sources.json"),
+                "--projection",
+                str(natural_dir / "projection.json"),
+                "--disclosure",
+                str(natural_dir / "source-disclosure.json"),
+                "--policy",
+                str(natural_dir / "receiver-policy.json"),
+                "--public-key",
+                public_key,
+                "--output",
+                str(installed_review),
+                "--title",
+                "Published abstract vs. main results",
+            ],
+            extra_env={"PYTHONPATH": str(install_target)},
+        )
+        installed_cli_review_matches = sha256_file(installed_review) == sha256_file(
+            natural_dir / "review.html"
+        )
+        if not installed_cli_review_matches:
+            raise RuntimeError("installed CLI review differs from repository artifact")
 
     verification = json.loads((ROOT / "artifacts/demo/verification.json").read_text(encoding="utf-8"))
     scaling = json.loads((ROOT / "artifacts/scaling-probe.json").read_text(encoding="utf-8"))
@@ -119,11 +163,19 @@ def main() -> int:
     arct_upstream_verification = json.loads(
         (ROOT / "experiments/development_benchmarks/arct/upstream-verification.json").read_text(encoding="utf-8")
     )
+    natural_case_report = json.loads(
+        (ROOT / "artifacts/plos-correction-case/report.json").read_text(encoding="utf-8")
+    )
+    natural_case_review = ROOT / "artifacts/plos-correction-case/review.html"
+    natural_case_upstream = json.loads(
+        (ROOT / "artifacts/plos-correction-case/upstream-verification.json").read_text(encoding="utf-8")
+    )
     checks = {
         "compileall": True,
         "python_3_11_grammar_parse": len(grammar_files),
         "wheel_build": True,
         "clean_wheel_install_import": True,
+        "installed_cli_review_matches": installed_cli_review_matches,
         "unit_and_adversarial_tests": test_count,
         "deterministic_tamper_mutations": 10_000,
         "deterministic_tamper_misses": 0,
@@ -132,6 +184,13 @@ def main() -> int:
         "demo_source_disclosure_valid": verification["source_disclosure"]["valid"],
         "demo_bundle_disposition": verification["bundle"]["disposition"],
         "demo_wallet_dispositions": [item["disposition"] for item in verification["wallet_admissions"]],
+        "natural_case_status": natural_case_report["status"],
+        "natural_case_bundle_valid": natural_case_report["bundle_valid"],
+        "natural_case_conflict_count": natural_case_report["conflict_count"],
+        "natural_case_review_hash_matches": sha256_file(natural_case_review)
+        == natural_case_report["review_sha256"],
+        "natural_case_external_anchor_class": natural_case_report["external_anchor"]["anchor_class"],
+        "natural_case_upstream_exact_match": natural_case_upstream["exact_match"],
         "pilot_case_pack_empty": pilot_contract["status"] == "PROTOCOL_READY_CASE_PACK_EMPTY",
         "pilot_condition_unit": pilot_contract["assignment"]["condition_unit"],
         "pilot_stage_1_promotion_allowed": pilot_contract["analysis"]["stage_1_promotion_allowed"],
@@ -151,10 +210,18 @@ def main() -> int:
     if not all(
         [
             checks["compileall"],
+            checks["installed_cli_review_matches"],
             checks["demo_receipt_valid"],
             checks["demo_projection_valid"],
             checks["demo_source_disclosure_valid"],
             checks["demo_bundle_disposition"] == "ADMIT",
+            checks["natural_case_status"]
+            == "MECHANISM_WORKS_ON_ONE_EXTERNALLY_ANCHORED_NATURAL_CASE_VALUE_UNTESTED",
+            checks["natural_case_bundle_valid"],
+            checks["natural_case_conflict_count"] == 5,
+            checks["natural_case_review_hash_matches"],
+            checks["natural_case_external_anchor_class"] == "E1_EXPLICIT_EXTERNAL_ANCHOR",
+            checks["natural_case_upstream_exact_match"],
             checks["deterministic_tamper_misses"] == 0,
             checks["pilot_case_pack_empty"],
             checks["pilot_condition_unit"] == "receiver",
@@ -217,17 +284,28 @@ def main() -> int:
             "usage": "Independent-gold, multiple-choice missing-premise development check; not a receiver pilot.",
         }
     )
+    inputs.append(
+        {
+            "name": "PLOS ONE abstract/main-text inconsistency natural-material case",
+            "original_doi": "10.1371/journal.pone.0223255",
+            "correction_doi": "10.1371/journal.pone.0249731",
+            "source_bundle_sha256": sha256_file(ROOT / "artifacts/plos-correction-case/sources.json"),
+            "external_anchor_sha256": natural_case_report["external_anchor"]["anchor_sha256"],
+            "usage": "Real published material with a later explicit correction; manual extraction and not a receiver-value test.",
+        }
+    )
     evidence = {
         "schema": "openline.claim-graph.prototype-evidence.v1",
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
-        "status": "MECHANICALLY_VERIFIED_INDEPENDENT_GOLD_DEVELOPMENT_CHECK_EXTERNAL_VALUE_UNTESTED",
+        "status": "MECHANICALLY_VERIFIED_NATURAL_MATERIAL_REVIEW_EXTERNAL_VALUE_UNTESTED",
         "checks": checks,
         "inputs": inputs,
         "manifest_aggregate_sha256": manifest["aggregate_sha256"],
         "claim_boundary": (
             "Evidence covers deterministic integrity, source-span, lineage, projection, and receiver-policy mechanics "
-            "plus one small independently labeled, multiple-choice missing-premise mapping check (21/24). It does not "
-            "cover open-ended extraction fidelity, model generalization, or graph-versus-summary receiver value."
+            "plus one small independently labeled, multiple-choice missing-premise mapping check (21/24) and one "
+            "manually mapped natural-material inconsistency later confirmed by a public correction. It does not cover "
+            "open-ended extraction fidelity, model generalization, or graph-versus-summary receiver value."
         ),
         "incremental_api_spend_usd": 0,
         "model_calls": 1,

@@ -2,7 +2,7 @@
 
 ## Verdict
 
-The idea survives as a working integrity and lineage mechanism. A small independent-gold development check now shows that one source-to-graph mapping pass can recover signal on a constrained missing-premise task. It has not earned standing as a useful receiver-facing decision system.
+The idea survives as a working integrity, lineage, and receiver-review mechanism. A small independent-gold development check shows that one source-to-graph mapping pass can recover signal on a constrained missing-premise task. A separate natural-material case produces a readable review of five published abstract/main-text conflicts later confirmed by an independent correction. It has not earned standing as a superior receiver-facing decision system.
 
 The durable correction to Coherence Dynamics is architectural:
 
@@ -15,6 +15,8 @@ The prototype can create a small signed commitment to a larger graph state; repr
 It also closes the easiest provenance forgery. A producer cannot label a paraphrase as `QUOTE` unless the claim text exactly matches the declared UTF-8 source span. This is narrower than semantic extraction fidelity but materially stronger than trusting `EXTRACTED` because the producer typed it.
 
 The receipt-size design initially contained every source commitment and every warning, which made it grow with the graph. That failed the stated efficiency goal. Both collections were replaced with Merkle roots, counts, and compact warning categories. Only projection-relevant source commitments travel with inclusion proofs.
+
+The new Decision Review renderer adds no semantic judgment. It verifies the composed bundle first and fails closed on a broken key pin, signature, source, graph, projection, disclosure, or binding. For an admitted bundle it renders the declared conflicts, exact source spans, policy limits, and lineage as one static HTML file. It escapes source content rather than executing it.
 
 ## What remains outside the instrument
 
@@ -33,6 +35,12 @@ An extraction-process receipt containing a model ID, prompt digest, and source d
 The development fixture uses 24 deterministically selected rows from the independently annotated Argument Reasoning Comprehension Task. The mapper saw each premise, claim, two candidate warrants, and debate context without the correct-warrant label. One frozen pass selected 21/24 upstream labels correctly. Executable controls then show that the graph representation commits to the selection: gold mappings score 24/24, opposite mappings score 0/24, and all 24 gold/decoy pairs have different state roots.
 
 This is useful evidence against the claim that the mapping step can only echo a fixture authored inside OpenLine. It remains deliberately weak evidence for anything larger. The task is multiple-choice, the sample is small, the benchmark is public, the model pass was not replicated, and the repository file was assembled after the labels were revealed. Most importantly, no receiver compared a graph with prose.
+
+## What the natural-material case adds
+
+The PLOS ONE example uses the original article's published abstract and main-results passages without showing the later correction to the receiver bundle. The graph represents five conflicting quantities, the signed bundle verifies, and the HTML review reproduces those fault lines with exact spans. The later correction explicitly identifies the same abstract/main-text inconsistency.
+
+That is evidence of contact with natural material and an external veto, but not of product value. The extraction was manual, only one case was used, and no blinded receiver comparison was run. The honest result is: the mechanism and surface work on this case; superiority remains untested.
 
 ## Relation to the prior work
 

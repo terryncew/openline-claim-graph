@@ -24,24 +24,31 @@
     ],
     "deterministic_tamper_misses": 0,
     "deterministic_tamper_mutations": 10000,
+    "installed_cli_review_matches": true,
+    "natural_case_bundle_valid": true,
+    "natural_case_conflict_count": 5,
+    "natural_case_external_anchor_class": "E1_EXPLICIT_EXTERNAL_ANCHOR",
+    "natural_case_review_hash_matches": true,
+    "natural_case_status": "MECHANISM_WORKS_ON_ONE_EXTERNALLY_ANCHORED_NATURAL_CASE_VALUE_UNTESTED",
+    "natural_case_upstream_exact_match": true,
     "pilot_case_pack_empty": true,
     "pilot_condition_unit": "receiver",
     "pilot_stage_1_promotion_allowed": false,
     "pilot_target_receiver_type": "human",
-    "python_3_11_grammar_parse": 20,
+    "python_3_11_grammar_parse": 24,
     "scaling_probe_claim_counts": [
       1,
       10,
       100,
       1000
     ],
-    "unit_and_adversarial_tests": 33,
+    "unit_and_adversarial_tests": 36,
     "wheel_build": true
   },
-  "claim_boundary": "Evidence covers deterministic integrity, source-span, lineage, projection, and receiver-policy mechanics plus one small independently labeled, multiple-choice missing-premise mapping check (21/24). It does not cover open-ended extraction fidelity, model generalization, or graph-versus-summary receiver value.",
+  "claim_boundary": "Evidence covers deterministic integrity, source-span, lineage, projection, and receiver-policy mechanics plus one small independently labeled, multiple-choice missing-premise mapping check (21/24) and one manually mapped natural-material inconsistency later confirmed by a public correction. It does not cover open-ended extraction fidelity, model generalization, or graph-versus-summary receiver value.",
   "compile_output": "",
   "external_publication_or_push": false,
-  "generated_at": "2026-08-16T02:47:53Z",
+  "generated_at": "2026-08-16T04:43:56Z",
   "incremental_api_spend_usd": 0,
   "inputs": [
     {
@@ -59,12 +66,20 @@
       "upstream_path": "experiments/src/main/python/data/dev.tsv",
       "upstream_repository": "UKPLab/argument-reasoning-comprehension-task",
       "usage": "Independent-gold, multiple-choice missing-premise development check; not a receiver pilot."
+    },
+    {
+      "correction_doi": "10.1371/journal.pone.0249731",
+      "external_anchor_sha256": "4536c1a99b7b1b1ef6581342f1f4ee0a71937463f28054e2657ce4144198ba6d",
+      "name": "PLOS ONE abstract/main-text inconsistency natural-material case",
+      "original_doi": "10.1371/journal.pone.0223255",
+      "source_bundle_sha256": "be2e262df6d403dc3f98c8147a9560f588441fa58ce6020d5ea523b62ef2e448",
+      "usage": "Real published material with a later explicit correction; manual extraction and not a receiver-value test."
     }
   ],
   "interactive_model_mapping_passes": 1,
-  "manifest_aggregate_sha256": "ee98398956cffbf3d717ff823e739664f2af568c9325fbd4430a0815444704f3",
+  "manifest_aggregate_sha256": "5f437e2f4eaf03c234e154df6a4a9437721eb07c6a1c85056f4e61223f73a11c",
   "model_calls": 1,
   "programmatic_experiment_api_calls": 0,
   "schema": "openline.claim-graph.prototype-evidence.v1",
-  "status": "MECHANICALLY_VERIFIED_INDEPENDENT_GOLD_DEVELOPMENT_CHECK_EXTERNAL_VALUE_UNTESTED"
+  "status": "MECHANICALLY_VERIFIED_NATURAL_MATERIAL_REVIEW_EXTERNAL_VALUE_UNTESTED"
 }

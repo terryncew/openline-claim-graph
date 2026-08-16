@@ -1,0 +1,11 @@
+{
+  "anchor_class": "E1_EXPLICIT_EXTERNAL_ANCHOR",
+  "anchor_sha256": "4536c1a99b7b1b1ef6581342f1f4ee0a71937463f28054e2657ce4144198ba6d",
+  "anchor_text": "In the Results subsection of the Abstract. there are numbers reported which are inconsistent with those of the main text.",
+  "claim_boundary": "The correction confirms the inconsistency, not that this review surface improves human decisions.",
+  "correction_doi": "10.1371/journal.pone.0249731",
+  "correction_locator": "https://doi.org/10.1371/journal.pone.0249731",
+  "original_doi": "10.1371/journal.pone.0223255",
+  "schema": "openline.claim-graph.external-anchor.v1",
+  "use": "Post-hoc confirmation that the represented fault line existed; excluded from the receiver bundle."
+}

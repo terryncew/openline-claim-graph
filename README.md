@@ -1,4 +1,4 @@
-# OpenLine Claim Graph — mechanical prototype
+# OpenLine Claim Graph — verified Decision Review prototype
 
 This prototype tests one narrow idea from the earlier OLP/DSM work:
 
@@ -6,7 +6,7 @@ This prototype tests one narrow idea from the earlier OLP/DSM work:
 
 It does **not** put truth in a receipt. It records representations, their declared relations, their source anchors, and their history.
 
-Status: `EXPERIMENTAL_MECHANICAL_PROTOTYPE`. It is not a promoted product, standard, or scientific result.
+Status: `EXPERIMENTAL_RECEIVER_REVIEW_PROTOTYPE`. It is not a promoted product, standard, or scientific result.
 
 ## What is implemented
 
@@ -25,6 +25,7 @@ Status: `EXPERIMENTAL_MECHANICAL_PROTOTYPE`. It is not a promoted product, stand
 - An append-only wallet that preserves branches and merges.
 - Deterministic branch comparison and disagreement reports without ranking a branch as true.
 - A composed receiver verifier that checks every layer before returning `ADMIT`, `QUARANTINE`, or `DENY`.
+- A fail-closed, self-contained HTML Decision Review that makes represented fault lines, exact source anchors, lineage, and verification limits readable without exposing raw graph JSON.
 
 ## The important trust split
 
@@ -52,6 +53,7 @@ Python 3.11+ and `cryptography` are required.
 ```bash
 PYTHONPATH=src python -m unittest discover -s tests -v
 PYTHONPATH=src python examples/build_demo.py --output artifacts/demo
+PYTHONPATH=src python examples/build_plos_correction_case.py --output artifacts/plos-correction-case
 PYTHONPATH=src python scripts/scaling_probe.py
 ```
 
@@ -74,9 +76,26 @@ PYTHONPATH=src python -m openline_claim_graph verify-bundle \
 
 The fixture public key is also recorded in `artifacts/demo/fixture-public-key.json`. It is deterministic test material, not a production identity.
 
+Render a verified bundle as a static Decision Review:
+
+```bash
+PYTHONPATH=src python -m openline_claim_graph render-review \
+  --snapshot artifacts/plos-correction-case/snapshot.json \
+  --receipt artifacts/plos-correction-case/receipt.json \
+  --sources artifacts/plos-correction-case/sources.json \
+  --projection artifacts/plos-correction-case/projection.json \
+  --disclosure artifacts/plos-correction-case/source-disclosure.json \
+  --policy artifacts/plos-correction-case/receiver-policy.json \
+  --public-key 17cb79fb2b4120f2b1ec65e4198d6e08b28e813feb01e4a400839b85e18080ce \
+  --output /tmp/decision-review.html \
+  --title "Published abstract vs. main results"
+```
+
+Rendering fails closed when the source, receipt, graph, projection, policy binding, or receiver key pin is invalid. `ADMIT` means only that the verified bundle satisfies the declared receiver policy; the page states this beside the disposition.
+
 ## Evidence generated here
 
-- 33 offline unit/adversarial/protocol/development tests.
+- 36 offline unit/adversarial/protocol/development tests.
 - 10,000 deterministic tamper mutations detected with zero misses.
 - Exact-quote mislabeling is rejected.
 - Paraphrase/inference labels remain admitted only as disclosed, semantically unverified mappings.
@@ -85,6 +104,19 @@ The fixture public key is also recorded in `artifacts/demo/fixture-public-key.js
 - A 1,000-claim controlled graph produced a roughly 1.4 KB signed state receipt and a roughly 3.7 KB one-claim projection. The full snapshot was roughly 643 KB.
 
 Those are mechanical results. The controlled fixture was designed here, so it is not evidence that the graph improves decisions on natural material.
+
+### Natural-material review check
+
+`artifacts/plos-correction-case/` applies the same mechanism to the abstract results and two main-results passages from a published PLOS ONE article. The generated Decision Review exposes five numerical conflicts. A later PLOS correction explicitly states that numbers in the abstract were inconsistent with the main text. The correction is kept outside the receiver bundle and recorded as an E1 external anchor.
+
+This establishes that the review surface can carry a real, independently confirmed fault line without collapsing it into a score. It does **not** establish automated extraction, completeness, or an advantage over ordinary prose. Extraction for this case is manual and disclosed.
+
+The checked-in upstream verification records exact excerpt matches against the PLOS Search API. Re-run it when auditing or updating the example:
+
+```bash
+PYTHONPATH=src python scripts/verify_plos_upstream.py \
+  --output artifacts/plos-correction-case/upstream-verification.json
+```
 
 ### Independent-gold development check
 

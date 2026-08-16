@@ -1,6 +1,6 @@
 # Claim boundary
 
-This is an experimental mechanical prototype, not a promoted OpenLine product.
+This is an experimental receiver-review prototype, not a promoted OpenLine product.
 
 It demonstrates that a receiver can verify:
 
@@ -11,6 +11,7 @@ It demonstrates that a receiver can verify:
 - explicit parent pointers, record-level deltas, and multi-parent conflict handling;
 - bounded graph projections and source-manifest inclusion proofs;
 - append-only custody of branches and merges.
+- fail-closed rendering of a verified bundle as a static human-readable review.
 
 It does **not** demonstrate:
 
@@ -23,6 +24,12 @@ It does **not** demonstrate:
 - truth, coherence, reputation, consciousness, safety, or authorization.
 
 The graph records representations and relations among representations. Reality remains outside the receipt.
+
+## Natural-material contact
+
+Version `0.1.0.dev3` renders one real PLOS ONE abstract/main-text inconsistency. The receiver bundle exposes five numerical conflicts from the original article; a later correction explicitly confirms that abstract numbers were inconsistent with the main text. The correction stays outside the receiver bundle.
+
+This demonstrates that the verified surface can preserve an independently confirmed natural-material fault line. The mapping is manual, the case count is one, and no blinded receiver comparison exists. It is not evidence that graphs outperform careful prose, that extraction can be automated reliably, or that the surface improves decisions.
 
 ## Independent-gold development check
 

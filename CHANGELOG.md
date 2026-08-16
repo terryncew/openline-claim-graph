@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0.dev3 — 2026-08-15
+
+- Added `render-review`, a fail-closed static HTML surface over a fully verified receiver bundle.
+- Made represented fault lines, exact source spans, receiver-policy limits, and state lineage readable without exposing raw graph JSON.
+- Added deterministic rendering, wrong-pin, source-tamper, and HTML-injection tests.
+- Added one natural-material PLOS ONE case with five abstract/main-text numerical conflicts and a later explicit external correction recorded outside the receiver bundle.
+- Kept the claim boundary: the natural case establishes mechanism contact with reality, not automated extraction, completeness, or receiver-value superiority.
+
 ## 0.1.0.dev2 — 2026-08-15
 
 - Added a deterministic 24-case development subset of the independently annotated ARCT missing-premise benchmark, with upstream commit, blob, license, selection rule, and attribution fixed in the repository.
