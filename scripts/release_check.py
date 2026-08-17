@@ -232,6 +232,44 @@ def main() -> int:
             "artifacts/evidence-recall-temporal/independent-verification.json",
         ]
     )
+    run(
+        [
+            sys.executable,
+            "scripts/build_real_temporal_case_shah_iron.py",
+            "--output",
+            "artifacts/evidence-recall-temporal/real-001-shah-iron",
+        ]
+    )
+    run(
+        [
+            sys.executable,
+            "scripts/verify_real_temporal_case_shah_iron.py",
+            "--artifact",
+            "artifacts/evidence-recall-temporal/real-001-shah-iron",
+            "--output",
+            "artifacts/evidence-recall-temporal/real-001-shah-iron/independent-verification.json",
+        ]
+    )
+    run(
+        [
+            sys.executable,
+            "-m",
+            "openline_claim_graph",
+            "temporal-benchmark-validate",
+            "--pack",
+            "artifacts/evidence-recall-temporal/real-001-shah-iron/pack.json",
+            "--authority",
+            "artifacts/evidence-recall-temporal/real-001-shah-iron/authority.json",
+            "--future-seal",
+            "artifacts/evidence-recall-temporal/real-001-shah-iron/future-seal.private.json",
+            "--gold",
+            "artifacts/evidence-recall-temporal/real-001-shah-iron/gold.private.json",
+            "--predictions",
+            "artifacts/evidence-recall-temporal/real-001-shah-iron/predictions.json",
+            "--score",
+            "artifacts/evidence-recall-temporal/real-001-shah-iron/score.json",
+        ]
+    )
 
     grammar_files = [
         path
@@ -251,6 +289,7 @@ def main() -> int:
     installed_cli_published_diagnostic_matches = False
     installed_cli_temporal_benchmark_verifies = False
     installed_cli_temporal_diagnostic_matches = False
+    installed_cli_temporal_real_case_verifies = False
     with tempfile.TemporaryDirectory(prefix="openline-claim-graph-wheel-") as temporary:
         temp = Path(temporary)
         run(
@@ -516,6 +555,29 @@ def main() -> int:
         installed_cli_temporal_diagnostic_matches = sha256_file(installed_temporal_diagnostic) == sha256_file(
             temporal_dir / "published-diagnostic.json"
         )
+        temporal_real = temporal_dir / "real-001-shah-iron"
+        run(
+            [
+                sys.executable,
+                "-m",
+                "openline_claim_graph",
+                "temporal-benchmark-validate",
+                "--pack",
+                str(temporal_real / "pack.json"),
+                "--authority",
+                str(temporal_real / "authority.json"),
+                "--future-seal",
+                str(temporal_real / "future-seal.private.json"),
+                "--gold",
+                str(temporal_real / "gold.private.json"),
+                "--predictions",
+                str(temporal_real / "predictions.json"),
+                "--score",
+                str(temporal_real / "score.json"),
+            ],
+            extra_env={"PYTHONPATH": str(install_target)},
+        )
+        installed_cli_temporal_real_case_verifies = True
 
     verification = json.loads((ROOT / "artifacts/demo/verification.json").read_text(encoding="utf-8"))
     scaling = json.loads((ROOT / "artifacts/scaling-probe.json").read_text(encoding="utf-8"))
@@ -578,6 +640,13 @@ def main() -> int:
     temporal_score = json.loads(
         (ROOT / "artifacts/evidence-recall-temporal/conformance/score.json").read_text(encoding="utf-8")
     )
+    temporal_real_dir = ROOT / "artifacts/evidence-recall-temporal/real-001-shah-iron"
+    temporal_real_summary = json.loads((temporal_real_dir / "summary.json").read_text(encoding="utf-8"))
+    temporal_real_score = json.loads((temporal_real_dir / "score.json").read_text(encoding="utf-8"))
+    temporal_real_independent = json.loads(
+        (temporal_real_dir / "independent-verification.json").read_text(encoding="utf-8")
+    )
+    temporal_real_custody = json.loads((temporal_real_dir / "custody.json").read_text(encoding="utf-8"))
     checks = {
         "compileall": True,
         "python_3_11_grammar_parse": len(grammar_files),
@@ -593,6 +662,7 @@ def main() -> int:
         "installed_cli_published_diagnostic_matches": installed_cli_published_diagnostic_matches,
         "installed_cli_temporal_benchmark_verifies": installed_cli_temporal_benchmark_verifies,
         "installed_cli_temporal_diagnostic_matches": installed_cli_temporal_diagnostic_matches,
+        "installed_cli_temporal_real_case_verifies": installed_cli_temporal_real_case_verifies,
         "unit_and_adversarial_tests": test_count,
         "deterministic_tamper_mutations": 10_000,
         "deterministic_tamper_misses": 0,
@@ -679,7 +749,20 @@ def main() -> int:
         "temporal_conformance_er_review_load": temporal_score["metrics"]["EVIDENCE_RECALL"]["total_review_load"],
         "temporal_conformance_er_missed_reopenings": temporal_score["metrics"]["EVIDENCE_RECALL"]["missed_reopenings"],
         "temporal_conformance_er_reviewer_savings": temporal_score["comparisons_vs_review_all"]["EVIDENCE_RECALL"]["reviewer_savings_vs_review_all"],
-        "temporal_real_case_level_result_present": False,
+        "temporal_real_case_level_result_present": True,
+        "temporal_real_case_status": temporal_real_summary["status"],
+        "temporal_real_case_independent_status": temporal_real_independent["disposition"],
+        "temporal_real_case_independent_valid": temporal_real_independent["valid"],
+        "temporal_real_case_independent_checks": temporal_real_independent["check_count"],
+        "temporal_real_case_direct_review_load": temporal_real_summary["direct_review_load"],
+        "temporal_real_case_direct_missed_reopenings": temporal_real_summary["direct_missed_reopenings"],
+        "temporal_real_case_review_all_load": temporal_real_summary["review_all_review_load"],
+        "temporal_real_case_er_review_load": temporal_real_summary["evidence_recall_review_load"],
+        "temporal_real_case_er_missed_reopenings": temporal_real_summary["evidence_recall_missed_reopenings"],
+        "temporal_real_case_er_reviewer_savings": temporal_real_summary["evidence_recall_reviewer_savings_vs_review_all"],
+        "temporal_real_case_er_hard_quarantine_load": temporal_real_score["metrics"]["EVIDENCE_RECALL"]["hard_quarantine_load"],
+        "temporal_real_case_engine_unchanged": temporal_real_summary["engine_unchanged"],
+        "temporal_real_case_custody_engine_unchanged": temporal_real_custody["engine_unchanged"],
         "scaling_probe_claim_counts": [item["claim_count"] for item in scaling["results"]],
     }
     if not all(
@@ -695,6 +778,7 @@ def main() -> int:
             checks["installed_cli_published_diagnostic_matches"],
             checks["installed_cli_temporal_benchmark_verifies"],
             checks["installed_cli_temporal_diagnostic_matches"],
+            checks["installed_cli_temporal_real_case_verifies"],
             checks["demo_receipt_valid"],
             checks["demo_projection_valid"],
             checks["demo_source_disclosure_valid"],
@@ -773,7 +857,20 @@ def main() -> int:
             checks["temporal_conformance_er_review_load"] == 3,
             checks["temporal_conformance_er_missed_reopenings"] == 0,
             checks["temporal_conformance_er_reviewer_savings"] == 2,
-            checks["temporal_real_case_level_result_present"] is False,
+            checks["temporal_real_case_level_result_present"] is True,
+            checks["temporal_real_case_status"] == "REAL_TEMPORAL_CASE_001_RUN_NO_SELECTIVITY_ADVANTAGE",
+            checks["temporal_real_case_independent_status"] == "PASS",
+            checks["temporal_real_case_independent_valid"],
+            checks["temporal_real_case_independent_checks"] >= 36,
+            checks["temporal_real_case_direct_review_load"] == 1,
+            checks["temporal_real_case_direct_missed_reopenings"] == 1,
+            checks["temporal_real_case_review_all_load"] == 2,
+            checks["temporal_real_case_er_review_load"] == 2,
+            checks["temporal_real_case_er_missed_reopenings"] == 0,
+            checks["temporal_real_case_er_reviewer_savings"] == 0,
+            checks["temporal_real_case_er_hard_quarantine_load"] == 2,
+            checks["temporal_real_case_engine_unchanged"],
+            checks["temporal_real_case_custody_engine_unchanged"],
         ]
     ):
         raise RuntimeError(f"release checks failed: {checks}")
@@ -908,14 +1005,35 @@ def main() -> int:
             "usage": (
                 "Prospective-style historical evaluation protocol comparing Direct Lookup, Review-All Reachability, "
                 "and frozen Evidence Recall. Later records are content-committed before prediction and unsealed only for scoring. "
-                "The checked-in run is synthetic conformance only; no real case-level temporal advantage is claimed."
+                "The conformance fixture remains synthetic; the first real historical Shah/Darwish case is separately sealed and scored."
+            ),
+        }
+    )
+    inputs.append(
+        {
+            "name": "Evidence Recall temporal holdout real case 001 — Shah intravenous iron",
+            "accepted_review_doi": "10.1001/jamanetworkopen.2021.33935",
+            "invalidated_study_doi": "10.1080/14767058.2017.1379988",
+            "retraction_notice_doi": "10.1080/14767058.2023.2169999",
+            "later_correction_doi": "10.1001/jamanetworkopen.2025.0887",
+            "pack_id": temporal_real_summary["pack_id"],
+            "future_seal_id": temporal_real_summary["future_seal_id"],
+            "predictions_id": temporal_real_summary["predictions_id"],
+            "gold_id": temporal_real_summary["gold_id"],
+            "score_id": temporal_real_summary["score_id"],
+            "usage": (
+                "First real historical temporal episode. The pre-cutoff Shah review explicitly included the later-retracted "
+                "Darwish trial in its hemoglobin meta-analysis; the 2025 JAMA correction records an explicit reanalysis without "
+                "that study and no change in reported results. Direct Lookup catches one of two positive reopen targets; Review-All "
+                "and frozen Evidence Recall catch both, but Evidence Recall saves zero reviews. This is NO_PROMOTION and cannot "
+                "estimate false-review precision because both gold targets are positive."
             ),
         }
     )
     evidence = {
         "schema": "openline.claim-graph.prototype-evidence.v1",
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
-        "status": "TEMPORAL_HOLDOUT_PIPELINE_READY_REAL_CASE_LEVEL_PROMOTION_UNTESTED",
+        "status": "FIRST_REAL_TEMPORAL_CASE_RUN_NO_SELECTIVITY_ADVANTAGE_MORE_CASES_REQUIRED",
         "checks": checks,
         "inputs": inputs,
         "manifest_aggregate_sha256": manifest["aggregate_sha256"],
@@ -936,10 +1054,14 @@ def main() -> int:
             "unresolved review, and total review load without a composite score. Published aggregate diagnostics are source-backed "
             "and independently reproduced, but the canonical Schneider case-level CSV and van der Vet DOT bytes are not bundled in "
             "this build environment, so no case-level empirical mechanism-advantage or moat claim is present. "
-            "Version 0.5.0.dev0 additionally adds temporal-holdout custody: pre-cutoff nodes and edges, a post-cutoff trigger, "
-            "a committed but sealed later-record corpus, prediction without future records, and later reconsideration scoring against "
-            "Direct Lookup, Review-All Reachability, and frozen Evidence Recall. The conformance fixture demonstrates only that the "
-            "evaluator can distinguish recall from review burden. No real case-level temporal result or product promotion is present."
+            "Version 0.5.0.dev0 adds temporal-holdout custody: pre-cutoff nodes and edges, a post-cutoff trigger, a committed but "
+            "sealed later-record corpus, prediction without future records, and later reconsideration scoring against Direct Lookup, "
+            "Review-All Reachability, and frozen Evidence Recall. Version 0.5.0.dev1 adds the first real historical temporal episode: "
+            "the 2021 Shah intravenous-iron meta-analysis, the 2023 Darwish trial retraction, and the 2025 JAMA correction reporting "
+            "explicit reanalysis without the retracted study. Direct Lookup catches 1/2 warranted reopenings; Review-All and frozen "
+            "Evidence Recall catch 2/2, but Evidence Recall reviews the same two targets and therefore saves zero reviewer attention. "
+            "Both gold targets are positive, so this episode cannot estimate false-review precision. It is a real temporal mechanism "
+            "contact and an explicit NO_PROMOTION result, not evidence of a temporal selectivity or product advantage."
         ),
         "incremental_api_spend_usd": 0,
         "model_calls": 1,

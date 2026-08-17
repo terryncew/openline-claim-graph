@@ -1,0 +1,105 @@
+{
+  "benchmark_id": "temporal-real-001-shah-iron-v1",
+  "construction_rule": "Graph nodes and edges use only evidence published by the t0 cutoff. HARD authority is granted only to explicit pre-cutoff inclusion/derivation relations. The t1 retraction is prediction-visible. Later records are committed by seal but are not inputs to prediction.",
+  "episodes": [
+    {
+      "cutoff_at": "2023-01-18T23:59:59Z",
+      "edges": [
+        {
+          "available_at": "2021-11-12T00:00:00Z",
+          "dependent_node_id": "shah2021:pooled-hemoglobin",
+          "edge_id": "temporal-edge:sha256:13c150ff39e5a862afcf0f4f493c19a45a2a3b333ce696840e9f26c9314a9b29",
+          "evidence": [
+            "Pre-cutoff review explicitly lists 111 RCTs for hemoglobin and includes reference 76, the Darwish trial."
+          ],
+          "prerequisite_node_id": "doi:10.1080/14767058.2017.1379988",
+          "relation": "DERIVED_FROM"
+        },
+        {
+          "available_at": "2021-11-12T00:00:00Z",
+          "dependent_node_id": "shah2021:finding-improved-hemoglobin",
+          "edge_id": "temporal-edge:sha256:553ba53e031a236f5caf619e3bed665daaceaca24596c228cf2a66b534e16d22",
+          "evidence": [
+            "Pre-cutoff discussion restates improved hemoglobin as a main finding from the pooled hemoglobin analysis."
+          ],
+          "prerequisite_node_id": "shah2021:pooled-hemoglobin",
+          "relation": "DERIVED_FROM"
+        }
+      ],
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+      "episode_name": "Darwish retraction -> Shah intravenous-iron meta-analysis",
+      "event": {
+        "available_at": "2023-01-19T00:00:00Z",
+        "evidence_sha256": "546e9b4108e3296e5c81ebff6be3853187eea7034e78ff3d273b24dd74746209",
+        "identifier": "doi:10.1080/14767058.2017.1379988",
+        "locator": "doi:10.1080/14767058.2023.2169999",
+        "reason": "Publisher retraction after integrity concerns about data and reported results.",
+        "status": "RETRACTED"
+      },
+      "event_at": "2023-01-19T00:00:00Z",
+      "invalidated_node_id": "doi:10.1080/14767058.2017.1379988",
+      "metadata": {
+        "case_role": "FIRST_REAL_TEMPORAL_HOLDOUT",
+        "construction_basis": "Explicit pre-cutoff study membership and derivation statements only.",
+        "domain": "SCIENTIFIC_CLINICAL",
+        "historical_resolution": "DAY"
+      },
+      "nodes": [
+        {
+          "available_at": "2017-10-03T00:00:00Z",
+          "independent_basis": false,
+          "label": "Darwish 2019 randomized trial",
+          "locator": "doi:10.1080/14767058.2017.1379988",
+          "node_id": "doi:10.1080/14767058.2017.1379988",
+          "text": "Darwish et al. randomized trial of intravenous iron dextran versus oral iron in pregnancy."
+        },
+        {
+          "available_at": "2021-11-12T00:00:00Z",
+          "independent_basis": false,
+          "label": "Shah 2021 improved-hemoglobin finding",
+          "locator": "doi:10.1001/jamanetworkopen.2021.33935#discussion",
+          "node_id": "shah2021:finding-improved-hemoglobin",
+          "text": "The systematic review identifies improved hemoglobin as one of its main findings for intravenous iron."
+        },
+        {
+          "available_at": "2021-11-12T00:00:00Z",
+          "independent_basis": false,
+          "label": "Shah 2021 pooled hemoglobin result",
+          "locator": "doi:10.1001/jamanetworkopen.2021.33935#hemoglobin",
+          "node_id": "shah2021:pooled-hemoglobin",
+          "text": "Intravenous iron was associated with a pooled hemoglobin increase of 0.57 g/dL versus oral iron or no iron."
+        }
+      ],
+      "target_node_ids": [
+        "shah2021:finding-improved-hemoglobin",
+        "shah2021:pooled-hemoglobin"
+      ]
+    }
+  ],
+  "future_seal_commitment": {
+    "future_seal_id": "evidence-recall-temporal-future-seal:sha256:854b55d575c832cab95b79f6033ecfd7ed4768779cab4968554137f83313b074",
+    "record_count": 1,
+    "records_root": "c70054d35553c71a80aa001f1bb7047c2f5c0bd1524b8209ba300eb1b152baa2",
+    "retrieval_cutoff_at": "2025-01-27T23:59:59Z",
+    "scope_sha256": "ac1be9b9cfcef549df2070c3a2ffc254785da235d3bc15258e6e7c72fc7cb844"
+  },
+  "pack_id": "evidence-recall-temporal-pack:sha256:33bae71082ea539729bdb6a7a57d818fb6033ff26e5b21bde0cb76439bf83eac",
+  "schema": "openline.evidence-recall-temporal-pack.v1",
+  "source_manifest": [
+    {
+      "available_at": "2021-11-12T00:00:00Z",
+      "identifier": "darwish-2017-shah-2021",
+      "locator": "source-evidence/pre-cutoff.json",
+      "role": "pre-cutoff-study-and-review-evidence",
+      "sha256": "fc7f9300453c905bea2741b77c2275b5c1338908d033bcdbb85252f44a85fd2b"
+    },
+    {
+      "available_at": "2023-01-19T00:00:00Z",
+      "identifier": "doi:10.1080/14767058.2023.2169999",
+      "locator": "source-evidence/trigger.json",
+      "role": "trigger-retraction-evidence",
+      "sha256": "546e9b4108e3296e5c81ebff6be3853187eea7034e78ff3d273b24dd74746209"
+    }
+  ],
+  "status": "REAL_TEMPORAL_CASE_001_INPUTS_FROZEN"
+}

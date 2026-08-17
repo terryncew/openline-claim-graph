@@ -1,0 +1,20 @@
+{
+  "authority_id": "evidence-recall-temporal-authority:sha256:fe169b3a80247d6fa38000eaf51116570e8617958b6f253a05d414f268932c5c",
+  "benchmark_id": "temporal-real-001-shah-iron-v1",
+  "construction_rule": "HARD only because the 2021 review explicitly identifies study 76 as an input to the hemoglobin analysis and explicitly derives the improved-hemoglobin finding from that pooled analysis. No later record is used.",
+  "declared_by": "temporal-real-case-construction-rule",
+  "edge_authority": [
+    {
+      "authority": "HARD",
+      "edge_id": "temporal-edge:sha256:13c150ff39e5a862afcf0f4f493c19a45a2a3b333ce696840e9f26c9314a9b29",
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539"
+    },
+    {
+      "authority": "HARD",
+      "edge_id": "temporal-edge:sha256:553ba53e031a236f5caf619e3bed665daaceaca24596c228cf2a66b534e16d22",
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539"
+    }
+  ],
+  "pack_id": "evidence-recall-temporal-pack:sha256:33bae71082ea539729bdb6a7a57d818fb6033ff26e5b21bde0cb76439bf83eac",
+  "schema": "openline.evidence-recall-temporal-authority.v1"
+}

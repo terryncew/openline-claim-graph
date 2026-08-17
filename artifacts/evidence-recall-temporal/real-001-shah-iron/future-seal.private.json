@@ -1,0 +1,22 @@
+{
+  "benchmark_id": "temporal-real-001-shah-iron-v1",
+  "future_seal_id": "evidence-recall-temporal-future-seal:sha256:854b55d575c832cab95b79f6033ecfd7ed4768779cab4968554137f83313b074",
+  "records": [
+    {
+      "available_at": "2025-01-27T00:00:00Z",
+      "description": "JAMA Network Open later acknowledged the retracted included study and reported an explicit reanalysis without it; the reported results did not change.",
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+      "evidence_sha256": "1d7c544f5f436475fc0b49874455f8f75aba2be21826dcb33b19b54e0e9e1e49",
+      "locator": "doi:10.1001/jamanetworkopen.2025.0887",
+      "record_id": "temporal-future-record:sha256:f61319b5d67b35d38e886154d8406e646644240e3e5de3c8477076ee057e0818",
+      "record_type": "EXPLICIT_NO_CHANGE_AFTER_REANALYSIS",
+      "target_node_ids": [
+        "shah2021:finding-improved-hemoglobin",
+        "shah2021:pooled-hemoglobin"
+      ]
+    }
+  ],
+  "retrieval_cutoff_at": "2025-01-27T23:59:59Z",
+  "schema": "openline.evidence-recall-temporal-future-seal.v1",
+  "scope_definition": "Published records through 2025-01-27 that explicitly attribute reconsideration of the Shah 2021 meta-analysis to the Darwish retraction. Unrelated corrections are outside this trigger-specific scope."
+}

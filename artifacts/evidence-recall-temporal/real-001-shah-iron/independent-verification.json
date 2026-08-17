@@ -1,0 +1,189 @@
+{
+  "check_count": 36,
+  "checks": [
+    {
+      "detail": "",
+      "name": "pack_content_id",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "authority_content_id",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "seal_content_id",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "gold_content_id",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "predictions_content_id",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "score_content_id",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "seal_commitment_id",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "seal_commitment_count",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "seal_commitment_records_root",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "sealed_later_evidence_not_in_pack",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "cutoff_before_trigger",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "all_nodes_pre_cutoff",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "all_edges_pre_cutoff",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "later_record_after_trigger",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "pre_evidence_hash",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "trigger_evidence_hash",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "later_evidence_hash",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "trigger_binding",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "later_record_binding",
+      "pass": true
+    },
+    {
+      "detail": "{'src/openline_claim_graph/temporal_holdout.py': 'bc8f0011d65cb1c2c728ef374ebb82b86c3c08657e9919427ff5d80b2707886a', 'src/openline_claim_graph/comparative_benchmark.py': '6c04e9e021cbc1c01aae78606acc6cd41393c99673185e1e8e3ee4ccaa06e4b1', 'src/openline_claim_graph/impact.py': '1757340f69e919ff68d3cdfe4265fc1ac330bc99ff5bcd20b69058fa846905a2'}",
+      "name": "frozen_engine_unchanged",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "custody_agrees_engine_unchanged",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "all_case_edges_hard",
+      "pass": true
+    },
+    {
+      "detail": "{'shah2021:finding-improved-hemoglobin', 'shah2021:pooled-hemoglobin'}",
+      "name": "review_all_reaches_both_targets",
+      "pass": true
+    },
+    {
+      "detail": "{'shah2021:pooled-hemoglobin'}",
+      "name": "direct_reaches_one_target",
+      "pass": true
+    },
+    {
+      "detail": "1",
+      "name": "prediction_direct_load_independent",
+      "pass": true
+    },
+    {
+      "detail": "2",
+      "name": "prediction_review_all_load_independent",
+      "pass": true
+    },
+    {
+      "detail": "2",
+      "name": "prediction_evidence_recall_load",
+      "pass": true
+    },
+    {
+      "detail": "{'shah2021:finding-improved-hemoglobin': {'classification': 'QUARANTINE', 'review': True}, 'shah2021:pooled-hemoglobin': {'classification': 'QUARANTINE', 'review': True}}",
+      "name": "evidence_recall_hard_required_chain",
+      "pass": true
+    },
+    {
+      "detail": "{('temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539', 'shah2021:finding-improved-hemoglobin'): 'REOPEN', ('temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539', 'shah2021:pooled-hemoglobin'): 'REOPEN'}",
+      "name": "gold_both_reopen",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "gold_uses_positive_later_record",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "later_record_is_reanalysis_no_change",
+      "pass": true
+    },
+    {
+      "detail": "{'correct_nonreviews': 0, 'hard_quarantine_load': 0, 'missed_reopenings': 1, 'no_reopen_gold': 0, 'reconsideration_precision': {'basis_points': 10000, 'denominator': 1, 'numerator': 1}, 'reconsideration_recall': {'basis_points': 5000, 'denominator': 2, 'numerator': 1}, 'relevant_reopenings_caught_per_unnecessary_review': None, 'reopen_gold': 2, 'review_burden': {'basis_points': 5000, 'denominator': 2, 'numerator': 1}, 'scored_cases': 2, 'total_review_load': 1, 'true_reopen_reviews': 1, 'unnecessary_review_rate': None, 'unnecessary_reviews': 0, 'unresolved_review_load': 0}",
+      "name": "score_direct_expected",
+      "pass": true
+    },
+    {
+      "detail": "{'correct_nonreviews': 0, 'hard_quarantine_load': 0, 'missed_reopenings': 0, 'no_reopen_gold': 0, 'reconsideration_precision': {'basis_points': 10000, 'denominator': 2, 'numerator': 2}, 'reconsideration_recall': {'basis_points': 10000, 'denominator': 2, 'numerator': 2}, 'relevant_reopenings_caught_per_unnecessary_review': None, 'reopen_gold': 2, 'review_burden': {'basis_points': 10000, 'denominator': 2, 'numerator': 2}, 'scored_cases': 2, 'total_review_load': 2, 'true_reopen_reviews': 2, 'unnecessary_review_rate': None, 'unnecessary_reviews': 0, 'unresolved_review_load': 0}",
+      "name": "score_review_all_expected",
+      "pass": true
+    },
+    {
+      "detail": "{'correct_nonreviews': 0, 'hard_quarantine_load': 2, 'missed_reopenings': 0, 'no_reopen_gold': 0, 'reconsideration_precision': {'basis_points': 10000, 'denominator': 2, 'numerator': 2}, 'reconsideration_recall': {'basis_points': 10000, 'denominator': 2, 'numerator': 2}, 'relevant_reopenings_caught_per_unnecessary_review': None, 'reopen_gold': 2, 'review_burden': {'basis_points': 10000, 'denominator': 2, 'numerator': 2}, 'scored_cases': 2, 'total_review_load': 2, 'true_reopen_reviews': 2, 'unnecessary_review_rate': None, 'unnecessary_reviews': 0, 'unresolved_review_load': 0}",
+      "name": "score_er_expected",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "er_zero_reviewer_savings",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "summary_no_selectivity",
+      "pass": true
+    }
+  ],
+  "claim_boundary": "This verifier independently checks artifact custody, temporal ordering, simple graph reachability, frozen engine hashes, and the exact first-case score. It does not independently reproduce publisher source bytes or establish generalization.",
+  "disposition": "PASS",
+  "schema": "openline.temporal-real-case-independent-verification.v1",
+  "valid": true
+}

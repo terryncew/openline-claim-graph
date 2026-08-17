@@ -1,0 +1,34 @@
+{
+  "benchmark_id": "temporal-real-001-shah-iron-v1",
+  "build_sequence": [
+    "local source evidence snapshots created",
+    "later-record seal created",
+    "public pack bound to seal commitment",
+    "receiver authority frozen from pre-cutoff evidence",
+    "predictions emitted from pack and authority only",
+    "gold bound to already sealed later record",
+    "score computed from frozen predictions"
+  ],
+  "case_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+  "construction_limit": "This is a retrospective historical reconstruction built in 2026. Timestamp and artifact custody are mechanically checked, but code cannot prove the human constructor was psychologically blind to later history. The graph therefore uses only explicit pre-cutoff study membership and derivation statements to minimize discretion.",
+  "cutoff_at": "2023-01-18T23:59:59Z",
+  "engine_sha256": {
+    "src/openline_claim_graph/comparative_benchmark.py": "6c04e9e021cbc1c01aae78606acc6cd41393c99673185e1e8e3ee4ccaa06e4b1",
+    "src/openline_claim_graph/impact.py": "1757340f69e919ff68d3cdfe4265fc1ac330bc99ff5bcd20b69058fa846905a2",
+    "src/openline_claim_graph/temporal_holdout.py": "bc8f0011d65cb1c2c728ef374ebb82b86c3c08657e9919427ff5d80b2707886a"
+  },
+  "engine_sha256_expected_from_0_5_0_dev0": {
+    "src/openline_claim_graph/comparative_benchmark.py": "6c04e9e021cbc1c01aae78606acc6cd41393c99673185e1e8e3ee4ccaa06e4b1",
+    "src/openline_claim_graph/impact.py": "1757340f69e919ff68d3cdfe4265fc1ac330bc99ff5bcd20b69058fa846905a2",
+    "src/openline_claim_graph/temporal_holdout.py": "bc8f0011d65cb1c2c728ef374ebb82b86c3c08657e9919427ff5d80b2707886a"
+  },
+  "engine_unchanged": true,
+  "evidence_hashes": {
+    "later_record": "1d7c544f5f436475fc0b49874455f8f75aba2be21826dcb33b19b54e0e9e1e49",
+    "pre_cutoff": "fc7f9300453c905bea2741b77c2275b5c1338908d033bcdbb85252f44a85fd2b",
+    "trigger": "546e9b4108e3296e5c81ebff6be3853187eea7034e78ff3d273b24dd74746209"
+  },
+  "later_record_at": "2025-01-27T00:00:00Z",
+  "schema": "openline.temporal-real-case-custody.v1",
+  "trigger_at": "2023-01-19T00:00:00Z"
+}

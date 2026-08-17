@@ -1,8 +1,8 @@
 # Evidence Recall Temporal Holdout Benchmark
 
-Version: `0.5.0.dev0`
+Version: `0.5.0.dev1`
 
-Status: `TEMPORAL_HOLDOUT_PIPELINE_READY_REAL_CASE_LEVEL_PROMOTION_UNTESTED`
+Status: `FIRST_REAL_TEMPORAL_CASE_RUN_NO_SELECTIVITY_ADVANTAGE_MORE_CASES_REQUIRED`
 
 ## Question
 
@@ -80,7 +80,28 @@ The first real version is restricted to scientific and clinical material because
 - VITALITY Study I (2025), DOI `10.1136/bmj-2024-082068`, as a large retracted-trial/meta-analysis/guideline substrate; and
 - the Cochrane letrozole review, DOI `10.1002/14651858.CD010287.pub3`, as a positive example where review was warranted even though conclusions did not change.
 
-These sources are candidates, not a temporal benchmark result. No case-level temporal promotion claim is checked into `0.5.0.dev0`.
+These sources remain candidate families for broader grading.
+
+## Real historical case 001 — Shah intravenous iron
+
+The first checked-in real episode uses only explicit pre-cutoff dependency evidence:
+
+- accepted review: Shah et al. 2021, DOI `10.1001/jamanetworkopen.2021.33935`;
+- `t0`: 2023-01-18T23:59:59Z;
+- trigger: Darwish trial retraction, DOI `10.1080/14767058.2023.2169999`, at `t1` = 2023-01-19;
+- later record: JAMA correction DOI `10.1001/jamanetworkopen.2025.0887`, dated 2025-01-27.
+
+The pre-cutoff review explicitly includes reference 76 (Darwish) in the 111-RCT hemoglobin analysis. The case therefore binds a hard derivation from the Darwish trial to the pooled hemoglobin result and from that pooled result to the review's improved-hemoglobin finding. The later correction records a reanalysis without the retracted study and reports no change in reported results. Both targets are positive `REOPEN` gold because reconsideration occurred.
+
+Frozen result:
+
+| System | Reopenings caught | Missed | Review load | Savings vs Review-All |
+|---|---:|---:|---:|---:|
+| Direct Lookup | 1/2 | 1 | 1 | 1 |
+| Review-All Reachability | 2/2 | 0 | 2 | 0 |
+| Frozen Evidence Recall | 2/2 | 0 | 2 | 0 |
+
+Verdict: `NO_PROMOTION`. Evidence Recall ties Review-All on attention cost in this episode. Both gold targets are positive, so this case establishes temporal mechanism contact but cannot estimate false-review precision or the broader selectivity advantage.
 
 ## Frozen boundaries
 

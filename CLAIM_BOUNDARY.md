@@ -88,8 +88,8 @@ The repository does **not** currently claim that Evidence Recall lowers review l
 
 ## Temporal holdout boundary
 
-Version `0.5.0.dev0` adds evaluation custody, not a new Evidence Recall inference mechanism. The evaluator binds a pre-cutoff graph, one post-cutoff triggering event, receiver edge authority, a commitment to a separately sealed future-record corpus, predictions, later gold, and an exactly reproducible score.
+Version `0.5.0.dev0` adds evaluation custody, not a new Evidence Recall inference mechanism. Version `0.5.0.dev1` adds the first real historical temporal episode while keeping that inference mechanism byte-for-byte frozen. The evaluator binds a pre-cutoff graph, one post-cutoff triggering event, receiver edge authority, a commitment to a separately sealed future-record corpus, predictions, later gold, and an exactly reproducible score.
 
 The temporal gold question is whether later independent records show that a target warranted reconsideration. This is not a truth label. A target can survive after reanalysis and still be a correct `REOPEN`. Conversely, no later correction is not evidence for `NO_REOPEN`; negative gold requires affirmative no-reliance or explicit scope evidence.
 
-The principal baseline is Review-All Reachability. Evidence Recall has not earned a temporal selectivity advantage until a real case-level historical run catches later reopenings while reducing review load relative to that baseline. The checked-in conformance fixture is synthetic and cannot support that claim.
+The principal baseline is Review-All Reachability. The first real Shah/Darwish temporal episode catches 2/2 warranted reopenings with frozen Evidence Recall, but Review-All also catches 2/2 and both have review load 2. Evidence Recall therefore saves zero reviews and earns `NO_PROMOTION`. The episode has only positive gold labels, so it cannot estimate false-review precision; more real cases with affirmative negative outcomes are required before the temporal selectivity thesis can be graded.

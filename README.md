@@ -8,7 +8,7 @@ This prototype tests one narrow idea from the earlier OLP/DSM work:
 
 It does **not** put truth in a receipt. It records representations, their declared relations, their source anchors, and their history.
 
-Status: `TEMPORAL_HOLDOUT_PIPELINE_READY_REAL_CASE_LEVEL_PROMOTION_UNTESTED`. Evidence Recall remains frozen. The new temporal evaluator is ready, but no real case-level temporal product, moat, or decision-value promotion is claimed.
+Status: `FIRST_REAL_TEMPORAL_CASE_RUN_NO_SELECTIVITY_ADVANTAGE_MORE_CASES_REQUIRED`. Evidence Recall remains frozen. The first real historical temporal episode is now scored, and it earns **no product promotion**.
 
 ## What works now
 
@@ -34,7 +34,7 @@ See [the Frame Ledger contract](docs/FRAME_LEDGER.md) and open [`artifacts/wapo-
 
 ## Temporal holdout is the next promotion test
 
-Version `0.5.0.dev0` adds a prospective-style historical benchmark without changing Evidence Recall semantics. Each episode freezes an accepted dependency state at `t0`, binds a private future-record corpus by commitment, reveals one later event at `t1`, runs predictions without future records, and only then unseals independently dated later reconsideration evidence for scoring.
+Version `0.5.0.dev0` adds a prospective-style historical benchmark without changing Evidence Recall semantics. Version `0.5.0.dev1` adds the first real historical case without changing those semantics. Each episode freezes an accepted dependency state at `t0`, binds a private future-record corpus by commitment, reveals one later event at `t1`, runs predictions without future records, and only then unseals independently dated later reconsideration evidence for scoring.
 
 The main systems are **Direct Lookup**, **Review-All Reachability**, and the frozen **Evidence Recall** engine. Review-All Reachability is intentionally stronger than the earlier hard-taint baseline: it simply sends every reachable target to a human. Evidence Recall therefore earns attention selectivity only if it catches later documented reopenings while waking fewer targets. Naive Transitive Taint remains an optional severity diagnostic.
 
@@ -42,7 +42,7 @@ Gold means independently recorded later **reconsideration**, not later falsity. 
 
 The evaluator reports precision, recall, review burden, unnecessary reviews, and reviewer savings versus Review-All. Rates are stored as exact integer ratios/basis points rather than floating point. There is no composite score or automatic promotion threshold.
 
-The checked-in temporal conformance fixture is synthetic and proves only evaluator mechanics. The source-backed corpus registry identifies clinical/scientific candidates, but no real case-level temporal holdout has been run in this release. See [`experiments/evidence_recall_temporal/PROTOCOL.md`](experiments/evidence_recall_temporal/PROTOCOL.md).
+The checked-in temporal conformance fixture remains synthetic. `0.5.0.dev1` also contains one real historical episode: the 2021 Shah intravenous-iron meta-analysis, the January 2023 retraction of the included Darwish trial, and the January 2025 JAMA correction reporting an explicit reanalysis without that trial. Direct Lookup catches 1/2 warranted reopenings; Review-All and frozen Evidence Recall catch 2/2, but Evidence Recall reviews the same two targets and therefore saves zero reviewer attention. This is `NO_PROMOTION`, not evidence of selectivity. See [`experiments/evidence_recall_temporal/PROTOCOL.md`](experiments/evidence_recall_temporal/PROTOCOL.md).
 
 ## Structural comparative benchmark (0.4)
 
@@ -165,7 +165,24 @@ python scripts/verify_temporal_published_diagnostic.py \
   --output artifacts/evidence-recall-temporal/independent-verification.json
 ```
 
-For a real temporal episode, predictions are run from only `pack.json` and `authority.json`; `future-seal.private.json` and `gold.private.json` are withheld until scoring.
+Rebuild and independently verify the first real historical episode:
+
+```bash
+PYTHONPATH=src python scripts/build_real_temporal_case_shah_iron.py \
+  --output artifacts/evidence-recall-temporal/real-001-shah-iron
+python scripts/verify_real_temporal_case_shah_iron.py \
+  --artifact artifacts/evidence-recall-temporal/real-001-shah-iron \
+  --output artifacts/evidence-recall-temporal/real-001-shah-iron/independent-verification.json
+PYTHONPATH=src python -m openline_claim_graph temporal-benchmark-validate \
+  --pack artifacts/evidence-recall-temporal/real-001-shah-iron/pack.json \
+  --authority artifacts/evidence-recall-temporal/real-001-shah-iron/authority.json \
+  --future-seal artifacts/evidence-recall-temporal/real-001-shah-iron/future-seal.private.json \
+  --gold artifacts/evidence-recall-temporal/real-001-shah-iron/gold.private.json \
+  --predictions artifacts/evidence-recall-temporal/real-001-shah-iron/predictions.json \
+  --score artifacts/evidence-recall-temporal/real-001-shah-iron/score.json
+```
+
+For a real temporal episode, predictions are run from only `pack.json` and `authority.json`; `future-seal.private.json` and `gold.private.json` are withheld until scoring. The first episode is a retrospective historical reconstruction, so the code proves timestamp/artifact separation, not that the human constructor was psychologically blind to later history.
 
 When the canonical Schneider V2 CSV is available locally, the importer itself performs the anti-leakage split and fails closed unless it recovers the published 152 accessible rows and 23 positives:
 

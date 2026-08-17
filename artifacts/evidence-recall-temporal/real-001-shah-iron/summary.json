@@ -1,0 +1,18 @@
+{
+  "benchmark_id": "temporal-real-001-shah-iron-v1",
+  "direct_missed_reopenings": 1,
+  "direct_review_load": 1,
+  "engine_unchanged": true,
+  "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+  "evidence_recall_missed_reopenings": 0,
+  "evidence_recall_review_load": 2,
+  "evidence_recall_reviewer_savings_vs_review_all": 0,
+  "future_seal_id": "evidence-recall-temporal-future-seal:sha256:854b55d575c832cab95b79f6033ecfd7ed4768779cab4968554137f83313b074",
+  "gold_id": "evidence-recall-temporal-gold:sha256:e575b740ffae7e3daa68943085f6109f3f482b10da75d173b59170f963a8e1db",
+  "pack_id": "evidence-recall-temporal-pack:sha256:33bae71082ea539729bdb6a7a57d818fb6033ff26e5b21bde0cb76439bf83eac",
+  "predictions_id": "evidence-recall-temporal-predictions:sha256:649587f5f360fa6e297e09305515262fd2045fd2a1c245c6d3f3d31ac171d7bc",
+  "review_all_review_load": 2,
+  "score_id": "evidence-recall-temporal-score:sha256:394e463754e70b21042b931f4dc740cf063ffce934fa3921252df28443b46414",
+  "status": "REAL_TEMPORAL_CASE_001_RUN_NO_SELECTIVITY_ADVANTAGE",
+  "valid": true
+}

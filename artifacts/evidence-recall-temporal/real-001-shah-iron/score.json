@@ -1,0 +1,184 @@
+{
+  "authority_id": "evidence-recall-temporal-authority:sha256:fe169b3a80247d6fa38000eaf51116570e8617958b6f253a05d414f268932c5c",
+  "benchmark_id": "temporal-real-001-shah-iron-v1",
+  "claim_boundary": "Gold measures independently recorded later reconsideration, not eventual falsity. No absence of correction is treated as NO_REOPEN. No composite score or automatic promotion threshold is computed.",
+  "comparisons_vs_review_all": {
+    "DIRECT_LOOKUP": {
+      "additional_missed_reopenings_vs_review_all": 1,
+      "reviewer_savings_vs_review_all": 1,
+      "unnecessary_review_savings_vs_review_all": 0
+    },
+    "EVIDENCE_RECALL": {
+      "additional_missed_reopenings_vs_review_all": 0,
+      "reviewer_savings_vs_review_all": 0,
+      "unnecessary_review_savings_vs_review_all": 0
+    },
+    "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+      "additional_missed_reopenings_vs_review_all": 0,
+      "reviewer_savings_vs_review_all": 0,
+      "unnecessary_review_savings_vs_review_all": 0
+    },
+    "REVIEW_ALL_REACHABILITY": {
+      "additional_missed_reopenings_vs_review_all": 0,
+      "reviewer_savings_vs_review_all": 0,
+      "unnecessary_review_savings_vs_review_all": 0
+    }
+  },
+  "episode_counts": {
+    "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539": {
+      "DIRECT_LOOKUP": {
+        "missed_reopenings": 1,
+        "scored_cases": 2,
+        "total_review_load": 1,
+        "true_reopen_reviews": 1,
+        "unnecessary_reviews": 0
+      },
+      "EVIDENCE_RECALL": {
+        "missed_reopenings": 0,
+        "scored_cases": 2,
+        "total_review_load": 2,
+        "true_reopen_reviews": 2,
+        "unnecessary_reviews": 0
+      },
+      "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+        "missed_reopenings": 0,
+        "scored_cases": 2,
+        "total_review_load": 2,
+        "true_reopen_reviews": 2,
+        "unnecessary_reviews": 0
+      },
+      "REVIEW_ALL_REACHABILITY": {
+        "missed_reopenings": 0,
+        "scored_cases": 2,
+        "total_review_load": 2,
+        "true_reopen_reviews": 2,
+        "unnecessary_reviews": 0
+      }
+    }
+  },
+  "future_seal_id": "evidence-recall-temporal-future-seal:sha256:854b55d575c832cab95b79f6033ecfd7ed4768779cab4968554137f83313b074",
+  "gold_id": "evidence-recall-temporal-gold:sha256:e575b740ffae7e3daa68943085f6109f3f482b10da75d173b59170f963a8e1db",
+  "metrics": {
+    "DIRECT_LOOKUP": {
+      "correct_nonreviews": 0,
+      "hard_quarantine_load": 0,
+      "missed_reopenings": 1,
+      "no_reopen_gold": 0,
+      "reconsideration_precision": {
+        "basis_points": 10000,
+        "denominator": 1,
+        "numerator": 1
+      },
+      "reconsideration_recall": {
+        "basis_points": 5000,
+        "denominator": 2,
+        "numerator": 1
+      },
+      "relevant_reopenings_caught_per_unnecessary_review": null,
+      "reopen_gold": 2,
+      "review_burden": {
+        "basis_points": 5000,
+        "denominator": 2,
+        "numerator": 1
+      },
+      "scored_cases": 2,
+      "total_review_load": 1,
+      "true_reopen_reviews": 1,
+      "unnecessary_review_rate": null,
+      "unnecessary_reviews": 0,
+      "unresolved_review_load": 0
+    },
+    "EVIDENCE_RECALL": {
+      "correct_nonreviews": 0,
+      "hard_quarantine_load": 2,
+      "missed_reopenings": 0,
+      "no_reopen_gold": 0,
+      "reconsideration_precision": {
+        "basis_points": 10000,
+        "denominator": 2,
+        "numerator": 2
+      },
+      "reconsideration_recall": {
+        "basis_points": 10000,
+        "denominator": 2,
+        "numerator": 2
+      },
+      "relevant_reopenings_caught_per_unnecessary_review": null,
+      "reopen_gold": 2,
+      "review_burden": {
+        "basis_points": 10000,
+        "denominator": 2,
+        "numerator": 2
+      },
+      "scored_cases": 2,
+      "total_review_load": 2,
+      "true_reopen_reviews": 2,
+      "unnecessary_review_rate": null,
+      "unnecessary_reviews": 0,
+      "unresolved_review_load": 0
+    },
+    "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+      "correct_nonreviews": 0,
+      "hard_quarantine_load": 2,
+      "missed_reopenings": 0,
+      "no_reopen_gold": 0,
+      "reconsideration_precision": {
+        "basis_points": 10000,
+        "denominator": 2,
+        "numerator": 2
+      },
+      "reconsideration_recall": {
+        "basis_points": 10000,
+        "denominator": 2,
+        "numerator": 2
+      },
+      "relevant_reopenings_caught_per_unnecessary_review": null,
+      "reopen_gold": 2,
+      "review_burden": {
+        "basis_points": 10000,
+        "denominator": 2,
+        "numerator": 2
+      },
+      "scored_cases": 2,
+      "total_review_load": 2,
+      "true_reopen_reviews": 2,
+      "unnecessary_review_rate": null,
+      "unnecessary_reviews": 0,
+      "unresolved_review_load": 0
+    },
+    "REVIEW_ALL_REACHABILITY": {
+      "correct_nonreviews": 0,
+      "hard_quarantine_load": 0,
+      "missed_reopenings": 0,
+      "no_reopen_gold": 0,
+      "reconsideration_precision": {
+        "basis_points": 10000,
+        "denominator": 2,
+        "numerator": 2
+      },
+      "reconsideration_recall": {
+        "basis_points": 10000,
+        "denominator": 2,
+        "numerator": 2
+      },
+      "relevant_reopenings_caught_per_unnecessary_review": null,
+      "reopen_gold": 2,
+      "review_burden": {
+        "basis_points": 10000,
+        "denominator": 2,
+        "numerator": 2
+      },
+      "scored_cases": 2,
+      "total_review_load": 2,
+      "true_reopen_reviews": 2,
+      "unnecessary_review_rate": null,
+      "unnecessary_reviews": 0,
+      "unresolved_review_load": 0
+    }
+  },
+  "pack_id": "evidence-recall-temporal-pack:sha256:33bae71082ea539729bdb6a7a57d818fb6033ff26e5b21bde0cb76439bf83eac",
+  "predictions_id": "evidence-recall-temporal-predictions:sha256:649587f5f360fa6e297e09305515262fd2045fd2a1c245c6d3f3d31ac171d7bc",
+  "primary_question": "When a new event arrives, does frozen Evidence Recall catch later independently recorded reopenings while waking fewer targets than review-all reachability?",
+  "schema": "openline.evidence-recall-temporal-score.v1",
+  "score_id": "evidence-recall-temporal-score:sha256:394e463754e70b21042b931f4dc740cf063ffce934fa3921252df28443b46414"
+}

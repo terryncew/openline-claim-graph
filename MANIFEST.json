@@ -1,11 +1,11 @@
 {
-  "aggregate_sha256": "40e1fcda930df6ef92d4ab725797e29039810289a94fe954b09f6734e265d631",
-  "file_count": 176,
+  "aggregate_sha256": "86f7d7b097c882c5a18d52c70b4cf9eb8880bfaf51f6be8a37d5894eabc96036",
+  "file_count": 192,
   "files": [
     {
-      "bytes": 4944,
+      "bytes": 5924,
       "path": ".github/workflows/ci.yml",
-      "sha256": "7c96e721ad6c1a0b850061212234f44f4c3316074b4e19d1c975086fb0d8ef78"
+      "sha256": "fbaf4b44ec78a3f74448d30c0d3bf0b01a76b82f1f8ed8b747ab7046ef22a726"
     },
     {
       "bytes": 112,
@@ -13,24 +13,24 @@
       "sha256": "6e328070b6749987b63470925c9b8ed781af5cbcf6987150f818f628e3ff5ebe"
     },
     {
-      "bytes": 14614,
+      "bytes": 15613,
       "path": "ASSESSMENT.md",
-      "sha256": "143d56a2ea2f7ec2d811eebcec63eac633b8ab0271b3c9e8dce7535a18fcfa88"
+      "sha256": "fbf37c7fa7698ee988279d072069333b59d0fe390e39c43b9dfcbc8f85b7025b"
     },
     {
-      "bytes": 12845,
+      "bytes": 14690,
       "path": "CHANGELOG.md",
-      "sha256": "4f044a0d9b313c7c98219f20dd64902506756440686c2232a950351d4eb29b8e"
+      "sha256": "2cc0652a366b2edf3e3250bcdf9d5cfbed3ff1c3253329e0d3d4844c72ce5850"
     },
     {
-      "bytes": 10174,
+      "bytes": 10489,
       "path": "CLAIM_BOUNDARY.md",
-      "sha256": "cadeaca6016200ec7e90a9867fa1d3f2eee040c3996a8e4387eb7f0f5b5a58fe"
+      "sha256": "2b49427f5ec1de8a2f70af147a953747185c7535cfc168981a712c6e355c8ffc"
     },
     {
-      "bytes": 1552,
+      "bytes": 2291,
       "path": "CLAIM_BOUNDARY_TEMPORAL.md",
-      "sha256": "63effed1181d9799d0c0b1450702c9486141b520a7c20ad3adf1add37ed84a5c"
+      "sha256": "70f24673fd9759c52f501b22bb4265b61d3875c0519d1139f8ffc49a1f911a01"
     },
     {
       "bytes": 1071,
@@ -38,14 +38,14 @@
       "sha256": "07674dfa9960dff5128d0cdcce58fee7543c26ff47e58e07ae6ac0254a0f58b1"
     },
     {
-      "bytes": 29487,
+      "bytes": 31081,
       "path": "README.md",
-      "sha256": "bce0ddd19411ea1145d3858029e4c1184729b50891b4873a87952ec8b8f29a8a"
+      "sha256": "cf09acb4fd7c5ae03fe8e5aa37dcb4799e9b1f0c090e36e814f58fd7874dae07"
     },
     {
-      "bytes": 1913,
+      "bytes": 1984,
       "path": "RELEASE.md",
-      "sha256": "58b21e156f5735ac54bfa5006b8f93bc0ec5349a9ef4733c7741c9dc76228882"
+      "sha256": "c3377228e4ea91fbcec0dd3624a87f26db7d3c34af7dd80054fc6107a9dc25f2"
     },
     {
       "bytes": 15678,
@@ -226,6 +226,71 @@
       "bytes": 2559,
       "path": "artifacts/evidence-recall-temporal/published-diagnostic.json",
       "sha256": "e21e9af6390c66e86f07ac685e1f3e20741fc724b7623038a1702aea1e2b08b4"
+    },
+    {
+      "bytes": 3055,
+      "path": "artifacts/evidence-recall-temporal/real-001-shah-iron/REPORT.md",
+      "sha256": "5601df6fedc2bda27762acedf2d8a4afbf2bf20fd0d9f74cded3b243a2014df9"
+    },
+    {
+      "bytes": 1213,
+      "path": "artifacts/evidence-recall-temporal/real-001-shah-iron/authority.json",
+      "sha256": "dc91bfdaed241f9410d3c349d2d0d18ed8f95ac786b0f748c511678a34dce6fb"
+    },
+    {
+      "bytes": 2156,
+      "path": "artifacts/evidence-recall-temporal/real-001-shah-iron/custody.json",
+      "sha256": "1af704f52f3c541ee9d526edc03c52acb7ff89b05b4d9c4ff714b0f7de43f726"
+    },
+    {
+      "bytes": 1346,
+      "path": "artifacts/evidence-recall-temporal/real-001-shah-iron/future-seal.private.json",
+      "sha256": "82786abcd35fa9e126160a3c22b13e41ed80d80d9a8d5de3ff28aa359edb679f"
+    },
+    {
+      "bytes": 1504,
+      "path": "artifacts/evidence-recall-temporal/real-001-shah-iron/gold.private.json",
+      "sha256": "b3ceaf0561834a7d267c79895d116b3dc45285577c7c31dceccaec8bcf5d67e2"
+    },
+    {
+      "bytes": 6428,
+      "path": "artifacts/evidence-recall-temporal/real-001-shah-iron/independent-verification.json",
+      "sha256": "3982b4574cdd54b9f31efc93db4489874340b958e6267cbf1e3a609e62d3590f"
+    },
+    {
+      "bytes": 5089,
+      "path": "artifacts/evidence-recall-temporal/real-001-shah-iron/pack.json",
+      "sha256": "46c6068f1cc6d8fd76f0e6bfe2e6f36d2a8f46533b9209fcff808cd6adfd7b51"
+    },
+    {
+      "bytes": 2573,
+      "path": "artifacts/evidence-recall-temporal/real-001-shah-iron/predictions.json",
+      "sha256": "018f8457f6f464c88e42df53a813d701f17157df605f9fe3bf973f24916344f3"
+    },
+    {
+      "bytes": 6219,
+      "path": "artifacts/evidence-recall-temporal/real-001-shah-iron/score.json",
+      "sha256": "3a8661b0800c0052e0c2a32904fdc395a4f1604b1ca0e994c719a216c545669a"
+    },
+    {
+      "bytes": 770,
+      "path": "artifacts/evidence-recall-temporal/real-001-shah-iron/source-evidence/later.private.json",
+      "sha256": "79dc3599a95356b00692260c6bd92aad2f51bf9cadb4855e9c41809c3452ddf1"
+    },
+    {
+      "bytes": 1834,
+      "path": "artifacts/evidence-recall-temporal/real-001-shah-iron/source-evidence/pre-cutoff.json",
+      "sha256": "8f85fca40886302568ac7fc7b30dc851d7f07179b221733912909a39c50bc074"
+    },
+    {
+      "bytes": 849,
+      "path": "artifacts/evidence-recall-temporal/real-001-shah-iron/source-evidence/trigger.json",
+      "sha256": "3331ffa27ff4dfca69f82a67ac7bfe5ca52e93dcf7ad0eeab26b6e95742648c3"
+    },
+    {
+      "bytes": 1127,
+      "path": "artifacts/evidence-recall-temporal/real-001-shah-iron/summary.json",
+      "sha256": "2b9c79361c69044fa04b79e62db36af61664befdf7ce4730073667d8fd9d7fce"
     },
     {
       "bytes": 494,
@@ -558,9 +623,9 @@
       "sha256": "82f272154a074ca250612a6dbed253fa6db3aee18226efa8172ad8db8f843941"
     },
     {
-      "bytes": 4841,
+      "bytes": 6181,
       "path": "experiments/evidence_recall_temporal/PROTOCOL.md",
-      "sha256": "2d2756cf5dc5beae6fa9218e334c6cb5036f357a9284ce030195fdce8de75066"
+      "sha256": "8e411d1a4e780b6800c401b9c540ccec6f5abc7f1eb43a6502b74048ed5e3718"
     },
     {
       "bytes": 4040,
@@ -650,7 +715,7 @@
     {
       "bytes": 610,
       "path": "pyproject.toml",
-      "sha256": "41b7c26e6e5d2c56d37bf67929847c7129fb6e42036cde91bb777af39b2528bb"
+      "sha256": "ce53f6f9559ee6ff1dca78cc89724b49cc2144c8f592a5bb2032c4388adb8ca3"
     },
     {
       "bytes": 8042,
@@ -673,6 +738,11 @@
       "sha256": "2b7347a942878826c4753103b5111f12615c7a7380c7c31085105c51145ea04a"
     },
     {
+      "bytes": 19660,
+      "path": "scripts/build_real_temporal_case_shah_iron.py",
+      "sha256": "f1517c8e2e36e2a4debef1ae6bbf831f303a67eb9bc1d42d0c9fc3f854577788"
+    },
+    {
       "bytes": 6801,
       "path": "scripts/build_temporal_holdout_fixture.py",
       "sha256": "ccbf275a53ee90e74ac98904ae068b49a5ca458385405cc561a1bd1ac7996160"
@@ -688,9 +758,9 @@
       "sha256": "20a67eacd0104e6d015b0208ceab58c0f8bfb299548ab687d8d440e62ecedd9b"
     },
     {
-      "bytes": 44829,
+      "bytes": 51969,
       "path": "scripts/release_check.py",
-      "sha256": "d941b3b106c076d00b3a06c6ea4a1b42871405c7ce77cdd27eca028c843beccf"
+      "sha256": "9b95aad2632aefdf87e65b3b6773e8871b221f134c7812f24d66ba7f390caa42"
     },
     {
       "bytes": 10871,
@@ -726,6 +796,11 @@
       "bytes": 3664,
       "path": "scripts/verify_plos_upstream.py",
       "sha256": "fbbe592f3bf110306d6e33fe7dd0cdc7f24150db6e4b97d32112a9ca0370f3bc"
+    },
+    {
+      "bytes": 9454,
+      "path": "scripts/verify_real_temporal_case_shah_iron.py",
+      "sha256": "13b8d7ea532a20b2c4a309778c3f75d6431de412c156470448ef1e3161604179"
     },
     {
       "bytes": 3760,
@@ -881,6 +956,11 @@
       "bytes": 13029,
       "path": "tests/test_temporal_holdout.py",
       "sha256": "69029a598c95c5998fab936145be93805b4aaf45afe082f4310d438c80cda39e"
+    },
+    {
+      "bytes": 3820,
+      "path": "tests/test_temporal_real_case.py",
+      "sha256": "588d2d7da5a710474cf7769825d32fa929d69f09603de1708c9b2ba72d9a35b8"
     }
   ],
   "schema": "openline.claim-graph.prototype-manifest.v1"

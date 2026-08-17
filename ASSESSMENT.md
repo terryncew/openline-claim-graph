@@ -1,5 +1,13 @@
 # Assessment
 
+## First real temporal case — 0.5.0.dev1
+
+The first real historical temporal episode is now graded. The accepted state is the 2021 Shah intravenous-iron meta-analysis, frozen the day before the Darwish trial retraction. The later 2025 JAMA correction records an explicit reanalysis without the retracted study and no change in reported results.
+
+Direct Lookup catches one of the two warranted reopenings. Review-All Reachability and frozen Evidence Recall catch both, but both wake two targets. Evidence Recall therefore saves zero reviews. The engine is unchanged from `0.5.0.dev0`; no rescue semantics were added.
+
+Verdict: `NO_PROMOTION`. This is real temporal mechanism contact, not a selectivity win. Because the episode has only positive gold labels, it does not estimate false-review precision. A corpus containing affirmative later `REOPEN` and `NO_REOPEN` outcomes is still required to test whether structured dependency state buys back attention rather than merely matching Review-All.
+
 ## Temporal holdout update — 0.5.0.dev0
 
 The benchmark infrastructure advances, not Evidence Recall. The new evaluator can freeze a pre-event accepted state, bind later records without exposing them to prediction, compare Direct Lookup / Review-All Reachability / frozen Evidence Recall, and score later documented reconsideration with explicit human-review cost. The synthetic fixture proves those mechanics only.

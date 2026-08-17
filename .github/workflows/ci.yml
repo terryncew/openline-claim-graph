@@ -87,6 +87,18 @@ jobs:
           python scripts/verify_temporal_published_diagnostic.py \
             --report "${{ runner.temp }}/temporal-published-diagnostic.json" \
             --output "${{ runner.temp }}/temporal-independent-verification.json"
+          python scripts/build_real_temporal_case_shah_iron.py \
+            --output "${{ runner.temp }}/temporal-real-001-shah-iron"
+          python scripts/verify_real_temporal_case_shah_iron.py \
+            --artifact "${{ runner.temp }}/temporal-real-001-shah-iron" \
+            --output "${{ runner.temp }}/temporal-real-001-shah-iron/independent-verification.json"
+          python -m openline_claim_graph temporal-benchmark-validate \
+            --pack "${{ runner.temp }}/temporal-real-001-shah-iron/pack.json" \
+            --authority "${{ runner.temp }}/temporal-real-001-shah-iron/authority.json" \
+            --future-seal "${{ runner.temp }}/temporal-real-001-shah-iron/future-seal.private.json" \
+            --gold "${{ runner.temp }}/temporal-real-001-shah-iron/gold.private.json" \
+            --predictions "${{ runner.temp }}/temporal-real-001-shah-iron/predictions.json" \
+            --score "${{ runner.temp }}/temporal-real-001-shah-iron/score.json"
       - name: Build wheel
         run: python -m pip wheel . --no-deps --no-build-isolation -w "${{ runner.temp }}/wheel"
       - name: CLI smoke

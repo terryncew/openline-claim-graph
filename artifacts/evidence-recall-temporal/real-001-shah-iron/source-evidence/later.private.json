@@ -1,0 +1,12 @@
+{
+  "available_at": "2025-01-27T00:00:00Z",
+  "facts": [
+    "The 2025 JAMA Network Open correction explicitly identifies study 76 as having been retracted after the 2021 meta-analysis was published.",
+    "The correction reports that the meta-analysis was reanalyzed without the retracted study and that the reported results were unaffected.",
+    "Because an explicit reanalysis occurred, this benchmark treats the affected accepted results as warranted REOPEN even though they survived the reanalysis."
+  ],
+  "hash_scope": "Canonical local evidence record; not publisher raw bytes.",
+  "identifier": "doi:10.1001/jamanetworkopen.2025.0887",
+  "schema": "openline.temporal-later-evidence.v1",
+  "title": "Correction to Meta-Analysis to Acknowledge Retracted Study"
+}

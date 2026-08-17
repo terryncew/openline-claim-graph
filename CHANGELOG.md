@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.5.0.dev1 — 2026-08-17
+
+- Added the first real historical Evidence Recall temporal-holdout episode without changing the frozen `0.5.0.dev0` inference semantics.
+- Case: Shah et al. 2021 intravenous-iron meta-analysis (`10.1001/jamanetworkopen.2021.33935`), the Darwish trial later retracted on 2023-01-19 (`10.1080/14767058.2023.2169999`), and the 2025 JAMA correction reporting explicit reanalysis without that study (`10.1001/jamanetworkopen.2025.0887`).
+- Froze the accepted state on 2023-01-18 from explicit pre-cutoff evidence: the Darwish trial is reference 76 inside the 111-RCT hemoglobin analysis, and the review's improved-hemoglobin finding derives from that pooled result.
+- Bound the later 2025 correction into a private future seal before prediction; `pack.json` carries only its commitment. Direct Lookup / Review-All Reachability / frozen Evidence Recall predictions are reproducible without the later record or gold.
+- Gold labels both scored targets `REOPEN` because the later correction records an actual reanalysis, even though the reported results survived unchanged.
+- Result: Direct Lookup catches 1/2 warranted reopenings with review load 1; Review-All catches 2/2 with load 2; frozen Evidence Recall catches 2/2 with load 2. Evidence Recall saves **zero** reviews versus Review-All.
+- Verdict: `NO_PROMOTION`. This first real case establishes temporal mechanism contact but no attention-selectivity advantage. Both labels are positive, so it does not estimate false-review precision.
+- Added a stdlib-only 36-check independent verifier, deterministic case-rebuild tests, release-gate coverage, and installed-wheel validation.
+- Preserved the frozen engine byte-for-byte; no weighted support, new basis types, generalized revocation, hidden-edge discovery, UI, Receipt Gate work, or Successor Gate work was added.
+
 ## 0.5.0.dev0 — 2026-08-17
 
 - Added the Evidence Recall Temporal Holdout Benchmark: freeze accepted state at `t0`, reveal one later event at `t1`, predict without later records, then score against separately sealed post-event reconsideration evidence.

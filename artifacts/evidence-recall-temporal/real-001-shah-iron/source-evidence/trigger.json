@@ -1,0 +1,13 @@
+{
+  "available_at": "2023-01-19T00:00:00Z",
+  "facts": [
+    "The publisher retracted the Darwish trial online on January 19, 2023.",
+    "The notice cites significant concerns about the integrity of the data and reported results, including unexplained overlap with another study.",
+    "The notice reports 27 identical baseline values and 38 identical outcome values between the two studies and states that sufficient original data were not supplied for review."
+  ],
+  "hash_scope": "Canonical local evidence record; not publisher raw bytes.",
+  "identifier": "doi:10.1080/14767058.2023.2169999",
+  "pmid": "36658746",
+  "schema": "openline.temporal-trigger-evidence.v1",
+  "title": "Statement of Retraction: Total dose iron dextran infusion versus oral iron for treating iron deficiency anemia in pregnant women: a randomized controlled trial"
+}

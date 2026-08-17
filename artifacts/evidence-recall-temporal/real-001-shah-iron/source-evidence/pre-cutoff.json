@@ -1,0 +1,31 @@
+{
+  "hash_scope": "Canonical local evidence record; not publisher raw bytes.",
+  "records": [
+    {
+      "available_at": "2017-10-03T00:00:00Z",
+      "facts": [
+        "The study compared intravenous low-molecular-weight iron dextran with oral ferrous fumarate in 66 pregnant women with iron-deficiency anemia.",
+        "The study reported hemoglobin and other anemia-response outcomes after treatment."
+      ],
+      "identifier": "doi:10.1080/14767058.2017.1379988",
+      "pmid": "28901214",
+      "role": "invalidated-study",
+      "title": "Total dose iron dextran infusion versus oral iron for treating iron deficiency anemia in pregnant women: a randomized controlled trial"
+    },
+    {
+      "available_at": "2021-11-12T00:00:00Z",
+      "facts": [
+        "The review included 154 randomized clinical trials overall.",
+        "The hemoglobin analysis used 111 randomized clinical trials and its enumerated reference range includes reference 76, the Darwish trial.",
+        "The pooled hemoglobin result reported a mean difference of 0.57 g/dL with intravenous iron versus oral or no iron.",
+        "The discussion identifies improved hemoglobin as one of the review's main findings.",
+        "The primary infection analysis enumerates 64 trials and does not include reference 76; that branch is intentionally outside this first scored pack.",
+        "The RBC-transfusion-requirement analysis enumerates 54 trials and does not include reference 76; that branch is intentionally outside this first scored pack."
+      ],
+      "identifier": "doi:10.1001/jamanetworkopen.2021.33935",
+      "role": "accepted-systematic-review",
+      "title": "Risk of Infection Associated With Administration of Intravenous Iron: A Systematic Review and Meta-analysis"
+    }
+  ],
+  "schema": "openline.temporal-source-evidence.v1"
+}

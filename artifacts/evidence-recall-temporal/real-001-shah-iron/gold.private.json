@@ -1,0 +1,26 @@
+{
+  "benchmark_id": "temporal-real-001-shah-iron-v1",
+  "future_seal_id": "evidence-recall-temporal-future-seal:sha256:854b55d575c832cab95b79f6033ecfd7ed4768779cab4968554137f83313b074",
+  "gold_id": "evidence-recall-temporal-gold:sha256:e575b740ffae7e3daa68943085f6109f3f482b10da75d173b59170f963a8e1db",
+  "label_definition": "REOPEN means a later independent publication explicitly shows trigger-attributed reanalysis or reconsideration. The 2025 correction reports reanalysis after the included Darwish study was retracted; unchanged results still count as warranted reconsideration.",
+  "labels": [
+    {
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+      "future_record_ids": [
+        "temporal-future-record:sha256:f61319b5d67b35d38e886154d8406e646644240e3e5de3c8477076ee057e0818"
+      ],
+      "outcome": "REOPEN",
+      "target_node_id": "shah2021:finding-improved-hemoglobin"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+      "future_record_ids": [
+        "temporal-future-record:sha256:f61319b5d67b35d38e886154d8406e646644240e3e5de3c8477076ee057e0818"
+      ],
+      "outcome": "REOPEN",
+      "target_node_id": "shah2021:pooled-hemoglobin"
+    }
+  ],
+  "pack_id": "evidence-recall-temporal-pack:sha256:33bae71082ea539729bdb6a7a57d818fb6033ff26e5b21bde0cb76439bf83eac",
+  "schema": "openline.evidence-recall-temporal-gold.v1"
+}
