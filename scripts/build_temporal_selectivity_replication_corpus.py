@@ -477,12 +477,75 @@ def build(output: Path) -> dict:
     }
     write(output / "custody.json", custody)
 
-    point = "Evidence Recall did save meaningful review work." if verdict == "PROMOTION" else "Evidence Recall did not save enough review work for promotion."
-    because = f"It caught {er['true_reopen_reviews']}/{er['reopen_gold']} warranted reopenings while reviewing {er['total_review_load']} instead of {review_all['total_review_load']} items under Review-All Reachability."
-    but = f"Savings recurred in {recurring_count}/{len(episode_metrics)} trigger episodes, and Evidence Recall missed {er['missed_reopenings']} warranted cases; three trigger episodes come from the same Sato/Avenell audit family."
-    so = verdict
+    if verdict == "PROMOTION":
+        point = "Under this five-episode historical benchmark, frozen Evidence Recall reduced review load while preserving every warranted reopening."
+        so = "Promote temporal selectivity only as a benchmark-supported candidate finding; do not generalize beyond this corpus."
+    else:
+        point = "This historical benchmark does not justify promoting Evidence Recall temporal selectivity."
+        so = "Preserve the result and make no promotion claim."
+    because = (
+        f"It caught {er['true_reopen_reviews']}/{er['reopen_gold']} warranted reopenings with {er['total_review_load']} reviews "
+        f"versus Review-All Reachability's {review_all['total_review_load']}, a {reduction_bps // 100}.{reduction_bps % 100:02d}% reduction with "
+        f"{cmp_er['additional_missed_reopenings_vs_review_all']} additional misses."
+    )
+    but = (
+        "All episodes were historically reconstructed after outcomes were known, and three of five triggers share the same later "
+        "Sato/Avenell audit family, so independent prospective generality is not established."
+    )
     card = f"POINT\n{point}\n\nBECAUSE\n{because}\n\nBUT\n{but}\n\nSO\n{so}\n"
     write(output / "POINT_BECAUSE_BUT_SO.md", card)
+
+    def trace(artifact_name: str, *json_pointers: str) -> dict:
+        artifact_path = output / artifact_name
+        return {
+            "artifact": artifact_name,
+            "sha256": sha256_file(artifact_path),
+            "json_pointers": list(json_pointers),
+        }
+
+    card_audit = {
+        "schema": "openline.point-because-but-so-audit.v1",
+        "contract": "HUMAN_CONTRACT.md",
+        "rendered_file": "POINT_BECAUSE_BUT_SO.md",
+        "lines": {
+            "POINT": {
+                "text": point,
+                "trace": [
+                    trace("promotion-result.json", "/verdict"),
+                    trace("score.json", "/metrics/EVIDENCE_RECALL/reconsideration_recall", "/metrics/EVIDENCE_RECALL/total_review_load", "/metrics/REVIEW_ALL_REACHABILITY/total_review_load"),
+                ],
+            },
+            "BECAUSE": {
+                "text": because,
+                "trace": [
+                    trace("score.json", "/metrics/EVIDENCE_RECALL/true_reopen_reviews", "/metrics/EVIDENCE_RECALL/reopen_gold", "/metrics/EVIDENCE_RECALL/total_review_load", "/metrics/REVIEW_ALL_REACHABILITY/total_review_load", "/comparisons_vs_review_all/EVIDENCE_RECALL/additional_missed_reopenings_vs_review_all"),
+                    trace("promotion-result.json", "/observed_review_load_reduction_vs_review_all_basis_points"),
+                ],
+            },
+            "BUT": {
+                "text": but,
+                "trace": [
+                    trace("custody.json", "/historical_reconstruction_limit", "/corpus_selection_limit"),
+                    trace("episode-metrics.json", "/episode_count"),
+                ],
+            },
+            "SO": {
+                "text": so,
+                "trace": [
+                    trace("promotion-result.json", "/verdict", "/failed_conditions"),
+                    trace("custody.json", "/historical_reconstruction_limit", "/corpus_selection_limit"),
+                ],
+            },
+        },
+        "constraints": {
+            "point_is_scoped_to_audited_benchmark": True,
+            "because_is_reproducible_from_scored_fields": True,
+            "but_is_material_and_not_boilerplate": True,
+            "but_is_not_omitted": True,
+            "so_does_not_generalize_beyond_point": True,
+        },
+    }
+    write(output / "POINT_BECAUSE_BUT_SO.audit.json", card_audit)
 
     status = "TEMPORAL_SELECTIVITY_REPLICATION_PROMOTED" if verdict == "PROMOTION" else "TEMPORAL_SELECTIVITY_REPLICATION_BELOW_PROMOTION_BAR"
     summary = {

@@ -65,9 +65,20 @@ class TemporalSelectivityReplicationTests(unittest.TestCase):
                 "pack.json", "authority.json", "future-seal.private.json", "promotion-policy.json",
                 "predictions.json", "gold.private.json", "score.json", "episode-metrics.json",
                 "promotion-result.json", "target-ledger.json", "custody.json", "summary.json",
-                "REPORT.md", "POINT_BECAUSE_BUT_SO.md", "source-evidence/kataoka-case-level-admission.json",
+                "REPORT.md", "POINT_BECAUSE_BUT_SO.md", "POINT_BECAUSE_BUT_SO.audit.json", "source-evidence/kataoka-case-level-admission.json",
             ):
                 self.assertEqual((CASE / rel).read_bytes(), (out / rel).read_bytes(), rel)
+
+
+    def test_human_contract_is_root_canonical_and_auditable(self):
+        contract = (ROOT / "HUMAN_CONTRACT.md").read_text(encoding="utf-8")
+        self.assertIn("POINT", contract)
+        self.assertIn("BECAUSE", contract)
+        self.assertIn("BUT", contract)
+        self.assertIn("SO", contract)
+        audit = json.loads((CASE / "POINT_BECAUSE_BUT_SO.audit.json").read_text(encoding="utf-8"))
+        self.assertTrue(all(audit["constraints"].values()))
+        self.assertTrue(all(audit["lines"][name]["trace"] for name in ("POINT", "BECAUSE", "BUT", "SO")))
 
     def test_independent_verifier_reproduces_artifact(self):
         with tempfile.TemporaryDirectory(prefix="temporal-replication-verify-") as temp:

@@ -1,0 +1,99 @@
+{
+  "constraints": {
+    "because_is_reproducible_from_scored_fields": true,
+    "but_is_material_and_not_boilerplate": true,
+    "but_is_not_omitted": true,
+    "point_is_scoped_to_audited_benchmark": true,
+    "so_does_not_generalize_beyond_point": true
+  },
+  "contract": "HUMAN_CONTRACT.md",
+  "lines": {
+    "BECAUSE": {
+      "text": "It caught 8/8 warranted reopenings with 8 reviews versus Review-All Reachability's 14, a 42.85% reduction with 0 additional misses.",
+      "trace": [
+        {
+          "artifact": "score.json",
+          "json_pointers": [
+            "/metrics/EVIDENCE_RECALL/true_reopen_reviews",
+            "/metrics/EVIDENCE_RECALL/reopen_gold",
+            "/metrics/EVIDENCE_RECALL/total_review_load",
+            "/metrics/REVIEW_ALL_REACHABILITY/total_review_load",
+            "/comparisons_vs_review_all/EVIDENCE_RECALL/additional_missed_reopenings_vs_review_all"
+          ],
+          "sha256": "39b035044887a8300d851082a44ef6aadcaf703145a22e462456b9011622c87c"
+        },
+        {
+          "artifact": "promotion-result.json",
+          "json_pointers": [
+            "/observed_review_load_reduction_vs_review_all_basis_points"
+          ],
+          "sha256": "769acfc5a99253ca645f7e876d30a84630c96ce9deec4f0341deda6db233db18"
+        }
+      ]
+    },
+    "BUT": {
+      "text": "All episodes were historically reconstructed after outcomes were known, and three of five triggers share the same later Sato/Avenell audit family, so independent prospective generality is not established.",
+      "trace": [
+        {
+          "artifact": "custody.json",
+          "json_pointers": [
+            "/historical_reconstruction_limit",
+            "/corpus_selection_limit"
+          ],
+          "sha256": "52280d5b9222f5d7b4a8adcbb42c23519e0929babb4ca52526449877807bd231"
+        },
+        {
+          "artifact": "episode-metrics.json",
+          "json_pointers": [
+            "/episode_count"
+          ],
+          "sha256": "4bfbec9e86c721f870fe20d97a5b1a5980c9995efa7dd6c01c5aad563142a640"
+        }
+      ]
+    },
+    "POINT": {
+      "text": "Under this five-episode historical benchmark, frozen Evidence Recall reduced review load while preserving every warranted reopening.",
+      "trace": [
+        {
+          "artifact": "promotion-result.json",
+          "json_pointers": [
+            "/verdict"
+          ],
+          "sha256": "769acfc5a99253ca645f7e876d30a84630c96ce9deec4f0341deda6db233db18"
+        },
+        {
+          "artifact": "score.json",
+          "json_pointers": [
+            "/metrics/EVIDENCE_RECALL/reconsideration_recall",
+            "/metrics/EVIDENCE_RECALL/total_review_load",
+            "/metrics/REVIEW_ALL_REACHABILITY/total_review_load"
+          ],
+          "sha256": "39b035044887a8300d851082a44ef6aadcaf703145a22e462456b9011622c87c"
+        }
+      ]
+    },
+    "SO": {
+      "text": "Promote temporal selectivity only as a benchmark-supported candidate finding; do not generalize beyond this corpus.",
+      "trace": [
+        {
+          "artifact": "promotion-result.json",
+          "json_pointers": [
+            "/verdict",
+            "/failed_conditions"
+          ],
+          "sha256": "769acfc5a99253ca645f7e876d30a84630c96ce9deec4f0341deda6db233db18"
+        },
+        {
+          "artifact": "custody.json",
+          "json_pointers": [
+            "/historical_reconstruction_limit",
+            "/corpus_selection_limit"
+          ],
+          "sha256": "52280d5b9222f5d7b4a8adcbb42c23519e0929babb4ca52526449877807bd231"
+        }
+      ]
+    }
+  },
+  "rendered_file": "POINT_BECAUSE_BUT_SO.md",
+  "schema": "openline.point-because-but-so-audit.v1"
+}

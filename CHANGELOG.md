@@ -9,7 +9,8 @@
 - Pooled result: Review-All reviews 14 targets and catches 8/8 warranted reopenings; frozen Evidence Recall reviews 8, catches 8/8, and avoids all 6 affirmative unnecessary reviews. Reviewer reduction is 42.85% (4285 basis points), with positive savings and zero additional misses in 4/5 episodes.
 - Verdict under the frozen rule: `PROMOTION`. This promotes the observed temporal-selectivity behavior to a serious product candidate; it does not establish commercial moat, cross-domain generality, or hidden-edge discovery.
 - Recorded Kataoka's aggregate 335/239 corpus pathway but admitted zero scored Kataoka rows because reproducible case-level inclusion/affirmative-exclusion rows were not available to this build. No aggregate count or silence was converted into gold.
-- Added a stdlib-only independent verifier with 132 checks, deterministic rebuild tests, a target ledger, custody record, and the canonical `POINT / BECAUSE / BUT / SO` result card.
+- Made `POINT / BECAUSE / BUT / SO` the canonical human-facing contract: the 0.5.2 card is now reconstructed from scored artifacts, carries a byte-traceable audit sidecar, requires a material `BUT`, and constrains `SO` to the narrow benchmark-supported consequence.
+- Added a stdlib-only independent verifier, deterministic rebuild tests, a target ledger, custody record, and contract/audit checks.
 - No weighted support, generalized revocation, dependency contracts, hidden-edge discovery, UI, Frame Ledger expansion, Receipt Gate work, or Successor Gate work was added.
 
 ## 0.5.1 — 2026-08-17

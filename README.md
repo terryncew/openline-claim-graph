@@ -1,443 +1,154 @@
 # OpenLine Claim Graph — Evidence Recall
 
-> Something you relied on changed. Compute what depended on it, preserve what still has an admitted basis, and show the unresolved review burden without pretending the graph settled truth.
+> Something you relied on changed. Compute what depended on it, preserve what still has an admitted basis, and show what still requires review.
 
-This prototype tests one narrow idea from the earlier OLP/DSM work:
+OpenLine Claim Graph is an open-source Python system for tracing which accepted claims and decisions need reconsideration when upstream evidence changes.
 
-> A small receipt can commit to a much larger, versioned argument state while carrying only the graph slice and source commitments a receiver needs now.
+The core job is deliberately narrow: given an accepted dependency graph, an exact source-status event, and a receiver-owned relation policy, compute the downstream consequence without pretending the graph settled truth.
 
-It does **not** put truth in a receipt. It records representations, their declared relations, their source anchors, and their history.
+**Current release candidate: `0.5.2`.** In a five-episode historical replication with 14 explicitly scored targets, frozen Evidence Recall caught **8/8 warranted reopenings** while reviewing **8 targets instead of 14** under Review-All Reachability: a **42.85% reduction in review load with zero additional misses**. Three trigger episodes are related Sato retractions evaluated through the same later Avenell audit, so this is a small historical replication, not broad-domain proof.
 
-Status: `TEMPORAL_SELECTIVITY_REPLICATION_PROMOTED`. Evidence Recall remains frozen. Version `0.5.2` expands the temporal benchmark to five historical trigger episodes and fourteen explicitly scored targets. Frozen Evidence Recall catches 8/8 warranted reopenings while reviewing 8 targets instead of Review-All Reachability's 14, a 42.85% review-load reduction with zero additional misses. The promotion is narrow: it applies to temporal selectivity under this historical benchmark, not broad-domain generality or commercial moat.
+## What it does
 
-## What works now
+Evidence Recall answers a practical question: **if evidence changes, what downstream state must be reconsidered?**
 
-The graph now has a native computational job: deterministic blast-radius analysis when accepted evidence is corrected, retracted, withdrawn, superseded, or revoked.
+The model may propose claims and relations. It cannot directly grant those relations authority. The receiver decides which relation IDs are `HARD`, `ADVISORY`, or unadmitted. The deterministic engine then computes the blast radius of the exact event against that accepted state.
 
-Input is one accepted graph state, one exact source-status event, and one receiver-owned edge policy. Output is a content-addressed report that separates:
+For each reachable claim, the engine distinguishes:
 
-- claims proposed for `QUARANTINE` because no admitted basis survives;
-- claims that `SURVIVE` because an admitted alternative basis remains;
-- claims that are `AFFECTED_UNRESOLVED` because the path includes an advisory edge; and
-- claims outside the event's admitted blast radius.
+- `QUARANTINE` — no admitted basis survives;
+- `SURVIVE` — an admitted alternative basis remains;
+- `AFFECTED_UNRESOLVED` — an advisory path makes human review necessary; and
+- unaffected claims outside the admitted blast radius.
 
-The model cannot directly mutate accepted state. It may propose claims and edges; the receiver decides which relation IDs have hard authority, which are advisory, and which are ignored. The deterministic engine then computes the consequences of that admitted state.
+The output includes reproducible witness paths and content-addressed artifacts so the visible consequence can be audited back to the committed inputs.
 
-See [the Evidence Recall contract](docs/EVIDENCE_RECALL.md) and open [`artifacts/plos-correction-impact/review.html`](artifacts/plos-correction-impact/review.html) for the checked-in real-event specimen.
+See [`docs/EVIDENCE_RECALL.md`](docs/EVIDENCE_RECALL.md) for the mechanism contract and [`artifacts/plos-correction-impact/review.html`](artifacts/plos-correction-impact/review.html) for a checked-in event specimen.
 
-The second native job is `Frame Ledger`: reproduce narrow framing devices from exact text, then keep any semantic interpretation under an explicit receiver-owned admission policy. The checked-in headline specimen identifies the exact conflict word, context cue, secrecy/security lexemes, a narrow local-attribution pattern, and two declared scoped absences. It refuses to convert those observations into a truth, intent, fairness, propaganda, rationalization, or bias verdict.
+## Human-facing contract
 
-Models can run the advisory layer autonomously. A proposer emits exact-quote-anchored candidates; distinct receiver-pinned reviewers independently confirm, challenge, or abstain; signed heterogeneous-family quorum controls admission; and a proposer can never approve itself. Human confirmation is an explicit `OPTIONAL`, `REQUIRED`, or `DISABLED` receiver-policy choice.
+Every mechanism should be able to project its result through the same four questions:
 
-See [the Frame Ledger contract](docs/FRAME_LEDGER.md) and open [`artifacts/wapo-headline-frame-ledger/review.html`](artifacts/wapo-headline-frame-ledger/review.html).
+**POINT** — What is the narrowest conclusion justified right now?  
+**BECAUSE** — What reproducible facts make that conclusion warranted?  
+**BUT** — What is the strongest material reason it could be wrong, incomplete, or overstated?  
+**SO** — What is the smallest consequence justified by the first three lines?
 
+These are constrained outputs, not an after-the-fact summary. `POINT` cannot claim more certainty than the evidence earns. `BUT` cannot be replaced by boilerplate uncertainty language. `SO` cannot outrun `POINT` or erase `BUT`. A valid result may be that there is not enough evidence to make a finding.
 
-## Mixed temporal selectivity corpus — 0.5.1
+The full contract is in [`HUMAN_CONTRACT.md`](HUMAN_CONTRACT.md). The 0.5.2 replication emits both a visible [`POINT_BECAUSE_BUT_SO.md`](artifacts/evidence-recall-temporal/replication-001-selectivity/POINT_BECAUSE_BUT_SO.md) card and a [`POINT_BECAUSE_BUT_SO.audit.json`](artifacts/evidence-recall-temporal/replication-001-selectivity/POINT_BECAUSE_BUT_SO.audit.json) sidecar that binds each line to the scored artifacts and fields that produced it. The independent verifier reconstructs the projection and fails if the card or trace bindings drift.
 
-`0.5.1` changes the evidence, not the mechanism. The frozen Shah/Darwish episode is retained and a second historical Narayan SIRT2 episode adds the first affirmative reachable `NO_REOPEN` target. Before gold construction, the benchmark declares a promotion bar: at least 95% reconsideration recall, at least 40% review-load reduction versus Review-All Reachability, and no additional missed reopenings.
+## 0.5.2 result
 
-Across four real historical targets, the mixed gold is 3 `REOPEN` and 1 `NO_REOPEN`. Direct Lookup catches 2/3 warranted reopenings with review load 3. Review-All catches 3/3 with load 4 and one unnecessary review. Frozen Evidence Recall catches 3/3 with load 3 and zero unnecessary reviews. That is a real 25% reduction in review load versus Review-All, but it is below the predeclared 40% materiality threshold. Verdict: `NO_PROMOTION`.
+Version `0.5.2` changes the historical evaluation corpus, not the Evidence Recall inference semantics.
 
-The narrow positive result is therefore: typed receiver authority bought back **one** unit of human attention in this tiny historical corpus without losing a warranted reopening. That is not enough to promote the product thesis, and no engine semantics were repaired after the result. See [`artifacts/evidence-recall-temporal/mixed-001-selectivity/REPORT.md`](artifacts/evidence-recall-temporal/mixed-001-selectivity/REPORT.md).
+| System | Warranted reopenings caught | Missed | Review load | Unnecessary reviews |
+|---|---:|---:|---:|---:|
+| Direct Lookup | 7/8 | 1 | 13 | 6 |
+| Review-All Reachability | 8/8 | 0 | 14 | 6 |
+| Frozen Evidence Recall | 8/8 | 0 | 8 | 0 |
 
-## Temporal holdout evaluation lineage
+The predeclared promotion rule required at least 95% reconsideration recall, at least 40% review-load reduction versus Review-All, zero additional misses, and positive savings with zero additional misses in at least three trigger episodes.
 
-Version `0.5.0.dev0` adds a prospective-style historical benchmark without changing Evidence Recall semantics. Version `0.5.0.dev1` adds the first real historical case. Version `0.5.1` adds the first mixed real positive/negative selectivity corpus, again without changing those semantics. Each episode freezes an accepted dependency state at `t0`, binds a private future-record corpus by commitment, reveals one later event at `t1`, runs predictions without future records, and only then unseals independently dated later reconsideration evidence for scoring.
+Observed result:
 
-The main systems are **Direct Lookup**, **Review-All Reachability**, and the frozen **Evidence Recall** engine. Review-All Reachability is intentionally stronger than the earlier hard-taint baseline: it simply sends every reachable target to a human. Evidence Recall therefore earns attention selectivity only if it catches later documented reopenings while waking fewer targets. Naive Transitive Taint remains an optional severity diagnostic.
+- reconsideration recall: **100%**;
+- review-load reduction: **42.85%**;
+- additional misses versus Review-All: **0**;
+- trigger episodes with positive savings and zero additional misses: **4/5**;
+- verdict: **`PROMOTION`**.
 
-Gold means independently recorded later **reconsideration**, not later falsity. A review that is reanalyzed and keeps the same conclusion is still a correct `REOPEN`. Mere absence of a correction is never treated as `NO_REOPEN`; negative gold requires affirmative later evidence of non-reliance or explicit scope exclusion.
+Gold is intentionally strict. A target is scored only when a later case-level record establishes explicit reliance/reconsideration or affirmative non-reliance/scope exclusion. Silence is `UNASSESSED`, not `NO_REOPEN`. Aggregate counts that could not be reproduced at case level were not converted into gold.
 
-The evaluator reports precision, recall, review burden, unnecessary reviews, and reviewer savings versus Review-All. Rates are stored as exact integer ratios/basis points rather than floating point. There is no composite score or automatic promotion threshold.
+The result and its limits are in [`artifacts/evidence-recall-temporal/replication-001-selectivity/REPORT.md`](artifacts/evidence-recall-temporal/replication-001-selectivity/REPORT.md). The frozen release boundary is in [`CLAIM_BOUNDARY_TEMPORAL.md`](CLAIM_BOUNDARY_TEMPORAL.md).
 
-The checked-in temporal conformance fixture remains synthetic. `0.5.0.dev1` also contains one real historical episode: the 2021 Shah intravenous-iron meta-analysis, the January 2023 retraction of the included Darwish trial, and the January 2025 JAMA correction reporting an explicit reanalysis without that trial. Direct Lookup catches 1/2 warranted reopenings; Review-All and frozen Evidence Recall catch 2/2, but Evidence Recall reviews the same two targets and therefore saves zero reviewer attention. This is `NO_PROMOTION`, not evidence of selectivity. See [`experiments/evidence_recall_temporal/PROTOCOL.md`](experiments/evidence_recall_temporal/PROTOCOL.md).
+## Trust boundary
 
-## Temporal selectivity replication (0.5.2)
+The system separates representation, authority, and consequence.
 
-Version `0.5.2` adds no new Evidence Recall semantics. It expands the temporal holdout into five historical trigger episodes and fourteen explicitly scored targets, and adds episode-level replication reporting. Gold still means later independently recorded reconsideration or affirmative non-reliance; silence is never a negative.
-
-The pooled result crosses the frozen product-candidate bar: Review-All Reachability catches 8/8 warranted reopenings while reviewing 14 targets; frozen Evidence Recall catches 8/8 while reviewing 8. That is 6 avoided reviews, or 42.85% reviewer-load reduction, with zero additional misses. Positive savings with zero additional misses recur in 4/5 trigger episodes. The predeclared threshold is >=95% recall, >=40% review reduction, zero additional misses, plus recurring savings across at least three triggers. Verdict: `PROMOTION`.
-
-The result is intentionally narrow. Three trigger episodes are Sato-family retractions graded by the same later Avenell audit, and all historical packs were reconstructed after outcomes were known. Kataoka's aggregate corpus pathway is recorded but contributes no scored rows because case-level inclusion/affirmative-exclusion rows were not reproducible here. This is evidence for temporal selectivity, not proof of broad-domain generality or commercial moat. See `artifacts/evidence-recall-temporal/replication-001-selectivity/REPORT.md`.
-
-## Structural comparative benchmark (0.4)
-
-Version `0.4.0.dev0` adds a sealed three-way comparative benchmark without changing Evidence Recall semantics:
-
-- **Direct Lookup** flags only immediate dependents of the invalidated source.
-- **Naive Transitive Taint** quarantines every reachable descendant and ignores alternative support or edge authority.
-- **Evidence Recall** runs the shipped `analyze_source_impact()` engine under a separately frozen HARD / ADVISORY / UNADMITTED authority artifact.
-
-The benchmark keeps `pack.json`, `authority.json`, `predictions.json`, and `gold.private.json` separately content-addressed. Predictions do not require gold. Scoring reports missed exposure, hard false quarantine, unnecessary unresolved review, and total review load. `AFFECTED_UNRESOLVED` therefore cannot masquerade as a free win. There is no composite score and no automatic promotion threshold.
-
-The canonical empirical assets are fixed in [`experiments/evidence_recall_comparative/PROTOCOL.md`](experiments/evidence_recall_comparative/PROTOCOL.md): Schneider et al. is the main second-generation propagation stratum, van der Vet/Nijveen is the indirect-propagation negative control, and the 2025 JAMA meta-analysis reanalysis is a quantitative-dependency stress test. The raw Schneider CSV and van der Vet DOT could not be acquired and hashed inside this build environment, so the checked-in result is an independently verified **published aggregate diagnostic**, not the final case-level run.
-
-That aggregate diagnostic is already hostile to the thesis: Direct Lookup misses all 23 published non-direct possible-diffusion positives; naive taint creates at least 125 hard over-taint candidates; under the deliberately conservative citation-only policy, Evidence Recall avoids hard quarantine on ordinary second-generation links but creates at least 125 unnecessary unresolved reviews and the same 152-item total review load. In other words, the current aggregate evidence does **not** show a reviewer-load advantage. Case-level selective precision remains unearned.
-
-## What is implemented
-
-- Typed claims: observations, measurements, source assertions, definitions, assumptions, inferences, causal hypotheses, predictions, value judgments, adjudications, outcomes, and unresolved questions.
-- Typed relations: support, contradiction, dependence, definition, derivation, prediction, supersession, qualification, adjudication, and unresolved status.
-- Content-addressed claim and relation IDs.
-- Deterministic restricted canonical JSON. Floats are rejected rather than quietly canonicalized incorrectly.
-- Exact UTF-8 source-span verification for records labeled `QUOTE`.
-- Explicit warnings for `PARAPHRASE`, `INFERENCE`, and `AMBIGUOUS`; their semantic fidelity is not self-certified.
-- Merkle graph roots and inclusion proofs for bounded projections.
-- A separate source-manifest root so raw sources stay outside the portable receipt.
-- Ed25519 graph-state receipts with receiver-pinned keys.
-- Parent-state pointers and record-level deltas.
-- Multi-parent merges that do not assume one lowest common ancestor.
-- Mandatory conflict resolutions and reasons; parent records cannot disappear silently.
-- An append-only wallet that preserves branches and merges.
-- Deterministic branch comparison and disagreement reports without ranking a branch as true.
-- A composed receiver verifier that checks every layer before returning `ADMIT`, `QUARANTINE`, or `DENY`.
-- A fail-closed, self-contained HTML Decision Review that makes represented fault lines, exact source anchors, lineage, and verification limits readable without exposing raw graph JSON.
-- A sealed automated receiver benchmark harness with gold/pack separation, deterministic full-factorial planning, fresh-process execution, resumable spend caps, strict identifier responses, and code-only scoring.
-- Content-addressed source-status events with exact affected byte scopes and exact notice anchors.
-- Receiver-owned hard/advisory edge authority; unadmitted relations are ignored and disclosed.
-- Deterministic, cycle-safe support-path propagation with admitted-alternative preservation.
-- Reproducible downstream witness paths and a fail-closed Evidence Recall HTML surface.
-- A content-addressed Frame Ledger ruleset for exact epistemic lexemes, context cues, declared issue-frame lexemes, narrow local-attribution patterns, and scoped term-set absences.
-- Signed AI proposal and review records with receiver-pinned keys, non-self-review, distinct-family quorum, challenge blocking, and optional/required/disabled human confirmation.
-- Strict exact-quote import for model proposals; invented source text is rejected after schema-constrained generation.
-- Provider-neutral OpenAI-compatible adapters for vLLM, SGLang, llama.cpp, and hosted open models, plus an official Responses API adapter using Structured Outputs with storage disabled.
-- A fully unattended proposal → independent review → receiver-policy admission pipeline.
-
-## The important trust split
-
-| Layer | What it establishes | What it cannot establish |
+| Layer | What it establishes | What it does not establish |
 |---|---|---|
 | Source hash and span | The disclosed bytes and exact quote | Whether the source is honest |
-| Claim ID and graph root | Exact represented structure | Semantic accuracy or truth |
-| Signature with receiver pin | A pinned key signed that state | Wisdom, neutrality, or authority beyond the pin |
-| Parent and delta | What was added, removed, or merged | Whether the revision improved the map |
-| Projection proof | Records belong to the committed graph | That omitted context is irrelevant |
-| Receiver policy | This receiver accepted the declared limitations | That another receiver should agree |
+| Claim and relation IDs | The exact represented structure | Semantic truth |
+| Receiver policy | Which relations this receiver admits | What another receiver should admit |
+| Graph-state receipt | The committed state and lineage | That the state is wise or complete |
+| Deterministic impact analysis | What follows from the admitted state and event | Hidden dependencies that were never represented |
+| Human projection | A bounded, traceable conclusion and consequence | Permission to exceed the underlying evidence |
 
-The actor-supplied label is never treated as its own proof. `QUOTE` is mechanically checked against the source bytes. Every other source-to-claim or source-to-relation mapping stays visibly unverified unless an independent process evaluates it later.
+`QUOTE` records are mechanically checked against source bytes. Other semantic mappings remain claims about representation unless an independent process evaluates them. Signatures authenticate committed state; they do not turn judgment into truth.
 
-## Why this is smaller than the old architecture
+## Install and test
 
-There is no κ, Φ*, VKD, coherence score, truth score, reputation score, automatic extractor, RDF store, JSON-LD processor, ontology server, or W3C conformance claim.
-
-The current core uses canonical JSON, SHA-256, Merkle proofs, and Ed25519. RDF Dataset Canonicalization, W3C Data Integrity, PROV-O, or nanopublication adapters would be interoperability work only. They inherit nothing until the minimal object demonstrates external value.
-
-## Run it
-
-Python 3.11+ and `cryptography` are required.
+Python 3.11+ is required.
 
 ```bash
-PYTHONPATH=src python -m unittest discover -s tests -v
-PYTHONPATH=src python examples/build_demo.py --output artifacts/demo
-PYTHONPATH=src python examples/build_plos_correction_case.py --output artifacts/plos-correction-case
+python -m pip install -e .
+python -m unittest discover -s tests -v
+```
+
+Build the checked Evidence Recall specimen:
+
+```bash
+PYTHONPATH=src python examples/build_plos_correction_case.py \
+  --output artifacts/plos-correction-case
 PYTHONPATH=src python examples/build_plos_correction_impact.py \
   --base artifacts/plos-correction-case \
   --output artifacts/plos-correction-impact
-PYTHONPATH=src python scripts/verify_plos_correction_impact.py \
+python scripts/verify_plos_correction_impact.py \
   --artifact artifacts/plos-correction-impact
-PYTHONPATH=src python scripts/impact_differential_probe.py --iterations 2000
-PYTHONPATH=src python scripts/scaling_probe.py
-PYTHONPATH=src python scripts/build_arct_automated_receiver_pack.py \
-  --output artifacts/automated-receiver-benchmark
-PYTHONPATH=src python examples/build_wapo_frame_ledger.py \
-  --output artifacts/wapo-headline-frame-ledger
-PYTHONPATH=src python scripts/verify_wapo_frame_ledger.py \
-  --artifact artifacts/wapo-headline-frame-ledger
 ```
 
-Build and verify the comparative pipeline conformance fixture and the source-backed aggregate diagnostic:
+Rebuild and independently verify the 0.5.2 temporal replication:
 
 ```bash
-PYTHONPATH=src python scripts/build_evidence_recall_comparative_fixture.py \
-  --output artifacts/evidence-recall-comparative/conformance
-PYTHONPATH=src python -m openline_claim_graph evidence-benchmark-validate \
-  --pack artifacts/evidence-recall-comparative/conformance/pack.json \
-  --authority artifacts/evidence-recall-comparative/conformance/authority.json \
-  --gold artifacts/evidence-recall-comparative/conformance/gold.private.json \
-  --predictions artifacts/evidence-recall-comparative/conformance/predictions.json \
-  --score artifacts/evidence-recall-comparative/conformance/score.json
-PYTHONPATH=src python -m openline_claim_graph evidence-benchmark-published-diagnostic \
-  --output artifacts/evidence-recall-comparative/published-diagnostic.json
-python scripts/verify_evidence_recall_published_diagnostic.py \
-  --report artifacts/evidence-recall-comparative/published-diagnostic.json
-```
+PYTHONPATH=src python scripts/build_temporal_selectivity_replication_corpus.py \
+  --output artifacts/evidence-recall-temporal/replication-001-selectivity
 
-Build and verify the temporal-holdout conformance fixture. The future seal and gold remain separate from the prediction-visible pack:
+python scripts/verify_temporal_selectivity_replication_corpus.py \
+  --artifact artifacts/evidence-recall-temporal/replication-001-selectivity \
+  --output artifacts/evidence-recall-temporal/replication-001-selectivity/independent-verification.json
 
-```bash
-PYTHONPATH=src python scripts/build_temporal_holdout_fixture.py \
-  --output artifacts/evidence-recall-temporal/conformance
 PYTHONPATH=src python -m openline_claim_graph temporal-benchmark-validate \
-  --pack artifacts/evidence-recall-temporal/conformance/pack.json \
-  --authority artifacts/evidence-recall-temporal/conformance/authority.json \
-  --future-seal artifacts/evidence-recall-temporal/conformance/future-seal.private.json \
-  --gold artifacts/evidence-recall-temporal/conformance/gold.private.json \
-  --predictions artifacts/evidence-recall-temporal/conformance/predictions.json \
-  --score artifacts/evidence-recall-temporal/conformance/score.json
-PYTHONPATH=src python -m openline_claim_graph temporal-benchmark-published-diagnostic \
-  --output artifacts/evidence-recall-temporal/published-diagnostic.json
-python scripts/verify_temporal_published_diagnostic.py \
-  --report artifacts/evidence-recall-temporal/published-diagnostic.json \
-  --output artifacts/evidence-recall-temporal/independent-verification.json
+  --pack artifacts/evidence-recall-temporal/replication-001-selectivity/pack.json \
+  --authority artifacts/evidence-recall-temporal/replication-001-selectivity/authority.json \
+  --future-seal artifacts/evidence-recall-temporal/replication-001-selectivity/future-seal.private.json \
+  --gold artifacts/evidence-recall-temporal/replication-001-selectivity/gold.private.json \
+  --predictions artifacts/evidence-recall-temporal/replication-001-selectivity/predictions.json \
+  --score artifacts/evidence-recall-temporal/replication-001-selectivity/score.json
 ```
 
-Rebuild and independently verify the first real historical episode:
+The historical protocol withholds the future record and gold from the prediction-visible pack. Because the cases are retrospective reconstructions, this establishes artifact separation and reproducibility; it does not prove the human constructor was psychologically blind to later history.
 
-```bash
-PYTHONPATH=src python scripts/build_real_temporal_case_shah_iron.py \
-  --output artifacts/evidence-recall-temporal/real-001-shah-iron
-python scripts/verify_real_temporal_case_shah_iron.py \
-  --artifact artifacts/evidence-recall-temporal/real-001-shah-iron \
-  --output artifacts/evidence-recall-temporal/real-001-shah-iron/independent-verification.json
-PYTHONPATH=src python -m openline_claim_graph temporal-benchmark-validate \
-  --pack artifacts/evidence-recall-temporal/real-001-shah-iron/pack.json \
-  --authority artifacts/evidence-recall-temporal/real-001-shah-iron/authority.json \
-  --future-seal artifacts/evidence-recall-temporal/real-001-shah-iron/future-seal.private.json \
-  --gold artifacts/evidence-recall-temporal/real-001-shah-iron/gold.private.json \
-  --predictions artifacts/evidence-recall-temporal/real-001-shah-iron/predictions.json \
-  --score artifacts/evidence-recall-temporal/real-001-shah-iron/score.json
-```
+## Repository map
 
-For a real temporal episode, predictions are run from only `pack.json` and `authority.json`; `future-seal.private.json` and `gold.private.json` are withheld until scoring. The first episode is a retrospective historical reconstruction, so the code proves timestamp/artifact separation, not that the human constructor was psychologically blind to later history.
+- `src/openline_claim_graph/` — deterministic graph, verification, impact, and evaluation code.
+- `tests/` — unit, adversarial, custody, and regression tests.
+- `artifacts/` — checked outputs and independent-verification records.
+- `experiments/` — benchmark protocols and historical evaluation material.
+- `docs/EVIDENCE_RECALL.md` — current Evidence Recall mechanism contract.
+- `HUMAN_CONTRACT.md` — canonical human-facing projection contract.
+- `CLAIM_BOUNDARY.md` / `CLAIM_BOUNDARY_TEMPORAL.md` — explicit non-claims and evaluation boundaries.
+- `ASSESSMENT.md` — research assessment and older experimental context.
+- `CHANGELOG.md` — development history.
+- `RELEASE.md` — current release disposition.
+- `MANIFEST.json` / `EVIDENCE.json` — release closure and verification receipts.
 
-When the canonical Schneider V2 CSV is available locally, the importer itself performs the anti-leakage split and fails closed unless it recovers the published 152 accessible rows and 23 positives:
+The README intentionally describes the current public surface rather than reproducing the full development archaeology. Older benchmark history and failed or below-threshold runs remain preserved in the assessment, changelog, experiment protocols, and checked artifacts.
 
-```bash
-openline-claim-graph evidence-benchmark-import-schneider \
-  --csv "2010-2019 SG to specific not mentioned FG-v2.csv" \
-  --output /tmp/schneider-benchmark
-openline-claim-graph evidence-benchmark-run \
-  --pack /tmp/schneider-benchmark/pack.json \
-  --authority /tmp/schneider-benchmark/authority.json \
-  --output /tmp/schneider-benchmark/predictions.json
-openline-claim-graph evidence-benchmark-score \
-  --pack /tmp/schneider-benchmark/pack.json \
-  --authority /tmp/schneider-benchmark/authority.json \
-  --gold /tmp/schneider-benchmark/gold.private.json \
-  --predictions /tmp/schneider-benchmark/predictions.json \
-  --output /tmp/schneider-benchmark/score.json
-```
+## Related experimental work
 
-The demo creates a base policy state, two incompatible status branches, an explicit merge that preserves both conflicts, signed receipts, a receiver-scoped projection, source inclusion proofs, and an append-only wallet.
+The repository also contains **Frame Ledger**, an experimental exact-text framing-analysis path with its own contract and receiver-owned admission policy. It is not part of the 0.5.2 Evidence Recall promotion claim and should not be read as having the same empirical status.
 
-Complete receiver verification:
+See [`docs/FRAME_LEDGER.md`](docs/FRAME_LEDGER.md) and its checked artifact under `artifacts/wapo-headline-frame-ledger/`.
 
-```bash
-PYTHONPATH=src python -m openline_claim_graph verify-bundle \
-  --snapshot artifacts/demo/merged.snapshot.json \
-  --receipt artifacts/demo/merged.receipt.json \
-  --sources artifacts/demo/sources.fixture.json \
-  --projection artifacts/demo/projection.json \
-  --disclosure artifacts/demo/source-disclosure.json \
-  --policy artifacts/demo/receiver-policy.json \
-  --public-key d04ab232742bb4ab3a1368bd4615e4e6d0224ab71a016baf8520a332c9778737 \
-  --parent artifacts/demo/branch-a.snapshot.json \
-  --parent artifacts/demo/branch-b.snapshot.json
-```
+## Scope
 
-The fixture public key is also recorded in `artifacts/demo/fixture-public-key.json`. It is deterministic test material, not a production identity.
+OpenLine Claim Graph does not claim to determine truth, discover every hidden dependency, infer intent, replace domain review, or establish broad generality from 14 historical targets.
 
-Render a verified bundle as a static Decision Review:
+The current supported claim is smaller: **in this frozen historical replication, typed receiver-owned dependency authority preserved all observed warranted reopenings while reducing review load relative to reviewing every reachable target.**
 
-```bash
-PYTHONPATH=src python -m openline_claim_graph render-review \
-  --snapshot artifacts/plos-correction-case/snapshot.json \
-  --receipt artifacts/plos-correction-case/receipt.json \
-  --sources artifacts/plos-correction-case/sources.json \
-  --projection artifacts/plos-correction-case/projection.json \
-  --disclosure artifacts/plos-correction-case/source-disclosure.json \
-  --policy artifacts/plos-correction-case/receiver-policy.json \
-  --public-key 17cb79fb2b4120f2b1ec65e4198d6e08b28e813feb01e4a400839b85e18080ce \
-  --output /tmp/decision-review.html \
-  --title "Published abstract vs. main results"
-```
+That claim is falsifiable. A broader corpus with new evidence families, prospective construction, or materially different graph structure can break it.
 
-Rendering fails closed when the source, receipt, graph, projection, policy binding, or receiver key pin is invalid. `ADMIT` means only that the verified bundle satisfies the declared receiver policy; the page states this beside the disposition.
+## License
 
-Compute and render source impact from an accepted state:
-
-```bash
-openline-claim-graph impact \
-  --snapshot artifacts/plos-correction-impact/accepted.snapshot.json \
-  --sources artifacts/plos-correction-impact/sources.json \
-  --event artifacts/plos-correction-impact/source-status-event.json \
-  --policy artifacts/plos-correction-impact/impact-policy.json \
-  --output /tmp/impact-report.json
-
-openline-claim-graph render-impact \
-  --report /tmp/impact-report.json \
-  --snapshot artifacts/plos-correction-impact/accepted.snapshot.json \
-  --sources artifacts/plos-correction-impact/sources.json \
-  --event artifacts/plos-correction-impact/source-status-event.json \
-  --policy artifacts/plos-correction-impact/impact-policy.json \
-  --receipt artifacts/plos-correction-impact/accepted.receipt.json \
-  --public-key d759793bbc13a2819a827c76adb6fba8a49aee007f49f2d0992d99b825ad2c48 \
-  --output /tmp/evidence-recall.html
-```
-
-Impact computation fails closed on invalid graph, source, event, or policy commitments. Verification and rendering additionally require the signed accepted-state receipt and receiver-pinned key. Rendering does not mutate the accepted graph.
-
-Reproduce and render the Frame Ledger specimen:
-
-```bash
-openline-claim-graph verify-frame \
-  --report artifacts/wapo-headline-frame-ledger/report.json \
-  --source artifacts/wapo-headline-frame-ledger/source.json \
-  --findings artifacts/wapo-headline-frame-ledger/findings.json \
-  --policy artifacts/wapo-headline-frame-ledger/policy.json
-
-openline-claim-graph render-frame \
-  --report artifacts/wapo-headline-frame-ledger/report.json \
-  --source artifacts/wapo-headline-frame-ledger/source.json \
-  --findings artifacts/wapo-headline-frame-ledger/findings.json \
-  --policy artifacts/wapo-headline-frame-ledger/policy.json \
-  --output /tmp/frame-ledger.html
-```
-
-The autonomous model lane is optional and unrun in this release. `scripts/run_autonomous_frame_pipeline.py` can call an official frontier endpoint or three separately served open-weight families, sign every proposal/review under configured execution keys, apply the receiver policy, and render the result without a mandatory human tap. Model-card candidates and their honest deployment tiers are recorded in [`docs/open-model-candidates.json`](docs/open-model-candidates.json); none is labeled as a benchmark winner.
-
-## Evidence generated here
-
-- 86 offline unit/adversarial/protocol/development/benchmark tests.
-- 10,000 deterministic tamper mutations detected with zero misses.
-- Exact-quote mislabeling is rejected.
-- Paraphrase/inference labels remain admitted only as disclosed, semantically unverified mappings.
-- Silent parent-record deletion is rejected.
-- Conflicting branches cannot merge without an explicit resolution record.
-- A 1,000-claim controlled graph produced a roughly 1.4 KB signed state receipt and a roughly 3.7 KB one-claim projection. The full snapshot was roughly 643 KB.
-
-Those are mechanical results. The controlled fixture was designed here, so it is not evidence that the graph improves decisions on natural material.
-
-### Frame Ledger on one natural headline
-
-`artifacts/wapo-headline-frame-ledger/` audits the exact headline supplied by the maintainer. Seven findings reproduce: one conflict lexeme, one co-occurrence cue, two issue-frame lexemes, one local-attribution-pattern absence, and two receiver-declared term-set absences. An independent verifier that does not import the candidate Frame Ledger code reproduces 20 content, span, rule, policy, classification, and rendered-output checks.
-
-The specimen includes only the headline, not the article body. It validates a deterministic mechanism on natural text. It does not validate the general ruleset against Media Frames Corpus or NewsWCL50, model competence, political neutrality, author intent, fairness, factual truth, rationalization, propaganda, reader effect, usefulness, or demand. No frontier/open-model call or incremental API spend was used to create it.
-
-### Evidence Recall on a real correction event
-
-`artifacts/plos-correction-impact/` starts from a signed accepted-state specimen and admits the later PLOS correction as a source-status event. Direct source lookup finds 5 exposed abstract claims. Dependency propagation proposes 7 claims for quarantine, including 2 downstream claims direct lookup misses. It preserves 1 related claim with an admitted alternative main-text basis, routes 1 advisory-edge exposure to unresolved review rather than hard quarantine, leaves 6 claims untouched, and identifies 1 accepted decision to reopen.
-
-An independent verifier that does not import the impact engine reproduces the content hashes, accepted-state root, Ed25519 binding, event/policy/report IDs, classification sets, witness paths, and review hash. A separate 2,000-case randomized differential probe covers cycles, alternative support, required dependencies, advisory paths, and exact affected spans with zero oracle mismatches.
-
-The PLOS article and correction are real. The downstream accepted-state dependencies are explicitly authored for the specimen. This earns a mechanical claim: **given this admitted graph, event, and policy, the blast radius is exact and reproducible.** It does not earn claims about extraction accuracy, historical completeness, scientific truth, user demand, or commercial value.
-
-### Natural-material review check
-
-`artifacts/plos-correction-case/` applies the same mechanism to the abstract results and two main-results passages from a published PLOS ONE article. The generated Decision Review exposes five numerical conflicts. A later PLOS correction explicitly states that numbers in the abstract were inconsistent with the main text. The correction is kept outside the receiver bundle and recorded as an E1 external anchor.
-
-This establishes that the review surface can carry a real, independently confirmed fault line without collapsing it into a score. It does **not** establish automated extraction, completeness, or an advantage over ordinary prose. Extraction for this case is manual and disclosed.
-
-The checked-in upstream verification records exact excerpt matches against the PLOS Search API. Re-run it when auditing or updating the example:
-
-```bash
-PYTHONPATH=src python scripts/verify_plos_upstream.py \
-  --output artifacts/plos-correction-case/upstream-verification.json
-```
-
-### Independent-gold development check
-
-`experiments/development_benchmarks/arct/` adds a constrained real-data check against the independently annotated Argument Reasoning Comprehension Task. A deterministic 24-case subset was selected before labels were shown to the mapper. One frozen interactive pass chose the correct implicit warrant in 21 cases. The three errors are retained.
-
-The executable check builds the blind mapping, the upstream gold mapping, and the opposite-warrant control for every case. All 72 graph states verify; the gold and opposite controls score 24/24 and 0/24; and the chosen warrant changes the committed root in every case.
-
-This is a positive control for source-to-structure signal, not evidence of receiver value. It is multiple-choice, small, potentially exposed in model pretraining, and lacks an independent public prediction precommit. It does not enter the human pilot.
-
-## Automated receiver benchmark
-
-`experiments/automated_receiver_benchmark/` defines the immediate external-value
-test for machine receivers. It preserves three arms:
-
-- ordinary summarization;
-- one frozen claim inventory rendered as prose; and
-- the identical inventory rendered as verified structured state.
-
-The public pack never contains the answer key. The separately stored gold file
-is bound to the exact pack hash. Each trial starts a fresh receiver process,
-passes one case and one arm on stdin, and requires strict JSON identifiers on
-stdout. The deterministic scorer counts missing, malformed, timed-out, and
-skipped trials as misses. No LLM judge is involved.
-
-The common source packet and extracted inventory are included in the public
-case. Their roots are recomputed. Arm B must equal the harness's deterministic
-prose rendering of that inventory; Arm C must equal the inventory itself. This
-closes accidental B/C content drift while leaving the honest remaining limit:
-no hash can prove that the case author included every relevant fact.
-
-Build and validate the checked-in development pack:
-
-```bash
-PYTHONPATH=src python scripts/build_arct_automated_receiver_pack.py \
-  --output artifacts/automated-receiver-benchmark
-
-PYTHONPATH=src python -m openline_claim_graph benchmark-validate \
-  --pack artifacts/automated-receiver-benchmark/pack.json \
-  --gold artifacts/automated-receiver-benchmark/gold.private.json
-```
-
-Create a plan, then run each frozen receiver command separately:
-
-```bash
-PYTHONPATH=src python -m openline_claim_graph benchmark-plan \
-  --pack artifacts/automated-receiver-benchmark/pack.json \
-  --receiver model-family-a@version \
-  --receiver model-family-b@version \
-  --output /tmp/receiver-plan.json
-
-PYTHONPATH=src python -m openline_claim_graph benchmark-run \
-  --pack artifacts/automated-receiver-benchmark/pack.json \
-  --plan /tmp/receiver-plan.json \
-  --receiver-id model-family-a@version \
-  --output /tmp/model-a-responses.json \
-  --max-cost-microusd 5000000 \
-  -- python path/to/receiver_adapter.py
-```
-
-The receiver command is deliberately provider-neutral. It receives one trial
-document on stdin and emits the strict answer schema on stdout. API keys and
-provider SDKs stay outside the trusted core.
-
-Finally, score all receiver files against the bound key:
-
-```bash
-PYTHONPATH=src python -m openline_claim_graph benchmark-score \
-  --pack artifacts/automated-receiver-benchmark/pack.json \
-  --gold artifacts/automated-receiver-benchmark/gold.private.json \
-  --plan /tmp/receiver-plan.json \
-  --responses /tmp/model-a-responses.json \
-  --responses /tmp/model-b-responses.json \
-  --output /tmp/receiver-score.json
-```
-
-The checked-in ARCT pack is `DEVELOPMENT_ONLY`. It is one public,
-multiple-choice dataset with possible pretraining contamination and no negative
-controls. It validates the harness and cannot pass the promotion gate. No
-completed receiver efficacy result is included in this branch.
-
-## Dormant human receiver protocol
-
-`experiments/receiver_discovery_pilot/` contains the push-ready protocol and custody templates for the first human receiver pilot. It separates three effects:
-
-- ordinary summarization;
-- claim-level extraction rendered as prose;
-- the same extraction rendered as a graph.
-
-Condition is assigned between receivers, case selection is locked before mapping, positive keys require an explicit external anchor, and no-conflict cases measure false discovery. Stage 1 is an effect-size and operations pilot only; it cannot promote or archive the value claim.
-
-The analyzed pilot case pack is intentionally empty. The ARCT development fixture is not an admitted Stage 1 case pack. No human trials or decision-value results exist yet.
-
-This human protocol is not the immediate roadmap. It becomes relevant only if
-a later claim concerns human comprehension; source-impact correctness does not
-inherit that claim.
-
-## Promotion status
-
-`SOURCE_IMPACT_MECHANISM_VERIFIED_ON_REAL_EVENT_AUTHORED_DEPENDENCIES_VALUE_UNTESTED`
-
-The existing DSM “Same Word, Different Rules” example is structurally useful but cannot serve as extraction-fidelity evidence: it explicitly paraphrases an anonymized exchange and does not include the raw source spans needed for independent recovery.
-
-The deterministic source-impact mechanism now stands independently of the unresolved presentation claim:
-
-> Given an accurate enough accepted dependency state, does catching downstream exposure after real corrections save enough missed-review cost to justify maintaining that state?
-
-Nothing in this repository answers adoption or economic value yet. It does answer the narrower engineering question: the graph can perform exact, receiver-policy-bound evidence recall that a direct source lookup misses, without over-quarantining a branch with an admitted alternative basis.
+MIT.

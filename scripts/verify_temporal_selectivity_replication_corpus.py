@@ -97,6 +97,7 @@ def main() -> int:
     summary = load(artifact / "summary.json")
     kataoka = load(artifact / "source-evidence/kataoka-case-level-admission.json")
     card = (artifact / "POINT_BECAUSE_BUT_SO.md").read_text(encoding="utf-8")
+    card_audit = load(artifact / "POINT_BECAUSE_BUT_SO.audit.json")
 
     checks: list[dict[str, Any]] = []
     def check(name: str, ok: bool, detail: Any = None):
@@ -210,10 +211,28 @@ def main() -> int:
     check("custody_engine_unchanged", custody["engine_unchanged"] is True)
     check("summary_engine_unchanged", summary["engine_unchanged"] is True)
 
-    check("card_has_point", "POINT\nEvidence Recall did save meaningful review work." in card)
-    check("card_has_because", "BECAUSE\nIt caught 8/8 warranted reopenings while reviewing 8 instead of 14 items" in card)
-    check("card_has_but", "BUT\nSavings recurred in 4/5 trigger episodes" in card)
-    check("card_has_so", card.rstrip().endswith("SO\nPROMOTION"))
+    expected_point = "Under this five-episode historical benchmark, frozen Evidence Recall reduced review load while preserving every warranted reopening."
+    expected_because = "It caught 8/8 warranted reopenings with 8 reviews versus Review-All Reachability's 14, a 42.85% reduction with 0 additional misses."
+    expected_but = "All episodes were historically reconstructed after outcomes were known, and three of five triggers share the same later Sato/Avenell audit family, so independent prospective generality is not established."
+    expected_so = "Promote temporal selectivity only as a benchmark-supported candidate finding; do not generalize beyond this corpus."
+    expected_card = f"POINT\n{expected_point}\n\nBECAUSE\n{expected_because}\n\nBUT\n{expected_but}\n\nSO\n{expected_so}\n"
+    check("card_exact_projection", card == expected_card)
+    check("card_audit_schema", card_audit["schema"] == "openline.point-because-but-so-audit.v1")
+    check("card_audit_contract", card_audit["contract"] == "HUMAN_CONTRACT.md")
+    check("card_audit_point", card_audit["lines"]["POINT"]["text"] == expected_point)
+    check("card_audit_because", card_audit["lines"]["BECAUSE"]["text"] == expected_because)
+    check("card_audit_but", card_audit["lines"]["BUT"]["text"] == expected_but)
+    check("card_audit_so", card_audit["lines"]["SO"]["text"] == expected_so)
+    check("card_audit_but_present", bool(card_audit["lines"]["BUT"]["text"].strip()))
+    check("card_audit_so_bounded", "do not generalize beyond this corpus" in card_audit["lines"]["SO"]["text"])
+    check("card_audit_constraints", all(card_audit["constraints"].values()))
+    for line_name, line in card_audit["lines"].items():
+        check(f"card_audit_trace_present:{line_name}", bool(line["trace"]))
+        for ref in line["trace"]:
+            source_path = artifact / ref["artifact"]
+            check(f"card_audit_trace_file:{line_name}:{ref['artifact']}", source_path.is_file())
+            check(f"card_audit_trace_hash:{line_name}:{ref['artifact']}", sha256_file(source_path) == ref["sha256"])
+            check(f"card_audit_trace_pointer:{line_name}:{ref['artifact']}", bool(ref["json_pointers"]))
     check("report_exists", (artifact / "REPORT.md").is_file())
 
     failed = [x for x in checks if not x["pass"]]

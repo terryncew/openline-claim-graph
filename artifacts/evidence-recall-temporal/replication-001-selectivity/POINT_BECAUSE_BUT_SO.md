@@ -1,11 +1,11 @@
 POINT
-Evidence Recall did save meaningful review work.
+Under this five-episode historical benchmark, frozen Evidence Recall reduced review load while preserving every warranted reopening.
 
 BECAUSE
-It caught 8/8 warranted reopenings while reviewing 8 instead of 14 items under Review-All Reachability.
+It caught 8/8 warranted reopenings with 8 reviews versus Review-All Reachability's 14, a 42.85% reduction with 0 additional misses.
 
 BUT
-Savings recurred in 4/5 trigger episodes, and Evidence Recall missed 0 warranted cases; three trigger episodes come from the same Sato/Avenell audit family.
+All episodes were historically reconstructed after outcomes were known, and three of five triggers share the same later Sato/Avenell audit family, so independent prospective generality is not established.
 
 SO
-PROMOTION
+Promote temporal selectivity only as a benchmark-supported candidate finding; do not generalize beyond this corpus.

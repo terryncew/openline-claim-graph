@@ -20,6 +20,8 @@ Predeclared bar: at least 95% recall, at least 40% pooled review-load reduction,
 
 Verdict: `PROMOTION`.
 
+The human-facing result now follows the canonical `POINT / BECAUSE / BUT / SO` contract. The card is generated from benchmark outputs rather than written as an after-the-fact summary, and an audit sidecar binds each line to the exact scored artifacts and custody limits that produced it.
+
 The promotion is narrow: temporal selectivity under this frozen historical benchmark. Three of five trigger episodes are Sato-family retractions graded by one later Avenell audit, so the result is not broad independent-domain replication or a commercial moat claim.
 
 No engine repair, weighted support, generalized revocation, hidden-edge discovery, UI, Frame Ledger expansion, Receipt Gate work, or Successor Gate work is included.

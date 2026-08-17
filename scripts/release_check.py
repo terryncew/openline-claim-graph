@@ -787,6 +787,7 @@ def main() -> int:
     temporal_replication_policy = json.loads((temporal_replication_dir / "promotion-policy.json").read_text(encoding="utf-8"))
     temporal_replication_result = json.loads((temporal_replication_dir / "promotion-result.json").read_text(encoding="utf-8"))
     temporal_replication_episode_metrics = json.loads((temporal_replication_dir / "episode-metrics.json").read_text(encoding="utf-8"))
+    temporal_replication_card_audit = json.loads((temporal_replication_dir / "POINT_BECAUSE_BUT_SO.audit.json").read_text(encoding="utf-8"))
     checks = {
         "compileall": True,
         "python_3_11_grammar_parse": len(grammar_files),
@@ -952,6 +953,12 @@ def main() -> int:
         "temporal_replication_engine_unchanged": temporal_replication_custody["engine_unchanged"],
         "temporal_replication_mean_episode_savings_bps": temporal_replication_episode_metrics["mean_episode_review_savings_basis_points"],
         "temporal_replication_median_episode_savings_bps": temporal_replication_episode_metrics["median_episode_review_savings_basis_points"],
+        "human_contract_present": (ROOT / "HUMAN_CONTRACT.md").is_file(),
+        "human_contract_card_audit_valid": all(temporal_replication_card_audit["constraints"].values()),
+        "human_contract_four_lines_traced": all(
+            temporal_replication_card_audit["lines"][name]["trace"]
+            for name in ("POINT", "BECAUSE", "BUT", "SO")
+        ),
         "scaling_probe_claim_counts": [item["claim_count"] for item in scaling["results"]],
     }
     if not all(
@@ -1109,6 +1116,9 @@ def main() -> int:
             checks["temporal_replication_engine_unchanged"],
             checks["temporal_replication_mean_episode_savings_bps"] == 4166,
             checks["temporal_replication_median_episode_savings_bps"] == 5000,
+            checks["human_contract_present"],
+            checks["human_contract_card_audit_valid"],
+            checks["human_contract_four_lines_traced"],
         ]
     ):
         raise RuntimeError(f"release checks failed: {checks}")
@@ -1358,7 +1368,10 @@ def main() -> int:
             "product candidate. Three trigger episodes are related Sato retractions adjudicated by the same later Avenell audit family; the corpus has only "
             "fourteen scored targets and was historically reconstructed after outcomes were known. This does not establish broad-domain replication, commercial "
             "moat, hidden-edge discovery, or prospective performance. Kataoka aggregate counts contribute zero scored rows because case-level inclusion/exclusion "
-            "material was not independently recoverable. No Evidence Recall engine semantics were changed in response."
+            "material was not independently recoverable. No Evidence Recall engine semantics were changed in response. "
+            "The canonical human-facing contract is POINT / BECAUSE / BUT / SO: the 0.5.2 card is generated from scored artifacts "
+            "and custody limits, every line carries an audit path to exact artifact bytes, BUT is mandatory and material, and SO is "
+            "bounded to the narrow benchmark-supported consequence."
         ),
         "incremental_api_spend_usd": 0,
         "model_calls": 1,

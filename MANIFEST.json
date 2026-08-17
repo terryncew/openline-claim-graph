@@ -1,6 +1,6 @@
 {
-  "aggregate_sha256": "689605e3254580f9dd9688327ad650ed3be59b9723a0debb072359765e1b11fa",
-  "file_count": 247,
+  "aggregate_sha256": "bbb602e62b62bfc5729c7bb4ecbcf981c172f1840a66ec2c9181e4471adc64cc",
+  "file_count": 249,
   "files": [
     {
       "bytes": 7007,
@@ -18,9 +18,9 @@
       "sha256": "f08a744cdcab25303491ac265194d80756ea4925db2a52efb48fc57daf08223e"
     },
     {
-      "bytes": 18305,
+      "bytes": 18522,
       "path": "CHANGELOG.md",
-      "sha256": "b6efed4d6d6a7ca75125465eeb4664fbe454765a8054cba5a6fd8eccba2bd59f"
+      "sha256": "314885dffd8e6d3698329fb693bde183a803784ad881c5793069551696dcba67"
     },
     {
       "bytes": 10918,
@@ -33,19 +33,24 @@
       "sha256": "54a8a772a7ca869fa7dffee432296ef73be00464b49bf1f9d8cf3a0d6c7b04c4"
     },
     {
+      "bytes": 2703,
+      "path": "HUMAN_CONTRACT.md",
+      "sha256": "24888230dc4327b7bf65849bfbb28b32a52bf37d64555630ba2e1991848273dd"
+    },
+    {
       "bytes": 1071,
       "path": "LICENSE",
       "sha256": "07674dfa9960dff5128d0cdcce58fee7543c26ff47e58e07ae6ac0254a0f58b1"
     },
     {
-      "bytes": 34253,
+      "bytes": 9962,
       "path": "README.md",
-      "sha256": "ce22ad93e31a167c5969542529d7e753e69e66d9bf5e3c58f4c195e07327d0a0"
+      "sha256": "3c6dcd5efc985ba5ef288a9c6e022e78d234a1bab39f8132f1da3fc50d0ec963"
     },
     {
-      "bytes": 1629,
+      "bytes": 1918,
       "path": "RELEASE.md",
-      "sha256": "8e6160b362d432c7ffa46f9368ce7e47f955b4bc5ac35b7ad30f1e1468de24c6"
+      "sha256": "c00da17153c07d3352c47b7b045771f70c854e4c5ff508841032b07c7ef532f1"
     },
     {
       "bytes": 15678,
@@ -345,7 +350,7 @@
     {
       "bytes": 6428,
       "path": "artifacts/evidence-recall-temporal/real-001-shah-iron/independent-verification.json",
-      "sha256": "22a753f194f8b3958293279609ed19551730162e198654a80af93f3f4d4c1f92"
+      "sha256": "3982b4574cdd54b9f31efc93db4489874340b958e6267cbf1e3a609e62d3590f"
     },
     {
       "bytes": 5089,
@@ -383,9 +388,14 @@
       "sha256": "2b9c79361c69044fa04b79e62db36af61664befdf7ce4730073667d8fd9d7fce"
     },
     {
-      "bytes": 344,
+      "bytes": 3660,
+      "path": "artifacts/evidence-recall-temporal/replication-001-selectivity/POINT_BECAUSE_BUT_SO.audit.json",
+      "sha256": "4f6f0f4ec659586cd10dbba050696a7689099664c67706aaef3bd344060fa2cd"
+    },
+    {
+      "bytes": 610,
       "path": "artifacts/evidence-recall-temporal/replication-001-selectivity/POINT_BECAUSE_BUT_SO.md",
-      "sha256": "f711aa264e03ad7bce438eadc8888f2dbc2d7146c206cc327664037482cc18a2"
+      "sha256": "ec17c0e6f2b47c68b0ba7ea4aaee7227f4e3f58779ff77d85797a6e1a24d33ec"
     },
     {
       "bytes": 3237,
@@ -418,9 +428,9 @@
       "sha256": "3e29b5c91b30e6268df40280c1673e41b3ddcdfe876a90e2217b48326ffa1726"
     },
     {
-      "bytes": 14906,
+      "bytes": 18660,
       "path": "artifacts/evidence-recall-temporal/replication-001-selectivity/independent-verification.json",
-      "sha256": "f4107f7e1194829cef9c73b1062e4392b740a78a80cd10c09f1fda4616f9f614"
+      "sha256": "58d223fdbc58418e9b0dd35379163758de939392d8e5dbb3c7cbcd8222c3ddc3"
     },
     {
       "bytes": 25203,
@@ -998,9 +1008,9 @@
       "sha256": "ccbf275a53ee90e74ac98904ae068b49a5ca458385405cc561a1bd1ac7996160"
     },
     {
-      "bytes": 42259,
+      "bytes": 45130,
       "path": "scripts/build_temporal_selectivity_replication_corpus.py",
-      "sha256": "eee9264c3b4345c624882bd7becc031fe11b70e8dfaab43057b033579c3bad25"
+      "sha256": "81adbc73fdc26203db4d56fec7648914354af908c17738031ee266877df7e322"
     },
     {
       "bytes": 2367,
@@ -1013,9 +1023,9 @@
       "sha256": "20a67eacd0104e6d015b0208ceab58c0f8bfb299548ab687d8d440e62ecedd9b"
     },
     {
-      "bytes": 71645,
+      "bytes": 72644,
       "path": "scripts/release_check.py",
-      "sha256": "9c56ce26312ec570cefc32fde6cc0eab020ab3a7cf3524d1903300011da1d0ac"
+      "sha256": "16cb22baecd02973333bb4217f066b3a1ee7a4e727f47b6f2de0f9b25fee4946"
     },
     {
       "bytes": 10871,
@@ -1068,9 +1078,9 @@
       "sha256": "18609156892d8e8037b09898a22feff534c9b11e309d08abae1e2109265c70a1"
     },
     {
-      "bytes": 13519,
+      "bytes": 15402,
       "path": "scripts/verify_temporal_selectivity_replication_corpus.py",
-      "sha256": "0f0149ff6da2ec01aa4236e845b539971dcd49a00456499ea90975965ce85e13"
+      "sha256": "2d7c128d252e8055cd23c06053135785242e9ffb624577c1c3e0678da488086f"
     },
     {
       "bytes": 8095,
@@ -1233,9 +1243,9 @@
       "sha256": "588d2d7da5a710474cf7769825d32fa929d69f09603de1708c9b2ba72d9a35b8"
     },
     {
-      "bytes": 4659,
+      "bytes": 5265,
       "path": "tests/test_temporal_selectivity_replication.py",
-      "sha256": "ea3edee873717828636cc2f01ca36da5ccf8161337878da590cdca85a3990f74"
+      "sha256": "a24656cef9f3103392b2820962d3f4266d980ca2f70fe870d242851d98734b3d"
     }
   ],
   "schema": "openline.claim-graph.prototype-manifest.v1"

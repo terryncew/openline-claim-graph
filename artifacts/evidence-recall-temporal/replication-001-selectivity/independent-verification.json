@@ -1,5 +1,5 @@
 {
-  "check_count": 132,
+  "check_count": 166,
   "checks": [
     {
       "detail": "TEMPORAL_SELECTIVITY_REPLICATION_PROMOTED",
@@ -638,22 +638,192 @@
     },
     {
       "detail": null,
-      "name": "card_has_point",
+      "name": "card_exact_projection",
       "pass": true
     },
     {
       "detail": null,
-      "name": "card_has_because",
+      "name": "card_audit_schema",
       "pass": true
     },
     {
       "detail": null,
-      "name": "card_has_but",
+      "name": "card_audit_contract",
       "pass": true
     },
     {
       "detail": null,
-      "name": "card_has_so",
+      "name": "card_audit_point",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_because",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_but",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_so",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_but_present",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_so_bounded",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_constraints",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_present:BECAUSE",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_file:BECAUSE:score.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_hash:BECAUSE:score.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_pointer:BECAUSE:score.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_file:BECAUSE:promotion-result.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_hash:BECAUSE:promotion-result.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_pointer:BECAUSE:promotion-result.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_present:BUT",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_file:BUT:custody.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_hash:BUT:custody.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_pointer:BUT:custody.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_file:BUT:episode-metrics.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_hash:BUT:episode-metrics.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_pointer:BUT:episode-metrics.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_present:POINT",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_file:POINT:promotion-result.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_hash:POINT:promotion-result.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_pointer:POINT:promotion-result.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_file:POINT:score.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_hash:POINT:score.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_pointer:POINT:score.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_present:SO",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_file:SO:promotion-result.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_hash:SO:promotion-result.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_pointer:SO:promotion-result.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_file:SO:custody.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_hash:SO:custody.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_audit_trace_pointer:SO:custody.json",
       "pass": true
     },
     {
