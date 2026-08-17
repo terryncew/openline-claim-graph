@@ -1,0 +1,40 @@
+{
+  "authority_id": "evidence-recall-temporal-authority:sha256:a4ca76d3d00956e762d97d3fbca1d622578735a062951f3672ae4654d7b74004",
+  "benchmark_id": "temporal-conformance-v1",
+  "construction_rule": "Inferred fixture edge advisory; explicit unadmitted fixture edge unadmitted; all remaining edges hard.",
+  "declared_by": "conformance-fixture",
+  "edge_authority": [
+    {
+      "authority": "ADVISORY",
+      "edge_id": "temporal-edge:sha256:20613d1fa300dbc87e0e582ba7235d7c0bef711392b53c63547fb6ef08abd5f6",
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5"
+    },
+    {
+      "authority": "HARD",
+      "edge_id": "temporal-edge:sha256:49d748ee3a3b392e71036d8551c7ad6507de3e9282ac581427c4b0897fc7a8e5",
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5"
+    },
+    {
+      "authority": "HARD",
+      "edge_id": "temporal-edge:sha256:6cb7ef75666d990f0449bcb2c938cef3b461ad48089554ecbbcbd8892355e313",
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5"
+    },
+    {
+      "authority": "HARD",
+      "edge_id": "temporal-edge:sha256:b7aec9079e140f96e538840e0e8bd9c5f6c1bff8c2cf9f79e2e50d61305ce6d3",
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5"
+    },
+    {
+      "authority": "UNADMITTED",
+      "edge_id": "temporal-edge:sha256:f8bb1251a3ac701b42410441b916c40bfc05ea984c44d0d192b22516891aeef4",
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5"
+    },
+    {
+      "authority": "HARD",
+      "edge_id": "temporal-edge:sha256:fb46650cfe4fa015b406f1468e6b9b26c4ab97525abf704207b9ac9810acb897",
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5"
+    }
+  ],
+  "pack_id": "evidence-recall-temporal-pack:sha256:ea16f4658d80e7f9e29c742345ae198d8c76dbb8887508f79227e282c0133516",
+  "schema": "openline.evidence-recall-temporal-authority.v1"
+}

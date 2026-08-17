@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.5.0.dev0 — 2026-08-17
+
+- Added the Evidence Recall Temporal Holdout Benchmark: freeze accepted state at `t0`, reveal one later event at `t1`, predict without later records, then score against separately sealed post-event reconsideration evidence.
+- Added **Review-All Reachability** as the principal temporal baseline; every reachable target consumes human review rather than being hard-quarantined.
+- Reused the shipped Evidence Recall impact semantics unchanged; no weighted support, new basis types, hidden-edge discovery, generalized revocation, or cut-set logic.
+- Added content-addressed future-record seals whose commitment is bound into the public pack before predictions. Future records and gold are not required to run the prediction systems.
+- Added strict temporal validation: pre-cutoff nodes/edges must not postdate `t0`; the trigger must occur after `t0`; gold evidence must postdate the trigger and reproduce the committed future seal.
+- Defined gold as later independently recorded reconsideration rather than falsity. Explicit reanalysis with no conclusion change is still `REOPEN`; silence cannot become `NO_REOPEN`.
+- Added exact reconsideration precision/recall, review-burden, unnecessary-review, and reviewer-savings metrics without a composite score.
+- Added a five-target synthetic conformance fixture where Review-All reviews 5 targets and frozen Evidence Recall reviews 3 while preserving full fixture recall. This is evaluator conformance, not empirical product evidence.
+- Added a source-backed clinical/scientific temporal-corpus candidate diagnostic and independent stdlib-only verification. No real case-level temporal holdout result is claimed.
+
 ## 0.4.0.dev0 — 2026-08-17
 
 - Added the Evidence Recall three-way comparative benchmark: Direct Lookup vs naive transitive taint vs the unchanged shipped Evidence Recall engine.

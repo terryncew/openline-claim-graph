@@ -1,0 +1,54 @@
+{
+  "benchmark_claim": "The promotion question is temporal selectivity: after a new event, catch later independently recorded reconsiderations with less human review than review-all reachability.",
+  "candidate_corpora": {
+    "cochrane_letrozole_2021": {
+      "benchmark_role": "positive example: warranted reconsideration can end in survival",
+      "doi": "10.1002/14651858.CD010287.pub3",
+      "published_fact": "review update excluded prior studies because of validity/retraction concerns while reporting that conclusions did not change"
+    },
+    "jama_2025": {
+      "benchmark_role": "quantitative abstraction stress asset, not automatic NO_REOPEN gold",
+      "doi": "10.1001/jamainternmed.2025.0256",
+      "published_facts": {
+        "meta_analyses_recomputed": 166,
+        "meta_analyses_with_no_pooled_estimate_change": 21,
+        "statistical_significance_changed": 18
+      }
+    },
+    "kataoka_2022": {
+      "benchmark_role": "candidate temporal cohort; absence of later correction is not negative gold",
+      "doi": "10.1016/j.jclinepi.2022.06.015",
+      "published_facts": {
+        "articles_citing_retracted_rcts": 587,
+        "clinical_practice_guidelines_later_corrected": 2,
+        "clinical_practice_guidelines_using_rct": 43,
+        "pre_retraction_articles_using_rct_in_evidence_synthesis": 239,
+        "published_after_retraction": 252,
+        "published_before_retraction": 335,
+        "systematic_reviews_later_corrected_or_retracted": 9,
+        "systematic_reviews_using_rct": 196
+      }
+    },
+    "vitality_2025": {
+      "benchmark_role": "candidate independently recomputed downstream-outcome substrate",
+      "doi": "10.1136/bmj-2024-082068",
+      "published_facts": {
+        "guideline_documents_using_impacted_evidence": 157,
+        "meta_analyses_replicated": 3902,
+        "meta_analyses_substantially_impacted": 218,
+        "retracted_rcts": 1330,
+        "systematic_reviews_quantitatively_synthesizing_retracted_trials": 847,
+        "systematic_reviews_with_substantially_impacted_meta_analyses": 68
+      }
+    }
+  },
+  "diagnostic_id": "evidence-recall-temporal-published-diagnostic:sha256:7cb876e90f17d40b540a240dc947f3e3a63b5410908fa91f1b248462891427c6",
+  "not_present": [
+    "case-level temporal predictions",
+    "case-level temporal gold",
+    "empirical Evidence Recall temporal advantage",
+    "commercial moat evidence"
+  ],
+  "schema": "openline.evidence-recall-temporal-published-diagnostic.v1",
+  "status": "TEMPORAL_CORPUS_CANDIDATES_VERIFIED_CASE_LEVEL_HOLDOUT_NOT_YET_RUN"
+}

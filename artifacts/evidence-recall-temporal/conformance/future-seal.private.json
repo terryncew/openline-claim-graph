@@ -1,0 +1,69 @@
+{
+  "benchmark_id": "temporal-conformance-v1",
+  "future_seal_id": "evidence-recall-temporal-future-seal:sha256:a9a8a53feca5682ce2734ed80d864905f8c67e8d53a2d6217030954cfdcc20d6",
+  "records": [
+    {
+      "available_at": "2020-02-01T00:00:00Z",
+      "description": "B later reopened",
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5",
+      "evidence_sha256": "de1232138fee396b7012015ad0acee4b1b984934695c8ee3c24c835554398337",
+      "locator": "fixture:future:fixture:b",
+      "record_id": "temporal-future-record:sha256:0ee958c429f08f764f5ef2d67227dc788445caa802e5a51fbff2ca012f994e8c",
+      "record_type": "ACCEPTED_DECISION_FORMALLY_REOPENED",
+      "target_node_ids": [
+        "fixture:b"
+      ]
+    },
+    {
+      "available_at": "2020-04-01T00:00:00Z",
+      "description": "D later explicitly outside affected scope",
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5",
+      "evidence_sha256": "2ef4f3a591a49a388c0dad913e50a19532ea51693f8825416d8f70dbb786e489",
+      "locator": "fixture:future:fixture:d",
+      "record_id": "temporal-future-record:sha256:49707d8dcbdae6b0e1cffced9effa678b9b2eeb71102f52439b16fb324066ff7",
+      "record_type": "FORMAL_SCOPE_EXCLUSION",
+      "target_node_ids": [
+        "fixture:d"
+      ]
+    },
+    {
+      "available_at": "2020-01-01T00:00:00Z",
+      "description": "A later corrected",
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5",
+      "evidence_sha256": "1e9e00ecff5f56fb043b94c4da9802bb9cbfc50cb118ff8d0b9038debc8c1e38",
+      "locator": "fixture:future:fixture:a",
+      "record_id": "temporal-future-record:sha256:53e39d450a35d26c1fb25c6cdf2138959ba3b91bed02635c2d38cafea8e75201",
+      "record_type": "DOWNSTREAM_CORRECTION",
+      "target_node_ids": [
+        "fixture:a"
+      ]
+    },
+    {
+      "available_at": "2020-05-01T00:00:00Z",
+      "description": "E later found not reliant",
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5",
+      "evidence_sha256": "ce0a81e02215c6cfffd62063c30e44f81a5ea195c40e270fcc9aaa5f9f555f9a",
+      "locator": "fixture:future:fixture:e",
+      "record_id": "temporal-future-record:sha256:61f51dfecf1128df207ef5324b23496785a68777caa5242ebb0f4392f9de6d41",
+      "record_type": "INDEPENDENT_CITATION_CONTEXT_NO_RELIANCE",
+      "target_node_ids": [
+        "fixture:e"
+      ]
+    },
+    {
+      "available_at": "2020-03-01T00:00:00Z",
+      "description": "C later found not reliant",
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5",
+      "evidence_sha256": "e0b8ce5e711f9c65c41ad4dcd2059f6d4be7a55dfd96c5a24eb0cb3121ff6860",
+      "locator": "fixture:future:fixture:c",
+      "record_id": "temporal-future-record:sha256:db077ac2cd416f66e99015dfa73eace234294c072d0ea1153405ee0cb79b47d4",
+      "record_type": "INDEPENDENT_DEPENDENCY_AUDIT_NO_RELIANCE",
+      "target_node_ids": [
+        "fixture:c"
+      ]
+    }
+  ],
+  "retrieval_cutoff_at": "2021-01-01T00:00:00Z",
+  "schema": "openline.evidence-recall-temporal-future-seal.v1",
+  "scope_definition": "All predetermined later records for the five conformance targets."
+}

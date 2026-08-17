@@ -70,6 +70,8 @@
     "installed_cli_impact_verifies": true,
     "installed_cli_published_diagnostic_matches": true,
     "installed_cli_review_matches": true,
+    "installed_cli_temporal_benchmark_verifies": true,
+    "installed_cli_temporal_diagnostic_matches": true,
     "natural_case_bundle_valid": true,
     "natural_case_conflict_count": 5,
     "natural_case_external_anchor_class": "E1_EXPLICIT_EXTERNAL_ANCHOR",
@@ -83,20 +85,30 @@
     "pilot_condition_unit": "receiver",
     "pilot_stage_1_promotion_allowed": false,
     "pilot_target_receiver_type": "human",
-    "python_3_11_grammar_parse": 46,
+    "python_3_11_grammar_parse": 50,
     "scaling_probe_claim_counts": [
       1,
       10,
       100,
       1000
     ],
-    "unit_and_adversarial_tests": 86,
+    "temporal_conformance_er_missed_reopenings": 0,
+    "temporal_conformance_er_review_load": 3,
+    "temporal_conformance_er_reviewer_savings": 2,
+    "temporal_conformance_review_all_load": 5,
+    "temporal_conformance_score_schema": "openline.evidence-recall-temporal-score.v1",
+    "temporal_independent_checks": 13,
+    "temporal_independent_module_free": true,
+    "temporal_independent_valid": true,
+    "temporal_pipeline_status": "TEMPORAL_CORPUS_CANDIDATES_VERIFIED_CASE_LEVEL_HOLDOUT_NOT_YET_RUN",
+    "temporal_real_case_level_result_present": false,
+    "unit_and_adversarial_tests": 97,
     "wheel_build": true
   },
-  "claim_boundary": "Evidence covers deterministic integrity, source-span, lineage, projection, and receiver-policy mechanics plus one small independently labeled, multiple-choice missing-premise mapping check (21/24) and one manually mapped natural-material inconsistency later confirmed by a public correction. It additionally covers deterministic source-impact propagation on that real correction event: two downstream claims beyond direct source lookup were found, one alternative-supported claim was preserved, and one advisory-edge exposure remained unresolved. The dependency state is explicitly authored. This does not cover open-ended extraction fidelity, historical completeness, user demand, market value, model generalization, or graph-versus-summary receiver value. It also covers seven deterministic Frame Ledger findings on one supplied headline and a signed autonomous heterogeneous-review contract. The headline specimen does not include the article body and makes no bias, truth, intent, rationalization, propaganda, reader-effect, or model-competence claim. A new three-way comparative pipeline freezes Direct Lookup, naive transitive taint, and the shipped Evidence Recall semantics; separates public pack, receiver authority, predictions, and external gold; and scores missed exposure, hard false quarantine, unresolved review, and total review load without a composite score. Published aggregate diagnostics are source-backed and independently reproduced, but the canonical Schneider case-level CSV and van der Vet DOT bytes are not bundled in this build environment, so no case-level empirical mechanism-advantage or moat claim is present.",
+  "claim_boundary": "Evidence covers deterministic integrity, source-span, lineage, projection, and receiver-policy mechanics plus one small independently labeled, multiple-choice missing-premise mapping check (21/24) and one manually mapped natural-material inconsistency later confirmed by a public correction. It additionally covers deterministic source-impact propagation on that real correction event: two downstream claims beyond direct source lookup were found, one alternative-supported claim was preserved, and one advisory-edge exposure remained unresolved. The dependency state is explicitly authored. This does not cover open-ended extraction fidelity, historical completeness, user demand, market value, model generalization, or graph-versus-summary receiver value. It also covers seven deterministic Frame Ledger findings on one supplied headline and a signed autonomous heterogeneous-review contract. The headline specimen does not include the article body and makes no bias, truth, intent, rationalization, propaganda, reader-effect, or model-competence claim. A new three-way comparative pipeline freezes Direct Lookup, naive transitive taint, and the shipped Evidence Recall semantics; separates public pack, receiver authority, predictions, and external gold; and scores missed exposure, hard false quarantine, unresolved review, and total review load without a composite score. Published aggregate diagnostics are source-backed and independently reproduced, but the canonical Schneider case-level CSV and van der Vet DOT bytes are not bundled in this build environment, so no case-level empirical mechanism-advantage or moat claim is present. Version 0.5.0.dev0 additionally adds temporal-holdout custody: pre-cutoff nodes and edges, a post-cutoff trigger, a committed but sealed later-record corpus, prediction without future records, and later reconsideration scoring against Direct Lookup, Review-All Reachability, and frozen Evidence Recall. The conformance fixture demonstrates only that the evaluator can distinguish recall from review burden. No real case-level temporal result or product promotion is present.",
   "compile_output": "",
   "external_publication_or_push": false,
-  "generated_at": "2026-08-17T06:12:59Z",
+  "generated_at": "2026-08-17T06:50:19Z",
   "incremental_api_spend_usd": 0,
   "inputs": [
     {
@@ -149,12 +161,21 @@
       "schneider_dataset_doi": "10.13012/B2IDB-3331845_V2",
       "usage": "Three-way Direct Lookup vs naive transitive taint vs frozen Evidence Recall evaluation pipeline. Published aggregate diagnostic is independently verified; raw Schneider case bytes and van der Vet DOT are not bundled, so case-level empirical promotion remains blocked.",
       "van_der_vet_article_doi": "10.1186/s41073-016-0008-5"
+    },
+    {
+      "cochrane_letrozole_doi": "10.1002/14651858.CD010287.pub3",
+      "diagnostic_id": "evidence-recall-temporal-published-diagnostic:sha256:7cb876e90f17d40b540a240dc947f3e3a63b5410908fa91f1b248462891427c6",
+      "jama_article_doi": "10.1001/jamainternmed.2025.0256",
+      "kataoka_article_doi": "10.1016/j.jclinepi.2022.06.015",
+      "name": "Evidence Recall temporal holdout benchmark protocol",
+      "usage": "Prospective-style historical evaluation protocol comparing Direct Lookup, Review-All Reachability, and frozen Evidence Recall. Later records are content-committed before prediction and unsealed only for scoring. The checked-in run is synthetic conformance only; no real case-level temporal advantage is claimed.",
+      "vitality_article_doi": "10.1136/bmj-2024-082068"
     }
   ],
   "interactive_model_mapping_passes": 1,
-  "manifest_aggregate_sha256": "0d1f9f9a63b6721b806a7c1df22bb7e1a3e94049bf39765ac96f13fa259a43cb",
+  "manifest_aggregate_sha256": "40e1fcda930df6ef92d4ab725797e29039810289a94fe954b09f6734e265d631",
   "model_calls": 1,
   "programmatic_experiment_api_calls": 0,
   "schema": "openline.claim-graph.prototype-evidence.v1",
-  "status": "COMPARATIVE_BENCHMARK_PIPELINE_READY_CASE_LEVEL_EMPIRICAL_PROMOTION_BLOCKED"
+  "status": "TEMPORAL_HOLDOUT_PIPELINE_READY_REAL_CASE_LEVEL_PROMOTION_UNTESTED"
 }

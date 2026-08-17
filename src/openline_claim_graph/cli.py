@@ -41,6 +41,18 @@ from .impact import (
 from .impact_review import ImpactReviewError, render_impact_review
 from .receipts import verify_receipt, verify_source_disclosure
 from .review import ReviewRenderError, render_review
+from .temporal_holdout import (
+    TemporalHoldoutError,
+    build_published_diagnostic as build_temporal_published_diagnostic,
+    run_temporal,
+    score_temporal,
+    validate_authority as validate_temporal_authority,
+    validate_future_seal_for_pack,
+    validate_gold as validate_temporal_gold,
+    validate_pack as validate_temporal_pack,
+    verify_predictions as verify_temporal_predictions,
+    verify_score as verify_temporal_score,
+)
 
 
 def _load(path: str) -> Any:
@@ -194,6 +206,43 @@ def main(argv: list[str] | None = None) -> int:
         help="write the source-backed aggregate diagnostic while case-level raw data remain unbound",
     )
     evidence_diag.add_argument("--output", required=True)
+
+    temporal_validate = sub.add_parser(
+        "temporal-benchmark-validate",
+        help="validate temporal holdout pack and optional sealed artifacts",
+    )
+    temporal_validate.add_argument("--pack", required=True)
+    temporal_validate.add_argument("--authority")
+    temporal_validate.add_argument("--future-seal")
+    temporal_validate.add_argument("--gold")
+    temporal_validate.add_argument("--predictions")
+    temporal_validate.add_argument("--score")
+
+    temporal_run = sub.add_parser(
+        "temporal-benchmark-run",
+        help="run Direct Lookup, Review-All Reachability, and frozen Evidence Recall without future records",
+    )
+    temporal_run.add_argument("--pack", required=True)
+    temporal_run.add_argument("--authority", required=True)
+    temporal_run.add_argument("--output", required=True)
+    temporal_run.add_argument("--omit-naive-diagnostic", action="store_true")
+
+    temporal_score = sub.add_parser(
+        "temporal-benchmark-score",
+        help="score temporal predictions against later independently recorded reconsideration",
+    )
+    temporal_score.add_argument("--pack", required=True)
+    temporal_score.add_argument("--authority", required=True)
+    temporal_score.add_argument("--future-seal", required=True)
+    temporal_score.add_argument("--gold", required=True)
+    temporal_score.add_argument("--predictions", required=True)
+    temporal_score.add_argument("--output", required=True)
+
+    temporal_diag = sub.add_parser(
+        "temporal-benchmark-published-diagnostic",
+        help="write source-backed temporal corpus candidates without claiming a case-level result",
+    )
+    temporal_diag.add_argument("--output", required=True)
 
     impact = sub.add_parser(
         "impact",
@@ -486,6 +535,70 @@ def main(argv: list[str] | None = None) -> int:
         })
     if args.command == "evidence-benchmark-published-diagnostic":
         result = build_published_diagnostic()
+        _write(args.output, result)
+        return _emit({
+            "valid": True,
+            "output": args.output,
+            "diagnostic_id": result["diagnostic_id"],
+            "status": result["status"],
+        })
+    if args.command == "temporal-benchmark-validate":
+        pack = _load(args.pack)
+        if args.score:
+            if not (args.authority and args.future_seal and args.gold and args.predictions):
+                parser.error("--score requires --authority, --future-seal, --gold, and --predictions")
+            return _emit(
+                verify_temporal_score(
+                    _load(args.score), pack, _load(args.authority), _load(args.future_seal),
+                    _load(args.gold), _load(args.predictions)
+                )
+            )
+        if args.predictions:
+            if not args.authority:
+                parser.error("--predictions requires --authority")
+            return _emit(verify_temporal_predictions(_load(args.predictions), pack, _load(args.authority)))
+        if args.gold:
+            if not args.future_seal:
+                parser.error("--gold requires --future-seal")
+            return _emit(validate_temporal_gold(_load(args.gold), pack, _load(args.future_seal)))
+        if args.future_seal:
+            return _emit(validate_future_seal_for_pack(_load(args.future_seal), pack))
+        if args.authority:
+            return _emit(validate_temporal_authority(_load(args.authority), pack))
+        return _emit(validate_temporal_pack(pack))
+    if args.command == "temporal-benchmark-run":
+        try:
+            result = run_temporal(
+                _load(args.pack), _load(args.authority),
+                include_naive_diagnostic=not args.omit_naive_diagnostic,
+            )
+        except TemporalHoldoutError as exc:
+            return _emit({"valid": False, "errors": [str(exc)]})
+        _write(args.output, result)
+        return _emit({
+            "valid": True,
+            "output": args.output,
+            "predictions_id": result["predictions_id"],
+            "targets": len(result["rows"]),
+            "systems": result["systems"],
+        })
+    if args.command == "temporal-benchmark-score":
+        try:
+            result = score_temporal(
+                _load(args.pack), _load(args.authority), _load(args.future_seal),
+                _load(args.gold), _load(args.predictions)
+            )
+        except TemporalHoldoutError as exc:
+            return _emit({"valid": False, "errors": [str(exc)]})
+        _write(args.output, result)
+        return _emit({
+            "valid": True,
+            "output": args.output,
+            "score_id": result["score_id"],
+            "metrics": result["metrics"],
+        })
+    if args.command == "temporal-benchmark-published-diagnostic":
+        result = build_temporal_published_diagnostic()
         _write(args.output, result)
         return _emit({
             "valid": True,

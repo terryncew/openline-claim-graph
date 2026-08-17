@@ -184,6 +184,54 @@ def main() -> int:
             "artifacts/evidence-recall-comparative/independent-verification.json",
         ]
     )
+    run(
+        [
+            sys.executable,
+            "scripts/build_temporal_holdout_fixture.py",
+            "--output",
+            "artifacts/evidence-recall-temporal/conformance",
+        ]
+    )
+    run(
+        [
+            sys.executable,
+            "-m",
+            "openline_claim_graph",
+            "temporal-benchmark-validate",
+            "--pack",
+            "artifacts/evidence-recall-temporal/conformance/pack.json",
+            "--authority",
+            "artifacts/evidence-recall-temporal/conformance/authority.json",
+            "--future-seal",
+            "artifacts/evidence-recall-temporal/conformance/future-seal.private.json",
+            "--gold",
+            "artifacts/evidence-recall-temporal/conformance/gold.private.json",
+            "--predictions",
+            "artifacts/evidence-recall-temporal/conformance/predictions.json",
+            "--score",
+            "artifacts/evidence-recall-temporal/conformance/score.json",
+        ]
+    )
+    run(
+        [
+            sys.executable,
+            "-m",
+            "openline_claim_graph",
+            "temporal-benchmark-published-diagnostic",
+            "--output",
+            "artifacts/evidence-recall-temporal/published-diagnostic.json",
+        ]
+    )
+    run(
+        [
+            sys.executable,
+            "scripts/verify_temporal_published_diagnostic.py",
+            "--report",
+            "artifacts/evidence-recall-temporal/published-diagnostic.json",
+            "--output",
+            "artifacts/evidence-recall-temporal/independent-verification.json",
+        ]
+    )
 
     grammar_files = [
         path
@@ -201,6 +249,8 @@ def main() -> int:
     installed_cli_frame_review_matches = False
     installed_cli_evidence_benchmark_verifies = False
     installed_cli_published_diagnostic_matches = False
+    installed_cli_temporal_benchmark_verifies = False
+    installed_cli_temporal_diagnostic_matches = False
     with tempfile.TemporaryDirectory(prefix="openline-claim-graph-wheel-") as temporary:
         temp = Path(temporary)
         run(
@@ -427,6 +477,45 @@ def main() -> int:
         installed_cli_published_diagnostic_matches = sha256_file(installed_diagnostic) == sha256_file(
             comparative_dir / "published-diagnostic.json"
         )
+        temporal_dir = ROOT / "artifacts/evidence-recall-temporal"
+        temporal_conformance = temporal_dir / "conformance"
+        run(
+            [
+                sys.executable,
+                "-m",
+                "openline_claim_graph",
+                "temporal-benchmark-validate",
+                "--pack",
+                str(temporal_conformance / "pack.json"),
+                "--authority",
+                str(temporal_conformance / "authority.json"),
+                "--future-seal",
+                str(temporal_conformance / "future-seal.private.json"),
+                "--gold",
+                str(temporal_conformance / "gold.private.json"),
+                "--predictions",
+                str(temporal_conformance / "predictions.json"),
+                "--score",
+                str(temporal_conformance / "score.json"),
+            ],
+            extra_env={"PYTHONPATH": str(install_target)},
+        )
+        installed_cli_temporal_benchmark_verifies = True
+        installed_temporal_diagnostic = temp / "installed-temporal-published-diagnostic.json"
+        run(
+            [
+                sys.executable,
+                "-m",
+                "openline_claim_graph",
+                "temporal-benchmark-published-diagnostic",
+                "--output",
+                str(installed_temporal_diagnostic),
+            ],
+            extra_env={"PYTHONPATH": str(install_target)},
+        )
+        installed_cli_temporal_diagnostic_matches = sha256_file(installed_temporal_diagnostic) == sha256_file(
+            temporal_dir / "published-diagnostic.json"
+        )
 
     verification = json.loads((ROOT / "artifacts/demo/verification.json").read_text(encoding="utf-8"))
     scaling = json.loads((ROOT / "artifacts/scaling-probe.json").read_text(encoding="utf-8"))
@@ -480,6 +569,15 @@ def main() -> int:
     comparative_score = json.loads(
         (ROOT / "artifacts/evidence-recall-comparative/conformance/score.json").read_text(encoding="utf-8")
     )
+    temporal_diagnostic = json.loads(
+        (ROOT / "artifacts/evidence-recall-temporal/published-diagnostic.json").read_text(encoding="utf-8")
+    )
+    temporal_independent = json.loads(
+        (ROOT / "artifacts/evidence-recall-temporal/independent-verification.json").read_text(encoding="utf-8")
+    )
+    temporal_score = json.loads(
+        (ROOT / "artifacts/evidence-recall-temporal/conformance/score.json").read_text(encoding="utf-8")
+    )
     checks = {
         "compileall": True,
         "python_3_11_grammar_parse": len(grammar_files),
@@ -493,6 +591,8 @@ def main() -> int:
         "installed_cli_frame_review_matches": installed_cli_frame_review_matches,
         "installed_cli_evidence_benchmark_verifies": installed_cli_evidence_benchmark_verifies,
         "installed_cli_published_diagnostic_matches": installed_cli_published_diagnostic_matches,
+        "installed_cli_temporal_benchmark_verifies": installed_cli_temporal_benchmark_verifies,
+        "installed_cli_temporal_diagnostic_matches": installed_cli_temporal_diagnostic_matches,
         "unit_and_adversarial_tests": test_count,
         "deterministic_tamper_mutations": 10_000,
         "deterministic_tamper_misses": 0,
@@ -570,6 +670,16 @@ def main() -> int:
         "comparative_schneider_naive_review_load": comparative_diagnostic["schneider"]["systems"]["NAIVE_TRANSITIVE_TAINT"]["total_review_load"],
         "comparative_schneider_er_review_load": comparative_diagnostic["schneider"]["systems"]["EVIDENCE_RECALL"]["total_review_load"],
         "comparative_case_level_empirical_result_present": False,
+        "temporal_pipeline_status": temporal_diagnostic["status"],
+        "temporal_independent_valid": temporal_independent["valid"],
+        "temporal_independent_module_free": temporal_independent["independent_of_candidate_module"],
+        "temporal_independent_checks": temporal_independent["check_count"],
+        "temporal_conformance_score_schema": temporal_score["schema"],
+        "temporal_conformance_review_all_load": temporal_score["metrics"]["REVIEW_ALL_REACHABILITY"]["total_review_load"],
+        "temporal_conformance_er_review_load": temporal_score["metrics"]["EVIDENCE_RECALL"]["total_review_load"],
+        "temporal_conformance_er_missed_reopenings": temporal_score["metrics"]["EVIDENCE_RECALL"]["missed_reopenings"],
+        "temporal_conformance_er_reviewer_savings": temporal_score["comparisons_vs_review_all"]["EVIDENCE_RECALL"]["reviewer_savings_vs_review_all"],
+        "temporal_real_case_level_result_present": False,
         "scaling_probe_claim_counts": [item["claim_count"] for item in scaling["results"]],
     }
     if not all(
@@ -583,6 +693,8 @@ def main() -> int:
             checks["installed_cli_frame_review_matches"],
             checks["installed_cli_evidence_benchmark_verifies"],
             checks["installed_cli_published_diagnostic_matches"],
+            checks["installed_cli_temporal_benchmark_verifies"],
+            checks["installed_cli_temporal_diagnostic_matches"],
             checks["demo_receipt_valid"],
             checks["demo_projection_valid"],
             checks["demo_source_disclosure_valid"],
@@ -652,6 +764,16 @@ def main() -> int:
             checks["comparative_schneider_naive_review_load"] == 152,
             checks["comparative_schneider_er_review_load"] == 152,
             checks["comparative_case_level_empirical_result_present"] is False,
+            checks["temporal_pipeline_status"] == "TEMPORAL_CORPUS_CANDIDATES_VERIFIED_CASE_LEVEL_HOLDOUT_NOT_YET_RUN",
+            checks["temporal_independent_valid"],
+            checks["temporal_independent_module_free"],
+            checks["temporal_independent_checks"] >= 10,
+            checks["temporal_conformance_score_schema"] == "openline.evidence-recall-temporal-score.v1",
+            checks["temporal_conformance_review_all_load"] == 5,
+            checks["temporal_conformance_er_review_load"] == 3,
+            checks["temporal_conformance_er_missed_reopenings"] == 0,
+            checks["temporal_conformance_er_reviewer_savings"] == 2,
+            checks["temporal_real_case_level_result_present"] is False,
         ]
     ):
         raise RuntimeError(f"release checks failed: {checks}")
@@ -775,10 +897,25 @@ def main() -> int:
             ),
         }
     )
+    inputs.append(
+        {
+            "name": "Evidence Recall temporal holdout benchmark protocol",
+            "kataoka_article_doi": "10.1016/j.jclinepi.2022.06.015",
+            "jama_article_doi": "10.1001/jamainternmed.2025.0256",
+            "vitality_article_doi": "10.1136/bmj-2024-082068",
+            "cochrane_letrozole_doi": "10.1002/14651858.CD010287.pub3",
+            "diagnostic_id": temporal_diagnostic["diagnostic_id"],
+            "usage": (
+                "Prospective-style historical evaluation protocol comparing Direct Lookup, Review-All Reachability, "
+                "and frozen Evidence Recall. Later records are content-committed before prediction and unsealed only for scoring. "
+                "The checked-in run is synthetic conformance only; no real case-level temporal advantage is claimed."
+            ),
+        }
+    )
     evidence = {
         "schema": "openline.claim-graph.prototype-evidence.v1",
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
-        "status": "COMPARATIVE_BENCHMARK_PIPELINE_READY_CASE_LEVEL_EMPIRICAL_PROMOTION_BLOCKED",
+        "status": "TEMPORAL_HOLDOUT_PIPELINE_READY_REAL_CASE_LEVEL_PROMOTION_UNTESTED",
         "checks": checks,
         "inputs": inputs,
         "manifest_aggregate_sha256": manifest["aggregate_sha256"],
@@ -798,7 +935,11 @@ def main() -> int:
             "public pack, receiver authority, predictions, and external gold; and scores missed exposure, hard false quarantine, "
             "unresolved review, and total review load without a composite score. Published aggregate diagnostics are source-backed "
             "and independently reproduced, but the canonical Schneider case-level CSV and van der Vet DOT bytes are not bundled in "
-            "this build environment, so no case-level empirical mechanism-advantage or moat claim is present."
+            "this build environment, so no case-level empirical mechanism-advantage or moat claim is present. "
+            "Version 0.5.0.dev0 additionally adds temporal-holdout custody: pre-cutoff nodes and edges, a post-cutoff trigger, "
+            "a committed but sealed later-record corpus, prediction without future records, and later reconsideration scoring against "
+            "Direct Lookup, Review-All Reachability, and frozen Evidence Recall. The conformance fixture demonstrates only that the "
+            "evaluator can distinguish recall from review burden. No real case-level temporal result or product promotion is present."
         ),
         "incremental_api_spend_usd": 0,
         "model_calls": 1,

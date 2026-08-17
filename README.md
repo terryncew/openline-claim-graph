@@ -8,7 +8,7 @@ This prototype tests one narrow idea from the earlier OLP/DSM work:
 
 It does **not** put truth in a receipt. It records representations, their declared relations, their source anchors, and their history.
 
-Status: `COMPARATIVE_BENCHMARK_PIPELINE_READY_CASE_LEVEL_EMPIRICAL_PROMOTION_BLOCKED`. The Evidence Recall engine is frozen for the next empirical comparison; no product, moat, or decision-value promotion is claimed.
+Status: `TEMPORAL_HOLDOUT_PIPELINE_READY_REAL_CASE_LEVEL_PROMOTION_UNTESTED`. Evidence Recall remains frozen. The new temporal evaluator is ready, but no real case-level temporal product, moat, or decision-value promotion is claimed.
 
 ## What works now
 
@@ -32,7 +32,19 @@ Models can run the advisory layer autonomously. A proposer emits exact-quote-anc
 See [the Frame Ledger contract](docs/FRAME_LEDGER.md) and open [`artifacts/wapo-headline-frame-ledger/review.html`](artifacts/wapo-headline-frame-ledger/review.html).
 
 
-## The next empirical test is now implemented
+## Temporal holdout is the next promotion test
+
+Version `0.5.0.dev0` adds a prospective-style historical benchmark without changing Evidence Recall semantics. Each episode freezes an accepted dependency state at `t0`, binds a private future-record corpus by commitment, reveals one later event at `t1`, runs predictions without future records, and only then unseals independently dated later reconsideration evidence for scoring.
+
+The main systems are **Direct Lookup**, **Review-All Reachability**, and the frozen **Evidence Recall** engine. Review-All Reachability is intentionally stronger than the earlier hard-taint baseline: it simply sends every reachable target to a human. Evidence Recall therefore earns attention selectivity only if it catches later documented reopenings while waking fewer targets. Naive Transitive Taint remains an optional severity diagnostic.
+
+Gold means independently recorded later **reconsideration**, not later falsity. A review that is reanalyzed and keeps the same conclusion is still a correct `REOPEN`. Mere absence of a correction is never treated as `NO_REOPEN`; negative gold requires affirmative later evidence of non-reliance or explicit scope exclusion.
+
+The evaluator reports precision, recall, review burden, unnecessary reviews, and reviewer savings versus Review-All. Rates are stored as exact integer ratios/basis points rather than floating point. There is no composite score or automatic promotion threshold.
+
+The checked-in temporal conformance fixture is synthetic and proves only evaluator mechanics. The source-backed corpus registry identifies clinical/scientific candidates, but no real case-level temporal holdout has been run in this release. See [`experiments/evidence_recall_temporal/PROTOCOL.md`](experiments/evidence_recall_temporal/PROTOCOL.md).
+
+## Structural comparative benchmark (0.4)
 
 Version `0.4.0.dev0` adds a sealed three-way comparative benchmark without changing Evidence Recall semantics:
 
@@ -133,6 +145,27 @@ PYTHONPATH=src python -m openline_claim_graph evidence-benchmark-published-diagn
 python scripts/verify_evidence_recall_published_diagnostic.py \
   --report artifacts/evidence-recall-comparative/published-diagnostic.json
 ```
+
+Build and verify the temporal-holdout conformance fixture. The future seal and gold remain separate from the prediction-visible pack:
+
+```bash
+PYTHONPATH=src python scripts/build_temporal_holdout_fixture.py \
+  --output artifacts/evidence-recall-temporal/conformance
+PYTHONPATH=src python -m openline_claim_graph temporal-benchmark-validate \
+  --pack artifacts/evidence-recall-temporal/conformance/pack.json \
+  --authority artifacts/evidence-recall-temporal/conformance/authority.json \
+  --future-seal artifacts/evidence-recall-temporal/conformance/future-seal.private.json \
+  --gold artifacts/evidence-recall-temporal/conformance/gold.private.json \
+  --predictions artifacts/evidence-recall-temporal/conformance/predictions.json \
+  --score artifacts/evidence-recall-temporal/conformance/score.json
+PYTHONPATH=src python -m openline_claim_graph temporal-benchmark-published-diagnostic \
+  --output artifacts/evidence-recall-temporal/published-diagnostic.json
+python scripts/verify_temporal_published_diagnostic.py \
+  --report artifacts/evidence-recall-temporal/published-diagnostic.json \
+  --output artifacts/evidence-recall-temporal/independent-verification.json
+```
+
+For a real temporal episode, predictions are run from only `pack.json` and `authority.json`; `future-seal.private.json` and `gold.private.json` are withheld until scoring.
 
 When the canonical Schneider V2 CSV is available locally, the importer itself performs the anti-leakage split and fails closed unless it recovers the published 152 accessible rows and 23 positives:
 

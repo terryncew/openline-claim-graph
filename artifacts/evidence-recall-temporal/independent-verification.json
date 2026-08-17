@@ -1,0 +1,20 @@
+{
+  "check_count": 13,
+  "checks": {
+    "content_id": true,
+    "jama_doi": true,
+    "jama_recomputed": true,
+    "jama_significance_changed": true,
+    "kataoka_doi": true,
+    "kataoka_evidence_synthesis": true,
+    "kataoka_pre_retraction": true,
+    "no_temporal_win_claim": true,
+    "schema": true,
+    "status": true,
+    "vitality_doi": true,
+    "vitality_meta_analyses": true,
+    "vitality_reviews": true
+  },
+  "independent_of_candidate_module": true,
+  "valid": true
+}

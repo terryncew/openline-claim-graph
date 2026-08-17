@@ -1,5 +1,13 @@
 # Assessment
 
+## Temporal holdout update — 0.5.0.dev0
+
+The benchmark infrastructure advances, not Evidence Recall. The new evaluator can freeze a pre-event accepted state, bind later records without exposing them to prediction, compare Direct Lookup / Review-All Reachability / frozen Evidence Recall, and score later documented reconsideration with explicit human-review cost. The synthetic fixture proves those mechanics only.
+
+The product thesis remains unpromoted until a real historical corpus shows that Evidence Recall catches later warranted reopenings with materially less review than simply escalating every reachable item. A tie with Review-All Reachability is a failure of the selectivity thesis even if Evidence Recall produces safer labels.
+
+The historical-reconstruction blindfold is partly mechanical and partly procedural. Timestamps, content commitments, and sealed artifacts can be verified; the code cannot prove that a corpus constructor did not consult future information while assigning pre-cutoff semantic edges. That construction process must therefore be independently auditable in a real run.
+
 ## Verdict
 
 The idea survives as a working integrity, lineage, and deterministic source-impact mechanism. A small independent-gold development check shows that one source-to-graph mapping pass can recover signal on a constrained missing-premise task. A separate natural-material case produces a readable review of five published abstract/main-text conflicts later confirmed by an independent correction. Version `0.2.0.dev1` applies that real correction to an accepted dependency specimen and computes the downstream evidence blast radius without an LLM judge. Version `0.3.0.dev0` adds a second native operation: reproduce narrowly typed framing devices from exact text while preventing model interpretation from self-promoting into a verdict.

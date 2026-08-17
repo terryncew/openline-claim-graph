@@ -1,0 +1,132 @@
+{
+  "authority_id": "evidence-recall-temporal-authority:sha256:a4ca76d3d00956e762d97d3fbca1d622578735a062951f3672ae4654d7b74004",
+  "benchmark_id": "temporal-conformance-v1",
+  "engine_contract": {
+    "direct_lookup": "review only immediate dependents of the invalidated node",
+    "evidence_recall": "frozen shipped Evidence Recall semantics; QUARANTINE and AFFECTED_UNRESOLVED require review, SURVIVES and UNAFFECTED do not",
+    "naive_transitive_taint_diagnostic": "optional diagnostic: hard quarantine every reachable target",
+    "review_all_reachability": "review every target reachable over any directed edge"
+  },
+  "future_seal_id": "evidence-recall-temporal-future-seal:sha256:a9a8a53feca5682ce2734ed80d864905f8c67e8d53a2d6217030954cfdcc20d6",
+  "pack_id": "evidence-recall-temporal-pack:sha256:ea16f4658d80e7f9e29c742345ae198d8c76dbb8887508f79227e282c0133516",
+  "predictions_id": "evidence-recall-temporal-predictions:sha256:1bb7e5d8fb17b571a331a1af897325ea08b09b947138b5da235e525f2aedb291",
+  "rows": [
+    {
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "DIRECT_REVIEW",
+          "review": true
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "fixture:a"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "UNAFFECTED",
+          "review": false
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "fixture:b"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "UNAFFECTED",
+          "review": false
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "AFFECTED_UNRESOLVED",
+          "review": true
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "fixture:c"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "DIRECT_REVIEW",
+          "review": true
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "SURVIVES",
+          "review": false
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "fixture:d"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "UNAFFECTED",
+          "review": false
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "UNAFFECTED",
+          "review": false
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "fixture:e"
+    }
+  ],
+  "schema": "openline.evidence-recall-temporal-predictions.v1",
+  "systems": [
+    "DIRECT_LOOKUP",
+    "REVIEW_ALL_REACHABILITY",
+    "EVIDENCE_RECALL",
+    "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC"
+  ]
+}

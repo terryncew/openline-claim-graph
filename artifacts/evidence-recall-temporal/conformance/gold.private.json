@@ -1,0 +1,50 @@
+{
+  "benchmark_id": "temporal-conformance-v1",
+  "future_seal_id": "evidence-recall-temporal-future-seal:sha256:a9a8a53feca5682ce2734ed80d864905f8c67e8d53a2d6217030954cfdcc20d6",
+  "gold_id": "evidence-recall-temporal-gold:sha256:b5b7b1e041b917879bbd4e1f846520cfd6e995933bd2dda619b59e9331b3c62f",
+  "label_definition": "Conformance-only later reconsideration labels; not empirical evidence.",
+  "labels": [
+    {
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5",
+      "future_record_ids": [
+        "temporal-future-record:sha256:53e39d450a35d26c1fb25c6cdf2138959ba3b91bed02635c2d38cafea8e75201"
+      ],
+      "outcome": "REOPEN",
+      "target_node_id": "fixture:a"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5",
+      "future_record_ids": [
+        "temporal-future-record:sha256:0ee958c429f08f764f5ef2d67227dc788445caa802e5a51fbff2ca012f994e8c"
+      ],
+      "outcome": "REOPEN",
+      "target_node_id": "fixture:b"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5",
+      "future_record_ids": [
+        "temporal-future-record:sha256:db077ac2cd416f66e99015dfa73eace234294c072d0ea1153405ee0cb79b47d4"
+      ],
+      "outcome": "NO_REOPEN",
+      "target_node_id": "fixture:c"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5",
+      "future_record_ids": [
+        "temporal-future-record:sha256:49707d8dcbdae6b0e1cffced9effa678b9b2eeb71102f52439b16fb324066ff7"
+      ],
+      "outcome": "NO_REOPEN",
+      "target_node_id": "fixture:d"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:bb0cec6ef1817f57504940b5d23cc9b8a4ea0cfa25aec0a9f85f17c19d41c1b5",
+      "future_record_ids": [
+        "temporal-future-record:sha256:61f51dfecf1128df207ef5324b23496785a68777caa5242ebb0f4392f9de6d41"
+      ],
+      "outcome": "NO_REOPEN",
+      "target_node_id": "fixture:e"
+    }
+  ],
+  "pack_id": "evidence-recall-temporal-pack:sha256:ea16f4658d80e7f9e29c742345ae198d8c76dbb8887508f79227e282c0133516",
+  "schema": "openline.evidence-recall-temporal-gold.v1"
+}

@@ -1,40 +1,21 @@
 # Push status
 
-Version: `0.4.0.dev0`
+Version: `0.5.0.dev0`
 
-Disposition: `READY_TO_PUSH_AS_EXPERIMENTAL_BENCHMARK_PIPELINE`
+Disposition: `READY_TO_PUSH_AS_EXPERIMENTAL_TEMPORAL_HOLDOUT_PIPELINE`
 
-This build freezes Evidence Recall and moves the thesis into a three-way comparative benchmark. It does **not** promote the product claim.
+This build adds one capability only: the Evidence Recall Temporal Holdout Benchmark. Evidence Recall itself is frozen and receives no semantic rescue.
 
-The new evaluation path compares:
+The temporal evaluator freezes accepted state at `t0`, binds a private later-record corpus by content commitment, reveals one triggering event at `t1`, runs Direct Lookup / Review-All Reachability / frozen Evidence Recall without the later records, and then scores the frozen predictions against independently dated post-event reconsideration evidence. Naive Transitive Taint is retained only as an optional diagnostic.
 
-- Direct Lookup — immediate dependents only;
-- Naive Transitive Taint — blind directed reachability;
-- Evidence Recall — the unchanged shipped `analyze_source_impact()` semantics under separately frozen receiver relation authority.
+The main comparison is now against **Review-All Reachability**. If Evidence Recall wakes essentially the same reachable set, typed relation authority has not demonstrated an attention-saving advantage.
 
-The benchmark has separate content-addressed public pack, authority, predictions, private gold, and score artifacts. `AFFECTED_UNRESOLVED` is charged as reviewer load; no composite score exists.
+Gold is later recorded reconsideration, not eventual falsity. A later reanalysis whose conclusion survives is still a positive reopen. Silence is never negative gold; `NO_REOPEN` requires affirmative later no-reliance or explicit scope evidence.
 
-Verified locally before packaging:
+The checked-in five-target fixture is conformance-only. It demonstrates that the evaluator can preserve full fixture recall while distinguishing review burden: Review-All wakes 5 targets and frozen Evidence Recall wakes 3. That result is authored by the fixture and is **not** empirical evidence for the product thesis.
 
-- 86/86 unit/adversarial/protocol/development/benchmark tests;
-- 10,000 deterministic tamper mutations with zero misses;
-- 2,000 randomized Evidence Recall differential cases with zero oracle mismatches;
-- PLOS correction specimen and independent impact verification;
-- deterministic single-edge adjudication counterfactual surface;
-- Frame Ledger specimen and independent verification;
-- three-way comparative conformance fixture with exact score reproduction;
-- Schneider V2 fail-closed CSV importer with public/gold separation and label-independent authority construction;
-- van der Vet/Nijveen DOT importer with citation-direction inversion;
-- source-backed published aggregate diagnostic plus stdlib-only independent verification;
-- wheel build, clean install, installed CLI verification, and Python 3.11 grammar parse;
-- CI coverage for the new comparative commands.
+The source-backed diagnostic records candidate scientific/clinical corpora and independently verified published counts. No real case-level temporal holdout score is present, so Evidence Recall remains unpromoted.
 
-The checked-in aggregate diagnostic is deliberately hostile rather than promotional. Schneider et al. report 23 possible diffusions among 152 accessible second-generation citations. The paper also reports four second-generation nodes that are direct citations in the full 161-node selected network. Conservatively withholding all four possible overlaps from false-positive scoring still leaves a lower bound of 125 naive hard over-taint candidates. Under the benchmark's citation-only receiver policy, Evidence Recall converts those ordinary second-generation paths to unresolved review rather than hard quarantine, but it still has a lower bound of 125 unnecessary unresolved reviews and the same 152-item total review load.
+Status: `TEMPORAL_HOLDOUT_PIPELINE_READY_REAL_CASE_LEVEL_PROMOTION_UNTESTED`
 
-That is **not an empirical Evidence Recall win**. It shows why the case-level run matters.
-
-The final empirical promotion remains blocked because the canonical Schneider CSV bytes and van der Vet supplementary DOT bytes could not be acquired and hashed inside this build environment. The repository therefore includes importers, frozen protocol, source manifest, conformance evidence, and the independently verified published-count diagnostic—but does not synthesize missing external rows or claim a case-level result.
-
-JAMA remains a quantitative-dependency abstraction stress test, not a false-quarantine oracle. Reopening an aggregate that incorporated a retracted study can be correct even when recomputation later produces a similar result.
-
-No new UI, generalized basis-revocation system, weighted-support semantics, cut-set solver, Receipt Gate feature, or Successor Gate feature is included.
+No UI, AI edge discovery, weighted support, generalized basis revocation, new basis types, multi-edge cut sets, Receipt Gate work, or Successor Gate work is included.

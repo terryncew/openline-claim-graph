@@ -84,3 +84,12 @@ The checked-in published aggregate diagnostic supports these bounded observation
 The repository does **not** currently claim that Evidence Recall lowers review load, outperforms naive taint on the full case-level corpus, has zero missed exposure, or has commercial defensibility. Those claims remain blocked until the canonical external files are acquired, hashed, split under the anti-leakage protocol, predictions are frozen before gold unsealing, and the resulting score is reproduced.
 
 `AFFECTED_UNRESOLVED` is explicitly charged as review burden. `SURVIVES` is a touched-state classification, not a truth verdict. JAMA recomputation invariance is not treated as proof that an old aggregate did not require reopening.
+
+
+## Temporal holdout boundary
+
+Version `0.5.0.dev0` adds evaluation custody, not a new Evidence Recall inference mechanism. The evaluator binds a pre-cutoff graph, one post-cutoff triggering event, receiver edge authority, a commitment to a separately sealed future-record corpus, predictions, later gold, and an exactly reproducible score.
+
+The temporal gold question is whether later independent records show that a target warranted reconsideration. This is not a truth label. A target can survive after reanalysis and still be a correct `REOPEN`. Conversely, no later correction is not evidence for `NO_REOPEN`; negative gold requires affirmative no-reliance or explicit scope evidence.
+
+The principal baseline is Review-All Reachability. Evidence Recall has not earned a temporal selectivity advantage until a real case-level historical run catches later reopenings while reducing review load relative to that baseline. The checked-in conformance fixture is synthetic and cannot support that claim.
