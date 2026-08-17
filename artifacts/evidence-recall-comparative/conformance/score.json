@@ -1,0 +1,148 @@
+{
+  "authority_id": "evidence-recall-comparative-authority:sha256:95d7498c67ae249e3c9d214c659a099947b3d84328bb1b118b2e4397cecee516",
+  "benchmark_id": "three-way-conformance-fixture",
+  "claim_boundary": "Scores external exposure labels against three frozen mechanisms. AFFECTED_UNRESOLVED counts as detected exposure but also consumes review load. SURVIVES counts as structurally touched without hard quarantine. No composite score or commercial-moat claim is derived.",
+  "gold_id": "evidence-recall-comparative-gold:sha256:888ac8825e6cb7eb2e29c91ad37962df6977c082060f7b7c55a25d8fbed7e464",
+  "metrics": {
+    "ALL": {
+      "DIRECT_LOOKUP": {
+        "exposure_detected": 1,
+        "exposure_marked_survives": 0,
+        "exposure_reopened_or_reviewed": 1,
+        "gold_exposed": 2,
+        "gold_no_exposure": 2,
+        "hard_false_quarantine": 1,
+        "missed_exposure": 1,
+        "scored_cases": 4,
+        "total_hard_quarantine": 2,
+        "total_review_load": 2,
+        "total_unresolved_review": 0,
+        "unnecessary_review_load": 1,
+        "unnecessary_unresolved_review": 0
+      },
+      "EVIDENCE_RECALL": {
+        "exposure_detected": 2,
+        "exposure_marked_survives": 0,
+        "exposure_reopened_or_reviewed": 2,
+        "gold_exposed": 2,
+        "gold_no_exposure": 2,
+        "hard_false_quarantine": 0,
+        "missed_exposure": 0,
+        "scored_cases": 4,
+        "total_hard_quarantine": 1,
+        "total_review_load": 3,
+        "total_unresolved_review": 2,
+        "unnecessary_review_load": 1,
+        "unnecessary_unresolved_review": 1
+      },
+      "NAIVE_TRANSITIVE_TAINT": {
+        "exposure_detected": 2,
+        "exposure_marked_survives": 0,
+        "exposure_reopened_or_reviewed": 2,
+        "gold_exposed": 2,
+        "gold_no_exposure": 2,
+        "hard_false_quarantine": 2,
+        "missed_exposure": 0,
+        "scored_cases": 4,
+        "total_hard_quarantine": 4,
+        "total_review_load": 4,
+        "total_unresolved_review": 0,
+        "unnecessary_review_load": 2,
+        "unnecessary_unresolved_review": 0
+      }
+    },
+    "CONFORMANCE": {
+      "DIRECT_LOOKUP": {
+        "exposure_detected": 1,
+        "exposure_marked_survives": 0,
+        "exposure_reopened_or_reviewed": 1,
+        "gold_exposed": 2,
+        "gold_no_exposure": 2,
+        "hard_false_quarantine": 1,
+        "missed_exposure": 1,
+        "scored_cases": 4,
+        "total_hard_quarantine": 2,
+        "total_review_load": 2,
+        "total_unresolved_review": 0,
+        "unnecessary_review_load": 1,
+        "unnecessary_unresolved_review": 0
+      },
+      "EVIDENCE_RECALL": {
+        "exposure_detected": 2,
+        "exposure_marked_survives": 0,
+        "exposure_reopened_or_reviewed": 2,
+        "gold_exposed": 2,
+        "gold_no_exposure": 2,
+        "hard_false_quarantine": 0,
+        "missed_exposure": 0,
+        "scored_cases": 4,
+        "total_hard_quarantine": 1,
+        "total_review_load": 3,
+        "total_unresolved_review": 2,
+        "unnecessary_review_load": 1,
+        "unnecessary_unresolved_review": 1
+      },
+      "NAIVE_TRANSITIVE_TAINT": {
+        "exposure_detected": 2,
+        "exposure_marked_survives": 0,
+        "exposure_reopened_or_reviewed": 2,
+        "gold_exposed": 2,
+        "gold_no_exposure": 2,
+        "hard_false_quarantine": 2,
+        "missed_exposure": 0,
+        "scored_cases": 4,
+        "total_hard_quarantine": 4,
+        "total_review_load": 4,
+        "total_unresolved_review": 0,
+        "unnecessary_review_load": 2,
+        "unnecessary_unresolved_review": 0
+      }
+    }
+  },
+  "pack_id": "evidence-recall-comparative-pack:sha256:02f691293641b6fa0dead416173b4840c8a75289819e968bcea7f52917a13a7e",
+  "predictions_id": "evidence-recall-comparative-predictions:sha256:a5fa08c4c9bf8b7bc781da7cecca0c329ee883748d06fcdf3dac9a913ad7000d",
+  "rows": [
+    {
+      "case_id": "comparative-case:sha256:83666d23ad903c62ea532800c1e0a1a37fe89d7df9ba888588a220da8f5b96a4",
+      "gold": "NO_EXPOSURE",
+      "stratum": "CONFORMANCE",
+      "systems": {
+        "DIRECT_LOOKUP": "UNAFFECTED",
+        "EVIDENCE_RECALL": "AFFECTED_UNRESOLVED",
+        "NAIVE_TRANSITIVE_TAINT": "QUARANTINE"
+      }
+    },
+    {
+      "case_id": "comparative-case:sha256:91719379454bd6cd499df3fb0eeffad83d954e104549ecaddaeed255d35dab41",
+      "gold": "NO_EXPOSURE",
+      "stratum": "CONFORMANCE",
+      "systems": {
+        "DIRECT_LOOKUP": "QUARANTINE",
+        "EVIDENCE_RECALL": "SURVIVES",
+        "NAIVE_TRANSITIVE_TAINT": "QUARANTINE"
+      }
+    },
+    {
+      "case_id": "comparative-case:sha256:bb5a61287aafc81cf0126756e2cbb57441388becbe40be0ec15f1564ce8a33bc",
+      "gold": "EXPOSED",
+      "stratum": "CONFORMANCE",
+      "systems": {
+        "DIRECT_LOOKUP": "UNAFFECTED",
+        "EVIDENCE_RECALL": "AFFECTED_UNRESOLVED",
+        "NAIVE_TRANSITIVE_TAINT": "QUARANTINE"
+      }
+    },
+    {
+      "case_id": "comparative-case:sha256:f7fb8f2b9d607f7ed3132f14743cf4abfdb429e906c19ccec5659430867228f4",
+      "gold": "EXPOSED",
+      "stratum": "CONFORMANCE",
+      "systems": {
+        "DIRECT_LOOKUP": "QUARANTINE",
+        "EVIDENCE_RECALL": "QUARANTINE",
+        "NAIVE_TRANSITIVE_TAINT": "QUARANTINE"
+      }
+    }
+  ],
+  "schema": "openline.evidence-recall-comparative-score.v1",
+  "score_id": "evidence-recall-comparative-score:sha256:76f4ea3a105155a0f7b290beb9307c7c350f87b9110f2665048b0d50e6ea652f"
+}

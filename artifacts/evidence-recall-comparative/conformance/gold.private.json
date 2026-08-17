@@ -1,0 +1,26 @@
+{
+  "benchmark_id": "three-way-conformance-fixture",
+  "gold_id": "evidence-recall-comparative-gold:sha256:888ac8825e6cb7eb2e29c91ad37962df6977c082060f7b7c55a25d8fbed7e464",
+  "label_definition": "conformance only",
+  "labels": [
+    {
+      "case_id": "comparative-case:sha256:83666d23ad903c62ea532800c1e0a1a37fe89d7df9ba888588a220da8f5b96a4",
+      "outcome": "NO_EXPOSURE"
+    },
+    {
+      "case_id": "comparative-case:sha256:91719379454bd6cd499df3fb0eeffad83d954e104549ecaddaeed255d35dab41",
+      "outcome": "NO_EXPOSURE"
+    },
+    {
+      "case_id": "comparative-case:sha256:bb5a61287aafc81cf0126756e2cbb57441388becbe40be0ec15f1564ce8a33bc",
+      "outcome": "EXPOSED"
+    },
+    {
+      "case_id": "comparative-case:sha256:f7fb8f2b9d607f7ed3132f14743cf4abfdb429e906c19ccec5659430867228f4",
+      "outcome": "EXPOSED"
+    }
+  ],
+  "pack_id": "evidence-recall-comparative-pack:sha256:02f691293641b6fa0dead416173b4840c8a75289819e968bcea7f52917a13a7e",
+  "schema": "openline.evidence-recall-comparative-gold.v1",
+  "source": "self-authored fixture"
+}

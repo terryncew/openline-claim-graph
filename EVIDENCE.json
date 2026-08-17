@@ -16,6 +16,16 @@
     "automated_benchmark_status": "DEVELOPMENT_PACK_ONLY_NO_RECEIVER_RESULT",
     "automated_benchmark_trial_count": 144,
     "clean_wheel_install_import": true,
+    "comparative_case_level_empirical_result_present": false,
+    "comparative_conformance_score_schema": "openline.evidence-recall-comparative-score.v1",
+    "comparative_independent_module_free": true,
+    "comparative_independent_valid": true,
+    "comparative_pipeline_status": "AGGREGATE_DIAGNOSTIC_ONLY_CASE_LEVEL_EMPIRICAL_PROMOTION_BLOCKED",
+    "comparative_schneider_direct_missed_exposure": 23,
+    "comparative_schneider_er_review_load": 152,
+    "comparative_schneider_er_unresolved_lower_bound": 125,
+    "comparative_schneider_naive_hard_fp_lower_bound": 125,
+    "comparative_schneider_naive_review_load": 152,
     "compileall": true,
     "demo_bundle_disposition": "ADMIT",
     "demo_projection_valid": true,
@@ -53,10 +63,12 @@
     "impact_unresolved_count": 1,
     "impact_upstream_exact_match": true,
     "installed_cli_benchmark_validate": true,
+    "installed_cli_evidence_benchmark_verifies": true,
     "installed_cli_frame_review_matches": true,
     "installed_cli_frame_verifies": true,
     "installed_cli_impact_review_matches": true,
     "installed_cli_impact_verifies": true,
+    "installed_cli_published_diagnostic_matches": true,
     "installed_cli_review_matches": true,
     "natural_case_bundle_valid": true,
     "natural_case_conflict_count": 5,
@@ -71,20 +83,20 @@
     "pilot_condition_unit": "receiver",
     "pilot_stage_1_promotion_allowed": false,
     "pilot_target_receiver_type": "human",
-    "python_3_11_grammar_parse": 42,
+    "python_3_11_grammar_parse": 46,
     "scaling_probe_claim_counts": [
       1,
       10,
       100,
       1000
     ],
-    "unit_and_adversarial_tests": 76,
+    "unit_and_adversarial_tests": 86,
     "wheel_build": true
   },
-  "claim_boundary": "Evidence covers deterministic integrity, source-span, lineage, projection, and receiver-policy mechanics plus one small independently labeled, multiple-choice missing-premise mapping check (21/24) and one manually mapped natural-material inconsistency later confirmed by a public correction. It additionally covers deterministic source-impact propagation on that real correction event: two downstream claims beyond direct source lookup were found, one alternative-supported claim was preserved, and one advisory-edge exposure remained unresolved. The dependency state is explicitly authored. This does not cover open-ended extraction fidelity, historical completeness, user demand, market value, model generalization, or graph-versus-summary receiver value. It also covers seven deterministic Frame Ledger findings on one supplied headline and a signed autonomous heterogeneous-review contract. The headline specimen does not include the article body and makes no bias, truth, intent, rationalization, propaganda, reader-effect, or model-competence claim.",
+  "claim_boundary": "Evidence covers deterministic integrity, source-span, lineage, projection, and receiver-policy mechanics plus one small independently labeled, multiple-choice missing-premise mapping check (21/24) and one manually mapped natural-material inconsistency later confirmed by a public correction. It additionally covers deterministic source-impact propagation on that real correction event: two downstream claims beyond direct source lookup were found, one alternative-supported claim was preserved, and one advisory-edge exposure remained unresolved. The dependency state is explicitly authored. This does not cover open-ended extraction fidelity, historical completeness, user demand, market value, model generalization, or graph-versus-summary receiver value. It also covers seven deterministic Frame Ledger findings on one supplied headline and a signed autonomous heterogeneous-review contract. The headline specimen does not include the article body and makes no bias, truth, intent, rationalization, propaganda, reader-effect, or model-competence claim. A new three-way comparative pipeline freezes Direct Lookup, naive transitive taint, and the shipped Evidence Recall semantics; separates public pack, receiver authority, predictions, and external gold; and scores missed exposure, hard false quarantine, unresolved review, and total review load without a composite score. Published aggregate diagnostics are source-backed and independently reproduced, but the canonical Schneider case-level CSV and van der Vet DOT bytes are not bundled in this build environment, so no case-level empirical mechanism-advantage or moat claim is present.",
   "compile_output": "",
   "external_publication_or_push": false,
-  "generated_at": "2026-08-17T01:25:26Z",
+  "generated_at": "2026-08-17T06:12:59Z",
   "incremental_api_spend_usd": 0,
   "inputs": [
     {
@@ -128,12 +140,21 @@
       "report_id": "frame-ledger-report:sha256:04f9668dee5daaa4d57ecda9fe64bc78d650b730afa1438963b7375945fc2dfb",
       "source_id": "source:sha256:2b1357bf30979a99724a52789785edda7204f29bb6d640d1bd401f1b5d5057a2",
       "usage": "User-supplied natural headline used to reproduce seven exact lexical, local-grammar, and receiver-declared scoped-absence findings. The article body is not included and no bias, truth, intent, rationalization, propaganda, or model-performance claim is made."
+    },
+    {
+      "diagnostic_id": "evidence-recall-published-diagnostic:sha256:1ea7ac4d6d5e8c8bc614dc62cfcf070e11cb0312464c0b52bbb5c797eb127346",
+      "jama_article_doi": "10.1001/jamainternmed.2025.0256",
+      "name": "Evidence Recall three-way comparative benchmark protocol",
+      "schneider_article_doi": "10.1007/s11192-020-03631-1",
+      "schneider_dataset_doi": "10.13012/B2IDB-3331845_V2",
+      "usage": "Three-way Direct Lookup vs naive transitive taint vs frozen Evidence Recall evaluation pipeline. Published aggregate diagnostic is independently verified; raw Schneider case bytes and van der Vet DOT are not bundled, so case-level empirical promotion remains blocked.",
+      "van_der_vet_article_doi": "10.1186/s41073-016-0008-5"
     }
   ],
   "interactive_model_mapping_passes": 1,
-  "manifest_aggregate_sha256": "2847ad7591c5acb8539df5ff92cbaf9930fab92889bd1920fe1d7b025817699e",
+  "manifest_aggregate_sha256": "0d1f9f9a63b6721b806a7c1df22bb7e1a3e94049bf39765ac96f13fa259a43cb",
   "model_calls": 1,
   "programmatic_experiment_api_calls": 0,
   "schema": "openline.claim-graph.prototype-evidence.v1",
-  "status": "IMPACT_AND_FRAME_MECHANISMS_REPRODUCED_ON_NATURAL_MATERIAL_VALUE_UNTESTED"
+  "status": "COMPARATIVE_BENCHMARK_PIPELINE_READY_CASE_LEVEL_EMPIRICAL_PROMOTION_BLOCKED"
 }

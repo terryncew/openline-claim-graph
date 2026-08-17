@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.4.0.dev0 — 2026-08-17
+
+- Added the Evidence Recall three-way comparative benchmark: Direct Lookup vs naive transitive taint vs the unchanged shipped Evidence Recall engine.
+- Separated public case pack, receiver authority, predictions, and external gold into independently content-addressed artifacts; predictions never require gold.
+- Added explicit error metrics for missed exposure, hard false quarantine, unnecessary unresolved review, total review load, and unnecessary review load; no composite score or automatic promotion rule exists.
+- Added a Schneider V2 CSV importer that strips answer-bearing annotation fields from the public pack, freezes a label-independent conservative authority rule, binds private gold separately, hashes raw source bytes, and fails closed unless the canonical corpus yields 152 accessible rows and 23 positives.
+- Added a van der Vet/Nijveen DOT importer that reverses the paper's citing→cited arrows into dependency-flow direction and freezes inspected indirect targets as a negative-control gold set.
+- Added a source-backed published aggregate diagnostic for Schneider, van der Vet/Nijveen, and the 2025 JAMA meta-analysis reanalysis, plus a stdlib-only independent verifier.
+- The aggregate result is intentionally non-promotional: Direct Lookup misses the 23 published non-direct Schneider positives; naive taint has at least 125 hard over-taint candidates; conservative Evidence Recall has at least 125 unnecessary unresolved reviews and the same 152-item total review load. This does not establish a precision or reviewer-load advantage.
+- Kept JAMA as an abstraction/selectivity stress test rather than mislabeling unchanged recomputations as false quarantine.
+- Added ten comparative benchmark tests; the full suite is now 86 tests.
+- Added CI and installed-wheel coverage for the new comparative benchmark commands.
+- Did not add new UI, generalized basis revocation, weighted support, cut-set solving, or changes to Receipt Gate / Successor Gate. Evidence Recall semantics remain frozen for the empirical test.
+
 ## Unreleased
 
 - Added deterministic single-edge adjudication counterfactuals on top of Evidence Recall.

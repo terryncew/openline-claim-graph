@@ -14,6 +14,20 @@ from .benchmark import (
     validate_pack,
 )
 from .bundle import verify_bundle
+from .comparative_benchmark import (
+    ComparativeBenchmarkError,
+    build_published_diagnostic,
+    import_schneider_csv,
+    run_comparative,
+    score_comparative,
+    validate_authority as validate_comparative_authority,
+    validate_gold as validate_comparative_gold,
+    validate_pack as validate_comparative_pack,
+    validate_predictions as validate_comparative_predictions,
+    verify_predictions as verify_comparative_predictions,
+    verify_published_diagnostic,
+    verify_score as verify_comparative_score,
+)
 from .frame import FrameValidationError, evaluate_frame_ledger, verify_frame_report
 from .frame_review import FrameReviewError, render_frame_ledger
 from .graph import verify_projection
@@ -138,6 +152,48 @@ def main(argv: list[str] | None = None) -> int:
     benchmark_score.add_argument("--plan", required=True)
     benchmark_score.add_argument("--responses", action="append", required=True)
     benchmark_score.add_argument("--output", required=True)
+
+
+    evidence_validate = sub.add_parser(
+        "evidence-benchmark-validate",
+        help="validate the sealed Evidence Recall comparative benchmark artifacts",
+    )
+    evidence_validate.add_argument("--pack", required=True)
+    evidence_validate.add_argument("--authority")
+    evidence_validate.add_argument("--gold")
+    evidence_validate.add_argument("--predictions")
+    evidence_validate.add_argument("--score")
+
+    evidence_run = sub.add_parser(
+        "evidence-benchmark-run",
+        help="run direct lookup, naive taint, and frozen Evidence Recall without reading gold",
+    )
+    evidence_run.add_argument("--pack", required=True)
+    evidence_run.add_argument("--authority", required=True)
+    evidence_run.add_argument("--output", required=True)
+
+    evidence_score = sub.add_parser(
+        "evidence-benchmark-score",
+        help="score frozen comparative predictions against separately bound external gold",
+    )
+    evidence_score.add_argument("--pack", required=True)
+    evidence_score.add_argument("--authority", required=True)
+    evidence_score.add_argument("--gold", required=True)
+    evidence_score.add_argument("--predictions", required=True)
+    evidence_score.add_argument("--output", required=True)
+
+    evidence_import = sub.add_parser(
+        "evidence-benchmark-import-schneider",
+        help="split the Schneider V2 CSV into public pack, blind authority, and private gold",
+    )
+    evidence_import.add_argument("--csv", required=True)
+    evidence_import.add_argument("--output", required=True)
+
+    evidence_diag = sub.add_parser(
+        "evidence-benchmark-published-diagnostic",
+        help="write the source-backed aggregate diagnostic while case-level raw data remain unbound",
+    )
+    evidence_diag.add_argument("--output", required=True)
 
     impact = sub.add_parser(
         "impact",
@@ -353,6 +409,90 @@ def main(argv: list[str] | None = None) -> int:
         )
         _write(args.output, result)
         return _emit(result)
+    if args.command == "evidence-benchmark-validate":
+        pack = _load(args.pack)
+        if args.score:
+            if not (args.authority and args.gold and args.predictions):
+                parser.error("--score requires --authority, --gold, and --predictions")
+            return _emit(
+                verify_comparative_score(
+                    _load(args.score),
+                    pack,
+                    _load(args.authority),
+                    _load(args.gold),
+                    _load(args.predictions),
+                )
+            )
+        if args.predictions:
+            if not args.authority:
+                parser.error("--predictions requires --authority")
+            return _emit(
+                verify_comparative_predictions(
+                    _load(args.predictions), pack, _load(args.authority)
+                )
+            )
+        if args.gold:
+            return _emit(validate_comparative_gold(_load(args.gold), pack))
+        if args.authority:
+            return _emit(validate_comparative_authority(_load(args.authority), pack))
+        return _emit(validate_comparative_pack(pack))
+    if args.command == "evidence-benchmark-run":
+        try:
+            result = run_comparative(_load(args.pack), _load(args.authority))
+        except ComparativeBenchmarkError as exc:
+            return _emit({"valid": False, "errors": [str(exc)]})
+        _write(args.output, result)
+        return _emit({
+            "valid": True,
+            "output": args.output,
+            "predictions_id": result["predictions_id"],
+            "cases": len(result["rows"]),
+        })
+    if args.command == "evidence-benchmark-score":
+        try:
+            result = score_comparative(
+                _load(args.pack),
+                _load(args.authority),
+                _load(args.gold),
+                _load(args.predictions),
+            )
+        except ComparativeBenchmarkError as exc:
+            return _emit({"valid": False, "errors": [str(exc)]})
+        _write(args.output, result)
+        return _emit({
+            "valid": True,
+            "output": args.output,
+            "score_id": result["score_id"],
+            "metrics": result["metrics"]["ALL"],
+        })
+    if args.command == "evidence-benchmark-import-schneider":
+        try:
+            pack, authority, gold, import_report = import_schneider_csv(args.csv)
+        except (ComparativeBenchmarkError, OSError, UnicodeError) as exc:
+            return _emit({"valid": False, "errors": [str(exc)]})
+        output = Path(args.output)
+        output.mkdir(parents=True, exist_ok=True)
+        _write(str(output / "pack.json"), pack)
+        _write(str(output / "authority.json"), authority)
+        _write(str(output / "gold.private.json"), gold)
+        _write(str(output / "import-report.json"), import_report)
+        return _emit({
+            "valid": True,
+            "output": str(output),
+            "pack_id": pack["pack_id"],
+            "authority_id": authority["authority_id"],
+            "gold_id": gold["gold_id"],
+            "cases": len(pack["cases"]),
+        })
+    if args.command == "evidence-benchmark-published-diagnostic":
+        result = build_published_diagnostic()
+        _write(args.output, result)
+        return _emit({
+            "valid": True,
+            "output": args.output,
+            "diagnostic_id": result["diagnostic_id"],
+            "status": result["status"],
+        })
     if args.command == "impact":
         sources_doc = _load(args.sources)
         sources = {item["source_id"]: item for item in sources_doc["sources"]}

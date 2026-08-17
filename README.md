@@ -1,6 +1,6 @@
-# OpenLine Claim Graph — Evidence Recall + Frame Ledger
+# OpenLine Claim Graph — Evidence Recall
 
-> Something you relied on changed. Or a surface framed it in a consequential way. Show the exact mechanism, its source, and the receiver policy—without pretending the machine settled truth.
+> Something you relied on changed. Compute what depended on it, preserve what still has an admitted basis, and show the unresolved review burden without pretending the graph settled truth.
 
 This prototype tests one narrow idea from the earlier OLP/DSM work:
 
@@ -8,7 +8,7 @@ This prototype tests one narrow idea from the earlier OLP/DSM work:
 
 It does **not** put truth in a receipt. It records representations, their declared relations, their source anchors, and their history.
 
-Status: `IMPACT_AND_FRAME_MECHANISMS_REPRODUCED_ON_NATURAL_MATERIAL_VALUE_UNTESTED`. It is not a promoted product, standard, bias oracle, or scientific result.
+Status: `COMPARATIVE_BENCHMARK_PIPELINE_READY_CASE_LEVEL_EMPIRICAL_PROMOTION_BLOCKED`. The Evidence Recall engine is frozen for the next empirical comparison; no product, moat, or decision-value promotion is claimed.
 
 ## What works now
 
@@ -30,6 +30,21 @@ The second native job is `Frame Ledger`: reproduce narrow framing devices from e
 Models can run the advisory layer autonomously. A proposer emits exact-quote-anchored candidates; distinct receiver-pinned reviewers independently confirm, challenge, or abstain; signed heterogeneous-family quorum controls admission; and a proposer can never approve itself. Human confirmation is an explicit `OPTIONAL`, `REQUIRED`, or `DISABLED` receiver-policy choice.
 
 See [the Frame Ledger contract](docs/FRAME_LEDGER.md) and open [`artifacts/wapo-headline-frame-ledger/review.html`](artifacts/wapo-headline-frame-ledger/review.html).
+
+
+## The next empirical test is now implemented
+
+Version `0.4.0.dev0` adds a sealed three-way comparative benchmark without changing Evidence Recall semantics:
+
+- **Direct Lookup** flags only immediate dependents of the invalidated source.
+- **Naive Transitive Taint** quarantines every reachable descendant and ignores alternative support or edge authority.
+- **Evidence Recall** runs the shipped `analyze_source_impact()` engine under a separately frozen HARD / ADVISORY / UNADMITTED authority artifact.
+
+The benchmark keeps `pack.json`, `authority.json`, `predictions.json`, and `gold.private.json` separately content-addressed. Predictions do not require gold. Scoring reports missed exposure, hard false quarantine, unnecessary unresolved review, and total review load. `AFFECTED_UNRESOLVED` therefore cannot masquerade as a free win. There is no composite score and no automatic promotion threshold.
+
+The canonical empirical assets are fixed in [`experiments/evidence_recall_comparative/PROTOCOL.md`](experiments/evidence_recall_comparative/PROTOCOL.md): Schneider et al. is the main second-generation propagation stratum, van der Vet/Nijveen is the indirect-propagation negative control, and the 2025 JAMA meta-analysis reanalysis is a quantitative-dependency stress test. The raw Schneider CSV and van der Vet DOT could not be acquired and hashed inside this build environment, so the checked-in result is an independently verified **published aggregate diagnostic**, not the final case-level run.
+
+That aggregate diagnostic is already hostile to the thesis: Direct Lookup misses all 23 published non-direct possible-diffusion positives; naive taint creates at least 125 hard over-taint candidates; under the deliberately conservative citation-only policy, Evidence Recall avoids hard quarantine on ordinary second-generation links but creates at least 125 unnecessary unresolved reviews and the same 152-item total review load. In other words, the current aggregate evidence does **not** show a reviewer-load advantage. Case-level selective precision remains unearned.
 
 ## What is implemented
 
@@ -100,6 +115,41 @@ PYTHONPATH=src python examples/build_wapo_frame_ledger.py \
   --output artifacts/wapo-headline-frame-ledger
 PYTHONPATH=src python scripts/verify_wapo_frame_ledger.py \
   --artifact artifacts/wapo-headline-frame-ledger
+```
+
+Build and verify the comparative pipeline conformance fixture and the source-backed aggregate diagnostic:
+
+```bash
+PYTHONPATH=src python scripts/build_evidence_recall_comparative_fixture.py \
+  --output artifacts/evidence-recall-comparative/conformance
+PYTHONPATH=src python -m openline_claim_graph evidence-benchmark-validate \
+  --pack artifacts/evidence-recall-comparative/conformance/pack.json \
+  --authority artifacts/evidence-recall-comparative/conformance/authority.json \
+  --gold artifacts/evidence-recall-comparative/conformance/gold.private.json \
+  --predictions artifacts/evidence-recall-comparative/conformance/predictions.json \
+  --score artifacts/evidence-recall-comparative/conformance/score.json
+PYTHONPATH=src python -m openline_claim_graph evidence-benchmark-published-diagnostic \
+  --output artifacts/evidence-recall-comparative/published-diagnostic.json
+python scripts/verify_evidence_recall_published_diagnostic.py \
+  --report artifacts/evidence-recall-comparative/published-diagnostic.json
+```
+
+When the canonical Schneider V2 CSV is available locally, the importer itself performs the anti-leakage split and fails closed unless it recovers the published 152 accessible rows and 23 positives:
+
+```bash
+openline-claim-graph evidence-benchmark-import-schneider \
+  --csv "2010-2019 SG to specific not mentioned FG-v2.csv" \
+  --output /tmp/schneider-benchmark
+openline-claim-graph evidence-benchmark-run \
+  --pack /tmp/schneider-benchmark/pack.json \
+  --authority /tmp/schneider-benchmark/authority.json \
+  --output /tmp/schneider-benchmark/predictions.json
+openline-claim-graph evidence-benchmark-score \
+  --pack /tmp/schneider-benchmark/pack.json \
+  --authority /tmp/schneider-benchmark/authority.json \
+  --gold /tmp/schneider-benchmark/gold.private.json \
+  --predictions /tmp/schneider-benchmark/predictions.json \
+  --output /tmp/schneider-benchmark/score.json
 ```
 
 The demo creates a base policy state, two incompatible status branches, an explicit merge that preserves both conflicts, signed receipts, a receiver-scoped projection, source inclusion proofs, and an append-only wallet.
@@ -182,7 +232,7 @@ The autonomous model lane is optional and unrun in this release. `scripts/run_au
 
 ## Evidence generated here
 
-- 73 offline unit/adversarial/protocol/development/benchmark tests.
+- 86 offline unit/adversarial/protocol/development/benchmark tests.
 - 10,000 deterministic tamper mutations detected with zero misses.
 - Exact-quote mislabeling is rejected.
 - Paraphrase/inference labels remain admitted only as disclosed, semantically unverified mappings.

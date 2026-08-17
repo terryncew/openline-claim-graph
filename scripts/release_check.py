@@ -25,6 +25,7 @@ def sha256_file(path: Path) -> str:
 
 
 def run(args: list[str], *, extra_env: dict[str, str] | None = None) -> str:
+    print(f"release-check: {' '.join(args)}", flush=True)
     env = os.environ.copy()
     env["PYTHONPATH"] = str(ROOT / "src")
     env.update(extra_env or {})
@@ -137,6 +138,52 @@ def main() -> int:
             "artifacts/wapo-headline-frame-ledger/independent-verification.json",
         ]
     )
+    run(
+        [
+            sys.executable,
+            "scripts/build_evidence_recall_comparative_fixture.py",
+            "--output",
+            "artifacts/evidence-recall-comparative/conformance",
+        ]
+    )
+    run(
+        [
+            sys.executable,
+            "-m",
+            "openline_claim_graph",
+            "evidence-benchmark-validate",
+            "--pack",
+            "artifacts/evidence-recall-comparative/conformance/pack.json",
+            "--authority",
+            "artifacts/evidence-recall-comparative/conformance/authority.json",
+            "--gold",
+            "artifacts/evidence-recall-comparative/conformance/gold.private.json",
+            "--predictions",
+            "artifacts/evidence-recall-comparative/conformance/predictions.json",
+            "--score",
+            "artifacts/evidence-recall-comparative/conformance/score.json",
+        ]
+    )
+    run(
+        [
+            sys.executable,
+            "-m",
+            "openline_claim_graph",
+            "evidence-benchmark-published-diagnostic",
+            "--output",
+            "artifacts/evidence-recall-comparative/published-diagnostic.json",
+        ]
+    )
+    run(
+        [
+            sys.executable,
+            "scripts/verify_evidence_recall_published_diagnostic.py",
+            "--report",
+            "artifacts/evidence-recall-comparative/published-diagnostic.json",
+            "--output",
+            "artifacts/evidence-recall-comparative/independent-verification.json",
+        ]
+    )
 
     grammar_files = [
         path
@@ -152,6 +199,8 @@ def main() -> int:
     installed_cli_impact_review_matches = False
     installed_cli_frame_verifies = False
     installed_cli_frame_review_matches = False
+    installed_cli_evidence_benchmark_verifies = False
+    installed_cli_published_diagnostic_matches = False
     with tempfile.TemporaryDirectory(prefix="openline-claim-graph-wheel-") as temporary:
         temp = Path(temporary)
         run(
@@ -341,6 +390,43 @@ def main() -> int:
         installed_cli_frame_review_matches = sha256_file(installed_frame_review) == sha256_file(
             frame_dir / "review.html"
         )
+        comparative_dir = ROOT / "artifacts/evidence-recall-comparative"
+        conformance_dir = comparative_dir / "conformance"
+        run(
+            [
+                sys.executable,
+                "-m",
+                "openline_claim_graph",
+                "evidence-benchmark-validate",
+                "--pack",
+                str(conformance_dir / "pack.json"),
+                "--authority",
+                str(conformance_dir / "authority.json"),
+                "--gold",
+                str(conformance_dir / "gold.private.json"),
+                "--predictions",
+                str(conformance_dir / "predictions.json"),
+                "--score",
+                str(conformance_dir / "score.json"),
+            ],
+            extra_env={"PYTHONPATH": str(install_target)},
+        )
+        installed_cli_evidence_benchmark_verifies = True
+        installed_diagnostic = temp / "installed-published-diagnostic.json"
+        run(
+            [
+                sys.executable,
+                "-m",
+                "openline_claim_graph",
+                "evidence-benchmark-published-diagnostic",
+                "--output",
+                str(installed_diagnostic),
+            ],
+            extra_env={"PYTHONPATH": str(install_target)},
+        )
+        installed_cli_published_diagnostic_matches = sha256_file(installed_diagnostic) == sha256_file(
+            comparative_dir / "published-diagnostic.json"
+        )
 
     verification = json.loads((ROOT / "artifacts/demo/verification.json").read_text(encoding="utf-8"))
     scaling = json.loads((ROOT / "artifacts/scaling-probe.json").read_text(encoding="utf-8"))
@@ -385,6 +471,15 @@ def main() -> int:
     model_candidates = json.loads(
         (ROOT / "docs/open-model-candidates.json").read_text(encoding="utf-8")
     )
+    comparative_diagnostic = json.loads(
+        (ROOT / "artifacts/evidence-recall-comparative/published-diagnostic.json").read_text(encoding="utf-8")
+    )
+    comparative_independent = json.loads(
+        (ROOT / "artifacts/evidence-recall-comparative/independent-verification.json").read_text(encoding="utf-8")
+    )
+    comparative_score = json.loads(
+        (ROOT / "artifacts/evidence-recall-comparative/conformance/score.json").read_text(encoding="utf-8")
+    )
     checks = {
         "compileall": True,
         "python_3_11_grammar_parse": len(grammar_files),
@@ -396,6 +491,8 @@ def main() -> int:
         "installed_cli_impact_review_matches": installed_cli_impact_review_matches,
         "installed_cli_frame_verifies": installed_cli_frame_verifies,
         "installed_cli_frame_review_matches": installed_cli_frame_review_matches,
+        "installed_cli_evidence_benchmark_verifies": installed_cli_evidence_benchmark_verifies,
+        "installed_cli_published_diagnostic_matches": installed_cli_published_diagnostic_matches,
         "unit_and_adversarial_tests": test_count,
         "deterministic_tamper_mutations": 10_000,
         "deterministic_tamper_misses": 0,
@@ -463,6 +560,16 @@ def main() -> int:
         "open_model_candidates_all_unrun": all(
             item["status"] == "UNRUN_CANDIDATE" for item in model_candidates["candidates"]
         ),
+        "comparative_pipeline_status": comparative_diagnostic["status"],
+        "comparative_independent_valid": comparative_independent["valid"],
+        "comparative_independent_module_free": comparative_independent["independent_of_candidate_module"],
+        "comparative_conformance_score_schema": comparative_score["schema"],
+        "comparative_schneider_direct_missed_exposure": comparative_diagnostic["schneider"]["systems"]["DIRECT_LOOKUP"]["missed_exposure"],
+        "comparative_schneider_naive_hard_fp_lower_bound": comparative_diagnostic["schneider"]["systems"]["NAIVE_TRANSITIVE_TAINT"]["hard_false_quarantine_lower_bound"],
+        "comparative_schneider_er_unresolved_lower_bound": comparative_diagnostic["schneider"]["systems"]["EVIDENCE_RECALL"]["unnecessary_unresolved_review_lower_bound"],
+        "comparative_schneider_naive_review_load": comparative_diagnostic["schneider"]["systems"]["NAIVE_TRANSITIVE_TAINT"]["total_review_load"],
+        "comparative_schneider_er_review_load": comparative_diagnostic["schneider"]["systems"]["EVIDENCE_RECALL"]["total_review_load"],
+        "comparative_case_level_empirical_result_present": False,
         "scaling_probe_claim_counts": [item["claim_count"] for item in scaling["results"]],
     }
     if not all(
@@ -474,6 +581,8 @@ def main() -> int:
             checks["installed_cli_impact_review_matches"],
             checks["installed_cli_frame_verifies"],
             checks["installed_cli_frame_review_matches"],
+            checks["installed_cli_evidence_benchmark_verifies"],
+            checks["installed_cli_published_diagnostic_matches"],
             checks["demo_receipt_valid"],
             checks["demo_projection_valid"],
             checks["demo_source_disclosure_valid"],
@@ -533,6 +642,16 @@ def main() -> int:
             checks["open_model_registry_status"] == "UNRUN_CANDIDATES_NOT_BENCHMARK_RESULTS",
             checks["open_model_candidate_count"] == 7,
             checks["open_model_candidates_all_unrun"],
+            checks["comparative_pipeline_status"] == "AGGREGATE_DIAGNOSTIC_ONLY_CASE_LEVEL_EMPIRICAL_PROMOTION_BLOCKED",
+            checks["comparative_independent_valid"],
+            checks["comparative_independent_module_free"],
+            checks["comparative_conformance_score_schema"] == "openline.evidence-recall-comparative-score.v1",
+            checks["comparative_schneider_direct_missed_exposure"] == 23,
+            checks["comparative_schneider_naive_hard_fp_lower_bound"] == 125,
+            checks["comparative_schneider_er_unresolved_lower_bound"] == 125,
+            checks["comparative_schneider_naive_review_load"] == 152,
+            checks["comparative_schneider_er_review_load"] == 152,
+            checks["comparative_case_level_empirical_result_present"] is False,
         ]
     ):
         raise RuntimeError(f"release checks failed: {checks}")
@@ -641,10 +760,25 @@ def main() -> int:
             ),
         }
     )
+    inputs.append(
+        {
+            "name": "Evidence Recall three-way comparative benchmark protocol",
+            "schneider_dataset_doi": "10.13012/B2IDB-3331845_V2",
+            "schneider_article_doi": "10.1007/s11192-020-03631-1",
+            "van_der_vet_article_doi": "10.1186/s41073-016-0008-5",
+            "jama_article_doi": "10.1001/jamainternmed.2025.0256",
+            "diagnostic_id": comparative_diagnostic["diagnostic_id"],
+            "usage": (
+                "Three-way Direct Lookup vs naive transitive taint vs frozen Evidence Recall evaluation pipeline. "
+                "Published aggregate diagnostic is independently verified; raw Schneider case bytes and van der Vet DOT are not bundled, "
+                "so case-level empirical promotion remains blocked."
+            ),
+        }
+    )
     evidence = {
         "schema": "openline.claim-graph.prototype-evidence.v1",
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
-        "status": "IMPACT_AND_FRAME_MECHANISMS_REPRODUCED_ON_NATURAL_MATERIAL_VALUE_UNTESTED",
+        "status": "COMPARATIVE_BENCHMARK_PIPELINE_READY_CASE_LEVEL_EMPIRICAL_PROMOTION_BLOCKED",
         "checks": checks,
         "inputs": inputs,
         "manifest_aggregate_sha256": manifest["aggregate_sha256"],
@@ -659,7 +793,12 @@ def main() -> int:
             "generalization, or graph-versus-summary receiver value. It also covers seven deterministic Frame "
             "Ledger findings on one supplied headline and a signed autonomous heterogeneous-review contract. "
             "The headline specimen does not include the article body and makes no bias, truth, intent, "
-            "rationalization, propaganda, reader-effect, or model-competence claim."
+            "rationalization, propaganda, reader-effect, or model-competence claim. A new three-way comparative "
+            "pipeline freezes Direct Lookup, naive transitive taint, and the shipped Evidence Recall semantics; separates "
+            "public pack, receiver authority, predictions, and external gold; and scores missed exposure, hard false quarantine, "
+            "unresolved review, and total review load without a composite score. Published aggregate diagnostics are source-backed "
+            "and independently reproduced, but the canonical Schneider case-level CSV and van der Vet DOT bytes are not bundled in "
+            "this build environment, so no case-level empirical mechanism-advantage or moat claim is present."
         ),
         "incremental_api_spend_usd": 0,
         "model_calls": 1,

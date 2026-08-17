@@ -1,0 +1,290 @@
+{
+  "benchmark_id": "three-way-conformance-fixture",
+  "cases": [
+    {
+      "case_id": "comparative-case:sha256:83666d23ad903c62ea532800c1e0a1a37fe89d7df9ba888588a220da8f5b96a4",
+      "edges": [
+        {
+          "dependent_node_id": "fixture:direct",
+          "edge_id": "comparative-edge:sha256:38dba2e877821dbf854a95e87a8394571f1703e3c0a0b23dadbc6e37f2aa0f73",
+          "evidence": [
+            "fixture direct"
+          ],
+          "prerequisite_node_id": "fixture:root",
+          "relation": "DERIVED_FROM"
+        },
+        {
+          "dependent_node_id": "fixture:no-exposure",
+          "edge_id": "comparative-edge:sha256:c25c3a0067ed17c8584ce0407cad2976cd2efe1229ae7b356db5853b6001223c",
+          "evidence": [
+            "fixture advisory"
+          ],
+          "prerequisite_node_id": "fixture:direct",
+          "relation": "DEPENDS_ON"
+        }
+      ],
+      "invalidated_node_id": "fixture:root",
+      "metadata": {},
+      "nodes": [
+        {
+          "independent_basis": false,
+          "label": "alternative support survivor",
+          "locator": "",
+          "node_id": "fixture:alternate",
+          "text": "alternative support survivor"
+        },
+        {
+          "independent_basis": true,
+          "label": "independent backup",
+          "locator": "",
+          "node_id": "fixture:backup",
+          "text": "independent backup"
+        },
+        {
+          "independent_basis": false,
+          "label": "direct dependent",
+          "locator": "",
+          "node_id": "fixture:direct",
+          "text": "direct dependent"
+        },
+        {
+          "independent_basis": false,
+          "label": "indirect dependent",
+          "locator": "",
+          "node_id": "fixture:indirect",
+          "text": "indirect dependent"
+        },
+        {
+          "independent_basis": false,
+          "label": "reachable but externally negative",
+          "locator": "",
+          "node_id": "fixture:no-exposure",
+          "text": "reachable but externally negative"
+        },
+        {
+          "independent_basis": false,
+          "label": "invalidated root",
+          "locator": "",
+          "node_id": "fixture:root",
+          "text": "invalidated root"
+        }
+      ],
+      "stratum": "CONFORMANCE",
+      "target_node_id": "fixture:no-exposure"
+    },
+    {
+      "case_id": "comparative-case:sha256:91719379454bd6cd499df3fb0eeffad83d954e104549ecaddaeed255d35dab41",
+      "edges": [
+        {
+          "dependent_node_id": "fixture:alternate",
+          "edge_id": "comparative-edge:sha256:a2a19f4d913d82d968f2f3585113a241b7133b7dab382f9d20264b78d67a68a2",
+          "evidence": [
+            "fixture support"
+          ],
+          "prerequisite_node_id": "fixture:root",
+          "relation": "SUPPORTS"
+        },
+        {
+          "dependent_node_id": "fixture:alternate",
+          "edge_id": "comparative-edge:sha256:fe63b1f84218b7fccaf7aa324d5d52cb2c862b66a59ddcc64ffb69c59f290728",
+          "evidence": [
+            "fixture independent support"
+          ],
+          "prerequisite_node_id": "fixture:backup",
+          "relation": "SUPPORTS"
+        }
+      ],
+      "invalidated_node_id": "fixture:root",
+      "metadata": {},
+      "nodes": [
+        {
+          "independent_basis": false,
+          "label": "alternative support survivor",
+          "locator": "",
+          "node_id": "fixture:alternate",
+          "text": "alternative support survivor"
+        },
+        {
+          "independent_basis": true,
+          "label": "independent backup",
+          "locator": "",
+          "node_id": "fixture:backup",
+          "text": "independent backup"
+        },
+        {
+          "independent_basis": false,
+          "label": "direct dependent",
+          "locator": "",
+          "node_id": "fixture:direct",
+          "text": "direct dependent"
+        },
+        {
+          "independent_basis": false,
+          "label": "indirect dependent",
+          "locator": "",
+          "node_id": "fixture:indirect",
+          "text": "indirect dependent"
+        },
+        {
+          "independent_basis": false,
+          "label": "reachable but externally negative",
+          "locator": "",
+          "node_id": "fixture:no-exposure",
+          "text": "reachable but externally negative"
+        },
+        {
+          "independent_basis": false,
+          "label": "invalidated root",
+          "locator": "",
+          "node_id": "fixture:root",
+          "text": "invalidated root"
+        }
+      ],
+      "stratum": "CONFORMANCE",
+      "target_node_id": "fixture:alternate"
+    },
+    {
+      "case_id": "comparative-case:sha256:bb5a61287aafc81cf0126756e2cbb57441388becbe40be0ec15f1564ce8a33bc",
+      "edges": [
+        {
+          "dependent_node_id": "fixture:direct",
+          "edge_id": "comparative-edge:sha256:38dba2e877821dbf854a95e87a8394571f1703e3c0a0b23dadbc6e37f2aa0f73",
+          "evidence": [
+            "fixture direct"
+          ],
+          "prerequisite_node_id": "fixture:root",
+          "relation": "DERIVED_FROM"
+        },
+        {
+          "dependent_node_id": "fixture:indirect",
+          "edge_id": "comparative-edge:sha256:53bb81d4f11f8e2652bb3fdd51ef070cbdb3b545273c8bce424e3fc06026f9f2",
+          "evidence": [
+            "fixture advisory"
+          ],
+          "prerequisite_node_id": "fixture:direct",
+          "relation": "DEPENDS_ON"
+        }
+      ],
+      "invalidated_node_id": "fixture:root",
+      "metadata": {},
+      "nodes": [
+        {
+          "independent_basis": false,
+          "label": "alternative support survivor",
+          "locator": "",
+          "node_id": "fixture:alternate",
+          "text": "alternative support survivor"
+        },
+        {
+          "independent_basis": true,
+          "label": "independent backup",
+          "locator": "",
+          "node_id": "fixture:backup",
+          "text": "independent backup"
+        },
+        {
+          "independent_basis": false,
+          "label": "direct dependent",
+          "locator": "",
+          "node_id": "fixture:direct",
+          "text": "direct dependent"
+        },
+        {
+          "independent_basis": false,
+          "label": "indirect dependent",
+          "locator": "",
+          "node_id": "fixture:indirect",
+          "text": "indirect dependent"
+        },
+        {
+          "independent_basis": false,
+          "label": "reachable but externally negative",
+          "locator": "",
+          "node_id": "fixture:no-exposure",
+          "text": "reachable but externally negative"
+        },
+        {
+          "independent_basis": false,
+          "label": "invalidated root",
+          "locator": "",
+          "node_id": "fixture:root",
+          "text": "invalidated root"
+        }
+      ],
+      "stratum": "CONFORMANCE",
+      "target_node_id": "fixture:indirect"
+    },
+    {
+      "case_id": "comparative-case:sha256:f7fb8f2b9d607f7ed3132f14743cf4abfdb429e906c19ccec5659430867228f4",
+      "edges": [
+        {
+          "dependent_node_id": "fixture:direct",
+          "edge_id": "comparative-edge:sha256:38dba2e877821dbf854a95e87a8394571f1703e3c0a0b23dadbc6e37f2aa0f73",
+          "evidence": [
+            "fixture direct"
+          ],
+          "prerequisite_node_id": "fixture:root",
+          "relation": "DERIVED_FROM"
+        }
+      ],
+      "invalidated_node_id": "fixture:root",
+      "metadata": {},
+      "nodes": [
+        {
+          "independent_basis": false,
+          "label": "alternative support survivor",
+          "locator": "",
+          "node_id": "fixture:alternate",
+          "text": "alternative support survivor"
+        },
+        {
+          "independent_basis": true,
+          "label": "independent backup",
+          "locator": "",
+          "node_id": "fixture:backup",
+          "text": "independent backup"
+        },
+        {
+          "independent_basis": false,
+          "label": "direct dependent",
+          "locator": "",
+          "node_id": "fixture:direct",
+          "text": "direct dependent"
+        },
+        {
+          "independent_basis": false,
+          "label": "indirect dependent",
+          "locator": "",
+          "node_id": "fixture:indirect",
+          "text": "indirect dependent"
+        },
+        {
+          "independent_basis": false,
+          "label": "reachable but externally negative",
+          "locator": "",
+          "node_id": "fixture:no-exposure",
+          "text": "reachable but externally negative"
+        },
+        {
+          "independent_basis": false,
+          "label": "invalidated root",
+          "locator": "",
+          "node_id": "fixture:root",
+          "text": "invalidated root"
+        }
+      ],
+      "stratum": "CONFORMANCE",
+      "target_node_id": "fixture:direct"
+    }
+  ],
+  "construction_rule": "Synthetic fixture that exercises direct, transitive, advisory, and alternative-support behavior; not empirical evidence.",
+  "pack_id": "evidence-recall-comparative-pack:sha256:02f691293641b6fa0dead416173b4840c8a75289819e968bcea7f52917a13a7e",
+  "schema": "openline.evidence-recall-comparative-pack.v1",
+  "source_manifest": [
+    {
+      "identifier": "self-authored-fixture",
+      "role": "conformance_only"
+    }
+  ],
+  "status": "CONFORMANCE_ONLY"
+}

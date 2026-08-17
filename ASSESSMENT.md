@@ -100,3 +100,15 @@ The human receiver protocol remains a dormant branch for any future claim about 
 The receiver-discovery pilot protocol is included, but its analyzed case pack is empty and it has not been run. The ARCT fixture is a development positive control and is structurally barred from being counted as Stage 1. The protocol fixes case admission, custody, the three-arm estimand, between-receiver assignment, scoring, and Stage 1/Stage 2 boundaries before any receiver result exists. That is experimental discipline, not evidence of value.
 
 No paid experiment API calls or automated receiver trials were performed. One interactive model mapping pass from the earlier ARCT development check was scored against withheld labels; its three errors remain disclosed.
+
+## Comparative benchmark status — 0.4.0.dev0
+
+The next claim is now forced through a three-way external comparison rather than another feature. The benchmark freezes Direct Lookup, naive transitive taint, and the shipped Evidence Recall engine. Public inputs, receiver edge authority, predictions, and external gold are separately bound so gold is unnecessary for prediction generation.
+
+The canonical main corpus is Schneider et al.'s second-generation Matsuyama citation-context dataset. The importer is ready and fail-closed, but the canonical CSV bytes could not be acquired inside this build environment; the van der Vet supplementary DOT is likewise not bundled. Therefore **no case-level empirical advantage is claimed in this release**.
+
+A published-count diagnostic is checked in and independently reproduced. It is already informative: the 23 Schneider positives are non-direct and therefore missed by direct lookup; blind transitive taint would act on the whole 152-item accessible neighborhood; with ordinary second-generation citation edges kept advisory, Evidence Recall avoids turning those links directly into hard quarantine but still sends the neighborhood to review. After conservatively excluding all four possible direct-overlap records from false-positive counting, naive taint still has at least 125 hard over-taint candidates and Evidence Recall still has at least 125 unnecessary unresolved-review candidates. Both carry a 152-item total review load at this aggregate level.
+
+That is not a win. It is the benchmark doing its job: **typed authority has not earned selective reviewer-load reduction from citation topology alone.** The case-level run must determine whether a blind, independently constructed authority file can separate the 23 consequential paths from the rest. If it cannot, the current mechanism should not be promoted as an empirical advantage over simpler provenance systems.
+
+The JAMA stratum remains diagnostic rather than scored as false quarantine. A retracted constituent can legitimately force recomputation of an exact aggregate even when the recomputed number happens not to change. The stress test asks whether categorical relation semantics are selective enough for quantitative aggregation, not whether quarantine predicts a numerical flip.

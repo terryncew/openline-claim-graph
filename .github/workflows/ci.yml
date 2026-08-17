@@ -57,6 +57,20 @@ jobs:
             --output "${{ runner.temp }}/wapo-headline-frame-ledger"
           python scripts/verify_wapo_frame_ledger.py \
             --artifact "${{ runner.temp }}/wapo-headline-frame-ledger"
+      - name: Build and verify Evidence Recall comparative benchmark pipeline
+        run: |
+          python scripts/build_evidence_recall_comparative_fixture.py \
+            --output "${{ runner.temp }}/evidence-recall-comparative"
+          python -m openline_claim_graph evidence-benchmark-validate \
+            --pack "${{ runner.temp }}/evidence-recall-comparative/pack.json" \
+            --authority "${{ runner.temp }}/evidence-recall-comparative/authority.json" \
+            --gold "${{ runner.temp }}/evidence-recall-comparative/gold.private.json" \
+            --predictions "${{ runner.temp }}/evidence-recall-comparative/predictions.json" \
+            --score "${{ runner.temp }}/evidence-recall-comparative/score.json"
+          python -m openline_claim_graph evidence-benchmark-published-diagnostic \
+            --output "${{ runner.temp }}/published-diagnostic.json"
+          python scripts/verify_evidence_recall_published_diagnostic.py \
+            --report "${{ runner.temp }}/published-diagnostic.json"
       - name: Build wheel
         run: python -m pip wheel . --no-deps --no-build-isolation -w "${{ runner.temp }}/wheel"
       - name: CLI smoke

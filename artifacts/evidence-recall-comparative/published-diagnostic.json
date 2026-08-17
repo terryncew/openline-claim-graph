@@ -1,0 +1,73 @@
+{
+  "claim_boundary": "Published aggregate counts are independently grounded, but this report is not a substitute for the sealed case-level run. It cannot establish an Evidence Recall advantage from selective relation authority because no case-level blind authority file is evaluated here.",
+  "diagnostic_id": "evidence-recall-published-diagnostic:sha256:1ea7ac4d6d5e8c8bc614dc62cfcf070e11cb0312464c0b52bbb5c797eb127346",
+  "jama": {
+    "effect_change_ge_10_percent": 57,
+    "effect_change_ge_30_percent": 31,
+    "effect_change_ge_50_percent": 23,
+    "effect_evolution_cases": 163,
+    "meta_analyses_rerun": 166,
+    "no_change_pooled_effect": 21,
+    "reviews": 50,
+    "reviews_with_potentially_meaningful_abstract_interpretation_change": 7,
+    "scoring_rule": "Do not call unchanged recomputations false quarantine. Evidence Recall is a reconsideration detector, not a predictor that the recomputed numerical result must differ. These counts diagnose whether categorical dependency semantics are selective enough for quantitative aggregation.",
+    "significance_changed": 18,
+    "source": "doi:10.1001/jamainternmed.2025.0256",
+    "status": "QUANTITATIVE_DEPENDENCY_STRESS_TEST_AGGREGATE"
+  },
+  "schema": "openline.evidence-recall-published-diagnostic.v1",
+  "schneider": {
+    "accessible_second_generation": 152,
+    "assumption": "Ordinary first-to-second-generation citation edges remain ADVISORY until independently admitted; public direct-overlap edges are HARD. Aggregate counts alone cannot resolve which of the four direct-overlap records were among the 152 accessible cases, so over-taint counts are lower bounds.",
+    "diagnosis": "Even under the favorable lower-bound treatment, conservative Evidence Recall converts much of naive hard over-taint into unresolved review but does not reduce total reviewer load. A case-level blind authority file is required to test selective precision.",
+    "externally_annotated_possible_diffusion": 23,
+    "not_marked_possible_diffusion_or_unassessed": 129,
+    "second_generation_items_also_direct_in_full_161_network": 4,
+    "source": "doi:10.1007/s11192-020-03631-1",
+    "status": "PUBLISHED_AGGREGATE_DIAGNOSTIC",
+    "systems": {
+      "DIRECT_LOOKUP": {
+        "missed_exposure": 23,
+        "note": "The published 23 positives are described as non-direct; exact nonpositive direct-overlap scoring awaits row-level bytes."
+      },
+      "EVIDENCE_RECALL": {
+        "hard_false_quarantine": 0,
+        "missed_exposure": 0,
+        "note": "Under the predeclared citation-only policy, ordinary second-generation edges remain advisory; public direct-overlap edges would be hard. Exact split awaits row-level bytes.",
+        "total_review_load": 152,
+        "unnecessary_unresolved_review_lower_bound": 125
+      },
+      "NAIVE_TRANSITIVE_TAINT": {
+        "hard_false_quarantine_lower_bound": 125,
+        "missed_exposure": 0,
+        "note": "Lower bound excludes all four possible direct-overlap records from false-positive scoring because their accessible/assessment status is not recoverable from aggregate counts alone.",
+        "total_review_load": 152
+      }
+    }
+  },
+  "status": "AGGREGATE_DIAGNOSTIC_ONLY_CASE_LEVEL_EMPIRICAL_PROMOTION_BLOCKED",
+  "van_der_vet": {
+    "assumption": "All indirect citation edges remain ADVISORY absent independently admitted semantic dependence.",
+    "indirect_candidates_manually_inspected": 10,
+    "indirect_propagation_found": 0,
+    "source": "doi:10.1186/s41073-016-0008-5",
+    "status": "PUBLISHED_NEGATIVE_CONTROL_AGGREGATE",
+    "systems": {
+      "DIRECT_LOOKUP": {
+        "hard_false_quarantine": 0,
+        "total_review_load": 0,
+        "unnecessary_unresolved_review": 0
+      },
+      "EVIDENCE_RECALL": {
+        "hard_false_quarantine": 0,
+        "total_review_load": 10,
+        "unnecessary_unresolved_review": 10
+      },
+      "NAIVE_TRANSITIVE_TAINT": {
+        "hard_false_quarantine": 10,
+        "total_review_load": 10,
+        "unnecessary_unresolved_review": 0
+      }
+    }
+  }
+}

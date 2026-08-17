@@ -74,3 +74,13 @@ This demonstrates that the verified surface can preserve an independently confir
 Version `0.1.0.dev2` adds one narrow outside-labeled positive control. A single interactive model pass chose between two proposed missing premises for 24 deterministically selected ARCT arguments while the gold labels were withheld. It matched 21/24 upstream labels. The graph code then committed the chosen premise, reproduced the 21/24 score, made the upstream oracle score 24/24, made the opposite-warrant control score 0/24, and produced distinct gold/decoy roots for every case.
 
 That result shows non-random signal in one small multiple-choice source-to-structure check. It does not establish open-ended extraction fidelity, model generalization, graph usefulness to a receiver, or any claim in the unrun three-arm pilot. ARCT is public and old enough that model-training contamination cannot be excluded. The prediction vector was ordered before label reveal in the build conversation, but it did not receive an independent public timestamped precommit.
+
+## Comparative benchmark boundary
+
+Version `0.4.0.dev0` implements the empirical evaluation pipeline but does not claim the final empirical result. The benchmark can prove only what is present in its separately bound artifacts.
+
+The checked-in published aggregate diagnostic supports these bounded observations: Schneider et al. report 23 possible misinformation diffusions among 152 accessible second-generation citations; the paper also reports four second-generation nodes that are direct citations in the full 161-node selected network. Under the benchmark's conservative citation-only authority rule, Direct Lookup necessarily misses the 23 described non-direct positives, naive reachability produces at least 125 hard over-taint candidates after conservatively withholding all four possible direct-overlap records from false-positive counting, and Evidence Recall replaces that hard action with at least 125 unresolved reviews while retaining 152 total review actions. This is an aggregate diagnostic, not a case-level selective-authority result.
+
+The repository does **not** currently claim that Evidence Recall lowers review load, outperforms naive taint on the full case-level corpus, has zero missed exposure, or has commercial defensibility. Those claims remain blocked until the canonical external files are acquired, hashed, split under the anti-leakage protocol, predictions are frozen before gold unsealing, and the resulting score is reproduced.
+
+`AFFECTED_UNRESOLVED` is explicitly charged as review burden. `SURVIVES` is a touched-state classification, not a truth verdict. JAMA recomputation invariance is not treated as proof that an old aggregate did not require reopening.

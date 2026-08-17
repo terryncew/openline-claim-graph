@@ -1,0 +1,38 @@
+{
+  "schema": "openline.evidence-recall-comparative.source-manifest.v1",
+  "sources": [
+    {
+      "role": "main_case_level_dataset",
+      "name": "Schneider et al. second-generation citation context analysis V2",
+      "doi": "10.13012/B2IDB-3331845_V2",
+      "expected_file": "2010-2019 SG to specific not mentioned FG-v2.csv",
+      "license": "CC0",
+      "expected_accessible_rows": 152,
+      "expected_positive_annotations": 23,
+      "local_status": "RAW_BYTES_NOT_BUNDLED"
+    },
+    {
+      "role": "main_method_and_published_counts",
+      "name": "Continued post-retraction citation of a fraudulent clinical trial report, 11 years after it was retracted for falsifying data",
+      "doi": "10.1007/s11192-020-03631-1",
+      "local_status": "PUBLISHED_COUNTS_PINNED_IN_DIAGNOSTIC"
+    },
+    {
+      "role": "negative_control_network_and_manual_inspection",
+      "name": "Propagation of errors in citation networks: a study involving the entire citation network of a widely cited paper published in, and later retracted from, the journal Nature",
+      "doi": "10.1186/s41073-016-0008-5",
+      "expected_2015_dot": "41073_2016_8_MOESM3_ESM.txt",
+      "expected_inspected_indirect_candidates": 10,
+      "expected_indirect_propagation": 0,
+      "local_status": "RAW_DOT_BYTES_NOT_BUNDLED"
+    },
+    {
+      "role": "quantitative_abstraction_stress_test",
+      "name": "Impact of Retracted Studies on Systematic Reviews and Meta-Analyses",
+      "doi": "10.1001/jamainternmed.2025.0256",
+      "expected_meta_analyses_rerun": 166,
+      "local_status": "PUBLISHED_AGGREGATES_PINNED_ROW_LEVEL_SUPPLEMENT_NOT_BUNDLED"
+    }
+  ],
+  "boundary": "Dataset/event metadata locate external evidence; they are not themselves dependency ground truth. Raw case-level source bytes are intentionally not synthesized when they cannot be acquired and hashed in this build environment."
+}

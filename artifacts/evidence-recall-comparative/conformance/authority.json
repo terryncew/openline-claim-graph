@@ -1,0 +1,30 @@
+{
+  "authority_id": "evidence-recall-comparative-authority:sha256:95d7498c67ae249e3c9d214c659a099947b3d84328bb1b118b2e4397cecee516",
+  "benchmark_id": "three-way-conformance-fixture",
+  "construction_rule": "advisory edges are fixed by fixture name; all others hard",
+  "declared_by": "conformance-fixture",
+  "edge_authority": [
+    {
+      "authority": "HARD",
+      "edge_id": "comparative-edge:sha256:38dba2e877821dbf854a95e87a8394571f1703e3c0a0b23dadbc6e37f2aa0f73"
+    },
+    {
+      "authority": "ADVISORY",
+      "edge_id": "comparative-edge:sha256:53bb81d4f11f8e2652bb3fdd51ef070cbdb3b545273c8bce424e3fc06026f9f2"
+    },
+    {
+      "authority": "HARD",
+      "edge_id": "comparative-edge:sha256:a2a19f4d913d82d968f2f3585113a241b7133b7dab382f9d20264b78d67a68a2"
+    },
+    {
+      "authority": "ADVISORY",
+      "edge_id": "comparative-edge:sha256:c25c3a0067ed17c8584ce0407cad2976cd2efe1229ae7b356db5853b6001223c"
+    },
+    {
+      "authority": "HARD",
+      "edge_id": "comparative-edge:sha256:fe63b1f84218b7fccaf7aa324d5d52cb2c862b66a59ddcc64ffb69c59f290728"
+    }
+  ],
+  "pack_id": "evidence-recall-comparative-pack:sha256:02f691293641b6fa0dead416173b4840c8a75289819e968bcea7f52917a13a7e",
+  "schema": "openline.evidence-recall-comparative-authority.v1"
+}
