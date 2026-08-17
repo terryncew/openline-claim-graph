@@ -1,0 +1,144 @@
+{
+  "benchmark_id": "temporal-selectivity-replication-001-v1",
+  "future_seal_id": "evidence-recall-temporal-future-seal:sha256:5e169ab60b6e3372aa3f3d4ed7cb339f5fa4826b569ffffee938f8bbe9479e56",
+  "records": [
+    {
+      "available_at": "2019-10-30T00:00:00Z",
+      "description": "Avenell et al. report that AHRQ included reports 11-13 and that those reports were the only evidence for 2.5 mg risedronate preventing hip fracture.",
+      "episode_id": "temporal-holdout-episode:sha256:6c17f4b406386baec11ff7c4fef0c2bb351f17929c175ffb40c0ecbb165a4162",
+      "evidence_sha256": "a5dab0cf564663469f58b44b1d69e5940fe03276cccf1be6b0f05586db738e35",
+      "locator": "doi:10.1136/bmjopen-2019-031909",
+      "record_id": "temporal-future-record:sha256:5b6618fc57995d7d18e296f3c9e5e9d7a2509ce78c815c04066c574c9d8d216f",
+      "record_type": "INDEPENDENT_DEPENDENCY_AUDIT_RELIANCE",
+      "target_node_ids": [
+        "ahrq2007:bisphosphonate-high-risk-falls-conclusion"
+      ]
+    },
+    {
+      "available_at": "2019-10-30T00:00:00Z",
+      "description": "Avenell et al. report that the handbook statement was based entirely on affected trial reports 12 and 13.",
+      "episode_id": "temporal-holdout-episode:sha256:6378d837c1e5b69548c877258a95783c2d47c05aa4b78df3e09b566d86abe4f8",
+      "evidence_sha256": "554ba9106bce16c3853feb44808a90e7e3e78f412de8f0eecc40c965d5109c59",
+      "locator": "doi:10.1136/bmjopen-2019-031909",
+      "record_id": "temporal-future-record:sha256:65d9ef72f76b30ac3aebfb961edfb71df380bd9d6d7ce32a7b2822683c2400d1",
+      "record_type": "INDEPENDENT_DEPENDENCY_AUDIT_RELIANCE",
+      "target_node_ids": [
+        "handbook2008:risedronate-fracture-prevention-conclusion"
+      ]
+    },
+    {
+      "available_at": "2016-05-03T00:00:00Z",
+      "description": "Later manual citation-use audit establishes direct propagation of the retracted result for the scored admitted contexts.",
+      "episode_id": "temporal-holdout-episode:sha256:2baa331b2ec887d76d1c14ff8f2f5e8b43dd9a7ee308466e2f5fb73d2cdbfaf5",
+      "evidence_sha256": "1bbf8af64ebee1b496c429557baa65ff2553da9eba7e0af8ffef268dd505c16b",
+      "locator": "doi:10.1186/s41073-016-0008-5",
+      "record_id": "temporal-future-record:sha256:6c4afee51fec4432cdff2b6eb97a70fe07c2ccf69428c5812baec37893726adf",
+      "record_type": "INDEPENDENT_DEPENDENCY_AUDIT_RELIANCE",
+      "target_node_ids": [
+        "cai2013:mlkl-necroptosis-context",
+        "webster2014:autophagy-necroptosis-context",
+        "zhou2012:death-by-deacetylation-summary"
+      ]
+    },
+    {
+      "available_at": "2019-10-30T00:00:00Z",
+      "description": "Avenell et al. explicitly state that report 11 in McCarus et al. was little more than a passing reference and its data were not used.",
+      "episode_id": "temporal-holdout-episode:sha256:6c17f4b406386baec11ff7c4fef0c2bb351f17929c175ffb40c0ecbb165a4162",
+      "evidence_sha256": "a5dab0cf564663469f58b44b1d69e5940fe03276cccf1be6b0f05586db738e35",
+      "locator": "doi:10.1136/bmjopen-2019-031909",
+      "record_id": "temporal-future-record:sha256:9c4ef96fa95959d0cef01a5fe0e841f353cfd6135233d080c0801e041d25a04a",
+      "record_type": "INDEPENDENT_CITATION_CONTEXT_NO_RELIANCE",
+      "target_node_ids": [
+        "mccarus:report11-passing-reference"
+      ]
+    },
+    {
+      "available_at": "2019-10-30T00:00:00Z",
+      "description": "Avenell et al. judged Peterson's conclusions to be based almost entirely on four affected trial reports including report 8.",
+      "episode_id": "temporal-holdout-episode:sha256:70f1e73f5c1180eb60ad74db74ebe4768f525996f66a5e8d33e042cf032ac03d",
+      "evidence_sha256": "d94f4ce9d5c3531780d18bcfbb2a4140f48aeaa8691a9b34e8344e915d3ccc72",
+      "locator": "doi:10.1136/bmjopen-2019-031909",
+      "record_id": "temporal-future-record:sha256:9df61a5888407eaca83816ba02daede523f26d4b8f5986115043d6b0f799d808",
+      "record_type": "INDEPENDENT_DEPENDENCY_AUDIT_RELIANCE",
+      "target_node_ids": [
+        "peterson2014:vitamin-d-parkinson-conclusion"
+      ]
+    },
+    {
+      "available_at": "2019-10-30T00:00:00Z",
+      "description": "Avenell et al. identify reports 11 and 12 as awaiting assessment in Verheyden et al.; they were not included in the scored synthesis.",
+      "episode_id": "temporal-holdout-episode:sha256:6378d837c1e5b69548c877258a95783c2d47c05aa4b78df3e09b566d86abe4f8",
+      "evidence_sha256": "554ba9106bce16c3853feb44808a90e7e3e78f412de8f0eecc40c965d5109c59",
+      "locator": "doi:10.1136/bmjopen-2019-031909",
+      "record_id": "temporal-future-record:sha256:a22cc24e81ebcdd7093f6c43733ff83cd3acfad9dd7881f8df1ff98454620d72",
+      "record_type": "FORMAL_SCOPE_EXCLUSION",
+      "target_node_ids": [
+        "verheyden2013:sato2005b-awaiting-assessment"
+      ]
+    },
+    {
+      "available_at": "2019-10-30T00:00:00Z",
+      "description": "Avenell et al. report that AHRQ excluded trial report 8 because it did not focus on falls rate or number of fallers.",
+      "episode_id": "temporal-holdout-episode:sha256:70f1e73f5c1180eb60ad74db74ebe4768f525996f66a5e8d33e042cf032ac03d",
+      "evidence_sha256": "d94f4ce9d5c3531780d18bcfbb2a4140f48aeaa8691a9b34e8344e915d3ccc72",
+      "locator": "doi:10.1136/bmjopen-2019-031909",
+      "record_id": "temporal-future-record:sha256:d5e6d63958d138576134393a2c344b9393a2fa805518936b6e2bb4c7cca96a99",
+      "record_type": "FORMAL_SCOPE_EXCLUSION",
+      "target_node_ids": [
+        "ahrq-falls:falls-prevention-conclusion"
+      ]
+    },
+    {
+      "available_at": "2019-10-30T00:00:00Z",
+      "description": "Avenell et al. report that Latham et al. appeared to exclude affected trial report 8 because of poor quality.",
+      "episode_id": "temporal-holdout-episode:sha256:70f1e73f5c1180eb60ad74db74ebe4768f525996f66a5e8d33e042cf032ac03d",
+      "evidence_sha256": "d94f4ce9d5c3531780d18bcfbb2a4140f48aeaa8691a9b34e8344e915d3ccc72",
+      "locator": "doi:10.1136/bmjopen-2019-031909",
+      "record_id": "temporal-future-record:sha256:db4074d0caabfe612e649674b6699c765d5871d20a685ad902f0c7bf7c27f5bd",
+      "record_type": "FORMAL_SCOPE_EXCLUSION",
+      "target_node_ids": [
+        "latham2003:vitamin-d-falls-conclusion"
+      ]
+    },
+    {
+      "available_at": "2025-01-27T00:00:00Z",
+      "description": "JAMA Network Open later acknowledged the retracted included study and reported an explicit reanalysis without it; the reported results did not change.",
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+      "evidence_sha256": "1d7c544f5f436475fc0b49874455f8f75aba2be21826dcb33b19b54e0e9e1e49",
+      "locator": "doi:10.1001/jamanetworkopen.2025.0887",
+      "record_id": "temporal-future-record:sha256:f61319b5d67b35d38e886154d8406e646644240e3e5de3c8477076ee057e0818",
+      "record_type": "EXPLICIT_NO_CHANGE_AFTER_REANALYSIS",
+      "target_node_ids": [
+        "shah2021:finding-improved-hemoglobin",
+        "shah2021:pooled-hemoglobin"
+      ]
+    },
+    {
+      "available_at": "2019-10-30T00:00:00Z",
+      "description": "Avenell et al. identify reports 11 and 12 as awaiting assessment in Verheyden et al.; they were not included in the scored synthesis.",
+      "episode_id": "temporal-holdout-episode:sha256:6c17f4b406386baec11ff7c4fef0c2bb351f17929c175ffb40c0ecbb165a4162",
+      "evidence_sha256": "a5dab0cf564663469f58b44b1d69e5940fe03276cccf1be6b0f05586db738e35",
+      "locator": "doi:10.1136/bmjopen-2019-031909",
+      "record_id": "temporal-future-record:sha256:f97d688514e9a906de84c30964b3457aaca9a361fc91c5827942275ace97ed1e",
+      "record_type": "FORMAL_SCOPE_EXCLUSION",
+      "target_node_ids": [
+        "verheyden2013:sato2005a-awaiting-assessment"
+      ]
+    },
+    {
+      "available_at": "2016-05-03T00:00:00Z",
+      "description": "Later manual audit identifies the scored Vitner use as method-only rather than propagation of the retracted conclusion.",
+      "episode_id": "temporal-holdout-episode:sha256:2baa331b2ec887d76d1c14ff8f2f5e8b43dd9a7ee308466e2f5fb73d2cdbfaf5",
+      "evidence_sha256": "1bbf8af64ebee1b496c429557baa65ff2553da9eba7e0af8ffef268dd505c16b",
+      "locator": "doi:10.1186/s41073-016-0008-5",
+      "record_id": "temporal-future-record:sha256:fc395332813e884102e3a63908b7ebbd241d9bfbbd0b175e2e2fee022063d6df",
+      "record_type": "INDEPENDENT_CITATION_CONTEXT_NO_RELIANCE",
+      "target_node_ids": [
+        "vitner2014:gaucher-main-conclusion"
+      ]
+    }
+  ],
+  "retrieval_cutoff_at": "2026-08-17T00:00:00Z",
+  "schema": "openline.evidence-recall-temporal-future-seal.v1",
+  "scope_definition": "Later records are admitted only where an independent case-level record establishes actual reliance/reconsideration or affirmative non-reliance/scope exclusion for the exact scored target. Silence is UNASSESSED. Kataoka aggregate counts are not converted to rows."
+}

@@ -1,0 +1,11 @@
+{
+  "available_at": "2014-02-26T00:00:00Z",
+  "facts": [
+    "Nature published the retraction note online on 2014-02-26.",
+    "The authors said data supporting an in-vitro requirement for SIRT2 in TNF-alpha-mediated necroptosis appeared irreproducible and retracted the article in its entirety."
+  ],
+  "hash_scope": "Canonical local evidence record; not publisher raw bytes.",
+  "identifier": "doi:10.1038/nature12897",
+  "schema": "openline.temporal-trigger-evidence.v1",
+  "title": "Retraction Note: The NAD-dependent deacetylase SIRT2 is required for programmed necrosis"
+}

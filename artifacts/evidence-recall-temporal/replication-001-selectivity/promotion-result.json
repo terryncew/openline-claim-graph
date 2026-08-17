@@ -1,0 +1,19 @@
+{
+  "conditions": {
+    "maximum_additional_missed_reopenings": true,
+    "minimum_reconsideration_recall": true,
+    "minimum_review_load_reduction": true,
+    "multi_episode_recurrence": true
+  },
+  "episode_metrics_id": "temporal-selectivity-episode-metrics:sha256:87823a398d64c9920ca54317737a2be50532542ecb3463934798df2c11bf1a85",
+  "failed_conditions": [],
+  "observed_additional_missed_reopenings_vs_review_all": 0,
+  "observed_episodes_with_positive_savings_and_zero_additional_misses": 4,
+  "observed_reconsideration_recall_basis_points": 10000,
+  "observed_review_load_reduction_vs_review_all_basis_points": 4285,
+  "promotion_policy_id": "temporal-replication-promotion-policy:sha256:92ddafcb47c66e3e0968589fda513ab10237d5052a32a44df711ab6fbe3ba921",
+  "promotion_result_id": "temporal-replication-promotion-result:sha256:8e21761ffd229f54742ac98418af3bfa53340acc91b647452a9c5779381ca266",
+  "schema": "openline.evidence-recall-temporal-replication-promotion-result.v1",
+  "score_id": "evidence-recall-temporal-score:sha256:b8a6fc74db6800c40a41d03715334e5ca85771d1f411126bfdc662052ea8a6c4",
+  "verdict": "PROMOTION"
+}

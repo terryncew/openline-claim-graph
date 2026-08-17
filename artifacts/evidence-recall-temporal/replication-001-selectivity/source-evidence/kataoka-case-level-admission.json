@@ -1,0 +1,11 @@
+{
+  "aggregate_facts": {
+    "included_later_retracted_rct": 239,
+    "pre_retraction_reviews_or_guidelines": 335
+  },
+  "corpus": "Kataoka 2022",
+  "doi": "10.1016/j.jclinepi.2022.06.015",
+  "reason": "Aggregate counts are source-backed, but reproducible case-level inclusion/affirmative-exclusion rows were not available to this build. No rows are synthesized from aggregate numbers or silence.",
+  "schema": "openline.temporal-case-level-admission.v1",
+  "scored_rows_admitted": 0
+}

@@ -1,0 +1,12 @@
+{
+  "available_at": "2016-05-03T00:00:00Z",
+  "facts": [
+    "The independent citation-network audit identifies Zhou and Yuan as a summary of the Narayan paper and says this summary enhanced the retracted paper's exposure.",
+    "The audit identifies Vitner et al. as an exception in which part of Narayan's experimental method was cited, rather than a propagation of the retracted result into the paper's scientific conclusion.",
+    "The audit concludes that directly citing papers were an important source of propagation overall while indirect citations did not propagate the retracted result in this case study."
+  ],
+  "hash_scope": "Canonical local evidence record; not publisher raw bytes.",
+  "identifier": "doi:10.1186/s41073-016-0008-5",
+  "schema": "openline.temporal-later-evidence.v1",
+  "title": "Propagation of errors in citation networks: a study involving the entire citation network of a widely cited paper published in, and later retracted from, the journal Nature"
+}

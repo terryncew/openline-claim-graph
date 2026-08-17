@@ -1,0 +1,28 @@
+{
+  "benchmark_id": "temporal-selectivity-replication-001-v1",
+  "build_sequence": [
+    "freeze source-backed case list",
+    "seal later records",
+    "construct public pack",
+    "freeze pre-trigger authority",
+    "write promotion policy",
+    "emit predictions",
+    "open future records into gold",
+    "score pooled and per episode",
+    "apply unchanged promotion thresholds plus recurrence sufficiency"
+  ],
+  "corpus_selection_limit": "Three Sato trigger episodes are distinct retractions but share one later Avenell audit and one research-misconduct family; episode replication is not equivalent to independent-domain replication.",
+  "engine_sha256": {
+    "src/openline_claim_graph/comparative_benchmark.py": "6c04e9e021cbc1c01aae78606acc6cd41393c99673185e1e8e3ee4ccaa06e4b1",
+    "src/openline_claim_graph/impact.py": "1757340f69e919ff68d3cdfe4265fc1ac330bc99ff5bcd20b69058fa846905a2",
+    "src/openline_claim_graph/temporal_holdout.py": "bc8f0011d65cb1c2c728ef374ebb82b86c3c08657e9919427ff5d80b2707886a"
+  },
+  "engine_sha256_expected": {
+    "src/openline_claim_graph/comparative_benchmark.py": "6c04e9e021cbc1c01aae78606acc6cd41393c99673185e1e8e3ee4ccaa06e4b1",
+    "src/openline_claim_graph/impact.py": "1757340f69e919ff68d3cdfe4265fc1ac330bc99ff5bcd20b69058fa846905a2",
+    "src/openline_claim_graph/temporal_holdout.py": "bc8f0011d65cb1c2c728ef374ebb82b86c3c08657e9919427ff5d80b2707886a"
+  },
+  "engine_unchanged": true,
+  "historical_reconstruction_limit": "The pack is reconstructed after outcomes are known. Mechanical timestamps and seals prevent explicit future records from entering the prediction artifact, but cannot prove psychological blindness of the constructor. Case-level inclusion/exclusion facts must themselves have existed by t0.",
+  "schema": "openline.temporal-selectivity-replication-custody.v1"
+}

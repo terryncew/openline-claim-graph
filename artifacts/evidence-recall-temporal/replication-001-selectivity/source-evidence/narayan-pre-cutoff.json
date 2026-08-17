@@ -1,0 +1,38 @@
+{
+  "hash_scope": "Canonical local evidence record; not publisher raw bytes.",
+  "name": "Narayan pre-retraction accepted-state evidence",
+  "note": "Authority is assigned from pre-retraction citation use only. The later audit is sealed from prediction.",
+  "records": [
+    {
+      "available_at": "2012-11-28T00:00:00Z",
+      "fact": "Narayan et al. reported SIRT2 as required for TNF-alpha-mediated necroptosis.",
+      "identifier": "doi:10.1038/nature11700",
+      "role": "invalidated-study"
+    },
+    {
+      "available_at": "2012-11-28T00:00:00Z",
+      "fact": "The contemporaneous Nature News & Views item summarized the Narayan SIRT2-necroptosis result.",
+      "identifier": "doi:10.1038/nature11761",
+      "role": "direct-summary"
+    },
+    {
+      "available_at": "2013-12-08T00:00:00Z",
+      "fact": "Cai et al. directly cited Narayan in a necroptosis paper before the retraction.",
+      "identifier": "doi:10.1038/ncb2883",
+      "role": "direct-citing-original"
+    },
+    {
+      "available_at": "2014-02-11T00:00:00Z",
+      "fact": "Webster et al. directly cited Narayan in a pre-retraction review.",
+      "identifier": "doi:10.1016/j.bbalip.2014.02.001",
+      "role": "direct-citing-review"
+    },
+    {
+      "available_at": "2014-01-19T00:00:00Z",
+      "fact": "Vitner et al. directly cited Narayan in experimental-method context; the Gaucher-disease conclusion had its own experimental basis.",
+      "identifier": "doi:10.1038/nm.3449",
+      "role": "method-only-direct-citation"
+    }
+  ],
+  "schema": "openline.temporal-source-evidence.v1"
+}

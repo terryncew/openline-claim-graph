@@ -1,0 +1,192 @@
+{
+  "benchmark_id": "temporal-mixed-selectivity-001-v1",
+  "construction_rule": "Each episode uses only information available by its own t0 cutoff. The trigger is prediction-visible. Later records are separately sealed. The Shah episode is reused unchanged from 0.5.0.dev1. For Narayan, the explicit News & Views summary relation is admitted HARD; the Vitner direct-citation candidate is UNADMITTED because its pre-cutoff citation context is method-only rather than conclusion-level reliance.",
+  "episodes": [
+    {
+      "cutoff_at": "2023-01-18T23:59:59Z",
+      "edges": [
+        {
+          "available_at": "2021-11-12T00:00:00Z",
+          "dependent_node_id": "shah2021:pooled-hemoglobin",
+          "edge_id": "temporal-edge:sha256:13c150ff39e5a862afcf0f4f493c19a45a2a3b333ce696840e9f26c9314a9b29",
+          "evidence": [
+            "Pre-cutoff review explicitly lists 111 RCTs for hemoglobin and includes reference 76, the Darwish trial."
+          ],
+          "prerequisite_node_id": "doi:10.1080/14767058.2017.1379988",
+          "relation": "DERIVED_FROM"
+        },
+        {
+          "available_at": "2021-11-12T00:00:00Z",
+          "dependent_node_id": "shah2021:finding-improved-hemoglobin",
+          "edge_id": "temporal-edge:sha256:553ba53e031a236f5caf619e3bed665daaceaca24596c228cf2a66b534e16d22",
+          "evidence": [
+            "Pre-cutoff discussion restates improved hemoglobin as a main finding from the pooled hemoglobin analysis."
+          ],
+          "prerequisite_node_id": "shah2021:pooled-hemoglobin",
+          "relation": "DERIVED_FROM"
+        }
+      ],
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+      "episode_name": "Darwish retraction -> Shah intravenous-iron meta-analysis",
+      "event": {
+        "available_at": "2023-01-19T00:00:00Z",
+        "evidence_sha256": "546e9b4108e3296e5c81ebff6be3853187eea7034e78ff3d273b24dd74746209",
+        "identifier": "doi:10.1080/14767058.2017.1379988",
+        "locator": "doi:10.1080/14767058.2023.2169999",
+        "reason": "Publisher retraction after integrity concerns about data and reported results.",
+        "status": "RETRACTED"
+      },
+      "event_at": "2023-01-19T00:00:00Z",
+      "invalidated_node_id": "doi:10.1080/14767058.2017.1379988",
+      "metadata": {
+        "case_role": "FIRST_REAL_TEMPORAL_HOLDOUT",
+        "construction_basis": "Explicit pre-cutoff study membership and derivation statements only.",
+        "domain": "SCIENTIFIC_CLINICAL",
+        "historical_resolution": "DAY"
+      },
+      "nodes": [
+        {
+          "available_at": "2017-10-03T00:00:00Z",
+          "independent_basis": false,
+          "label": "Darwish 2019 randomized trial",
+          "locator": "doi:10.1080/14767058.2017.1379988",
+          "node_id": "doi:10.1080/14767058.2017.1379988",
+          "text": "Darwish et al. randomized trial of intravenous iron dextran versus oral iron in pregnancy."
+        },
+        {
+          "available_at": "2021-11-12T00:00:00Z",
+          "independent_basis": false,
+          "label": "Shah 2021 improved-hemoglobin finding",
+          "locator": "doi:10.1001/jamanetworkopen.2021.33935#discussion",
+          "node_id": "shah2021:finding-improved-hemoglobin",
+          "text": "The systematic review identifies improved hemoglobin as one of its main findings for intravenous iron."
+        },
+        {
+          "available_at": "2021-11-12T00:00:00Z",
+          "independent_basis": false,
+          "label": "Shah 2021 pooled hemoglobin result",
+          "locator": "doi:10.1001/jamanetworkopen.2021.33935#hemoglobin",
+          "node_id": "shah2021:pooled-hemoglobin",
+          "text": "Intravenous iron was associated with a pooled hemoglobin increase of 0.57 g/dL versus oral iron or no iron."
+        }
+      ],
+      "target_node_ids": [
+        "shah2021:finding-improved-hemoglobin",
+        "shah2021:pooled-hemoglobin"
+      ]
+    },
+    {
+      "cutoff_at": "2014-02-25T23:59:59Z",
+      "edges": [
+        {
+          "available_at": "2014-01-19T00:00:00Z",
+          "dependent_node_id": "vitner2014:gaucher-main-conclusion",
+          "edge_id": "temporal-edge:sha256:4aa57c851d5f471f2fbfbeb34e0bf5d51cb95e183f0f9729a3d1c3e91117f37b",
+          "evidence": [
+            "The pre-cutoff Vitner article directly cites Narayan in experimental-method context, which establishes reachability but does not establish that the Gaucher-disease conclusion relies on the retracted SIRT2-necroptosis result."
+          ],
+          "prerequisite_node_id": "doi:10.1038/nature11700",
+          "relation": "SUPPORTS"
+        },
+        {
+          "available_at": "2012-11-28T00:00:00Z",
+          "dependent_node_id": "zhou2012:death-by-deacetylation-summary",
+          "edge_id": "temporal-edge:sha256:6db7706ea8025e9b6dfdc61351e634c57ef4d0f59f116eb49c8b802f3b3f67c6",
+          "evidence": [
+            "The pre-cutoff Nature News & Views item explicitly identifies itself as commentary on the Narayan article and summarizes its SIRT2-necroptosis result."
+          ],
+          "prerequisite_node_id": "doi:10.1038/nature11700",
+          "relation": "DERIVED_FROM"
+        }
+      ],
+      "episode_id": "temporal-holdout-episode:sha256:e1ea9907aa38136ab40efcc07df2b4396975b8879275225c6f00caca38222561",
+      "episode_name": "Narayan SIRT2 retraction -> pre-retraction direct citation contexts",
+      "event": {
+        "available_at": "2014-02-26T00:00:00Z",
+        "evidence_sha256": "5582ecd9aaa923bc5a7f12b38f66f2be3c377a8683f363ba5d6c4d74c39865ae",
+        "identifier": "doi:10.1038/nature11700",
+        "locator": "doi:10.1038/nature12897",
+        "reason": "Nature retracted the article after the reported TNF-alpha necroptosis result could not be reproduced.",
+        "status": "RETRACTED"
+      },
+      "event_at": "2014-02-26T00:00:00Z",
+      "invalidated_node_id": "doi:10.1038/nature11700",
+      "metadata": {
+        "case_role": "MIXED_REAL_TEMPORAL_SELECTIVITY",
+        "construction_basis": "Primary pre-cutoff publication and citation context only; later 2016 audit is sealed from prediction.",
+        "domain": "SCIENTIFIC_CLINICAL",
+        "historical_resolution": "DAY"
+      },
+      "nodes": [
+        {
+          "available_at": "2012-11-28T00:00:00Z",
+          "independent_basis": false,
+          "label": "Narayan 2012 SIRT2-necroptosis article",
+          "locator": "doi:10.1038/nature11700",
+          "node_id": "doi:10.1038/nature11700",
+          "text": "Narayan et al. reported a required role for SIRT2 in programmed necrosis/necroptosis."
+        },
+        {
+          "available_at": "2014-01-19T00:00:00Z",
+          "independent_basis": true,
+          "label": "Vitner 2014 Gaucher-disease conclusion",
+          "locator": "doi:10.1038/nm.3449",
+          "node_id": "vitner2014:gaucher-main-conclusion",
+          "text": "Vitner et al. conclude that modulating the RIPK3 pathway improves disease in a Gaucher-disease mouse model."
+        },
+        {
+          "available_at": "2012-11-28T00:00:00Z",
+          "independent_basis": false,
+          "label": "Zhou and Yuan 2012 News & Views summary",
+          "locator": "doi:10.1038/nature11761",
+          "node_id": "zhou2012:death-by-deacetylation-summary",
+          "text": "Death by deacetylation summarizes the reported SIRT2-dependent necrosis finding from Narayan et al."
+        }
+      ],
+      "target_node_ids": [
+        "vitner2014:gaucher-main-conclusion",
+        "zhou2012:death-by-deacetylation-summary"
+      ]
+    }
+  ],
+  "future_seal_commitment": {
+    "future_seal_id": "evidence-recall-temporal-future-seal:sha256:90f99385e3180ade0af21d5d55a508164f0e85d252f8441144781efa1b535878",
+    "record_count": 3,
+    "records_root": "56abc16d6e18485a29238e56d43899aa8cd6da9c402d215f7203577436c47cee",
+    "retrieval_cutoff_at": "2025-01-27T23:59:59Z",
+    "scope_sha256": "75c3a4cad607a972fa6b97f264e6968306e47479b6d6970c960ecdbb9f4ae891"
+  },
+  "pack_id": "evidence-recall-temporal-pack:sha256:384a474b83cc687792ac2b839fe2989091a7790550d08999dbceb6a2bec75288",
+  "schema": "openline.evidence-recall-temporal-pack.v1",
+  "source_manifest": [
+    {
+      "available_at": "2014-01-19T00:00:00Z",
+      "identifier": "narayan-zhou-vitner-pre-2014-02-26",
+      "locator": "source-evidence/narayan-pre-cutoff.json",
+      "role": "narayan-pre-cutoff-primary-context",
+      "sha256": "bd0cb7d003dec79d08c0809d5cec7153c8f9878f42e03ff45e07f7fc1470edf4"
+    },
+    {
+      "available_at": "2014-02-26T00:00:00Z",
+      "identifier": "doi:10.1038/nature12897",
+      "locator": "source-evidence/narayan-trigger.json",
+      "role": "narayan-trigger-retraction-evidence",
+      "sha256": "5582ecd9aaa923bc5a7f12b38f66f2be3c377a8683f363ba5d6c4d74c39865ae"
+    },
+    {
+      "available_at": "2021-11-12T00:00:00Z",
+      "identifier": "darwish-2017-shah-2021",
+      "locator": "source-evidence/shah-pre-cutoff.json",
+      "role": "pre-cutoff-study-and-review-evidence",
+      "sha256": "fc7f9300453c905bea2741b77c2275b5c1338908d033bcdbb85252f44a85fd2b"
+    },
+    {
+      "available_at": "2023-01-19T00:00:00Z",
+      "identifier": "doi:10.1080/14767058.2023.2169999",
+      "locator": "source-evidence/shah-trigger.json",
+      "role": "trigger-retraction-evidence",
+      "sha256": "546e9b4108e3296e5c81ebff6be3853187eea7034e78ff3d273b24dd74746209"
+    }
+  ],
+  "status": "MIXED_TEMPORAL_SELECTIVITY_INPUTS_FROZEN"
+}

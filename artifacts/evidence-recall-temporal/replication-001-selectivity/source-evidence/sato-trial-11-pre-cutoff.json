@@ -1,0 +1,32 @@
+{
+  "hash_scope": "Canonical local evidence record; not publisher raw bytes.",
+  "name": "Sato trial 11 pre-retraction dependency evidence",
+  "note": "Only facts that were encoded in the downstream publication before the trigger are used for authority. Later Avenell audit classifications are sealed.",
+  "records": [
+    {
+      "available_at": "2005-01-01T00:00:00Z",
+      "fact": "Sato et al. 2005 risedronate after stroke in elderly women",
+      "identifier": "doi:10.1212/01.WNL.0000152871.65027.76",
+      "role": "invalidated-trial"
+    },
+    {
+      "available_at": "2007-12-01T00:00:00Z",
+      "fact": "The AHRQ review included trial report 11 in its fracture evidence synthesis.",
+      "identifier": "PMID:20704035",
+      "role": "downstream-target"
+    },
+    {
+      "available_at": "2013-05-31T00:00:00Z",
+      "fact": "The Cochrane review categorised affected report 11 as awaiting assessment.",
+      "identifier": "doi:10.1002/14651858.CD008728.pub2",
+      "role": "downstream-target"
+    },
+    {
+      "available_at": "2006-12-31T00:00:00Z",
+      "fact": "The cited trial was a passing reference; its data were not used in the review.",
+      "identifier": "Avenell-2019-ref29",
+      "role": "downstream-target"
+    }
+  ],
+  "schema": "openline.temporal-source-evidence.v1"
+}

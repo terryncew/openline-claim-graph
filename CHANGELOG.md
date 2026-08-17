@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.5.2 — 2026-08-17
+
+- Added **Temporal Selectivity Replication** as corpus/evaluator work only; the three frozen Evidence Recall engine files remain byte-identical to `0.5.0.dev0` / `0.5.1`.
+- Expanded the real historical corpus from 2 to 5 trigger episodes and from 4 to 14 scored targets: retained Shah/Darwish, expanded the manually inspected Narayan episode, and added three separate Sato trial-retraction episodes using explicit inclusion/non-reliance findings from the later Avenell audit.
+- Added episode-level reporting so one large graph cannot hide failure elsewhere: pooled totals, per-trigger recall/load/savings/additional misses, and mean/median reviewer savings are all recorded.
+- Preserved the predeclared pooled promotion bar: >=95% reconsideration recall, >=40% review-load reduction versus Review-All Reachability, and zero additional missed reopenings. Added only the requested sufficiency condition: positive savings with zero additional misses must recur across at least three trigger episodes.
+- Pooled result: Review-All reviews 14 targets and catches 8/8 warranted reopenings; frozen Evidence Recall reviews 8, catches 8/8, and avoids all 6 affirmative unnecessary reviews. Reviewer reduction is 42.85% (4285 basis points), with positive savings and zero additional misses in 4/5 episodes.
+- Verdict under the frozen rule: `PROMOTION`. This promotes the observed temporal-selectivity behavior to a serious product candidate; it does not establish commercial moat, cross-domain generality, or hidden-edge discovery.
+- Recorded Kataoka's aggregate 335/239 corpus pathway but admitted zero scored Kataoka rows because reproducible case-level inclusion/affirmative-exclusion rows were not available to this build. No aggregate count or silence was converted into gold.
+- Added a stdlib-only independent verifier with 132 checks, deterministic rebuild tests, a target ledger, custody record, and the canonical `POINT / BECAUSE / BUT / SO` result card.
+- No weighted support, generalized revocation, dependency contracts, hidden-edge discovery, UI, Frame Ledger expansion, Receipt Gate work, or Successor Gate work was added.
+
+## 0.5.1 — 2026-08-17
+
+- Added the first mixed real temporal selectivity corpus without changing any frozen Evidence Recall semantics.
+- Reused the Shah/Darwish `0.5.0.dev1` episode unchanged and added a second pre-retraction Narayan SIRT2 episode with one later affirmative `REOPEN` and one affirmative `NO_REOPEN` from the independent van der Vet/Nijveen citation-context audit.
+- Added a predeclared promotion policy before gold construction: Evidence Recall must retain at least 95% reconsideration recall, reduce review load at least 40% versus Review-All Reachability, and add no missed reopenings versus Review-All. No composite score is used.
+- Mixed-corpus result: Direct Lookup catches 2/3 warranted reopenings with review load 3; Review-All catches 3/3 with review load 4 and one unnecessary review; frozen Evidence Recall catches 3/3 with review load 3 and zero unnecessary reviews.
+- Evidence Recall therefore demonstrates one unit of real case-level attention selectivity, a 25% review-load reduction versus Review-All, but fails the predeclared 40% materiality bar. Verdict: `NO_PROMOTION`.
+- Added a stdlib-only independent verifier, deterministic corpus-rebuild tests, and release-gate / installed-wheel coverage for the mixed corpus.
+- Preserved the three frozen engine files byte-for-byte. No weighted support, generalized revocation, hidden-edge discovery, UI, Receipt Gate work, Successor Gate work, or post-hoc semantic repair was added.
+
 ## 0.5.0.dev1 — 2026-08-17
 
 - Added the first real historical Evidence Recall temporal-holdout episode without changing the frozen `0.5.0.dev0` inference semantics.

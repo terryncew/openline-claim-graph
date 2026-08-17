@@ -8,7 +8,7 @@ This prototype tests one narrow idea from the earlier OLP/DSM work:
 
 It does **not** put truth in a receipt. It records representations, their declared relations, their source anchors, and their history.
 
-Status: `FIRST_REAL_TEMPORAL_CASE_RUN_NO_SELECTIVITY_ADVANTAGE_MORE_CASES_REQUIRED`. Evidence Recall remains frozen. The first real historical temporal episode is now scored, and it earns **no product promotion**.
+Status: `TEMPORAL_SELECTIVITY_REPLICATION_PROMOTED`. Evidence Recall remains frozen. Version `0.5.2` expands the temporal benchmark to five historical trigger episodes and fourteen explicitly scored targets. Frozen Evidence Recall catches 8/8 warranted reopenings while reviewing 8 targets instead of Review-All Reachability's 14, a 42.85% review-load reduction with zero additional misses. The promotion is narrow: it applies to temporal selectivity under this historical benchmark, not broad-domain generality or commercial moat.
 
 ## What works now
 
@@ -32,9 +32,17 @@ Models can run the advisory layer autonomously. A proposer emits exact-quote-anc
 See [the Frame Ledger contract](docs/FRAME_LEDGER.md) and open [`artifacts/wapo-headline-frame-ledger/review.html`](artifacts/wapo-headline-frame-ledger/review.html).
 
 
-## Temporal holdout is the next promotion test
+## Mixed temporal selectivity corpus — 0.5.1
 
-Version `0.5.0.dev0` adds a prospective-style historical benchmark without changing Evidence Recall semantics. Version `0.5.0.dev1` adds the first real historical case without changing those semantics. Each episode freezes an accepted dependency state at `t0`, binds a private future-record corpus by commitment, reveals one later event at `t1`, runs predictions without future records, and only then unseals independently dated later reconsideration evidence for scoring.
+`0.5.1` changes the evidence, not the mechanism. The frozen Shah/Darwish episode is retained and a second historical Narayan SIRT2 episode adds the first affirmative reachable `NO_REOPEN` target. Before gold construction, the benchmark declares a promotion bar: at least 95% reconsideration recall, at least 40% review-load reduction versus Review-All Reachability, and no additional missed reopenings.
+
+Across four real historical targets, the mixed gold is 3 `REOPEN` and 1 `NO_REOPEN`. Direct Lookup catches 2/3 warranted reopenings with review load 3. Review-All catches 3/3 with load 4 and one unnecessary review. Frozen Evidence Recall catches 3/3 with load 3 and zero unnecessary reviews. That is a real 25% reduction in review load versus Review-All, but it is below the predeclared 40% materiality threshold. Verdict: `NO_PROMOTION`.
+
+The narrow positive result is therefore: typed receiver authority bought back **one** unit of human attention in this tiny historical corpus without losing a warranted reopening. That is not enough to promote the product thesis, and no engine semantics were repaired after the result. See [`artifacts/evidence-recall-temporal/mixed-001-selectivity/REPORT.md`](artifacts/evidence-recall-temporal/mixed-001-selectivity/REPORT.md).
+
+## Temporal holdout evaluation lineage
+
+Version `0.5.0.dev0` adds a prospective-style historical benchmark without changing Evidence Recall semantics. Version `0.5.0.dev1` adds the first real historical case. Version `0.5.1` adds the first mixed real positive/negative selectivity corpus, again without changing those semantics. Each episode freezes an accepted dependency state at `t0`, binds a private future-record corpus by commitment, reveals one later event at `t1`, runs predictions without future records, and only then unseals independently dated later reconsideration evidence for scoring.
 
 The main systems are **Direct Lookup**, **Review-All Reachability**, and the frozen **Evidence Recall** engine. Review-All Reachability is intentionally stronger than the earlier hard-taint baseline: it simply sends every reachable target to a human. Evidence Recall therefore earns attention selectivity only if it catches later documented reopenings while waking fewer targets. Naive Transitive Taint remains an optional severity diagnostic.
 
@@ -43,6 +51,14 @@ Gold means independently recorded later **reconsideration**, not later falsity. 
 The evaluator reports precision, recall, review burden, unnecessary reviews, and reviewer savings versus Review-All. Rates are stored as exact integer ratios/basis points rather than floating point. There is no composite score or automatic promotion threshold.
 
 The checked-in temporal conformance fixture remains synthetic. `0.5.0.dev1` also contains one real historical episode: the 2021 Shah intravenous-iron meta-analysis, the January 2023 retraction of the included Darwish trial, and the January 2025 JAMA correction reporting an explicit reanalysis without that trial. Direct Lookup catches 1/2 warranted reopenings; Review-All and frozen Evidence Recall catch 2/2, but Evidence Recall reviews the same two targets and therefore saves zero reviewer attention. This is `NO_PROMOTION`, not evidence of selectivity. See [`experiments/evidence_recall_temporal/PROTOCOL.md`](experiments/evidence_recall_temporal/PROTOCOL.md).
+
+## Temporal selectivity replication (0.5.2)
+
+Version `0.5.2` adds no new Evidence Recall semantics. It expands the temporal holdout into five historical trigger episodes and fourteen explicitly scored targets, and adds episode-level replication reporting. Gold still means later independently recorded reconsideration or affirmative non-reliance; silence is never a negative.
+
+The pooled result crosses the frozen product-candidate bar: Review-All Reachability catches 8/8 warranted reopenings while reviewing 14 targets; frozen Evidence Recall catches 8/8 while reviewing 8. That is 6 avoided reviews, or 42.85% reviewer-load reduction, with zero additional misses. Positive savings with zero additional misses recur in 4/5 trigger episodes. The predeclared threshold is >=95% recall, >=40% review reduction, zero additional misses, plus recurring savings across at least three triggers. Verdict: `PROMOTION`.
+
+The result is intentionally narrow. Three trigger episodes are Sato-family retractions graded by the same later Avenell audit, and all historical packs were reconstructed after outcomes were known. Kataoka's aggregate corpus pathway is recorded but contributes no scored rows because case-level inclusion/affirmative-exclusion rows were not reproducible here. This is evidence for temporal selectivity, not proof of broad-domain generality or commercial moat. See `artifacts/evidence-recall-temporal/replication-001-selectivity/REPORT.md`.
 
 ## Structural comparative benchmark (0.4)
 

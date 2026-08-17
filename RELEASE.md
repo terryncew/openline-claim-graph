@@ -1,26 +1,25 @@
 # Push status
 
-Version: `0.5.0.dev1`
+Version: `0.5.2`
 
-Disposition: `READY_TO_PUSH_AS_EXPERIMENTAL_FIRST_REAL_TEMPORAL_CASE_NO_PROMOTION`
+Disposition: `READY_TO_PUSH_TEMPORAL_SELECTIVITY_REPLICATION_PROMOTION`
 
-This build adds one empirical asset only: the first real historical case pack for the Evidence Recall Temporal Holdout Benchmark. The frozen `0.5.0.dev0` Evidence Recall engine is byte-for-byte unchanged.
+This build changes the corpus and evaluation record only. The frozen Evidence Recall engine bytes are unchanged.
 
-The case freezes the 2021 Shah et al. intravenous-iron meta-analysis before the January 19, 2023 retraction of an included Darwish randomized trial. The pre-cutoff review explicitly places that trial (reference 76) inside the 111-RCT hemoglobin analysis. A private future seal commits to the January 27, 2025 JAMA correction before prediction; the correction later records an explicit reanalysis without the retracted study and says the reported results were unaffected.
+The replication corpus contains five historical trigger episodes and fourteen scored targets. Gold is admitted only when a later case-level record establishes explicit reliance/reconsideration or affirmative non-reliance/scope exclusion; silence remains unassessed. Kataoka aggregate counts are recorded but contribute zero scored rows because case-level rows were not reproducible in this build.
 
-Under the frozen gold rule, both scored targets are `REOPEN`: the pooled hemoglobin result and the downstream improved-hemoglobin finding were actually reconsidered.
+Pooled result:
 
-Result:
+- Direct Lookup: 7/8 warranted reopenings caught; review load 13.
+- Review-All Reachability: 8/8 caught; review load 14; 6 unnecessary reviews.
+- Frozen Evidence Recall: 8/8 caught; review load 8; 0 unnecessary reviews.
+- Reviewer savings versus Review-All: 6/14 = 42.85%.
+- Positive savings with zero additional misses recur in 4/5 trigger episodes.
 
-- Direct Lookup: 1/2 reopenings caught; review load 1.
-- Review-All Reachability: 2/2 caught; review load 2.
-- Frozen Evidence Recall: 2/2 caught; review load 2.
-- Evidence Recall reviewer savings vs Review-All: **0**.
+Predeclared bar: at least 95% recall, at least 40% pooled review-load reduction, zero additional misses versus Review-All, plus recurring savings across at least three trigger episodes.
 
-Verdict: `NO_PROMOTION`. The case establishes real historical temporal mechanism contact but no attention-selectivity advantage. Because both gold labels are positive, it does not estimate false-review precision and cannot by itself grade the larger product thesis.
+Verdict: `PROMOTION`.
 
-A stdlib-only verifier independently checks 36 custody, timestamp, content-ID, frozen-engine, reachability, gold, and score properties. The release gate also rebuilds the case, validates it through the installed wheel, and requires the no-selectivity result to remain exact.
+The promotion is narrow: temporal selectivity under this frozen historical benchmark. Three of five trigger episodes are Sato-family retractions graded by one later Avenell audit, so the result is not broad independent-domain replication or a commercial moat claim.
 
-Status: `FIRST_REAL_TEMPORAL_CASE_RUN_NO_SELECTIVITY_ADVANTAGE_MORE_CASES_REQUIRED`
-
-No weighted support, new basis type, generalized revocation, hidden-edge discovery, UI, Receipt Gate work, Successor Gate work, or semantic rescue is included.
+No engine repair, weighted support, generalized revocation, hidden-edge discovery, UI, Frame Ledger expansion, Receipt Gate work, or Successor Gate work is included.

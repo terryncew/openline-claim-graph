@@ -1,0 +1,37 @@
+{
+  "hash_scope": "Canonical local evidence record; not publisher raw bytes.",
+  "records": [
+    {
+      "available_at": "2012-11-28T00:00:00Z",
+      "facts": [
+        "Narayan et al. reported that SIRT2 was required for TNF-alpha-mediated necroptosis and proposed a SIRT2-dependent mechanism involving RIP1/RIP3.",
+        "The article was published online on 2012-11-28."
+      ],
+      "identifier": "doi:10.1038/nature11700",
+      "role": "invalidated-study",
+      "title": "The NAD-dependent deacetylase SIRT2 is required for programmed necrosis"
+    },
+    {
+      "available_at": "2012-11-28T00:00:00Z",
+      "facts": [
+        "The Nature News & Views item states that a sirtuin protein regulates one form of necrosis through deacetylation and points readers to the Narayan article on page 199.",
+        "Its references identify Narayan et al. 2012 as the paper under discussion."
+      ],
+      "identifier": "doi:10.1038/nature11761",
+      "role": "direct-summary",
+      "title": "Death by deacetylation"
+    },
+    {
+      "available_at": "2014-01-19T00:00:00Z",
+      "facts": [
+        "Vitner et al. report that RIPK3 deficiency improves neurological and systemic disease in a Gaucher-disease mouse model.",
+        "The paper directly cites Narayan et al. in its experimental-method context for RIPK3 detection rather than as the basis for the Gaucher-disease therapeutic conclusion.",
+        "Because the pre-cutoff citation establishes neighborhood membership but not conclusion-level dependence on the Narayan SIRT2-necroptosis result, that candidate relation is frozen as UNADMITTED."
+      ],
+      "identifier": "doi:10.1038/nm.3449",
+      "role": "direct-method-citation",
+      "title": "RIPK3 as a potential therapeutic target for Gaucher's disease"
+    }
+  ],
+  "schema": "openline.temporal-source-evidence.v1"
+}

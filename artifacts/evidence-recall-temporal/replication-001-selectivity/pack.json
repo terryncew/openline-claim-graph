@@ -1,0 +1,539 @@
+{
+  "benchmark_id": "temporal-selectivity-replication-001-v1",
+  "construction_rule": "Reuse Shah unchanged. For every added episode, build only from facts available by its t0 cutoff. HARD means explicit pre-trigger inclusion or conclusion-level reliance; UNADMITTED means explicit exclusion, awaiting-assessment status, method-only use, or passing citation with no data use. Later audits are sealed from prediction. No silence is scored as NO_REOPEN.",
+  "episodes": [
+    {
+      "cutoff_at": "2014-02-25T23:59:59Z",
+      "edges": [
+        {
+          "available_at": "2014-02-11T00:00:00Z",
+          "dependent_node_id": "webster2014:autophagy-necroptosis-context",
+          "edge_id": "temporal-edge:sha256:a32697a50c3ee1dac07083a0fbcf84f3b2a0f805e084aea93f6a2c5cbf28880b",
+          "evidence": [
+            "Webster directly cites the pre-retraction Narayan result in the relevant review context."
+          ],
+          "prerequisite_node_id": "doi:10.1038/nature11700",
+          "relation": "SUPPORTS"
+        },
+        {
+          "available_at": "2012-11-28T00:00:00Z",
+          "dependent_node_id": "zhou2012:death-by-deacetylation-summary",
+          "edge_id": "temporal-edge:sha256:b5804ace319a9e8f32fe27ff7b293f3300a669c0076247d35425cd20bc414550",
+          "evidence": [
+            "The News & Views item explicitly summarizes Narayan's main reported result."
+          ],
+          "prerequisite_node_id": "doi:10.1038/nature11700",
+          "relation": "DERIVED_FROM"
+        },
+        {
+          "available_at": "2014-01-19T00:00:00Z",
+          "dependent_node_id": "vitner2014:gaucher-main-conclusion",
+          "edge_id": "temporal-edge:sha256:d149430485b7bad39c6e9650f38b5371d0ce2d71e154dcebdd0d573324a012a8",
+          "evidence": [
+            "Vitner cites Narayan for experimental method, establishing reachability but not conclusion-level reliance."
+          ],
+          "prerequisite_node_id": "doi:10.1038/nature11700",
+          "relation": "SUPPORTS"
+        },
+        {
+          "available_at": "2013-12-08T00:00:00Z",
+          "dependent_node_id": "cai2013:mlkl-necroptosis-context",
+          "edge_id": "temporal-edge:sha256:e8baf6b99ed5fe0f5bfa9e21f778110843aa57207be4105e0937b23d2cb2644b",
+          "evidence": [
+            "Cai directly cites the pre-retraction Narayan result in the necroptosis context."
+          ],
+          "prerequisite_node_id": "doi:10.1038/nature11700",
+          "relation": "SUPPORTS"
+        }
+      ],
+      "episode_id": "temporal-holdout-episode:sha256:2baa331b2ec887d76d1c14ff8f2f5e8b43dd9a7ee308466e2f5fb73d2cdbfaf5",
+      "episode_name": "Narayan SIRT2 retraction \u2014 expanded manually inspected direct contexts",
+      "event": {
+        "available_at": "2014-02-26T00:00:00Z",
+        "evidence_sha256": "6bb0982272118517e6fb05234ff75c2100ec32ed896d17b349bcb61af8fa50d9",
+        "identifier": "doi:10.1038/nature11700",
+        "locator": "doi:10.1038/nature12897",
+        "reason": "Key TNF-alpha necroptosis data appeared irreproducible.",
+        "status": "RETRACTED"
+      },
+      "event_at": "2014-02-26T00:00:00Z",
+      "invalidated_node_id": "doi:10.1038/nature11700",
+      "metadata": {
+        "case_role": "TEMPORAL_SELECTIVITY_REPLICATION",
+        "domain": "SCIENTIFIC_CLINICAL",
+        "historical_resolution": "DAY",
+        "source_family": "NARAYAN_VAN_DER_VET"
+      },
+      "nodes": [
+        {
+          "available_at": "2013-12-08T00:00:00Z",
+          "independent_basis": false,
+          "label": "Cai et al. necroptosis paper",
+          "locator": "doi:10.1038/ncb2883",
+          "node_id": "cai2013:mlkl-necroptosis-context",
+          "text": "Pre-retraction direct citation in a paper about TNF-induced necroptosis."
+        },
+        {
+          "available_at": "2012-11-28T00:00:00Z",
+          "independent_basis": false,
+          "label": "Narayan 2012 SIRT2-necroptosis article",
+          "locator": "doi:10.1038/nature11700",
+          "node_id": "doi:10.1038/nature11700",
+          "text": "SIRT2 was reported as required for programmed necrosis."
+        },
+        {
+          "available_at": "2014-01-19T00:00:00Z",
+          "independent_basis": true,
+          "label": "Vitner 2014 Gaucher conclusion",
+          "locator": "doi:10.1038/nm.3449",
+          "node_id": "vitner2014:gaucher-main-conclusion",
+          "text": "RIPK3 modulation improves disease in a Gaucher-disease mouse model."
+        },
+        {
+          "available_at": "2014-02-11T00:00:00Z",
+          "independent_basis": false,
+          "label": "Webster et al. review",
+          "locator": "doi:10.1016/j.bbalip.2014.02.001",
+          "node_id": "webster2014:autophagy-necroptosis-context",
+          "text": "Pre-retraction direct citation in a review discussing acetylation and cell-death biology."
+        },
+        {
+          "available_at": "2012-11-28T00:00:00Z",
+          "independent_basis": false,
+          "label": "Zhou & Yuan 2012 News & Views",
+          "locator": "doi:10.1038/nature11761",
+          "node_id": "zhou2012:death-by-deacetylation-summary",
+          "text": "Summary of the Narayan SIRT2-necroptosis result."
+        }
+      ],
+      "target_node_ids": [
+        "cai2013:mlkl-necroptosis-context",
+        "vitner2014:gaucher-main-conclusion",
+        "webster2014:autophagy-necroptosis-context",
+        "zhou2012:death-by-deacetylation-summary"
+      ]
+    },
+    {
+      "cutoff_at": "2023-01-18T23:59:59Z",
+      "edges": [
+        {
+          "available_at": "2021-11-12T00:00:00Z",
+          "dependent_node_id": "shah2021:pooled-hemoglobin",
+          "edge_id": "temporal-edge:sha256:13c150ff39e5a862afcf0f4f493c19a45a2a3b333ce696840e9f26c9314a9b29",
+          "evidence": [
+            "Pre-cutoff review explicitly lists 111 RCTs for hemoglobin and includes reference 76, the Darwish trial."
+          ],
+          "prerequisite_node_id": "doi:10.1080/14767058.2017.1379988",
+          "relation": "DERIVED_FROM"
+        },
+        {
+          "available_at": "2021-11-12T00:00:00Z",
+          "dependent_node_id": "shah2021:finding-improved-hemoglobin",
+          "edge_id": "temporal-edge:sha256:553ba53e031a236f5caf619e3bed665daaceaca24596c228cf2a66b534e16d22",
+          "evidence": [
+            "Pre-cutoff discussion restates improved hemoglobin as a main finding from the pooled hemoglobin analysis."
+          ],
+          "prerequisite_node_id": "shah2021:pooled-hemoglobin",
+          "relation": "DERIVED_FROM"
+        }
+      ],
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+      "episode_name": "Darwish retraction -> Shah intravenous-iron meta-analysis",
+      "event": {
+        "available_at": "2023-01-19T00:00:00Z",
+        "evidence_sha256": "546e9b4108e3296e5c81ebff6be3853187eea7034e78ff3d273b24dd74746209",
+        "identifier": "doi:10.1080/14767058.2017.1379988",
+        "locator": "doi:10.1080/14767058.2023.2169999",
+        "reason": "Publisher retraction after integrity concerns about data and reported results.",
+        "status": "RETRACTED"
+      },
+      "event_at": "2023-01-19T00:00:00Z",
+      "invalidated_node_id": "doi:10.1080/14767058.2017.1379988",
+      "metadata": {
+        "case_role": "FIRST_REAL_TEMPORAL_HOLDOUT",
+        "construction_basis": "Explicit pre-cutoff study membership and derivation statements only.",
+        "domain": "SCIENTIFIC_CLINICAL",
+        "historical_resolution": "DAY"
+      },
+      "nodes": [
+        {
+          "available_at": "2017-10-03T00:00:00Z",
+          "independent_basis": false,
+          "label": "Darwish 2019 randomized trial",
+          "locator": "doi:10.1080/14767058.2017.1379988",
+          "node_id": "doi:10.1080/14767058.2017.1379988",
+          "text": "Darwish et al. randomized trial of intravenous iron dextran versus oral iron in pregnancy."
+        },
+        {
+          "available_at": "2021-11-12T00:00:00Z",
+          "independent_basis": false,
+          "label": "Shah 2021 improved-hemoglobin finding",
+          "locator": "doi:10.1001/jamanetworkopen.2021.33935#discussion",
+          "node_id": "shah2021:finding-improved-hemoglobin",
+          "text": "The systematic review identifies improved hemoglobin as one of its main findings for intravenous iron."
+        },
+        {
+          "available_at": "2021-11-12T00:00:00Z",
+          "independent_basis": false,
+          "label": "Shah 2021 pooled hemoglobin result",
+          "locator": "doi:10.1001/jamanetworkopen.2021.33935#hemoglobin",
+          "node_id": "shah2021:pooled-hemoglobin",
+          "text": "Intravenous iron was associated with a pooled hemoglobin increase of 0.57 g/dL versus oral iron or no iron."
+        }
+      ],
+      "target_node_ids": [
+        "shah2021:finding-improved-hemoglobin",
+        "shah2021:pooled-hemoglobin"
+      ]
+    },
+    {
+      "cutoff_at": "2016-06-02T23:59:59Z",
+      "edges": [
+        {
+          "available_at": "2013-05-31T00:00:00Z",
+          "dependent_node_id": "verheyden2013:sato2005b-awaiting-assessment",
+          "edge_id": "temporal-edge:sha256:7997ad9226c0f399b0d30c693898524e0db1b759f0419267e6243fea6c26c9c6",
+          "evidence": [
+            "Reachable citation exists, but awaiting-assessment status means no admitted dependency in the scored review conclusion."
+          ],
+          "prerequisite_node_id": "doi:10.1001/archinte.165.15.1743",
+          "relation": "SUPPORTS"
+        },
+        {
+          "available_at": "2008-04-01T00:00:00Z",
+          "dependent_node_id": "handbook2008:risedronate-fracture-prevention-conclusion",
+          "edge_id": "temporal-edge:sha256:d760a153ca48c25317ae19aefd3b25d176d38ab741adde854b091e5dc4604d33",
+          "evidence": [
+            "The scored conclusion explicitly uses the affected report as an evidentiary basis."
+          ],
+          "prerequisite_node_id": "doi:10.1001/archinte.165.15.1743",
+          "relation": "SUPPORTS"
+        }
+      ],
+      "episode_id": "temporal-holdout-episode:sha256:6378d837c1e5b69548c877258a95783c2d47c05aa4b78df3e09b566d86abe4f8",
+      "episode_name": "Sato trial 12 retraction \u2014 explicit inclusion versus affirmative non-reliance",
+      "event": {
+        "available_at": "2016-06-03T00:00:00Z",
+        "evidence_sha256": "daa405012c8d5b9fde741ab4eb519797566764cdb422f418bd6cdd4db0ffc022",
+        "identifier": "doi:10.1001/archinte.165.15.1743",
+        "locator": "doi:10.1001/jamainternmed.2016.3771",
+        "reason": "JAMA Internal Medicine published the retraction notice online on 2016-06-03 because of scientific misconduct and data-integrity concerns.",
+        "status": "RETRACTED"
+      },
+      "event_at": "2016-06-03T00:00:00Z",
+      "invalidated_node_id": "doi:10.1001/archinte.165.15.1743",
+      "metadata": {
+        "case_role": "TEMPORAL_SELECTIVITY_REPLICATION",
+        "domain": "SCIENTIFIC_CLINICAL",
+        "historical_resolution": "DAY",
+        "source_family": "SATO_AVENELL",
+        "timestamp_note": "Exact publication day used where available."
+      },
+      "nodes": [
+        {
+          "available_at": "2005-08-08T00:00:00Z",
+          "independent_basis": false,
+          "label": "Sato et al. 2005 risedronate in men after stroke",
+          "locator": "doi:10.1001/archinte.165.15.1743",
+          "node_id": "doi:10.1001/archinte.165.15.1743",
+          "text": "Sato et al. 2005 risedronate in men after stroke"
+        },
+        {
+          "available_at": "2008-04-01T00:00:00Z",
+          "independent_basis": false,
+          "label": "2008 evidence-based nursing handbook",
+          "locator": "Avenell-2019-ref56",
+          "node_id": "handbook2008:risedronate-fracture-prevention-conclusion",
+          "text": "Risedronate fracture-prevention statement for older stroke/Alzheimer populations."
+        },
+        {
+          "available_at": "2013-05-31T00:00:00Z",
+          "independent_basis": false,
+          "label": "Verheyden 2013 falls-after-stroke review \u2014 report 12",
+          "locator": "doi:10.1002/14651858.CD008728.pub2",
+          "node_id": "verheyden2013:sato2005b-awaiting-assessment",
+          "text": "Sato 2005 report remained awaiting assessment rather than included."
+        }
+      ],
+      "target_node_ids": [
+        "handbook2008:risedronate-fracture-prevention-conclusion",
+        "verheyden2013:sato2005b-awaiting-assessment"
+      ]
+    },
+    {
+      "cutoff_at": "2016-07-11T23:59:59Z",
+      "edges": [
+        {
+          "available_at": "2013-05-31T00:00:00Z",
+          "dependent_node_id": "verheyden2013:sato2005a-awaiting-assessment",
+          "edge_id": "temporal-edge:sha256:7c9c85eccf9eed0ce3f9bf1b3cc7511ff4b7b7b705ab5a58dc95945f59ff1530",
+          "evidence": [
+            "Reachable citation exists, but awaiting-assessment status means no admitted dependency in the scored review conclusion."
+          ],
+          "prerequisite_node_id": "doi:10.1212/01.WNL.0000152871.65027.76",
+          "relation": "SUPPORTS"
+        },
+        {
+          "available_at": "2006-12-31T00:00:00Z",
+          "dependent_node_id": "mccarus:report11-passing-reference",
+          "edge_id": "temporal-edge:sha256:c659dea0d93789021d60e691b583a112fb38857bfd5daa5e273b7f95b02e6f1b",
+          "evidence": [
+            "Citation establishes reachability but no data-use dependency for the scored conclusion."
+          ],
+          "prerequisite_node_id": "doi:10.1212/01.WNL.0000152871.65027.76",
+          "relation": "SUPPORTS"
+        },
+        {
+          "available_at": "2007-12-01T00:00:00Z",
+          "dependent_node_id": "ahrq2007:bisphosphonate-high-risk-falls-conclusion",
+          "edge_id": "temporal-edge:sha256:eae74ec8a1873b6b5c24f202ba15c38efa474a3efc0119a39e7a186a47d20ba9",
+          "evidence": [
+            "The trial is an included evidentiary input to the scored synthesis."
+          ],
+          "prerequisite_node_id": "doi:10.1212/01.WNL.0000152871.65027.76",
+          "relation": "SUPPORTS"
+        }
+      ],
+      "episode_id": "temporal-holdout-episode:sha256:6c17f4b406386baec11ff7c4fef0c2bb351f17929c175ffb40c0ecbb165a4162",
+      "episode_name": "Sato trial 11 retraction \u2014 explicit inclusion versus affirmative non-reliance",
+      "event": {
+        "available_at": "2016-07-12T00:00:00Z",
+        "evidence_sha256": "663e0c26a78b5cd94dbf5a2687b9ee124a2342ade7eb59a70b6da1dd76545da2",
+        "identifier": "doi:10.1212/01.WNL.0000152871.65027.76",
+        "locator": "doi:10.1212/WNL.0000000000002788",
+        "reason": "Neurology published the retraction record on 2016-07-12.",
+        "status": "RETRACTED"
+      },
+      "event_at": "2016-07-12T00:00:00Z",
+      "invalidated_node_id": "doi:10.1212/01.WNL.0000152871.65027.76",
+      "metadata": {
+        "case_role": "TEMPORAL_SELECTIVITY_REPLICATION",
+        "domain": "SCIENTIFIC_CLINICAL",
+        "historical_resolution": "DAY",
+        "source_family": "SATO_AVENELL",
+        "timestamp_note": "Exact publication day used where available."
+      },
+      "nodes": [
+        {
+          "available_at": "2007-12-01T00:00:00Z",
+          "independent_basis": false,
+          "label": "AHRQ 2007 fracture review",
+          "locator": "PMID:20704035",
+          "node_id": "ahrq2007:bisphosphonate-high-risk-falls-conclusion",
+          "text": "Bisphosphonate evidence for high-risk falls populations and low-dose risedronate."
+        },
+        {
+          "available_at": "2005-01-01T00:00:00Z",
+          "independent_basis": false,
+          "label": "Sato et al. 2005 risedronate after stroke in elderly women",
+          "locator": "doi:10.1212/01.WNL.0000152871.65027.76",
+          "node_id": "doi:10.1212/01.WNL.0000152871.65027.76",
+          "text": "Sato et al. 2005 risedronate after stroke in elderly women"
+        },
+        {
+          "available_at": "2006-12-31T00:00:00Z",
+          "independent_basis": false,
+          "label": "McCarus review \u2014 report 11",
+          "locator": "Avenell-2019-ref29",
+          "node_id": "mccarus:report11-passing-reference",
+          "text": "Narrative review containing a passing citation to the trial."
+        },
+        {
+          "available_at": "2013-05-31T00:00:00Z",
+          "independent_basis": false,
+          "label": "Verheyden 2013 falls-after-stroke review \u2014 report 11",
+          "locator": "doi:10.1002/14651858.CD008728.pub2",
+          "node_id": "verheyden2013:sato2005a-awaiting-assessment",
+          "text": "Sato 2005 report remained awaiting assessment rather than included."
+        }
+      ],
+      "target_node_ids": [
+        "ahrq2007:bisphosphonate-high-risk-falls-conclusion",
+        "mccarus:report11-passing-reference",
+        "verheyden2013:sato2005a-awaiting-assessment"
+      ]
+    },
+    {
+      "cutoff_at": "2017-07-31T23:59:59Z",
+      "edges": [
+        {
+          "available_at": "2007-12-31T00:00:00Z",
+          "dependent_node_id": "ahrq-falls:falls-prevention-conclusion",
+          "edge_id": "temporal-edge:sha256:262c5ac4e867c0b64d8b57ae78da4617ada0d35733f46a5c0b0bf01a8fbf66db",
+          "evidence": [
+            "Citation establishes reachability, but explicit scope exclusion means no admitted dependency for the scored conclusion."
+          ],
+          "prerequisite_node_id": "doi:10.1136/jnnp.66.1.64",
+          "relation": "SUPPORTS"
+        },
+        {
+          "available_at": "2014-03-05T00:00:00Z",
+          "dependent_node_id": "peterson2014:vitamin-d-parkinson-conclusion",
+          "edge_id": "temporal-edge:sha256:5f3ba54de3080f4c936fd091f46ea8fbb6788c19f7d82d416c8dc066c6b721e4",
+          "evidence": [
+            "The review used the Sato report as conclusion-level evidence."
+          ],
+          "prerequisite_node_id": "doi:10.1136/jnnp.66.1.64",
+          "relation": "SUPPORTS"
+        },
+        {
+          "available_at": "2003-08-15T00:00:00Z",
+          "dependent_node_id": "latham2003:vitamin-d-falls-conclusion",
+          "edge_id": "temporal-edge:sha256:93d5542d6c8190ea9e701d1439ecfbc42008eee350ec4aa6a16035aef134c980",
+          "evidence": [
+            "Citation establishes reachability, but explicit exclusion means the scored synthesis did not depend on the trial."
+          ],
+          "prerequisite_node_id": "doi:10.1136/jnnp.66.1.64",
+          "relation": "SUPPORTS"
+        }
+      ],
+      "episode_id": "temporal-holdout-episode:sha256:70f1e73f5c1180eb60ad74db74ebe4768f525996f66a5e8d33e042cf032ac03d",
+      "episode_name": "Sato trial 8 retraction \u2014 explicit inclusion versus affirmative non-reliance",
+      "event": {
+        "available_at": "2017-08-31T23:59:59Z",
+        "evidence_sha256": "6648ff7de87bbe7917744ad76e172e4f5f0628bfdf51e0c663de95195a994290",
+        "identifier": "doi:10.1136/jnnp.66.1.64",
+        "locator": "doi:10.1136/jnnp.66.1.64ret",
+        "reason": "The trial was retracted in 2017; this benchmark uses an August 2017 month-resolution trigger marker because an exact online day is not asserted by the frozen source record.",
+        "status": "RETRACTED"
+      },
+      "event_at": "2017-08-31T23:59:59Z",
+      "invalidated_node_id": "doi:10.1136/jnnp.66.1.64",
+      "metadata": {
+        "case_role": "TEMPORAL_SELECTIVITY_REPLICATION",
+        "domain": "SCIENTIFIC_CLINICAL",
+        "historical_resolution": "MONTH",
+        "source_family": "SATO_AVENELL",
+        "timestamp_note": "Month-resolution benchmark marker; not asserted as exact publisher day."
+      },
+      "nodes": [
+        {
+          "available_at": "2007-12-31T00:00:00Z",
+          "independent_basis": false,
+          "label": "AHRQ falls-prevention guideline",
+          "locator": "Avenell-2019-ref57",
+          "node_id": "ahrq-falls:falls-prevention-conclusion",
+          "text": "AHRQ review of interventions to prevent falls in older people."
+        },
+        {
+          "available_at": "1999-01-01T00:00:00Z",
+          "independent_basis": false,
+          "label": "Sato et al. 1999 vitamin D/Parkinson osteopenia trial",
+          "locator": "doi:10.1136/jnnp.66.1.64",
+          "node_id": "doi:10.1136/jnnp.66.1.64",
+          "text": "Sato et al. 1999 vitamin D/Parkinson osteopenia trial"
+        },
+        {
+          "available_at": "2003-08-15T00:00:00Z",
+          "independent_basis": false,
+          "label": "Latham 2003 vitamin D/falls review",
+          "locator": "doi:10.1046/j.1532-5415.2003.51405.x",
+          "node_id": "latham2003:vitamin-d-falls-conclusion",
+          "text": "Systematic review of vitamin D supplementation, physical performance, and falls."
+        },
+        {
+          "available_at": "2014-03-05T00:00:00Z",
+          "independent_basis": false,
+          "label": "Peterson 2014 vitamin D/Parkinson review",
+          "locator": "doi:10.1016/j.maturitas.2014.02.012",
+          "node_id": "peterson2014:vitamin-d-parkinson-conclusion",
+          "text": "Review conclusion about vitamin D and Parkinson's disease."
+        }
+      ],
+      "target_node_ids": [
+        "ahrq-falls:falls-prevention-conclusion",
+        "latham2003:vitamin-d-falls-conclusion",
+        "peterson2014:vitamin-d-parkinson-conclusion"
+      ]
+    }
+  ],
+  "future_seal_commitment": {
+    "future_seal_id": "evidence-recall-temporal-future-seal:sha256:5e169ab60b6e3372aa3f3d4ed7cb339f5fa4826b569ffffee938f8bbe9479e56",
+    "record_count": 11,
+    "records_root": "ef05788440f4acb8f0c89a18dbbb7210d52e2854e339a85922d61c5d7609b3ba",
+    "retrieval_cutoff_at": "2026-08-17T00:00:00Z",
+    "scope_sha256": "9bb2e8f7a91676589b61bfaf11b2ba4442266fab05eb8b05e0719f0d053a2472"
+  },
+  "pack_id": "evidence-recall-temporal-pack:sha256:2032028f1f13ce92d87669e407cfcd9cae0d289359ef7d4c03da574bcde689f7",
+  "schema": "openline.evidence-recall-temporal-pack.v1",
+  "source_manifest": [
+    {
+      "available_at": "2022-07-01T00:00:00Z",
+      "identifier": "doi:10.1016/j.jclinepi.2022.06.015",
+      "locator": "source-evidence/kataoka-case-level-admission.json",
+      "role": "kataoka-case-level-admission",
+      "sha256": "c206729ab6dc17b1e2b3624d366ec135be7e4fbe47039ed89aff772754ecbcf5"
+    },
+    {
+      "available_at": "2014-02-11T00:00:00Z",
+      "identifier": "narayan-pre-retraction-contexts",
+      "locator": "source-evidence/narayan-pre-cutoff.json",
+      "role": "narayan-pre-cutoff",
+      "sha256": "0a7bf864d9e25276659c313d8849880670cc23a030aa500243eebd76188fec98"
+    },
+    {
+      "available_at": "2014-02-26T00:00:00Z",
+      "identifier": "doi:10.1038/nature12897",
+      "locator": "source-evidence/narayan-trigger.json",
+      "role": "narayan-trigger",
+      "sha256": "6bb0982272118517e6fb05234ff75c2100ec32ed896d17b349bcb61af8fa50d9"
+    },
+    {
+      "available_at": "2021-11-12T00:00:00Z",
+      "identifier": "darwish-2017-shah-2021",
+      "locator": "source-evidence/shah-pre-cutoff.json",
+      "role": "pre-cutoff-study-and-review-evidence",
+      "sha256": "fc7f9300453c905bea2741b77c2275b5c1338908d033bcdbb85252f44a85fd2b"
+    },
+    {
+      "available_at": "2013-05-31T00:00:00Z",
+      "identifier": "sato-trial-11-pre-cutoff-evidence",
+      "locator": "source-evidence/sato-trial-11-pre-cutoff.json",
+      "role": "sato-trial-11-pre-cutoff",
+      "sha256": "3f0a341cc0ed00ad9c944422816e22b1860f5d03cbd7c880e0d1b273b2c18f24"
+    },
+    {
+      "available_at": "2016-07-12T00:00:00Z",
+      "identifier": "doi:10.1212/WNL.0000000000002788",
+      "locator": "source-evidence/sato-trial-11-trigger.json",
+      "role": "sato-trial-11-trigger",
+      "sha256": "663e0c26a78b5cd94dbf5a2687b9ee124a2342ade7eb59a70b6da1dd76545da2"
+    },
+    {
+      "available_at": "2013-05-31T00:00:00Z",
+      "identifier": "sato-trial-12-pre-cutoff-evidence",
+      "locator": "source-evidence/sato-trial-12-pre-cutoff.json",
+      "role": "sato-trial-12-pre-cutoff",
+      "sha256": "866cd4ff860ff3bf7586c7f0636cb0c9d842b53497653ba9b0ab6f3e0d53e06b"
+    },
+    {
+      "available_at": "2016-06-03T00:00:00Z",
+      "identifier": "doi:10.1001/jamainternmed.2016.3771",
+      "locator": "source-evidence/sato-trial-12-trigger.json",
+      "role": "sato-trial-12-trigger",
+      "sha256": "daa405012c8d5b9fde741ab4eb519797566764cdb422f418bd6cdd4db0ffc022"
+    },
+    {
+      "available_at": "2014-03-05T00:00:00Z",
+      "identifier": "sato-trial-8-pre-cutoff-evidence",
+      "locator": "source-evidence/sato-trial-8-pre-cutoff.json",
+      "role": "sato-trial-8-pre-cutoff",
+      "sha256": "5cb58eaa502166918bf6643f924ad3567ac83eab8fc1dbf46da71db58be2449a"
+    },
+    {
+      "available_at": "2017-08-31T23:59:59Z",
+      "identifier": "doi:10.1136/jnnp.66.1.64ret",
+      "locator": "source-evidence/sato-trial-8-trigger.json",
+      "role": "sato-trial-8-trigger",
+      "sha256": "6648ff7de87bbe7917744ad76e172e4f5f0628bfdf51e0c663de95195a994290"
+    },
+    {
+      "available_at": "2023-01-19T00:00:00Z",
+      "identifier": "doi:10.1080/14767058.2023.2169999",
+      "locator": "source-evidence/shah-trigger.json",
+      "role": "trigger-retraction-evidence",
+      "sha256": "546e9b4108e3296e5c81ebff6be3853187eea7034e78ff3d273b24dd74746209"
+    }
+  ],
+  "status": "TEMPORAL_SELECTIVITY_REPLICATION_INPUTS_FROZEN"
+}

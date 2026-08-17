@@ -93,3 +93,8 @@ Version `0.5.0.dev0` adds evaluation custody, not a new Evidence Recall inferenc
 The temporal gold question is whether later independent records show that a target warranted reconsideration. This is not a truth label. A target can survive after reanalysis and still be a correct `REOPEN`. Conversely, no later correction is not evidence for `NO_REOPEN`; negative gold requires affirmative no-reliance or explicit scope evidence.
 
 The principal baseline is Review-All Reachability. The first real Shah/Darwish temporal episode catches 2/2 warranted reopenings with frozen Evidence Recall, but Review-All also catches 2/2 and both have review load 2. Evidence Recall therefore saves zero reviews and earns `NO_PROMOTION`. The episode has only positive gold labels, so it cannot estimate false-review precision; more real cases with affirmative negative outcomes are required before the temporal selectivity thesis can be graded.
+
+
+### 0.5.2 temporal replication boundary
+
+The 0.5.2 `PROMOTION` applies only to the observed temporal-selectivity criterion: near-Review-All recall with materially lower review load on a frozen historical corpus. It is not a truth claim, a cross-domain generality claim, a commercial moat claim, or evidence for hidden-edge discovery. The engine is unchanged; only the empirical corpus and episode-balanced evaluation expanded.

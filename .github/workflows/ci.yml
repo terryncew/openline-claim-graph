@@ -99,6 +99,18 @@ jobs:
             --gold "${{ runner.temp }}/temporal-real-001-shah-iron/gold.private.json" \
             --predictions "${{ runner.temp }}/temporal-real-001-shah-iron/predictions.json" \
             --score "${{ runner.temp }}/temporal-real-001-shah-iron/score.json"
+          python scripts/build_temporal_selectivity_replication_corpus.py \
+            --output "${{ runner.temp }}/temporal-replication-001-selectivity"
+          python scripts/verify_temporal_selectivity_replication_corpus.py \
+            --artifact "${{ runner.temp }}/temporal-replication-001-selectivity" \
+            --output "${{ runner.temp }}/temporal-replication-001-selectivity/independent-verification.json"
+          python -m openline_claim_graph temporal-benchmark-validate \
+            --pack "${{ runner.temp }}/temporal-replication-001-selectivity/pack.json" \
+            --authority "${{ runner.temp }}/temporal-replication-001-selectivity/authority.json" \
+            --future-seal "${{ runner.temp }}/temporal-replication-001-selectivity/future-seal.private.json" \
+            --gold "${{ runner.temp }}/temporal-replication-001-selectivity/gold.private.json" \
+            --predictions "${{ runner.temp }}/temporal-replication-001-selectivity/predictions.json" \
+            --score "${{ runner.temp }}/temporal-replication-001-selectivity/score.json"
       - name: Build wheel
         run: python -m pip wheel . --no-deps --no-build-isolation -w "${{ runner.temp }}/wheel"
       - name: CLI smoke

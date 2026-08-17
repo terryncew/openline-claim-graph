@@ -1,0 +1,122 @@
+{
+  "benchmark_id": "temporal-selectivity-replication-001-v1",
+  "future_seal_id": "evidence-recall-temporal-future-seal:sha256:5e169ab60b6e3372aa3f3d4ed7cb339f5fa4826b569ffffee938f8bbe9479e56",
+  "gold_id": "evidence-recall-temporal-gold:sha256:37759dfcf96a9318b8aa6ec148f9a6342ec58406d78c0f3657019f08e18637dd",
+  "label_definition": "REOPEN requires a later independent case-level record of actual reconsideration or explicit reliance on the invalidated input. NO_REOPEN requires affirmative non-reliance or scope exclusion for the exact target. Silence is never negative gold; unchanged recomputation is still REOPEN if reconsideration occurred.",
+  "labels": [
+    {
+      "episode_id": "temporal-holdout-episode:sha256:2baa331b2ec887d76d1c14ff8f2f5e8b43dd9a7ee308466e2f5fb73d2cdbfaf5",
+      "future_record_ids": [
+        "temporal-future-record:sha256:6c4afee51fec4432cdff2b6eb97a70fe07c2ccf69428c5812baec37893726adf"
+      ],
+      "outcome": "REOPEN",
+      "target_node_id": "cai2013:mlkl-necroptosis-context"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:2baa331b2ec887d76d1c14ff8f2f5e8b43dd9a7ee308466e2f5fb73d2cdbfaf5",
+      "future_record_ids": [
+        "temporal-future-record:sha256:fc395332813e884102e3a63908b7ebbd241d9bfbbd0b175e2e2fee022063d6df"
+      ],
+      "outcome": "NO_REOPEN",
+      "target_node_id": "vitner2014:gaucher-main-conclusion"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:2baa331b2ec887d76d1c14ff8f2f5e8b43dd9a7ee308466e2f5fb73d2cdbfaf5",
+      "future_record_ids": [
+        "temporal-future-record:sha256:6c4afee51fec4432cdff2b6eb97a70fe07c2ccf69428c5812baec37893726adf"
+      ],
+      "outcome": "REOPEN",
+      "target_node_id": "webster2014:autophagy-necroptosis-context"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:2baa331b2ec887d76d1c14ff8f2f5e8b43dd9a7ee308466e2f5fb73d2cdbfaf5",
+      "future_record_ids": [
+        "temporal-future-record:sha256:6c4afee51fec4432cdff2b6eb97a70fe07c2ccf69428c5812baec37893726adf"
+      ],
+      "outcome": "REOPEN",
+      "target_node_id": "zhou2012:death-by-deacetylation-summary"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+      "future_record_ids": [
+        "temporal-future-record:sha256:f61319b5d67b35d38e886154d8406e646644240e3e5de3c8477076ee057e0818"
+      ],
+      "outcome": "REOPEN",
+      "target_node_id": "shah2021:finding-improved-hemoglobin"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+      "future_record_ids": [
+        "temporal-future-record:sha256:f61319b5d67b35d38e886154d8406e646644240e3e5de3c8477076ee057e0818"
+      ],
+      "outcome": "REOPEN",
+      "target_node_id": "shah2021:pooled-hemoglobin"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:6378d837c1e5b69548c877258a95783c2d47c05aa4b78df3e09b566d86abe4f8",
+      "future_record_ids": [
+        "temporal-future-record:sha256:65d9ef72f76b30ac3aebfb961edfb71df380bd9d6d7ce32a7b2822683c2400d1"
+      ],
+      "outcome": "REOPEN",
+      "target_node_id": "handbook2008:risedronate-fracture-prevention-conclusion"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:6378d837c1e5b69548c877258a95783c2d47c05aa4b78df3e09b566d86abe4f8",
+      "future_record_ids": [
+        "temporal-future-record:sha256:a22cc24e81ebcdd7093f6c43733ff83cd3acfad9dd7881f8df1ff98454620d72"
+      ],
+      "outcome": "NO_REOPEN",
+      "target_node_id": "verheyden2013:sato2005b-awaiting-assessment"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:6c17f4b406386baec11ff7c4fef0c2bb351f17929c175ffb40c0ecbb165a4162",
+      "future_record_ids": [
+        "temporal-future-record:sha256:5b6618fc57995d7d18e296f3c9e5e9d7a2509ce78c815c04066c574c9d8d216f"
+      ],
+      "outcome": "REOPEN",
+      "target_node_id": "ahrq2007:bisphosphonate-high-risk-falls-conclusion"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:6c17f4b406386baec11ff7c4fef0c2bb351f17929c175ffb40c0ecbb165a4162",
+      "future_record_ids": [
+        "temporal-future-record:sha256:9c4ef96fa95959d0cef01a5fe0e841f353cfd6135233d080c0801e041d25a04a"
+      ],
+      "outcome": "NO_REOPEN",
+      "target_node_id": "mccarus:report11-passing-reference"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:6c17f4b406386baec11ff7c4fef0c2bb351f17929c175ffb40c0ecbb165a4162",
+      "future_record_ids": [
+        "temporal-future-record:sha256:f97d688514e9a906de84c30964b3457aaca9a361fc91c5827942275ace97ed1e"
+      ],
+      "outcome": "NO_REOPEN",
+      "target_node_id": "verheyden2013:sato2005a-awaiting-assessment"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:70f1e73f5c1180eb60ad74db74ebe4768f525996f66a5e8d33e042cf032ac03d",
+      "future_record_ids": [
+        "temporal-future-record:sha256:d5e6d63958d138576134393a2c344b9393a2fa805518936b6e2bb4c7cca96a99"
+      ],
+      "outcome": "NO_REOPEN",
+      "target_node_id": "ahrq-falls:falls-prevention-conclusion"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:70f1e73f5c1180eb60ad74db74ebe4768f525996f66a5e8d33e042cf032ac03d",
+      "future_record_ids": [
+        "temporal-future-record:sha256:db4074d0caabfe612e649674b6699c765d5871d20a685ad902f0c7bf7c27f5bd"
+      ],
+      "outcome": "NO_REOPEN",
+      "target_node_id": "latham2003:vitamin-d-falls-conclusion"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:70f1e73f5c1180eb60ad74db74ebe4768f525996f66a5e8d33e042cf032ac03d",
+      "future_record_ids": [
+        "temporal-future-record:sha256:9df61a5888407eaca83816ba02daede523f26d4b8f5986115043d6b0f799d808"
+      ],
+      "outcome": "REOPEN",
+      "target_node_id": "peterson2014:vitamin-d-parkinson-conclusion"
+    }
+  ],
+  "pack_id": "evidence-recall-temporal-pack:sha256:2032028f1f13ce92d87669e407cfcd9cae0d289359ef7d4c03da574bcde689f7",
+  "schema": "openline.evidence-recall-temporal-gold.v1"
+}

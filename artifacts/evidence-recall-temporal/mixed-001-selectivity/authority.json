@@ -1,0 +1,30 @@
+{
+  "authority_id": "evidence-recall-temporal-authority:sha256:26ffb7016b34ccc674d16d80c1b9acff9b563c9b3731f3ef383b785e0f8ca412",
+  "benchmark_id": "temporal-mixed-selectivity-001-v1",
+  "construction_rule": "Reuse Shah authority exactly. For Narayan, HARD requires explicit pre-cutoff conclusion-level derivation; a direct citation that is only method-context reachability remains UNADMITTED. No later audit label is an input.",
+  "declared_by": "temporal-mixed-selectivity-construction-rule",
+  "edge_authority": [
+    {
+      "authority": "HARD",
+      "edge_id": "temporal-edge:sha256:13c150ff39e5a862afcf0f4f493c19a45a2a3b333ce696840e9f26c9314a9b29",
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539"
+    },
+    {
+      "authority": "HARD",
+      "edge_id": "temporal-edge:sha256:553ba53e031a236f5caf619e3bed665daaceaca24596c228cf2a66b534e16d22",
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539"
+    },
+    {
+      "authority": "UNADMITTED",
+      "edge_id": "temporal-edge:sha256:4aa57c851d5f471f2fbfbeb34e0bf5d51cb95e183f0f9729a3d1c3e91117f37b",
+      "episode_id": "temporal-holdout-episode:sha256:e1ea9907aa38136ab40efcc07df2b4396975b8879275225c6f00caca38222561"
+    },
+    {
+      "authority": "HARD",
+      "edge_id": "temporal-edge:sha256:6db7706ea8025e9b6dfdc61351e634c57ef4d0f59f116eb49c8b802f3b3f67c6",
+      "episode_id": "temporal-holdout-episode:sha256:e1ea9907aa38136ab40efcc07df2b4396975b8879275225c6f00caca38222561"
+    }
+  ],
+  "pack_id": "evidence-recall-temporal-pack:sha256:384a474b83cc687792ac2b839fe2989091a7790550d08999dbceb6a2bec75288",
+  "schema": "openline.evidence-recall-temporal-authority.v1"
+}

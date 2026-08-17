@@ -106,3 +106,10 @@ Verdict: `NO_PROMOTION`. Evidence Recall ties Review-All on attention cost in th
 ## Frozen boundaries
 
 This version does not add weighted support, hidden-edge discovery, new basis types, generalized revocation, multi-edge cut-set analysis, UI, or changes to other OpenLine gates.
+
+
+## 0.5.1 mixed real selectivity corpus
+
+The first mixed corpus reuses the frozen Shah/Darwish episode and adds a pre-retraction Narayan SIRT2 episode. Before gold construction, the promotion policy fixes three gates: Evidence Recall recall >=95%, review-load reduction versus Review-All >=40%, and no extra missed reopenings.
+
+Observed: Evidence Recall 3/3 reopenings, review load 3; Review-All 3/3, review load 4. Review-load reduction is 25%, so the result is `NO_PROMOTION`. No engine semantics may change in response to this run.

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "openline-claim-graph"
-version = "0.5.0.dev1"
+version = "0.5.2"
 description = "Dependency-aware evidence recall with sealed temporal holdout evaluation and receiver-owned relation authority."
 readme = "README.md"
 requires-python = ">=3.11"

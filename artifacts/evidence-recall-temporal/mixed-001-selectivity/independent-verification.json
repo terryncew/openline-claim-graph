@@ -1,0 +1,330 @@
+{
+  "check_count": 61,
+  "checks": [
+    {
+      "detail": "MIXED_TEMPORAL_SELECTIVITY_CORPUS_RUN_BELOW_PROMOTION_BAR",
+      "name": "status",
+      "pass": true
+    },
+    {
+      "detail": 2,
+      "name": "two_episodes",
+      "pass": true
+    },
+    {
+      "detail": 4,
+      "name": "four_scored_targets",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "mixed_gold",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "pack_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "authority_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "future_seal_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "gold_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "predictions_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "score_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "promotion_policy_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "promotion_result_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "pack_future_binding",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "future_records_root",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "future_record_count",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "authority_pack_binding",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "gold_pack_binding",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "gold_seal_binding",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "prediction_pack_binding",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "prediction_authority_binding",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "score_prediction_binding",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "score_gold_binding",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "shah_target_count",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "narayan_target_count",
+      "pass": true
+    },
+    {
+      "detail": [
+        "2014-02-25T23:59:59Z",
+        "2014-02-26T00:00:00Z"
+      ],
+      "name": "narayan_cutoff_before_event",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "all_nodes_pre_cutoff",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "all_edges_pre_cutoff",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "future_after_event",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "zhou_hard",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "vitner_unadmitted",
+      "pass": true
+    },
+    {
+      "detail": [
+        "vitner2014:gaucher-main-conclusion",
+        "zhou2012:death-by-deacetylation-summary"
+      ],
+      "name": "narayan_both_reachable",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "zhou_gold_reopen",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "vitner_gold_no_reopen",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "gold_counts_independent",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "review_all_reviews_zhou",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "review_all_reviews_vitner",
+      "pass": true
+    },
+    {
+      "detail": {
+        "classification": "QUARANTINE",
+        "review": true
+      },
+      "name": "er_reviews_zhou",
+      "pass": true
+    },
+    {
+      "detail": {
+        "classification": "UNAFFECTED",
+        "review": false
+      },
+      "name": "er_skips_vitner",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "direct_reviews_both_narayan_targets",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "direct_metrics",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "review_all_metrics",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "er_metrics",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "review_all_one_unnecessary",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "er_zero_unnecessary",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "er_full_recall",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "er_full_precision",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "reviewer_savings_one",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "no_additional_misses",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "observed_reduction_25pct",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "predeclared_min_recall_95pct",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "predeclared_min_reduction_40pct",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "promotion_fails",
+      "pass": true
+    },
+    {
+      "detail": [
+        "minimum_review_load_reduction"
+      ],
+      "name": "promotion_failure_is_attention_only",
+      "pass": true
+    },
+    {
+      "detail": "bc8f0011d65cb1c2c728ef374ebb82b86c3c08657e9919427ff5d80b2707886a",
+      "name": "frozen_engine:src/openline_claim_graph/temporal_holdout.py",
+      "pass": true
+    },
+    {
+      "detail": "6c04e9e021cbc1c01aae78606acc6cd41393c99673185e1e8e3ee4ccaa06e4b1",
+      "name": "frozen_engine:src/openline_claim_graph/comparative_benchmark.py",
+      "pass": true
+    },
+    {
+      "detail": "1757340f69e919ff68d3cdfe4265fc1ac330bc99ff5bcd20b69058fa846905a2",
+      "name": "frozen_engine:src/openline_claim_graph/impact.py",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "custody_engine_unchanged",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "summary_engine_unchanged",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "evidence_hash:pre_cutoff",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "evidence_hash:trigger",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "evidence_hash:later_record",
+      "pass": true
+    }
+  ],
+  "claim_boundary": "This verifier uses only Python standard library and artifact bytes. It verifies custody, frozen engine hashes, the mixed positive/negative gold shape, deterministic baseline reachability, declared authority, reported scores, and the predeclared promotion threshold. It does not independently adjudicate the scientific meaning of source text.",
+  "disposition": "PASS",
+  "failed_count": 0,
+  "module_free": true,
+  "schema": "openline.temporal-mixed-selectivity-independent-verification.v1",
+  "valid": true
+}

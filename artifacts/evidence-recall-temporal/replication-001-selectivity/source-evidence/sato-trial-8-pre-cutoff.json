@@ -1,0 +1,32 @@
+{
+  "hash_scope": "Canonical local evidence record; not publisher raw bytes.",
+  "name": "Sato trial 8 pre-retraction dependency evidence",
+  "note": "Only facts that were encoded in the downstream publication before the trigger are used for authority. Later Avenell audit classifications are sealed.",
+  "records": [
+    {
+      "available_at": "1999-01-01T00:00:00Z",
+      "fact": "Sato et al. 1999 vitamin D/Parkinson osteopenia trial",
+      "identifier": "doi:10.1136/jnnp.66.1.64",
+      "role": "invalidated-trial"
+    },
+    {
+      "available_at": "2014-03-05T00:00:00Z",
+      "fact": "The pre-retraction review incorporated the Sato Parkinson trial among the affected reports underlying its conclusions.",
+      "identifier": "doi:10.1016/j.maturitas.2014.02.012",
+      "role": "downstream-target"
+    },
+    {
+      "available_at": "2003-08-15T00:00:00Z",
+      "fact": "The review cited but excluded the Sato trial because of poor quality.",
+      "identifier": "doi:10.1046/j.1532-5415.2003.51405.x",
+      "role": "downstream-target"
+    },
+    {
+      "available_at": "2007-12-31T00:00:00Z",
+      "fact": "The guideline cited but excluded trial report 8 because it did not focus on the outcome of interest.",
+      "identifier": "Avenell-2019-ref57",
+      "role": "downstream-target"
+    }
+  ],
+  "schema": "openline.temporal-source-evidence.v1"
+}

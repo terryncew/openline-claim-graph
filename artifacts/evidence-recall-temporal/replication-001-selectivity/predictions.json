@@ -1,0 +1,330 @@
+{
+  "authority_id": "evidence-recall-temporal-authority:sha256:85483730432e0fac815b9b24e474f84cca088f1312c280fcf9abc52a09345218",
+  "benchmark_id": "temporal-selectivity-replication-001-v1",
+  "engine_contract": {
+    "direct_lookup": "review only immediate dependents of the invalidated node",
+    "evidence_recall": "frozen shipped Evidence Recall semantics; QUARANTINE and AFFECTED_UNRESOLVED require review, SURVIVES and UNAFFECTED do not",
+    "naive_transitive_taint_diagnostic": "optional diagnostic: hard quarantine every reachable target",
+    "review_all_reachability": "review every target reachable over any directed edge"
+  },
+  "future_seal_id": "evidence-recall-temporal-future-seal:sha256:5e169ab60b6e3372aa3f3d4ed7cb339f5fa4826b569ffffee938f8bbe9479e56",
+  "pack_id": "evidence-recall-temporal-pack:sha256:2032028f1f13ce92d87669e407cfcd9cae0d289359ef7d4c03da574bcde689f7",
+  "predictions_id": "evidence-recall-temporal-predictions:sha256:a1deeb306929cfa519d0e9bb643558a8ccd8bf0a31a439545496008453de5e02",
+  "rows": [
+    {
+      "episode_id": "temporal-holdout-episode:sha256:2baa331b2ec887d76d1c14ff8f2f5e8b43dd9a7ee308466e2f5fb73d2cdbfaf5",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "DIRECT_REVIEW",
+          "review": true
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "cai2013:mlkl-necroptosis-context"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:2baa331b2ec887d76d1c14ff8f2f5e8b43dd9a7ee308466e2f5fb73d2cdbfaf5",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "DIRECT_REVIEW",
+          "review": true
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "UNAFFECTED",
+          "review": false
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "vitner2014:gaucher-main-conclusion"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:2baa331b2ec887d76d1c14ff8f2f5e8b43dd9a7ee308466e2f5fb73d2cdbfaf5",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "DIRECT_REVIEW",
+          "review": true
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "webster2014:autophagy-necroptosis-context"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:2baa331b2ec887d76d1c14ff8f2f5e8b43dd9a7ee308466e2f5fb73d2cdbfaf5",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "DIRECT_REVIEW",
+          "review": true
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "zhou2012:death-by-deacetylation-summary"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "UNAFFECTED",
+          "review": false
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "shah2021:finding-improved-hemoglobin"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "DIRECT_REVIEW",
+          "review": true
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "shah2021:pooled-hemoglobin"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:6378d837c1e5b69548c877258a95783c2d47c05aa4b78df3e09b566d86abe4f8",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "DIRECT_REVIEW",
+          "review": true
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "handbook2008:risedronate-fracture-prevention-conclusion"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:6378d837c1e5b69548c877258a95783c2d47c05aa4b78df3e09b566d86abe4f8",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "DIRECT_REVIEW",
+          "review": true
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "UNAFFECTED",
+          "review": false
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "verheyden2013:sato2005b-awaiting-assessment"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:6c17f4b406386baec11ff7c4fef0c2bb351f17929c175ffb40c0ecbb165a4162",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "DIRECT_REVIEW",
+          "review": true
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "ahrq2007:bisphosphonate-high-risk-falls-conclusion"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:6c17f4b406386baec11ff7c4fef0c2bb351f17929c175ffb40c0ecbb165a4162",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "DIRECT_REVIEW",
+          "review": true
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "UNAFFECTED",
+          "review": false
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "mccarus:report11-passing-reference"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:6c17f4b406386baec11ff7c4fef0c2bb351f17929c175ffb40c0ecbb165a4162",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "DIRECT_REVIEW",
+          "review": true
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "UNAFFECTED",
+          "review": false
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "verheyden2013:sato2005a-awaiting-assessment"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:70f1e73f5c1180eb60ad74db74ebe4768f525996f66a5e8d33e042cf032ac03d",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "DIRECT_REVIEW",
+          "review": true
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "UNAFFECTED",
+          "review": false
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "ahrq-falls:falls-prevention-conclusion"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:70f1e73f5c1180eb60ad74db74ebe4768f525996f66a5e8d33e042cf032ac03d",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "DIRECT_REVIEW",
+          "review": true
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "UNAFFECTED",
+          "review": false
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "latham2003:vitamin-d-falls-conclusion"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:70f1e73f5c1180eb60ad74db74ebe4768f525996f66a5e8d33e042cf032ac03d",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "DIRECT_REVIEW",
+          "review": true
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "peterson2014:vitamin-d-parkinson-conclusion"
+    }
+  ],
+  "schema": "openline.evidence-recall-temporal-predictions.v1",
+  "systems": [
+    "DIRECT_LOOKUP",
+    "REVIEW_ALL_REACHABILITY",
+    "EVIDENCE_RECALL",
+    "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC"
+  ]
+}

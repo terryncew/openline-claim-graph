@@ -1,0 +1,42 @@
+{
+  "benchmark_id": "temporal-mixed-selectivity-001-v1",
+  "future_seal_id": "evidence-recall-temporal-future-seal:sha256:90f99385e3180ade0af21d5d55a508164f0e85d252f8441144781efa1b535878",
+  "gold_id": "evidence-recall-temporal-gold:sha256:8d6cbcb00ed4fede55bde09b074befe9e651bbf1823d608ade260a87cd00e464",
+  "label_definition": "REOPEN requires a later independent record of actual reconsideration or affirmative reliance on the invalidated result. NO_REOPEN requires affirmative later evidence that the exact scored target did not rely on the invalidated result. Silence and unchanged conclusions are not negative gold.",
+  "labels": [
+    {
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+      "future_record_ids": [
+        "temporal-future-record:sha256:f61319b5d67b35d38e886154d8406e646644240e3e5de3c8477076ee057e0818"
+      ],
+      "outcome": "REOPEN",
+      "target_node_id": "shah2021:finding-improved-hemoglobin"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+      "future_record_ids": [
+        "temporal-future-record:sha256:f61319b5d67b35d38e886154d8406e646644240e3e5de3c8477076ee057e0818"
+      ],
+      "outcome": "REOPEN",
+      "target_node_id": "shah2021:pooled-hemoglobin"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:e1ea9907aa38136ab40efcc07df2b4396975b8879275225c6f00caca38222561",
+      "future_record_ids": [
+        "temporal-future-record:sha256:dd9666c2cabb9dc6f6d54880aa2408a696423491eead236cdf8bb7c740c2ff88"
+      ],
+      "outcome": "NO_REOPEN",
+      "target_node_id": "vitner2014:gaucher-main-conclusion"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:e1ea9907aa38136ab40efcc07df2b4396975b8879275225c6f00caca38222561",
+      "future_record_ids": [
+        "temporal-future-record:sha256:c042b9da7eedaf688459c24298de32e2b03d3fea0b3238abf21bb7b07819df9f"
+      ],
+      "outcome": "REOPEN",
+      "target_node_id": "zhou2012:death-by-deacetylation-summary"
+    }
+  ],
+  "pack_id": "evidence-recall-temporal-pack:sha256:384a474b83cc687792ac2b839fe2989091a7790550d08999dbceb6a2bec75288",
+  "schema": "openline.evidence-recall-temporal-gold.v1"
+}

@@ -1,0 +1,13 @@
+{
+  "failed_conditions": [
+    "minimum_review_load_reduction"
+  ],
+  "observed_additional_missed_reopenings_vs_review_all": 0,
+  "observed_reconsideration_recall_basis_points": 10000,
+  "observed_review_load_reduction_vs_review_all_basis_points": 2500,
+  "promotion_policy_id": "temporal-promotion-policy:sha256:9ae0a1f14043e84debd159a366cba099be89ff42478ff302216a4498c0d2196c",
+  "promotion_result_id": "temporal-promotion-result:sha256:873c75d5127f98953b7d50ea00a37cd15edf1386cd8f991685caff47e5789c25",
+  "schema": "openline.evidence-recall-temporal-promotion-result.v1",
+  "score_id": "evidence-recall-temporal-score:sha256:c3c3101b6504cbc932de4e03770cd8f3635d5ac7e47cb7fc86f8ad2e7fe64f3e",
+  "verdict": "NO_PROMOTION"
+}

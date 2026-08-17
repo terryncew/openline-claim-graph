@@ -1,5 +1,15 @@
 # Assessment
 
+## Mixed real temporal selectivity corpus — 0.5.1
+
+The first mixed corpus is now graded under a promotion rule declared before gold construction: frozen Evidence Recall must achieve at least 95% reconsideration recall, reduce review load by at least 40% versus Review-All Reachability, and add no missed reopenings.
+
+The corpus reuses the Shah/Darwish episode unchanged and adds a Narayan SIRT2 retraction episode. The latter contains one pre-cutoff Nature News & Views summary admitted as HARD and one pre-cutoff Vitner direct-citation candidate left UNADMITTED because the citation context is experimental-method use rather than conclusion-level reliance. A later independent citation audit supplies one affirmative `REOPEN` and one affirmative `NO_REOPEN`.
+
+Result: Direct Lookup catches 2/3 warranted reopenings with review load 3. Review-All catches 3/3 with review load 4 and one unnecessary review. Frozen Evidence Recall catches 3/3 with review load 3 and zero unnecessary reviews. Evidence Recall therefore cuts review load 25% while retaining 100% recall, but misses the predeclared 40% materiality bar.
+
+Verdict: `NO_PROMOTION`. This is the first real case-level evidence that typed authority can buy back some attention rather than merely changing severity labels, but one saved review across four targets is not enough to justify the product thesis. The engine remains byte-for-byte frozen and the shortfall is not repaired.
+
 ## First real temporal case — 0.5.0.dev1
 
 The first real historical temporal episode is now graded. The accepted state is the 2021 Shah intravenous-iron meta-analysis, frozen the day before the Darwish trial retraction. The later 2025 JAMA correction records an explicit reanalysis without the retracted study and no change in reported results.
@@ -128,3 +138,9 @@ A published-count diagnostic is checked in and independently reproduced. It is a
 That is not a win. It is the benchmark doing its job: **typed authority has not earned selective reviewer-load reduction from citation topology alone.** The case-level run must determine whether a blind, independently constructed authority file can separate the 23 consequential paths from the rest. If it cannot, the current mechanism should not be promoted as an empirical advantage over simpler provenance systems.
 
 The JAMA stratum remains diagnostic rather than scored as false quarantine. A retracted constituent can legitimately force recomputation of an exact aggregate even when the recomputed number happens not to change. The stress test asks whether categorical relation semantics are selective enough for quantitative aggregation, not whether quarantine predicts a numerical flip.
+
+## 0.5.2 replication verdict
+
+The frozen temporal-selectivity behavior now crosses its predeclared product-candidate bar on the checked-in replication corpus. Across five trigger episodes and fourteen explicit case-level targets, Evidence Recall catches 8/8 warranted reopenings while reviewing 8 targets versus Review-All's 14, a 42.85% reduction with zero additional misses. Positive savings recur in four of five trigger episodes.
+
+Verdict: `PROMOTION`, narrowly defined as promotion of temporal selectivity to a serious product candidate. The evidence does not establish a moat or broad independent-domain replication. Three of the five triggers belong to one Sato misconduct family and rely on one later manual audit; the packs were reconstructed retrospectively. No engine semantics were changed to obtain the result.

@@ -1,0 +1,14 @@
+{
+  "hash_scope": "Canonical local evidence record; not publisher raw bytes.",
+  "name": "Avenell later audit for Sato trial 12",
+  "note": "Later audit facts are used only for gold after prediction.",
+  "records": [
+    {
+      "available_at": "2019-10-30T00:00:00Z",
+      "fact": "Avenell et al. manually assessed citation use and impact of retracted Sato trial reports in systematic reviews and guidelines.",
+      "identifier": "doi:10.1136/bmjopen-2019-031909",
+      "role": "later-audit"
+    }
+  ],
+  "schema": "openline.temporal-source-evidence.v1"
+}

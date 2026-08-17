@@ -1,0 +1,110 @@
+{
+  "authority_id": "evidence-recall-temporal-authority:sha256:26ffb7016b34ccc674d16d80c1b9acff9b563c9b3731f3ef383b785e0f8ca412",
+  "benchmark_id": "temporal-mixed-selectivity-001-v1",
+  "engine_contract": {
+    "direct_lookup": "review only immediate dependents of the invalidated node",
+    "evidence_recall": "frozen shipped Evidence Recall semantics; QUARANTINE and AFFECTED_UNRESOLVED require review, SURVIVES and UNAFFECTED do not",
+    "naive_transitive_taint_diagnostic": "optional diagnostic: hard quarantine every reachable target",
+    "review_all_reachability": "review every target reachable over any directed edge"
+  },
+  "future_seal_id": "evidence-recall-temporal-future-seal:sha256:90f99385e3180ade0af21d5d55a508164f0e85d252f8441144781efa1b535878",
+  "pack_id": "evidence-recall-temporal-pack:sha256:384a474b83cc687792ac2b839fe2989091a7790550d08999dbceb6a2bec75288",
+  "predictions_id": "evidence-recall-temporal-predictions:sha256:de3c287e4ac08702180970c185cbe04172c8a0fdb265a31f97cc6dc72378e9e5",
+  "rows": [
+    {
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "UNAFFECTED",
+          "review": false
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "shah2021:finding-improved-hemoglobin"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "DIRECT_REVIEW",
+          "review": true
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "shah2021:pooled-hemoglobin"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:e1ea9907aa38136ab40efcc07df2b4396975b8879275225c6f00caca38222561",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "DIRECT_REVIEW",
+          "review": true
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "UNAFFECTED",
+          "review": false
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "vitner2014:gaucher-main-conclusion"
+    },
+    {
+      "episode_id": "temporal-holdout-episode:sha256:e1ea9907aa38136ab40efcc07df2b4396975b8879275225c6f00caca38222561",
+      "predictions": {
+        "DIRECT_LOOKUP": {
+          "classification": "DIRECT_REVIEW",
+          "review": true
+        },
+        "EVIDENCE_RECALL": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC": {
+          "classification": "QUARANTINE",
+          "review": true
+        },
+        "REVIEW_ALL_REACHABILITY": {
+          "classification": "REVIEW",
+          "review": true
+        }
+      },
+      "target_node_id": "zhou2012:death-by-deacetylation-summary"
+    }
+  ],
+  "schema": "openline.evidence-recall-temporal-predictions.v1",
+  "systems": [
+    "DIRECT_LOOKUP",
+    "REVIEW_ALL_REACHABILITY",
+    "EVIDENCE_RECALL",
+    "NAIVE_TRANSITIVE_TAINT_DIAGNOSTIC"
+  ]
+}

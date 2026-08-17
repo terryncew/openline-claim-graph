@@ -1,0 +1,44 @@
+{
+  "benchmark_id": "temporal-mixed-selectivity-001-v1",
+  "build_sequence": [
+    "reuse frozen Shah episode and authority from 0.5.0.dev1",
+    "create Narayan pre-cutoff and trigger evidence snapshots",
+    "create combined future seal from later records",
+    "create public pack bound only to future-seal commitment",
+    "freeze receiver authority from pre-cutoff evidence",
+    "write predeclared promotion policy",
+    "emit Direct / Review-All / frozen Evidence Recall predictions",
+    "create gold from already sealed later records",
+    "score frozen predictions",
+    "apply predeclared promotion policy"
+  ],
+  "construction_limit": "This 2026 build reconstructs historical states after outcomes are known. Artifact custody and timestamps are mechanically enforced, but code cannot prove psychological blindness of the constructor. The Shah episode is reused unchanged; Narayan authority is based only on primary pre-cutoff citation context, while the 2016 audit is present only in the private future seal/gold path.",
+  "engine_sha256": {
+    "src/openline_claim_graph/comparative_benchmark.py": "6c04e9e021cbc1c01aae78606acc6cd41393c99673185e1e8e3ee4ccaa06e4b1",
+    "src/openline_claim_graph/impact.py": "1757340f69e919ff68d3cdfe4265fc1ac330bc99ff5bcd20b69058fa846905a2",
+    "src/openline_claim_graph/temporal_holdout.py": "bc8f0011d65cb1c2c728ef374ebb82b86c3c08657e9919427ff5d80b2707886a"
+  },
+  "engine_sha256_expected_from_0_5_0_dev0": {
+    "src/openline_claim_graph/comparative_benchmark.py": "6c04e9e021cbc1c01aae78606acc6cd41393c99673185e1e8e3ee4ccaa06e4b1",
+    "src/openline_claim_graph/impact.py": "1757340f69e919ff68d3cdfe4265fc1ac330bc99ff5bcd20b69058fa846905a2",
+    "src/openline_claim_graph/temporal_holdout.py": "bc8f0011d65cb1c2c728ef374ebb82b86c3c08657e9919427ff5d80b2707886a"
+  },
+  "engine_unchanged": true,
+  "episode_ids": [
+    "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+    "temporal-holdout-episode:sha256:e1ea9907aa38136ab40efcc07df2b4396975b8879275225c6f00caca38222561"
+  ],
+  "narayan_evidence_hashes": {
+    "later_record": "4c361258cc5d288abc3b152b5c82622d7b420d18ef992d7f72373aa21d289fd3",
+    "pre_cutoff": "bd0cb7d003dec79d08c0809d5cec7153c8f9878f42e03ff45e07f7fc1470edf4",
+    "trigger": "5582ecd9aaa923bc5a7f12b38f66f2be3c377a8683f363ba5d6c4d74c39865ae"
+  },
+  "schema": "openline.temporal-mixed-corpus-custody.v1",
+  "shah_episode_hash": "24cc96ab9558503566a0eb3b5e5360438a10a98a5cdb74c7c1ec393aef56b9fe",
+  "shah_episode_id_reused": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+  "shah_evidence_hashes": {
+    "later_record": "1d7c544f5f436475fc0b49874455f8f75aba2be21826dcb33b19b54e0e9e1e49",
+    "pre_cutoff": "fc7f9300453c905bea2741b77c2275b5c1338908d033bcdbb85252f44a85fd2b",
+    "trigger": "546e9b4108e3296e5c81ebff6be3853187eea7034e78ff3d273b24dd74746209"
+  }
+}

@@ -112,7 +112,7 @@
       "pass": true
     },
     {
-      "detail": "{'shah2021:finding-improved-hemoglobin', 'shah2021:pooled-hemoglobin'}",
+      "detail": "{'shah2021:pooled-hemoglobin', 'shah2021:finding-improved-hemoglobin'}",
       "name": "review_all_reaches_both_targets",
       "pass": true
     },

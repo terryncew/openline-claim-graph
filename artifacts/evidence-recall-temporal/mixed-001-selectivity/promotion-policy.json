@@ -1,0 +1,11 @@
+{
+  "candidate_system": "EVIDENCE_RECALL",
+  "declared_before_gold": true,
+  "maximum_additional_missed_reopenings_vs_review_all": 0,
+  "minimum_reconsideration_recall_basis_points": 9500,
+  "minimum_review_load_reduction_vs_review_all_basis_points": 4000,
+  "promotion_policy_id": "temporal-promotion-policy:sha256:9ae0a1f14043e84debd159a366cba099be89ff42478ff302216a4498c0d2196c",
+  "reference_system": "REVIEW_ALL_REACHABILITY",
+  "rule": "Promotion requires Evidence Recall reconsideration recall >=95%, review-load reduction versus Review-All Reachability >=40%, and no additional missed warranted reopenings versus Review-All. No composite score is used.",
+  "schema": "openline.evidence-recall-temporal-promotion-policy.v1"
+}

@@ -1,0 +1,6 @@
+{
+  "available_at": "2017-08-31T23:59:59Z",
+  "fact": "The trial was retracted in 2017; this benchmark uses an August 2017 month-resolution trigger marker because an exact online day is not asserted by the frozen source record.",
+  "identifier": "doi:10.1136/jnnp.66.1.64ret",
+  "schema": "openline.temporal-trigger-evidence.v1"
+}

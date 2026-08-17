@@ -1,0 +1,80 @@
+{
+  "authority_id": "evidence-recall-temporal-authority:sha256:85483730432e0fac815b9b24e474f84cca088f1312c280fcf9abc52a09345218",
+  "benchmark_id": "temporal-selectivity-replication-001-v1",
+  "construction_rule": "HARD only for explicit pre-trigger inclusion or conclusion-level dependence. Explicit exclusion, awaiting-assessment, method-only citation, or passing reference without data use remains UNADMITTED. No future audit label is an authority input.",
+  "declared_by": "temporal-selectivity-replication-construction-rule",
+  "edge_authority": [
+    {
+      "authority": "HARD",
+      "edge_id": "temporal-edge:sha256:a32697a50c3ee1dac07083a0fbcf84f3b2a0f805e084aea93f6a2c5cbf28880b",
+      "episode_id": "temporal-holdout-episode:sha256:2baa331b2ec887d76d1c14ff8f2f5e8b43dd9a7ee308466e2f5fb73d2cdbfaf5"
+    },
+    {
+      "authority": "HARD",
+      "edge_id": "temporal-edge:sha256:b5804ace319a9e8f32fe27ff7b293f3300a669c0076247d35425cd20bc414550",
+      "episode_id": "temporal-holdout-episode:sha256:2baa331b2ec887d76d1c14ff8f2f5e8b43dd9a7ee308466e2f5fb73d2cdbfaf5"
+    },
+    {
+      "authority": "UNADMITTED",
+      "edge_id": "temporal-edge:sha256:d149430485b7bad39c6e9650f38b5371d0ce2d71e154dcebdd0d573324a012a8",
+      "episode_id": "temporal-holdout-episode:sha256:2baa331b2ec887d76d1c14ff8f2f5e8b43dd9a7ee308466e2f5fb73d2cdbfaf5"
+    },
+    {
+      "authority": "HARD",
+      "edge_id": "temporal-edge:sha256:e8baf6b99ed5fe0f5bfa9e21f778110843aa57207be4105e0937b23d2cb2644b",
+      "episode_id": "temporal-holdout-episode:sha256:2baa331b2ec887d76d1c14ff8f2f5e8b43dd9a7ee308466e2f5fb73d2cdbfaf5"
+    },
+    {
+      "authority": "HARD",
+      "edge_id": "temporal-edge:sha256:13c150ff39e5a862afcf0f4f493c19a45a2a3b333ce696840e9f26c9314a9b29",
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539"
+    },
+    {
+      "authority": "HARD",
+      "edge_id": "temporal-edge:sha256:553ba53e031a236f5caf619e3bed665daaceaca24596c228cf2a66b534e16d22",
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539"
+    },
+    {
+      "authority": "UNADMITTED",
+      "edge_id": "temporal-edge:sha256:7997ad9226c0f399b0d30c693898524e0db1b759f0419267e6243fea6c26c9c6",
+      "episode_id": "temporal-holdout-episode:sha256:6378d837c1e5b69548c877258a95783c2d47c05aa4b78df3e09b566d86abe4f8"
+    },
+    {
+      "authority": "HARD",
+      "edge_id": "temporal-edge:sha256:d760a153ca48c25317ae19aefd3b25d176d38ab741adde854b091e5dc4604d33",
+      "episode_id": "temporal-holdout-episode:sha256:6378d837c1e5b69548c877258a95783c2d47c05aa4b78df3e09b566d86abe4f8"
+    },
+    {
+      "authority": "UNADMITTED",
+      "edge_id": "temporal-edge:sha256:7c9c85eccf9eed0ce3f9bf1b3cc7511ff4b7b7b705ab5a58dc95945f59ff1530",
+      "episode_id": "temporal-holdout-episode:sha256:6c17f4b406386baec11ff7c4fef0c2bb351f17929c175ffb40c0ecbb165a4162"
+    },
+    {
+      "authority": "UNADMITTED",
+      "edge_id": "temporal-edge:sha256:c659dea0d93789021d60e691b583a112fb38857bfd5daa5e273b7f95b02e6f1b",
+      "episode_id": "temporal-holdout-episode:sha256:6c17f4b406386baec11ff7c4fef0c2bb351f17929c175ffb40c0ecbb165a4162"
+    },
+    {
+      "authority": "HARD",
+      "edge_id": "temporal-edge:sha256:eae74ec8a1873b6b5c24f202ba15c38efa474a3efc0119a39e7a186a47d20ba9",
+      "episode_id": "temporal-holdout-episode:sha256:6c17f4b406386baec11ff7c4fef0c2bb351f17929c175ffb40c0ecbb165a4162"
+    },
+    {
+      "authority": "UNADMITTED",
+      "edge_id": "temporal-edge:sha256:262c5ac4e867c0b64d8b57ae78da4617ada0d35733f46a5c0b0bf01a8fbf66db",
+      "episode_id": "temporal-holdout-episode:sha256:70f1e73f5c1180eb60ad74db74ebe4768f525996f66a5e8d33e042cf032ac03d"
+    },
+    {
+      "authority": "HARD",
+      "edge_id": "temporal-edge:sha256:5f3ba54de3080f4c936fd091f46ea8fbb6788c19f7d82d416c8dc066c6b721e4",
+      "episode_id": "temporal-holdout-episode:sha256:70f1e73f5c1180eb60ad74db74ebe4768f525996f66a5e8d33e042cf032ac03d"
+    },
+    {
+      "authority": "UNADMITTED",
+      "edge_id": "temporal-edge:sha256:93d5542d6c8190ea9e701d1439ecfbc42008eee350ec4aa6a16035aef134c980",
+      "episode_id": "temporal-holdout-episode:sha256:70f1e73f5c1180eb60ad74db74ebe4768f525996f66a5e8d33e042cf032ac03d"
+    }
+  ],
+  "pack_id": "evidence-recall-temporal-pack:sha256:2032028f1f13ce92d87669e407cfcd9cae0d289359ef7d4c03da574bcde689f7",
+  "schema": "openline.evidence-recall-temporal-authority.v1"
+}

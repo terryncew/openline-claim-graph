@@ -1,0 +1,14 @@
+{
+  "hash_scope": "Canonical local evidence record; not publisher raw bytes.",
+  "name": "van der Vet/Nijveen later citation-use audit",
+  "note": "The audit is used only after predictions exist.",
+  "records": [
+    {
+      "available_at": "2016-05-03T00:00:00Z",
+      "fact": "The audit read direct citation contexts, found direct propagation of the retracted result with narrow exceptions, and found no propagation through the inspected indirect citations.",
+      "identifier": "doi:10.1186/s41073-016-0008-5",
+      "role": "later-audit"
+    }
+  ],
+  "schema": "openline.temporal-source-evidence.v1"
+}

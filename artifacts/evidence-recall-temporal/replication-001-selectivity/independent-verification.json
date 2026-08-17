@@ -1,0 +1,671 @@
+{
+  "check_count": 132,
+  "checks": [
+    {
+      "detail": "TEMPORAL_SELECTIVITY_REPLICATION_PROMOTED",
+      "name": "status",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "episode_count",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "target_count",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "gold_mix",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "kataoka_zero_rows",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "kataoka_no_synthetic_rows",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "pack_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "authority_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "seal_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "gold_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "predictions_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "score_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "policy_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "result_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "episode_metrics_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "ledger_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "pack_seal_binding",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "records_root",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "record_count",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "authority_pack_binding",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "gold_pack_binding",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "gold_seal_binding",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "prediction_pack_binding",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "prediction_authority_binding",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "score_gold_binding",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "score_prediction_binding",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "cutoff_before_event:b73d2cdbfaf5",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "nodes_pre_cutoff:b73d2cdbfaf5",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "edges_pre_cutoff:b73d2cdbfaf5",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "targets_reachable:b73d2cdbfaf5",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "cutoff_before_event:f89375103539",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "nodes_pre_cutoff:f89375103539",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "edges_pre_cutoff:f89375103539",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "targets_reachable:f89375103539",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "cutoff_before_event:566d86abe4f8",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "nodes_pre_cutoff:566d86abe4f8",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "edges_pre_cutoff:566d86abe4f8",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "targets_reachable:566d86abe4f8",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "cutoff_before_event:ecbb165a4162",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "nodes_pre_cutoff:ecbb165a4162",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "edges_pre_cutoff:ecbb165a4162",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "targets_reachable:ecbb165a4162",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "cutoff_before_event:42cf032ac03d",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "nodes_pre_cutoff:42cf032ac03d",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "edges_pre_cutoff:42cf032ac03d",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "targets_reachable:42cf032ac03d",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "future_records_after_trigger",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "label_count",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "reopen_count",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "no_reopen_count",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "all_gold_has_future_record",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "review_all_reviews:cai2013:mlkl-necroptosis-context",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "direct_reviews:cai2013:mlkl-necroptosis-context",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "hard_maps_reopen:cai2013:mlkl-necroptosis-context",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "hard_er_reviews:cai2013:mlkl-necroptosis-context",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "review_all_reviews:vitner2014:gaucher-main-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "direct_reviews:vitner2014:gaucher-main-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unadmitted_maps_negative:vitner2014:gaucher-main-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unadmitted_er_skips:vitner2014:gaucher-main-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "review_all_reviews:webster2014:autophagy-necroptosis-context",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "direct_reviews:webster2014:autophagy-necroptosis-context",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "hard_maps_reopen:webster2014:autophagy-necroptosis-context",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "hard_er_reviews:webster2014:autophagy-necroptosis-context",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "review_all_reviews:zhou2012:death-by-deacetylation-summary",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "direct_reviews:zhou2012:death-by-deacetylation-summary",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "hard_maps_reopen:zhou2012:death-by-deacetylation-summary",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "hard_er_reviews:zhou2012:death-by-deacetylation-summary",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "review_all_reviews:handbook2008:risedronate-fracture-prevention-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "direct_reviews:handbook2008:risedronate-fracture-prevention-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "hard_maps_reopen:handbook2008:risedronate-fracture-prevention-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "hard_er_reviews:handbook2008:risedronate-fracture-prevention-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "review_all_reviews:verheyden2013:sato2005b-awaiting-assessment",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "direct_reviews:verheyden2013:sato2005b-awaiting-assessment",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unadmitted_maps_negative:verheyden2013:sato2005b-awaiting-assessment",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unadmitted_er_skips:verheyden2013:sato2005b-awaiting-assessment",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "review_all_reviews:ahrq2007:bisphosphonate-high-risk-falls-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "direct_reviews:ahrq2007:bisphosphonate-high-risk-falls-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "hard_maps_reopen:ahrq2007:bisphosphonate-high-risk-falls-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "hard_er_reviews:ahrq2007:bisphosphonate-high-risk-falls-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "review_all_reviews:mccarus:report11-passing-reference",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "direct_reviews:mccarus:report11-passing-reference",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unadmitted_maps_negative:mccarus:report11-passing-reference",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unadmitted_er_skips:mccarus:report11-passing-reference",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "review_all_reviews:verheyden2013:sato2005a-awaiting-assessment",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "direct_reviews:verheyden2013:sato2005a-awaiting-assessment",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unadmitted_maps_negative:verheyden2013:sato2005a-awaiting-assessment",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unadmitted_er_skips:verheyden2013:sato2005a-awaiting-assessment",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "review_all_reviews:ahrq-falls:falls-prevention-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "direct_reviews:ahrq-falls:falls-prevention-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unadmitted_maps_negative:ahrq-falls:falls-prevention-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unadmitted_er_skips:ahrq-falls:falls-prevention-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "review_all_reviews:latham2003:vitamin-d-falls-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "direct_reviews:latham2003:vitamin-d-falls-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unadmitted_maps_negative:latham2003:vitamin-d-falls-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "unadmitted_er_skips:latham2003:vitamin-d-falls-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "review_all_reviews:peterson2014:vitamin-d-parkinson-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "direct_reviews:peterson2014:vitamin-d-parkinson-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "hard_maps_reopen:peterson2014:vitamin-d-parkinson-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "hard_er_reviews:peterson2014:vitamin-d-parkinson-conclusion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "direct_metrics",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "review_all_metrics",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "er_metrics",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "er_recall",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "er_savings",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "er_no_extra_misses",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "pooled_reduction",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "policy_recall_bar",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "policy_savings_bar",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "policy_extra_misses_bar",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "policy_recurrence",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "episode_metric_count",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "recurring_savings_count",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "mean_episode_savings",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "median_episode_savings",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "promotion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "no_failed_conditions",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "all_conditions_true",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "shah_zero_savings",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "narayan_positive_savings",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "three_sato_episodes",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "all_sato_positive_savings",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "all_sato_no_extra_misses",
+      "pass": true
+    },
+    {
+      "detail": "bc8f0011d65cb1c2c728ef374ebb82b86c3c08657e9919427ff5d80b2707886a",
+      "name": "frozen_engine:src/openline_claim_graph/temporal_holdout.py",
+      "pass": true
+    },
+    {
+      "detail": "6c04e9e021cbc1c01aae78606acc6cd41393c99673185e1e8e3ee4ccaa06e4b1",
+      "name": "frozen_engine:src/openline_claim_graph/comparative_benchmark.py",
+      "pass": true
+    },
+    {
+      "detail": "1757340f69e919ff68d3cdfe4265fc1ac330bc99ff5bcd20b69058fa846905a2",
+      "name": "frozen_engine:src/openline_claim_graph/impact.py",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "custody_engine_unchanged",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "summary_engine_unchanged",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_has_point",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_has_because",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_has_but",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "card_has_so",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "report_exists",
+      "pass": true
+    }
+  ],
+  "claim_boundary": "Stdlib-only verifier checks artifact custody, temporal ordering, content-addressed bindings, frozen engine bytes, explicit gold shape, authority/prediction consistency for added one-edge episodes, pooled and episode-level metrics, and the predeclared promotion rule. It does not independently adjudicate the scientific content of the source records.",
+  "disposition": "PASS",
+  "failed_count": 0,
+  "module_free": true,
+  "schema": "openline.temporal-selectivity-replication-independent-verification.v1",
+  "valid": true
+}

@@ -1,0 +1,46 @@
+{
+  "benchmark_id": "temporal-mixed-selectivity-001-v1",
+  "future_seal_id": "evidence-recall-temporal-future-seal:sha256:90f99385e3180ade0af21d5d55a508164f0e85d252f8441144781efa1b535878",
+  "records": [
+    {
+      "available_at": "2016-05-03T00:00:00Z",
+      "description": "The independent 2016 audit identifies Zhou and Yuan as a summary of the Narayan paper and describes that summary as increasing its exposure.",
+      "episode_id": "temporal-holdout-episode:sha256:e1ea9907aa38136ab40efcc07df2b4396975b8879275225c6f00caca38222561",
+      "evidence_sha256": "4c361258cc5d288abc3b152b5c82622d7b420d18ef992d7f72373aa21d289fd3",
+      "locator": "doi:10.1186/s41073-016-0008-5",
+      "record_id": "temporal-future-record:sha256:c042b9da7eedaf688459c24298de32e2b03d3fea0b3238abf21bb7b07819df9f",
+      "record_type": "INDEPENDENT_DEPENDENCY_AUDIT_RELIANCE",
+      "target_node_ids": [
+        "zhou2012:death-by-deacetylation-summary"
+      ]
+    },
+    {
+      "available_at": "2016-05-03T00:00:00Z",
+      "description": "The independent 2016 audit singles out Vitner et al. as a method-only citation of Narayan, not propagation of the retracted SIRT2-necroptosis result into the Gaucher-disease conclusion scored here.",
+      "episode_id": "temporal-holdout-episode:sha256:e1ea9907aa38136ab40efcc07df2b4396975b8879275225c6f00caca38222561",
+      "evidence_sha256": "4c361258cc5d288abc3b152b5c82622d7b420d18ef992d7f72373aa21d289fd3",
+      "locator": "doi:10.1186/s41073-016-0008-5",
+      "record_id": "temporal-future-record:sha256:dd9666c2cabb9dc6f6d54880aa2408a696423491eead236cdf8bb7c740c2ff88",
+      "record_type": "INDEPENDENT_CITATION_CONTEXT_NO_RELIANCE",
+      "target_node_ids": [
+        "vitner2014:gaucher-main-conclusion"
+      ]
+    },
+    {
+      "available_at": "2025-01-27T00:00:00Z",
+      "description": "JAMA Network Open later acknowledged the retracted included study and reported an explicit reanalysis without it; the reported results did not change.",
+      "episode_id": "temporal-holdout-episode:sha256:2f5e682b05be5d4994d4a9ee5f5208527bb780675c2a67472a80f89375103539",
+      "evidence_sha256": "1d7c544f5f436475fc0b49874455f8f75aba2be21826dcb33b19b54e0e9e1e49",
+      "locator": "doi:10.1001/jamanetworkopen.2025.0887",
+      "record_id": "temporal-future-record:sha256:f61319b5d67b35d38e886154d8406e646644240e3e5de3c8477076ee057e0818",
+      "record_type": "EXPLICIT_NO_CHANGE_AFTER_REANALYSIS",
+      "target_node_ids": [
+        "shah2021:finding-improved-hemoglobin",
+        "shah2021:pooled-hemoglobin"
+      ]
+    }
+  ],
+  "retrieval_cutoff_at": "2025-01-27T23:59:59Z",
+  "schema": "openline.evidence-recall-temporal-future-seal.v1",
+  "scope_definition": "Trigger-attributed later records for the already-frozen Shah/Darwish episode plus the independently published 2016 Narayan citation-context audit. Negative gold requires affirmative non-reliance for the exact scored target; silence is excluded."
+}

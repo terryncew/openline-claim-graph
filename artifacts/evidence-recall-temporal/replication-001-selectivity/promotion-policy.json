@@ -1,0 +1,12 @@
+{
+  "candidate_system": "EVIDENCE_RECALL",
+  "declared_before_gold": true,
+  "maximum_additional_missed_reopenings_vs_review_all": 0,
+  "minimum_independent_trigger_episodes_with_positive_savings_and_zero_additional_misses": 3,
+  "minimum_reconsideration_recall_basis_points": 9500,
+  "minimum_review_load_reduction_vs_review_all_basis_points": 4000,
+  "promotion_policy_id": "temporal-replication-promotion-policy:sha256:92ddafcb47c66e3e0968589fda513ab10237d5052a32a44df711ab6fbe3ba921",
+  "reference_system": "REVIEW_ALL_REACHABILITY",
+  "rule": "Promotion requires >=95% pooled reconsideration recall, >=40% pooled review-load reduction versus Review-All, zero additional misses, and positive savings with zero additional misses in at least three independent trigger episodes. No composite score.",
+  "schema": "openline.evidence-recall-temporal-replication-promotion-policy.v1"
+}
