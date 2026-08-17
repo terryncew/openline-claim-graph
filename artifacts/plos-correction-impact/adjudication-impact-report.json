@@ -1,0 +1,63 @@
+{
+  "accepted_state_root": "4486fb3f7333b9cc29003066be6aa4a0ee633e392529190527b21c96ef2f072c",
+  "advisory_relations": [
+    {
+      "changed_claims": [
+        {
+          "after": "QUARANTINE",
+          "before": "AFFECTED_UNRESOLVED",
+          "claim_id": "claim:sha256:e0dba46f71acad4358ab9cde67d498155881a1198f06fbbe87886fc12ebf994d",
+          "kind": "UNRESOLVED_QUESTION",
+          "text": "Does the executive summary require revision after the numerical correction?"
+        }
+      ],
+      "changed_decision_claim_ids": [],
+      "counterfactual_policy_id": "claim-impact-policy:sha256:52c705298fd86c89787b1e64372dad906f8f72c2d36db067f76c0cf5ae117e58",
+      "counterfactual_report_id": "claim-impact-report:sha256:cd7a2cd8117d9670fac9ff2ae3ba3e89975446b4eb2d0761fe9ed33d2eafbc58",
+      "relation": "DERIVED_FROM",
+      "relation_id": "relation:sha256:560e344487f31ba1cc12507866f4d93af3d19de07dcd22af79617db083d87dd0",
+      "review_order": 1,
+      "source_claim_id": "claim:sha256:e0dba46f71acad4358ab9cde67d498155881a1198f06fbbe87886fc12ebf994d",
+      "summary": {
+        "changed_claims": 1,
+        "changed_decisions": 0
+      },
+      "target_claim_id": "claim:sha256:77388f43e6335602981b7b0c2abb9b8d37e2a849b2c7d12c082071d2b67bc56c"
+    }
+  ],
+  "baseline_policy_id": "claim-impact-policy:sha256:40938147890bfda88c7126a4e6d1e6f20312deea8be085f9d7b4c878524cfbf9",
+  "baseline_report_id": "claim-impact-report:sha256:67fc15a96446717ee1c46233672b91538849f5612d441321cac9dd8d1e6d8319",
+  "claim_boundary": "For each advisory relation in this exact accepted graph and receiver policy, the report changes only that relation's authority to hard, reruns the existing deterministic impact semantics, and reports classification deltas. It does not certify that an advisory relation is true, complete, important, or worthy of admission, and it does not mutate accepted state.",
+  "event_id": "source-status-event:sha256:d49971d40209a6539622106430e9bdf47b5f2af59a8b868a0b0671fc1be3f8fc",
+  "queue_rule": "changed receiver-declared decisions descending, then changed claim classifications descending, then relation_id ascending",
+  "report_id": "adjudication-impact-report:sha256:731ecd3aafd2050115124150d8698adc8a6d746801a35017b0c9de1b96b12c2b",
+  "schema": "openline.adjudication-impact-report.v1",
+  "status": "ADJUDICATION_COUNTERFACTUALS_COMPUTED_CONDITIONALLY",
+  "summary": {
+    "advisory_relations_evaluated": 1,
+    "consequential_relations": 1,
+    "distinct_changed_claims": 1,
+    "distinct_changed_decisions": 0
+  },
+  "valid": true,
+  "warnings": [
+    "claim_unanchored:claim:sha256:0056fca46714576870c52cae36ad84d394c6c0c3e93f4e03c3588158edacce53",
+    "claim_unanchored:claim:sha256:77388f43e6335602981b7b0c2abb9b8d37e2a849b2c7d12c082071d2b67bc56c",
+    "claim_unanchored:claim:sha256:b8259546395efb02803202580a360cd9250c81024bf0a5064646ce535989a586",
+    "claim_unanchored:claim:sha256:d14f3b5beeebd36bcc2e59b0860612455b6b018ec5bf52100d5ab3b0067d283c",
+    "claim_unanchored:claim:sha256:e0dba46f71acad4358ab9cde67d498155881a1198f06fbbe87886fc12ebf994d",
+    "event_scope_mapping_asserted_not_mechanically_adjudicated",
+    "impact_policy_relations_not_admitted:5",
+    "relation_unanchored:relation:sha256:0eb2201ddada4a1c48966dd71287b95a32f2e572eda05b303c693b6f96433f22",
+    "relation_unanchored:relation:sha256:221be4a8fd779760b1186b316cf2356f44a34688405a5cfa1707bfbd6aab9fe5",
+    "relation_unanchored:relation:sha256:560e344487f31ba1cc12507866f4d93af3d19de07dcd22af79617db083d87dd0",
+    "relation_unanchored:relation:sha256:b769a244b483960b5da7fd610798c5b0ffd0632b55bb21cef681cbc9680cc1f0",
+    "relation_unanchored:relation:sha256:cc31190dc620e694b8deec7fb6e412d6c5fb52ecf7935a8d686ddff8a4568c11",
+    "relation_unanchored:relation:sha256:cc666aa3a0a0945b51ba3079fc8b1e2b70a6f2a344f8ae4e676e8e97d57576ea",
+    "semantic_mapping_unverified:inference:relation:sha256:2ed56f6fcb194ed3228e19d62f5401ab1825eb5a19a36cebf45e974025a9098b",
+    "semantic_mapping_unverified:inference:relation:sha256:6ccaba6099cc6e0aabac67a09deaceb23e4dd836ffb995b7b3e08fc8d652e673",
+    "semantic_mapping_unverified:inference:relation:sha256:9d91ddf59ad45d8614606bd8b2bd0b863e746d985d59647cf521420eeecebf52",
+    "semantic_mapping_unverified:inference:relation:sha256:b1df1de2925827b7f8663d7e320d4c0ff1bf35e66c3377d218d68e105c592400",
+    "semantic_mapping_unverified:inference:relation:sha256:fae4c4ec7f428838e95d3787a0dceb02fb7775c818644395357437f175884cfd"
+  ]
+}

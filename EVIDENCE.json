@@ -78,13 +78,13 @@
       100,
       1000
     ],
-    "unit_and_adversarial_tests": 73,
+    "unit_and_adversarial_tests": 76,
     "wheel_build": true
   },
   "claim_boundary": "Evidence covers deterministic integrity, source-span, lineage, projection, and receiver-policy mechanics plus one small independently labeled, multiple-choice missing-premise mapping check (21/24) and one manually mapped natural-material inconsistency later confirmed by a public correction. It additionally covers deterministic source-impact propagation on that real correction event: two downstream claims beyond direct source lookup were found, one alternative-supported claim was preserved, and one advisory-edge exposure remained unresolved. The dependency state is explicitly authored. This does not cover open-ended extraction fidelity, historical completeness, user demand, market value, model generalization, or graph-versus-summary receiver value. It also covers seven deterministic Frame Ledger findings on one supplied headline and a signed autonomous heterogeneous-review contract. The headline specimen does not include the article body and makes no bias, truth, intent, rationalization, propaganda, reader-effect, or model-competence claim.",
   "compile_output": "",
   "external_publication_or_push": false,
-  "generated_at": "2026-08-16T13:32:27Z",
+  "generated_at": "2026-08-17T01:25:26Z",
   "incremental_api_spend_usd": 0,
   "inputs": [
     {
@@ -131,7 +131,7 @@
     }
   ],
   "interactive_model_mapping_passes": 1,
-  "manifest_aggregate_sha256": "ae59abfbcc366764d75ffa85fb5605db309cc309efa979313193861ca62d960b",
+  "manifest_aggregate_sha256": "2847ad7591c5acb8539df5ff92cbaf9930fab92889bd1920fe1d7b025817699e",
   "model_calls": 1,
   "programmatic_experiment_api_calls": 0,
   "schema": "openline.claim-graph.prototype-evidence.v1",

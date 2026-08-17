@@ -17,7 +17,13 @@ from .bundle import verify_bundle
 from .frame import FrameValidationError, evaluate_frame_ledger, verify_frame_report
 from .frame_review import FrameReviewError, render_frame_ledger
 from .graph import verify_projection
-from .impact import ImpactValidationError, analyze_source_impact, verify_impact_bundle
+from .impact import (
+    ImpactValidationError,
+    analyze_adjudication_impact,
+    analyze_source_impact,
+    verify_adjudication_impact_bundle,
+    verify_impact_bundle,
+)
 from .impact_review import ImpactReviewError, render_impact_review
 from .receipts import verify_receipt, verify_source_disclosure
 from .review import ReviewRenderError, render_review
@@ -170,6 +176,29 @@ def main(argv: list[str] | None = None) -> int:
     impact_render.add_argument("--parent", action="append", default=[])
     impact_render.add_argument("--output", required=True)
     impact_render.add_argument("--title", default="Evidence Recall")
+
+    adjudication_impact = sub.add_parser(
+        "adjudication-impact",
+        help="compute the single-edge counterfactual review surface for advisory relations",
+    )
+    adjudication_impact.add_argument("--snapshot", required=True)
+    adjudication_impact.add_argument("--sources", required=True)
+    adjudication_impact.add_argument("--event", required=True)
+    adjudication_impact.add_argument("--policy", required=True)
+    adjudication_impact.add_argument("--output", required=True)
+
+    adjudication_impact_verify = sub.add_parser(
+        "verify-adjudication-impact",
+        help="authenticate accepted state and reproduce an adjudication-impact report",
+    )
+    adjudication_impact_verify.add_argument("--report", required=True)
+    adjudication_impact_verify.add_argument("--snapshot", required=True)
+    adjudication_impact_verify.add_argument("--sources", required=True)
+    adjudication_impact_verify.add_argument("--event", required=True)
+    adjudication_impact_verify.add_argument("--policy", required=True)
+    adjudication_impact_verify.add_argument("--receipt", required=True)
+    adjudication_impact_verify.add_argument("--public-key", required=True)
+    adjudication_impact_verify.add_argument("--parent", action="append", default=[])
 
     frame = sub.add_parser(
         "frame-audit",
@@ -350,6 +379,42 @@ def main(argv: list[str] | None = None) -> int:
         sources = {item["source_id"]: item for item in sources_doc["sources"]}
         return _emit(
             verify_impact_bundle(
+                _load(args.report),
+                _load(args.snapshot),
+                sources,
+                _load(args.event),
+                _load(args.policy),
+                _load(args.receipt),
+                pinned_public_key=args.public_key,
+                parent_snapshots=[_load(path) for path in args.parent],
+            )
+        )
+    if args.command == "adjudication-impact":
+        sources_doc = _load(args.sources)
+        sources = {item["source_id"]: item for item in sources_doc["sources"]}
+        try:
+            result = analyze_adjudication_impact(
+                _load(args.snapshot),
+                sources,
+                _load(args.event),
+                _load(args.policy),
+            )
+        except ImpactValidationError as exc:
+            return _emit({"valid": False, "errors": [str(exc)]})
+        _write(args.output, result)
+        return _emit(
+            {
+                "valid": True,
+                "output": args.output,
+                "report_id": result["report_id"],
+                "summary": result["summary"],
+            }
+        )
+    if args.command == "verify-adjudication-impact":
+        sources_doc = _load(args.sources)
+        sources = {item["source_id"]: item for item in sources_doc["sources"]}
+        return _emit(
+            verify_adjudication_impact_bundle(
                 _load(args.report),
                 _load(args.snapshot),
                 sources,

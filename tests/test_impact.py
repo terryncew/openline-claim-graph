@@ -5,6 +5,7 @@ import unittest
 
 from openline_claim_graph import (
     ImpactValidationError,
+    analyze_adjudication_impact,
     analyze_source_impact,
     build_source,
     create_claim,
@@ -19,6 +20,8 @@ from openline_claim_graph import (
     sign_snapshot,
     source_span,
     validate_source_status_event,
+    verify_adjudication_impact_bundle,
+    verify_adjudication_impact_report,
     verify_impact_report,
     verify_impact_bundle,
 )
@@ -320,6 +323,117 @@ class ImpactAnalysisTest(unittest.TestCase):
         )
         self.assertFalse(verification["valid"])
         self.assertIn("impact_report_id_mismatch", verification["errors"])
+
+    def test_adjudication_impact_promotes_one_advisory_edge_counterfactually(self):
+        report = analyze_adjudication_impact(
+            self.snapshot,
+            self.sources,
+            self.event,
+            self.policy,
+        )
+        self.assertEqual(self.snapshot["state_root"], report["accepted_state_root"])
+        self.assertEqual(self.policy["policy_id"], report["baseline_policy_id"])
+        self.assertEqual(1, report["summary"]["advisory_relations_evaluated"])
+        self.assertEqual(1, report["summary"]["consequential_relations"])
+        item = report["advisory_relations"][0]
+        self.assertEqual(self.advisory_edge["relation_id"], item["relation_id"])
+        self.assertNotEqual(self.policy["policy_id"], item["counterfactual_policy_id"])
+        self.assertEqual(1, item["summary"]["changed_claims"])
+        self.assertEqual(
+            [
+                {
+                    "claim_id": self.advisory["claim_id"],
+                    "kind": self.advisory["kind"],
+                    "text": self.advisory["text"],
+                    "before": "AFFECTED_UNRESOLVED",
+                    "after": "QUARANTINE",
+                }
+            ],
+            item["changed_claims"],
+        )
+        self.assertTrue(
+            verify_adjudication_impact_report(
+                report,
+                self.snapshot,
+                self.sources,
+                self.event,
+                self.policy,
+            )["valid"]
+        )
+
+    def test_adjudication_impact_review_order_is_mechanical_and_keeps_zero_delta_edges(self):
+        unrelated_advisory = self.edge(self.good, self.other, "SUPPORTS")
+        snapshot = create_snapshot(
+            claims=list(self.snapshot["claims"]),
+            relations=list(self.snapshot["relations"]) + [unrelated_advisory],
+        )
+        policy = create_impact_policy(
+            snapshot,
+            hard_relation_ids=[
+                self.derived_edge["relation_id"],
+                self.decision_edge["relation_id"],
+                self.bad_support["relation_id"],
+                self.good_support["relation_id"],
+            ],
+            advisory_relation_ids=[
+                self.advisory_edge["relation_id"],
+                unrelated_advisory["relation_id"],
+            ],
+            decision_claim_ids=[self.advisory["claim_id"]],
+        )
+        report = analyze_adjudication_impact(snapshot, self.sources, self.event, policy)
+        first, second = report["advisory_relations"]
+        self.assertEqual(self.advisory_edge["relation_id"], first["relation_id"])
+        self.assertEqual(1, first["summary"]["changed_decisions"])
+        self.assertEqual([self.advisory["claim_id"]], first["changed_decision_claim_ids"])
+        self.assertEqual(unrelated_advisory["relation_id"], second["relation_id"])
+        self.assertEqual(0, second["summary"]["changed_claims"])
+        self.assertEqual([], second["changed_claims"])
+        self.assertEqual(1, first["review_order"])
+        self.assertEqual(2, second["review_order"])
+
+    def test_adjudication_impact_tampering_and_wrong_state_pin_fail_closed(self):
+        report = analyze_adjudication_impact(
+            self.snapshot,
+            self.sources,
+            self.event,
+            self.policy,
+        )
+        tampered = copy.deepcopy(report)
+        tampered["advisory_relations"][0]["changed_claims"] = []
+        verification = verify_adjudication_impact_report(
+            tampered,
+            self.snapshot,
+            self.sources,
+            self.event,
+            self.policy,
+        )
+        self.assertFalse(verification["valid"])
+        self.assertIn("adjudication_impact_report_id_mismatch", verification["errors"])
+
+        admitted = verify_adjudication_impact_bundle(
+            report,
+            self.snapshot,
+            self.sources,
+            self.event,
+            self.policy,
+            self.receipt,
+            pinned_public_key=self.pin,
+            parent_snapshots=[],
+        )
+        self.assertTrue(admitted["valid"], admitted)
+        denied = verify_adjudication_impact_bundle(
+            report,
+            self.snapshot,
+            self.sources,
+            self.event,
+            self.policy,
+            self.receipt,
+            pinned_public_key="00" * 32,
+            parent_snapshots=[],
+        )
+        self.assertFalse(denied["valid"])
+        self.assertEqual("DENY_ADJUDICATION_REVIEW", denied["disposition"])
 
     def test_review_renders_only_after_exact_report_reproduction(self):
         report = analyze_source_impact(self.snapshot, self.sources, self.event, self.policy)

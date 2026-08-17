@@ -1,6 +1,6 @@
 {
-  "aggregate_sha256": "ae59abfbcc366764d75ffa85fb5605db309cc309efa979313193861ca62d960b",
-  "file_count": 147,
+  "aggregate_sha256": "2847ad7591c5acb8539df5ff92cbaf9930fab92889bd1920fe1d7b025817699e",
+  "file_count": 149,
   "files": [
     {
       "bytes": 2723,
@@ -18,9 +18,9 @@
       "sha256": "367e0f858ef891cb4e5340860f663ce73186469582f3b5d208422eff0732eb77"
     },
     {
-      "bytes": 8264,
+      "bytes": 9090,
       "path": "CHANGELOG.md",
-      "sha256": "fee9acea3041a5869059792523b4e438dfa4e42da6213b868e078ce9e2f15816"
+      "sha256": "d01b87eec44e8444e9c6d21b266c4107eda6a81e6ccb80ed34a258027e6e6934"
     },
     {
       "bytes": 7474,
@@ -248,6 +248,16 @@
       "sha256": "de605cec9e3251c07126a3114446d0aaf2d77d4c5213a353fbfd910660b0bc70"
     },
     {
+      "bytes": 4481,
+      "path": "artifacts/plos-correction-impact/adjudication-impact-report.json",
+      "sha256": "8ca8fb8c9add0f27c2b2a4b7148d1a8d3b02928cb046f76ac85fb8c5d5fb5006"
+    },
+    {
+      "bytes": 82,
+      "path": "artifacts/plos-correction-impact/adjudication-impact-verification.json",
+      "sha256": "890753baef78edb4e04a5ddd9df5a70c25b510caf352ca945b3359853c74db7c"
+    },
+    {
       "bytes": 1113,
       "path": "artifacts/plos-correction-impact/direct-only-baseline.json",
       "sha256": "e88a540e20171a093a6ff96417cd19568e5b84ea5dc23a3d698be0b22824fff3"
@@ -283,9 +293,9 @@
       "sha256": "f973ab4a771e4cf5a615aedb3e1e89a605ce4ab6dffadc3a98c3ea3c86cd5961"
     },
     {
-      "bytes": 2186,
+      "bytes": 2543,
       "path": "artifacts/plos-correction-impact/report.json",
-      "sha256": "00786699cbe0a7adc2936b522ca5c8ba148e62bdc11aa8e214e96f354a0a3d57"
+      "sha256": "47b3c94229a96d142925e2c7c9380be2a55dd6f82f91f474dd0bf84cce1b5e96"
     },
     {
       "bytes": 10496,
@@ -373,9 +383,9 @@
       "sha256": "db28e15d3da4edab06d97ad83a972b34d4f9945d356a0e52d878b82143f74c50"
     },
     {
-      "bytes": 5691,
+      "bytes": 7041,
       "path": "docs/EVIDENCE_RECALL.md",
-      "sha256": "3e987851e23b26642b83aa12852c214479b8cab287b79f119a6f1ab78886663d"
+      "sha256": "bc63744a320ba0b240f8d9d06ae6ce528aeffbddaf9078d51d0a4fda988696cf"
     },
     {
       "bytes": 5846,
@@ -398,9 +408,9 @@
       "sha256": "39a4c11b80f75bfae403f01290fd0f9bc09f1116d17f93d6f8998132d923c4f6"
     },
     {
-      "bytes": 16084,
+      "bytes": 16803,
       "path": "examples/build_plos_correction_impact.py",
-      "sha256": "6a119659d93bee408a95c5499fa65db06538bf5bfdc85733a3b64548fda9a521"
+      "sha256": "2d4982a0c941f286364978aa61dc20320a107b488c79ae0bc2eeb86dbe5b43f7"
     },
     {
       "bytes": 5833,
@@ -613,9 +623,9 @@
       "sha256": "65d98220b8df4c4f614c73b1ad6ae802e73317df8100a0d6bf4ea56021a2a01a"
     },
     {
-      "bytes": 4466,
+      "bytes": 4774,
       "path": "src/openline_claim_graph/__init__.py",
-      "sha256": "06df95c41e8af10f038cf3df8457b0d234c143385096ddde241ac963ded46b81"
+      "sha256": "bb75a2691aea82a217ad86fb48ec93df6156e8f0701f1675b71c22d4b7f15e10"
     },
     {
       "bytes": 49,
@@ -643,9 +653,9 @@
       "sha256": "f03bbededc76bf4ba136ca1395bac3ca575808aeda027ed799c43fc79ed53657"
     },
     {
-      "bytes": 18726,
+      "bytes": 21428,
       "path": "src/openline_claim_graph/cli.py",
-      "sha256": "6d7ee48a36277ec5108dd1d517e287b305682d859d319f88bfc7072574d79b32"
+      "sha256": "4f9793f162ccfc5544d8b9dbbdf0a91d2c7bd980e47458228c9c837652434361"
     },
     {
       "bytes": 37650,
@@ -668,9 +678,9 @@
       "sha256": "749b452a3c759f207b80ff4b0f4672e0f309a294f4ee3354cf4194e64076fdc9"
     },
     {
-      "bytes": 27758,
+      "bytes": 37226,
       "path": "src/openline_claim_graph/impact.py",
-      "sha256": "6890fcf33feb90f2a7b94c3a28f2c1bbd20eff852cc2be1121fa05c5a9b34174"
+      "sha256": "1757340f69e919ff68d3cdfe4265fc1ac330bc99ff5bcd20b69058fa846905a2"
     },
     {
       "bytes": 8656,
@@ -723,9 +733,9 @@
       "sha256": "21bee38c0c69789315fa3af758b23270fb2baf74fa3d266db7100daf1b86bb5e"
     },
     {
-      "bytes": 17867,
+      "bytes": 22439,
       "path": "tests/test_impact.py",
-      "sha256": "86027c2ca21ac27e6eba2fcacd659513cb4b17a06eb304935218efb711ac4639"
+      "sha256": "f9b97585e74c5e662c4c922e3c5d39c22cc7f22683b798eb9d9d1dcfb296b09c"
     },
     {
       "bytes": 3546,

@@ -20,6 +20,7 @@ from .receipts import verify_receipt
 SOURCE_STATUS_EVENT_SCHEMA = "openline.source-status-event.v1"
 IMPACT_POLICY_SCHEMA = "openline.claim-impact-policy.v1"
 IMPACT_REPORT_SCHEMA = "openline.claim-impact-report.v1"
+ADJUDICATION_IMPACT_REPORT_SCHEMA = "openline.adjudication-impact-report.v1"
 
 SOURCE_STATUSES = ("CORRECTED", "RETRACTED", "WITHDRAWN", "SUPERSEDED", "REVOKED")
 IMPACT_RELATIONS = ("SUPPORTS", "DEPENDS_ON", "DERIVED_FROM")
@@ -377,6 +378,27 @@ def _claim_entry(claim: Mapping[str, Any]) -> dict[str, Any]:
     }
 
 
+def _classification_index(report: Mapping[str, Any]) -> dict[str, dict[str, Any]]:
+    """Flatten an impact report into one deterministic classification per claim."""
+
+    names = {
+        "quarantine": "QUARANTINE",
+        "survives": "SURVIVES",
+        "affected_unresolved": "AFFECTED_UNRESOLVED",
+        "unaffected": "UNAFFECTED",
+    }
+    result: dict[str, dict[str, Any]] = {}
+    for bucket_name, classification in names.items():
+        for raw in report.get("classifications", {}).get(bucket_name, []):
+            item = dict(raw)
+            claim_id = str(item["claim_id"])
+            result[claim_id] = {
+                "classification": str(item.get("classification", classification)),
+                "reason": item.get("reason"),
+            }
+    return result
+
+
 def analyze_source_impact(
     snapshot: Mapping[str, Any],
     sources: Mapping[str, Mapping[str, Any]],
@@ -577,6 +599,158 @@ def analyze_source_impact(
     return {"report_id": content_id("claim-impact-report", body), **body}
 
 
+def analyze_adjudication_impact(
+    snapshot: Mapping[str, Any],
+    sources: Mapping[str, Mapping[str, Any]],
+    event: Mapping[str, Any],
+    policy: Mapping[str, Any],
+) -> dict[str, Any]:
+    """Compute the marginal consequence of admitting each advisory relation.
+
+    The function changes exactly one policy fact at a time: one currently
+    advisory relation is promoted to hard authority, the existing source-impact
+    engine is rerun, and accepted claim classifications are diffed against the
+    unchanged baseline.  This determines the review surface mechanically; it
+    does not decide whether any advisory relation is semantically correct or
+    should be admitted.
+    """
+
+    baseline = analyze_source_impact(snapshot, sources, event, policy)
+    claims = {str(item["claim_id"]): item for item in snapshot.get("claims", [])}
+    relations = {str(item["relation_id"]): item for item in snapshot.get("relations", [])}
+    advisory_ids = sorted(map(str, policy.get("advisory_relation_ids", [])))
+    hard_ids = list(map(str, policy.get("hard_relation_ids", [])))
+    decision_ids = set(map(str, policy.get("decision_claim_ids", [])))
+    baseline_index = _classification_index(baseline)
+
+    entries: list[dict[str, Any]] = []
+    for relation_id in advisory_ids:
+        promoted_policy = create_impact_policy(
+            snapshot,
+            hard_relation_ids=hard_ids + [relation_id],
+            advisory_relation_ids=[item for item in advisory_ids if item != relation_id],
+            hard_provenance_modes=policy.get("hard_provenance_modes", ()),
+            decision_claim_ids=policy.get("decision_claim_ids", ()),
+        )
+        counterfactual = analyze_source_impact(snapshot, sources, event, promoted_policy)
+        counterfactual_index = _classification_index(counterfactual)
+
+        changed_claims: list[dict[str, Any]] = []
+        for claim_id in sorted(baseline_index):
+            before = baseline_index[claim_id]
+            after = counterfactual_index[claim_id]
+            if before["classification"] == after["classification"]:
+                continue
+            claim = claims[claim_id]
+            changed_claims.append(
+                {
+                    "claim_id": claim_id,
+                    "kind": str(claim["kind"]),
+                    "text": str(claim["text"]),
+                    "before": before["classification"],
+                    "after": after["classification"],
+                }
+            )
+
+        changed_claim_ids = {item["claim_id"] for item in changed_claims}
+        changed_decisions = sorted(decision_ids & changed_claim_ids)
+        relation = relations[relation_id]
+        entries.append(
+            {
+                "relation_id": relation_id,
+                "relation": str(relation["relation"]),
+                "source_claim_id": str(relation["source_claim_id"]),
+                "target_claim_id": str(relation["target_claim_id"]),
+                "counterfactual_policy_id": str(promoted_policy["policy_id"]),
+                "counterfactual_report_id": str(counterfactual["report_id"]),
+                "changed_claims": changed_claims,
+                "changed_decision_claim_ids": changed_decisions,
+                "summary": {
+                    "changed_claims": len(changed_claims),
+                    "changed_decisions": len(changed_decisions),
+                },
+            }
+        )
+
+    # This ordering is intentionally mechanical rather than rhetorical.  It is
+    # not a truth or importance score: receiver-declared decision claims are
+    # surfaced first, then larger classification deltas, then stable relation ID.
+    entries.sort(
+        key=lambda item: (
+            -int(item["summary"]["changed_decisions"]),
+            -int(item["summary"]["changed_claims"]),
+            str(item["relation_id"]),
+        )
+    )
+    for index, item in enumerate(entries, start=1):
+        item["review_order"] = index
+
+    changed_claim_union = sorted(
+        {claim["claim_id"] for item in entries for claim in item["changed_claims"]}
+    )
+    changed_decision_union = sorted(
+        {claim_id for item in entries for claim_id in item["changed_decision_claim_ids"]}
+    )
+    body: dict[str, Any] = {
+        "schema": ADJUDICATION_IMPACT_REPORT_SCHEMA,
+        "status": "ADJUDICATION_COUNTERFACTUALS_COMPUTED_CONDITIONALLY",
+        "valid": True,
+        "accepted_state_root": str(snapshot["state_root"]),
+        "event_id": str(event["event_id"]),
+        "baseline_policy_id": str(policy["policy_id"]),
+        "baseline_report_id": str(baseline["report_id"]),
+        "queue_rule": (
+            "changed receiver-declared decisions descending, then changed claim classifications "
+            "descending, then relation_id ascending"
+        ),
+        "advisory_relations": entries,
+        "summary": {
+            "advisory_relations_evaluated": len(entries),
+            "consequential_relations": sum(
+                1 for item in entries if int(item["summary"]["changed_claims"]) > 0
+            ),
+            "distinct_changed_claims": len(changed_claim_union),
+            "distinct_changed_decisions": len(changed_decision_union),
+        },
+        "warnings": list(baseline.get("warnings", [])),
+        "claim_boundary": (
+            "For each advisory relation in this exact accepted graph and receiver policy, the report "
+            "changes only that relation's authority to hard, reruns the existing deterministic impact "
+            "semantics, and reports classification deltas. It does not certify that an advisory relation "
+            "is true, complete, important, or worthy of admission, and it does not mutate accepted state."
+        ),
+    }
+    return {"report_id": content_id("adjudication-impact-report", body), **body}
+
+
+def verify_adjudication_impact_report(
+    report: Mapping[str, Any],
+    snapshot: Mapping[str, Any],
+    sources: Mapping[str, Mapping[str, Any]],
+    event: Mapping[str, Any],
+    policy: Mapping[str, Any],
+) -> dict[str, Any]:
+    """Recompute the single-edge counterfactual queue and require exact equality."""
+
+    errors: list[str] = []
+    try:
+        expected = analyze_adjudication_impact(snapshot, sources, event, policy)
+        if report.get("schema") != ADJUDICATION_IMPACT_REPORT_SCHEMA:
+            errors.append("adjudication_impact_report_schema_invalid")
+        expected_id = content_id("adjudication-impact-report", _without_id(report, "report_id"))
+        if report.get("report_id") != expected_id:
+            errors.append("adjudication_impact_report_id_mismatch")
+        if hash_object(report) != hash_object(expected):
+            errors.append("adjudication_impact_report_reproduction_mismatch")
+    except (ImpactValidationError, KeyError, TypeError, ValueError):
+        errors.append("adjudication_impact_report_inputs_invalid")
+    return {
+        "valid": not errors,
+        "errors": sorted(set(errors)),
+        "disposition": "ADMIT_ADJUDICATION_REVIEW" if not errors else "DENY_ADJUDICATION_REVIEW",
+    }
+
+
 def verify_impact_report(
     report: Mapping[str, Any],
     snapshot: Mapping[str, Any],
@@ -639,5 +813,43 @@ def verify_impact_bundle(
         "claim_boundary": (
             "Authenticates the accepted state and reproduces impact under the declared event and policy. "
             "It does not certify truth, semantic completeness, or authority to mutate that state."
+        ),
+    }
+
+
+def verify_adjudication_impact_bundle(
+    report: Mapping[str, Any],
+    snapshot: Mapping[str, Any],
+    sources: Mapping[str, Mapping[str, Any]],
+    event: Mapping[str, Any],
+    policy: Mapping[str, Any],
+    accepted_receipt: Mapping[str, Any],
+    *,
+    pinned_public_key: str,
+    parent_snapshots: Sequence[Mapping[str, Any]] | None = None,
+) -> dict[str, Any]:
+    """Authenticate accepted state and reproduce adjudication counterfactuals."""
+
+    receipt_check = verify_receipt(
+        accepted_receipt,
+        snapshot,
+        sources,
+        pinned_public_key=pinned_public_key,
+        parent_snapshots=parent_snapshots,
+    )
+    report_check = verify_adjudication_impact_report(report, snapshot, sources, event, policy)
+    errors = [f"accepted_receipt:{item}" for item in receipt_check["errors"]]
+    errors.extend(f"adjudication_impact_report:{item}" for item in report_check["errors"])
+    warnings = [f"accepted_receipt:{item}" for item in receipt_check["warnings"]]
+    return {
+        "valid": not errors,
+        "errors": sorted(set(errors)),
+        "warnings": sorted(set(warnings)),
+        "disposition": "ADMIT_ADJUDICATION_REVIEW" if not errors else "DENY_ADJUDICATION_REVIEW",
+        "accepted_receipt": receipt_check,
+        "adjudication_impact_report": report_check,
+        "claim_boundary": (
+            "Authenticates the accepted state and reproduces the single-edge authority counterfactuals. "
+            "It does not certify semantic correctness, materiality, or authority to admit any relation."
         ),
     }

@@ -45,6 +45,26 @@ Relation authority is not inferred from the relation's author. The receiver poli
 
 An LLM may propose an edge. It cannot promote its own edge into hard authority.
 
+## Consequence-ranked adjudication review
+
+`analyze_adjudication_impact()` asks a narrower counterfactual question over the same
+accepted state and source event:
+
+> If exactly one currently advisory relation were admitted as hard, which accepted
+> classifications would actually change?
+
+For each advisory relation, the engine changes only that relation's authority,
+recomputes the existing impact analysis, and diffs the claim classifications. The
+content-addressed report records the baseline state root, event and policy IDs, the
+counterfactual policy/report IDs, before/after classifications, and any receiver-declared
+decision claims whose classifications change.
+
+The queue order is mechanical: changed receiver-declared decisions first, then the
+number of changed claim classifications, then stable relation ID. This is not a truth or
+importance score. It prevents a proposer model from deciding which of its own semantic
+edges humans ever see; the model may argue for an edge only after the deterministic
+engine exposes what accepted state depends on that adjudication.
+
 ## Support-path rule
 
 Citation count is not the unit. Admitted support paths are.
@@ -83,6 +103,11 @@ The signed accepted-state specimen includes five abstract measurements, five mai
 An independent verifier that does not import the impact engine reproduces the graph roots, Ed25519 receipt binding, event/policy/report IDs, exposure sets, witness paths, survival on an admitted alternative basis, and rendered review hash.
 
 The article and correction are natural material. The downstream dependency state is an authored specimen. Therefore the earned result is implementation and mechanism evidence, not extraction accuracy, historical completeness, user demand, or scientific adjudication.
+
+The same specimen also contains one advisory relation. Its single-edge counterfactual
+changes exactly one claim from `AFFECTED_UNRESOLVED` to `QUARANTINE`. That is an
+illustrative one-edge review surface, not evidence that the ordering will be useful on a
+richer graph.
 
 ## Reusable validation playbook
 

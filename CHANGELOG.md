@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Added deterministic single-edge adjudication counterfactuals on top of Evidence Recall.
+- `analyze_adjudication_impact()` promotes one advisory relation at a time into hard receiver authority, reruns the existing impact engine, and reports only the accepted claim/decision classifications that change.
+- Added a content-addressed adjudication-impact report, exact reproduction verifier, accepted-state receipt bundle verification, and CLI commands `adjudication-impact` / `verify-adjudication-impact`.
+- Added the PLOS correction review-surface artifact: its one advisory edge changes exactly one claim from `AFFECTED_UNRESOLVED` to `QUARANTINE`.
+- Kept the boundary explicit: mechanical consequence selects the review surface; it does not establish that the edge is true, important, or worthy of admission.
+
 ## 0.3.0.dev0 — 2026-08-16
 
 - Added `Frame Ledger`, a content-addressed ruleset and report for exact epistemic lexemes, context cues, declared issue-frame lexemes, narrow local-attribution patterns, and receiver-declared term-set absences.

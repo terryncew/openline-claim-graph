@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from openline_claim_graph import (
+    analyze_adjudication_impact,
     analyze_source_impact,
     build_source,
     create_claim,
@@ -29,6 +30,7 @@ from openline_claim_graph import (
     render_impact_review,
     sign_snapshot,
     verify_impact_report,
+    verify_adjudication_impact_report,
     verify_impact_bundle,
     verify_receipt,
 )
@@ -259,6 +261,14 @@ def build(base: Path, output: Path) -> dict:
     )
     report = analyze_source_impact(snapshot, all_sources, event, policy)
     verification = verify_impact_report(report, snapshot, all_sources, event, policy)
+    adjudication_impact = analyze_adjudication_impact(snapshot, all_sources, event, policy)
+    adjudication_verification = verify_adjudication_impact_report(
+        adjudication_impact,
+        snapshot,
+        all_sources,
+        event,
+        policy,
+    )
     key = private_key_from_hex("44" * 32)
     public_key = public_key_hex(key)
     receipt = sign_snapshot(
@@ -356,6 +366,9 @@ def build(base: Path, output: Path) -> dict:
         "impact_bundle_valid": bundle_verification["valid"],
         "upstream_exact_match": upstream_verification["exact_match"],
         "report_id": report["report_id"],
+        "adjudication_impact_report_id": adjudication_impact["report_id"],
+        "adjudication_impact_valid": adjudication_verification["valid"],
+        "adjudication_impact_summary": adjudication_impact["summary"],
         "review_sha256": hashlib.sha256(review.encode("utf-8")).hexdigest(),
         "summary": report["summary"],
         "direct_only_baseline": baseline,
@@ -374,6 +387,8 @@ def build(base: Path, output: Path) -> dict:
     _write(output / "source-status-event.json", event)
     _write(output / "impact-policy.json", policy)
     _write(output / "impact-report.json", report)
+    _write(output / "adjudication-impact-report.json", adjudication_impact)
+    _write(output / "adjudication-impact-verification.json", adjudication_verification)
     _write(output / "verification.json", verification)
     _write(output / "accepted-receipt-verification.json", receipt_verification)
     _write(output / "impact-bundle-verification.json", bundle_verification)

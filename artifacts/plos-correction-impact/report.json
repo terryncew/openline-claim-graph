@@ -1,5 +1,13 @@
 {
   "accepted_receipt_valid": true,
+  "adjudication_impact_report_id": "adjudication-impact-report:sha256:731ecd3aafd2050115124150d8698adc8a6d746801a35017b0c9de1b96b12c2b",
+  "adjudication_impact_summary": {
+    "advisory_relations_evaluated": 1,
+    "consequential_relations": 1,
+    "distinct_changed_claims": 1,
+    "distinct_changed_decisions": 0
+  },
+  "adjudication_impact_valid": true,
   "claim_boundary": "Real article and correction; authored dependency state. Demonstrates exact, reproducible blast-radius computation and over-quarantine avoidance. Does not establish extraction accuracy, historical completeness, user demand, or commercial value.",
   "correction_doi": "10.1371/journal.pone.0249731",
   "direct_only_baseline": {
