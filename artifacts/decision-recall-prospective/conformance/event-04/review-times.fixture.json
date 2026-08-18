@@ -1,0 +1,32 @@
+{
+  "event_id": "decision-recall-revocation-event:sha256:2b1f391c3427def74176e363654f4cdbd56738be6fc8d00277ec956c00387df4",
+  "records": [
+    {
+      "notes": "",
+      "review_milliseconds": 60000,
+      "review_packet_id": "decision-recall-review-packet:sha256:4e10617b9490133b0dc769d3bdfc828385d30391b72369a0d72c217bcf37bab8",
+      "reviewer_id": "fixture-dr-reviewer",
+      "system": "DECISION_RECALL",
+      "timing_source": "SYNTHETIC_FIXTURE"
+    },
+    {
+      "notes": "",
+      "review_milliseconds": 180000,
+      "review_packet_id": "decision-recall-review-packet:sha256:dc24c2f31e3956a52c85701e9caf523298fcc2e24ed646005113c1332c6adc19",
+      "reviewer_id": "fixture-flat-reviewer",
+      "system": "FLAT_LOG_SEARCH",
+      "timing_source": "SYNTHETIC_FIXTURE"
+    },
+    {
+      "notes": "",
+      "review_milliseconds": 480000,
+      "review_packet_id": "decision-recall-review-packet:sha256:99f3e8996a16075023c9432586d4507f6dcc0d51559fc354ee1a71d33d6462ea",
+      "reviewer_id": "fixture-full-reviewer",
+      "system": "FULL_HISTORY_REVIEW",
+      "timing_source": "SYNTHETIC_FIXTURE"
+    }
+  ],
+  "review_times_id": "decision-recall-review-times:sha256:7db468c2b54ed13537f3f6c12455696beb4cab8923e6eb226ad7d4f854a3cfb6",
+  "schema": "openline.decision-recall-review-times.v1",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf"
+}

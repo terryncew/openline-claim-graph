@@ -1,0 +1,52 @@
+{
+  "event": {
+    "basis_id": "dep-2",
+    "event_at": "2026-08-18T02:01:00Z",
+    "event_id": "decision-recall-revocation-event:sha256:c3414f8cb57261e55eaf6df9aeb98910d3b55daa0137dee14fe1e6343d009e51",
+    "event_type": "LOSS_OF_STANDING",
+    "evidence_sha256": "",
+    "locator": "",
+    "reason": "fixture controlled revocation",
+    "schema": "openline.decision-recall-revocation-event.v1",
+    "selection_proof": {},
+    "stratum": "CONTROLLED",
+    "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf"
+  },
+  "event_id": "decision-recall-revocation-event:sha256:c3414f8cb57261e55eaf6df9aeb98910d3b55daa0137dee14fe1e6343d009e51",
+  "instructions": "Review only the surfaced rows using the pre-trigger record and revocation event. Produce the operational disposition required by the condition. Gold is intentionally absent.",
+  "review_packet_id": "decision-recall-review-packet:sha256:e7ff75bc410a939632573ca019c87e48c5e5563bfd1faf47c630babff5088e01",
+  "review_row_count": 1,
+  "rows": [
+    {
+      "complete_pre_trigger_records": [
+        {
+          "available_at": "2026-08-18T00:02:00Z",
+          "decision": "Accept software change 2",
+          "decision_id": "decision-2",
+          "materials": [
+            {
+              "kind": "ISSUE_PR_TEST_BUNDLE",
+              "locator": "fixture:decision-2",
+              "material_id": "record-2",
+              "sha256": "ef5dfbf05344ff8e35db44da1673604a550fdb5e48df5fdc6b25f70007dc6649",
+              "text": "Accepted change materials. Mentioned bases: dep-2, shared-context, alt-2"
+            }
+          ],
+          "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:b8c6d8ee91efad4275c4910ce05115f113e3612b817febcbbfad557c7b743362",
+          "schema": "openline.decision-recall-pre-trigger-record.v1"
+        }
+      ],
+      "decision": "Accept software change 2",
+      "decision_id": "decision-2",
+      "system_projection": {
+        "disposition": "REVIEW",
+        "witness": [
+          "dep-2"
+        ]
+      }
+    }
+  ],
+  "schema": "openline.decision-recall-review-packet.v1",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf",
+  "system": "FLAT_LOG_SEARCH"
+}

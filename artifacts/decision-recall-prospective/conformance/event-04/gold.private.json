@@ -1,0 +1,52 @@
+{
+  "adjudicated_at": "2026-08-18T03:00:00Z",
+  "adjudication_packet_id": "decision-recall-adjudication-packet:sha256:5a81c100a9083962c9134a65b1be915cf54d3ddc8dbaa52c9bca454e3406e67c",
+  "adjudicator_id": "fixture-not-human",
+  "event_id": "decision-recall-revocation-event:sha256:2b1f391c3427def74176e363654f4cdbd56738be6fc8d00277ec956c00387df4",
+  "gold_id": "decision-recall-gold:sha256:52820593617b68da13101ff8b69adafd1ae8c31411e89a8289919483f7401628",
+  "labels": [
+    {
+      "decision_id": "decision-1",
+      "label": "SURVIVE",
+      "rationale": "fixture-only expected disposition"
+    },
+    {
+      "decision_id": "decision-2",
+      "label": "SURVIVE",
+      "rationale": "fixture-only expected disposition"
+    },
+    {
+      "decision_id": "decision-3",
+      "label": "SURVIVE",
+      "rationale": "fixture-only expected disposition"
+    },
+    {
+      "decision_id": "decision-4",
+      "label": "ESCALATE",
+      "rationale": "fixture-only expected disposition"
+    },
+    {
+      "decision_id": "decision-5",
+      "label": "SURVIVE",
+      "rationale": "fixture-only expected disposition"
+    },
+    {
+      "decision_id": "decision-6",
+      "label": "SURVIVE",
+      "rationale": "fixture-only expected disposition"
+    },
+    {
+      "decision_id": "decision-7",
+      "label": "SURVIVE",
+      "rationale": "fixture-only expected disposition"
+    },
+    {
+      "decision_id": "decision-8",
+      "label": "SURVIVE",
+      "rationale": "fixture-only expected disposition"
+    }
+  ],
+  "method": "CONFORMANCE_FIXTURE_NOT_EMPIRICAL_GOLD",
+  "schema": "openline.decision-recall-gold.v1",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf"
+}

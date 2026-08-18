@@ -29,3 +29,16 @@ Under the predeclared >=95% recall, >=40% review-reduction, zero-additional-miss
 Three trigger episodes belong to the same Sato misconduct family and share the later Avenell audit. Historical reconstruction was performed after outcomes were known. Kataoka aggregate counts were not promoted to case-level gold. Those limitations remain part of the result.
 
 Status: `TEMPORAL_SELECTIVITY_REPLICATION_PROMOTED`.
+
+
+## Prospective Decision Recall development boundary
+
+The `0.6.0.dev0` development line does not upgrade the 0.5.2 historical result. It adds a protocol and mechanics for a future prospective test. A decision-time manifest is accepted operational state, not certified causal truth.
+
+The benchmark therefore seals a separate conventional pre-trigger record and eligible-basis universe. Controlled revocations are drawn from that universe, including bases the dependency manifest may have omitted. The eligible-basis catalog carries explicit custody and promotion requires it to be declared as enumerated from conventional records only by a manifest-blind builder role separated from manifest capture. Those byte bindings and role declarations are reproducible; whether a human secretly saw a manifest remains a procedural audit fact. Independent gold does not see the manifest or system predictions. This prevents the evaluator from defining completeness in terms of whatever Decision Recall happened to record.
+
+Full History is a human baseline, not gold. Its blinded reviewer labels every accepted decision after the trigger; Flat Search reviewers label only surfaced decisions, with unsurfaced decisions remaining closed. Those baseline outcomes are bound to exact review packets and can disagree with separate independent gold. The conformance fixture intentionally gives the Full History baseline one authored miss that Decision Recall catches to prove the scorer can expose that possibility; it is not empirical evidence.
+
+The checked conformance fixture contains an intentionally omitted material basis and records a Decision Recall miss when that basis is revoked. That miss is a required control, not a defect to hide. The accepted decision text used by blind gold is bound in the conventional record rather than sourced from the dependency manifest. Review workloads and baseline reviewer outcomes are content-addressed per system, and the fixture's independent verifier is stdlib-only and runs under Python isolated mode without importing the candidate package. The fixture still uses authored decisions, fixture gold, and synthetic review times and has status `MECHANICS_ONLY_NOT_PRODUCT_EVIDENCE`.
+
+Promotion additionally requires the frozen policy to predate the first empirical accepted decision, preventing threshold tuning after capture begins. No claim is made yet about real capture latency, real prospective recall, natural revocation frequency, annual ROI, cross-domain transport, or product moat.

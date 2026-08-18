@@ -1,0 +1,28 @@
+{
+  "decision_id": "decision:<stable-id>",
+  "decision": "Accept change X",
+  "available_at": "2026-08-18T12:00:00Z",
+  "materials": [
+    {
+      "material_id": "issue-123",
+      "kind": "ISSUE",
+      "locator": "issue:123",
+      "sha256": "",
+      "text": "Complete conventional issue/spec text used when the decision was accepted."
+    },
+    {
+      "material_id": "pr-diff",
+      "kind": "DIFF",
+      "locator": "commit:<sha>",
+      "sha256": "",
+      "text": "Relevant accepted diff or a bound textual representation."
+    },
+    {
+      "material_id": "test-output",
+      "kind": "TEST_LOG",
+      "locator": "ci:<run>",
+      "sha256": "",
+      "text": "Relevant pre-trigger test output."
+    }
+  ]
+}

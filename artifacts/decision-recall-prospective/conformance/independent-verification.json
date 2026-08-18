@@ -1,0 +1,1483 @@
+{
+  "check_count": 272,
+  "checks": [
+    {
+      "detail": [],
+      "name": "stream_seal_valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "openline.decision-recall-stream-seal.v2",
+      "name": "stream_seal_schema",
+      "pass": true
+    },
+    {
+      "detail": 8,
+      "name": "eight_fixture_decisions",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-prospective-001-v1",
+      "name": "protocol_id",
+      "pass": true
+    },
+    {
+      "detail": {
+        "builder_id": "fixture-catalog-builder",
+        "built_at": "2026-08-18T00:59:00Z",
+        "manifest_visible": false,
+        "method": "MANIFEST_BLIND_RECORD_ENUMERATION",
+        "source_scope": "CONVENTIONAL_PRE_TRIGGER_RECORDS_ONLY"
+      },
+      "name": "catalog_manifest_blind_method",
+      "pass": true
+    },
+    {
+      "detail": {
+        "builder_id": "fixture-catalog-builder",
+        "built_at": "2026-08-18T00:59:00Z",
+        "manifest_visible": false,
+        "method": "MANIFEST_BLIND_RECORD_ENUMERATION",
+        "source_scope": "CONVENTIONAL_PRE_TRIGGER_RECORDS_ONLY"
+      },
+      "name": "catalog_conventional_record_scope",
+      "pass": true
+    },
+    {
+      "detail": false,
+      "name": "catalog_manifest_not_visible",
+      "pass": true
+    },
+    {
+      "detail": "fixture-catalog-builder",
+      "name": "catalog_builder_role_separated",
+      "pass": true
+    },
+    {
+      "detail": "openline.decision-recall-promotion-policy.v1",
+      "name": "promotion_policy_schema",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-promotion-policy:sha256:8ac5a79bde84560320916be7e7163d17c598b8d81692ac0b171c39192e5d3347",
+      "name": "promotion_policy_content_id",
+      "pass": true
+    },
+    {
+      "detail": "2026-08-18T00:00:00Z",
+      "name": "promotion_policy:declared_at",
+      "pass": true
+    },
+    {
+      "detail": 30,
+      "name": "promotion_policy:minimum_decisions",
+      "pass": true
+    },
+    {
+      "detail": 10,
+      "name": "promotion_policy:minimum_controlled_revocations",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "promotion_policy:maximum_additional_missed_reopenings_vs_full_history",
+      "pass": true
+    },
+    {
+      "detail": 4000,
+      "name": "promotion_policy:minimum_review_load_reduction_basis_points",
+      "pass": true
+    },
+    {
+      "detail": 60000,
+      "name": "promotion_policy:maximum_median_capture_milliseconds",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "promotion_policy:maximum_silent_ambiguous_survivals",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "promotion_policy:maximum_ambiguous_overreach",
+      "pass": true
+    },
+    {
+      "detail": 1000,
+      "name": "promotion_policy:minimum_review_load_reduction_vs_flat_search_basis_points",
+      "pass": true
+    },
+    {
+      "detail": 3,
+      "name": "promotion_policy:minimum_timed_revocations",
+      "pass": true
+    },
+    {
+      "detail": true,
+      "name": "promotion_policy:require_positive_conditional_attention_savings",
+      "pass": true
+    },
+    {
+      "detail": true,
+      "name": "promotion_policy:require_instrumented_capture",
+      "pass": true
+    },
+    {
+      "detail": [
+        "MONOTONIC_CLI",
+        "MONOTONIC_UI"
+      ],
+      "name": "promotion_policy:acceptable_capture_timing_sources",
+      "pass": true
+    },
+    {
+      "detail": true,
+      "name": "promotion_policy:require_outperform_flat_search",
+      "pass": true
+    },
+    {
+      "detail": 3,
+      "name": "promotion_policy:minimum_mixed_gold_revocations",
+      "pass": true
+    },
+    {
+      "detail": true,
+      "name": "promotion_policy:require_adjudicator_role_separation",
+      "pass": true
+    },
+    {
+      "detail": true,
+      "name": "promotion_policy:require_verified_controlled_selection",
+      "pass": true
+    },
+    {
+      "detail": true,
+      "name": "promotion_policy:require_instrumented_review_timing",
+      "pass": true
+    },
+    {
+      "detail": true,
+      "name": "promotion_policy:require_verified_score_artifacts",
+      "pass": true
+    },
+    {
+      "detail": true,
+      "name": "promotion_policy:require_manifest_blind_basis_catalog",
+      "pass": true
+    },
+    {
+      "detail": true,
+      "name": "promotion_policy:require_catalog_role_separation",
+      "pass": true
+    },
+    {
+      "detail": true,
+      "name": "promotion_policy:require_baseline_review_outcomes",
+      "pass": true
+    },
+    {
+      "detail": true,
+      "name": "promotion_policy:require_baseline_reviewer_role_separation",
+      "pass": true
+    },
+    {
+      "detail": true,
+      "name": "promotion_policy:require_policy_predeclared_before_capture",
+      "pass": true
+    },
+    {
+      "detail": "MECHANICS_ONLY_NOT_PRODUCT_EVIDENCE",
+      "name": "mechanics_only_status",
+      "pass": true
+    },
+    {
+      "detail": false,
+      "name": "promotion_not_claimed",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-prospective-conformance-001",
+      "name": "report_benchmark_binding",
+      "pass": true
+    },
+    {
+      "detail": 8,
+      "name": "report_manifest_count",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-promotion-policy:sha256:8ac5a79bde84560320916be7e7163d17c598b8d81692ac0b171c39192e5d3347",
+      "name": "report_policy_binding",
+      "pass": true
+    },
+    {
+      "detail": [
+        "fixture decisions are authored calibration data rather than a real accepted decision stream",
+        "fixture gold is pre-authored rather than independent blinded human adjudication",
+        "fixture baseline-review outcomes are pre-authored and fixture review times are synthetic, so neither accuracy nor attention economics is empirical",
+        "fixture has fewer than the predeclared minimum decisions and revocations"
+      ],
+      "name": "report_explicitly_disclaims_authored_fixture",
+      "pass": true
+    },
+    {
+      "detail": [
+        "fixture decisions are authored calibration data rather than a real accepted decision stream",
+        "fixture gold is pre-authored rather than independent blinded human adjudication",
+        "fixture baseline-review outcomes are pre-authored and fixture review times are synthetic, so neither accuracy nor attention economics is empirical",
+        "fixture has fewer than the predeclared minimum decisions and revocations"
+      ],
+      "name": "report_explicitly_disclaims_empirical_gold",
+      "pass": true
+    },
+    {
+      "detail": [
+        "fixture decisions are authored calibration data rather than a real accepted decision stream",
+        "fixture gold is pre-authored rather than independent blinded human adjudication",
+        "fixture baseline-review outcomes are pre-authored and fixture review times are synthetic, so neither accuracy nor attention economics is empirical",
+        "fixture has fewer than the predeclared minimum decisions and revocations"
+      ],
+      "name": "report_explicitly_disclaims_attention_economics",
+      "pass": true
+    },
+    {
+      "detail": "bc8f0011d65cb1c2c728ef374ebb82b86c3c08657e9919427ff5d80b2707886a",
+      "name": "frozen_engine:src/openline_claim_graph/temporal_holdout.py",
+      "pass": true
+    },
+    {
+      "detail": "6c04e9e021cbc1c01aae78606acc6cd41393c99673185e1e8e3ee4ccaa06e4b1",
+      "name": "frozen_engine:src/openline_claim_graph/comparative_benchmark.py",
+      "pass": true
+    },
+    {
+      "detail": "1757340f69e919ff68d3cdfe4265fc1ac330bc99ff5bcd20b69058fa846905a2",
+      "name": "frozen_engine:src/openline_claim_graph/impact.py",
+      "pass": true
+    },
+    {
+      "detail": 5,
+      "name": "five_fixture_events",
+      "pass": true
+    },
+    {
+      "detail": 5,
+      "name": "report_event_count",
+      "pass": true
+    },
+    {
+      "detail": 5,
+      "name": "report_event_summary_count",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-01:event_valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "CONTROLLED",
+      "name": "event-01:controlled_stratum",
+      "pass": true
+    },
+    {
+      "detail": {},
+      "name": "event-01:fixture_does_not_fake_random_selection",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-01:predictions_reproduce_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-predictions:sha256:a07811872fc27dccb4255afa8b590b7dfae1678d1ee1cc1354cc49d9ec673763",
+      "name": "event-01:predictions_content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-01:blind_packet_reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-adjudication-packet:sha256:188cf99e757b954ce0518365ff74a353995afacbd12c99da8f0dc63dcaa7dbe9",
+      "name": "event-01:packet_content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-01:packet_hides_predictions",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-01:packet_hides_manifest_contract",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-01:review_packet:FULL_HISTORY_REVIEW:reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-review-packet:sha256:7ac12088baf44b5ddae1cd566040cdf341a0277556551b2faf2f7c30d4562087",
+      "name": "event-01:review_packet:FULL_HISTORY_REVIEW:content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-01:review_packet:FULL_HISTORY_REVIEW:hides_gold",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-01:review_packet:FLAT_LOG_SEARCH:reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-review-packet:sha256:0d0d579ac474f24ed48e8a660a0d722186e420d6eb2c1304d0ef5dbf63bde65d",
+      "name": "event-01:review_packet:FLAT_LOG_SEARCH:content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-01:review_packet:FLAT_LOG_SEARCH:hides_gold",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-01:review_packet:DECISION_RECALL:reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-review-packet:sha256:b441f9b04b9e9c87354d1613977deee73e7ac34c74a8ed2e7d8b4b88a56e4dec",
+      "name": "event-01:review_packet:DECISION_RECALL:content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-01:review_packet:DECISION_RECALL:hides_gold",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-01:gold_valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "CONFORMANCE_FIXTURE_NOT_EMPIRICAL_GOLD",
+      "name": "event-01:fixture_gold_not_misrepresented",
+      "pass": true
+    },
+    {
+      "detail": "fixture-not-human",
+      "name": "event-01:fixture_adjudicator_not_human",
+      "pass": true
+    },
+    {
+      "detail": [
+        "FLAT_LOG_SEARCH",
+        "FULL_HISTORY_REVIEW"
+      ],
+      "name": "event-01:two_baseline_review_outcomes",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-01:review_outcome:FULL_HISTORY_REVIEW:valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "BLINDED_BASELINE_REVIEW",
+      "name": "event-01:review_outcome:FULL_HISTORY_REVIEW:method",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-01:review_outcome:FLAT_LOG_SEARCH:valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "BLINDED_BASELINE_REVIEW",
+      "name": "event-01:review_outcome:FLAT_LOG_SEARCH:method",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-01:review_times_valid_independent",
+      "pass": true
+    },
+    {
+      "detail": [
+        "SYNTHETIC_FIXTURE"
+      ],
+      "name": "event-01:review_times_declared_synthetic",
+      "pass": true
+    },
+    {
+      "detail": {
+        "DECISION_RECALL": "decision-recall-review-packet:sha256:b441f9b04b9e9c87354d1613977deee73e7ac34c74a8ed2e7d8b4b88a56e4dec",
+        "FLAT_LOG_SEARCH": "decision-recall-review-packet:sha256:0d0d579ac474f24ed48e8a660a0d722186e420d6eb2c1304d0ef5dbf63bde65d",
+        "FULL_HISTORY_REVIEW": "decision-recall-review-packet:sha256:7ac12088baf44b5ddae1cd566040cdf341a0277556551b2faf2f7c30d4562087"
+      },
+      "name": "event-01:review_times_bind_exact_workloads",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-01:score_reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-score:sha256:41d7987cb0455c54b20061fec683cf047b85ec6b500ef4914eb509b066f14b2c",
+      "name": "event-01:score_content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-01:annual_roi_not_inferred",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-01:review_timing_not_empirical",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-01:review_packet_bindings_valid",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-01:review_outcome_timing_bindings_valid",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-01:baseline_review_outcomes_verified",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-01:controlled_selection_not_verified",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-revocation-event:sha256:f89295bfe6451e64b7a5285bfb13651403a43a6f98f33ed6eaf41280c64ef535",
+      "name": "event-01:report_summary_present",
+      "pass": true
+    },
+    {
+      "detail": "dep-1",
+      "name": "event-01:report_basis",
+      "pass": true
+    },
+    {
+      "detail": 1,
+      "name": "event-01:report_review_load",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "event-01:report_missed_reopens",
+      "pass": true
+    },
+    {
+      "detail": 1,
+      "name": "event-01:report_full_history_reviewer_misses",
+      "pass": true
+    },
+    {
+      "detail": {
+        "decision_recall": 0,
+        "full_history": 1
+      },
+      "name": "event-01:full_history_is_not_gold_oracle",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "event-01:non_omission_no_dr_miss",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-02:event_valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "CONTROLLED",
+      "name": "event-02:controlled_stratum",
+      "pass": true
+    },
+    {
+      "detail": {},
+      "name": "event-02:fixture_does_not_fake_random_selection",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-02:predictions_reproduce_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-predictions:sha256:c9588c3558691d086abebfeb14fb3b230c0702a1b515c83e4dac04f7d90149fe",
+      "name": "event-02:predictions_content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-02:blind_packet_reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-adjudication-packet:sha256:a081e9be1f9eb027998001250e63bbac4301e2e406297348099f5f987539160d",
+      "name": "event-02:packet_content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-02:packet_hides_predictions",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-02:packet_hides_manifest_contract",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-02:review_packet:FULL_HISTORY_REVIEW:reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-review-packet:sha256:c8e98a53ff268a7190329adf831aa8b03c1f3e032375338c31a5e11738737a7a",
+      "name": "event-02:review_packet:FULL_HISTORY_REVIEW:content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-02:review_packet:FULL_HISTORY_REVIEW:hides_gold",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-02:review_packet:FLAT_LOG_SEARCH:reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-review-packet:sha256:e7ff75bc410a939632573ca019c87e48c5e5563bfd1faf47c630babff5088e01",
+      "name": "event-02:review_packet:FLAT_LOG_SEARCH:content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-02:review_packet:FLAT_LOG_SEARCH:hides_gold",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-02:review_packet:DECISION_RECALL:reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-review-packet:sha256:0101c6dbc57b83e7a0a881d8f572d033cf5a61815d2fb6fe4a001be8693e10de",
+      "name": "event-02:review_packet:DECISION_RECALL:content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-02:review_packet:DECISION_RECALL:hides_gold",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-02:gold_valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "CONFORMANCE_FIXTURE_NOT_EMPIRICAL_GOLD",
+      "name": "event-02:fixture_gold_not_misrepresented",
+      "pass": true
+    },
+    {
+      "detail": "fixture-not-human",
+      "name": "event-02:fixture_adjudicator_not_human",
+      "pass": true
+    },
+    {
+      "detail": [
+        "FLAT_LOG_SEARCH",
+        "FULL_HISTORY_REVIEW"
+      ],
+      "name": "event-02:two_baseline_review_outcomes",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-02:review_outcome:FULL_HISTORY_REVIEW:valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "BLINDED_BASELINE_REVIEW",
+      "name": "event-02:review_outcome:FULL_HISTORY_REVIEW:method",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-02:review_outcome:FLAT_LOG_SEARCH:valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "BLINDED_BASELINE_REVIEW",
+      "name": "event-02:review_outcome:FLAT_LOG_SEARCH:method",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-02:review_times_valid_independent",
+      "pass": true
+    },
+    {
+      "detail": [
+        "SYNTHETIC_FIXTURE"
+      ],
+      "name": "event-02:review_times_declared_synthetic",
+      "pass": true
+    },
+    {
+      "detail": {
+        "DECISION_RECALL": "decision-recall-review-packet:sha256:0101c6dbc57b83e7a0a881d8f572d033cf5a61815d2fb6fe4a001be8693e10de",
+        "FLAT_LOG_SEARCH": "decision-recall-review-packet:sha256:e7ff75bc410a939632573ca019c87e48c5e5563bfd1faf47c630babff5088e01",
+        "FULL_HISTORY_REVIEW": "decision-recall-review-packet:sha256:c8e98a53ff268a7190329adf831aa8b03c1f3e032375338c31a5e11738737a7a"
+      },
+      "name": "event-02:review_times_bind_exact_workloads",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-02:score_reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-score:sha256:3d778265f911f1c6dd1e1349fb7215bb8e1d212730bcdcf35fdef48e81fb692a",
+      "name": "event-02:score_content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-02:annual_roi_not_inferred",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-02:review_timing_not_empirical",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-02:review_packet_bindings_valid",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-02:review_outcome_timing_bindings_valid",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-02:baseline_review_outcomes_verified",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-02:controlled_selection_not_verified",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-revocation-event:sha256:c3414f8cb57261e55eaf6df9aeb98910d3b55daa0137dee14fe1e6343d009e51",
+      "name": "event-02:report_summary_present",
+      "pass": true
+    },
+    {
+      "detail": "dep-2",
+      "name": "event-02:report_basis",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "event-02:report_review_load",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "event-02:report_missed_reopens",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "event-02:report_full_history_reviewer_misses",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "event-02:non_omission_no_dr_miss",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-03:event_valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "CONTROLLED",
+      "name": "event-03:controlled_stratum",
+      "pass": true
+    },
+    {
+      "detail": {},
+      "name": "event-03:fixture_does_not_fake_random_selection",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-03:predictions_reproduce_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-predictions:sha256:fdf3437a49b510d2496694ae00367be1efa274b11b5537a1c6efa22f25bc968b",
+      "name": "event-03:predictions_content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-03:blind_packet_reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-adjudication-packet:sha256:2b2f96bbd84ee7382d55adbd0fa01beaba0f5abfe12ee7eadd3855a992e0686d",
+      "name": "event-03:packet_content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-03:packet_hides_predictions",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-03:packet_hides_manifest_contract",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-03:review_packet:FULL_HISTORY_REVIEW:reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-review-packet:sha256:f11c2f95137c0326f2c324addf29c38e49737be4848befb925495c9a748363e2",
+      "name": "event-03:review_packet:FULL_HISTORY_REVIEW:content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-03:review_packet:FULL_HISTORY_REVIEW:hides_gold",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-03:review_packet:FLAT_LOG_SEARCH:reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-review-packet:sha256:c55849dbfc08488c47796bce4eccf7c986bb424bdf4db57fcaedb836e69204a7",
+      "name": "event-03:review_packet:FLAT_LOG_SEARCH:content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-03:review_packet:FLAT_LOG_SEARCH:hides_gold",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-03:review_packet:DECISION_RECALL:reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-review-packet:sha256:8df73ff9abf70c9951560e401ce7f289af58c86089f2616957b153a72c2024a8",
+      "name": "event-03:review_packet:DECISION_RECALL:content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-03:review_packet:DECISION_RECALL:hides_gold",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-03:gold_valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "CONFORMANCE_FIXTURE_NOT_EMPIRICAL_GOLD",
+      "name": "event-03:fixture_gold_not_misrepresented",
+      "pass": true
+    },
+    {
+      "detail": "fixture-not-human",
+      "name": "event-03:fixture_adjudicator_not_human",
+      "pass": true
+    },
+    {
+      "detail": [
+        "FLAT_LOG_SEARCH",
+        "FULL_HISTORY_REVIEW"
+      ],
+      "name": "event-03:two_baseline_review_outcomes",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-03:review_outcome:FULL_HISTORY_REVIEW:valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "BLINDED_BASELINE_REVIEW",
+      "name": "event-03:review_outcome:FULL_HISTORY_REVIEW:method",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-03:review_outcome:FLAT_LOG_SEARCH:valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "BLINDED_BASELINE_REVIEW",
+      "name": "event-03:review_outcome:FLAT_LOG_SEARCH:method",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-03:review_times_valid_independent",
+      "pass": true
+    },
+    {
+      "detail": [
+        "SYNTHETIC_FIXTURE"
+      ],
+      "name": "event-03:review_times_declared_synthetic",
+      "pass": true
+    },
+    {
+      "detail": {
+        "DECISION_RECALL": "decision-recall-review-packet:sha256:8df73ff9abf70c9951560e401ce7f289af58c86089f2616957b153a72c2024a8",
+        "FLAT_LOG_SEARCH": "decision-recall-review-packet:sha256:c55849dbfc08488c47796bce4eccf7c986bb424bdf4db57fcaedb836e69204a7",
+        "FULL_HISTORY_REVIEW": "decision-recall-review-packet:sha256:f11c2f95137c0326f2c324addf29c38e49737be4848befb925495c9a748363e2"
+      },
+      "name": "event-03:review_times_bind_exact_workloads",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-03:score_reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-score:sha256:c01f23ed7f8e0f2eb7348ef0bd60cffe98f273e97aa5884287d9499cea5ffa08",
+      "name": "event-03:score_content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-03:annual_roi_not_inferred",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-03:review_timing_not_empirical",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-03:review_packet_bindings_valid",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-03:review_outcome_timing_bindings_valid",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-03:baseline_review_outcomes_verified",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-03:controlled_selection_not_verified",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-revocation-event:sha256:6cd0c6479a6d1dd013c2016ab84729fb20a848eac40238664fbc8853638b17f5",
+      "name": "event-03:report_summary_present",
+      "pass": true
+    },
+    {
+      "detail": "shared-context",
+      "name": "event-03:report_basis",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "event-03:report_review_load",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "event-03:report_missed_reopens",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "event-03:report_full_history_reviewer_misses",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "event-03:non_omission_no_dr_miss",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-03:negative_control_has_zero_dr_review",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-04:event_valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "CONTROLLED",
+      "name": "event-04:controlled_stratum",
+      "pass": true
+    },
+    {
+      "detail": {},
+      "name": "event-04:fixture_does_not_fake_random_selection",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-04:predictions_reproduce_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-predictions:sha256:2991f701c036bec3621b7095c0199e16d54f1b77df743637365d6fc0c93f28e0",
+      "name": "event-04:predictions_content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-04:blind_packet_reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-adjudication-packet:sha256:5a81c100a9083962c9134a65b1be915cf54d3ddc8dbaa52c9bca454e3406e67c",
+      "name": "event-04:packet_content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-04:packet_hides_predictions",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-04:packet_hides_manifest_contract",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-04:review_packet:FULL_HISTORY_REVIEW:reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-review-packet:sha256:99f3e8996a16075023c9432586d4507f6dcc0d51559fc354ee1a71d33d6462ea",
+      "name": "event-04:review_packet:FULL_HISTORY_REVIEW:content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-04:review_packet:FULL_HISTORY_REVIEW:hides_gold",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-04:review_packet:FLAT_LOG_SEARCH:reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-review-packet:sha256:dc24c2f31e3956a52c85701e9caf523298fcc2e24ed646005113c1332c6adc19",
+      "name": "event-04:review_packet:FLAT_LOG_SEARCH:content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-04:review_packet:FLAT_LOG_SEARCH:hides_gold",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-04:review_packet:DECISION_RECALL:reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-review-packet:sha256:4e10617b9490133b0dc769d3bdfc828385d30391b72369a0d72c217bcf37bab8",
+      "name": "event-04:review_packet:DECISION_RECALL:content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-04:review_packet:DECISION_RECALL:hides_gold",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-04:gold_valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "CONFORMANCE_FIXTURE_NOT_EMPIRICAL_GOLD",
+      "name": "event-04:fixture_gold_not_misrepresented",
+      "pass": true
+    },
+    {
+      "detail": "fixture-not-human",
+      "name": "event-04:fixture_adjudicator_not_human",
+      "pass": true
+    },
+    {
+      "detail": [
+        "FLAT_LOG_SEARCH",
+        "FULL_HISTORY_REVIEW"
+      ],
+      "name": "event-04:two_baseline_review_outcomes",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-04:review_outcome:FULL_HISTORY_REVIEW:valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "BLINDED_BASELINE_REVIEW",
+      "name": "event-04:review_outcome:FULL_HISTORY_REVIEW:method",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-04:review_outcome:FLAT_LOG_SEARCH:valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "BLINDED_BASELINE_REVIEW",
+      "name": "event-04:review_outcome:FLAT_LOG_SEARCH:method",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-04:review_times_valid_independent",
+      "pass": true
+    },
+    {
+      "detail": [
+        "SYNTHETIC_FIXTURE"
+      ],
+      "name": "event-04:review_times_declared_synthetic",
+      "pass": true
+    },
+    {
+      "detail": {
+        "DECISION_RECALL": "decision-recall-review-packet:sha256:4e10617b9490133b0dc769d3bdfc828385d30391b72369a0d72c217bcf37bab8",
+        "FLAT_LOG_SEARCH": "decision-recall-review-packet:sha256:dc24c2f31e3956a52c85701e9caf523298fcc2e24ed646005113c1332c6adc19",
+        "FULL_HISTORY_REVIEW": "decision-recall-review-packet:sha256:99f3e8996a16075023c9432586d4507f6dcc0d51559fc354ee1a71d33d6462ea"
+      },
+      "name": "event-04:review_times_bind_exact_workloads",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-04:score_reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-score:sha256:39a6c2ea553a5cffdbcee5795a01898c525308c8cf33bf51d21293f167d4f42a",
+      "name": "event-04:score_content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-04:annual_roi_not_inferred",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-04:review_timing_not_empirical",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-04:review_packet_bindings_valid",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-04:review_outcome_timing_bindings_valid",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-04:baseline_review_outcomes_verified",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-04:controlled_selection_not_verified",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-revocation-event:sha256:2b1f391c3427def74176e363654f4cdbd56738be6fc8d00277ec956c00387df4",
+      "name": "event-04:report_summary_present",
+      "pass": true
+    },
+    {
+      "detail": "dep-4",
+      "name": "event-04:report_basis",
+      "pass": true
+    },
+    {
+      "detail": 1,
+      "name": "event-04:report_review_load",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "event-04:report_missed_reopens",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "event-04:report_full_history_reviewer_misses",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "event-04:non_omission_no_dr_miss",
+      "pass": true
+    },
+    {
+      "detail": {
+        "disposition": "ESCALATE",
+        "reason": "accepted record declared materiality ambiguous",
+        "witness": [
+          "dep-4"
+        ]
+      },
+      "name": "event-04:ambiguous_dependency_escalates",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-04:no_ambiguous_overreach",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-05:event_valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "CONTROLLED",
+      "name": "event-05:controlled_stratum",
+      "pass": true
+    },
+    {
+      "detail": {},
+      "name": "event-05:fixture_does_not_fake_random_selection",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-05:predictions_reproduce_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-predictions:sha256:d4533427254842d1f2472d813e41efc586069c2470fd490352aaea29a12cdd14",
+      "name": "event-05:predictions_content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-05:blind_packet_reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-adjudication-packet:sha256:42d184e5a37413b4debfb860dfadb71bb39a8af2fffa8d7aa9f1a1639aacf30b",
+      "name": "event-05:packet_content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-05:packet_hides_predictions",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-05:packet_hides_manifest_contract",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-05:review_packet:FULL_HISTORY_REVIEW:reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-review-packet:sha256:c21d76a2d5a03108c1c273c47e1895a2e86fc2603fd02e8fe08a76559f5ecd8d",
+      "name": "event-05:review_packet:FULL_HISTORY_REVIEW:content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-05:review_packet:FULL_HISTORY_REVIEW:hides_gold",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-05:review_packet:FLAT_LOG_SEARCH:reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-review-packet:sha256:6993845109b4bfa72c931341fe9d5b094ee3f5c9a1157d63711bce76ca0c34d7",
+      "name": "event-05:review_packet:FLAT_LOG_SEARCH:content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-05:review_packet:FLAT_LOG_SEARCH:hides_gold",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-05:review_packet:DECISION_RECALL:reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-review-packet:sha256:b628f381259f805162addc49df4bdc0c795404cd50c4d70cce14b93504b0d9d7",
+      "name": "event-05:review_packet:DECISION_RECALL:content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-05:review_packet:DECISION_RECALL:hides_gold",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-05:gold_valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "CONFORMANCE_FIXTURE_NOT_EMPIRICAL_GOLD",
+      "name": "event-05:fixture_gold_not_misrepresented",
+      "pass": true
+    },
+    {
+      "detail": "fixture-not-human",
+      "name": "event-05:fixture_adjudicator_not_human",
+      "pass": true
+    },
+    {
+      "detail": [
+        "FLAT_LOG_SEARCH",
+        "FULL_HISTORY_REVIEW"
+      ],
+      "name": "event-05:two_baseline_review_outcomes",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-05:review_outcome:FULL_HISTORY_REVIEW:valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "BLINDED_BASELINE_REVIEW",
+      "name": "event-05:review_outcome:FULL_HISTORY_REVIEW:method",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-05:review_outcome:FLAT_LOG_SEARCH:valid_independent",
+      "pass": true
+    },
+    {
+      "detail": "BLINDED_BASELINE_REVIEW",
+      "name": "event-05:review_outcome:FLAT_LOG_SEARCH:method",
+      "pass": true
+    },
+    {
+      "detail": [],
+      "name": "event-05:review_times_valid_independent",
+      "pass": true
+    },
+    {
+      "detail": [
+        "SYNTHETIC_FIXTURE"
+      ],
+      "name": "event-05:review_times_declared_synthetic",
+      "pass": true
+    },
+    {
+      "detail": {
+        "DECISION_RECALL": "decision-recall-review-packet:sha256:b628f381259f805162addc49df4bdc0c795404cd50c4d70cce14b93504b0d9d7",
+        "FLAT_LOG_SEARCH": "decision-recall-review-packet:sha256:6993845109b4bfa72c931341fe9d5b094ee3f5c9a1157d63711bce76ca0c34d7",
+        "FULL_HISTORY_REVIEW": "decision-recall-review-packet:sha256:c21d76a2d5a03108c1c273c47e1895a2e86fc2603fd02e8fe08a76559f5ecd8d"
+      },
+      "name": "event-05:review_times_bind_exact_workloads",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-05:score_reproduces_independently",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-score:sha256:313ccfa8a57adf0e8c69a0a42a10b345a22ef44e23a4b3e4b6233eacff24d2c0",
+      "name": "event-05:score_content_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-05:annual_roi_not_inferred",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-05:review_timing_not_empirical",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-05:review_packet_bindings_valid",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-05:review_outcome_timing_bindings_valid",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-05:baseline_review_outcomes_verified",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "event-05:controlled_selection_not_verified",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-revocation-event:sha256:50a73d7d8454bc7d487535a14809d058500ec8b9f36b4ebdb94684d57d8f95fd",
+      "name": "event-05:report_summary_present",
+      "pass": true
+    },
+    {
+      "detail": "hidden-5",
+      "name": "event-05:report_basis",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "event-05:report_review_load",
+      "pass": true
+    },
+    {
+      "detail": 1,
+      "name": "event-05:report_missed_reopens",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "event-05:report_full_history_reviewer_misses",
+      "pass": true
+    },
+    {
+      "detail": {
+        "ambiguous_overreach": 0,
+        "baseline_review_outcome_bound": false,
+        "decision_count": 8,
+        "exact_or_correct_triage": 7,
+        "exact_or_correct_triage_basis_points": 8750,
+        "final_disposition_errors": 1,
+        "gold_escalations": 0,
+        "missed_reopenings": 1,
+        "review_load": 0,
+        "review_load_reduction_basis_points_vs_full_history": 10000,
+        "silent_ambiguous_survivals": 0,
+        "surfaced_escalations": 0,
+        "unnecessary_reviews": 0
+      },
+      "name": "event-05:omitted_dependency_punishes_decision_recall",
+      "pass": true
+    },
+    {
+      "detail": {
+        "ambiguous_overreach": 0,
+        "baseline_review_outcome_bound": true,
+        "decision_count": 8,
+        "exact_or_correct_triage": 8,
+        "exact_or_correct_triage_basis_points": 10000,
+        "final_disposition_errors": 0,
+        "gold_escalations": 0,
+        "missed_reopenings": 0,
+        "review_load": 1,
+        "review_load_reduction_basis_points_vs_full_history": 8750,
+        "silent_ambiguous_survivals": 0,
+        "surfaced_escalations": 0,
+        "unnecessary_reviews": 0
+      },
+      "name": "event-05:flat_search_catches_omitted_dependency",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "hostile_omission_control_present",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "full_history_reviewer_error_control_present",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "ambiguity_control_present",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "negative_control_present",
+      "pass": true
+    }
+  ],
+  "claim_boundary": "This module-free verifier independently reproduces content-addressed custody, reference dispositions, blind adjudication packets, and score arithmetic for the authored conformance fixture. It does not turn the fixture into prospective human evidence, validate capture usability, estimate natural revocation frequency, or establish product promotion.",
+  "disposition": "PASS",
+  "failed_count": 0,
+  "module_free": true,
+  "schema": "openline.decision-recall-prospective-conformance-verification.v2",
+  "valid": true
+}

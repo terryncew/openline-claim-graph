@@ -1,0 +1,243 @@
+{
+  "check_count": 46,
+  "checks": [
+    {
+      "detail": null,
+      "name": "designation_exists",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "cohort_doc_exists",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "operator_contract_exists",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "ledger_readme_exists",
+      "pass": true
+    },
+    {
+      "detail": "openline.decision-recall-cohort-designation.v1",
+      "name": "designation_schema",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-cohort-001",
+      "name": "cohort_id",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-prospective-001-v1",
+      "name": "protocol_id",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "setup_commit_excluded",
+      "pass": true
+    },
+    {
+      "detail": "FIRST_GIT_COMMIT_CONTAINING_DESIGNATION_THEN_DESCENDANTS_ONLY",
+      "name": "activation_rule",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "minimum_30",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "controlled_10",
+      "pass": true
+    },
+    {
+      "detail": "decision-recall-promotion-policy:sha256:8ac5a79bde84560320916be7e7163d17c598b8d81692ac0b171c39192e5d3347",
+      "name": "policy_id_binding",
+      "pass": true
+    },
+    {
+      "detail": "53385bef0d492e0483f10aab01898c91c496e0166869abb3be32ffc69b0c1b03",
+      "name": "policy_sha_binding",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "natural_only",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "no_manufactured_work",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "restart_on_instrument_change",
+      "pass": true
+    },
+    {
+      "detail": [
+        "MONOTONIC_CLI",
+        "MONOTONIC_UI"
+      ],
+      "name": "capture_sources",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "exclude_cohort_ledger",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "exclude_manifest_generated",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "exclude_evidence_generated",
+      "pass": true
+    },
+    {
+      "detail": 10,
+      "name": "frozen_map_nonempty",
+      "pass": true
+    },
+    {
+      "detail": "4b674fba2e558769bf4f0c5922badb745c55e50fd3da8e67a1707e939f1e8709",
+      "name": "frozen:experiments/decision-recall-prospective-001/PROTOCOL.md",
+      "pass": true
+    },
+    {
+      "detail": "5e00467985b3a082a863b5c5bb284363198096c02e5910183f94373510bd707e",
+      "name": "frozen:experiments/decision-recall-prospective-001/cohort-001/OPERATOR_CONTRACT.md",
+      "pass": true
+    },
+    {
+      "detail": "53385bef0d492e0483f10aab01898c91c496e0166869abb3be32ffc69b0c1b03",
+      "name": "frozen:experiments/decision-recall-prospective-001/promotion-policy.json",
+      "pass": true
+    },
+    {
+      "detail": "64ab2e94ab8c5bc6bd71fa7d69e2ae6dba8aa275d7859aca9bc027a7a1f4c410",
+      "name": "frozen:scripts/build_decision_recall_prospective_fixture.py",
+      "pass": true
+    },
+    {
+      "detail": "2a59e3621e18f9945369e1caa2ee2948eb33ffd1d476b668d42351713464576a",
+      "name": "frozen:scripts/cohort001.py",
+      "pass": true
+    },
+    {
+      "detail": "c8e813e85e3d16393bb3bde5a235d9da718f259e3b818f3611c7d16438184d4b",
+      "name": "frozen:scripts/decision_recall_benchmark.py",
+      "pass": true
+    },
+    {
+      "detail": "5e97d9a67c07953b37b5c0786e64f08ef7cd91b6fd8272617a4e08658dbb7efb",
+      "name": "frozen:scripts/select_controlled_revocations.py",
+      "pass": true
+    },
+    {
+      "detail": "6e9d598434ad7624215267553b0e8010919382e2a306b8613ccf0b5542fdb089",
+      "name": "frozen:scripts/verify_cohort001_instrument.py",
+      "pass": true
+    },
+    {
+      "detail": "efcf6d50804c9802c7e4836ed229abc52f0eb09379fa413ff290b41672be3a36",
+      "name": "frozen:scripts/verify_decision_recall_prospective_fixture.py",
+      "pass": true
+    },
+    {
+      "detail": "a7da8755cce40d7f290090d4d08d34c5a05f4bec7e758fd1688a5a659e56740a",
+      "name": "frozen:src/openline_claim_graph/decision_recall.py",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "cohort_says_zero_at_install",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "cohort_says_no_manufacture",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "cohort_says_every_commit_classified",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "cohort_says_restart",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "operator_uses_normal_confirmation",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "operator_requires_independent_record",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "operator_forbids_future_peeking",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "operator_forbids_manufacture",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "empty_empirical_observations",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "empty_empirical_exclusions",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "empty_empirical_manifests",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "empty_empirical_pre-trigger-records",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "manager_exists",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "manager_is_frozen",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "cohort_tests_exist",
+      "pass": true
+    }
+  ],
+  "claim_boundary": "This verifier checks frozen instrument custody and zero-state cohort setup only. It does not establish capture usability, selection neutrality, prospective recall accuracy, review savings, natural revocation frequency, market demand, or product promotion.",
+  "disposition": "PASS",
+  "failed_count": 0,
+  "schema": "openline.cohort001-instrument-verification.v1",
+  "valid": true
+}

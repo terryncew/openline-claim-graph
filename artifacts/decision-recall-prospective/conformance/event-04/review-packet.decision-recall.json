@@ -1,0 +1,53 @@
+{
+  "event": {
+    "basis_id": "dep-4",
+    "event_at": "2026-08-18T02:03:00Z",
+    "event_id": "decision-recall-revocation-event:sha256:2b1f391c3427def74176e363654f4cdbd56738be6fc8d00277ec956c00387df4",
+    "event_type": "LOSS_OF_STANDING",
+    "evidence_sha256": "",
+    "locator": "",
+    "reason": "fixture ambiguity control",
+    "schema": "openline.decision-recall-revocation-event.v1",
+    "selection_proof": {},
+    "stratum": "CONTROLLED",
+    "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf"
+  },
+  "event_id": "decision-recall-revocation-event:sha256:2b1f391c3427def74176e363654f4cdbd56738be6fc8d00277ec956c00387df4",
+  "instructions": "Review only the surfaced rows using the pre-trigger record and revocation event. Produce the operational disposition required by the condition. Gold is intentionally absent.",
+  "review_packet_id": "decision-recall-review-packet:sha256:4e10617b9490133b0dc769d3bdfc828385d30391b72369a0d72c217bcf37bab8",
+  "review_row_count": 1,
+  "rows": [
+    {
+      "complete_pre_trigger_records": [
+        {
+          "available_at": "2026-08-18T00:04:00Z",
+          "decision": "Accept software change 4",
+          "decision_id": "decision-4",
+          "materials": [
+            {
+              "kind": "ISSUE_PR_TEST_BUNDLE",
+              "locator": "fixture:decision-4",
+              "material_id": "record-4",
+              "sha256": "5863e1355e4554a23b81331da217bdd31f134f342a8519cbdf2dbbf216e632de",
+              "text": "Accepted change materials. Mentioned bases: dep-4, shared-context"
+            }
+          ],
+          "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:300d6ee771921cfb27e75d42d42cf9a27336e064a2577c6355fdceb86aecd171",
+          "schema": "openline.decision-recall-pre-trigger-record.v1"
+        }
+      ],
+      "decision": "Accept software change 4",
+      "decision_id": "decision-4",
+      "system_projection": {
+        "disposition": "ESCALATE",
+        "reason": "accepted record declared materiality ambiguous",
+        "witness": [
+          "dep-4"
+        ]
+      }
+    }
+  ],
+  "schema": "openline.decision-recall-review-packet.v1",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf",
+  "system": "DECISION_RECALL"
+}

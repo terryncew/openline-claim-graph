@@ -346,6 +346,36 @@ def main() -> int:
             "artifacts/evidence-recall-temporal/replication-001-selectivity/score.json",
         ]
     )
+    run(
+        [
+            sys.executable,
+            "scripts/build_decision_recall_prospective_fixture.py",
+            "--output",
+            "artifacts/decision-recall-prospective/conformance",
+        ]
+    )
+    run(
+        [
+            sys.executable,
+            "-I",
+            "scripts/verify_decision_recall_prospective_fixture.py",
+            "--artifact",
+            "artifacts/decision-recall-prospective/conformance",
+            "--output",
+            "artifacts/decision-recall-prospective/conformance/independent-verification.json",
+        ]
+    )
+    run(
+        [
+            sys.executable,
+            "-I",
+            "scripts/verify_cohort001_instrument.py",
+            "--root",
+            ".",
+            "--output",
+            "artifacts/decision-recall-prospective/cohort-001/instrument-verification.json",
+        ]
+    )
 
     grammar_files = [
         path
@@ -788,6 +818,14 @@ def main() -> int:
     temporal_replication_result = json.loads((temporal_replication_dir / "promotion-result.json").read_text(encoding="utf-8"))
     temporal_replication_episode_metrics = json.loads((temporal_replication_dir / "episode-metrics.json").read_text(encoding="utf-8"))
     temporal_replication_card_audit = json.loads((temporal_replication_dir / "POINT_BECAUSE_BUT_SO.audit.json").read_text(encoding="utf-8"))
+    decision_recall_dir = ROOT / "artifacts/decision-recall-prospective/conformance"
+    decision_recall_report = json.loads((decision_recall_dir / "REPORT.json").read_text(encoding="utf-8"))
+    decision_recall_independent = json.loads((decision_recall_dir / "independent-verification.json").read_text(encoding="utf-8"))
+    decision_recall_policy = json.loads((decision_recall_dir / "promotion-policy.json").read_text(encoding="utf-8"))
+    decision_recall_stream = json.loads((decision_recall_dir / "stream-seal.json").read_text(encoding="utf-8"))
+    decision_recall_omission_score = json.loads((decision_recall_dir / "event-05/score.json").read_text(encoding="utf-8"))
+    cohort001_designation = json.loads((ROOT / "experiments/decision-recall-prospective-001/cohort-001/DESIGNATION.json").read_text(encoding="utf-8"))
+    cohort001_verification = json.loads((ROOT / "artifacts/decision-recall-prospective/cohort-001/instrument-verification.json").read_text(encoding="utf-8"))
     checks = {
         "compileall": True,
         "python_3_11_grammar_parse": len(grammar_files),
@@ -959,6 +997,37 @@ def main() -> int:
             temporal_replication_card_audit["lines"][name]["trace"]
             for name in ("POINT", "BECAUSE", "BUT", "SO")
         ),
+        "decision_recall_conformance_status": decision_recall_report["status"],
+        "decision_recall_promotion_eligible": decision_recall_report["promotion_eligible"],
+        "decision_recall_independent_valid": decision_recall_independent["valid"],
+        "decision_recall_independent_checks": decision_recall_independent["check_count"],
+        "decision_recall_independent_module_free": decision_recall_independent.get("module_free") is True,
+        "decision_recall_policy_id": decision_recall_policy["promotion_policy_id"],
+        "decision_recall_omitted_dependency_misses": decision_recall_omission_score["metrics"]["DECISION_RECALL"]["missed_reopenings"],
+        "decision_recall_flat_search_omitted_dependency_misses": decision_recall_omission_score["metrics"]["FLAT_LOG_SEARCH"]["missed_reopenings"],
+        "decision_recall_annual_roi_inferred": decision_recall_omission_score["economics"]["annual_roi_inferred"],
+        "decision_recall_review_packet_bindings_valid": decision_recall_omission_score["economics"].get("review_packet_bindings_valid"),
+        "decision_recall_catalog_manifest_blind": decision_recall_stream.get("eligible_basis_catalog_custody", {}).get("manifest_visible") is False,
+        "decision_recall_catalog_record_scope": decision_recall_stream.get("eligible_basis_catalog_custody", {}).get("source_scope") == "CONVENTIONAL_PRE_TRIGGER_RECORDS_ONLY",
+        "decision_recall_catalog_role_separated": decision_recall_stream.get("eligible_basis_catalog_custody", {}).get("builder_id") not in {
+            str(value).strip()
+            for manifest in decision_recall_stream.get("manifests", [])
+            for value in (manifest.get("capture", {}).get("drafted_by", ""), manifest.get("capture", {}).get("confirmed_by", ""))
+            if str(value).strip()
+        },
+        "decision_recall_verified_score_artifacts_required": decision_recall_policy.get("require_verified_score_artifacts") is True,
+        "decision_recall_manifest_blind_catalog_required": decision_recall_policy.get("require_manifest_blind_basis_catalog") is True,
+        "decision_recall_baseline_outcomes_required": decision_recall_policy.get("require_baseline_review_outcomes") is True,
+        "decision_recall_policy_predeclared_required": decision_recall_policy.get("require_policy_predeclared_before_capture") is True,
+        "decision_recall_baseline_outcomes_verified": decision_recall_omission_score.get("baseline_review_outcomes_verified") is True,
+        "decision_recall_review_outcome_timing_bindings_valid": decision_recall_omission_score["economics"].get("review_outcome_timing_bindings_valid") is True,
+        "cohort001_designated": cohort001_designation.get("cohort_id") == "decision-recall-cohort-001",
+        "cohort001_setup_commit_counts": cohort001_designation.get("setup_commit_counts"),
+        "cohort001_empirical_decisions_at_install": 0,
+        "cohort001_instrument_valid": cohort001_verification.get("valid") is True,
+        "cohort001_instrument_checks": cohort001_verification.get("check_count"),
+        "cohort001_restart_on_instrument_change": cohort001_designation.get("restart_on_frozen_instrument_change") is True,
+        "cohort001_natural_decisions_only": cohort001_designation.get("natural_decisions_only") is True,
         "scaling_probe_claim_counts": [item["claim_count"] for item in scaling["results"]],
     }
     if not all(
@@ -1119,6 +1188,32 @@ def main() -> int:
             checks["human_contract_present"],
             checks["human_contract_card_audit_valid"],
             checks["human_contract_four_lines_traced"],
+            checks["decision_recall_conformance_status"] == "MECHANICS_ONLY_NOT_PRODUCT_EVIDENCE",
+            checks["decision_recall_promotion_eligible"] is False,
+            checks["decision_recall_independent_valid"],
+            checks["decision_recall_independent_module_free"],
+            checks["decision_recall_independent_checks"] >= 200,
+            checks["decision_recall_policy_id"] == "decision-recall-promotion-policy:sha256:8ac5a79bde84560320916be7e7163d17c598b8d81692ac0b171c39192e5d3347",
+            checks["decision_recall_omitted_dependency_misses"] == 1,
+            checks["decision_recall_flat_search_omitted_dependency_misses"] == 0,
+            checks["decision_recall_annual_roi_inferred"] is False,
+            checks["decision_recall_review_packet_bindings_valid"] is True,
+            checks["decision_recall_catalog_manifest_blind"] is True,
+            checks["decision_recall_catalog_record_scope"] is True,
+            checks["decision_recall_catalog_role_separated"] is True,
+            checks["decision_recall_verified_score_artifacts_required"] is True,
+            checks["decision_recall_manifest_blind_catalog_required"] is True,
+            checks["decision_recall_baseline_outcomes_required"] is True,
+            checks["decision_recall_policy_predeclared_required"] is True,
+            checks["decision_recall_baseline_outcomes_verified"] is True,
+            checks["decision_recall_review_outcome_timing_bindings_valid"] is True,
+            checks["cohort001_designated"] is True,
+            checks["cohort001_setup_commit_counts"] is False,
+            checks["cohort001_empirical_decisions_at_install"] == 0,
+            checks["cohort001_instrument_valid"] is True,
+            checks["cohort001_instrument_checks"] >= 40,
+            checks["cohort001_restart_on_instrument_change"] is True,
+            checks["cohort001_natural_decisions_only"] is True,
         ]
     ):
         raise RuntimeError(f"release checks failed: {checks}")
@@ -1326,6 +1421,38 @@ def main() -> int:
             ),
         }
     )
+    inputs.append(
+        {
+            "name": "Prospective Decision Recall Cohort 001 zero-state designation",
+            "cohort_id": cohort001_designation["cohort_id"],
+            "promotion_policy_id": cohort001_designation["promotion_policy_id"],
+            "instrument_verification_checks": cohort001_verification["check_count"],
+            "usage": (
+                "Self-hosted natural development stream designation. The installation commit is excluded, empirical count begins at zero, "
+                "only independently warranted decisions can count, every substantive post-activation commit must be observed or explicitly excluded, "
+                "and any frozen instrument mutation forces cohort restart. This is measuring-instrument setup, not prospective product evidence."
+            ),
+        }
+    )
+    inputs.append(
+        {
+            "name": "Prospective Decision Recall conformance fixture",
+            "protocol_id": "decision-recall-prospective-001-v1",
+            "promotion_policy_id": decision_recall_policy["promotion_policy_id"],
+            "stream_seal_id": decision_recall_stream["stream_seal_id"],
+            "independent_verification_checks": decision_recall_independent["check_count"],
+            "usage": (
+                "Mechanics-only prospective custody fixture. The conventional pre-trigger record and eligible-basis universe are "
+                "sealed separately from the dependency manifest; the catalog carries manifest-blind, record-only, role-separated custody; "
+                "blind gold receives no manifest contract or system prediction. "
+                "One deliberately omitted material dependency later loses standing and is scored as a Decision Recall miss, proving "
+                "the benchmark can punish incomplete prospective capture. Full History and Flat Search also carry bound human-baseline "
+                "outcomes separate from gold; an authored Full History miss proves review-all is not hardwired as truth. System-specific "
+                "review workloads are content-addressed and independently reproduced by a stdlib-only verifier. Authored fixture gold, "
+                "baseline outcomes, and timing are not empirical product evidence."
+            ),
+        }
+    )
     evidence = {
         "schema": "openline.claim-graph.prototype-evidence.v1",
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
@@ -1371,7 +1498,16 @@ def main() -> int:
             "material was not independently recoverable. No Evidence Recall engine semantics were changed in response. "
             "The canonical human-facing contract is POINT / BECAUSE / BUT / SO: the 0.5.2 card is generated from scored artifacts "
             "and custody limits, every line carries an audit path to exact artifact bytes, BUT is mandatory and material, and SO is "
-            "bounded to the narrow benchmark-supported consequence."
+            "bounded to the narrow benchmark-supported consequence. "
+            "Version 0.6.0.dev0 adds only the prospective Decision Recall protocol and mechanics needed to test the next missing assumption: "
+            "whether a small dependency record can be captured cheaply before a future revocation and later reduce review without extra misses. "
+            "Its checked-in conformance fixture is authored calibration data, intentionally includes an omitted dependency that Decision Recall misses, "
+            "binds a manifest-blind eligible-basis catalog, records Full History/Flat Search baseline reviewer outcomes separately from gold, and binds exact review workloads. "
+            "The frozen policy must predate capture and aggregation replays the full event/prediction/gold/baseline-review/timing/score bundle. These mechanics cannot establish "
+            "capture usability, actual human/catalog blindness, prospective accuracy, natural revocation frequency, annual ROI, transport, or product promotion. "
+            "Cohort 001 now designates this repository's own post-install natural development stream as the first empirical run. The install commit is excluded, "
+            "the empirical count begins at zero, only decisions that would have happened anyway can count, every substantive post-activation commit must be observed or explicitly excluded, "
+            "and any change to the frozen instrument files forces a cohort restart. Cohort designation is instrument state, not product evidence."
         ),
         "incremental_api_spend_usd": 0,
         "model_calls": 1,

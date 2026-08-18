@@ -1,0 +1,28 @@
+{
+  "records": [
+    {
+      "system": "FULL_HISTORY_REVIEW",
+      "reviewer_id": "blinded-reviewer-id",
+      "review_packet_id": "decision-recall-review-packet:sha256:<full-history-packet>",
+      "review_milliseconds": 0,
+      "timing_source": "MONOTONIC_CLI",
+      "notes": "Measured total time for the condition; do not self-report if promotion is intended."
+    },
+    {
+      "system": "FLAT_LOG_SEARCH",
+      "reviewer_id": "blinded-reviewer-id",
+      "review_packet_id": "decision-recall-review-packet:sha256:<flat-search-packet>",
+      "review_milliseconds": 0,
+      "timing_source": "MONOTONIC_CLI",
+      "notes": "Measured total time for the condition."
+    },
+    {
+      "system": "DECISION_RECALL",
+      "reviewer_id": "blinded-reviewer-id",
+      "review_packet_id": "decision-recall-review-packet:sha256:<decision-recall-packet>",
+      "review_milliseconds": 0,
+      "timing_source": "MONOTONIC_CLI",
+      "notes": "Measured total time for the condition."
+    }
+  ]
+}

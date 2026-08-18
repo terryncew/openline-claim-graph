@@ -1,0 +1,53 @@
+{
+  "event": {
+    "basis_id": "dep-1",
+    "event_at": "2026-08-18T02:00:00Z",
+    "event_id": "decision-recall-revocation-event:sha256:f89295bfe6451e64b7a5285bfb13651403a43a6f98f33ed6eaf41280c64ef535",
+    "event_type": "LOSS_OF_STANDING",
+    "evidence_sha256": "",
+    "locator": "",
+    "reason": "fixture controlled revocation",
+    "schema": "openline.decision-recall-revocation-event.v1",
+    "selection_proof": {},
+    "stratum": "CONTROLLED",
+    "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf"
+  },
+  "event_id": "decision-recall-revocation-event:sha256:f89295bfe6451e64b7a5285bfb13651403a43a6f98f33ed6eaf41280c64ef535",
+  "instructions": "Review only the surfaced rows using the pre-trigger record and revocation event. Produce the operational disposition required by the condition. Gold is intentionally absent.",
+  "review_packet_id": "decision-recall-review-packet:sha256:b441f9b04b9e9c87354d1613977deee73e7ac34c74a8ed2e7d8b4b88a56e4dec",
+  "review_row_count": 1,
+  "rows": [
+    {
+      "complete_pre_trigger_records": [
+        {
+          "available_at": "2026-08-18T00:01:00Z",
+          "decision": "Accept software change 1",
+          "decision_id": "decision-1",
+          "materials": [
+            {
+              "kind": "ISSUE_PR_TEST_BUNDLE",
+              "locator": "fixture:decision-1",
+              "material_id": "record-1",
+              "sha256": "a171ae8360a3baa9195b521108d3bb2c6a41fb3f93d76eb52370541e93e19d66",
+              "text": "Accepted change materials. Mentioned bases: dep-1, shared-context"
+            }
+          ],
+          "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:dbd75b8ba8963d6c0da1be74e2deb7bfb812ed46e8f8349f8a25a990d8f31443",
+          "schema": "openline.decision-recall-pre-trigger-record.v1"
+        }
+      ],
+      "decision": "Accept software change 1",
+      "decision_id": "decision-1",
+      "system_projection": {
+        "disposition": "REOPEN",
+        "reason": "every predeclared sufficient support path depends on the basis that lost standing",
+        "witness": [
+          "dep-1"
+        ]
+      }
+    }
+  ],
+  "schema": "openline.decision-recall-review-packet.v1",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf",
+  "system": "DECISION_RECALL"
+}

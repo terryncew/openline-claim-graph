@@ -1,11 +1,11 @@
 {
-  "aggregate_sha256": "bbb602e62b62bfc5729c7bb4ecbcf981c172f1840a66ec2c9181e4471adc64cc",
-  "file_count": 249,
+  "aggregate_sha256": "e2ba7da46ededef763f5197290c17b8eab36d14d5b63d35151936e5597d456ed",
+  "file_count": 335,
   "files": [
     {
-      "bytes": 7007,
+      "bytes": 8330,
       "path": ".github/workflows/ci.yml",
-      "sha256": "281ff54bf061ef001c3d39982798f34cb01b72faf350d8aa246fa9c1deb7975c"
+      "sha256": "f6174f5d6b800e7ac4b8a0708d9d453094367725dd20c1aa4792515c542dd5af"
     },
     {
       "bytes": 112,
@@ -13,14 +13,14 @@
       "sha256": "6e328070b6749987b63470925c9b8ed781af5cbcf6987150f818f628e3ff5ebe"
     },
     {
-      "bytes": 17879,
+      "bytes": 20773,
       "path": "ASSESSMENT.md",
-      "sha256": "f08a744cdcab25303491ac265194d80756ea4925db2a52efb48fc57daf08223e"
+      "sha256": "e3341b0a50ec70e4cbc26a1e39e2c69a4271536f0adcfb4bbb84082922fd4ef7"
     },
     {
-      "bytes": 18522,
+      "bytes": 22892,
       "path": "CHANGELOG.md",
-      "sha256": "314885dffd8e6d3698329fb693bde183a803784ad881c5793069551696dcba67"
+      "sha256": "e760da2700e84e5e0f732290562488d50eed9494ecb79d65d3b7e9b46b5e42a3"
     },
     {
       "bytes": 10918,
@@ -28,9 +28,9 @@
       "sha256": "02507b0a91db7869aa33b3d0f88f05af467c1db3136ddda740c0649218e53bef"
     },
     {
-      "bytes": 4377,
+      "bytes": 6896,
       "path": "CLAIM_BOUNDARY_TEMPORAL.md",
-      "sha256": "54a8a772a7ca869fa7dffee432296ef73be00464b49bf1f9d8cf3a0d6c7b04c4"
+      "sha256": "3e99a89a2337544e04823eeea618817749f9d5a79a4384e775cbd372863eb261"
     },
     {
       "bytes": 2703,
@@ -43,14 +43,14 @@
       "sha256": "07674dfa9960dff5128d0cdcce58fee7543c26ff47e58e07ae6ac0254a0f58b1"
     },
     {
-      "bytes": 9962,
+      "bytes": 14094,
       "path": "README.md",
-      "sha256": "3c6dcd5efc985ba5ef288a9c6e022e78d234a1bab39f8132f1da3fc50d0ec963"
+      "sha256": "1ec1530ab5e87aa250096428ae793e47940376ac04ccc78b94b2c5df9bc9e4c9"
     },
     {
-      "bytes": 1918,
+      "bytes": 2305,
       "path": "RELEASE.md",
-      "sha256": "c00da17153c07d3352c47b7b045771f70c854e4c5ff508841032b07c7ef532f1"
+      "sha256": "bbfa8d881fc8daee32c0b80ca442d0188a945d3a5da7a3bdfde1c1150d7a6558"
     },
     {
       "bytes": 15678,
@@ -76,6 +76,331 @@
       "bytes": 578,
       "path": "artifacts/automated-receiver-benchmark/report.json",
       "sha256": "ada9dd732558b144bdc32ca418ad3216413e3ddedd96938dd954210dc0ca96ea"
+    },
+    {
+      "bytes": 757,
+      "path": "artifacts/decision-recall-prospective/cohort-001/README.md",
+      "sha256": "888d15e1f8b7f559099d2c097442bd9af65112f8ed3473356b0d8cfb59c1fa55"
+    },
+    {
+      "bytes": 0,
+      "path": "artifacts/decision-recall-prospective/cohort-001/exclusions/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 6062,
+      "path": "artifacts/decision-recall-prospective/cohort-001/instrument-verification.json",
+      "sha256": "e43ed513fe9aac069b7a2f91e0c0299c00f7cc50dd78747f59ab4e8ad916a2b0"
+    },
+    {
+      "bytes": 0,
+      "path": "artifacts/decision-recall-prospective/cohort-001/manifests/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "artifacts/decision-recall-prospective/cohort-001/observations/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "artifacts/decision-recall-prospective/cohort-001/pre-trigger-records/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2384,
+      "path": "artifacts/decision-recall-prospective/conformance/REPORT.json",
+      "sha256": "fdcc9ac7007fa3681719a7849b0a79dde0df6ca049dc43a7beec5666e3f06073"
+    },
+    {
+      "bytes": 8335,
+      "path": "artifacts/decision-recall-prospective/conformance/event-01/adjudication-packet.json",
+      "sha256": "0c30926b98ec7a602b516fbc6af86d2a8397d7b8e5f1930608c31b798cd85206"
+    },
+    {
+      "bytes": 544,
+      "path": "artifacts/decision-recall-prospective/conformance/event-01/event.json",
+      "sha256": "8041aa4ff963ef914e761264f8d0e0e9414ea32a9646b2cad646e3bff2da3932"
+    },
+    {
+      "bytes": 1732,
+      "path": "artifacts/decision-recall-prospective/conformance/event-01/gold.private.json",
+      "sha256": "110120c2a9c1daf5f220c5e2842df78a6ff15e643a9e180bd99a635c409f16bf"
+    },
+    {
+      "bytes": 4140,
+      "path": "artifacts/decision-recall-prospective/conformance/event-01/predictions.json",
+      "sha256": "d96135ba610e59b2095040567559d3683c4a3dd09b9e756c04c8aae74ec0f645"
+    },
+    {
+      "bytes": 852,
+      "path": "artifacts/decision-recall-prospective/conformance/event-01/review-outcome.flat-search.fixture.json",
+      "sha256": "9e62f809a6fc8142994fe0ecb049f29b5a47e9bdfa7ae61c5ee6f95d9b837e8f"
+    },
+    {
+      "bytes": 1697,
+      "path": "artifacts/decision-recall-prospective/conformance/event-01/review-outcome.full-history.fixture.json",
+      "sha256": "8b95841f496a2d0940fb4948c54a0071b96cf370a683c0e7e0d9ec9f0054e391"
+    },
+    {
+      "bytes": 2399,
+      "path": "artifacts/decision-recall-prospective/conformance/event-01/review-packet.decision-recall.json",
+      "sha256": "d2a99a308ddb027483ce72410cc5baebd23e6d6c04b2f2dab30002e66099f574"
+    },
+    {
+      "bytes": 2296,
+      "path": "artifacts/decision-recall-prospective/conformance/event-01/review-packet.flat-search.json",
+      "sha256": "3392c3d54ed7f85b20f01f2c89f2287fe99fe16baa4351ca23a82707d86e8fd2"
+    },
+    {
+      "bytes": 9195,
+      "path": "artifacts/decision-recall-prospective/conformance/event-01/review-packet.full-history.json",
+      "sha256": "5bf28c21e3efb76b4a87b7fb40676b0218af25a36771b7d61417154c4b8fc2f8"
+    },
+    {
+      "bytes": 1421,
+      "path": "artifacts/decision-recall-prospective/conformance/event-01/review-times.fixture.json",
+      "sha256": "668e901e1bbb47d517a1ba645b15e7861e266a9e3c2ca14c7f44acc8b623f992"
+    },
+    {
+      "bytes": 3860,
+      "path": "artifacts/decision-recall-prospective/conformance/event-01/score.json",
+      "sha256": "abf554f39aea342951199fae04369318a2530ef7200696756a97bd24b5ec4c72"
+    },
+    {
+      "bytes": 8335,
+      "path": "artifacts/decision-recall-prospective/conformance/event-02/adjudication-packet.json",
+      "sha256": "e43e1938891fc6f65afdcd2ef1fcdfb6a99d27cb0716e8ab0f65858b26bdf21c"
+    },
+    {
+      "bytes": 544,
+      "path": "artifacts/decision-recall-prospective/conformance/event-02/event.json",
+      "sha256": "cd286e1e3b45e805128ab1b1a78b066bb240208cebfda14014e661d3a8cc7cff"
+    },
+    {
+      "bytes": 1733,
+      "path": "artifacts/decision-recall-prospective/conformance/event-02/gold.private.json",
+      "sha256": "eab028b37ebc7ad65c6c9e8d66a705fadc584466a5c3c4e0b4d9cb01274afc2f"
+    },
+    {
+      "bytes": 4125,
+      "path": "artifacts/decision-recall-prospective/conformance/event-02/predictions.json",
+      "sha256": "c8193845dde22384a27db9b14b88006cab6683b2bac433fa5488a930dd22c59b"
+    },
+    {
+      "bytes": 853,
+      "path": "artifacts/decision-recall-prospective/conformance/event-02/review-outcome.flat-search.fixture.json",
+      "sha256": "de760afecf6fa7727213450329833a15f274f13b342ba6c0472f54d884484f12"
+    },
+    {
+      "bytes": 1697,
+      "path": "artifacts/decision-recall-prospective/conformance/event-02/review-outcome.full-history.fixture.json",
+      "sha256": "18c6cdd902d28824658ef55833ced939a1e3c2b15a9f9aa1ea61da244bf594c1"
+    },
+    {
+      "bytes": 1277,
+      "path": "artifacts/decision-recall-prospective/conformance/event-02/review-packet.decision-recall.json",
+      "sha256": "54832a87cdcba1d233db89bbc03a93bd7a0036c45a025219f25218d36ec3d046"
+    },
+    {
+      "bytes": 2303,
+      "path": "artifacts/decision-recall-prospective/conformance/event-02/review-packet.flat-search.json",
+      "sha256": "d94ebf0e4056bd6205af1ad5e0981d117d410f822151fc52f1ee2388f3528802"
+    },
+    {
+      "bytes": 9195,
+      "path": "artifacts/decision-recall-prospective/conformance/event-02/review-packet.full-history.json",
+      "sha256": "da3995bdbfe9bd2c48f2e51b5b0c30c53e49427a3e34af9d4437bafd06bde32a"
+    },
+    {
+      "bytes": 1421,
+      "path": "artifacts/decision-recall-prospective/conformance/event-02/review-times.fixture.json",
+      "sha256": "2447d5d0be823468f55f0fec56f479e7109fa528e86bf2f79d8563af4e30303d"
+    },
+    {
+      "bytes": 3862,
+      "path": "artifacts/decision-recall-prospective/conformance/event-02/score.json",
+      "sha256": "379a950bff00ec4990b8fd1366cf4f39c092c60d8debb0705935598c9653cda5"
+    },
+    {
+      "bytes": 8339,
+      "path": "artifacts/decision-recall-prospective/conformance/event-03/adjudication-packet.json",
+      "sha256": "5ebeae76543c432e982de6218cac49a4e9a1605f7c25d4f8e11d9b5a3b796375"
+    },
+    {
+      "bytes": 548,
+      "path": "artifacts/decision-recall-prospective/conformance/event-03/event.json",
+      "sha256": "5ea9ce53d167de088370d6472809a34b1adaaf33f720388d7478954f9d88f62d"
+    },
+    {
+      "bytes": 1733,
+      "path": "artifacts/decision-recall-prospective/conformance/event-03/gold.private.json",
+      "sha256": "26b4037085eaa92861e3b11a85a553c72558a64e3d576fbb4e507f33d9c97459"
+    },
+    {
+      "bytes": 4456,
+      "path": "artifacts/decision-recall-prospective/conformance/event-03/predictions.json",
+      "sha256": "403b8d724953453d1b887e72cab3a563e4740edaa89efb8ddc00f3f288f2fad9"
+    },
+    {
+      "bytes": 1453,
+      "path": "artifacts/decision-recall-prospective/conformance/event-03/review-outcome.flat-search.fixture.json",
+      "sha256": "cc2d418b8f78bb9d1b24393a3fa388206b91ea9281f2fb1f1eec3c8f77feb492"
+    },
+    {
+      "bytes": 1697,
+      "path": "artifacts/decision-recall-prospective/conformance/event-03/review-outcome.full-history.fixture.json",
+      "sha256": "f46dbc600d78f5f0ca04e20d6ba5b9efaf6ad3725048316a3e5ebff5a1fa452c"
+    },
+    {
+      "bytes": 1281,
+      "path": "artifacts/decision-recall-prospective/conformance/event-03/review-packet.decision-recall.json",
+      "sha256": "de3d159b4714bd34cd9a63c59831aa2e180ab4c5d8b88a23c9fa382a6390f111"
+    },
+    {
+      "bytes": 7463,
+      "path": "artifacts/decision-recall-prospective/conformance/event-03/review-packet.flat-search.json",
+      "sha256": "a82addc5fcfca2fe36b5b9268a1fc59109725a7ba69e07787dd4cdd308dd01d7"
+    },
+    {
+      "bytes": 9199,
+      "path": "artifacts/decision-recall-prospective/conformance/event-03/review-packet.full-history.json",
+      "sha256": "910262d0bae0bf06f053a9cbb8f99a80edd40d748f2ed2488f9ebbff0f072df5"
+    },
+    {
+      "bytes": 1421,
+      "path": "artifacts/decision-recall-prospective/conformance/event-03/review-times.fixture.json",
+      "sha256": "872c065fdd889a5602370224ca29a04f2a035636e7248c0fddff40d056273644"
+    },
+    {
+      "bytes": 3862,
+      "path": "artifacts/decision-recall-prospective/conformance/event-03/score.json",
+      "sha256": "e86fef9f1d084abf4ee824071952d152c9d6b1ffcdd2c16ec046f6b22ed2a07a"
+    },
+    {
+      "bytes": 8331,
+      "path": "artifacts/decision-recall-prospective/conformance/event-04/adjudication-packet.json",
+      "sha256": "8b938442f6e5afff84fffe3d5937bfa729f19343e64b220ef370e91aefcdb0ed"
+    },
+    {
+      "bytes": 540,
+      "path": "artifacts/decision-recall-prospective/conformance/event-04/event.json",
+      "sha256": "0c3b5afe008613b787ed76bf8341b6e5d7d893f1de3d8adb38b91011572a7ba8"
+    },
+    {
+      "bytes": 1734,
+      "path": "artifacts/decision-recall-prospective/conformance/event-04/gold.private.json",
+      "sha256": "c75c83c8feba8a71666a2fb832232e48e213977352742652752bb4417eee07e7"
+    },
+    {
+      "bytes": 4107,
+      "path": "artifacts/decision-recall-prospective/conformance/event-04/predictions.json",
+      "sha256": "07c40fc027675b80d433a52c7391a97ead8bfb1199a2434c147bf8d20270f035"
+    },
+    {
+      "bytes": 854,
+      "path": "artifacts/decision-recall-prospective/conformance/event-04/review-outcome.flat-search.fixture.json",
+      "sha256": "09466ee6c3df172422229304c17f34b9c0346b67a88afe96ebb88d7a2a649bcb"
+    },
+    {
+      "bytes": 1698,
+      "path": "artifacts/decision-recall-prospective/conformance/event-04/review-outcome.full-history.fixture.json",
+      "sha256": "69265be15fcf27dd9d8d4f4a4f9b9a33a836db7a58f6b0add6823975706f760b"
+    },
+    {
+      "bytes": 2362,
+      "path": "artifacts/decision-recall-prospective/conformance/event-04/review-packet.decision-recall.json",
+      "sha256": "aeda027f7a29eba8707dab2f19785cea043b91f1a7686b605d65a2eae7469c42"
+    },
+    {
+      "bytes": 2292,
+      "path": "artifacts/decision-recall-prospective/conformance/event-04/review-packet.flat-search.json",
+      "sha256": "4eccea3471e8aa70dcf7db921ee463e4f067f57a70528589d9caa058cd0132ba"
+    },
+    {
+      "bytes": 9191,
+      "path": "artifacts/decision-recall-prospective/conformance/event-04/review-packet.full-history.json",
+      "sha256": "c964fa93c02070986da48de1e36319376ac7fd08dd3b274506fe82cd1705abe7"
+    },
+    {
+      "bytes": 1421,
+      "path": "artifacts/decision-recall-prospective/conformance/event-04/review-times.fixture.json",
+      "sha256": "207bd91b3149249e939b001b9dfe0ba7dfb31f0dfd6b2230e7a3635ebe3cab99"
+    },
+    {
+      "bytes": 3861,
+      "path": "artifacts/decision-recall-prospective/conformance/event-04/score.json",
+      "sha256": "ec3e9dfda19675fbbdcfbe67ac48ede09107b71122ab892208130ab592617438"
+    },
+    {
+      "bytes": 8343,
+      "path": "artifacts/decision-recall-prospective/conformance/event-05/adjudication-packet.json",
+      "sha256": "8613ea37a22e2044cdd3cff882f1af2366bd92ee1bbd62ec7ca6439735b829d4"
+    },
+    {
+      "bytes": 552,
+      "path": "artifacts/decision-recall-prospective/conformance/event-05/event.json",
+      "sha256": "add1744ffc110b68875e8b565ac5153704e16521739271f247d2ff0a5314e605"
+    },
+    {
+      "bytes": 1732,
+      "path": "artifacts/decision-recall-prospective/conformance/event-05/gold.private.json",
+      "sha256": "376912c5260c2fca7473dcd8b6aa7581093df36d51abed2ca7fb1e2173ec7123"
+    },
+    {
+      "bytes": 4095,
+      "path": "artifacts/decision-recall-prospective/conformance/event-05/predictions.json",
+      "sha256": "d00ee7cdfbb12c135634ca985f81b5a0a6ab7459fa1b1975b0abc9d55348873f"
+    },
+    {
+      "bytes": 852,
+      "path": "artifacts/decision-recall-prospective/conformance/event-05/review-outcome.flat-search.fixture.json",
+      "sha256": "900627ff63b1ebe7c53fc813dc5bd459cb3ef863a17de0303451adb5306c51af"
+    },
+    {
+      "bytes": 1696,
+      "path": "artifacts/decision-recall-prospective/conformance/event-05/review-outcome.full-history.fixture.json",
+      "sha256": "7af09a2c5b457ab522f6c4d79ecb72cb1975dae869e1685e94413dd17f28dcb6"
+    },
+    {
+      "bytes": 1285,
+      "path": "artifacts/decision-recall-prospective/conformance/event-05/review-packet.decision-recall.json",
+      "sha256": "58dc26bb08a2c7c4365079e0dcb7cf6ad883cbf4f1a73cd6fa1156a921327c76"
+    },
+    {
+      "bytes": 2317,
+      "path": "artifacts/decision-recall-prospective/conformance/event-05/review-packet.flat-search.json",
+      "sha256": "7649f4af2c2f1c5c5d08c4837fb93774e08c9da9c378a5d2c3bb8bf4d992b309"
+    },
+    {
+      "bytes": 9203,
+      "path": "artifacts/decision-recall-prospective/conformance/event-05/review-packet.full-history.json",
+      "sha256": "1366cea377574d98c900022a8a49c80f7746b3eec28cb69405b971ff145eb15a"
+    },
+    {
+      "bytes": 1421,
+      "path": "artifacts/decision-recall-prospective/conformance/event-05/review-times.fixture.json",
+      "sha256": "1a032f86e6541a73b4fed1e22d1d87b04dbf04061b701f928116c914f7603c2f"
+    },
+    {
+      "bytes": 3861,
+      "path": "artifacts/decision-recall-prospective/conformance/event-05/score.json",
+      "sha256": "d4fec729ea9cd2c988e08969ed973e535e3f64db3e38977c4fd46d184b22c986"
+    },
+    {
+      "bytes": 41452,
+      "path": "artifacts/decision-recall-prospective/conformance/independent-verification.json",
+      "sha256": "9d3bc661e83dbe0473c3a2c901f9528115c1566b9f0738695453441b382f59d7"
+    },
+    {
+      "bytes": 2408,
+      "path": "artifacts/decision-recall-prospective/conformance/promotion-policy.json",
+      "sha256": "53385bef0d492e0483f10aab01898c91c496e0166869abb3be32ffc69b0c1b03"
+    },
+    {
+      "bytes": 29947,
+      "path": "artifacts/decision-recall-prospective/conformance/stream-seal.json",
+      "sha256": "995a950b8d93fb6770a843e76f9edacedb9c0c2eb5ba8da31d7f2e20f0e42cea"
     },
     {
       "bytes": 1534,
@@ -833,6 +1158,66 @@
       "sha256": "baee2fc4e71997ac9f34340be86764260237cb06fa9a5671d90b4e3cf78e4d36"
     },
     {
+      "bytes": 10982,
+      "path": "experiments/decision-recall-prospective-001/PROTOCOL.md",
+      "sha256": "4b674fba2e558769bf4f0c5922badb745c55e50fd3da8e67a1707e939f1e8709"
+    },
+    {
+      "bytes": 9867,
+      "path": "experiments/decision-recall-prospective-001/README.md",
+      "sha256": "618fba505a19cd62d0f95c3946ca4807349fb098b86ad8b14a39359143914c54"
+    },
+    {
+      "bytes": 188,
+      "path": "experiments/decision-recall-prospective-001/baseline-review-labels.template.json",
+      "sha256": "c1fa6b5964e150e0d7ae146ffbf20599850ba6cea1e72450a5ba7cd4abd2da2c"
+    },
+    {
+      "bytes": 2804,
+      "path": "experiments/decision-recall-prospective-001/cohort-001/COHORT.md",
+      "sha256": "3b2e81c77edd3f73a271372b75f11421317ad8281c87bb445fb510caa9dd5698"
+    },
+    {
+      "bytes": 2864,
+      "path": "experiments/decision-recall-prospective-001/cohort-001/DESIGNATION.json",
+      "sha256": "9b46d17360cf243ea8cbbf265a05b62b165f0a979e25de032035816c18870c70"
+    },
+    {
+      "bytes": 1820,
+      "path": "experiments/decision-recall-prospective-001/cohort-001/OPERATOR_CONTRACT.md",
+      "sha256": "5e00467985b3a082a863b5c5bb284363198096c02e5910183f94373510bd707e"
+    },
+    {
+      "bytes": 1348,
+      "path": "experiments/decision-recall-prospective-001/decision-manifest-draft.template.json",
+      "sha256": "21db3afd9a333a1f8886e22793d3e22676589857038ee42e04dbd14d687ddac9"
+    },
+    {
+      "bytes": 525,
+      "path": "experiments/decision-recall-prospective-001/eligible-bases.template.json",
+      "sha256": "b3945208a540269cd7ef2d63204f0d5ccacbc5c94675ae5d31b2964a0a36c396"
+    },
+    {
+      "bytes": 231,
+      "path": "experiments/decision-recall-prospective-001/gold-labels.template.json",
+      "sha256": "d9d3678671963b53177ed7077ddb767a800bbeb6610aeef445b6a3ded44e2b68"
+    },
+    {
+      "bytes": 719,
+      "path": "experiments/decision-recall-prospective-001/pre-trigger-record.template.json",
+      "sha256": "6fbbbb4da8c777f5831039c383b35b7130cc25de5d9ff191b0770d1f46b671f7"
+    },
+    {
+      "bytes": 2408,
+      "path": "experiments/decision-recall-prospective-001/promotion-policy.json",
+      "sha256": "53385bef0d492e0483f10aab01898c91c496e0166869abb3be32ffc69b0c1b03"
+    },
+    {
+      "bytes": 997,
+      "path": "experiments/decision-recall-prospective-001/review-times.template.json",
+      "sha256": "c996c2fc2c2b214857b409e6d6f5d5f7c9bfa857f371011ad80bac3351eac0b8"
+    },
+    {
       "bytes": 11357,
       "path": "experiments/development_benchmarks/arct/LICENSE-ARCT-APACHE-2.0.txt",
       "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
@@ -968,14 +1353,19 @@
       "sha256": "4689fb365233968dde3055d519a69631d95e6cf011c325f5dcaf2a53354005c2"
     },
     {
-      "bytes": 605,
+      "bytes": 610,
       "path": "pyproject.toml",
-      "sha256": "9d849ae631661eeab4697b71c77078e7858615d209e83ce8b3d5671afbe6b347"
+      "sha256": "0e31e63860d04d5e11598ac8779dd0fe177c5702cee8d8a2562aaf4095bf96a8"
     },
     {
       "bytes": 8042,
       "path": "scripts/build_arct_automated_receiver_pack.py",
       "sha256": "6e905c9d81a474b3b8f529a3b470da4d99315777f0a0041682ab06d54b73cce6"
+    },
+    {
+      "bytes": 13801,
+      "path": "scripts/build_decision_recall_prospective_fixture.py",
+      "sha256": "64ab2e94ab8c5bc6bd71fa7d69e2ae6dba8aa275d7859aca9bc027a7a1f4c410"
     },
     {
       "bytes": 4515,
@@ -1013,6 +1403,16 @@
       "sha256": "81adbc73fdc26203db4d56fec7648914354af908c17738031ee266877df7e322"
     },
     {
+      "bytes": 20037,
+      "path": "scripts/cohort001.py",
+      "sha256": "2a59e3621e18f9945369e1caa2ee2948eb33ffd1d476b668d42351713464576a"
+    },
+    {
+      "bytes": 19217,
+      "path": "scripts/decision_recall_benchmark.py",
+      "sha256": "c8e813e85e3d16393bb3bde5a235d9da718f259e3b818f3611c7d16438184d4b"
+    },
+    {
       "bytes": 2367,
       "path": "scripts/frame_agent_adapter.py",
       "sha256": "81e909aef1f481beaffe6e19cf9f5f599d5998bbf2ad0839985f2fbe0d170911"
@@ -1023,9 +1423,9 @@
       "sha256": "20a67eacd0104e6d015b0208ceab58c0f8bfb299548ab687d8d440e62ecedd9b"
     },
     {
-      "bytes": 72644,
+      "bytes": 83444,
       "path": "scripts/release_check.py",
-      "sha256": "16cb22baecd02973333bb4217f066b3a1ee7a4e727f47b6f2de0f9b25fee4946"
+      "sha256": "4dd3f319ef9af5a3af6c602b9a7e9b5ed408a71b120e2defa3c8c787f15f06c1"
     },
     {
       "bytes": 10871,
@@ -1043,9 +1443,24 @@
       "sha256": "071a97d31de24589d62b09061abcf7b7ebced5d2a7c48b96ba6728f31887c17b"
     },
     {
+      "bytes": 3970,
+      "path": "scripts/select_controlled_revocations.py",
+      "sha256": "5e97d9a67c07953b37b5c0786e64f08ef7cd91b6fd8272617a4e08658dbb7efb"
+    },
+    {
       "bytes": 4025,
       "path": "scripts/verify_arct_upstream.py",
       "sha256": "cfb1bf3bf2693b9f3c6408f3ed379ae90255ba322fa3db021593a4535f11bb9d"
+    },
+    {
+      "bytes": 6730,
+      "path": "scripts/verify_cohort001_instrument.py",
+      "sha256": "6e9d598434ad7624215267553b0e8010919382e2a306b8613ccf0b5542fdb089"
+    },
+    {
+      "bytes": 56621,
+      "path": "scripts/verify_decision_recall_prospective_fixture.py",
+      "sha256": "efcf6d50804c9802c7e4836ed229abc52f0eb09379fa413ff290b41672be3a36"
     },
     {
       "bytes": 3939,
@@ -1128,6 +1543,11 @@
       "sha256": "6c04e9e021cbc1c01aae78606acc6cd41393c99673185e1e8e3ee4ccaa06e4b1"
     },
     {
+      "bytes": 79491,
+      "path": "src/openline_claim_graph/decision_recall.py",
+      "sha256": "a7da8755cce40d7f290090d4d08d34c5a05f4bec7e758fd1688a5a659e56740a"
+    },
+    {
       "bytes": 37650,
       "path": "src/openline_claim_graph/frame.py",
       "sha256": "9f9befdb785569408e209bde4690aaaacd8713dfac9d3fa8ee6ff40d15a8ca3e"
@@ -1198,9 +1618,19 @@
       "sha256": "7d78877601bfe49ecda633fc805cbcb6c2241a92e0ff0aa4e014394ae49ba3e4"
     },
     {
+      "bytes": 6457,
+      "path": "tests/test_cohort001.py",
+      "sha256": "08591e7060cd1c5384a2ac82797a379d41439695675b9fc877081d2b8b1486ea"
+    },
+    {
       "bytes": 12933,
       "path": "tests/test_comparative_benchmark.py",
       "sha256": "74a268e9b478f6c4047da492a99099cea9b749e17ebd1895386861f152281593"
+    },
+    {
+      "bytes": 28898,
+      "path": "tests/test_decision_recall_prospective.py",
+      "sha256": "873911ef9f6d59266b7dcf7dfd574ab316f622a4bab72c513de62862d30574f9"
     },
     {
       "bytes": 17186,

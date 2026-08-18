@@ -1,0 +1,232 @@
+{
+  "event": {
+    "basis_id": "dep-2",
+    "event_at": "2026-08-18T02:01:00Z",
+    "event_id": "decision-recall-revocation-event:sha256:c3414f8cb57261e55eaf6df9aeb98910d3b55daa0137dee14fe1e6343d009e51",
+    "event_type": "LOSS_OF_STANDING",
+    "evidence_sha256": "",
+    "locator": "",
+    "reason": "fixture controlled revocation",
+    "schema": "openline.decision-recall-revocation-event.v1",
+    "selection_proof": {},
+    "stratum": "CONTROLLED",
+    "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf"
+  },
+  "event_id": "decision-recall-revocation-event:sha256:c3414f8cb57261e55eaf6df9aeb98910d3b55daa0137dee14fe1e6343d009e51",
+  "instructions": "Review only the surfaced rows using the pre-trigger record and revocation event. Produce the operational disposition required by the condition. Gold is intentionally absent.",
+  "review_packet_id": "decision-recall-review-packet:sha256:c8e98a53ff268a7190329adf831aa8b03c1f3e032375338c31a5e11738737a7a",
+  "review_row_count": 8,
+  "rows": [
+    {
+      "complete_pre_trigger_records": [
+        {
+          "available_at": "2026-08-18T00:01:00Z",
+          "decision": "Accept software change 1",
+          "decision_id": "decision-1",
+          "materials": [
+            {
+              "kind": "ISSUE_PR_TEST_BUNDLE",
+              "locator": "fixture:decision-1",
+              "material_id": "record-1",
+              "sha256": "a171ae8360a3baa9195b521108d3bb2c6a41fb3f93d76eb52370541e93e19d66",
+              "text": "Accepted change materials. Mentioned bases: dep-1, shared-context"
+            }
+          ],
+          "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:dbd75b8ba8963d6c0da1be74e2deb7bfb812ed46e8f8349f8a25a990d8f31443",
+          "schema": "openline.decision-recall-pre-trigger-record.v1"
+        }
+      ],
+      "decision": "Accept software change 1",
+      "decision_id": "decision-1",
+      "system_projection": {
+        "disposition": "REVIEW",
+        "witness": []
+      }
+    },
+    {
+      "complete_pre_trigger_records": [
+        {
+          "available_at": "2026-08-18T00:02:00Z",
+          "decision": "Accept software change 2",
+          "decision_id": "decision-2",
+          "materials": [
+            {
+              "kind": "ISSUE_PR_TEST_BUNDLE",
+              "locator": "fixture:decision-2",
+              "material_id": "record-2",
+              "sha256": "ef5dfbf05344ff8e35db44da1673604a550fdb5e48df5fdc6b25f70007dc6649",
+              "text": "Accepted change materials. Mentioned bases: dep-2, shared-context, alt-2"
+            }
+          ],
+          "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:b8c6d8ee91efad4275c4910ce05115f113e3612b817febcbbfad557c7b743362",
+          "schema": "openline.decision-recall-pre-trigger-record.v1"
+        }
+      ],
+      "decision": "Accept software change 2",
+      "decision_id": "decision-2",
+      "system_projection": {
+        "disposition": "REVIEW",
+        "witness": []
+      }
+    },
+    {
+      "complete_pre_trigger_records": [
+        {
+          "available_at": "2026-08-18T00:03:00Z",
+          "decision": "Accept software change 3",
+          "decision_id": "decision-3",
+          "materials": [
+            {
+              "kind": "ISSUE_PR_TEST_BUNDLE",
+              "locator": "fixture:decision-3",
+              "material_id": "record-3",
+              "sha256": "5f1f31c0fec2fb84c7f6f0e2668d24066d1bc8baf4525603e96eaf5b269d7dd3",
+              "text": "Accepted change materials. Mentioned bases: dep-3"
+            }
+          ],
+          "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:5861fec75aa35664061e1e4044a30f3a635b5e3a2db3ddf4153b5e52abfbca94",
+          "schema": "openline.decision-recall-pre-trigger-record.v1"
+        }
+      ],
+      "decision": "Accept software change 3",
+      "decision_id": "decision-3",
+      "system_projection": {
+        "disposition": "REVIEW",
+        "witness": []
+      }
+    },
+    {
+      "complete_pre_trigger_records": [
+        {
+          "available_at": "2026-08-18T00:04:00Z",
+          "decision": "Accept software change 4",
+          "decision_id": "decision-4",
+          "materials": [
+            {
+              "kind": "ISSUE_PR_TEST_BUNDLE",
+              "locator": "fixture:decision-4",
+              "material_id": "record-4",
+              "sha256": "5863e1355e4554a23b81331da217bdd31f134f342a8519cbdf2dbbf216e632de",
+              "text": "Accepted change materials. Mentioned bases: dep-4, shared-context"
+            }
+          ],
+          "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:300d6ee771921cfb27e75d42d42cf9a27336e064a2577c6355fdceb86aecd171",
+          "schema": "openline.decision-recall-pre-trigger-record.v1"
+        }
+      ],
+      "decision": "Accept software change 4",
+      "decision_id": "decision-4",
+      "system_projection": {
+        "disposition": "REVIEW",
+        "witness": []
+      }
+    },
+    {
+      "complete_pre_trigger_records": [
+        {
+          "available_at": "2026-08-18T00:05:00Z",
+          "decision": "Accept software change 5",
+          "decision_id": "decision-5",
+          "materials": [
+            {
+              "kind": "ISSUE_PR_TEST_BUNDLE",
+              "locator": "fixture:decision-5",
+              "material_id": "record-5",
+              "sha256": "2383b880405436830d22f0845671b7262ce398e743ce283e7bfe980f055e779d",
+              "text": "Accepted change materials. Mentioned bases: dep-5, shared-context, hidden-5"
+            }
+          ],
+          "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:47144ea8a135e33889b288d2e4b2fda007a44a1beff9f085d9cecf42e1570fba",
+          "schema": "openline.decision-recall-pre-trigger-record.v1"
+        }
+      ],
+      "decision": "Accept software change 5",
+      "decision_id": "decision-5",
+      "system_projection": {
+        "disposition": "REVIEW",
+        "witness": []
+      }
+    },
+    {
+      "complete_pre_trigger_records": [
+        {
+          "available_at": "2026-08-18T00:06:00Z",
+          "decision": "Accept software change 6",
+          "decision_id": "decision-6",
+          "materials": [
+            {
+              "kind": "ISSUE_PR_TEST_BUNDLE",
+              "locator": "fixture:decision-6",
+              "material_id": "record-6",
+              "sha256": "33a5119571f643df22d87a901d18b60196554852c07c8399629885722803ee14",
+              "text": "Accepted change materials. Mentioned bases: dep-6, shared-context, alt-6"
+            }
+          ],
+          "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:6df5f1c709ac315a7eff6cfb9a4d1173b65dad1065d34d6a208b8a330ab543ef",
+          "schema": "openline.decision-recall-pre-trigger-record.v1"
+        }
+      ],
+      "decision": "Accept software change 6",
+      "decision_id": "decision-6",
+      "system_projection": {
+        "disposition": "REVIEW",
+        "witness": []
+      }
+    },
+    {
+      "complete_pre_trigger_records": [
+        {
+          "available_at": "2026-08-18T00:07:00Z",
+          "decision": "Accept software change 7",
+          "decision_id": "decision-7",
+          "materials": [
+            {
+              "kind": "ISSUE_PR_TEST_BUNDLE",
+              "locator": "fixture:decision-7",
+              "material_id": "record-7",
+              "sha256": "499fde439e83a2f88d8ecc24fa44f0751aaad372d520d8fcfce35f7cdee13e1b",
+              "text": "Accepted change materials. Mentioned bases: dep-7"
+            }
+          ],
+          "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:40a6fbffff4d3d73aa03c5e2af028b1b0aeb208c75e62142cf8161465d873b16",
+          "schema": "openline.decision-recall-pre-trigger-record.v1"
+        }
+      ],
+      "decision": "Accept software change 7",
+      "decision_id": "decision-7",
+      "system_projection": {
+        "disposition": "REVIEW",
+        "witness": []
+      }
+    },
+    {
+      "complete_pre_trigger_records": [
+        {
+          "available_at": "2026-08-18T00:08:00Z",
+          "decision": "Accept software change 8",
+          "decision_id": "decision-8",
+          "materials": [
+            {
+              "kind": "ISSUE_PR_TEST_BUNDLE",
+              "locator": "fixture:decision-8",
+              "material_id": "record-8",
+              "sha256": "792480ef1cccdb07903d61539d96f000307393e6211b607e9509aafe1e0f0521",
+              "text": "Accepted change materials. Mentioned bases: dep-8, shared-context"
+            }
+          ],
+          "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:387e5de47db54669f68aaf9aa6228847343c1ad4223fae93a37ba6d60f145ed1",
+          "schema": "openline.decision-recall-pre-trigger-record.v1"
+        }
+      ],
+      "decision": "Accept software change 8",
+      "decision_id": "decision-8",
+      "system_projection": {
+        "disposition": "REVIEW",
+        "witness": []
+      }
+    }
+  ],
+  "schema": "openline.decision-recall-review-packet.v1",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf",
+  "system": "FULL_HISTORY_REVIEW"
+}

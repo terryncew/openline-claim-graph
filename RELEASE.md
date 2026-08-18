@@ -1,27 +1,19 @@
 # Push status
 
-Version: `0.5.2`
+Version: `0.6.0.dev0`
 
-Disposition: `READY_TO_PUSH_TEMPORAL_SELECTIVITY_REPLICATION_PROMOTION`
+Disposition: `READY_TO_PUSH_COHORT_001_INSTRUMENT`
 
-This build changes the corpus and evaluation record only. The frozen Evidence Recall engine bytes are unchanged.
+This build installs **Prospective Decision Recall Cohort 001**, the measuring instrument for the next empirical test. The installation commit itself does **not** count toward the cohort and does not add prospective product evidence.
 
-The replication corpus contains five historical trigger episodes and fourteen scored targets. Gold is admitted only when a later case-level record establishes explicit reliance/reconsideration or affirmative non-reliance/scope exclusion; silence remains unassessed. Kataoka aggregate counts are recorded but contribute zero scored rows because case-level rows were not reproducible in this build.
+The prior `0.5.2` temporal-selectivity result remains frozen: across five historical trigger episodes and fourteen scored targets, frozen Evidence Recall caught 8/8 warranted reopenings while reviewing 8 targets versus 14 for Review-All Reachability, a 42.85% review-load reduction with zero additional misses. That result is a narrow historical promotion, not prospective validation or a commercial moat claim.
 
-Pooled result:
+Cohort 001 begins at zero only after this instrument is committed. It admits only consequential repository decisions that would have happened anyway. Every substantive post-activation commit must be recorded as an observation or explicitly excluded. Any change to the frozen instrument files during accumulation forces a cohort restart.
 
-- Direct Lookup: 7/8 warranted reopenings caught; review load 13.
-- Review-All Reachability: 8/8 caught; review load 14; 6 unnecessary reviews.
-- Frozen Evidence Recall: 8/8 caught; review load 8; 0 unnecessary reviews.
-- Reviewer savings versus Review-All: 6/14 = 42.85%.
-- Positive savings with zero additional misses recur in 4/5 trigger episodes.
+The prospective instrument separately binds the decision-time dependency manifest, conventional pre-trigger record, manifest-blind eligible-basis catalog, post-seal controlled revocation, system-specific review workloads and reviewer outcomes, blinded gold, timing, predictions, and score replay. The checked conformance corpus intentionally contains an omitted-dependency miss and a Full History reviewer miss so the evaluator cannot silently treat either the manifest or review-all baseline as truth.
 
-Predeclared bar: at least 95% recall, at least 40% pooled review-load reduction, zero additional misses versus Review-All, plus recurring savings across at least three trigger episodes.
+The frozen first-run promotion bar requires at least 30 real accepted decisions and 10 post-seal controlled revocations; zero additional missed warranted reopenings versus the blinded Full History reviewer; at least 40% lower review load than Full History; at least 10% lower review load than Flat Search; median human capture under 60 seconds; and no silent survival of gold-ambiguous cases. The policy must predate capture and the instrument custody checks must remain valid.
 
-Verdict: `PROMOTION`.
+No Evidence Recall inference semantics, weighted support, generalized revocation, hidden-edge discovery, Frame Ledger expansion, Receipt Gate work, or Successor Gate work are added here.
 
-The human-facing result now follows the canonical `POINT / BECAUSE / BUT / SO` contract. The card is generated from benchmark outputs rather than written as an after-the-fact summary, and an audit sidecar binds each line to the exact scored artifacts and custody limits that produced it.
-
-The promotion is narrow: temporal selectivity under this frozen historical benchmark. Three of five trigger episodes are Sato-family retractions graded by one later Avenell audit, so the result is not broad independent-domain replication or a commercial moat claim.
-
-No engine repair, weighted support, generalized revocation, hidden-edge discovery, UI, Frame Ledger expansion, Receipt Gate work, or Successor Gate work is included.
+Status: `COHORT_001_INSTRUMENT_READY_EMPIRICAL_COUNT_ZERO`

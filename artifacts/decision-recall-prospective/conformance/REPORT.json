@@ -1,0 +1,52 @@
+{
+  "benchmark_id": "decision-recall-prospective-conformance-001",
+  "event_count": 5,
+  "events": [
+    {
+      "basis_id": "dep-1",
+      "decision_recall_missed_reopenings": 0,
+      "decision_recall_review_load": 1,
+      "event_id": "decision-recall-revocation-event:sha256:f89295bfe6451e64b7a5285bfb13651403a43a6f98f33ed6eaf41280c64ef535",
+      "full_history_reviewer_missed_reopenings": 1
+    },
+    {
+      "basis_id": "dep-2",
+      "decision_recall_missed_reopenings": 0,
+      "decision_recall_review_load": 0,
+      "event_id": "decision-recall-revocation-event:sha256:c3414f8cb57261e55eaf6df9aeb98910d3b55daa0137dee14fe1e6343d009e51",
+      "full_history_reviewer_missed_reopenings": 0
+    },
+    {
+      "basis_id": "shared-context",
+      "decision_recall_missed_reopenings": 0,
+      "decision_recall_review_load": 0,
+      "event_id": "decision-recall-revocation-event:sha256:6cd0c6479a6d1dd013c2016ab84729fb20a848eac40238664fbc8853638b17f5",
+      "full_history_reviewer_missed_reopenings": 0
+    },
+    {
+      "basis_id": "dep-4",
+      "decision_recall_missed_reopenings": 0,
+      "decision_recall_review_load": 1,
+      "event_id": "decision-recall-revocation-event:sha256:2b1f391c3427def74176e363654f4cdbd56738be6fc8d00277ec956c00387df4",
+      "full_history_reviewer_missed_reopenings": 0
+    },
+    {
+      "basis_id": "hidden-5",
+      "decision_recall_missed_reopenings": 1,
+      "decision_recall_review_load": 0,
+      "event_id": "decision-recall-revocation-event:sha256:50a73d7d8454bc7d487535a14809d058500ec8b9f36b4ebdb94684d57d8f95fd",
+      "full_history_reviewer_missed_reopenings": 0
+    }
+  ],
+  "manifest_count": 8,
+  "promotion_eligible": false,
+  "promotion_policy_id": "decision-recall-promotion-policy:sha256:8ac5a79bde84560320916be7e7163d17c598b8d81692ac0b171c39192e5d3347",
+  "schema": "openline.decision-recall-prospective-conformance-report.v1",
+  "status": "MECHANICS_ONLY_NOT_PRODUCT_EVIDENCE",
+  "why_not": [
+    "fixture decisions are authored calibration data rather than a real accepted decision stream",
+    "fixture gold is pre-authored rather than independent blinded human adjudication",
+    "fixture baseline-review outcomes are pre-authored and fixture review times are synthetic, so neither accuracy nor attention economics is empirical",
+    "fixture has fewer than the predeclared minimum decisions and revocations"
+  ]
+}

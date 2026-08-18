@@ -1,0 +1,32 @@
+{
+  "acceptable_capture_timing_sources": [
+    "MONOTONIC_CLI",
+    "MONOTONIC_UI"
+  ],
+  "declared_at": "2026-08-18T00:00:00Z",
+  "maximum_additional_missed_reopenings_vs_full_history": 0,
+  "maximum_ambiguous_overreach": 0,
+  "maximum_median_capture_milliseconds": 60000,
+  "maximum_silent_ambiguous_survivals": 0,
+  "minimum_controlled_revocations": 10,
+  "minimum_decisions": 30,
+  "minimum_mixed_gold_revocations": 3,
+  "minimum_review_load_reduction_basis_points": 4000,
+  "minimum_review_load_reduction_vs_flat_search_basis_points": 1000,
+  "minimum_timed_revocations": 3,
+  "promotion_policy_id": "decision-recall-promotion-policy:sha256:8ac5a79bde84560320916be7e7163d17c598b8d81692ac0b171c39192e5d3347",
+  "require_adjudicator_role_separation": true,
+  "require_baseline_review_outcomes": true,
+  "require_baseline_reviewer_role_separation": true,
+  "require_catalog_role_separation": true,
+  "require_instrumented_capture": true,
+  "require_instrumented_review_timing": true,
+  "require_manifest_blind_basis_catalog": true,
+  "require_outperform_flat_search": true,
+  "require_policy_predeclared_before_capture": true,
+  "require_positive_conditional_attention_savings": true,
+  "require_verified_controlled_selection": true,
+  "require_verified_score_artifacts": true,
+  "rule": "Promotion requires the policy to be frozen before the first accepted decision, a prospectively frozen decision stream, a manifest-blind independently enumerated eligible-basis catalog, future-blind controlled revocations selected by a post-seal committed random seed, independently reproducible event/prediction/gold/timing/score bundles, human Full History and Flat Search baseline outcomes bound to their blinded review packets, independent manifest-blind gold from an adjudicator outside capture/baseline-review roles, zero additional missed warranted reopenings versus the actual Full History reviewer baseline, >=40% review-load reduction, <60s median instrumented human capture, no silent survival or forced reopening of gold-ambiguous cases, >=10% review-load reduction versus flat history/search, at least three controlled revocations containing both REOPEN and SURVIVE gold, and positive instrumented conditional attention savings on at least three revocations. Controlled revocations do not estimate natural revocation frequency or annual ROI.",
+  "schema": "openline.decision-recall-promotion-policy.v1"
+}

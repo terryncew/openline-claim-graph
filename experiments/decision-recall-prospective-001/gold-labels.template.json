@@ -1,0 +1,9 @@
+{
+  "labels": [
+    {
+      "decision_id": "decision:<stable-id>",
+      "label": "REOPEN",
+      "rationale": "Independent adjudicator rationale based only on the complete pre-trigger record and the revocation event."
+    }
+  ]
+}

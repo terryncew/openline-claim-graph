@@ -1,0 +1,89 @@
+{
+  "baseline_review_outcome_ids": [
+    "decision-recall-review-outcome:sha256:4b6ddba4322a7fb30776dfdb6374420eec0c61157ba7faed8a19defb92253489",
+    "decision-recall-review-outcome:sha256:4d01671196fd0bcc6d0c7762eb8a83c8a07dc05531a138d644135d133af65ce4"
+  ],
+  "baseline_review_outcomes_verified": true,
+  "baseline_reviewer_ids": {
+    "FLAT_LOG_SEARCH": "fixture-flat-reviewer",
+    "FULL_HISTORY_REVIEW": "fixture-full-reviewer"
+  },
+  "claim_boundary": "Controlled revocations estimate conditional performance when a recorded basis loses standing. Human Full History and Flat Search outcomes are baselines, not gold. Controlled events do not estimate how often real revocations occur, annual customer ROI, or whether the decision-time manifest captured causal truth.",
+  "controlled_selection_verified": false,
+  "economics": {
+    "accepted_without_correction": 6,
+    "accepted_without_correction_basis_points": 7500,
+    "annual_roi_inferred": false,
+    "break_even_meaningful_revocations": 1,
+    "capture_median_milliseconds": 22000,
+    "capture_total_milliseconds": 176000,
+    "conditional_attention_saved_milliseconds": 420000,
+    "decision_recall_review_median_milliseconds": 60000,
+    "full_history_review_median_milliseconds": 480000,
+    "review_outcome_timing_bindings_valid": true,
+    "review_packet_bindings_valid": true,
+    "review_time_measurements_present": true,
+    "review_timing_instrumented": false
+  },
+  "event_id": "decision-recall-revocation-event:sha256:2b1f391c3427def74176e363654f4cdbd56738be6fc8d00277ec956c00387df4",
+  "event_stratum": "CONTROLLED",
+  "gold_adjudicator_id": "fixture-not-human",
+  "gold_id": "decision-recall-gold:sha256:52820593617b68da13101ff8b69adafd1ae8c31411e89a8289919483f7401628",
+  "gold_label_counts": {
+    "ESCALATE": 1,
+    "REOPEN": 0,
+    "SURVIVE": 7
+  },
+  "gold_method": "CONFORMANCE_FIXTURE_NOT_EMPIRICAL_GOLD",
+  "metrics": {
+    "DECISION_RECALL": {
+      "ambiguous_overreach": 0,
+      "baseline_review_outcome_bound": false,
+      "decision_count": 8,
+      "exact_or_correct_triage": 8,
+      "exact_or_correct_triage_basis_points": 10000,
+      "final_disposition_errors": 0,
+      "gold_escalations": 1,
+      "missed_reopenings": 0,
+      "review_load": 1,
+      "review_load_reduction_basis_points_vs_full_history": 8750,
+      "silent_ambiguous_survivals": 0,
+      "surfaced_escalations": 1,
+      "unnecessary_reviews": 0
+    },
+    "FLAT_LOG_SEARCH": {
+      "ambiguous_overreach": 0,
+      "baseline_review_outcome_bound": true,
+      "decision_count": 8,
+      "exact_or_correct_triage": 8,
+      "exact_or_correct_triage_basis_points": 10000,
+      "final_disposition_errors": 0,
+      "gold_escalations": 1,
+      "missed_reopenings": 0,
+      "review_load": 1,
+      "review_load_reduction_basis_points_vs_full_history": 8750,
+      "silent_ambiguous_survivals": 0,
+      "surfaced_escalations": 1,
+      "unnecessary_reviews": 0
+    },
+    "FULL_HISTORY_REVIEW": {
+      "ambiguous_overreach": 0,
+      "baseline_review_outcome_bound": true,
+      "decision_count": 8,
+      "exact_or_correct_triage": 8,
+      "exact_or_correct_triage_basis_points": 10000,
+      "final_disposition_errors": 0,
+      "gold_escalations": 1,
+      "missed_reopenings": 0,
+      "review_load": 8,
+      "review_load_reduction_basis_points_vs_full_history": 0,
+      "silent_ambiguous_survivals": 0,
+      "surfaced_escalations": 1,
+      "unnecessary_reviews": 7
+    }
+  },
+  "predictions_id": "decision-recall-predictions:sha256:2991f701c036bec3621b7095c0199e16d54f1b77df743637365d6fc0c93f28e0",
+  "schema": "openline.decision-recall-score.v1",
+  "score_id": "decision-recall-score:sha256:39a6c2ea553a5cffdbcee5795a01898c525308c8cf33bf51d21293f167d4f42a",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf"
+}

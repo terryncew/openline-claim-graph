@@ -1,0 +1,53 @@
+{
+  "accepted_at": "2026-08-18T12:00:00Z",
+  "decision": "Accept change X",
+  "drafted_by": "agent-name-or-model",
+  "basis": [
+    {
+      "basis_id": "requirement-123",
+      "kind": "REQUIREMENT",
+      "statement": "The customer requires behavior X.",
+      "locator": "issue:123",
+      "evidence_sha256": "",
+      "role": "REQUIRED"
+    },
+    {
+      "basis_id": "test-compatibility",
+      "kind": "TEST_EVIDENCE",
+      "statement": "Independent compatibility test supports the same accepted behavior.",
+      "locator": "test:test_compatibility",
+      "evidence_sha256": "",
+      "role": "ALTERNATIVE",
+      "alternative_group": "compatibility-path"
+    }
+  ],
+  "required_dependencies": [
+    "requirement-123"
+  ],
+  "alternative_support": [
+    {
+      "group_id": "compatibility-path",
+      "dependency_ids": [
+        "test-compatibility"
+      ]
+    }
+  ],
+  "assumptions": [],
+  "invalidation_conditions": [
+    {
+      "condition_id": "requirement-withdrawn",
+      "dependency_id": "requirement-123",
+      "event_types": [
+        "LOSS_OF_STANDING"
+      ],
+      "note": "Reconsider if the accepted customer requirement is withdrawn or superseded."
+    }
+  ],
+  "resulting_artifact": {
+    "kind": "COMMIT",
+    "locator": "commit:<sha>",
+    "sha256": ""
+  },
+  "metadata": {},
+  "decision_id": "decision:<stable-id>"
+}

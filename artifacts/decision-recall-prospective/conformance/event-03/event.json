@@ -1,0 +1,13 @@
+{
+  "basis_id": "shared-context",
+  "event_at": "2026-08-18T02:02:00Z",
+  "event_id": "decision-recall-revocation-event:sha256:6cd0c6479a6d1dd013c2016ab84729fb20a848eac40238664fbc8853638b17f5",
+  "event_type": "LOSS_OF_STANDING",
+  "evidence_sha256": "",
+  "locator": "",
+  "reason": "fixture negative control",
+  "schema": "openline.decision-recall-revocation-event.v1",
+  "selection_proof": {},
+  "stratum": "CONTROLLED",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf"
+}

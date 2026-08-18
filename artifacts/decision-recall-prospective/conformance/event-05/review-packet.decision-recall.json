@@ -1,0 +1,23 @@
+{
+  "event": {
+    "basis_id": "hidden-5",
+    "event_at": "2026-08-18T02:04:00Z",
+    "event_id": "decision-recall-revocation-event:sha256:50a73d7d8454bc7d487535a14809d058500ec8b9f36b4ebdb94684d57d8f95fd",
+    "event_type": "LOSS_OF_STANDING",
+    "evidence_sha256": "",
+    "locator": "",
+    "reason": "fixture omitted-dependency control",
+    "schema": "openline.decision-recall-revocation-event.v1",
+    "selection_proof": {},
+    "stratum": "CONTROLLED",
+    "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf"
+  },
+  "event_id": "decision-recall-revocation-event:sha256:50a73d7d8454bc7d487535a14809d058500ec8b9f36b4ebdb94684d57d8f95fd",
+  "instructions": "Review only the surfaced rows using the pre-trigger record and revocation event. Produce the operational disposition required by the condition. Gold is intentionally absent.",
+  "review_packet_id": "decision-recall-review-packet:sha256:b628f381259f805162addc49df4bdc0c795404cd50c4d70cce14b93504b0d9d7",
+  "review_row_count": 0,
+  "rows": [],
+  "schema": "openline.decision-recall-review-packet.v1",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf",
+  "system": "DECISION_RECALL"
+}

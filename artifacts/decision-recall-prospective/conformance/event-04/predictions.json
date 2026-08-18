@@ -1,0 +1,148 @@
+{
+  "event_id": "decision-recall-revocation-event:sha256:2b1f391c3427def74176e363654f4cdbd56738be6fc8d00277ec956c00387df4",
+  "predictions_id": "decision-recall-predictions:sha256:2991f701c036bec3621b7095c0199e16d54f1b77df743637365d6fc0c93f28e0",
+  "rows": [
+    {
+      "DECISION_RECALL": {
+        "disposition": "SURVIVE",
+        "reason": "revoked basis is absent from the accepted dependency record",
+        "witness": []
+      },
+      "FLAT_LOG_SEARCH": {
+        "disposition": "SURVIVE",
+        "witness": []
+      },
+      "FULL_HISTORY_REVIEW": {
+        "disposition": "REVIEW",
+        "witness": []
+      },
+      "decision": "Accept software change 1",
+      "decision_id": "decision-1"
+    },
+    {
+      "DECISION_RECALL": {
+        "disposition": "SURVIVE",
+        "reason": "revoked basis is absent from the accepted dependency record",
+        "witness": []
+      },
+      "FLAT_LOG_SEARCH": {
+        "disposition": "SURVIVE",
+        "witness": []
+      },
+      "FULL_HISTORY_REVIEW": {
+        "disposition": "REVIEW",
+        "witness": []
+      },
+      "decision": "Accept software change 2",
+      "decision_id": "decision-2"
+    },
+    {
+      "DECISION_RECALL": {
+        "disposition": "SURVIVE",
+        "reason": "revoked basis is absent from the accepted dependency record",
+        "witness": []
+      },
+      "FLAT_LOG_SEARCH": {
+        "disposition": "SURVIVE",
+        "witness": []
+      },
+      "FULL_HISTORY_REVIEW": {
+        "disposition": "REVIEW",
+        "witness": []
+      },
+      "decision": "Accept software change 3",
+      "decision_id": "decision-3"
+    },
+    {
+      "DECISION_RECALL": {
+        "disposition": "ESCALATE",
+        "reason": "accepted record declared materiality ambiguous",
+        "witness": [
+          "dep-4"
+        ]
+      },
+      "FLAT_LOG_SEARCH": {
+        "disposition": "REVIEW",
+        "witness": [
+          "dep-4"
+        ]
+      },
+      "FULL_HISTORY_REVIEW": {
+        "disposition": "REVIEW",
+        "witness": []
+      },
+      "decision": "Accept software change 4",
+      "decision_id": "decision-4"
+    },
+    {
+      "DECISION_RECALL": {
+        "disposition": "SURVIVE",
+        "reason": "revoked basis is absent from the accepted dependency record",
+        "witness": []
+      },
+      "FLAT_LOG_SEARCH": {
+        "disposition": "SURVIVE",
+        "witness": []
+      },
+      "FULL_HISTORY_REVIEW": {
+        "disposition": "REVIEW",
+        "witness": []
+      },
+      "decision": "Accept software change 5",
+      "decision_id": "decision-5"
+    },
+    {
+      "DECISION_RECALL": {
+        "disposition": "SURVIVE",
+        "reason": "revoked basis is absent from the accepted dependency record",
+        "witness": []
+      },
+      "FLAT_LOG_SEARCH": {
+        "disposition": "SURVIVE",
+        "witness": []
+      },
+      "FULL_HISTORY_REVIEW": {
+        "disposition": "REVIEW",
+        "witness": []
+      },
+      "decision": "Accept software change 6",
+      "decision_id": "decision-6"
+    },
+    {
+      "DECISION_RECALL": {
+        "disposition": "SURVIVE",
+        "reason": "revoked basis is absent from the accepted dependency record",
+        "witness": []
+      },
+      "FLAT_LOG_SEARCH": {
+        "disposition": "SURVIVE",
+        "witness": []
+      },
+      "FULL_HISTORY_REVIEW": {
+        "disposition": "REVIEW",
+        "witness": []
+      },
+      "decision": "Accept software change 7",
+      "decision_id": "decision-7"
+    },
+    {
+      "DECISION_RECALL": {
+        "disposition": "SURVIVE",
+        "reason": "revoked basis is absent from the accepted dependency record",
+        "witness": []
+      },
+      "FLAT_LOG_SEARCH": {
+        "disposition": "SURVIVE",
+        "witness": []
+      },
+      "FULL_HISTORY_REVIEW": {
+        "disposition": "REVIEW",
+        "witness": []
+      },
+      "decision": "Accept software change 8",
+      "decision_id": "decision-8"
+    }
+  ],
+  "schema": "openline.decision-recall-predictions.v1",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf"
+}

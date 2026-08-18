@@ -1,0 +1,20 @@
+{
+  "custody": {
+    "builder_id": "manifest-blind-catalog-builder",
+    "built_at": "2026-08-18T00:59:00Z",
+    "manifest_visible": false,
+    "method": "MANIFEST_BLIND_RECORD_ENUMERATION",
+    "source_scope": "CONVENTIONAL_PRE_TRIGGER_RECORDS_ONLY"
+  },
+  "eligible_bases": [
+    {
+      "basis_id": "requirement-123",
+      "evidence_sha256": "",
+      "kind": "REQUIREMENT",
+      "locator": "issue:123",
+      "mentioned_record_ids": [
+        "decision-recall-pre-trigger-record:sha256:<record-id>"
+      ]
+    }
+  ]
+}

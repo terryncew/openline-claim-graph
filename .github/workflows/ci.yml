@@ -111,6 +111,24 @@ jobs:
             --gold "${{ runner.temp }}/temporal-replication-001-selectivity/gold.private.json" \
             --predictions "${{ runner.temp }}/temporal-replication-001-selectivity/predictions.json" \
             --score "${{ runner.temp }}/temporal-replication-001-selectivity/score.json"
+      - name: Build and verify prospective Decision Recall mechanics
+        run: |
+          python scripts/build_decision_recall_prospective_fixture.py \
+            --output "${{ runner.temp }}/decision-recall-prospective-conformance"
+          python -I scripts/verify_decision_recall_prospective_fixture.py \
+            --artifact "${{ runner.temp }}/decision-recall-prospective-conformance" \
+            --output "${{ runner.temp }}/decision-recall-prospective-conformance/independent-verification.json"
+          printf 'independent-seed-after-seal' > "${{ runner.temp }}/decision-recall-seed.bin"
+          python scripts/select_controlled_revocations.py \
+            --stream-seal "${{ runner.temp }}/decision-recall-prospective-conformance/stream-seal.json" \
+            --seed-file "${{ runner.temp }}/decision-recall-seed.bin" \
+            --count 3 \
+            --selection-at "2026-08-18T03:59:00Z" \
+            --event-at "2026-08-18T04:00:00Z" \
+            --output "${{ runner.temp }}/decision-recall-controlled-plan.json"
+          python scripts/decision_recall_benchmark.py --help >/dev/null
+          python -I scripts/verify_cohort001_instrument.py --root . --output "${{ runner.temp }}/cohort-001-instrument-verification.json"
+          python scripts/cohort001.py --root . status >/dev/null
       - name: Build wheel
         run: python -m pip wheel . --no-deps --no-build-isolation -w "${{ runner.temp }}/wheel"
       - name: CLI smoke

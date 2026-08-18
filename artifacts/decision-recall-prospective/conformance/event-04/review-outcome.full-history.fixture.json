@@ -1,0 +1,53 @@
+{
+  "event_id": "decision-recall-revocation-event:sha256:2b1f391c3427def74176e363654f4cdbd56738be6fc8d00277ec956c00387df4",
+  "labels": [
+    {
+      "decision_id": "decision-1",
+      "label": "SURVIVE",
+      "rationale": "fixture baseline outcome"
+    },
+    {
+      "decision_id": "decision-2",
+      "label": "SURVIVE",
+      "rationale": "fixture baseline outcome"
+    },
+    {
+      "decision_id": "decision-3",
+      "label": "SURVIVE",
+      "rationale": "fixture baseline outcome"
+    },
+    {
+      "decision_id": "decision-4",
+      "label": "ESCALATE",
+      "rationale": "fixture baseline outcome"
+    },
+    {
+      "decision_id": "decision-5",
+      "label": "SURVIVE",
+      "rationale": "fixture baseline outcome"
+    },
+    {
+      "decision_id": "decision-6",
+      "label": "SURVIVE",
+      "rationale": "fixture baseline outcome"
+    },
+    {
+      "decision_id": "decision-7",
+      "label": "SURVIVE",
+      "rationale": "fixture baseline outcome"
+    },
+    {
+      "decision_id": "decision-8",
+      "label": "SURVIVE",
+      "rationale": "fixture baseline outcome"
+    }
+  ],
+  "method": "BLINDED_BASELINE_REVIEW",
+  "review_outcome_id": "decision-recall-review-outcome:sha256:4b6ddba4322a7fb30776dfdb6374420eec0c61157ba7faed8a19defb92253489",
+  "review_packet_id": "decision-recall-review-packet:sha256:99f3e8996a16075023c9432586d4507f6dcc0d51559fc354ee1a71d33d6462ea",
+  "reviewed_at": "2026-08-18T02:30:00Z",
+  "reviewer_id": "fixture-full-reviewer",
+  "schema": "openline.decision-recall-review-outcome.v1",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf",
+  "system": "FULL_HISTORY_REVIEW"
+}

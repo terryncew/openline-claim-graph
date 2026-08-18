@@ -1,0 +1,13 @@
+{
+  "basis_id": "hidden-5",
+  "event_at": "2026-08-18T02:04:00Z",
+  "event_id": "decision-recall-revocation-event:sha256:50a73d7d8454bc7d487535a14809d058500ec8b9f36b4ebdb94684d57d8f95fd",
+  "event_type": "LOSS_OF_STANDING",
+  "evidence_sha256": "",
+  "locator": "",
+  "reason": "fixture omitted-dependency control",
+  "schema": "openline.decision-recall-revocation-event.v1",
+  "selection_proof": {},
+  "stratum": "CONTROLLED",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf"
+}

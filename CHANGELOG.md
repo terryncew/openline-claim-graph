@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.6.0.dev0 — prospective Decision Recall benchmark
+
+- Designated **Prospective Decision Recall Cohort 001** as the self-hosted natural development stream. The install commit is excluded; only independently warranted repository decisions can count.
+- Added a cohort operator that binds observations to canonical subject change sets, surfaces every unclassified post-activation commit, records explicit exclusions, and forces cohort restart if frozen instrument files change during accumulation.
+- Added an independent stdlib-only zero-state verifier and cohort-specific tests. This is measuring-instrument setup, not prospective product evidence.
+
+
+- Froze the next empirical question instead of extending the 0.5.2 inference engine: can a small dependency record be captured at decision time cheaply enough to support safe selective recall later?
+- Added content-addressed decision manifests with measured human confirmation time, required dependencies, sufficient alternative support, assumptions, invalidation conditions, and resulting-artifact bindings.
+- Separated the dependency manifest from the conventional complete pre-trigger record used by baselines and blind gold.
+- Added an independently sealed eligible-basis universe that may contain bases omitted from the manifest. Controlled revocations are selected from that universe only after the stream seal exists, so the benchmark can expose missing prospective dependencies instead of testing only what the product remembered to declare.
+- Added explicit eligible-basis catalog custody: the empirical catalog must be enumerated from conventional pre-trigger records by a manifest-blind role separated from manifest drafting/confirmation; builder, timestamp, method, source scope, and manifest visibility are bound into the stream seal and promotion gate.
+- Added Full-History Review and Flat Log/Search baselines. Gold is bound from a prediction- and manifest-blind adjudication packet rather than treating full-history review as an oracle.
+- Full History and Flat Search now carry separately bound blinded human reviewer outcomes. Their reviewers can be wrong relative to independent gold; the conformance fixture intentionally contains one Full History miss that Decision Recall catches so the evaluator cannot silently treat review-all as truth.
+- The promotion policy is itself time-bound and must predate the first accepted decision, blocking post-hoc tuning of thresholds after capture data exists.
+- Hardened promotion custody against duplicate/tampered score artifacts, capture-role adjudicators, and all-positive controlled corpora; only the controlled stratum counts toward the frozen promotion bar. Promotion aggregation revalidates the sealed stream and replays each bound event/prediction/gold/baseline-review/timing/score bundle instead of trusting a standalone score merely because its content ID is self-consistent.
+- Added conditional attention-payback and break-even-revocation accounting while explicitly refusing to infer annual ROI from controlled revocations.
+- Froze the empirical promotion bar at >=30 real accepted decisions, >=10 post-seal controlled revocations, zero additional missed warranted reopenings, >=40% review-load reduction versus full-history review, >=10% reduction versus flat search, <60s median human capture, and zero silent survival of gold-ambiguous cases.
+- Added a mechanics-only conformance corpus with an intentionally omitted dependency. Decision Recall misses that injected case; the verifier requires the miss to remain visible. The fixture is explicitly not product evidence.
+- Replaced the first circular prospective verifier with a stdlib-only module-free verifier that independently reproduces restricted canonicalization, content IDs, reference dispositions, blind adjudication packets, system-specific review packets, and score arithmetic under `python -I`.
+- Bound the accepted decision statement into the conventional pre-trigger record so blinded gold no longer needs to source any field from the prospective dependency manifest.
+- Added content-addressed review workloads and a monotonic `time-review` surface. Timing only counts as instrumented when it is bound to the exact Full History / Flat Search / Decision Recall packet generated from the sealed state and predictions.
+- Preserved the 0.5.2 Evidence Recall engine hashes unchanged.
+
 ## 0.5.2 — 2026-08-17
 
 - Added **Temporal Selectivity Replication** as corpus/evaluator work only; the three frozen Evidence Recall engine files remain byte-identical to `0.5.0.dev0` / `0.5.1`.

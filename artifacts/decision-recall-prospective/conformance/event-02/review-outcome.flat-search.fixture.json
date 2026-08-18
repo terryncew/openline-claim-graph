@@ -1,0 +1,18 @@
+{
+  "event_id": "decision-recall-revocation-event:sha256:c3414f8cb57261e55eaf6df9aeb98910d3b55daa0137dee14fe1e6343d009e51",
+  "labels": [
+    {
+      "decision_id": "decision-2",
+      "label": "SURVIVE",
+      "rationale": "fixture baseline outcome"
+    }
+  ],
+  "method": "BLINDED_BASELINE_REVIEW",
+  "review_outcome_id": "decision-recall-review-outcome:sha256:f5df190d6477ae9497ac8573330f184054f54d084d01edd9ffc4f3b9f0acdb7c",
+  "review_packet_id": "decision-recall-review-packet:sha256:e7ff75bc410a939632573ca019c87e48c5e5563bfd1faf47c630babff5088e01",
+  "reviewed_at": "2026-08-18T02:31:00Z",
+  "reviewer_id": "fixture-flat-reviewer",
+  "schema": "openline.decision-recall-review-outcome.v1",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf",
+  "system": "FLAT_LOG_SEARCH"
+}

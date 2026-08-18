@@ -1,0 +1,13 @@
+{
+  "basis_id": "dep-4",
+  "event_at": "2026-08-18T02:03:00Z",
+  "event_id": "decision-recall-revocation-event:sha256:2b1f391c3427def74176e363654f4cdbd56738be6fc8d00277ec956c00387df4",
+  "event_type": "LOSS_OF_STANDING",
+  "evidence_sha256": "",
+  "locator": "",
+  "reason": "fixture ambiguity control",
+  "schema": "openline.decision-recall-revocation-event.v1",
+  "selection_proof": {},
+  "stratum": "CONTROLLED",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf"
+}

@@ -1,5 +1,20 @@
 # Assessment
 
+## Prospective Decision Recall — 0.6.0.dev0
+
+The 0.5.2 result is frozen. The next ratchet tests the missing upstream assumption rather than adding another propagation feature: whether a receiver can cheaply confirm enough dependency state at acceptance time for later revocations to become selectively reviewable.
+
+The benchmark is designed to distrust the manifest. Conventional pre-trigger records and an eligible-basis universe are sealed separately, and controlled revocations are sampled from that independent universe after the manifest stream is frozen. A basis can therefore be present in the real decision record, omitted from the tiny manifest, later lose standing, and count as a Decision Recall miss under blind gold.
+The aggregator also rejects duplicated or content-tampered score artifacts, grades the randomized controlled stratum separately from natural events, requires role-separated blinded adjudication, and requires mixed REOPEN/SURVIVE events rather than allowing an all-positive benchmark to masquerade as selectivity.
+
+The checked conformance fixture deliberately injects that exact failure. It proves custody and scoring mechanics can expose an omitted dependency; it does not provide evidence that real capture is cheap, real manifests are complete enough, or the economics work. The verifier was deliberately made module-free after the first version was found to import the candidate implementation; it now independently reproduces the fixture under Python isolated mode. Gold packets source the accepted decision statement from the separately sealed conventional record, not the manifest. Review-time receipts are bound to content-addressed system-specific workloads rather than free-floating declared milliseconds.
+
+Those repairs remove circular mechanics from the test harness; they do not create empirical evidence. Product promotion remains unearned until a real prospective stream crosses the frozen bar.
+
+The eligible-basis challenge universe is now separately custody-bound. Promotion requires a catalog declared as enumerated from conventional pre-trigger records only, with the prospective manifest hidden and the catalog builder role-separated from capture actors. This closes an easy self-test loophole—constructing the challenge universe from what the product already declared—but it remains partly procedural: software can bind the declaration and identities, not prove what a human secretly saw.
+
+Full History is also no longer an oracle. The benchmark records blinded baseline reviewer dispositions for Full History and Flat Search, separately from independent gold. An authored conformance control makes the Full History reviewer miss one warranted reopening that Decision Recall catches; this is calibration of the scorer, not empirical evidence. Promotion additionally requires the policy itself to have been frozen before capture started.
+
 ## Mixed real temporal selectivity corpus — 0.5.1
 
 The first mixed corpus is now graded under a promotion rule declared before gold construction: frozen Evidence Recall must achieve at least 95% reconsideration recall, reduce review load by at least 40% versus Review-All Reachability, and add no missed reopenings.

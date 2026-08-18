@@ -1,0 +1,770 @@
+{
+  "benchmark_id": "decision-recall-prospective-conformance-001",
+  "decision_ids": [
+    "decision-1",
+    "decision-2",
+    "decision-3",
+    "decision-4",
+    "decision-5",
+    "decision-6",
+    "decision-7",
+    "decision-8"
+  ],
+  "eligible_bases": [
+    {
+      "basis_id": "alt-2",
+      "evidence_sha256": "8ea02abc2c04d01b5e03567a6073ab3d268ee5566786c8afaa79c824f23494e6",
+      "kind": "FIXTURE_RECORDED_BASIS",
+      "locator": "fixture-basis:alt-2",
+      "mentioned_record_ids": [
+        "decision-recall-pre-trigger-record:sha256:b8c6d8ee91efad4275c4910ce05115f113e3612b817febcbbfad557c7b743362"
+      ]
+    },
+    {
+      "basis_id": "alt-6",
+      "evidence_sha256": "103e31b51716fa91a758e2a16b3454c6acee0420275575c2db8b156cc9a7c686",
+      "kind": "FIXTURE_RECORDED_BASIS",
+      "locator": "fixture-basis:alt-6",
+      "mentioned_record_ids": [
+        "decision-recall-pre-trigger-record:sha256:6df5f1c709ac315a7eff6cfb9a4d1173b65dad1065d34d6a208b8a330ab543ef"
+      ]
+    },
+    {
+      "basis_id": "dep-1",
+      "evidence_sha256": "ee5922638edfee323b605a34ae820807cba2725c69bc57dc7c6ee98096a7c84a",
+      "kind": "FIXTURE_RECORDED_BASIS",
+      "locator": "fixture-basis:dep-1",
+      "mentioned_record_ids": [
+        "decision-recall-pre-trigger-record:sha256:dbd75b8ba8963d6c0da1be74e2deb7bfb812ed46e8f8349f8a25a990d8f31443"
+      ]
+    },
+    {
+      "basis_id": "dep-2",
+      "evidence_sha256": "200f73039d98a202dc752339ecee8a86b8c93de47c2e1ef0808a4cb5ef7c26c9",
+      "kind": "FIXTURE_RECORDED_BASIS",
+      "locator": "fixture-basis:dep-2",
+      "mentioned_record_ids": [
+        "decision-recall-pre-trigger-record:sha256:b8c6d8ee91efad4275c4910ce05115f113e3612b817febcbbfad557c7b743362"
+      ]
+    },
+    {
+      "basis_id": "dep-3",
+      "evidence_sha256": "245d2a7358e87f71abbec9b3e9cd4cd5c437501486d6c6a47dc0030544f253e2",
+      "kind": "FIXTURE_RECORDED_BASIS",
+      "locator": "fixture-basis:dep-3",
+      "mentioned_record_ids": [
+        "decision-recall-pre-trigger-record:sha256:5861fec75aa35664061e1e4044a30f3a635b5e3a2db3ddf4153b5e52abfbca94"
+      ]
+    },
+    {
+      "basis_id": "dep-4",
+      "evidence_sha256": "4ca77553729c3dfc6686ffc4b8573a844d582241d442549efe0f1b2f218c09e7",
+      "kind": "FIXTURE_RECORDED_BASIS",
+      "locator": "fixture-basis:dep-4",
+      "mentioned_record_ids": [
+        "decision-recall-pre-trigger-record:sha256:300d6ee771921cfb27e75d42d42cf9a27336e064a2577c6355fdceb86aecd171"
+      ]
+    },
+    {
+      "basis_id": "dep-5",
+      "evidence_sha256": "e659accc00981b0fd0bed34a27f8575b630652befe39eb494230370871018c16",
+      "kind": "FIXTURE_RECORDED_BASIS",
+      "locator": "fixture-basis:dep-5",
+      "mentioned_record_ids": [
+        "decision-recall-pre-trigger-record:sha256:47144ea8a135e33889b288d2e4b2fda007a44a1beff9f085d9cecf42e1570fba"
+      ]
+    },
+    {
+      "basis_id": "dep-6",
+      "evidence_sha256": "c5adc69d7d79c7c44af7eafab735f2beb88f31986b680846758ab3b1f9548f17",
+      "kind": "FIXTURE_RECORDED_BASIS",
+      "locator": "fixture-basis:dep-6",
+      "mentioned_record_ids": [
+        "decision-recall-pre-trigger-record:sha256:6df5f1c709ac315a7eff6cfb9a4d1173b65dad1065d34d6a208b8a330ab543ef"
+      ]
+    },
+    {
+      "basis_id": "dep-7",
+      "evidence_sha256": "598d7e3c062fc8503ed473fb699d64a642868abc3b081b4f96ab3755ddc81607",
+      "kind": "FIXTURE_RECORDED_BASIS",
+      "locator": "fixture-basis:dep-7",
+      "mentioned_record_ids": [
+        "decision-recall-pre-trigger-record:sha256:40a6fbffff4d3d73aa03c5e2af028b1b0aeb208c75e62142cf8161465d873b16"
+      ]
+    },
+    {
+      "basis_id": "dep-8",
+      "evidence_sha256": "708d0cc08c5eec6738ab3ac2b4aa8a779327234e801138bee3bb86727cf919ad",
+      "kind": "FIXTURE_RECORDED_BASIS",
+      "locator": "fixture-basis:dep-8",
+      "mentioned_record_ids": [
+        "decision-recall-pre-trigger-record:sha256:387e5de47db54669f68aaf9aa6228847343c1ad4223fae93a37ba6d60f145ed1"
+      ]
+    },
+    {
+      "basis_id": "hidden-5",
+      "evidence_sha256": "2fca815b9ff934987003902f2d62434b52a2f40ef7e7fc529175f3f5d6c18098",
+      "kind": "FIXTURE_RECORDED_BASIS",
+      "locator": "fixture-basis:hidden-5",
+      "mentioned_record_ids": [
+        "decision-recall-pre-trigger-record:sha256:47144ea8a135e33889b288d2e4b2fda007a44a1beff9f085d9cecf42e1570fba"
+      ]
+    },
+    {
+      "basis_id": "shared-context",
+      "evidence_sha256": "8fb008c56984489b9902551b4bffc29402271b9b5218a1c3e7b0027cf72780ac",
+      "kind": "FIXTURE_RECORDED_BASIS",
+      "locator": "fixture-basis:shared-context",
+      "mentioned_record_ids": [
+        "decision-recall-pre-trigger-record:sha256:300d6ee771921cfb27e75d42d42cf9a27336e064a2577c6355fdceb86aecd171",
+        "decision-recall-pre-trigger-record:sha256:387e5de47db54669f68aaf9aa6228847343c1ad4223fae93a37ba6d60f145ed1",
+        "decision-recall-pre-trigger-record:sha256:47144ea8a135e33889b288d2e4b2fda007a44a1beff9f085d9cecf42e1570fba",
+        "decision-recall-pre-trigger-record:sha256:6df5f1c709ac315a7eff6cfb9a4d1173b65dad1065d34d6a208b8a330ab543ef",
+        "decision-recall-pre-trigger-record:sha256:b8c6d8ee91efad4275c4910ce05115f113e3612b817febcbbfad557c7b743362",
+        "decision-recall-pre-trigger-record:sha256:dbd75b8ba8963d6c0da1be74e2deb7bfb812ed46e8f8349f8a25a990d8f31443"
+      ]
+    }
+  ],
+  "eligible_bases_root": "c4490f662f90941b80c049b005297bf68c0fb6b7d98788e6b18123aa5c16f452",
+  "eligible_basis_catalog_custody": {
+    "builder_id": "fixture-catalog-builder",
+    "built_at": "2026-08-18T00:59:00Z",
+    "manifest_visible": false,
+    "method": "MANIFEST_BLIND_RECORD_ENUMERATION",
+    "source_scope": "CONVENTIONAL_PRE_TRIGGER_RECORDS_ONLY"
+  },
+  "eligible_basis_ids": [
+    "alt-2",
+    "alt-6",
+    "dep-1",
+    "dep-2",
+    "dep-3",
+    "dep-4",
+    "dep-5",
+    "dep-6",
+    "dep-7",
+    "dep-8",
+    "hidden-5",
+    "shared-context"
+  ],
+  "manifest_count": 8,
+  "manifest_ids": [
+    "decision-recall-manifest:sha256:142b63907312236f22e10a920e4663bb87eb9f59241936f1c8366d1346fed5a1",
+    "decision-recall-manifest:sha256:1fbdc764efe7061d57b3665d4947bb987b35dd9614a1a12ada1bf529abaadd3b",
+    "decision-recall-manifest:sha256:e3ce7766199f83c23aea0e12e652927e60a6f57a566d3369f09beedad4ac938c",
+    "decision-recall-manifest:sha256:fd88ff5235af015960ad98f7494ce69c10077bfd0266ce1e08a4f8aeb838163e",
+    "decision-recall-manifest:sha256:cbc9964ead5762765f0c3539ebdcd75caf3f1778ca08f93857a19461f51b16b0",
+    "decision-recall-manifest:sha256:a45fa808bc3660cb1dadc7aee106943173cadd6292bb84688921991f61bdf40c",
+    "decision-recall-manifest:sha256:9d6985b31eb3ffcd66dc10f3f9e910a20aebb25d14ce63abe43e6e4dff887e06",
+    "decision-recall-manifest:sha256:5f82264ca44a9a987ee6a592f0f2c1603c3f09dec7f2d9847fbbe54e858fabb1"
+  ],
+  "manifests": [
+    {
+      "accepted_at": "2026-08-18T00:01:00Z",
+      "alternative_support": [],
+      "assumptions": [],
+      "basis": [
+        {
+          "alternative_group": "",
+          "basis_id": "dep-1",
+          "evidence_sha256": "7fb9e04698e8a72b66b2d609e5205db6d0515611dd8355c22b04f00bfff67441",
+          "kind": "SOFTWARE_REQUIREMENT",
+          "locator": "issue:101",
+          "role": "REQUIRED",
+          "statement": "Requirement 1 justifies accepted change 1."
+        },
+        {
+          "alternative_group": "",
+          "basis_id": "shared-context",
+          "evidence_sha256": "8fb008c56984489b9902551b4bffc29402271b9b5218a1c3e7b0027cf72780ac",
+          "kind": "DISCUSSION",
+          "locator": "doc:background",
+          "role": "CONTEXT",
+          "statement": "Background discussion mentioned by several decisions but not relied upon."
+        }
+      ],
+      "capture": {
+        "accepted_without_correction": true,
+        "confirmed_at": "2026-08-18T00:01:21Z",
+        "confirmed_by": "fixture-receiver",
+        "correction_count": 0,
+        "drafted_by": "fixture-agent",
+        "human_capture_milliseconds": 21000,
+        "started_at": "2026-08-18T00:01:00Z",
+        "timing_source": "DECLARED"
+      },
+      "decision": "Accept software change 1",
+      "decision_id": "decision-1",
+      "invalidation_conditions": [
+        {
+          "condition_id": "loss-1",
+          "dependency_id": "dep-1",
+          "event_types": [
+            "LOSS_OF_STANDING"
+          ],
+          "note": "Loss of this admitted material basis requires contract evaluation."
+        }
+      ],
+      "manifest_id": "decision-recall-manifest:sha256:142b63907312236f22e10a920e4663bb87eb9f59241936f1c8366d1346fed5a1",
+      "metadata": {
+        "fixture_only": true
+      },
+      "required_dependencies": [
+        "dep-1"
+      ],
+      "resulting_artifact": {
+        "kind": "COMMIT",
+        "locator": "commit:fixture-1",
+        "sha256": "c4793fb94443793eb32e1128b2d4d2cb4c20bed467a6929ec09f78cb87af21a1"
+      },
+      "schema": "openline.decision-recall-manifest.v1"
+    },
+    {
+      "accepted_at": "2026-08-18T00:02:00Z",
+      "alternative_support": [
+        {
+          "dependency_ids": [
+            "alt-2"
+          ],
+          "group_id": "g-2"
+        }
+      ],
+      "assumptions": [],
+      "basis": [
+        {
+          "alternative_group": "g-2",
+          "basis_id": "alt-2",
+          "evidence_sha256": "8ea02abc2c04d01b5e03567a6073ab3d268ee5566786c8afaa79c824f23494e6",
+          "kind": "TEST_EVIDENCE",
+          "locator": "test:test_2",
+          "role": "ALTERNATIVE",
+          "statement": "Independent compatibility test for change 2."
+        },
+        {
+          "alternative_group": "",
+          "basis_id": "dep-2",
+          "evidence_sha256": "58566532cc7072edbf60f9b14f3efb346162e09569a3ef78fccb7e627bb2b4d4",
+          "kind": "SOFTWARE_REQUIREMENT",
+          "locator": "issue:102",
+          "role": "REQUIRED",
+          "statement": "Requirement 2 justifies accepted change 2."
+        },
+        {
+          "alternative_group": "",
+          "basis_id": "shared-context",
+          "evidence_sha256": "8fb008c56984489b9902551b4bffc29402271b9b5218a1c3e7b0027cf72780ac",
+          "kind": "DISCUSSION",
+          "locator": "doc:background",
+          "role": "CONTEXT",
+          "statement": "Background discussion mentioned by several decisions but not relied upon."
+        }
+      ],
+      "capture": {
+        "accepted_without_correction": true,
+        "confirmed_at": "2026-08-18T00:02:22Z",
+        "confirmed_by": "fixture-receiver",
+        "correction_count": 0,
+        "drafted_by": "fixture-agent",
+        "human_capture_milliseconds": 22000,
+        "started_at": "2026-08-18T00:02:00Z",
+        "timing_source": "DECLARED"
+      },
+      "decision": "Accept software change 2",
+      "decision_id": "decision-2",
+      "invalidation_conditions": [
+        {
+          "condition_id": "loss-2",
+          "dependency_id": "dep-2",
+          "event_types": [
+            "LOSS_OF_STANDING"
+          ],
+          "note": "Loss of this admitted material basis requires contract evaluation."
+        }
+      ],
+      "manifest_id": "decision-recall-manifest:sha256:1fbdc764efe7061d57b3665d4947bb987b35dd9614a1a12ada1bf529abaadd3b",
+      "metadata": {
+        "fixture_only": true
+      },
+      "required_dependencies": [
+        "dep-2"
+      ],
+      "resulting_artifact": {
+        "kind": "COMMIT",
+        "locator": "commit:fixture-2",
+        "sha256": "65b52ff3986b5ad33bd0ebdb49a989113e42ea761a96a4558f6644f86c8b582f"
+      },
+      "schema": "openline.decision-recall-manifest.v1"
+    },
+    {
+      "accepted_at": "2026-08-18T00:03:00Z",
+      "alternative_support": [],
+      "assumptions": [],
+      "basis": [
+        {
+          "alternative_group": "",
+          "basis_id": "dep-3",
+          "evidence_sha256": "5b53ccd50579cbf107c6f20a1280c998b900ae4d4e1548608423a1f0a9aab88e",
+          "kind": "SOFTWARE_REQUIREMENT",
+          "locator": "issue:103",
+          "role": "CONTEXT",
+          "statement": "Requirement 3 justifies accepted change 3."
+        }
+      ],
+      "capture": {
+        "accepted_without_correction": false,
+        "confirmed_at": "2026-08-18T00:03:23Z",
+        "confirmed_by": "fixture-receiver",
+        "correction_count": 1,
+        "drafted_by": "fixture-agent",
+        "human_capture_milliseconds": 23000,
+        "started_at": "2026-08-18T00:03:00Z",
+        "timing_source": "DECLARED"
+      },
+      "decision": "Accept software change 3",
+      "decision_id": "decision-3",
+      "invalidation_conditions": [],
+      "manifest_id": "decision-recall-manifest:sha256:e3ce7766199f83c23aea0e12e652927e60a6f57a566d3369f09beedad4ac938c",
+      "metadata": {
+        "fixture_only": true
+      },
+      "required_dependencies": [],
+      "resulting_artifact": {
+        "kind": "COMMIT",
+        "locator": "commit:fixture-3",
+        "sha256": "bdf22aa21729fcbda0ac8229fd4d505fa2b4a6aca8af1e426f4a3730b0e18a5f"
+      },
+      "schema": "openline.decision-recall-manifest.v1"
+    },
+    {
+      "accepted_at": "2026-08-18T00:04:00Z",
+      "alternative_support": [],
+      "assumptions": [],
+      "basis": [
+        {
+          "alternative_group": "",
+          "basis_id": "dep-4",
+          "evidence_sha256": "8642b9ebbb737f8ae8665736a09b559cbda8524e28ef70ffb674b31c7c8468c3",
+          "kind": "SOFTWARE_REQUIREMENT",
+          "locator": "issue:104",
+          "role": "AMBIGUOUS",
+          "statement": "Requirement 4 justifies accepted change 4."
+        },
+        {
+          "alternative_group": "",
+          "basis_id": "shared-context",
+          "evidence_sha256": "8fb008c56984489b9902551b4bffc29402271b9b5218a1c3e7b0027cf72780ac",
+          "kind": "DISCUSSION",
+          "locator": "doc:background",
+          "role": "CONTEXT",
+          "statement": "Background discussion mentioned by several decisions but not relied upon."
+        }
+      ],
+      "capture": {
+        "accepted_without_correction": true,
+        "confirmed_at": "2026-08-18T00:04:24Z",
+        "confirmed_by": "fixture-receiver",
+        "correction_count": 0,
+        "drafted_by": "fixture-agent",
+        "human_capture_milliseconds": 24000,
+        "started_at": "2026-08-18T00:04:00Z",
+        "timing_source": "DECLARED"
+      },
+      "decision": "Accept software change 4",
+      "decision_id": "decision-4",
+      "invalidation_conditions": [],
+      "manifest_id": "decision-recall-manifest:sha256:fd88ff5235af015960ad98f7494ce69c10077bfd0266ce1e08a4f8aeb838163e",
+      "metadata": {
+        "fixture_only": true
+      },
+      "required_dependencies": [],
+      "resulting_artifact": {
+        "kind": "COMMIT",
+        "locator": "commit:fixture-4",
+        "sha256": "475f97e65731b7707d9dd8376690219bc698dadc4449604efac24c50d9b0b3f3"
+      },
+      "schema": "openline.decision-recall-manifest.v1"
+    },
+    {
+      "accepted_at": "2026-08-18T00:05:00Z",
+      "alternative_support": [],
+      "assumptions": [],
+      "basis": [
+        {
+          "alternative_group": "",
+          "basis_id": "dep-5",
+          "evidence_sha256": "2dbb7ae022aeb1042552d594e69f55cb0a9d35c745030ecdc9bd5d38905272c0",
+          "kind": "SOFTWARE_REQUIREMENT",
+          "locator": "issue:105",
+          "role": "REQUIRED",
+          "statement": "Requirement 5 justifies accepted change 5."
+        },
+        {
+          "alternative_group": "",
+          "basis_id": "shared-context",
+          "evidence_sha256": "8fb008c56984489b9902551b4bffc29402271b9b5218a1c3e7b0027cf72780ac",
+          "kind": "DISCUSSION",
+          "locator": "doc:background",
+          "role": "CONTEXT",
+          "statement": "Background discussion mentioned by several decisions but not relied upon."
+        }
+      ],
+      "capture": {
+        "accepted_without_correction": true,
+        "confirmed_at": "2026-08-18T00:05:20Z",
+        "confirmed_by": "fixture-receiver",
+        "correction_count": 0,
+        "drafted_by": "fixture-agent",
+        "human_capture_milliseconds": 20000,
+        "started_at": "2026-08-18T00:05:00Z",
+        "timing_source": "DECLARED"
+      },
+      "decision": "Accept software change 5",
+      "decision_id": "decision-5",
+      "invalidation_conditions": [
+        {
+          "condition_id": "loss-5",
+          "dependency_id": "dep-5",
+          "event_types": [
+            "LOSS_OF_STANDING"
+          ],
+          "note": "Loss of this admitted material basis requires contract evaluation."
+        }
+      ],
+      "manifest_id": "decision-recall-manifest:sha256:cbc9964ead5762765f0c3539ebdcd75caf3f1778ca08f93857a19461f51b16b0",
+      "metadata": {
+        "fixture_only": true
+      },
+      "required_dependencies": [
+        "dep-5"
+      ],
+      "resulting_artifact": {
+        "kind": "COMMIT",
+        "locator": "commit:fixture-5",
+        "sha256": "36998731436ea986236f68f6d924c70e31d9be9599c77fdb8cfa56ab0cc71995"
+      },
+      "schema": "openline.decision-recall-manifest.v1"
+    },
+    {
+      "accepted_at": "2026-08-18T00:06:00Z",
+      "alternative_support": [
+        {
+          "dependency_ids": [
+            "alt-6"
+          ],
+          "group_id": "g-6"
+        }
+      ],
+      "assumptions": [],
+      "basis": [
+        {
+          "alternative_group": "g-6",
+          "basis_id": "alt-6",
+          "evidence_sha256": "103e31b51716fa91a758e2a16b3454c6acee0420275575c2db8b156cc9a7c686",
+          "kind": "TEST_EVIDENCE",
+          "locator": "test:test_6",
+          "role": "ALTERNATIVE",
+          "statement": "Independent compatibility test for change 6."
+        },
+        {
+          "alternative_group": "",
+          "basis_id": "dep-6",
+          "evidence_sha256": "6304b3d9985366938295b500255bb551d42e75a0ac8f79d808fc5c3b70bc1d16",
+          "kind": "SOFTWARE_REQUIREMENT",
+          "locator": "issue:106",
+          "role": "REQUIRED",
+          "statement": "Requirement 6 justifies accepted change 6."
+        },
+        {
+          "alternative_group": "",
+          "basis_id": "shared-context",
+          "evidence_sha256": "8fb008c56984489b9902551b4bffc29402271b9b5218a1c3e7b0027cf72780ac",
+          "kind": "DISCUSSION",
+          "locator": "doc:background",
+          "role": "CONTEXT",
+          "statement": "Background discussion mentioned by several decisions but not relied upon."
+        }
+      ],
+      "capture": {
+        "accepted_without_correction": false,
+        "confirmed_at": "2026-08-18T00:06:21Z",
+        "confirmed_by": "fixture-receiver",
+        "correction_count": 1,
+        "drafted_by": "fixture-agent",
+        "human_capture_milliseconds": 21000,
+        "started_at": "2026-08-18T00:06:00Z",
+        "timing_source": "DECLARED"
+      },
+      "decision": "Accept software change 6",
+      "decision_id": "decision-6",
+      "invalidation_conditions": [
+        {
+          "condition_id": "loss-6",
+          "dependency_id": "dep-6",
+          "event_types": [
+            "LOSS_OF_STANDING"
+          ],
+          "note": "Loss of this admitted material basis requires contract evaluation."
+        }
+      ],
+      "manifest_id": "decision-recall-manifest:sha256:a45fa808bc3660cb1dadc7aee106943173cadd6292bb84688921991f61bdf40c",
+      "metadata": {
+        "fixture_only": true
+      },
+      "required_dependencies": [
+        "dep-6"
+      ],
+      "resulting_artifact": {
+        "kind": "COMMIT",
+        "locator": "commit:fixture-6",
+        "sha256": "73654e0523a09eb782a048cc15a988bc4b0b4766aaf58c5ab6e1948d261c3606"
+      },
+      "schema": "openline.decision-recall-manifest.v1"
+    },
+    {
+      "accepted_at": "2026-08-18T00:07:00Z",
+      "alternative_support": [],
+      "assumptions": [],
+      "basis": [
+        {
+          "alternative_group": "",
+          "basis_id": "dep-7",
+          "evidence_sha256": "2143beaf566b8ea2d7755436371354db2b35232fc8c668adc42c5a7aeb9dc48f",
+          "kind": "SOFTWARE_REQUIREMENT",
+          "locator": "issue:107",
+          "role": "CONTEXT",
+          "statement": "Requirement 7 justifies accepted change 7."
+        }
+      ],
+      "capture": {
+        "accepted_without_correction": true,
+        "confirmed_at": "2026-08-18T00:07:22Z",
+        "confirmed_by": "fixture-receiver",
+        "correction_count": 0,
+        "drafted_by": "fixture-agent",
+        "human_capture_milliseconds": 22000,
+        "started_at": "2026-08-18T00:07:00Z",
+        "timing_source": "DECLARED"
+      },
+      "decision": "Accept software change 7",
+      "decision_id": "decision-7",
+      "invalidation_conditions": [],
+      "manifest_id": "decision-recall-manifest:sha256:9d6985b31eb3ffcd66dc10f3f9e910a20aebb25d14ce63abe43e6e4dff887e06",
+      "metadata": {
+        "fixture_only": true
+      },
+      "required_dependencies": [],
+      "resulting_artifact": {
+        "kind": "COMMIT",
+        "locator": "commit:fixture-7",
+        "sha256": "b57647e6e01b108f4bd54adfd2a9c1339047d1d4c0c8d812d18088df5eb50498"
+      },
+      "schema": "openline.decision-recall-manifest.v1"
+    },
+    {
+      "accepted_at": "2026-08-18T00:08:00Z",
+      "alternative_support": [],
+      "assumptions": [],
+      "basis": [
+        {
+          "alternative_group": "",
+          "basis_id": "dep-8",
+          "evidence_sha256": "c2ab61d51928a32528955951d7613ac79b57fc6dceb5899a5274631ba637ce46",
+          "kind": "SOFTWARE_REQUIREMENT",
+          "locator": "issue:108",
+          "role": "REQUIRED",
+          "statement": "Requirement 8 justifies accepted change 8."
+        },
+        {
+          "alternative_group": "",
+          "basis_id": "shared-context",
+          "evidence_sha256": "8fb008c56984489b9902551b4bffc29402271b9b5218a1c3e7b0027cf72780ac",
+          "kind": "DISCUSSION",
+          "locator": "doc:background",
+          "role": "CONTEXT",
+          "statement": "Background discussion mentioned by several decisions but not relied upon."
+        }
+      ],
+      "capture": {
+        "accepted_without_correction": true,
+        "confirmed_at": "2026-08-18T00:08:23Z",
+        "confirmed_by": "fixture-receiver",
+        "correction_count": 0,
+        "drafted_by": "fixture-agent",
+        "human_capture_milliseconds": 23000,
+        "started_at": "2026-08-18T00:08:00Z",
+        "timing_source": "DECLARED"
+      },
+      "decision": "Accept software change 8",
+      "decision_id": "decision-8",
+      "invalidation_conditions": [
+        {
+          "condition_id": "loss-8",
+          "dependency_id": "dep-8",
+          "event_types": [
+            "LOSS_OF_STANDING"
+          ],
+          "note": "Loss of this admitted material basis requires contract evaluation."
+        }
+      ],
+      "manifest_id": "decision-recall-manifest:sha256:5f82264ca44a9a987ee6a592f0f2c1603c3f09dec7f2d9847fbbe54e858fabb1",
+      "metadata": {
+        "fixture_only": true
+      },
+      "required_dependencies": [
+        "dep-8"
+      ],
+      "resulting_artifact": {
+        "kind": "COMMIT",
+        "locator": "commit:fixture-8",
+        "sha256": "825ee78b58042a3dfa3c205fc382fde0604485d1cb567a3106f517255c7b8b25"
+      },
+      "schema": "openline.decision-recall-manifest.v1"
+    }
+  ],
+  "manifests_root": "a1fdde112f42be9c33486e7725858c16d19714aa2fdc84fa667867f028e4d162",
+  "pre_trigger_record_ids": [
+    "decision-recall-pre-trigger-record:sha256:300d6ee771921cfb27e75d42d42cf9a27336e064a2577c6355fdceb86aecd171",
+    "decision-recall-pre-trigger-record:sha256:387e5de47db54669f68aaf9aa6228847343c1ad4223fae93a37ba6d60f145ed1",
+    "decision-recall-pre-trigger-record:sha256:40a6fbffff4d3d73aa03c5e2af028b1b0aeb208c75e62142cf8161465d873b16",
+    "decision-recall-pre-trigger-record:sha256:47144ea8a135e33889b288d2e4b2fda007a44a1beff9f085d9cecf42e1570fba",
+    "decision-recall-pre-trigger-record:sha256:5861fec75aa35664061e1e4044a30f3a635b5e3a2db3ddf4153b5e52abfbca94",
+    "decision-recall-pre-trigger-record:sha256:6df5f1c709ac315a7eff6cfb9a4d1173b65dad1065d34d6a208b8a330ab543ef",
+    "decision-recall-pre-trigger-record:sha256:b8c6d8ee91efad4275c4910ce05115f113e3612b817febcbbfad557c7b743362",
+    "decision-recall-pre-trigger-record:sha256:dbd75b8ba8963d6c0da1be74e2deb7bfb812ed46e8f8349f8a25a990d8f31443"
+  ],
+  "pre_trigger_records": [
+    {
+      "available_at": "2026-08-18T00:04:00Z",
+      "decision": "Accept software change 4",
+      "decision_id": "decision-4",
+      "materials": [
+        {
+          "kind": "ISSUE_PR_TEST_BUNDLE",
+          "locator": "fixture:decision-4",
+          "material_id": "record-4",
+          "sha256": "5863e1355e4554a23b81331da217bdd31f134f342a8519cbdf2dbbf216e632de",
+          "text": "Accepted change materials. Mentioned bases: dep-4, shared-context"
+        }
+      ],
+      "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:300d6ee771921cfb27e75d42d42cf9a27336e064a2577c6355fdceb86aecd171",
+      "schema": "openline.decision-recall-pre-trigger-record.v1"
+    },
+    {
+      "available_at": "2026-08-18T00:08:00Z",
+      "decision": "Accept software change 8",
+      "decision_id": "decision-8",
+      "materials": [
+        {
+          "kind": "ISSUE_PR_TEST_BUNDLE",
+          "locator": "fixture:decision-8",
+          "material_id": "record-8",
+          "sha256": "792480ef1cccdb07903d61539d96f000307393e6211b607e9509aafe1e0f0521",
+          "text": "Accepted change materials. Mentioned bases: dep-8, shared-context"
+        }
+      ],
+      "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:387e5de47db54669f68aaf9aa6228847343c1ad4223fae93a37ba6d60f145ed1",
+      "schema": "openline.decision-recall-pre-trigger-record.v1"
+    },
+    {
+      "available_at": "2026-08-18T00:07:00Z",
+      "decision": "Accept software change 7",
+      "decision_id": "decision-7",
+      "materials": [
+        {
+          "kind": "ISSUE_PR_TEST_BUNDLE",
+          "locator": "fixture:decision-7",
+          "material_id": "record-7",
+          "sha256": "499fde439e83a2f88d8ecc24fa44f0751aaad372d520d8fcfce35f7cdee13e1b",
+          "text": "Accepted change materials. Mentioned bases: dep-7"
+        }
+      ],
+      "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:40a6fbffff4d3d73aa03c5e2af028b1b0aeb208c75e62142cf8161465d873b16",
+      "schema": "openline.decision-recall-pre-trigger-record.v1"
+    },
+    {
+      "available_at": "2026-08-18T00:05:00Z",
+      "decision": "Accept software change 5",
+      "decision_id": "decision-5",
+      "materials": [
+        {
+          "kind": "ISSUE_PR_TEST_BUNDLE",
+          "locator": "fixture:decision-5",
+          "material_id": "record-5",
+          "sha256": "2383b880405436830d22f0845671b7262ce398e743ce283e7bfe980f055e779d",
+          "text": "Accepted change materials. Mentioned bases: dep-5, shared-context, hidden-5"
+        }
+      ],
+      "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:47144ea8a135e33889b288d2e4b2fda007a44a1beff9f085d9cecf42e1570fba",
+      "schema": "openline.decision-recall-pre-trigger-record.v1"
+    },
+    {
+      "available_at": "2026-08-18T00:03:00Z",
+      "decision": "Accept software change 3",
+      "decision_id": "decision-3",
+      "materials": [
+        {
+          "kind": "ISSUE_PR_TEST_BUNDLE",
+          "locator": "fixture:decision-3",
+          "material_id": "record-3",
+          "sha256": "5f1f31c0fec2fb84c7f6f0e2668d24066d1bc8baf4525603e96eaf5b269d7dd3",
+          "text": "Accepted change materials. Mentioned bases: dep-3"
+        }
+      ],
+      "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:5861fec75aa35664061e1e4044a30f3a635b5e3a2db3ddf4153b5e52abfbca94",
+      "schema": "openline.decision-recall-pre-trigger-record.v1"
+    },
+    {
+      "available_at": "2026-08-18T00:06:00Z",
+      "decision": "Accept software change 6",
+      "decision_id": "decision-6",
+      "materials": [
+        {
+          "kind": "ISSUE_PR_TEST_BUNDLE",
+          "locator": "fixture:decision-6",
+          "material_id": "record-6",
+          "sha256": "33a5119571f643df22d87a901d18b60196554852c07c8399629885722803ee14",
+          "text": "Accepted change materials. Mentioned bases: dep-6, shared-context, alt-6"
+        }
+      ],
+      "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:6df5f1c709ac315a7eff6cfb9a4d1173b65dad1065d34d6a208b8a330ab543ef",
+      "schema": "openline.decision-recall-pre-trigger-record.v1"
+    },
+    {
+      "available_at": "2026-08-18T00:02:00Z",
+      "decision": "Accept software change 2",
+      "decision_id": "decision-2",
+      "materials": [
+        {
+          "kind": "ISSUE_PR_TEST_BUNDLE",
+          "locator": "fixture:decision-2",
+          "material_id": "record-2",
+          "sha256": "ef5dfbf05344ff8e35db44da1673604a550fdb5e48df5fdc6b25f70007dc6649",
+          "text": "Accepted change materials. Mentioned bases: dep-2, shared-context, alt-2"
+        }
+      ],
+      "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:b8c6d8ee91efad4275c4910ce05115f113e3612b817febcbbfad557c7b743362",
+      "schema": "openline.decision-recall-pre-trigger-record.v1"
+    },
+    {
+      "available_at": "2026-08-18T00:01:00Z",
+      "decision": "Accept software change 1",
+      "decision_id": "decision-1",
+      "materials": [
+        {
+          "kind": "ISSUE_PR_TEST_BUNDLE",
+          "locator": "fixture:decision-1",
+          "material_id": "record-1",
+          "sha256": "a171ae8360a3baa9195b521108d3bb2c6a41fb3f93d76eb52370541e93e19d66",
+          "text": "Accepted change materials. Mentioned bases: dep-1, shared-context"
+        }
+      ],
+      "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:dbd75b8ba8963d6c0da1be74e2deb7bfb812ed46e8f8349f8a25a990d8f31443",
+      "schema": "openline.decision-recall-pre-trigger-record.v1"
+    }
+  ],
+  "pre_trigger_records_root": "90e3eec75ace0a16cb4afeca28a230ba06b1361e9d34d014a4edfd5fd5228412",
+  "protocol_id": "decision-recall-prospective-001-v1",
+  "schema": "openline.decision-recall-stream-seal.v2",
+  "sealed_at": "2026-08-18T01:00:00Z",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf"
+}

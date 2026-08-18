@@ -1,0 +1,18 @@
+{
+  "event_id": "decision-recall-revocation-event:sha256:50a73d7d8454bc7d487535a14809d058500ec8b9f36b4ebdb94684d57d8f95fd",
+  "labels": [
+    {
+      "decision_id": "decision-5",
+      "label": "REOPEN",
+      "rationale": "fixture baseline outcome"
+    }
+  ],
+  "method": "BLINDED_BASELINE_REVIEW",
+  "review_outcome_id": "decision-recall-review-outcome:sha256:e7816df53f70f387205b01059077caae28b2722f385607b90ccb69acb317e050",
+  "review_packet_id": "decision-recall-review-packet:sha256:6993845109b4bfa72c931341fe9d5b094ee3f5c9a1157d63711bce76ca0c34d7",
+  "reviewed_at": "2026-08-18T02:31:00Z",
+  "reviewer_id": "fixture-flat-reviewer",
+  "schema": "openline.decision-recall-review-outcome.v1",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:1caeeaec93bd8f38688101d78e680c8505f2089909d1bf94c928f5674eb1e1bf",
+  "system": "FLAT_LOG_SEARCH"
+}
