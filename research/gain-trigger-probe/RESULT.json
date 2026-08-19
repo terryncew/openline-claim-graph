@@ -1,0 +1,46 @@
+{
+  "actual_auto_clean": {
+    "X": true,
+    "Y": false,
+    "Z": false
+  },
+  "condition_recomputation": {
+    "X": {
+      "auto_clean": true,
+      "remaining_hard": [],
+      "remaining_unresolved": []
+    },
+    "Y": {
+      "auto_clean": false,
+      "remaining_hard": [
+        "B"
+      ],
+      "remaining_unresolved": []
+    },
+    "Z": {
+      "auto_clean": false,
+      "remaining_hard": [],
+      "remaining_unresolved": [
+        "O"
+      ]
+    }
+  },
+  "expected_auto_clean": {
+    "X": true,
+    "Y": false,
+    "Z": false
+  },
+  "fail_naive_nodes": [
+    "Y",
+    "Z"
+  ],
+  "fixture_result": "PASS",
+  "naive_reachability": [
+    "X",
+    "Y",
+    "Z"
+  ],
+  "naive_result": "FAIL-NAIVE",
+  "protocol_sha256": "30d56f74e45b867162af72722c9359671a8c238c43e3aecb81367dcee9498e5b",
+  "restored_basis": "A"
+}

@@ -1,0 +1,39 @@
+{
+  "all_passed": true,
+  "passed": 8,
+  "sample_A_rows": {
+    "X": {
+      "before": "BLOCKED",
+      "classification": "RECONSIDERABLE",
+      "complete_support_sets": [
+        [
+          "A"
+        ]
+      ],
+      "unresolved": []
+    },
+    "Z": {
+      "before": "BLOCKED",
+      "classification": "AFFECTED_UNRESOLVED",
+      "complete_support_sets": [
+        [
+          "A"
+        ]
+      ],
+      "unresolved": [
+        "O"
+      ]
+    }
+  },
+  "tests": {
+    "exact_basis_binding": true,
+    "existing_alternative_not_misread_as_gain": true,
+    "idempotent_replay": true,
+    "second_hard_blocker_not_laundered": true,
+    "sole_blocker_reopens_option": true,
+    "stale_state_rejected": true,
+    "unknown_basis_no_effect": true,
+    "unresolved_objection_not_laundered": true
+  },
+  "total": 8
+}
