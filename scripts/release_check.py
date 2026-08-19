@@ -1507,7 +1507,9 @@ def main() -> int:
             "capture usability, actual human/catalog blindness, prospective accuracy, natural revocation frequency, annual ROI, transport, or product promotion. "
             "Cohort 001 now designates this repository's own post-install natural development stream as the first empirical run. The install commit is excluded, "
             "the empirical count begins at zero, only decisions that would have happened anyway can count, every substantive post-activation commit must be observed or explicitly excluded, "
-            "and any change to the frozen instrument files forces a cohort restart. Cohort designation is instrument state, not product evidence."
+            "and any change to the frozen instrument files forces a cohort restart. Cohort designation is instrument state, not product evidence. "
+            "Version 0.6.1.dev0 adds the earned GAIN_OF_STANDING trigger inside Decision Recall, bound to explicit standing/blocker state and before/after support-set recomputation. "
+            "RECONSIDERABLE is review-only and cannot restore accepted state, clear independent blockers, or confer execution authority. The empty first Cohort 001 generation is restarted at generation 2 before any eligible prospective observation is admitted."
         ),
         "incremental_api_spend_usd": 0,
         "model_calls": 1,

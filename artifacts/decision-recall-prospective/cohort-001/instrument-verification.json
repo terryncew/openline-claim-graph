@@ -42,7 +42,7 @@
       "pass": true
     },
     {
-      "detail": "FIRST_GIT_COMMIT_CONTAINING_DESIGNATION_THEN_DESCENDANTS_ONLY",
+      "detail": "LATEST_GIT_COMMIT_MODIFYING_DESIGNATION_THEN_DESCENDANTS_ONLY",
       "name": "activation_rule",
       "pass": true
     },
@@ -130,7 +130,7 @@
       "pass": true
     },
     {
-      "detail": "2a59e3621e18f9945369e1caa2ee2948eb33ffd1d476b668d42351713464576a",
+      "detail": "9faed0b9d975fed87079108a708a1288ac376d5b1e4f44b9f64dd2188bc74dbe",
       "name": "frozen:scripts/cohort001.py",
       "pass": true
     },
@@ -145,7 +145,7 @@
       "pass": true
     },
     {
-      "detail": "6e9d598434ad7624215267553b0e8010919382e2a306b8613ccf0b5542fdb089",
+      "detail": "b482cde9d0037e470fd6741ac60aa1abc3721ea3b72523924c67ca7915b15c8b",
       "name": "frozen:scripts/verify_cohort001_instrument.py",
       "pass": true
     },
@@ -155,7 +155,7 @@
       "pass": true
     },
     {
-      "detail": "a7da8755cce40d7f290090d4d08d34c5a05f4bec7e758fd1688a5a659e56740a",
+      "detail": "ceee646667b687f0cb5089fedd3312e5fc60dc15b6a83a1a2d298132ba3b6c74",
       "name": "frozen:src/openline_claim_graph/decision_recall.py",
       "pass": true
     },

@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.6.1.dev0 — gain-of-standing Decision Recall extension
+
+- Add receiver-bound standing/blocker state and `GAIN_OF_STANDING` events inside Decision Recall.
+- Gain analysis recomputes existing sufficient-support sets before/after the exact restoration event; naive downstream reachability is not used for eligibility.
+- `RECONSIDERABLE` is explicitly a review projection only. It does not restore accepted state, clear independent blockers, certify truth, or confer execution authority.
+- Preserve replay safety, exact basis/state binding, unresolved-blocker containment, and alternative-support attribution boundaries.
+- Retire the empty first Cohort 001 instrument generation and restart Cohort 001 at generation 2 because the frozen Decision Recall instrument changed before any eligible prospective observations were admitted. The prior gain-trigger evidence commit remains historical research evidence and is not retroactively counted.
+- No new module or branded subsystem is introduced.
+
+
 ## 0.6.0.dev0 — prospective Decision Recall benchmark
 
 - Designated **Prospective Decision Recall Cohort 001** as the self-hosted natural development stream. The install commit is excluded; only independently warranted repository decisions can count.

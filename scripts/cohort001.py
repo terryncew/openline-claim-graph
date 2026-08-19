@@ -218,7 +218,7 @@ def activation_commit(root: Path) -> str | None:
     output = str(run_git(root, ["log", "--diff-filter=A", "--format=%H", "--", DESIGNATION_REL.as_posix()])).splitlines()
     if not output:
         return None
-    return output[-1].strip()
+    return output[0].strip()
 
 
 def _cohort_json_files(root: Path, kind: str) -> list[Path]:
@@ -281,6 +281,7 @@ def status_payload(root: Path) -> dict[str, Any]:
     return {
         "schema": "openline.decision-recall-cohort-status.v1",
         "cohort_id": spec["cohort_id"],
+        "generation": int(spec.get("generation", 1)),
         "state": state,
         "activation_commit": activation,
         "setup_commit_counts": False,

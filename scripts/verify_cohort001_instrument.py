@@ -51,7 +51,7 @@ def main() -> int:
     check('cohort_id', designation.get('cohort_id') == 'decision-recall-cohort-001', designation.get('cohort_id'))
     check('protocol_id', designation.get('protocol_id') == 'decision-recall-prospective-001-v1', designation.get('protocol_id'))
     check('setup_commit_excluded', designation.get('setup_commit_counts') is False)
-    check('activation_rule', designation.get('activation_rule') == 'FIRST_GIT_COMMIT_CONTAINING_DESIGNATION_THEN_DESCENDANTS_ONLY', designation.get('activation_rule'))
+    check('activation_rule', designation.get('activation_rule') == 'LATEST_GIT_COMMIT_MODIFYING_DESIGNATION_THEN_DESCENDANTS_ONLY', designation.get('activation_rule'))
     check('minimum_30', designation.get('minimum_real_accepted_decisions') == 30)
     check('controlled_10', designation.get('minimum_controlled_revocations') == 10)
     check('policy_id_binding', designation.get('promotion_policy_id') == policy.get('promotion_policy_id'), designation.get('promotion_policy_id'))

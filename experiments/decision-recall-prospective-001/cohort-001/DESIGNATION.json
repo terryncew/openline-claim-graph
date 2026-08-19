@@ -3,7 +3,7 @@
     "MONOTONIC_CLI",
     "MONOTONIC_UI"
   ],
-  "activation_rule": "FIRST_GIT_COMMIT_CONTAINING_DESIGNATION_THEN_DESCENDANTS_ONLY",
+  "activation_rule": "LATEST_GIT_COMMIT_MODIFYING_DESIGNATION_THEN_DESCENDANTS_ONLY",
   "allowed_exclusion_reasons": [
     "NON_CONSEQUENTIAL_MECHANICAL",
     "GENERATED_METADATA_ONLY",
@@ -28,22 +28,25 @@
     "experiments/decision-recall-prospective-001/cohort-001/OPERATOR_CONTRACT.md": "5e00467985b3a082a863b5c5bb284363198096c02e5910183f94373510bd707e",
     "experiments/decision-recall-prospective-001/promotion-policy.json": "53385bef0d492e0483f10aab01898c91c496e0166869abb3be32ffc69b0c1b03",
     "scripts/build_decision_recall_prospective_fixture.py": "64ab2e94ab8c5bc6bd71fa7d69e2ae6dba8aa275d7859aca9bc027a7a1f4c410",
-    "scripts/cohort001.py": "2a59e3621e18f9945369e1caa2ee2948eb33ffd1d476b668d42351713464576a",
+    "scripts/cohort001.py": "9faed0b9d975fed87079108a708a1288ac376d5b1e4f44b9f64dd2188bc74dbe",
     "scripts/decision_recall_benchmark.py": "c8e813e85e3d16393bb3bde5a235d9da718f259e3b818f3611c7d16438184d4b",
     "scripts/select_controlled_revocations.py": "5e97d9a67c07953b37b5c0786e64f08ef7cd91b6fd8272617a4e08658dbb7efb",
-    "scripts/verify_cohort001_instrument.py": "6e9d598434ad7624215267553b0e8010919382e2a306b8613ccf0b5542fdb089",
+    "scripts/verify_cohort001_instrument.py": "b482cde9d0037e470fd6741ac60aa1abc3721ea3b72523924c67ca7915b15c8b",
     "scripts/verify_decision_recall_prospective_fixture.py": "efcf6d50804c9802c7e4836ed229abc52f0eb09379fa413ff290b41672be3a36",
-    "src/openline_claim_graph/decision_recall.py": "a7da8755cce40d7f290090d4d08d34c5a05f4bec7e758fd1688a5a659e56740a"
+    "src/openline_claim_graph/decision_recall.py": "ceee646667b687f0cb5089fedd3312e5fc60dc15b6a83a1a2d298132ba3b6c74"
   },
+  "generation": 2,
   "manufactured_decisions_forbidden": true,
   "minimum_controlled_revocations": 10,
   "minimum_real_accepted_decisions": 30,
   "natural_decisions_only": true,
+  "prior_generation_eligible_observations": 0,
   "promotion_policy_id": "decision-recall-promotion-policy:sha256:8ac5a79bde84560320916be7e7163d17c598b8d81692ac0b171c39192e5d3347",
   "promotion_policy_sha256": "53385bef0d492e0483f10aab01898c91c496e0166869abb3be32ffc69b0c1b03",
   "protocol_id": "decision-recall-prospective-001-v1",
   "restart_on_frozen_instrument_change": true,
+  "restart_reason": "Frozen Decision Recall semantics changed to add the earned GAIN_OF_STANDING trigger before any eligible Cohort 001 observations were admitted.",
   "schema": "openline.decision-recall-cohort-designation.v1",
   "setup_commit_counts": false,
-  "status": "DESIGNATED_ACTIVATES_AFTER_INSTALL_COMMIT_ZERO_AT_INSTALL"
+  "status": "RESTARTED_GENERATION_2_ZERO_AT_INSTALL"
 }

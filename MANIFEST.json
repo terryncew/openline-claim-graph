@@ -1,6 +1,6 @@
 {
-  "aggregate_sha256": "e2ba7da46ededef763f5197290c17b8eab36d14d5b63d35151936e5597d456ed",
-  "file_count": 335,
+  "aggregate_sha256": "88c173efe52f2f2a18f145a1e276d59b069200476dab434bf6c42eb434f0208f",
+  "file_count": 344,
   "files": [
     {
       "bytes": 8330,
@@ -18,9 +18,9 @@
       "sha256": "e3341b0a50ec70e4cbc26a1e39e2c69a4271536f0adcfb4bbb84082922fd4ef7"
     },
     {
-      "bytes": 22892,
+      "bytes": 23890,
       "path": "CHANGELOG.md",
-      "sha256": "e760da2700e84e5e0f732290562488d50eed9494ecb79d65d3b7e9b46b5e42a3"
+      "sha256": "3890f8e1795b37fd1fcb929fc9c5460559f4d54d1e2fe0e91f1ded5512167c5f"
     },
     {
       "bytes": 10918,
@@ -90,7 +90,7 @@
     {
       "bytes": 6062,
       "path": "artifacts/decision-recall-prospective/cohort-001/instrument-verification.json",
-      "sha256": "e43ed513fe9aac069b7a2f91e0c0299c00f7cc50dd78747f59ab4e8ad916a2b0"
+      "sha256": "49d74a13d02f61081b5e2c0a1510eb60fd3711136f24e369b135da3e509e4920"
     },
     {
       "bytes": 0,
@@ -675,7 +675,7 @@
     {
       "bytes": 6428,
       "path": "artifacts/evidence-recall-temporal/real-001-shah-iron/independent-verification.json",
-      "sha256": "3982b4574cdd54b9f31efc93db4489874340b958e6267cbf1e3a609e62d3590f"
+      "sha256": "22a753f194f8b3958293279609ed19551730162e198654a80af93f3f4d4c1f92"
     },
     {
       "bytes": 5089,
@@ -1178,9 +1178,9 @@
       "sha256": "3b2e81c77edd3f73a271372b75f11421317ad8281c87bb445fb510caa9dd5698"
     },
     {
-      "bytes": 2864,
+      "bytes": 3077,
       "path": "experiments/decision-recall-prospective-001/cohort-001/DESIGNATION.json",
-      "sha256": "9b46d17360cf243ea8cbbf265a05b62b165f0a979e25de032035816c18870c70"
+      "sha256": "782f1f65d8b95c7d5e1f0749cacf931985a2ad7a3979c5aac9a652d5a19a1fa2"
     },
     {
       "bytes": 1820,
@@ -1355,7 +1355,47 @@
     {
       "bytes": 610,
       "path": "pyproject.toml",
-      "sha256": "0e31e63860d04d5e11598ac8779dd0fe177c5702cee8d8a2562aaf4095bf96a8"
+      "sha256": "3cdc35f9ecd08740f4bd56231534e8ed35c921a52d46fe46fedd315088378fd0"
+    },
+    {
+      "bytes": 817,
+      "path": "research/gain-trigger-probe/ADVERSARIAL_RESULT.json",
+      "sha256": "30e2ccd0e0f9e116e859864879380d44f129676ed0aa326bda28763791a577da"
+    },
+    {
+      "bytes": 3772,
+      "path": "research/gain-trigger-probe/GAIN_TRIGGER_SPEC.md",
+      "sha256": "fea8b2173c7b7b4a95c34af4f9bebfb6fc29717bae6a1c08f8552f60ab6b695c"
+    },
+    {
+      "bytes": 2284,
+      "path": "research/gain-trigger-probe/PROTOCOL.md",
+      "sha256": "30d56f74e45b867162af72722c9359671a8c238c43e3aecb81367dcee9498e5b"
+    },
+    {
+      "bytes": 824,
+      "path": "research/gain-trigger-probe/RESULT.json",
+      "sha256": "b117419a594f0379e9d821106a208f972506bb8a84d1d4ff5f1a3c4b42387df0"
+    },
+    {
+      "bytes": 572,
+      "path": "research/gain-trigger-probe/SHA256SUMS.txt",
+      "sha256": "4ee06817941d459f785ce158bbe391d68f43c52b1fe6518e9570944e80fb5ff7"
+    },
+    {
+      "bytes": 3230,
+      "path": "research/gain-trigger-probe/VERDICT.md",
+      "sha256": "9e862d772c50d7e18d0fb349b8e9791ccf119ecb28f4804639ba3e63318a6f5c"
+    },
+    {
+      "bytes": 3977,
+      "path": "research/gain-trigger-probe/adversarial_probe.py",
+      "sha256": "42ef5055b020be2b5cbe93265385af58737c3ad7ca662f9a33b6e4e5be609cdc"
+    },
+    {
+      "bytes": 2217,
+      "path": "research/gain-trigger-probe/probe.py",
+      "sha256": "434233542a84e00eb34809f6f5b2d0a5d4b7ce088e3ec0409a600be5c9c1eaeb"
     },
     {
       "bytes": 8042,
@@ -1403,9 +1443,9 @@
       "sha256": "81adbc73fdc26203db4d56fec7648914354af908c17738031ee266877df7e322"
     },
     {
-      "bytes": 20037,
+      "bytes": 20090,
       "path": "scripts/cohort001.py",
-      "sha256": "2a59e3621e18f9945369e1caa2ee2948eb33ffd1d476b668d42351713464576a"
+      "sha256": "9faed0b9d975fed87079108a708a1288ac376d5b1e4f44b9f64dd2188bc74dbe"
     },
     {
       "bytes": 19217,
@@ -1423,9 +1463,9 @@
       "sha256": "20a67eacd0104e6d015b0208ceab58c0f8bfb299548ab687d8d440e62ecedd9b"
     },
     {
-      "bytes": 83444,
+      "bytes": 83891,
       "path": "scripts/release_check.py",
-      "sha256": "4dd3f319ef9af5a3af6c602b9a7e9b5ed408a71b120e2defa3c8c787f15f06c1"
+      "sha256": "ba5e31023ca2c675701a19fcdf1da9efe5ec20fc4a587687ba0cd934c94e61cc"
     },
     {
       "bytes": 10871,
@@ -1455,7 +1495,7 @@
     {
       "bytes": 6730,
       "path": "scripts/verify_cohort001_instrument.py",
-      "sha256": "6e9d598434ad7624215267553b0e8010919382e2a306b8613ccf0b5542fdb089"
+      "sha256": "b482cde9d0037e470fd6741ac60aa1abc3721ea3b72523924c67ca7915b15c8b"
     },
     {
       "bytes": 56621,
@@ -1543,9 +1583,9 @@
       "sha256": "6c04e9e021cbc1c01aae78606acc6cd41393c99673185e1e8e3ee4ccaa06e4b1"
     },
     {
-      "bytes": 79491,
+      "bytes": 88165,
       "path": "src/openline_claim_graph/decision_recall.py",
-      "sha256": "a7da8755cce40d7f290090d4d08d34c5a05f4bec7e758fd1688a5a659e56740a"
+      "sha256": "ceee646667b687f0cb5089fedd3312e5fc60dc15b6a83a1a2d298132ba3b6c74"
     },
     {
       "bytes": 37650,
@@ -1626,6 +1666,11 @@
       "bytes": 12933,
       "path": "tests/test_comparative_benchmark.py",
       "sha256": "74a268e9b478f6c4047da492a99099cea9b749e17ebd1895386861f152281593"
+    },
+    {
+      "bytes": 3776,
+      "path": "tests/test_decision_recall_gain.py",
+      "sha256": "ac2da409f6ec0c7073476b03be7d3a1e01953349a4fe69f89a42650d1653942b"
     },
     {
       "bytes": 28898,

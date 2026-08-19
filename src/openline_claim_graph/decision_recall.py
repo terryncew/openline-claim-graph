@@ -34,6 +34,9 @@ DECISION_REVIEW_TIMES_SCHEMA = "openline.decision-recall-review-times.v1"
 DECISION_SCORE_SCHEMA = "openline.decision-recall-score.v1"
 DECISION_PROMOTION_POLICY_SCHEMA = "openline.decision-recall-promotion-policy.v1"
 DECISION_PROMOTION_RESULT_SCHEMA = "openline.decision-recall-promotion-result.v1"
+DECISION_STANDING_STATE_SCHEMA = "openline.decision-recall-standing-state.v1"
+DECISION_STANDING_EVENT_SCHEMA = "openline.decision-recall-standing-event.v1"
+DECISION_GAIN_REPORT_SCHEMA = "openline.decision-recall-gain-report.v1"
 
 SYSTEM_FULL_HISTORY = "FULL_HISTORY_REVIEW"
 SYSTEM_FLAT_SEARCH = "FLAT_LOG_SEARCH"
@@ -44,7 +47,7 @@ GOLD_LABELS = ("REOPEN", "SURVIVE", "ESCALATE")
 DECISION_RECALL_DISPOSITIONS = GOLD_LABELS
 BASELINE_DISPOSITIONS = ("REVIEW", "SURVIVE")
 BASIS_ROLES = ("REQUIRED", "ALTERNATIVE", "CONTEXT", "AMBIGUOUS")
-EVENT_TYPES = ("LOSS_OF_STANDING",)
+EVENT_TYPES = ("LOSS_OF_STANDING", "GAIN_OF_STANDING")
 
 
 class DecisionRecallError(ValueError):
@@ -1155,6 +1158,161 @@ def score_predictions(*, seal: Mapping[str, Any], event: Mapping[str, Any], pred
         "claim_boundary": "Controlled revocations estimate conditional performance when a recorded basis loses standing. Human Full History and Flat Search outcomes are baselines, not gold. Controlled events do not estimate how often real revocations occur, annual customer ROI, or whether the decision-time manifest captured causal truth.",
     }
     return {"score_id": content_id("decision-recall-score", body), **body}
+
+
+def create_standing_state(*, stream_seal: Mapping[str, Any], standing_basis_ids: Sequence[str], unresolved_blockers: Mapping[str, Sequence[str]] | None = None, recorded_at: str) -> dict[str, Any]:
+    """Bind receiver-owned runtime standing/blocker state for gain-side recomputation."""
+    if not validate_stream_seal(stream_seal)["valid"]:
+        raise DecisionRecallError("stream seal invalid")
+    universe = sorted({item["basis_id"] for item in stream_seal.get("eligible_bases", [])})
+    standing = sorted(set(map(str, standing_basis_ids)))
+    unknown = sorted(set(standing) - set(universe))
+    if unknown:
+        raise DecisionRecallError(f"standing state references unknown bases: {unknown}")
+    decision_ids = {item["decision_id"] for item in stream_seal.get("manifests", [])}
+    blockers = {}
+    for decision_id, values in sorted((unresolved_blockers or {}).items()):
+        if decision_id not in decision_ids:
+            raise DecisionRecallError(f"standing state blocker references unknown decision: {decision_id}")
+        normalized = sorted(set(map(str, values)))
+        if normalized:
+            blockers[str(decision_id)] = normalized
+    body = {
+        "schema": DECISION_STANDING_STATE_SCHEMA,
+        "stream_seal_id": stream_seal["stream_seal_id"],
+        "recorded_at": _time(recorded_at),
+        "basis_universe_ids": universe,
+        "standing_basis_ids": standing,
+        "unresolved_blockers": blockers,
+    }
+    return {"standing_state_id": content_id("decision-recall-standing-state", body), **body}
+
+
+def validate_standing_state(state: Mapping[str, Any], seal: Mapping[str, Any]) -> dict[str, Any]:
+    errors = []
+    try:
+        rebuilt = create_standing_state(
+            stream_seal=seal,
+            standing_basis_ids=state.get("standing_basis_ids", []),
+            unresolved_blockers=state.get("unresolved_blockers", {}),
+            recorded_at=state["recorded_at"],
+        )
+        if state.get("schema") != DECISION_STANDING_STATE_SCHEMA:
+            errors.append("schema mismatch")
+        if rebuilt != dict(state):
+            errors.append("standing state does not reproduce")
+    except (KeyError, TypeError, ValueError, DecisionRecallError) as exc:
+        errors.append(str(exc))
+    return {"valid": not errors, "errors": errors}
+
+
+def create_standing_event(*, state: Mapping[str, Any], seal: Mapping[str, Any], basis_id: str, event_type: str, event_at: str, asserted_by: str, reason: str) -> dict[str, Any]:
+    if not validate_standing_state(state, seal)["valid"]:
+        raise DecisionRecallError("standing state invalid")
+    event_type = str(event_type).upper()
+    if event_type not in EVENT_TYPES:
+        raise DecisionRecallError(f"unsupported standing event type: {event_type}")
+    basis_id = _token(basis_id)
+    universe = set(state.get("basis_universe_ids", []))
+    if basis_id not in universe:
+        raise DecisionRecallError(f"standing event basis unknown: {basis_id}")
+    standing = set(state.get("standing_basis_ids", []))
+    if event_type == "GAIN_OF_STANDING" and basis_id in standing:
+        transition = "NO_CHANGE"
+    elif event_type == "LOSS_OF_STANDING" and basis_id not in standing:
+        transition = "NO_CHANGE"
+    else:
+        transition = "CHANGE"
+    body = {
+        "schema": DECISION_STANDING_EVENT_SCHEMA,
+        "stream_seal_id": seal["stream_seal_id"],
+        "pre_state_id": state["standing_state_id"],
+        "event_type": event_type,
+        "basis_id": basis_id,
+        "event_at": _time(event_at),
+        "asserted_by": _token(asserted_by),
+        "reason": _token(reason),
+        "transition": transition,
+    }
+    return {"event_id": content_id("decision-recall-standing-event", body), **body}
+
+
+def _support_sets(manifest: Mapping[str, Any]) -> list[set[str]]:
+    required = set(map(str, manifest.get("required_dependencies", [])))
+    groups = [set(map(str, item.get("dependency_ids", []))) for item in manifest.get("alternative_support", []) if item.get("dependency_ids")]
+    return ([required] if required else []) + groups
+
+
+def analyze_gain_of_standing(*, seal: Mapping[str, Any], state: Mapping[str, Any], event: Mapping[str, Any]) -> dict[str, Any]:
+    """Compute the review-only delta caused by one bound GAIN_OF_STANDING event."""
+    check = validate_standing_state(state, seal)
+    if not check["valid"]:
+        raise DecisionRecallError(f"standing state invalid: {check['errors']}")
+    if event.get("schema") != DECISION_STANDING_EVENT_SCHEMA or event.get("event_type") != "GAIN_OF_STANDING":
+        raise DecisionRecallError("gain analysis requires GAIN_OF_STANDING event")
+    if event.get("stream_seal_id") != seal.get("stream_seal_id") or event.get("pre_state_id") != state.get("standing_state_id"):
+        raise DecisionRecallError("gain event state/stream binding mismatch")
+    expected = create_standing_event(state=state, seal=seal, basis_id=event["basis_id"], event_type=event["event_type"], event_at=event["event_at"], asserted_by=event.get("asserted_by", ""), reason=event.get("reason", ""))
+    if expected != dict(event):
+        raise DecisionRecallError("gain event does not reproduce")
+    basis = event["basis_id"]
+    before_standing = set(state.get("standing_basis_ids", []))
+    after_standing = set(before_standing)
+    after_standing.add(basis)
+    rows = []
+    if event.get("transition") == "CHANGE":
+        for manifest in seal.get("manifests", []):
+            support_sets = _support_sets(manifest)
+            if not any(basis in group for group in support_sets):
+                continue
+            before_complete = [sorted(group) for group in support_sets if group <= before_standing]
+            after_complete = [sorted(group) for group in support_sets if group <= after_standing]
+            blockers = sorted(set(state.get("unresolved_blockers", {}).get(manifest["decision_id"], [])))
+            before_cls = "BLOCKED" if not before_complete else ("AFFECTED_UNRESOLVED" if blockers else "SUPPORTED")
+            after_cls = "BLOCKED" if not after_complete else ("AFFECTED_UNRESOLVED" if blockers else "RECONSIDERABLE")
+            if before_complete == after_complete and before_cls == after_cls:
+                continue
+            # Existing support before the event means the restoration did not create the option.
+            if before_complete and not blockers:
+                continue
+            rows.append({
+                "decision_id": manifest["decision_id"],
+                "decision": manifest["decision"],
+                "before": before_cls,
+                "classification": after_cls,
+                "complete_support_sets_before": before_complete,
+                "complete_support_sets_after": after_complete,
+                "unresolved_blockers": blockers,
+            })
+    rows.sort(key=lambda item: item["decision_id"])
+    body = {
+        "schema": DECISION_GAIN_REPORT_SCHEMA,
+        "stream_seal_id": seal["stream_seal_id"],
+        "pre_state_id": state["standing_state_id"],
+        "event_id": event["event_id"],
+        "basis_id": basis,
+        "classifications": rows,
+        "summary": {
+            "reconsiderable": sum(1 for item in rows if item["classification"] == "RECONSIDERABLE"),
+            "affected_unresolved": sum(1 for item in rows if item["classification"] == "AFFECTED_UNRESOLVED"),
+            "blocked": sum(1 for item in rows if item["classification"] == "BLOCKED"),
+        },
+        "claim_boundary": "RECONSIDERABLE is a receiver review projection only. This report does not restore accepted state, certify truth, clear independent blockers, or confer execution authority.",
+    }
+    return {"report_id": content_id("decision-recall-gain-report", body), **body}
+
+
+def verify_gain_report(report: Mapping[str, Any], *, seal: Mapping[str, Any], state: Mapping[str, Any], event: Mapping[str, Any]) -> dict[str, Any]:
+    errors = []
+    try:
+        expected = analyze_gain_of_standing(seal=seal, state=state, event=event)
+        if report.get("schema") != DECISION_GAIN_REPORT_SCHEMA:
+            errors.append("schema mismatch")
+        if expected != dict(report):
+            errors.append("gain report reproduction mismatch")
+    except (KeyError, TypeError, ValueError, DecisionRecallError) as exc:
+        errors.append(str(exc))
+    return {"valid": not errors, "errors": errors, "disposition": "ADMIT_GAIN_REVIEW" if not errors else "DENY_GAIN_REVIEW"}
 
 def create_promotion_policy(
     *,
