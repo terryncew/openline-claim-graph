@@ -127,8 +127,25 @@ jobs:
             --event-at "2026-08-18T04:00:00Z" \
             --output "${{ runner.temp }}/decision-recall-controlled-plan.json"
           python scripts/decision_recall_benchmark.py --help >/dev/null
-          python -I scripts/verify_cohort001_instrument.py --root . --output "${{ runner.temp }}/cohort-001-instrument-verification.json"
-          python scripts/cohort001.py --root . status >/dev/null
+          python scripts/cohort001.py --root . status > "${{ runner.temp }}/cohort-001-status.json"
+          cat "${{ runner.temp }}/cohort-001-status.json"
+          python - "${{ runner.temp }}/cohort-001-status.json" <<'PY'
+          import json
+          import sys
+
+          with open(sys.argv[1], encoding="utf-8") as handle:
+              status = json.load(handle)
+
+          unclassified = status.get("unclassified_post_activation_commits", [])
+          if unclassified:
+              print("Unclassified post-activation commits remain:", file=sys.stderr)
+              for item in unclassified:
+                  print(
+                      f"- {item.get('commit', 'UNKNOWN')}: {item.get('subject', '')}",
+                      file=sys.stderr,
+                  )
+              raise SystemExit(2)
+          PY
       - name: Build wheel
         run: python -m pip wheel . --no-deps --no-build-isolation -w "${{ runner.temp }}/wheel"
       - name: CLI smoke
