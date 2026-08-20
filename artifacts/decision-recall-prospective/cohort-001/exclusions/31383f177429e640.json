@@ -1,0 +1,9 @@
+{
+  "cohort_exclusion_id": "decision-recall-cohort-exclusion:sha256:31383f177429e640fbac7e949a328adb50944a68b602aebd9cb9d78e20f5c0eb",
+  "cohort_id": "decision-recall-cohort-001",
+  "detail": "CI-only Cohort 001 custody repair: fetch full Git history, honor the declared generation-2 activation boundary, and fail closed on substantive post-activation commits lacking canonical classification. No frozen instrument file or accepted Decision Recall state changes.",
+  "reason": "NO_ACCEPTED_STATE_CHANGE",
+  "recorded_at": "2026-08-20T07:25:00Z",
+  "schema": "openline.decision-recall-cohort-exclusion.v1",
+  "subject_change_set_sha256": "4354f93a3cb9bb4b86ae3b9759cbfe19f3d784d73b9da0d4a8fa680a2e10674b"
+}

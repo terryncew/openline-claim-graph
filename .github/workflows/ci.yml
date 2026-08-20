@@ -18,6 +18,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python-version }}
@@ -129,21 +131,102 @@ jobs:
           python scripts/decision_recall_benchmark.py --help >/dev/null
           python scripts/cohort001.py --root . status > "${{ runner.temp }}/cohort-001-status.json"
           cat "${{ runner.temp }}/cohort-001-status.json"
-          python - "${{ runner.temp }}/cohort-001-status.json" <<'PY'
+          python - <<'PY'
+          import importlib.util
           import json
+          import os
+          import subprocess
           import sys
+          from pathlib import Path
 
-          with open(sys.argv[1], encoding="utf-8") as handle:
-              status = json.load(handle)
+          if os.environ.get("GITHUB_EVENT_NAME") != "push":
+              raise SystemExit(0)
 
-          unclassified = status.get("unclassified_post_activation_commits", [])
+          root = Path(".").resolve()
+          designation_rel = Path(
+              "experiments/decision-recall-prospective-001/cohort-001/DESIGNATION.json"
+          )
+          designation = json.loads(
+              (root / designation_rel).read_text(encoding="utf-8")
+          )
+          expected_rule = "LATEST_GIT_COMMIT_MODIFYING_DESIGNATION_THEN_DESCENDANTS_ONLY"
+          if designation.get("activation_rule") != expected_rule:
+              print("Unexpected Cohort 001 activation rule.", file=sys.stderr)
+              raise SystemExit(2)
+
+          activation = subprocess.run(
+              ["git", "log", "-1", "--format=%H", "--", designation_rel.as_posix()],
+              cwd=root,
+              text=True,
+              capture_output=True,
+              check=True,
+          ).stdout.strip()
+          if not activation:
+              print("Could not resolve Cohort 001 activation commit.", file=sys.stderr)
+              raise SystemExit(2)
+
+          spec = importlib.util.spec_from_file_location(
+              "cohort001_frozen", root / "scripts/cohort001.py"
+          )
+          if spec is None or spec.loader is None:
+              print("Could not load frozen Cohort 001 manager.", file=sys.stderr)
+              raise SystemExit(2)
+          cohort001 = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(cohort001)
+
+          represented = set()
+          ledger_root = root / "artifacts/decision-recall-prospective/cohort-001"
+          for kind in ("observations", "exclusions"):
+              for path in sorted((ledger_root / kind).glob("*.json")):
+                  value = json.loads(path.read_text(encoding="utf-8"))
+                  digest = value.get("subject_change_set_sha256", "")
+                  if digest:
+                      represented.add(digest)
+
+          commits = subprocess.run(
+              ["git", "rev-list", "--reverse", f"{activation}..HEAD"],
+              cwd=root,
+              text=True,
+              capture_output=True,
+              check=True,
+          ).stdout.splitlines()
+
+          patterns = designation.get("change_set_exclude_globs", [])
+          unclassified = []
+          for commit in commits:
+              change = cohort001.change_set_from_commit(root, commit, patterns)
+              if not change["entries"]:
+                  continue
+              if change["change_set_sha256"] in represented:
+                  continue
+              subject = subprocess.run(
+                  ["git", "show", "-s", "--format=%s", commit],
+                  cwd=root,
+                  text=True,
+                  capture_output=True,
+                  check=True,
+              ).stdout.strip()
+              unclassified.append(
+                  {
+                      "commit": commit,
+                      "subject": subject,
+                      "change_set_sha256": change["change_set_sha256"],
+                  }
+              )
+
+          print(
+              json.dumps(
+                  {
+                      "generation": designation.get("generation"),
+                      "activation_commit": activation,
+                      "unclassified_post_activation_commits": unclassified,
+                  },
+                  indent=2,
+                  sort_keys=True,
+              )
+          )
           if unclassified:
-              print("Unclassified post-activation commits remain:", file=sys.stderr)
-              for item in unclassified:
-                  print(
-                      f"- {item.get('commit', 'UNKNOWN')}: {item.get('subject', '')}",
-                      file=sys.stderr,
-                  )
+              print("Unclassified post-activation commits remain.", file=sys.stderr)
               raise SystemExit(2)
           PY
       - name: Build wheel

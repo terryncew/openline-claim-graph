@@ -1,0 +1,9 @@
+{
+  "cohort_exclusion_id": "decision-recall-cohort-exclusion:sha256:fc903c7e9ffd188d6485ec287d2c291f82bac11fc52553f61af20ca590890a38",
+  "cohort_id": "decision-recall-cohort-001",
+  "detail": "Commit f323a5edcf621e3c5ed090265f84a7a1cce7556b was rejected as an incomplete Cohort 001 custody fix after its shallow-history green run was found non-probative; it does not create or change accepted Decision Recall state.",
+  "reason": "NO_ACCEPTED_STATE_CHANGE",
+  "recorded_at": "2026-08-20T07:25:00Z",
+  "schema": "openline.decision-recall-cohort-exclusion.v1",
+  "subject_change_set_sha256": "f3052613c11f1922b22106fa815184eda965705a51249fbbaf916e944c215e99"
+}
