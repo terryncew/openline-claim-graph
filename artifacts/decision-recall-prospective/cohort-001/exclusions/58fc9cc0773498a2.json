@@ -1,0 +1,9 @@
+{
+  "cohort_exclusion_id": "decision-recall-cohort-exclusion:sha256:58fc9cc0773498a2f3dc66cc6610c0117bde29e3a86e29a6127fc30eee54bd6f",
+  "cohort_id": "decision-recall-cohort-001",
+  "detail": "Commit 07913525d7411ba9a1e6524958b51bb4be365599 adds the ERC-001 research/package overlay; it does not create or change an accepted Cohort 001 decision state.",
+  "reason": "NO_ACCEPTED_STATE_CHANGE",
+  "recorded_at": "2026-08-20T04:05:00Z",
+  "schema": "openline.decision-recall-cohort-exclusion.v1",
+  "subject_change_set_sha256": "f37b482aa4842cbebe9c05c038c9ee0728f117e7e0efbaed8b1e5ce5c8cfb7e9"
+}

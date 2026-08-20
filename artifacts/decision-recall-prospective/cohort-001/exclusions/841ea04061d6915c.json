@@ -1,0 +1,9 @@
+{
+  "cohort_exclusion_id": "decision-recall-cohort-exclusion:sha256:841ea04061d6915ca412b4357473d5760c28bb200d35e13aee250bb29940e56f",
+  "cohort_id": "decision-recall-cohort-001",
+  "detail": "Commit 7f12e4b5fd6a3b14ea273cf3315fde13370b9d11 repairs the ERC-001 root overlay; it does not create or change an accepted Cohort 001 decision state.",
+  "reason": "NO_ACCEPTED_STATE_CHANGE",
+  "recorded_at": "2026-08-20T04:05:00Z",
+  "schema": "openline.decision-recall-cohort-exclusion.v1",
+  "subject_change_set_sha256": "285ec1c0918a27167137cc975a928d7176ba516b7b3b3cc0c517be0694a898d8"
+}
