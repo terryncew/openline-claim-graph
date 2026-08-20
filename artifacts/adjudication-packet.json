@@ -1,0 +1,87 @@
+{
+  "adjudication_packet_id": "decision-recall-adjudication-packet:sha256:3466eb9a3611f50ec28302b30d676c9fa6ebd9e16ac77351cb9bde46af74ecb7",
+  "event": {
+    "basis_id": "trivy-distribution-latest",
+    "event_at": "2026-03-20T12:00:00Z",
+    "event_id": "decision-recall-revocation-event:sha256:9d41acc95bc0139bfaa7c060b16532ec5e85fac8c992ecb034c563d18d344687",
+    "event_type": "LOSS_OF_STANDING",
+    "evidence_sha256": "",
+    "locator": "GHSA-69fq-xp46-6x23",
+    "reason": "Trivy distribution/action integrity lost standing after the documented March 19 compromise.",
+    "schema": "openline.decision-recall-revocation-event.v1",
+    "selection_proof": {},
+    "stratum": "NATURAL",
+    "stream_seal_id": "decision-recall-stream-seal:sha256:004d6fec354abbc078fc9aa99705f94d928697188a17a950e732dff8c699c1ab"
+  },
+  "instructions": "Using only the conventional complete pre-trigger record and the new revocation event, label each accepted decision REOPEN, SURVIVE, or ESCALATE. Do not inspect the prospective dependency manifest or any system prediction.",
+  "rows": [
+    {
+      "complete_pre_trigger_records": [
+        {
+          "available_at": "2026-03-13T12:00:00Z",
+          "decision": "Continue treating the unpinned Trivy installation used by LiteLLM security scans as a trusted control.",
+          "decision_id": "ci-security-scan-trust",
+          "materials": [
+            {
+              "kind": "REPOSITORY_FILE",
+              "locator": "BerriAI/litellm@v1.82.6.dev1:ci_cd/security_scans.sh#blob-801b700f64f11485307ae64b2b779fc37dce5bc3",
+              "material_id": "litellm-security-scans-v1.82.6.dev1",
+              "sha256": "2c0afe76c5c0fd055d5ab1b0532d05c8a90fc4f6f6448758cd1908213e7d4cc9",
+              "text": "At LiteLLM tag v1.82.6.dev1, ci_cd/security_scans.sh configures Aqua's apt repository and executes `sudo apt-get install trivy` without pinning a version."
+            }
+          ],
+          "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:59d77a471c0c275b67ab52af2988c6dc986f53e6881a20ffa4690ed81bb87ae1",
+          "schema": "openline.decision-recall-pre-trigger-record.v1"
+        }
+      ],
+      "decision": "Continue treating the unpinned Trivy installation used by LiteLLM security scans as a trusted control.",
+      "decision_id": "ci-security-scan-trust"
+    },
+    {
+      "complete_pre_trigger_records": [
+        {
+          "available_at": "2026-03-13T12:00:00Z",
+          "decision": "Continue treating LiteLLM's source-controlled GitHub release lineage through v1.82.6.dev1 as legitimate.",
+          "decision_id": "github-release-source-lineage",
+          "materials": [
+            {
+              "kind": "GIT_TAG",
+              "locator": "BerriAI/litellm@v1.82.6.dev1",
+              "material_id": "litellm-source-tag-v1.82.6.dev1",
+              "sha256": "f114e60c69dcf4e536848472f09f02381b0cfd35e4ac39dee00e6a18ef595674",
+              "text": "LiteLLM repository tag v1.82.6.dev1 is the source-controlled pre-trigger release snapshot used by ERC-001."
+            }
+          ],
+          "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:9ea5744977ead7875a5e50c3ed9f43f50996ddbcacec2f1ea529b051fc7d147d",
+          "schema": "openline.decision-recall-pre-trigger-record.v1"
+        }
+      ],
+      "decision": "Continue treating LiteLLM's source-controlled GitHub release lineage through v1.82.6.dev1 as legitimate.",
+      "decision_id": "github-release-source-lineage"
+    },
+    {
+      "complete_pre_trigger_records": [
+        {
+          "available_at": "2026-03-13T12:00:00Z",
+          "decision": "Continue treating the LiteLLM PyPI publishing credential as confidential and valid publication authority.",
+          "decision_id": "pypi-publish-credential-standing",
+          "materials": [
+            {
+              "kind": "REPOSITORY_FILE",
+              "locator": "BerriAI/litellm@v1.82.6.dev1:.github/workflows/simple_pypi_publish.yml#blob-e1830556819b0181680f70b79e7e87d13acc6b90",
+              "material_id": "litellm-pypi-publish-v1.82.6.dev1",
+              "sha256": "b42b9a78022d5c490b400379c626b7b3ddc72ceaf4c6c41f7b7ef187d4edfe92",
+              "text": "At LiteLLM tag v1.82.6.dev1, .github/workflows/simple_pypi_publish.yml passes the repository secret PYPI_PUBLISH_PASSWORD to Twine as TWINE_PASSWORD and uploads dist/* to PyPI. The workflow itself does not mention Trivy."
+            }
+          ],
+          "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:23abc3eb8a436ece1c8bb893bd9581cda5ef61906194820fb2b5f7491f551548",
+          "schema": "openline.decision-recall-pre-trigger-record.v1"
+        }
+      ],
+      "decision": "Continue treating the LiteLLM PyPI publishing credential as confidential and valid publication authority.",
+      "decision_id": "pypi-publish-credential-standing"
+    }
+  ],
+  "schema": "openline.decision-recall-adjudication-packet.v1",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:004d6fec354abbc078fc9aa99705f94d928697188a17a950e732dff8c699c1ab"
+}

@@ -1,0 +1,63 @@
+{
+  "event_id": "decision-recall-revocation-event:sha256:9d41acc95bc0139bfaa7c060b16532ec5e85fac8c992ecb034c563d18d344687",
+  "predictions_id": "decision-recall-predictions:sha256:b84ee1a3038e93fc497b04cdb72b15ef7ea2bc230403bc8f0bedbe0f3c960ad3",
+  "rows": [
+    {
+      "DECISION_RECALL": {
+        "disposition": "REOPEN",
+        "reason": "every predeclared sufficient support path depends on the basis that lost standing",
+        "witness": [
+          "trivy-distribution-latest"
+        ]
+      },
+      "FLAT_LOG_SEARCH": {
+        "disposition": "REVIEW",
+        "witness": [
+          "trivy-distribution-latest"
+        ]
+      },
+      "FULL_HISTORY_REVIEW": {
+        "disposition": "REVIEW",
+        "witness": []
+      },
+      "decision": "Continue treating the unpinned Trivy installation used by LiteLLM security scans as a trusted control.",
+      "decision_id": "ci-security-scan-trust"
+    },
+    {
+      "DECISION_RECALL": {
+        "disposition": "SURVIVE",
+        "reason": "revoked basis is absent from the accepted dependency record",
+        "witness": []
+      },
+      "FLAT_LOG_SEARCH": {
+        "disposition": "SURVIVE",
+        "witness": []
+      },
+      "FULL_HISTORY_REVIEW": {
+        "disposition": "REVIEW",
+        "witness": []
+      },
+      "decision": "Continue treating LiteLLM's source-controlled GitHub release lineage through v1.82.6.dev1 as legitimate.",
+      "decision_id": "github-release-source-lineage"
+    },
+    {
+      "DECISION_RECALL": {
+        "disposition": "SURVIVE",
+        "reason": "revoked basis is absent from the accepted dependency record",
+        "witness": []
+      },
+      "FLAT_LOG_SEARCH": {
+        "disposition": "SURVIVE",
+        "witness": []
+      },
+      "FULL_HISTORY_REVIEW": {
+        "disposition": "REVIEW",
+        "witness": []
+      },
+      "decision": "Continue treating the LiteLLM PyPI publishing credential as confidential and valid publication authority.",
+      "decision_id": "pypi-publish-credential-standing"
+    }
+  ],
+  "schema": "openline.decision-recall-predictions.v1",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:004d6fec354abbc078fc9aa99705f94d928697188a17a950e732dff8c699c1ab"
+}

@@ -1,0 +1,81 @@
+{
+  "baseline_review_outcome_ids": [],
+  "baseline_review_outcomes_verified": false,
+  "baseline_reviewer_ids": {},
+  "claim_boundary": "Controlled revocations estimate conditional performance when a recorded basis loses standing. Human Full History and Flat Search outcomes are baselines, not gold. Controlled events do not estimate how often real revocations occur, annual customer ROI, or whether the decision-time manifest captured causal truth.",
+  "controlled_selection_verified": null,
+  "economics": {
+    "accepted_without_correction": 3,
+    "accepted_without_correction_basis_points": 10000,
+    "annual_roi_inferred": false,
+    "break_even_meaningful_revocations": null,
+    "capture_median_milliseconds": 0,
+    "capture_total_milliseconds": 0,
+    "conditional_attention_saved_milliseconds": null,
+    "review_outcome_timing_bindings_valid": false,
+    "review_packet_bindings_valid": false,
+    "review_time_measurements_present": false,
+    "review_timing_instrumented": false
+  },
+  "event_id": "decision-recall-revocation-event:sha256:9d41acc95bc0139bfaa7c060b16532ec5e85fac8c992ecb034c563d18d344687",
+  "event_stratum": "NATURAL",
+  "gold_adjudicator_id": "erc001-post-trigger-primary-source-reconstruction",
+  "gold_id": "decision-recall-gold:sha256:7a382e62b79b8dd1f70e00317cca6b559c1c2acd19d5e1e566423c2c8e1108ca",
+  "gold_label_counts": {
+    "ESCALATE": 0,
+    "REOPEN": 2,
+    "SURVIVE": 1
+  },
+  "gold_method": "RETROSPECTIVE_PRIMARY_SOURCE_ADJUDICATION_NOT_BLIND",
+  "metrics": {
+    "DECISION_RECALL": {
+      "ambiguous_overreach": 0,
+      "baseline_review_outcome_bound": false,
+      "decision_count": 3,
+      "exact_or_correct_triage": 2,
+      "exact_or_correct_triage_basis_points": 6666,
+      "final_disposition_errors": 1,
+      "gold_escalations": 0,
+      "missed_reopenings": 1,
+      "review_load": 1,
+      "review_load_reduction_basis_points_vs_full_history": 6666,
+      "silent_ambiguous_survivals": 0,
+      "surfaced_escalations": 0,
+      "unnecessary_reviews": 0
+    },
+    "FLAT_LOG_SEARCH": {
+      "ambiguous_overreach": 0,
+      "baseline_review_outcome_bound": false,
+      "decision_count": 3,
+      "exact_or_correct_triage": 2,
+      "exact_or_correct_triage_basis_points": 6666,
+      "final_disposition_errors": null,
+      "gold_escalations": 0,
+      "missed_reopenings": 1,
+      "review_load": 1,
+      "review_load_reduction_basis_points_vs_full_history": 6666,
+      "silent_ambiguous_survivals": 0,
+      "surfaced_escalations": 0,
+      "unnecessary_reviews": 0
+    },
+    "FULL_HISTORY_REVIEW": {
+      "ambiguous_overreach": 0,
+      "baseline_review_outcome_bound": false,
+      "decision_count": 3,
+      "exact_or_correct_triage": 2,
+      "exact_or_correct_triage_basis_points": 6666,
+      "final_disposition_errors": null,
+      "gold_escalations": 0,
+      "missed_reopenings": 0,
+      "review_load": 3,
+      "review_load_reduction_basis_points_vs_full_history": 0,
+      "silent_ambiguous_survivals": 0,
+      "surfaced_escalations": 0,
+      "unnecessary_reviews": 1
+    }
+  },
+  "predictions_id": "decision-recall-predictions:sha256:b84ee1a3038e93fc497b04cdb72b15ef7ea2bc230403bc8f0bedbe0f3c960ad3",
+  "schema": "openline.decision-recall-score.v1",
+  "score_id": "decision-recall-score:sha256:f7149dc2d0dbd96a0506a79d22082f854682b3ab13b925e7a9986d8024868c79",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:004d6fec354abbc078fc9aa99705f94d928697188a17a950e732dff8c699c1ab"
+}

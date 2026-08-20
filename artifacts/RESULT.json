@@ -1,0 +1,31 @@
+{
+  "case_id": "ERC-001",
+  "claim_boundary": "This case is retrospective and outcome-known. It tests representational fit only. No capture cost, natural failure frequency, annual ROI, product demand, or prospective safety claim is earned.",
+  "cohort001_credit": false,
+  "engine_version": "openline-claim-graph 0.6.1.dev0",
+  "event_basis": "trivy-distribution-latest",
+  "falsifier": "If a pre-trigger public record is found that explicitly binds the LiteLLM PyPI publishing credential's standing to the Trivy security-scan dependency, the current reconstruction is incomplete and ERC-001 must be rebuilt rather than patched in place.",
+  "finding": "Frozen Decision Recall reopens the directly represented Trivy-dependent CI state, but it does not reopen the PyPI publishing credential standing because the pre-trigger manifest contains no Trivy edge. Flat Search surfaces the same direct case and misses the same multi-hop credential consequence.",
+  "gold_reopenings": 2,
+  "mechanism_candidate_not_admitted": "A future mechanism would need to represent derived dependency/authority ancestry so loss of an upstream basis can invalidate an intermediate credential or authority without hindsight-invented direct edges. ERC-001 does not earn that mechanism.",
+  "promotion_eligible": false,
+  "schema": "openline.erc001-result.v1",
+  "status": "RETROSPECTIVE_EXTERNAL_STRUCTURAL_ONLY",
+  "systems": {
+    "DECISION_RECALL": {
+      "exact_or_correct_triage": 2,
+      "missed_reopenings": 1,
+      "review_load": 1
+    },
+    "FLAT_LOG_SEARCH": {
+      "missed_reopenings": 1,
+      "review_load": 1
+    },
+    "FULL_HISTORY_REVIEW": {
+      "missed_reopenings": 0,
+      "review_load": 3
+    }
+  },
+  "title": "Trivy -> LiteLLM revocation propagation",
+  "verdict": "REPRESENTATION_GAP_FLAT_SEARCH_PARITY"
+}

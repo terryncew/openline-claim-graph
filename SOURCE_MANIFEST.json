@@ -1,0 +1,46 @@
+{
+  "schema": "openline.erc001-source-manifest.v1",
+  "retrieved_for_reconstruction_at": "2026-08-19T18:53:00-07:00",
+  "sources": [
+    {
+      "source_id": "trivy-ghsa-69fq-xp46-6x23",
+      "kind": "PRIMARY_SECURITY_ADVISORY",
+      "locator": "https://github.com/aquasecurity/trivy/security/advisories/GHSA-69fq-xp46-6x23",
+      "facts_used": [
+        "On 2026-03-19 compromised credentials were used to publish malicious Trivy v0.69.4 and to replace Trivy GitHub Action tags with credential-stealing malware.",
+        "The affected Trivy binary/package exposure window began 2026-03-19 18:22 UTC and the advisory instructs potentially exposed users to rotate accessible secrets.",
+        "Trivy v0.69.3 or earlier and safe SHA-pinned action references are described as unaffected controls."
+      ]
+    },
+    {
+      "source_id": "litellm-incident-24518",
+      "kind": "FIRST_PARTY_INCIDENT_RECORD",
+      "locator": "https://github.com/BerriAI/litellm/issues/24518",
+      "facts_used": [
+        "LiteLLM states that compromised PyPI packages 1.82.7 and 1.82.8 came from the Trivy security-scan dependency incident.",
+        "LiteLLM states that the maintainer PyPI account was hijacked and that the malicious PyPI versions were not released through the official GitHub CI/CD path.",
+        "LiteLLM rotated maintainer accounts and advised credential rotation for potentially exposed systems."
+      ]
+    },
+    {
+      "source_id": "litellm-security-scans-v1.82.6.dev1",
+      "kind": "PRE_TRIGGER_REPOSITORY_FILE",
+      "locator": "https://github.com/BerriAI/litellm/blob/v1.82.6.dev1/ci_cd/security_scans.sh",
+      "git_blob_sha1": "801b700f64f11485307ae64b2b779fc37dce5bc3",
+      "facts_used": [
+        "The script configures Aqua's apt repository and runs an unpinned `sudo apt-get install trivy`."
+      ]
+    },
+    {
+      "source_id": "litellm-pypi-publish-v1.82.6.dev1",
+      "kind": "PRE_TRIGGER_REPOSITORY_FILE",
+      "locator": "https://github.com/BerriAI/litellm/blob/v1.82.6.dev1/.github/workflows/simple_pypi_publish.yml",
+      "git_blob_sha1": "e1830556819b0181680f70b79e7e87d13acc6b90",
+      "facts_used": [
+        "The publish workflow passes the repository secret `PYPI_PUBLISH_PASSWORD` to Twine as `TWINE_PASSWORD` and uploads built distributions to PyPI.",
+        "The workflow does not itself mention Trivy."
+      ]
+    }
+  ],
+  "boundary": "External source bytes are not vendored. GitHub blob SHAs bind the two pre-trigger repository files; the advisory and incident record are source-located and fact-normalized. The experiment's result is therefore a frozen source-derived reconstruction, not an offline reproduction of the external sites."
+}

@@ -1,0 +1,7 @@
+{
+  "schema": "openline.erc001-rejected-edge.v1",
+  "decision_id": "pypi-publish-credential-standing",
+  "proposed_dependency": "trivy-distribution-latest",
+  "disposition": "REJECTED_POST_TRIGGER_HINDSIGHT_EDGE",
+  "reason": "The pre-trigger PyPI publishing workflow exposes the publishing secret but does not document Trivy as a dependency. The Trivy-to-credential bridge is learned from post-trigger incident evidence and is therefore reserved for gold adjudication, not manifest repair."
+}

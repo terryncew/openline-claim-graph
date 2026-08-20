@@ -1,0 +1,27 @@
+{
+  "adjudicated_at": "2026-03-25T00:00:00Z",
+  "adjudication_packet_id": "decision-recall-adjudication-packet:sha256:3466eb9a3611f50ec28302b30d676c9fa6ebd9e16ac77351cb9bde46af74ecb7",
+  "adjudicator_id": "erc001-post-trigger-primary-source-reconstruction",
+  "event_id": "decision-recall-revocation-event:sha256:9d41acc95bc0139bfaa7c060b16532ec5e85fac8c992ecb034c563d18d344687",
+  "gold_id": "decision-recall-gold:sha256:7a382e62b79b8dd1f70e00317cca6b559c1c2acd19d5e1e566423c2c8e1108ca",
+  "labels": [
+    {
+      "decision_id": "ci-security-scan-trust",
+      "label": "REOPEN",
+      "rationale": "Trivy's unpinned distribution path entered the compromised exposure window and LiteLLM later attributed its compromise to the Trivy security-scan dependency."
+    },
+    {
+      "decision_id": "github-release-source-lineage",
+      "label": "SURVIVE",
+      "rationale": "LiteLLM reported that malicious versions 1.82.7 and 1.82.8 were uploaded directly to PyPI and were not released through the official GitHub CI/CD lineage."
+    },
+    {
+      "decision_id": "pypi-publish-credential-standing",
+      "label": "REOPEN",
+      "rationale": "LiteLLM later reported a hijacked maintainer PyPI account and attributed the compromise to the Trivy security-scan dependency; the credential therefore warranted reopening even though the pre-trigger publishing workflow did not name Trivy."
+    }
+  ],
+  "method": "RETROSPECTIVE_PRIMARY_SOURCE_ADJUDICATION_NOT_BLIND",
+  "schema": "openline.decision-recall-gold.v1",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:004d6fec354abbc078fc9aa99705f94d928697188a17a950e732dff8c699c1ab"
+}

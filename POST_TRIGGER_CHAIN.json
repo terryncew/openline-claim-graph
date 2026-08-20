@@ -1,0 +1,11 @@
+{
+  "schema": "openline.erc001-post-trigger-chain.v1",
+  "chain": [
+    "Trivy distribution/action integrity lost standing during the documented compromise window.",
+    "The Trivy payload was capable of stealing CI-accessible credentials.",
+    "LiteLLM later stated that its compromise came from the Trivy security-scan dependency.",
+    "LiteLLM stated that a maintainer PyPI account was hijacked and malicious versions 1.82.7 and 1.82.8 were uploaded directly to PyPI outside normal GitHub CI/CD."
+  ],
+  "use": "POST_TRIGGER_GOLD_ONLY",
+  "forbidden_use": "Do not inject this chain into reconstructed pre-trigger manifests."
+}

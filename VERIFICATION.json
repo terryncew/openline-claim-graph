@@ -1,0 +1,151 @@
+{
+  "check_count": 27,
+  "checks": [
+    {
+      "detail": "24820cfd4633fced028022ab8cff4e21c7665985322263c0a5f7f4a026070236",
+      "name": "source_zip_sha256",
+      "pass": true
+    },
+    {
+      "detail": "cec858bd7a0b812368d70066118e0feccfbadac6aa5a3562baee315074f731c3",
+      "name": "wheel_sha256",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "source_zip_root_ready",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "source_version_0_6_1_dev0",
+      "pass": true
+    },
+    {
+      "detail": 2,
+      "name": "source_cohort_generation_2",
+      "pass": true
+    },
+    {
+      "detail": 0,
+      "name": "source_cohort_zero_prior_eligible",
+      "pass": true
+    },
+    {
+      "detail": [
+        "litellm-incident-24518",
+        "litellm-pypi-publish-v1.82.6.dev1",
+        "litellm-security-scans-v1.82.6.dev1",
+        "trivy-ghsa-69fq-xp46-6x23"
+      ],
+      "name": "source_manifest_four_sources",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "security_scan_blob_pinned",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "publish_workflow_blob_pinned",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "name": "rebuild_exit_zero",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rebuild:stream-seal.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rebuild:event.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rebuild:predictions.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rebuild:adjudication-packet.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rebuild:gold.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rebuild:score.json",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "rebuild:RESULT.json",
+      "pass": true
+    },
+    {
+      "detail": "REPRESENTATION_GAP_FLAT_SEARCH_PARITY",
+      "name": "verdict_representation_gap_flat_parity",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "no_promotion",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "zero_cohort_credit",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "direct_ci_reopens",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "credential_gap_survives_incorrectly",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "github_lineage_survives",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "flat_and_recall_same_review_load",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "flat_and_recall_same_miss",
+      "pass": true
+    },
+    {
+      "detail": null,
+      "name": "full_history_no_triage_miss",
+      "pass": true
+    },
+    {
+      "detail": [
+        "pypi-publish-secret-confidentiality"
+      ],
+      "name": "hindsight_trivy_edge_not_laundered",
+      "pass": true
+    }
+  ],
+  "claim_boundary": "Verifier proves internal fixture reproducibility and vendored OpenLine custody. It does not live-fetch or independently authenticate the external web sources.",
+  "failed_count": 0,
+  "schema": "openline.erc001-verification.v1",
+  "valid": true
+}

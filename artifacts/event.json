@@ -1,0 +1,13 @@
+{
+  "basis_id": "trivy-distribution-latest",
+  "event_at": "2026-03-20T12:00:00Z",
+  "event_id": "decision-recall-revocation-event:sha256:9d41acc95bc0139bfaa7c060b16532ec5e85fac8c992ecb034c563d18d344687",
+  "event_type": "LOSS_OF_STANDING",
+  "evidence_sha256": "",
+  "locator": "GHSA-69fq-xp46-6x23",
+  "reason": "Trivy distribution/action integrity lost standing after the documented March 19 compromise.",
+  "schema": "openline.decision-recall-revocation-event.v1",
+  "selection_proof": {},
+  "stratum": "NATURAL",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:004d6fec354abbc078fc9aa99705f94d928697188a17a950e732dff8c699c1ab"
+}

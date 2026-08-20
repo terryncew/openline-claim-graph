@@ -1,0 +1,281 @@
+{
+  "benchmark_id": "erc001-trivy-litellm-retrospective",
+  "decision_ids": [
+    "ci-security-scan-trust",
+    "github-release-source-lineage",
+    "pypi-publish-credential-standing"
+  ],
+  "eligible_bases": [
+    {
+      "basis_id": "github-release-source-lineage",
+      "evidence_sha256": "",
+      "kind": "SOURCE_LINEAGE",
+      "locator": "BerriAI/litellm@v1.82.6.dev1",
+      "mentioned_record_ids": [
+        "decision-recall-pre-trigger-record:sha256:9ea5744977ead7875a5e50c3ed9f43f50996ddbcacec2f1ea529b051fc7d147d"
+      ]
+    },
+    {
+      "basis_id": "pypi-publish-secret-confidentiality",
+      "evidence_sha256": "",
+      "kind": "AUTHORITY_CREDENTIAL",
+      "locator": "BerriAI/litellm@v1.82.6.dev1:.github/workflows/simple_pypi_publish.yml",
+      "mentioned_record_ids": [
+        "decision-recall-pre-trigger-record:sha256:23abc3eb8a436ece1c8bb893bd9581cda5ef61906194820fb2b5f7491f551548"
+      ]
+    },
+    {
+      "basis_id": "trivy-distribution-latest",
+      "evidence_sha256": "",
+      "kind": "SUPPLY_CHAIN_DEPENDENCY",
+      "locator": "BerriAI/litellm@v1.82.6.dev1:ci_cd/security_scans.sh",
+      "mentioned_record_ids": [
+        "decision-recall-pre-trigger-record:sha256:59d77a471c0c275b67ab52af2988c6dc986f53e6881a20ffa4690ed81bb87ae1"
+      ]
+    }
+  ],
+  "eligible_bases_root": "3a46de04ae50157a885250c1345487ee584098dbb0922d83714a5fc9e728a46f",
+  "eligible_basis_catalog_custody": {
+    "builder_id": "erc001-retrospective-record-only-builder",
+    "built_at": "2026-03-19T18:19:00Z",
+    "manifest_visible": false,
+    "method": "HISTORICAL_PRE_TRIGGER_SURFACE_RECONSTRUCTION",
+    "source_scope": "PUBLIC_PRE_TRIGGER_RECORDS_ONLY"
+  },
+  "eligible_basis_ids": [
+    "github-release-source-lineage",
+    "pypi-publish-secret-confidentiality",
+    "trivy-distribution-latest"
+  ],
+  "manifest_count": 3,
+  "manifest_ids": [
+    "decision-recall-manifest:sha256:03dbedb4f4e1355a84b65c081fefe96c695a6359a7deb3671cc8bd53f85fd43d",
+    "decision-recall-manifest:sha256:bd39f88aa765bc2da4108d7a5cbdc7bf41938efc00b8c286304c7ed5e26579ed",
+    "decision-recall-manifest:sha256:02d7a2b53a76b7968560e9650c8edbc9cde549134ec62cafb2bec7a7cd902e99"
+  ],
+  "manifests": [
+    {
+      "accepted_at": "2026-03-13T12:00:00Z",
+      "alternative_support": [],
+      "assumptions": [],
+      "basis": [
+        {
+          "alternative_group": "",
+          "basis_id": "trivy-distribution-latest",
+          "evidence_sha256": "",
+          "kind": "OPERATIONAL_BASIS",
+          "locator": "BerriAI/litellm@v1.82.6.dev1:ci_cd/security_scans.sh#blob-801b700f64f11485307ae64b2b779fc37dce5bc3",
+          "role": "REQUIRED",
+          "statement": "The unpinned Trivy package resolved from Aqua's distribution remains trustworthy."
+        }
+      ],
+      "capture": {
+        "accepted_without_correction": true,
+        "confirmed_at": "2026-08-19T20:00:00Z",
+        "confirmed_by": "erc001-reconstruction",
+        "correction_count": 0,
+        "drafted_by": "erc001-reconstruction",
+        "human_capture_milliseconds": 0,
+        "started_at": "2026-08-19T20:00:00Z",
+        "timing_source": "RETROSPECTIVE_NOT_MEASURED"
+      },
+      "decision": "Continue treating the unpinned Trivy installation used by LiteLLM security scans as a trusted control.",
+      "decision_id": "ci-security-scan-trust",
+      "invalidation_conditions": [
+        {
+          "condition_id": "trivy-distribution-latest-loss",
+          "dependency_id": "trivy-distribution-latest",
+          "event_types": [
+            "LOSS_OF_STANDING"
+          ],
+          "note": "Reopen the accepted state if its required basis loses standing."
+        }
+      ],
+      "manifest_id": "decision-recall-manifest:sha256:03dbedb4f4e1355a84b65c081fefe96c695a6359a7deb3671cc8bd53f85fd43d",
+      "metadata": {
+        "cohort001_credit": false,
+        "dependency_admission": "PRE_TRIGGER_EXPLICIT_SURFACE_ONLY",
+        "evidence_credit": "RETROSPECTIVE_EXTERNAL_STRUCTURAL_ONLY",
+        "natural_decision": false
+      },
+      "required_dependencies": [
+        "trivy-distribution-latest"
+      ],
+      "resulting_artifact": {
+        "kind": "HISTORICAL_ACCEPTED_STATE_PROJECTION",
+        "locator": "BerriAI/litellm@v1.82.6.dev1:ci_cd/security_scans.sh#blob-801b700f64f11485307ae64b2b779fc37dce5bc3",
+        "sha256": ""
+      },
+      "schema": "openline.decision-recall-manifest.v1"
+    },
+    {
+      "accepted_at": "2026-03-13T12:00:00Z",
+      "alternative_support": [],
+      "assumptions": [],
+      "basis": [
+        {
+          "alternative_group": "",
+          "basis_id": "github-release-source-lineage",
+          "evidence_sha256": "",
+          "kind": "OPERATIONAL_BASIS",
+          "locator": "BerriAI/litellm@v1.82.6.dev1",
+          "role": "REQUIRED",
+          "statement": "The source-controlled GitHub release lineage remains legitimate."
+        }
+      ],
+      "capture": {
+        "accepted_without_correction": true,
+        "confirmed_at": "2026-08-19T20:00:00Z",
+        "confirmed_by": "erc001-reconstruction",
+        "correction_count": 0,
+        "drafted_by": "erc001-reconstruction",
+        "human_capture_milliseconds": 0,
+        "started_at": "2026-08-19T20:00:00Z",
+        "timing_source": "RETROSPECTIVE_NOT_MEASURED"
+      },
+      "decision": "Continue treating LiteLLM's source-controlled GitHub release lineage through v1.82.6.dev1 as legitimate.",
+      "decision_id": "github-release-source-lineage",
+      "invalidation_conditions": [
+        {
+          "condition_id": "github-release-source-lineage-loss",
+          "dependency_id": "github-release-source-lineage",
+          "event_types": [
+            "LOSS_OF_STANDING"
+          ],
+          "note": "Reopen the accepted state if its required basis loses standing."
+        }
+      ],
+      "manifest_id": "decision-recall-manifest:sha256:bd39f88aa765bc2da4108d7a5cbdc7bf41938efc00b8c286304c7ed5e26579ed",
+      "metadata": {
+        "cohort001_credit": false,
+        "dependency_admission": "PRE_TRIGGER_EXPLICIT_SURFACE_ONLY",
+        "evidence_credit": "RETROSPECTIVE_EXTERNAL_STRUCTURAL_ONLY",
+        "natural_decision": false
+      },
+      "required_dependencies": [
+        "github-release-source-lineage"
+      ],
+      "resulting_artifact": {
+        "kind": "HISTORICAL_ACCEPTED_STATE_PROJECTION",
+        "locator": "BerriAI/litellm@v1.82.6.dev1",
+        "sha256": ""
+      },
+      "schema": "openline.decision-recall-manifest.v1"
+    },
+    {
+      "accepted_at": "2026-03-13T12:00:00Z",
+      "alternative_support": [],
+      "assumptions": [],
+      "basis": [
+        {
+          "alternative_group": "",
+          "basis_id": "pypi-publish-secret-confidentiality",
+          "evidence_sha256": "",
+          "kind": "OPERATIONAL_BASIS",
+          "locator": "BerriAI/litellm@v1.82.6.dev1:.github/workflows/simple_pypi_publish.yml#blob-e1830556819b0181680f70b79e7e87d13acc6b90",
+          "role": "REQUIRED",
+          "statement": "The PyPI publishing secret remains confidential and under legitimate maintainer control."
+        }
+      ],
+      "capture": {
+        "accepted_without_correction": true,
+        "confirmed_at": "2026-08-19T20:00:00Z",
+        "confirmed_by": "erc001-reconstruction",
+        "correction_count": 0,
+        "drafted_by": "erc001-reconstruction",
+        "human_capture_milliseconds": 0,
+        "started_at": "2026-08-19T20:00:00Z",
+        "timing_source": "RETROSPECTIVE_NOT_MEASURED"
+      },
+      "decision": "Continue treating the LiteLLM PyPI publishing credential as confidential and valid publication authority.",
+      "decision_id": "pypi-publish-credential-standing",
+      "invalidation_conditions": [
+        {
+          "condition_id": "pypi-publish-secret-confidentiality-loss",
+          "dependency_id": "pypi-publish-secret-confidentiality",
+          "event_types": [
+            "LOSS_OF_STANDING"
+          ],
+          "note": "Reopen the accepted state if its required basis loses standing."
+        }
+      ],
+      "manifest_id": "decision-recall-manifest:sha256:02d7a2b53a76b7968560e9650c8edbc9cde549134ec62cafb2bec7a7cd902e99",
+      "metadata": {
+        "cohort001_credit": false,
+        "dependency_admission": "PRE_TRIGGER_EXPLICIT_SURFACE_ONLY",
+        "evidence_credit": "RETROSPECTIVE_EXTERNAL_STRUCTURAL_ONLY",
+        "natural_decision": false
+      },
+      "required_dependencies": [
+        "pypi-publish-secret-confidentiality"
+      ],
+      "resulting_artifact": {
+        "kind": "HISTORICAL_ACCEPTED_STATE_PROJECTION",
+        "locator": "BerriAI/litellm@v1.82.6.dev1:.github/workflows/simple_pypi_publish.yml#blob-e1830556819b0181680f70b79e7e87d13acc6b90",
+        "sha256": ""
+      },
+      "schema": "openline.decision-recall-manifest.v1"
+    }
+  ],
+  "manifests_root": "11f270c28847078e7299b8931b2dfad3c4f750cc720326c65d61f117db82eca9",
+  "pre_trigger_record_ids": [
+    "decision-recall-pre-trigger-record:sha256:23abc3eb8a436ece1c8bb893bd9581cda5ef61906194820fb2b5f7491f551548",
+    "decision-recall-pre-trigger-record:sha256:59d77a471c0c275b67ab52af2988c6dc986f53e6881a20ffa4690ed81bb87ae1",
+    "decision-recall-pre-trigger-record:sha256:9ea5744977ead7875a5e50c3ed9f43f50996ddbcacec2f1ea529b051fc7d147d"
+  ],
+  "pre_trigger_records": [
+    {
+      "available_at": "2026-03-13T12:00:00Z",
+      "decision": "Continue treating the LiteLLM PyPI publishing credential as confidential and valid publication authority.",
+      "decision_id": "pypi-publish-credential-standing",
+      "materials": [
+        {
+          "kind": "REPOSITORY_FILE",
+          "locator": "BerriAI/litellm@v1.82.6.dev1:.github/workflows/simple_pypi_publish.yml#blob-e1830556819b0181680f70b79e7e87d13acc6b90",
+          "material_id": "litellm-pypi-publish-v1.82.6.dev1",
+          "sha256": "b42b9a78022d5c490b400379c626b7b3ddc72ceaf4c6c41f7b7ef187d4edfe92",
+          "text": "At LiteLLM tag v1.82.6.dev1, .github/workflows/simple_pypi_publish.yml passes the repository secret PYPI_PUBLISH_PASSWORD to Twine as TWINE_PASSWORD and uploads dist/* to PyPI. The workflow itself does not mention Trivy."
+        }
+      ],
+      "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:23abc3eb8a436ece1c8bb893bd9581cda5ef61906194820fb2b5f7491f551548",
+      "schema": "openline.decision-recall-pre-trigger-record.v1"
+    },
+    {
+      "available_at": "2026-03-13T12:00:00Z",
+      "decision": "Continue treating the unpinned Trivy installation used by LiteLLM security scans as a trusted control.",
+      "decision_id": "ci-security-scan-trust",
+      "materials": [
+        {
+          "kind": "REPOSITORY_FILE",
+          "locator": "BerriAI/litellm@v1.82.6.dev1:ci_cd/security_scans.sh#blob-801b700f64f11485307ae64b2b779fc37dce5bc3",
+          "material_id": "litellm-security-scans-v1.82.6.dev1",
+          "sha256": "2c0afe76c5c0fd055d5ab1b0532d05c8a90fc4f6f6448758cd1908213e7d4cc9",
+          "text": "At LiteLLM tag v1.82.6.dev1, ci_cd/security_scans.sh configures Aqua's apt repository and executes `sudo apt-get install trivy` without pinning a version."
+        }
+      ],
+      "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:59d77a471c0c275b67ab52af2988c6dc986f53e6881a20ffa4690ed81bb87ae1",
+      "schema": "openline.decision-recall-pre-trigger-record.v1"
+    },
+    {
+      "available_at": "2026-03-13T12:00:00Z",
+      "decision": "Continue treating LiteLLM's source-controlled GitHub release lineage through v1.82.6.dev1 as legitimate.",
+      "decision_id": "github-release-source-lineage",
+      "materials": [
+        {
+          "kind": "GIT_TAG",
+          "locator": "BerriAI/litellm@v1.82.6.dev1",
+          "material_id": "litellm-source-tag-v1.82.6.dev1",
+          "sha256": "f114e60c69dcf4e536848472f09f02381b0cfd35e4ac39dee00e6a18ef595674",
+          "text": "LiteLLM repository tag v1.82.6.dev1 is the source-controlled pre-trigger release snapshot used by ERC-001."
+        }
+      ],
+      "pre_trigger_record_id": "decision-recall-pre-trigger-record:sha256:9ea5744977ead7875a5e50c3ed9f43f50996ddbcacec2f1ea529b051fc7d147d",
+      "schema": "openline.decision-recall-pre-trigger-record.v1"
+    }
+  ],
+  "pre_trigger_records_root": "6e027300071879acaa8818022a97451884d620d802b15c307ce51dd6f791ae40",
+  "protocol_id": "erc001-v1",
+  "schema": "openline.decision-recall-stream-seal.v2",
+  "sealed_at": "2026-03-19T18:20:00Z",
+  "stream_seal_id": "decision-recall-stream-seal:sha256:004d6fec354abbc078fc9aa99705f94d928697188a17a950e732dff8c699c1ab"
+}

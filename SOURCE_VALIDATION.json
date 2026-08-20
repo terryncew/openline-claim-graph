@@ -1,0 +1,18 @@
+{
+  "schema": "openline.erc001-source-validation.v1",
+  "uploaded_source_zip_sha256": "24820cfd4633fced028022ab8cff4e21c7665985322263c0a5f7f4a026070236",
+  "built_wheel_sha256": "cec858bd7a0b812368d70066118e0feccfbadac6aa5a3562baee315074f731c3",
+  "source_test_run": {
+    "command": "PYTHONPATH=src python -m pytest -q",
+    "passed_tests": 135,
+    "passed_subtests": 29,
+    "failed": 0
+  },
+  "cohort001_instrument_verifier": {
+    "valid": true,
+    "checks": 46,
+    "failed": 0,
+    "generation": 2
+  },
+  "note": "The external ERC-001 pack does not alter the uploaded source tree or Cohort 001 instrument."
+}
