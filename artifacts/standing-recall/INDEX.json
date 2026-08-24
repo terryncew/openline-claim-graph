@@ -1,0 +1,43 @@
+{
+  "claim": "On the two frozen standing-recall evaluations, a strong property-aware MemoRepair-style baseline matched OpenLine on scored correctness; OpenLine's surviving distinction was a smaller repair/replay surface.",
+  "claim_boundary": [
+    "DGRR and MemoRepair comparisons are contract abstractions, not author implementations.",
+    "SRE-001 lifecycle events are controlled adaptations, not natural revocations.",
+    "SRE-002 uses only eight retrospectively represented public events and is not prospective, blinded, random, or representative of event frequency.",
+    "These results do not establish dependency discovery, truth inference, rollback of irreversible external effects, broad generality, or a production API promotion.",
+    "The stable 0.5.2 Evidence Recall release claim remains unchanged."
+  ],
+  "experiments": [
+    {
+      "baseline_replay_surface": 120,
+      "best_accuracy_matching_baseline": "MEMOREPAIR_CONTRACT_PROPERTY_VALIDATION_EXTERNAL_V1",
+      "event_status": "controlled lifecycle events over external source material",
+      "experiment": "standing-recall-external-lifecycle-001",
+      "openline_preservation": 1.0,
+      "openline_recall": 1.0,
+      "openline_replay_surface": 40,
+      "receipt": "artifacts/standing-recall/sre-001-external-longmemeval-v2/RUN_RECEIPT.json",
+      "replay_surface_reduction": 0.6666666666666666,
+      "substrate": "5 pinned LongMemEval-V2 trajectory excerpts, 10 state anchors, 40 controlled lifecycle episodes",
+      "verdict": "EXTERNAL_STANDING_SEPARATION_ADAPTED_LONGMEMEVAL_V2"
+    },
+    {
+      "baseline_replay_surface": 24,
+      "best_accuracy_matching_baseline": "MEMOREPAIR_CONTRACT_PROPERTY_VALIDATION_NATURAL_V1",
+      "event_status": "natural public-record lifecycle events with retrospective human-authored dependency/facet mappings",
+      "experiment": "standing-recall-natural-events-002",
+      "openline_preservation": 1.0,
+      "openline_recall": 1.0,
+      "openline_replay_surface": 12,
+      "receipt": "artifacts/standing-recall/sre-002-natural-events/RUN_RECEIPT.json",
+      "replay_surface_reduction": 0.5,
+      "substrate": "8 natural public lifecycle events, 24 scored target dispositions",
+      "verdict": "NATURAL_STANDING_SELECTIVITY"
+    }
+  ],
+  "policy_authority": "NONE",
+  "production_api_promotion": false,
+  "schema": "openline.standing-recall-evidence-ledger.v1",
+  "stable_release_unchanged": "0.5.2",
+  "status": "FROZEN_EVIDENCE_CLOSURE"
+}

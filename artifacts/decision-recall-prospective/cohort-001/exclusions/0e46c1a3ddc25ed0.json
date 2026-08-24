@@ -1,0 +1,9 @@
+{
+  "cohort_exclusion_id": "decision-recall-cohort-exclusion:sha256:0e46c1a3ddc25ed0dfa26cc5ca78fd3d2a07006f0c024c5dc44b88214a44733c",
+  "cohort_id": "decision-recall-cohort-001",
+  "detail": "Standing Recall evidence-closure documentation and receipt commit: permanently checks in the exact SRE-001/SRE-002 CI result files and workflow receipts, adds a stdlib-only ledger verifier, and updates public documentation. It does not create or change an accepted Cohort 001 decision state, does not modify the frozen Decision Recall instrument, and does not promote Standing Recall into the stable production API.",
+  "reason": "NO_ACCEPTED_STATE_CHANGE",
+  "recorded_at": "2026-08-24T20:19:00Z",
+  "schema": "openline.decision-recall-cohort-exclusion.v1",
+  "subject_change_set_sha256": "6a96174e9edafb22f7006c47d02ed9723cc18469161bcb41caadef4843f4b1b5"
+}

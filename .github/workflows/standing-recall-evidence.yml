@@ -1,0 +1,24 @@
+name: Standing Recall Evidence Closure
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-standing-recall-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Verify frozen Standing Recall CI evidence ledger
+        run: python scripts/verify_standing_recall_evidence.py
+      - name: Verify Standing Recall experiments remain frozen
+        run: |
+          python experiments/standing-recall-external-lifecycle-001/scripts/verify_status.py
+          python experiments/standing-recall-natural-events-002/scripts/verify_status.py

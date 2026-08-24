@@ -1,0 +1,35 @@
+{
+  "artifact_created_at": "2026-08-24T19:29:25Z",
+  "artifact_expires_at": "2026-11-22T19:29:06Z",
+  "artifact_id": 9535290087,
+  "artifact_size_bytes": 82161,
+  "artifact_zip_sha256": "dd3a20e39effbd6715f9deffa306b9f5b526741601b795d11d7302037bd9470c",
+  "experiment": "standing-recall-external-lifecycle-001",
+  "files": {
+    "independent-verification.json": {
+      "bytes": 482,
+      "sha256": "b7bc515aa8aa1387034563e54e2b19f00f165db17dc6d67e8cf3bda385c56899"
+    },
+    "score.json": {
+      "bytes": 47147,
+      "sha256": "f7fd6aff2ecebe161ca90cee194c62ac4473b0ce15d917ea463fb71f4f0a74ed"
+    },
+    "source-manifest.json": {
+      "bytes": 16610,
+      "sha256": "c5bf38c7bb8ac2b3338053c6b15c11246985901bfeea67a3922ca1c13495e3ce"
+    },
+    "verdict.json": {
+      "bytes": 2591,
+      "sha256": "940be3cf8d0b61067b468424b18c98b189b3fbf277936908f6e5b88728937a1d"
+    }
+  },
+  "permanent_copy_note": "The exact score, verdict, independent verification, and source manifest from the CI artifact are checked into this directory. The large raw external source excerpt and generated adaptation remain reproducible from the pinned source manifest and are not duplicated here.",
+  "policy_authority": "NONE",
+  "schema": "openline.standing-recall-ci-receipt.v1",
+  "source_head_sha": "461804399f1242d560aaa3772f85c67b490b6b64",
+  "source_merge_commit_sha": "b0257486135ecc14a9b732b72fadb71a66140061",
+  "source_pr": 2,
+  "verdict": "EXTERNAL_STANDING_SEPARATION_ADAPTED_LONGMEMEVAL_V2",
+  "workflow_name": "SRE-001 External LongMemEval-V2 Adaptation",
+  "workflow_run_id": 32768417898
+}

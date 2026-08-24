@@ -1,0 +1,31 @@
+{
+  "artifact_created_at": "2026-08-24T20:06:09Z",
+  "artifact_expires_at": "2026-11-22T20:05:59Z",
+  "artifact_id": 9536502851,
+  "artifact_size_bytes": 9694,
+  "artifact_zip_sha256": "57e94a2f909d0128331e09dc4fe782abff42f8267b22d889992c4f71311ef4d3",
+  "experiment": "standing-recall-natural-events-002",
+  "files": {
+    "independent-verification.json": {
+      "bytes": 532,
+      "sha256": "90810fb63d2053ed818650c6bfd466338c87943e464d2cd790528e0a6c87fdae"
+    },
+    "score.json": {
+      "bytes": 12740,
+      "sha256": "db77094b48e6b716e595ea6c4dcb307ae214c802ad13eb21f12d4ccd7f02247c"
+    },
+    "verdict.json": {
+      "bytes": 2309,
+      "sha256": "16bced55dcb979cea33837aa07cac4d21239fcf7a606b80ae71d9ef8c680332e"
+    }
+  },
+  "permanent_copy_note": "The exact score, verdict, and independent verification from the CI artifact are checked into this directory. The deterministic fixture remains reproducible from the checked SRE-002 natural-case corpus and is not duplicated here.",
+  "policy_authority": "NONE",
+  "schema": "openline.standing-recall-ci-receipt.v1",
+  "source_head_sha": "6c2d8332c723e1a20b0337bd597bd127e3bbde8d",
+  "source_merge_commit_sha": "96a80de293e0c85d15c4376db3e084e8351ea74f",
+  "source_pr": 3,
+  "verdict": "NATURAL_STANDING_SELECTIVITY",
+  "workflow_name": "SRE-002 Natural Standing Events",
+  "workflow_run_id": 32771946520
+}

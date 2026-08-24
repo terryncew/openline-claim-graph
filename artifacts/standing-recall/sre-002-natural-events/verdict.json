@@ -1,0 +1,54 @@
+{
+  "accuracy_checks": {
+    "no_additional_false_reopenings": true,
+    "no_additional_missed_reopenings": true,
+    "openline_preservation": true,
+    "openline_recall": true
+  },
+  "best_accuracy_matching_baseline": "MEMOREPAIR_CONTRACT_PROPERTY_VALIDATION_NATURAL_V1",
+  "best_accuracy_matching_baseline_replay_surface": 24,
+  "claim_boundary": [
+    "Eight natural public lifecycle events yield 24 scored target dispositions; the 24 targets are not 24 independent events.",
+    "The public records anchor event occurrence and target disposition, while dependency/facet mappings remain retrospective human-authored representations.",
+    "The corpus is not blinded, prospective, randomly sampled, or representative of natural event frequency.",
+    "DGRR and MemoRepair systems are contract abstractions, not author implementations.",
+    "A successful verdict supports selectivity only on this frozen corpus and does not establish truth discovery or rollback of irreversible external effects."
+  ],
+  "direct_alternative_support_survival_targets": 11,
+  "event_distribution": {
+    "CORRECT": 2,
+    "EXPIRE": 2,
+    "REVOKE": 2,
+    "SUPERSEDE": 2
+  },
+  "experiment": "standing-recall-natural-events-002",
+  "falsifier_readout": "A strong MemoRepair-style property-aware baseline matched the public-record target dispositions; any surviving OpenLine distinction is limited to repair-surface selectivity.",
+  "gold_distribution": {
+    "REOPEN": 12,
+    "SURVIVE": 12
+  },
+  "natural_event_count": 8,
+  "openline": {
+    "affected_decision_recall": 1.0,
+    "fn": 0,
+    "fp": 0,
+    "replay_surface": 12,
+    "unaffected_state_preservation": 1.0
+  },
+  "policy_authority": "NONE",
+  "replay_check": true,
+  "replay_surface_reduction_vs_best_accuracy_matching_baseline": 0.5,
+  "schema": "openline.standing-recall-natural-verdict.v1",
+  "scored_target_count": 24,
+  "status": "NATURAL_STANDING_SELECTIVITY",
+  "strongest_accuracy_baseline": "MEMOREPAIR_CONTRACT_PROPERTY_VALIDATION_NATURAL_V1",
+  "structural_checks": {
+    "minimum_direct_alternative_support_survivals": true,
+    "minimum_gold_reopen": true,
+    "minimum_gold_survive": true,
+    "minimum_natural_events": true,
+    "minimum_per_event_type": true,
+    "minimum_scored_targets": true
+  },
+  "verdict": "NATURAL_STANDING_SELECTIVITY"
+}
