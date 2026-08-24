@@ -1,0 +1,24 @@
+{
+  "dgrr": {
+    "arxiv_id": "2608.10502",
+    "paper_version": "v1",
+    "role": "paper-contract baseline specification"
+  },
+  "longmemeval_v2_github": {
+    "commit": "2cc8c540bdb87fe6761629b585e727e1c4704520",
+    "repository": "xiaowu0162/LongMemEval-V2",
+    "role": "public schema and trajectory substrate implementation"
+  },
+  "longmemeval_v2_hf": {
+    "repository": "xiaowu0162/longmemeval-v2",
+    "revision": "4b3ea0239eab422d8cf48e3307e54097928ddcae",
+    "trajectory_sample_path": "sample/trajectories_sample_excerpts.jsonl",
+    "role": "pinned public external trajectory excerpts"
+  },
+  "memorepair": {
+    "arxiv_id": "2605.07242",
+    "paper_version": "v1",
+    "role": "paper-contract baseline specification"
+  },
+  "schema": "openline.standing-recall-external-source-pins.v1"
+}

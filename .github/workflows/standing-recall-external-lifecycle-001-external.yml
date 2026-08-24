@@ -1,0 +1,119 @@
+name: SRE-001 External LongMemEval-V2 Adaptation
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "experiments/standing-recall-external-lifecycle-001/external-longmemeval-v2/**"
+      - ".github/workflows/standing-recall-external-lifecycle-001-external.yml"
+  pull_request:
+    paths:
+      - "experiments/standing-recall-external-lifecycle-001/external-longmemeval-v2/**"
+      - ".github/workflows/standing-recall-external-lifecycle-001-external.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  adapter-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Verify frozen external instrument
+        run: |
+          python experiments/standing-recall-external-lifecycle-001/external-longmemeval-v2/scripts/verify_external_status.py
+      - name: External adapter hostile and contract tests
+        run: |
+          python -m unittest discover \
+            -s experiments/standing-recall-external-lifecycle-001/external-longmemeval-v2/tests \
+            -v
+
+  external-longmemeval-sample:
+    needs: adapter-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Verify frozen external instrument
+        run: |
+          python experiments/standing-recall-external-lifecycle-001/external-longmemeval-v2/scripts/verify_external_status.py
+      - name: Verify pinned LongMemEval-V2 repository
+        run: |
+          mkdir -p _upstream
+          git clone https://github.com/xiaowu0162/LongMemEval-V2.git _upstream/LongMemEval-V2
+          git -C _upstream/LongMemEval-V2 checkout 2cc8c540bdb87fe6761629b585e727e1c4704520
+          test "$(git -C _upstream/LongMemEval-V2 rev-parse HEAD)" = "2cc8c540bdb87fe6761629b585e727e1c4704520"
+          test -f _upstream/LongMemEval-V2/data/public_data.py
+          test -f _upstream/LongMemEval-V2/memory_modules/trajectory_store.py
+      - name: Fetch pinned public trajectory excerpts
+        run: |
+          mkdir -p "$RUNNER_TEMP/sre001-external"
+          curl --fail --location --retry 3 --retry-all-errors \
+            "https://huggingface.co/datasets/xiaowu0162/longmemeval-v2/raw/4b3ea0239eab422d8cf48e3307e54097928ddcae/sample/trajectories_sample_excerpts.jsonl" \
+            --output "$RUNNER_TEMP/sre001-external/trajectories_sample_excerpts.jsonl"
+          test -s "$RUNNER_TEMP/sre001-external/trajectories_sample_excerpts.jsonl"
+          sha256sum "$RUNNER_TEMP/sre001-external/trajectories_sample_excerpts.jsonl" \
+            | tee "$RUNNER_TEMP/sre001-external/source.sha256"
+      - name: Build frozen external adaptation
+        working-directory: experiments/standing-recall-external-lifecycle-001/external-longmemeval-v2
+        run: |
+          python scripts/build_external_adaptation.py \
+            --source "$RUNNER_TEMP/sre001-external/trajectories_sample_excerpts.jsonl" \
+            --output "$RUNNER_TEMP/sre001-external/adaptation.json" \
+            --manifest "$RUNNER_TEMP/sre001-external/source-manifest.json"
+      - name: Run frozen external benchmark
+        working-directory: experiments/standing-recall-external-lifecycle-001/external-longmemeval-v2
+        run: |
+          python scripts/run_external_benchmark.py \
+            --adaptation "$RUNNER_TEMP/sre001-external/adaptation.json" \
+            --score "$RUNNER_TEMP/sre001-external/score.json" \
+            --verdict "$RUNNER_TEMP/sre001-external/verdict.json"
+      - name: Independent replay
+        run: |
+          python -I experiments/standing-recall-external-lifecycle-001/external-longmemeval-v2/scripts/verify_external_benchmark.py \
+            --source "$RUNNER_TEMP/sre001-external/trajectories_sample_excerpts.jsonl" \
+            --adaptation "$RUNNER_TEMP/sre001-external/adaptation.json" \
+            --manifest "$RUNNER_TEMP/sre001-external/source-manifest.json" \
+            --score "$RUNNER_TEMP/sre001-external/score.json" \
+            --verdict "$RUNNER_TEMP/sre001-external/verdict.json" \
+            --promotion-policy experiments/standing-recall-external-lifecycle-001/promotion-policy.json \
+            --output "$RUNNER_TEMP/sre001-external/independent-verification.json"
+      - name: Publish summary
+        if: always()
+        run: |
+          echo '## SRE-001 External LongMemEval-V2 Adaptation' >> "$GITHUB_STEP_SUMMARY"
+          if test -f "$RUNNER_TEMP/sre001-external/verdict.json"; then
+            echo '```json' >> "$GITHUB_STEP_SUMMARY"
+            cat "$RUNNER_TEMP/sre001-external/verdict.json" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'No verdict artifact was produced.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sre001-external-longmemeval-v2
+          if-no-files-found: warn
+          path: |
+            ${{ runner.temp }}/sre001-external/trajectories_sample_excerpts.jsonl
+            ${{ runner.temp }}/sre001-external/source.sha256
+            ${{ runner.temp }}/sre001-external/adaptation.json
+            ${{ runner.temp }}/sre001-external/source-manifest.json
+            ${{ runner.temp }}/sre001-external/score.json
+            ${{ runner.temp }}/sre001-external/verdict.json
+            ${{ runner.temp }}/sre001-external/independent-verification.json

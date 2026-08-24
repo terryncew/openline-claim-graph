@@ -1,0 +1,42 @@
+{
+  "adapter_id": "sre001-longmemeval-v2-sample-excerpts-v1",
+  "base_main_commit": "259dd3605c342f6864cdd5f9e43ac1df10d5c9d0",
+  "claim_boundary": "External source bytes are unrun at installation. The planned 40 episodes are repeated controlled interventions over 10 state anchors from 5 pinned sample trajectories, not 40 independent trajectories. No LongMemEval-V2, DGRR, or MemoRepair external performance result is claimed until the pinned CI run independently verifies.",
+  "experiment": "standing-recall-external-lifecycle-001",
+  "external_run": false,
+  "frozen_instrument_sha256": {
+    "ADAPTATION_PROTOCOL.md": "a15c62b02608484c218ba22afb57833ae30b2ea92fb907757a03f500a9206e9d",
+    "ADAPTER_POLICY.json": "e133fdb7df09e47142559d20a13e5f695648703b5a667aa644b94ea14c148401",
+    "SOURCE_PINS.json": "be0e940dbcf5cfce7eec20d4e456617a8481d7e732c39c0bfb6573612b825ea2",
+    "scripts/build_external_adaptation.py": "e43b2e263b0924c3e76167d05b26d713b1f079f4c6023387cdd879b1566feed8",
+    "scripts/external_common.py": "0cbb82197a094c41c35a7716c8b0d687cfad8cefbfe7a4062a8fa689fa2d4210",
+    "scripts/run_external_benchmark.py": "db2aa65da1578da86dcc9371a67156102402db6b3d8f44a5a467008c3395cbfe",
+    "scripts/verify_external_benchmark.py": "f8ed5b6ac51d3c9efb466978d25d58895899f0e1b500f0a639392eef5305c2b6",
+    "scripts/verify_external_status.py": "0a4264f6e41c2dbc8b7c478fd6590105a74e9f5e808f554af744a32306f5cfad"
+  },
+  "next_earned_verdicts": [
+    "EXTERNAL_STANDING_SEPARATION_ADAPTED_LONGMEMEVAL_V2",
+    "NO_REPAIR_SURFACE_SEPARATION",
+    "EXTERNAL_STANDING_SEPARATION_NOT_EARNED",
+    "INCOMPLETE_EXTERNAL_ADAPTATION"
+  ],
+  "parent_frozen_sha256": {
+    "promotion-policy.json": "684545e4cf2bdbdeda3cfa3cd8dc73107b2f35379204b0bfd1fb8a492528656d",
+    "scripts/standing_recall.py": "17ae11cadf44f9fb2dda01582e894c7eb14bc59592bf6db9f08b071702ff692f"
+  },
+  "policy_authority": "NONE",
+  "production_semantics_changed": false,
+  "schema": "openline.standing-recall-external-adaptation-status.v1",
+  "source_design": {
+    "episodes_are_independent_trajectories": false,
+    "external_state_anchor_target": 10,
+    "lifecycle_episodes": 40,
+    "state_anchors_per_trajectory": 2,
+    "unique_trajectory_target": 5
+  },
+  "source_pins": {
+    "longmemeval_v2_github_commit": "2cc8c540bdb87fe6761629b585e727e1c4704520",
+    "longmemeval_v2_hf_revision": "4b3ea0239eab422d8cf48e3307e54097928ddcae"
+  },
+  "status": "EXTERNAL_ADAPTATION_READY_UNRUN"
+}
