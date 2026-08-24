@@ -1,0 +1,9 @@
+{
+  "cohort_exclusion_id": "decision-recall-cohort-exclusion:sha256:3117cc19868e9a12b63779dda9e1fe7428161cc87dacf1991bc709bf8211c234",
+  "cohort_id": "decision-recall-cohort-001",
+  "detail": "Adds the frozen SRE-001 external LongMemEval-V2 adaptation lane, source pins, paper-contract baselines, independent verifier, tests, and CI. It does not create or change an accepted Cohort 001 decision state and does not modify the frozen Decision Recall instrument.",
+  "reason": "NO_ACCEPTED_STATE_CHANGE",
+  "recorded_at": "2026-08-24T19:10:00Z",
+  "schema": "openline.decision-recall-cohort-exclusion.v1",
+  "subject_change_set_sha256": "c6078cd961de400f30e5b63a7bcd81baf9891365b9f7b541b09eda33fb0caaac"
+}

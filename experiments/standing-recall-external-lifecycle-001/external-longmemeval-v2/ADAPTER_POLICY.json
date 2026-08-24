@@ -1,0 +1,35 @@
+{
+  "adapter_id": "sre001-longmemeval-v2-sample-excerpts-v1",
+  "claim_boundary": "External trajectory records are real pinned LongMemEval-V2 sample excerpts. Two structural state anchors are taken per selected trajectory. Lifecycle standing changes are controlled synthetic post-finalization injections. The 40 episodes are not 40 independent trajectories. This is not the DGRR private 50-case adaptation or the full LongMemEval-V2 benchmark.",
+  "decision_family": {
+    "D1": "coarse environment decision remains supported by E2 while its E1-only state_url export loses support",
+    "D2": "depends specifically on D1.state_url and must reopen",
+    "D3": "depends on D1.core_environment and must survive",
+    "D4": "independent E2.domain branch and must survive"
+  },
+  "event_expansion": {
+    "events_per_trajectory": [
+      "EXPIRE",
+      "REVOKE",
+      "SUPERSEDE",
+      "CORRECT"
+    ],
+    "post_finalization_only": true,
+    "replacement_is_not_silent_substitution": true
+  },
+  "frozen_before_external_run": true,
+  "outcome_dependent_selection": false,
+  "policy_authority": "NONE",
+  "schema": "openline.standing-recall-external-adapter-policy.v1",
+  "source_selection": {
+    "eligibility": "non-empty id/domain/environment; at least two states; at least two states with non-empty url",
+    "order": "lexicographic trajectory id",
+    "selected_states": "first and last usable state by source-list order",
+    "state_anchors_per_trajectory": 2,
+    "trajectory_count": 5
+  },
+  "strong_baselines": {
+    "DGRR_CONTRACT_NODE_SUPPORT_EXTERNAL_V1": "diagnosed-root descendant tracing with conservative independent support only from outside the affected set",
+    "MEMOREPAIR_CONTRACT_PROPERTY_VALIDATION_EXTERNAL_V1": "barrier-first withdrawal of the full affected set plus exact property-aware successor validation; intentionally favorable to MemoRepair"
+  }
+}
