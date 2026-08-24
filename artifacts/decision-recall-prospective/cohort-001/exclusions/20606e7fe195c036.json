@@ -1,0 +1,9 @@
+{
+  "cohort_exclusion_id": "decision-recall-cohort-exclusion:sha256:20606e7fe195c0369ef84e02b56125c1b0c4ae58e390001d17d800db7cb01306",
+  "cohort_id": "decision-recall-cohort-001",
+  "detail": "SRE-002 experiment-only installation: adds the frozen natural standing-event corpus, benchmark baselines, independent verifier, and isolated CI workflow. It does not create or change an accepted Cohort 001 decision state and does not modify the frozen Decision Recall instrument.",
+  "reason": "NO_ACCEPTED_STATE_CHANGE",
+  "recorded_at": "2026-08-24T19:46:00Z",
+  "schema": "openline.decision-recall-cohort-exclusion.v1",
+  "subject_change_set_sha256": "96062eb1d7907367a0b8558a2bcdc46c0315889b0cd16e1a3cbff615d5a5bb8c"
+}

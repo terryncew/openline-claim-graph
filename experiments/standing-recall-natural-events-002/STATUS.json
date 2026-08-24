@@ -1,0 +1,42 @@
+{
+  "claim_boundary": "The lifecycle events and target dispositions are public-record anchored, but dependency/facet mappings are retrospective human-authored representations. Installation does not claim a benchmark result.",
+  "event_distribution": {
+    "CORRECT": 2,
+    "EXPIRE": 2,
+    "REVOKE": 2,
+    "SUPERSEDE": 2
+  },
+  "experiment": "standing-recall-natural-events-002",
+  "first_repository_visible_result": "GITHUB_ACTIONS_GENERATED",
+  "frozen_instrument_sha256": {
+    "NATURAL_CASES.json": "a893d43809fb43db7bdc575bb0bd3dd45d4f2a47c2b4793cb1a85c670bf028e7",
+    "PROTOCOL.md": "40bbd2b9a945076bb44d36234017ed19f79d17b32df6fffd833351cfcd476ada",
+    "SOURCES.md": "275dc49d312bd862ea8425074e1d45ee19f1905287bf3207aba66b3889bd5867",
+    "promotion-policy.json": "adac46a3f5b4879bb4672bba1bd1a4240a29a49022d4aff1b1be7263a145a927",
+    "scripts/build_fixture.py": "ae1a5524aad734ea34fc4c6d9eeed420a6ea195444b559d3f694da136f456de9",
+    "scripts/natural_common.py": "c5c864d67c2548192ba5ca0708d1de3efe9ee1b9dd51f51bc6e4757d6e02d29d",
+    "scripts/run_benchmark.py": "3dbbb3b51adefc67f698f4241cb92bd831dde290ec482c90c88cd0664718d339",
+    "scripts/verify_benchmark.py": "2584e0aa830edd7461c48d7bfb92d8362392eecfacceb6ed8a4eda88c04a9483",
+    "scripts/verify_status.py": "351260c738c7c518558241e9b4d997e5ccd6832c8253b16e249e8c7c22cbacfc"
+  },
+  "gold_distribution": {
+    "REOPEN": 12,
+    "SURVIVE": 12
+  },
+  "natural_event_count": 8,
+  "next_earned_verdicts": [
+    "NATURAL_STANDING_SELECTIVITY",
+    "NO_NATURAL_REPAIR_SURFACE_SEPARATION",
+    "NATURAL_STANDING_SELECTIVITY_NOT_EARNED",
+    "INCOMPLETE_NATURAL_CORPUS"
+  ],
+  "parent_frozen_sha256": {
+    "scripts/standing_recall.py": "17ae11cadf44f9fb2dda01582e894c7eb14bc59592bf6db9f08b071702ff692f"
+  },
+  "policy_authority": "NONE",
+  "production_semantics_changed": false,
+  "result_checked_in": false,
+  "schema": "openline.standing-recall-natural-status.v1",
+  "scored_target_count": 24,
+  "status": "NATURAL_CORPUS_READY_UNRUN"
+}
