@@ -1,0 +1,1681 @@
+{
+  "curation": {
+    "boundary": [
+      "Lifecycle events and observed target outcomes are drawn from public records.",
+      "Dependency and facet mappings are human-authored representations of those records; they are not automatically discovered.",
+      "The corpus tests standing-consequence mechanics and repair selectivity, not dependency discovery or truth inference."
+    ],
+    "mode": "RETROSPECTIVE_PUBLIC_RECORD",
+    "retrieved_at": "2026-08-24"
+  },
+  "events": [
+    {
+      "decisions": [
+        {
+          "id": "D1",
+          "kind": "decision",
+          "label": "Original inversion-rule method remains acceptable",
+          "outputs": {
+            "method": {
+              "bindings": [
+                {
+                  "facet": "method",
+                  "source": "E1"
+                }
+              ],
+              "value": "INVERSION_RULE"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "method",
+                  "source": "E1"
+                }
+              ],
+              "equals": "INVERSION_RULE",
+              "facet": "method"
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "kind": "decision",
+          "label": "Published result remains standing after reanalysis",
+          "outputs": {
+            "interpretation": {
+              "bindings": [
+                {
+                  "facet": "interpretation",
+                  "source": "E1"
+                },
+                {
+                  "facet": "interpretation",
+                  "source": "E2"
+                }
+              ],
+              "value": "ORIGINAL_INTERPRETATION"
+            },
+            "result": {
+              "bindings": [
+                {
+                  "facet": "result",
+                  "source": "E1"
+                },
+                {
+                  "facet": "result",
+                  "source": "E2"
+                }
+              ],
+              "value": "RCD_RCT_PATTERN"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "result",
+                  "source": "E1"
+                },
+                {
+                  "facet": "result",
+                  "source": "E2"
+                }
+              ],
+              "equals": "RCD_RCT_PATTERN",
+              "facet": "result"
+            }
+          ]
+        },
+        {
+          "id": "D3",
+          "kind": "decision",
+          "label": "Published interpretation remains standing",
+          "outputs": {
+            "interpretation": {
+              "bindings": [
+                {
+                  "facet": "interpretation",
+                  "source": "D2"
+                }
+              ],
+              "value": "ORIGINAL_INTERPRETATION"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "interpretation",
+                  "source": "D2"
+                }
+              ],
+              "equals": "ORIGINAL_INTERPRETATION",
+              "facet": "interpretation"
+            }
+          ]
+        }
+      ],
+      "domain": "scientific-publication",
+      "effective_at": "2018-08-17",
+      "event": {
+        "roots": [
+          "E1"
+        ],
+        "type": "CORRECT"
+      },
+      "event_id": "correct-bmj-hemkens-2018",
+      "event_type": "CORRECT",
+      "evidence": [
+        {
+          "after": {
+            "facets": {
+              "interpretation": "ORIGINAL_INTERPRETATION",
+              "method": "INVERSION_RULE",
+              "result": "RCD_RCT_PATTERN"
+            },
+            "standing": "CORRECTED"
+          },
+          "before": {
+            "facets": {
+              "interpretation": "ORIGINAL_INTERPRETATION",
+              "method": "INVERSION_RULE",
+              "result": "RCD_RCT_PATTERN"
+            },
+            "standing": "ACCEPTED"
+          },
+          "id": "E1",
+          "kind": "evidence",
+          "label": "Original inversion-rule analysis"
+        },
+        {
+          "after": {
+            "facets": {
+              "interpretation": "ORIGINAL_INTERPRETATION",
+              "method": "REANALYZED",
+              "result": "RCD_RCT_PATTERN"
+            },
+            "standing": "ACCEPTED"
+          },
+          "before": {
+            "facets": {
+              "interpretation": "ORIGINAL_INTERPRETATION",
+              "method": "REANALYZED",
+              "result": "RCD_RCT_PATTERN"
+            },
+            "standing": "UNAVAILABLE"
+          },
+          "id": "E2",
+          "kind": "evidence",
+          "label": "Corrected reanalysis"
+        }
+      ],
+      "gold": {
+        "reopen": [
+          "D1"
+        ],
+        "survive": [
+          "D2",
+          "D3"
+        ]
+      },
+      "gold_basis": [
+        {
+          "basis": "The correction explicitly identifies the original inversion strategy as biased.",
+          "disposition": "REOPEN",
+          "target": "D1"
+        },
+        {
+          "basis": "The BMJ states that the reanalysis did not change the paper's results.",
+          "disposition": "SURVIVE",
+          "target": "D2"
+        },
+        {
+          "basis": "The BMJ states that the reanalysis did not change the paper's interpretation.",
+          "disposition": "SURVIVE",
+          "target": "D3"
+        }
+      ],
+      "source_facts": [
+        "The BMJ concluded that the inversion strategy used in the original analysis was biased and asked the authors to reanalyse the data.",
+        "The published correction states that the reanalysis did not change the paper's results or interpretation.",
+        "The BMJ therefore issued a correction rather than retracting the paper."
+      ],
+      "sources": [
+        {
+          "publisher": "The BMJ",
+          "source_id": "bmj-k3210",
+          "source_role": "authoritative_correction_notice",
+          "title": "Correction notice to paper \u201cAgreement of treatment effects for mortality from routinely collected data and subsequent randomized trials: meta-epidemiological survey\u201d",
+          "url": "https://www.bmj.com/content/362/bmj.k3210"
+        }
+      ],
+      "title": "BMJ correction and reanalysis of Hemkens et al."
+    },
+    {
+      "decisions": [
+        {
+          "id": "D1",
+          "kind": "decision",
+          "label": "Exact original adjusted numeric statement remains acceptable",
+          "outputs": {
+            "numeric_statement": {
+              "bindings": [
+                {
+                  "facet": "numeric_statement",
+                  "source": "E1"
+                }
+              ],
+              "value": "ORIGINAL_TABLE_VALUE"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "numeric_statement",
+                  "source": "E1"
+                }
+              ],
+              "equals": "ORIGINAL_TABLE_VALUE",
+              "facet": "numeric_statement"
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "kind": "decision",
+          "label": "Overall published conclusion remains standing",
+          "outputs": {
+            "overall_conclusion": {
+              "bindings": [
+                {
+                  "facet": "overall_conclusion",
+                  "source": "E1"
+                },
+                {
+                  "facet": "overall_conclusion",
+                  "source": "E2"
+                }
+              ],
+              "value": "PUBLISHED_CONCLUSION"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "overall_conclusion",
+                  "source": "E1"
+                },
+                {
+                  "facet": "overall_conclusion",
+                  "source": "E2"
+                }
+              ],
+              "equals": "PUBLISHED_CONCLUSION",
+              "facet": "overall_conclusion"
+            }
+          ]
+        },
+        {
+          "id": "D3",
+          "kind": "decision",
+          "label": "Cervical lower-extremity finding remains standing",
+          "outputs": {
+            "cervical_finding": {
+              "bindings": [
+                {
+                  "facet": "cervical_finding",
+                  "source": "E1"
+                },
+                {
+                  "facet": "cervical_finding",
+                  "source": "E3"
+                }
+              ],
+              "value": "LOWER_EXTREMITY_ONLY"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "cervical_finding",
+                  "source": "E1"
+                },
+                {
+                  "facet": "cervical_finding",
+                  "source": "E3"
+                }
+              ],
+              "equals": "LOWER_EXTREMITY_ONLY",
+              "facet": "cervical_finding"
+            }
+          ]
+        }
+      ],
+      "domain": "scientific-publication",
+      "effective_at": "1991-12-05",
+      "event": {
+        "roots": [
+          "E1"
+        ],
+        "type": "CORRECT"
+      },
+      "event_id": "correct-nejm-gm1-1991",
+      "event_type": "CORRECT",
+      "evidence": [
+        {
+          "after": {
+            "facets": {
+              "cervical_finding": "LOWER_EXTREMITY_ONLY",
+              "numeric_statement": "ORIGINAL_TABLE_VALUE",
+              "overall_conclusion": "PUBLISHED_CONCLUSION"
+            },
+            "standing": "CORRECTED"
+          },
+          "before": {
+            "facets": {
+              "cervical_finding": "LOWER_EXTREMITY_ONLY",
+              "numeric_statement": "ORIGINAL_TABLE_VALUE",
+              "overall_conclusion": "PUBLISHED_CONCLUSION"
+            },
+            "standing": "ACCEPTED"
+          },
+          "id": "E1",
+          "kind": "evidence",
+          "label": "Original corrected-away Table 5/Abstract values"
+        },
+        {
+          "after": {
+            "facets": {
+              "numeric_statement": "ADJUSTED_DIFF_9_7_P_0_279",
+              "overall_conclusion": "PUBLISHED_CONCLUSION"
+            },
+            "standing": "ACCEPTED"
+          },
+          "before": {
+            "facets": {
+              "numeric_statement": "ADJUSTED_DIFF_9_7_P_0_279",
+              "overall_conclusion": "PUBLISHED_CONCLUSION"
+            },
+            "standing": "UNAVAILABLE"
+          },
+          "id": "E2",
+          "kind": "evidence",
+          "label": "Corrected Table 5/analysis"
+        },
+        {
+          "after": {
+            "facets": {
+              "cervical_finding": "LOWER_EXTREMITY_ONLY"
+            },
+            "standing": "ACCEPTED"
+          },
+          "before": {
+            "facets": {
+              "cervical_finding": "LOWER_EXTREMITY_ONLY"
+            },
+            "standing": "ACCEPTED"
+          },
+          "id": "E3",
+          "kind": "evidence",
+          "label": "Independent original lower-table/text/Figure 4 support"
+        }
+      ],
+      "gold": {
+        "reopen": [
+          "D1"
+        ],
+        "survive": [
+          "D2",
+          "D3"
+        ]
+      },
+      "gold_basis": [
+        {
+          "basis": "The correction replaces the original Table 5/Abstract numeric statement.",
+          "disposition": "REOPEN",
+          "target": "D1"
+        },
+        {
+          "basis": "The correction explicitly says the published conclusions are unchanged.",
+          "disposition": "SURVIVE",
+          "target": "D2"
+        },
+        {
+          "basis": "The correction says this finding was already supported by other reported material.",
+          "disposition": "SURVIVE",
+          "target": "D3"
+        }
+      ],
+      "source_facts": [
+        "The correction revised Table 5 and associated Results/Abstract numbers; the corrected adjusted difference was not statistically significant.",
+        "The authors state that the correction does not alter their published conclusions.",
+        "The correction states that the lower-extremity finding for cervical injuries had already been indicated by other parts of the paper."
+      ],
+      "sources": [
+        {
+          "publisher": "New England Journal of Medicine",
+          "source_id": "nejm-gm1-correction",
+          "source_role": "authoritative_correction_notice",
+          "title": "Correction: Recovery of Motor Function after Spinal-Cord Injury \u2014 A Randomized, Placebo-Controlled Trial with GM-1 Ganglioside",
+          "url": "https://www.nejm.org/doi/full/10.1056/NEJM199112053252321"
+        }
+      ],
+      "title": "NEJM correction to GM-1 spinal-cord injury trial"
+    },
+    {
+      "decisions": [
+        {
+          "id": "D1",
+          "kind": "decision",
+          "label": "Ordinary DigiNotar-issued website certificate remains trusted",
+          "outputs": {
+            "web_tls_trust": {
+              "bindings": [
+                {
+                  "facet": "web_tls_trust",
+                  "source": "E1"
+                }
+              ],
+              "value": "ACCEPTED"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "web_tls_trust",
+                  "source": "E1"
+                }
+              ],
+              "equals": "ACCEPTED",
+              "facet": "web_tls_trust"
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "kind": "decision",
+          "label": "DigiNotar-controlled Dutch-government chain remains trusted",
+          "outputs": {
+            "government_chain_trust": {
+              "bindings": [
+                {
+                  "facet": "government_chain_trust",
+                  "source": "E3"
+                }
+              ],
+              "value": "ACCEPTED"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "government_chain_trust",
+                  "source": "E3"
+                }
+              ],
+              "equals": "ACCEPTED",
+              "facet": "government_chain_trust"
+            }
+          ]
+        },
+        {
+          "id": "D3",
+          "kind": "decision",
+          "label": "Google users remain protected from the fraudulent DigiNotar Google certificate",
+          "outputs": {
+            "google_protection": {
+              "bindings": [
+                {
+                  "facet": "google_protection",
+                  "source": "E1"
+                },
+                {
+                  "facet": "google_protection",
+                  "source": "E2"
+                }
+              ],
+              "value": "ACTIVE"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "google_protection",
+                  "source": "E1"
+                },
+                {
+                  "facet": "google_protection",
+                  "source": "E2"
+                }
+              ],
+              "equals": "ACTIVE",
+              "facet": "google_protection"
+            }
+          ]
+        }
+      ],
+      "domain": "public-key-infrastructure",
+      "effective_at": "2011-09-02",
+      "event": {
+        "roots": [
+          "E1",
+          "E3"
+        ],
+        "type": "REVOKE"
+      },
+      "event_id": "revoke-diginotar-2011",
+      "event_type": "REVOKE",
+      "evidence": [
+        {
+          "after": {
+            "facets": {
+              "google_protection": "ACTIVE",
+              "web_tls_trust": "ACCEPTED"
+            },
+            "standing": "REVOKED"
+          },
+          "before": {
+            "facets": {
+              "google_protection": "ACTIVE",
+              "web_tls_trust": "ACCEPTED"
+            },
+            "standing": "ACCEPTED"
+          },
+          "id": "E1",
+          "kind": "evidence",
+          "label": "DigiNotar public web root trust"
+        },
+        {
+          "after": {
+            "facets": {
+              "google_protection": "ACTIVE"
+            },
+            "standing": "ACCEPTED"
+          },
+          "before": {
+            "facets": {
+              "google_protection": "ACTIVE"
+            },
+            "standing": "ACCEPTED"
+          },
+          "id": "E2",
+          "kind": "evidence",
+          "label": "Chrome independent Google certificate protection"
+        },
+        {
+          "after": {
+            "facets": {
+              "government_chain_trust": "ACCEPTED"
+            },
+            "standing": "REVOKED"
+          },
+          "before": {
+            "facets": {
+              "government_chain_trust": "ACCEPTED"
+            },
+            "standing": "ACCEPTED"
+          },
+          "id": "E3",
+          "kind": "evidence",
+          "label": "Temporary PKIoverheid DigiNotar exception"
+        }
+      ],
+      "gold": {
+        "reopen": [
+          "D1",
+          "D2"
+        ],
+        "survive": [
+          "D3"
+        ]
+      },
+      "gold_basis": [
+        {
+          "basis": "Mozilla removed DigiNotar public-web trust.",
+          "disposition": "REOPEN",
+          "target": "D1"
+        },
+        {
+          "basis": "Mozilla's follow-up removed the government-chain exception as well.",
+          "disposition": "REOPEN",
+          "target": "D2"
+        },
+        {
+          "basis": "Google described an independent Chrome protection that detected the fraudulent Google certificate.",
+          "disposition": "SURVIVE",
+          "target": "D3"
+        }
+      ],
+      "source_facts": [
+        "Mozilla removed the DigiNotar root from trust after fraudulent certificates were issued and used in active attacks.",
+        "Mozilla later removed its temporary exception for Dutch-government PKI intermediates under DigiNotar control.",
+        "Google reported that Chrome users were protected from the fraudulent Google certificate by Chrome's independent detection protections."
+      ],
+      "sources": [
+        {
+          "publisher": "Mozilla",
+          "source_id": "mozilla-mfsa2011-34",
+          "source_role": "browser_security_advisory",
+          "title": "Protection against fraudulent DigiNotar certificates",
+          "url": "https://www.mozilla.org/en-US/security/advisories/mfsa2011-34/"
+        },
+        {
+          "publisher": "Mozilla Security Blog",
+          "source_id": "mozilla-diginotar-followup",
+          "source_role": "trust_program_decision",
+          "title": "DigiNotar Removal Follow Up",
+          "url": "https://blog.mozilla.org/security/2011/09/02/diginotar-removal-follow-up/"
+        },
+        {
+          "publisher": "Google Online Security Blog",
+          "source_id": "google-diginotar-mitm",
+          "source_role": "independent_browser_protection",
+          "title": "An update on attempted man-in-the-middle attacks",
+          "url": "https://security.googleblog.com/2011/08/update-on-attempted-man-in-middle.html"
+        }
+      ],
+      "title": "Mozilla removes trust in DigiNotar"
+    },
+    {
+      "decisions": [
+        {
+          "id": "D1",
+          "kind": "decision",
+          "label": "Legacy Symantec-only TLS certificate remains accepted",
+          "outputs": {
+            "legacy_tls_trust": {
+              "bindings": [
+                {
+                  "facet": "legacy_tls_trust",
+                  "source": "E1"
+                }
+              ],
+              "value": "ACCEPTED"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "legacy_tls_trust",
+                  "source": "E1"
+                }
+              ],
+              "equals": "ACCEPTED",
+              "facet": "legacy_tls_trust"
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "kind": "decision",
+          "label": "Certificate under an allowed managed subordinate remains accepted",
+          "outputs": {
+            "site_reachability": {
+              "bindings": [
+                {
+                  "facet": "site_reachability",
+                  "source": "E1"
+                },
+                {
+                  "facet": "site_reachability",
+                  "source": "E2"
+                }
+              ],
+              "value": "ACCEPTED"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "site_reachability",
+                  "source": "E1"
+                },
+                {
+                  "facet": "site_reachability",
+                  "source": "E2"
+                }
+              ],
+              "equals": "ACCEPTED",
+              "facet": "site_reachability"
+            }
+          ]
+        },
+        {
+          "id": "D3",
+          "kind": "decision",
+          "label": "Certificate migrated to the new managed infrastructure remains accepted",
+          "outputs": {
+            "site_reachability": {
+              "bindings": [
+                {
+                  "facet": "site_reachability",
+                  "source": "E1"
+                },
+                {
+                  "facet": "site_reachability",
+                  "source": "E3"
+                }
+              ],
+              "value": "ACCEPTED"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "site_reachability",
+                  "source": "E1"
+                },
+                {
+                  "facet": "site_reachability",
+                  "source": "E3"
+                }
+              ],
+              "equals": "ACCEPTED",
+              "facet": "site_reachability"
+            }
+          ]
+        }
+      ],
+      "domain": "public-key-infrastructure",
+      "effective_at": "2018-10-17",
+      "event": {
+        "roots": [
+          "E1"
+        ],
+        "type": "REVOKE"
+      },
+      "event_id": "revoke-symantec-legacy-pki-2018",
+      "event_type": "REVOKE",
+      "evidence": [
+        {
+          "after": {
+            "facets": {
+              "legacy_tls_trust": "ACCEPTED",
+              "site_reachability": "ACCEPTED"
+            },
+            "standing": "REVOKED"
+          },
+          "before": {
+            "facets": {
+              "legacy_tls_trust": "ACCEPTED",
+              "site_reachability": "ACCEPTED"
+            },
+            "standing": "ACCEPTED"
+          },
+          "id": "E1",
+          "kind": "evidence",
+          "label": "Legacy Symantec PKI trust"
+        },
+        {
+          "after": {
+            "facets": {
+              "site_reachability": "ACCEPTED"
+            },
+            "standing": "ACCEPTED"
+          },
+          "before": {
+            "facets": {
+              "site_reachability": "ACCEPTED"
+            },
+            "standing": "ACCEPTED"
+          },
+          "id": "E2",
+          "kind": "evidence",
+          "label": "Apple/Google controlled subordinate-CA exception"
+        },
+        {
+          "after": {
+            "facets": {
+              "site_reachability": "ACCEPTED"
+            },
+            "standing": "ACCEPTED"
+          },
+          "before": {
+            "facets": {
+              "site_reachability": "ACCEPTED"
+            },
+            "standing": "ACCEPTED"
+          },
+          "id": "E3",
+          "kind": "evidence",
+          "label": "New Managed Partner Infrastructure trust"
+        }
+      ],
+      "gold": {
+        "reopen": [
+          "D1"
+        ],
+        "survive": [
+          "D2",
+          "D3"
+        ]
+      },
+      "gold_basis": [
+        {
+          "basis": "Chrome/Firefox distrust made remaining legacy Symantec-only certificates fail.",
+          "disposition": "REOPEN",
+          "target": "D1"
+        },
+        {
+          "basis": "The Mozilla transition retained narrow managed subordinate exceptions.",
+          "disposition": "SURVIVE",
+          "target": "D2"
+        },
+        {
+          "basis": "Google's plan preserved trust for the new independently operated managed infrastructure.",
+          "disposition": "SURVIVE",
+          "target": "D3"
+        }
+      ],
+      "source_facts": [
+        "Chrome 70 removed trust in remaining certificates issued by the legacy Symantec PKI, causing certificate errors for sites that had not replaced them.",
+        "Mozilla's plan contained narrow exceptions for certificates issued by certain Apple- and Google-controlled subordinate CAs.",
+        "Google's transition plan distinguished the distrusted legacy infrastructure from the new independently operated Managed Partner Infrastructure."
+      ],
+      "sources": [
+        {
+          "publisher": "Google Online Security Blog",
+          "source_id": "google-symantec-distrust",
+          "source_role": "browser_trust_transition",
+          "title": "Distrust of the Symantec PKI: Immediate action needed by site operators",
+          "url": "https://security.googleblog.com/2018/03/distrust-of-symantec-pki-immediate.html"
+        },
+        {
+          "publisher": "Mozilla Security Blog",
+          "source_id": "mozilla-symantec-distrust",
+          "source_role": "browser_trust_transition",
+          "title": "Distrust of Symantec TLS Certificates",
+          "url": "https://blog.mozilla.org/security/2018/03/12/distrust-symantec-tls-certificates/"
+        }
+      ],
+      "title": "Chrome and Firefox distrust the legacy Symantec PKI"
+    },
+    {
+      "decisions": [
+        {
+          "id": "D1",
+          "kind": "decision",
+          "label": "Receiver may negotiate TLS 1.0",
+          "outputs": {
+            "protocol": {
+              "bindings": [
+                {
+                  "facet": "protocol",
+                  "source": "E1"
+                }
+              ],
+              "value": "TLS1.0"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "protocol",
+                  "source": "E1"
+                }
+              ],
+              "equals": "TLS1.0",
+              "facet": "protocol"
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "kind": "decision",
+          "label": "Receiver may negotiate TLS 1.1",
+          "outputs": {
+            "protocol": {
+              "bindings": [
+                {
+                  "facet": "protocol",
+                  "source": "E2"
+                }
+              ],
+              "value": "TLS1.1"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "protocol",
+                  "source": "E2"
+                }
+              ],
+              "equals": "TLS1.1",
+              "facet": "protocol"
+            }
+          ]
+        },
+        {
+          "id": "D3",
+          "kind": "decision",
+          "label": "Receiver retains an acceptable TLS transport path",
+          "outputs": {
+            "transport": {
+              "bindings": [
+                {
+                  "facet": "transport",
+                  "source": "E1"
+                },
+                {
+                  "facet": "transport",
+                  "source": "E2"
+                },
+                {
+                  "facet": "transport",
+                  "source": "E3"
+                }
+              ],
+              "value": "TLS_AVAILABLE"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "transport",
+                  "source": "E1"
+                },
+                {
+                  "facet": "transport",
+                  "source": "E2"
+                },
+                {
+                  "facet": "transport",
+                  "source": "E3"
+                }
+              ],
+              "equals": "TLS_AVAILABLE",
+              "facet": "transport"
+            }
+          ]
+        }
+      ],
+      "domain": "internet-standard",
+      "effective_at": "2021-03-01",
+      "event": {
+        "roots": [
+          "E1",
+          "E2"
+        ],
+        "type": "SUPERSEDE"
+      },
+      "event_id": "supersede-tls10-tls11-rfc8996",
+      "event_type": "SUPERSEDE",
+      "evidence": [
+        {
+          "after": {
+            "facets": {
+              "protocol": "TLS1.0",
+              "transport": "TLS_AVAILABLE"
+            },
+            "standing": "SUPERSEDED"
+          },
+          "before": {
+            "facets": {
+              "protocol": "TLS1.0",
+              "transport": "TLS_AVAILABLE"
+            },
+            "standing": "ACCEPTED"
+          },
+          "id": "E1",
+          "kind": "evidence",
+          "label": "Prior TLS 1.0 acceptability"
+        },
+        {
+          "after": {
+            "facets": {
+              "protocol": "TLS1.1",
+              "transport": "TLS_AVAILABLE"
+            },
+            "standing": "SUPERSEDED"
+          },
+          "before": {
+            "facets": {
+              "protocol": "TLS1.1",
+              "transport": "TLS_AVAILABLE"
+            },
+            "standing": "ACCEPTED"
+          },
+          "id": "E2",
+          "kind": "evidence",
+          "label": "Prior TLS 1.1 acceptability"
+        },
+        {
+          "after": {
+            "facets": {
+              "protocol": "TLS1.2+",
+              "transport": "TLS_AVAILABLE"
+            },
+            "standing": "ACCEPTED"
+          },
+          "before": {
+            "facets": {
+              "protocol": "TLS1.2+",
+              "transport": "TLS_AVAILABLE"
+            },
+            "standing": "ACCEPTED"
+          },
+          "id": "E3",
+          "kind": "evidence",
+          "label": "TLS 1.2+ acceptability"
+        }
+      ],
+      "gold": {
+        "reopen": [
+          "D1",
+          "D2"
+        ],
+        "survive": [
+          "D3"
+        ]
+      },
+      "gold_basis": [
+        {
+          "basis": "RFC 8996 says implementations MUST NOT negotiate TLS 1.0.",
+          "disposition": "REOPEN",
+          "target": "D1"
+        },
+        {
+          "basis": "RFC 8996 says implementations MUST NOT negotiate TLS 1.1.",
+          "disposition": "REOPEN",
+          "target": "D2"
+        },
+        {
+          "basis": "TLS 1.2+ remains the acceptable replacement path.",
+          "disposition": "SURVIVE",
+          "target": "D3"
+        }
+      ],
+      "source_facts": [
+        "RFC 8996 moved TLS 1.0 and TLS 1.1 to Historic status and says implementations MUST NOT negotiate them.",
+        "The RFC replaces older minimum-version guidance with TLS 1.2.",
+        "Mozilla announced browser removal of TLS 1.0 and TLS 1.1 while recommending modern TLS 1.2 or later."
+      ],
+      "sources": [
+        {
+          "publisher": "RFC Editor / IETF",
+          "source_id": "rfc8996",
+          "source_role": "authoritative_standard",
+          "title": "RFC 8996: Deprecating TLS 1.0 and TLS 1.1",
+          "url": "https://www.rfc-editor.org/info/rfc8996/"
+        },
+        {
+          "publisher": "Mozilla Security Blog",
+          "source_id": "mozilla-old-tls",
+          "source_role": "implementation_transition",
+          "title": "Removing Old Versions of TLS",
+          "url": "https://blog.mozilla.org/security/2018/10/15/removing-old-versions-of-tls/"
+        }
+      ],
+      "title": "IETF formally deprecates TLS 1.0 and TLS 1.1"
+    },
+    {
+      "decisions": [
+        {
+          "id": "D1",
+          "kind": "decision",
+          "label": "Generate a new digital signature with SHA-1",
+          "outputs": {
+            "signature_generation": {
+              "bindings": [
+                {
+                  "facet": "signature_generation",
+                  "source": "E1"
+                },
+                {
+                  "facet": "signature_generation",
+                  "source": "E2"
+                }
+              ],
+              "value": "ALLOWED"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "signature_generation",
+                  "source": "E1"
+                },
+                {
+                  "facet": "signature_generation",
+                  "source": "E2"
+                }
+              ],
+              "equals": "ALLOWED",
+              "facet": "signature_generation"
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "kind": "decision",
+          "label": "Verify a previously generated SHA-1 signature",
+          "outputs": {
+            "legacy_verification": {
+              "bindings": [
+                {
+                  "facet": "legacy_verification",
+                  "source": "E1"
+                },
+                {
+                  "facet": "legacy_verification",
+                  "source": "E2"
+                }
+              ],
+              "value": "ALLOWED"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "legacy_verification",
+                  "source": "E1"
+                },
+                {
+                  "facet": "legacy_verification",
+                  "source": "E2"
+                }
+              ],
+              "equals": "ALLOWED",
+              "facet": "legacy_verification"
+            }
+          ]
+        },
+        {
+          "id": "D3",
+          "kind": "decision",
+          "label": "Use SHA-1 in an allowed HMAC/KDF legacy context",
+          "outputs": {
+            "hmac_kdf": {
+              "bindings": [
+                {
+                  "facet": "hmac_kdf",
+                  "source": "E1"
+                },
+                {
+                  "facet": "hmac_kdf",
+                  "source": "E2"
+                }
+              ],
+              "value": "ALLOWED"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "hmac_kdf",
+                  "source": "E1"
+                },
+                {
+                  "facet": "hmac_kdf",
+                  "source": "E2"
+                }
+              ],
+              "equals": "ALLOWED",
+              "facet": "hmac_kdf"
+            }
+          ]
+        }
+      ],
+      "domain": "cryptographic-policy",
+      "effective_at": "2014-01-01",
+      "event": {
+        "roots": [
+          "E1"
+        ],
+        "type": "SUPERSEDE"
+      },
+      "event_id": "supersede-nist-sha1-signature-generation",
+      "event_type": "SUPERSEDE",
+      "evidence": [
+        {
+          "after": {
+            "facets": {
+              "hmac_kdf": "ALLOWED",
+              "legacy_verification": "ALLOWED",
+              "signature_generation": "ALLOWED"
+            },
+            "standing": "SUPERSEDED"
+          },
+          "before": {
+            "facets": {
+              "hmac_kdf": "ALLOWED",
+              "legacy_verification": "ALLOWED",
+              "signature_generation": "ALLOWED"
+            },
+            "standing": "ACCEPTED"
+          },
+          "id": "E1",
+          "kind": "evidence",
+          "label": "Prior SHA-1 policy"
+        },
+        {
+          "after": {
+            "facets": {
+              "hmac_kdf": "ALLOWED",
+              "legacy_verification": "ALLOWED",
+              "signature_generation": "DISALLOWED"
+            },
+            "standing": "ACCEPTED"
+          },
+          "before": {
+            "facets": {
+              "hmac_kdf": "ALLOWED",
+              "legacy_verification": "ALLOWED",
+              "signature_generation": "DISALLOWED"
+            },
+            "standing": "UNAVAILABLE"
+          },
+          "id": "E2",
+          "kind": "evidence",
+          "label": "Current NIST SHA-1 transition policy"
+        }
+      ],
+      "gold": {
+        "reopen": [
+          "D1"
+        ],
+        "survive": [
+          "D2",
+          "D3"
+        ]
+      },
+      "gold_basis": [
+        {
+          "basis": "NIST no longer approves SHA-1 digital-signature generation.",
+          "disposition": "REOPEN",
+          "target": "D1"
+        },
+        {
+          "basis": "NIST explicitly allows legacy verification of old SHA-1 signatures/time stamps.",
+          "disposition": "SURVIVE",
+          "target": "D2"
+        },
+        {
+          "basis": "NIST policy retains specified SHA-1 HMAC/KDF uses.",
+          "disposition": "SURVIVE",
+          "target": "D3"
+        }
+      ],
+      "source_facts": [
+        "NIST deprecated SHA-1 for digital-signature generation and disallowed that use after the transition period.",
+        "NIST policy continues to permit SHA-1 for verifying old digital signatures and time stamps.",
+        "NIST policy also permits SHA-1 in specified non-collision-resistance uses including HMAC and key-derivation functions."
+      ],
+      "sources": [
+        {
+          "publisher": "NIST",
+          "source_id": "nist-hash-policy",
+          "source_role": "authoritative_cryptographic_policy",
+          "title": "NIST Policy on Hash Functions",
+          "url": "https://csrc.nist.gov/projects/hash-functions/nist-policy-on-hash-functions"
+        },
+        {
+          "publisher": "NIST",
+          "source_id": "nist-sha1-collisions",
+          "source_role": "policy_context",
+          "title": "Research Results on SHA-1 Collisions",
+          "url": "https://csrc.nist.gov/news/2017/research-results-on-sha-1-collisions"
+        }
+      ],
+      "title": "NIST ends approval of SHA-1 digital-signature generation while retaining limited legacy uses"
+    },
+    {
+      "decisions": [
+        {
+          "id": "D1",
+          "kind": "decision",
+          "label": "Old non-Android client relying only on DST Root CA X3 accepts the chain",
+          "outputs": {
+            "legacy_compat": {
+              "bindings": [
+                {
+                  "facet": "legacy_compat",
+                  "source": "E1"
+                }
+              ],
+              "value": "ACCEPTED"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "legacy_compat",
+                  "source": "E1"
+                }
+              ],
+              "equals": "ACCEPTED",
+              "facet": "legacy_compat"
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "kind": "decision",
+          "label": "Modern client continues accepting Let's Encrypt through ISRG Root X1",
+          "outputs": {
+            "letsencrypt_trust": {
+              "bindings": [
+                {
+                  "facet": "letsencrypt_trust",
+                  "source": "E1"
+                },
+                {
+                  "facet": "letsencrypt_trust",
+                  "source": "E2"
+                }
+              ],
+              "value": "ACCEPTED"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "letsencrypt_trust",
+                  "source": "E1"
+                },
+                {
+                  "facet": "letsencrypt_trust",
+                  "source": "E2"
+                }
+              ],
+              "equals": "ACCEPTED",
+              "facet": "letsencrypt_trust"
+            }
+          ]
+        },
+        {
+          "id": "D3",
+          "kind": "decision",
+          "label": "Older Android compatibility path remains available",
+          "outputs": {
+            "legacy_compat": {
+              "bindings": [
+                {
+                  "facet": "legacy_compat",
+                  "source": "E1"
+                },
+                {
+                  "facet": "legacy_compat",
+                  "source": "E3"
+                }
+              ],
+              "value": "ACCEPTED"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "legacy_compat",
+                  "source": "E1"
+                },
+                {
+                  "facet": "legacy_compat",
+                  "source": "E3"
+                }
+              ],
+              "equals": "ACCEPTED",
+              "facet": "legacy_compat"
+            }
+          ]
+        }
+      ],
+      "domain": "public-key-infrastructure",
+      "effective_at": "2021-09-30T14:01:15Z",
+      "event": {
+        "roots": [
+          "E1"
+        ],
+        "type": "EXPIRE"
+      },
+      "event_id": "expire-dst-root-ca-x3-2021",
+      "event_type": "EXPIRE",
+      "evidence": [
+        {
+          "after": {
+            "facets": {
+              "legacy_compat": "ACCEPTED",
+              "letsencrypt_trust": "ACCEPTED"
+            },
+            "standing": "EXPIRED"
+          },
+          "before": {
+            "facets": {
+              "legacy_compat": "ACCEPTED",
+              "letsencrypt_trust": "ACCEPTED"
+            },
+            "standing": "ACCEPTED"
+          },
+          "id": "E1",
+          "kind": "evidence",
+          "label": "DST Root CA X3 trust path"
+        },
+        {
+          "after": {
+            "facets": {
+              "letsencrypt_trust": "ACCEPTED"
+            },
+            "standing": "ACCEPTED"
+          },
+          "before": {
+            "facets": {
+              "letsencrypt_trust": "ACCEPTED"
+            },
+            "standing": "ACCEPTED"
+          },
+          "id": "E2",
+          "kind": "evidence",
+          "label": "ISRG Root X1 direct trust"
+        },
+        {
+          "after": {
+            "facets": {
+              "legacy_compat": "ACCEPTED"
+            },
+            "standing": "ACCEPTED"
+          },
+          "before": {
+            "facets": {
+              "legacy_compat": "ACCEPTED"
+            },
+            "standing": "ACCEPTED"
+          },
+          "id": "E3",
+          "kind": "evidence",
+          "label": "Android expired-trust-anchor compatibility behavior"
+        }
+      ],
+      "gold": {
+        "reopen": [
+          "D1"
+        ],
+        "survive": [
+          "D2",
+          "D3"
+        ]
+      },
+      "gold_basis": [
+        {
+          "basis": "Let's Encrypt warned that older non-Android devices without ISRG Root X1 would see certificate errors after expiry.",
+          "disposition": "REOPEN",
+          "target": "D1"
+        },
+        {
+          "basis": "Let's Encrypt states that almost all modern devices moved to ISRG Root X1 trust.",
+          "disposition": "SURVIVE",
+          "target": "D2"
+        },
+        {
+          "basis": "Let's Encrypt documented the Android-specific cross-sign compatibility mechanism.",
+          "disposition": "SURVIVE",
+          "target": "D3"
+        }
+      ],
+      "source_facts": [
+        "DST Root CA X3 expired on September 30, 2021.",
+        "Older non-Android devices that did not trust ISRG Root X1 could begin seeing certificate warnings.",
+        "Modern clients trusting ISRG Root X1 continued to work, and older Android devices had a special compatibility path because Android does not enforce trust-anchor expiration in the same way."
+      ],
+      "sources": [
+        {
+          "publisher": "Let's Encrypt",
+          "source_id": "letsencrypt-dst-expiry",
+          "source_role": "certificate_authority_notice",
+          "title": "DST Root CA X3 Expiration (September 2021)",
+          "url": "https://letsencrypt.org/ca/docs/dst-root-ca-x3-expiration-september-2021/"
+        },
+        {
+          "publisher": "Let's Encrypt",
+          "source_id": "letsencrypt-android-compatibility",
+          "source_role": "compatibility_mechanism",
+          "title": "Extending Android Device Compatibility for Let's Encrypt Certificates",
+          "url": "https://letsencrypt.org/2020/12/21/extending-android-compatibility.html"
+        }
+      ],
+      "title": "DST Root CA X3 expires"
+    },
+    {
+      "decisions": [
+        {
+          "id": "D1",
+          "kind": "decision",
+          "label": "2G data service remains authorized by the embedded certificate",
+          "outputs": {
+            "2g_data": {
+              "bindings": [
+                {
+                  "facet": "2g_data",
+                  "source": "E1"
+                }
+              ],
+              "value": "AVAILABLE"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "2g_data",
+                  "source": "E1"
+                }
+              ],
+              "equals": "AVAILABLE",
+              "facet": "2g_data"
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "kind": "decision",
+          "label": "3G data service remains authorized by the embedded certificate",
+          "outputs": {
+            "3g_data": {
+              "bindings": [
+                {
+                  "facet": "3g_data",
+                  "source": "E1"
+                }
+              ],
+              "value": "AVAILABLE"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "3g_data",
+                  "source": "E1"
+                }
+              ],
+              "equals": "AVAILABLE",
+              "facet": "3g_data"
+            }
+          ]
+        },
+        {
+          "id": "D3",
+          "kind": "decision",
+          "label": "4G data service remains authorized by the embedded certificate",
+          "outputs": {
+            "4g_data": {
+              "bindings": [
+                {
+                  "facet": "4g_data",
+                  "source": "E1"
+                }
+              ],
+              "value": "AVAILABLE"
+            }
+          },
+          "requires": [
+            {
+              "bindings": [
+                {
+                  "facet": "4g_data",
+                  "source": "E1"
+                }
+              ],
+              "equals": "AVAILABLE",
+              "facet": "4g_data"
+            }
+          ]
+        }
+      ],
+      "domain": "telecommunications",
+      "effective_at": "2018-12-06T04:30:00Z",
+      "event": {
+        "roots": [
+          "E1"
+        ],
+        "type": "EXPIRE"
+      },
+      "event_id": "expire-ericsson-o2-security-certificate-2018",
+      "event_type": "EXPIRE",
+      "evidence": [
+        {
+          "after": {
+            "facets": {
+              "2g_data": "AVAILABLE",
+              "3g_data": "AVAILABLE",
+              "4g_data": "AVAILABLE"
+            },
+            "standing": "EXPIRED"
+          },
+          "before": {
+            "facets": {
+              "2g_data": "AVAILABLE",
+              "3g_data": "AVAILABLE",
+              "4g_data": "AVAILABLE"
+            },
+            "standing": "ACCEPTED"
+          },
+          "id": "E1",
+          "kind": "evidence",
+          "label": "Hardcoded Ericsson SGSN\u2013MME security certificate"
+        }
+      ],
+      "gold": {
+        "reopen": [
+          "D1",
+          "D2",
+          "D3"
+        ],
+        "survive": []
+      },
+      "gold_basis": [
+        {
+          "basis": "Ofcom reports the outage affected 2G data services.",
+          "disposition": "REOPEN",
+          "target": "D1"
+        },
+        {
+          "basis": "Ofcom reports the outage affected 3G data services.",
+          "disposition": "REOPEN",
+          "target": "D2"
+        },
+        {
+          "basis": "Ofcom reports the outage affected 4G data services.",
+          "disposition": "REOPEN",
+          "target": "D3"
+        }
+      ],
+      "source_facts": [
+        "Ofcom found that a fault in Ericsson SGSN\u2013MME software linked to expiry of a security certificate at 04:30 on 6 December 2018 caused the software to fail.",
+        "The outage affected O2 2G, 3G, and 4G data services.",
+        "Ofcom later highlighted hardcoded security-certificate expiry as a risk that providers should actively manage."
+      ],
+      "sources": [
+        {
+          "publisher": "Ofcom",
+          "source_id": "ofcom-o2-outage",
+          "source_role": "regulatory_investigation",
+          "title": "O2 network outage \u2014 Decision to conclude investigation into Telef\u00f3nica UK Limited\u2019s compliance with section 105A(4) of the Communications Act 2003",
+          "url": "https://www.ofcom.org.uk/siteassets/resources/documents/about-ofcom/bulletins/enforcement-bulletin/all-cases/cw_01235/decision-to-conclude-investigation---o2-network-outage?v=321087"
+        }
+      ],
+      "title": "Hardcoded Ericsson security certificate expires and disrupts O2 network services"
+    }
+  ],
+  "experiment": "standing-recall-natural-events-002",
+  "schema": "openline.standing-recall-natural-cases.v1"
+}

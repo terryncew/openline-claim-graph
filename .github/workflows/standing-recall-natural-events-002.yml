@@ -1,0 +1,75 @@
+name: SRE-002 Natural Standing Events
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  natural-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Verify frozen SRE-002 instrument
+        run: python experiments/standing-recall-natural-events-002/scripts/verify_status.py
+      - name: Natural corpus hostile and contract tests
+        run: python -m unittest discover -s experiments/standing-recall-natural-events-002/tests -v
+      - name: Build deterministic natural fixture
+        run: |
+          python experiments/standing-recall-natural-events-002/scripts/build_fixture.py \
+            --output "${{ runner.temp }}/sre002-fixture.json"
+
+  natural-benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Verify frozen SRE-002 instrument
+        run: python experiments/standing-recall-natural-events-002/scripts/verify_status.py
+      - name: Build frozen natural-event corpus
+        run: |
+          mkdir -p "${{ runner.temp }}/sre002-natural"
+          python experiments/standing-recall-natural-events-002/scripts/build_fixture.py \
+            --output "${{ runner.temp }}/sre002-natural/fixture.json"
+      - name: Run frozen natural-event benchmark
+        run: |
+          python experiments/standing-recall-natural-events-002/scripts/run_benchmark.py \
+            --fixture "${{ runner.temp }}/sre002-natural/fixture.json" \
+            --score "${{ runner.temp }}/sre002-natural/score.json" \
+            --verdict "${{ runner.temp }}/sre002-natural/verdict.json"
+      - name: Independent replay
+        run: |
+          python -I experiments/standing-recall-natural-events-002/scripts/verify_benchmark.py \
+            --cases experiments/standing-recall-natural-events-002/NATURAL_CASES.json \
+            --fixture "${{ runner.temp }}/sre002-natural/fixture.json" \
+            --score "${{ runner.temp }}/sre002-natural/score.json" \
+            --verdict "${{ runner.temp }}/sre002-natural/verdict.json" \
+            --promotion-policy experiments/standing-recall-natural-events-002/promotion-policy.json \
+            --output "${{ runner.temp }}/sre002-natural/independent-verification.json"
+      - name: Publish summary
+        run: |
+          echo '## SRE-002 Natural Standing Events' >> "$GITHUB_STEP_SUMMARY"
+          echo '```json' >> "$GITHUB_STEP_SUMMARY"
+          cat "${{ runner.temp }}/sre002-natural/verdict.json" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sre002-natural-standing-events
+          path: |
+            ${{ runner.temp }}/sre002-natural/fixture.json
+            ${{ runner.temp }}/sre002-natural/score.json
+            ${{ runner.temp }}/sre002-natural/verdict.json
+            ${{ runner.temp }}/sre002-natural/independent-verification.json

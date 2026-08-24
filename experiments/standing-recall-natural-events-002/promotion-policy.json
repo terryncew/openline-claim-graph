@@ -1,0 +1,22 @@
+{
+  "schema": "openline.standing-recall-natural-promotion-policy.v1",
+  "experiment": "standing-recall-natural-events-002",
+  "frozen_before_first_benchmark_run": true,
+  "required_event_types": ["CORRECT", "REVOKE", "SUPERSEDE", "EXPIRE"],
+  "minimum_natural_events": 8,
+  "minimum_scored_targets": 24,
+  "minimum_per_event_type": 2,
+  "minimum_gold_reopen": 10,
+  "minimum_gold_survive": 10,
+  "minimum_direct_alternative_support_survivals": 6,
+  "promotion_requirements": {
+    "openline_recall_minimum": 0.95,
+    "openline_preservation_minimum": 0.95,
+    "additional_missed_reopenings_vs_strongest_baseline_maximum": 0,
+    "additional_false_reopenings_vs_strongest_baseline_maximum": 0,
+    "replay_surface_reduction_vs_best_accuracy_matching_baseline_minimum": 0.25,
+    "independent_verification_mismatch_maximum": 0
+  },
+  "falsifier": "If a MemoRepair-compatible barrier-first repair matches OpenLine on public-record target recall and preservation and reaches the same or smaller repair surface without receiver-owned standing semantics, no distinct natural-event mechanism is promoted.",
+  "policy_authority": "NONE"
+}
