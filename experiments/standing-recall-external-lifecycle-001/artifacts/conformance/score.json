@@ -1,0 +1,3020 @@
+{
+  "claim_boundary": [
+    "The checked fixture is a deterministic conformance pressure test, not the DGRR or MemoRepair authors' benchmark.",
+    "The DGRR-style and MemoRepair-style systems are paper-inspired abstractions, not author implementations.",
+    "No external benchmark promotion is earned by this score."
+  ],
+  "experiment": "standing-recall-external-lifecycle-001",
+  "fixture_sha256": "bd2f015bb6acc7cc221d56fb2b90da3d6e746afbe83a0e435004f673a1619995",
+  "policy_authority": "NONE",
+  "schema": "openline.standing-recall-external-lifecycle-score.v1",
+  "status": "MECHANICS_ONLY_EXTERNAL_BENCHMARK_UNRUN",
+  "systems": [
+    {
+      "affected_decision_recall": 0.6666666666666666,
+      "analysis_surface": 160,
+      "episodes": 64,
+      "fn": 20,
+      "fp": 0,
+      "per_episode": [
+        {
+          "episode_id": "expire-sole-0-001",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 0,
+          "tp": 2
+        },
+        {
+          "episode_id": "expire-sole-1-002",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "episode_id": "expire-sole-2-003",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "expire-sole-3-004",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "expire-full_alt-0-005",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-full_alt-1-006",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-full_alt-2-007",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-full_alt-3-008",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-partial_facet-0-009",
+          "event_type": "EXPIRE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 1,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-partial_facet-1-010",
+          "event_type": "EXPIRE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-partial_facet-2-011",
+          "event_type": "EXPIRE",
+          "fn": 2,
+          "fp": 0,
+          "gold_reopen": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 1,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-partial_facet-3-012",
+          "event_type": "EXPIRE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-irrelevant_facet-0-013",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-irrelevant_facet-1-014",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-irrelevant_facet-2-015",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-irrelevant_facet-3-016",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-sole-0-017",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 0,
+          "tp": 2
+        },
+        {
+          "episode_id": "revoke-sole-1-018",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "episode_id": "revoke-sole-2-019",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "revoke-sole-3-020",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "revoke-full_alt-0-021",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-full_alt-1-022",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-full_alt-2-023",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-full_alt-3-024",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-partial_facet-0-025",
+          "event_type": "REVOKE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 1,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-partial_facet-1-026",
+          "event_type": "REVOKE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-partial_facet-2-027",
+          "event_type": "REVOKE",
+          "fn": 2,
+          "fp": 0,
+          "gold_reopen": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 1,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-partial_facet-3-028",
+          "event_type": "REVOKE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-irrelevant_facet-0-029",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-irrelevant_facet-1-030",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-irrelevant_facet-2-031",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-irrelevant_facet-3-032",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-sole-0-033",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 0,
+          "tp": 2
+        },
+        {
+          "episode_id": "supersede-sole-1-034",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "episode_id": "supersede-sole-2-035",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "supersede-sole-3-036",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "supersede-full_alt-0-037",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-full_alt-1-038",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-full_alt-2-039",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-full_alt-3-040",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-partial_facet-0-041",
+          "event_type": "SUPERSEDE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 1,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-partial_facet-1-042",
+          "event_type": "SUPERSEDE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-partial_facet-2-043",
+          "event_type": "SUPERSEDE",
+          "fn": 2,
+          "fp": 0,
+          "gold_reopen": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 1,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-partial_facet-3-044",
+          "event_type": "SUPERSEDE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-irrelevant_facet-0-045",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-irrelevant_facet-1-046",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-irrelevant_facet-2-047",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-irrelevant_facet-3-048",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-sole-0-049",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 0,
+          "tp": 2
+        },
+        {
+          "episode_id": "correct-sole-1-050",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "episode_id": "correct-sole-2-051",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "correct-sole-3-052",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "correct-full_alt-0-053",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-full_alt-1-054",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-full_alt-2-055",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-full_alt-3-056",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-partial_facet-0-057",
+          "event_type": "CORRECT",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 1,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-partial_facet-1-058",
+          "event_type": "CORRECT",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-partial_facet-2-059",
+          "event_type": "CORRECT",
+          "fn": 2,
+          "fp": 0,
+          "gold_reopen": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 1,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-partial_facet-3-060",
+          "event_type": "CORRECT",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-irrelevant_facet-0-061",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-irrelevant_facet-1-062",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-irrelevant_facet-2-063",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-irrelevant_facet-3-064",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        }
+      ],
+      "replay_surface": 40,
+      "system": "DGRR_STYLE_NODE_SUPPORT_V1",
+      "tn": 116,
+      "tp": 40,
+      "unaffected_state_preservation": 1.0
+    },
+    {
+      "affected_decision_recall": 0.6666666666666666,
+      "analysis_surface": 160,
+      "episodes": 64,
+      "fn": 20,
+      "fp": 0,
+      "per_episode": [
+        {
+          "episode_id": "expire-sole-0-001",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 0,
+          "tp": 2
+        },
+        {
+          "episode_id": "expire-sole-1-002",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "episode_id": "expire-sole-2-003",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "expire-sole-3-004",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "expire-full_alt-0-005",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-full_alt-1-006",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-full_alt-2-007",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-full_alt-3-008",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-partial_facet-0-009",
+          "event_type": "EXPIRE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-partial_facet-1-010",
+          "event_type": "EXPIRE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-partial_facet-2-011",
+          "event_type": "EXPIRE",
+          "fn": 2,
+          "fp": 0,
+          "gold_reopen": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 1,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-partial_facet-3-012",
+          "event_type": "EXPIRE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-irrelevant_facet-0-013",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-irrelevant_facet-1-014",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-irrelevant_facet-2-015",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-irrelevant_facet-3-016",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-sole-0-017",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 0,
+          "tp": 2
+        },
+        {
+          "episode_id": "revoke-sole-1-018",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "episode_id": "revoke-sole-2-019",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "revoke-sole-3-020",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "revoke-full_alt-0-021",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-full_alt-1-022",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-full_alt-2-023",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-full_alt-3-024",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-partial_facet-0-025",
+          "event_type": "REVOKE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-partial_facet-1-026",
+          "event_type": "REVOKE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-partial_facet-2-027",
+          "event_type": "REVOKE",
+          "fn": 2,
+          "fp": 0,
+          "gold_reopen": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 1,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-partial_facet-3-028",
+          "event_type": "REVOKE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-irrelevant_facet-0-029",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-irrelevant_facet-1-030",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-irrelevant_facet-2-031",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-irrelevant_facet-3-032",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-sole-0-033",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 0,
+          "tp": 2
+        },
+        {
+          "episode_id": "supersede-sole-1-034",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "episode_id": "supersede-sole-2-035",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "supersede-sole-3-036",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "supersede-full_alt-0-037",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-full_alt-1-038",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-full_alt-2-039",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-full_alt-3-040",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-partial_facet-0-041",
+          "event_type": "SUPERSEDE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-partial_facet-1-042",
+          "event_type": "SUPERSEDE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-partial_facet-2-043",
+          "event_type": "SUPERSEDE",
+          "fn": 2,
+          "fp": 0,
+          "gold_reopen": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 1,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-partial_facet-3-044",
+          "event_type": "SUPERSEDE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-irrelevant_facet-0-045",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-irrelevant_facet-1-046",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-irrelevant_facet-2-047",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-irrelevant_facet-3-048",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-sole-0-049",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 0,
+          "tp": 2
+        },
+        {
+          "episode_id": "correct-sole-1-050",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "episode_id": "correct-sole-2-051",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "correct-sole-3-052",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "correct-full_alt-0-053",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-full_alt-1-054",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-full_alt-2-055",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-full_alt-3-056",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-partial_facet-0-057",
+          "event_type": "CORRECT",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-partial_facet-1-058",
+          "event_type": "CORRECT",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-partial_facet-2-059",
+          "event_type": "CORRECT",
+          "fn": 2,
+          "fp": 0,
+          "gold_reopen": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 1,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-partial_facet-3-060",
+          "event_type": "CORRECT",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-irrelevant_facet-0-061",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-irrelevant_facet-1-062",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-irrelevant_facet-2-063",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-irrelevant_facet-3-064",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 0
+        }
+      ],
+      "replay_surface": 160,
+      "system": "MEMOREPAIR_STYLE_CASCADE_V1",
+      "tn": 116,
+      "tp": 40,
+      "unaffected_state_preservation": 1.0
+    },
+    {
+      "affected_decision_recall": 1.0,
+      "analysis_surface": 160,
+      "episodes": 64,
+      "fn": 0,
+      "fp": 0,
+      "per_episode": [
+        {
+          "episode_id": "expire-sole-0-001",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 0,
+          "tp": 2
+        },
+        {
+          "episode_id": "expire-sole-1-002",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "episode_id": "expire-sole-2-003",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "expire-sole-3-004",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "expire-full_alt-0-005",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-full_alt-1-006",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-full_alt-2-007",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-full_alt-3-008",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-partial_facet-0-009",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 1
+        },
+        {
+          "episode_id": "expire-partial_facet-1-010",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "expire-partial_facet-2-011",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "episode_id": "expire-partial_facet-3-012",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "expire-irrelevant_facet-0-013",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-irrelevant_facet-1-014",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-irrelevant_facet-2-015",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "expire-irrelevant_facet-3-016",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-sole-0-017",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 0,
+          "tp": 2
+        },
+        {
+          "episode_id": "revoke-sole-1-018",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "episode_id": "revoke-sole-2-019",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "revoke-sole-3-020",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "revoke-full_alt-0-021",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-full_alt-1-022",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-full_alt-2-023",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-full_alt-3-024",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-partial_facet-0-025",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 1
+        },
+        {
+          "episode_id": "revoke-partial_facet-1-026",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "revoke-partial_facet-2-027",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "episode_id": "revoke-partial_facet-3-028",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "revoke-irrelevant_facet-0-029",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-irrelevant_facet-1-030",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-irrelevant_facet-2-031",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "revoke-irrelevant_facet-3-032",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-sole-0-033",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 0,
+          "tp": 2
+        },
+        {
+          "episode_id": "supersede-sole-1-034",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "episode_id": "supersede-sole-2-035",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "supersede-sole-3-036",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "supersede-full_alt-0-037",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-full_alt-1-038",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-full_alt-2-039",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-full_alt-3-040",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-partial_facet-0-041",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 1
+        },
+        {
+          "episode_id": "supersede-partial_facet-1-042",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "supersede-partial_facet-2-043",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "episode_id": "supersede-partial_facet-3-044",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "supersede-irrelevant_facet-0-045",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-irrelevant_facet-1-046",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-irrelevant_facet-2-047",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "supersede-irrelevant_facet-3-048",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-sole-0-049",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 0,
+          "tp": 2
+        },
+        {
+          "episode_id": "correct-sole-1-050",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "episode_id": "correct-sole-2-051",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "correct-sole-3-052",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        },
+        {
+          "episode_id": "correct-full_alt-0-053",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-full_alt-1-054",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-full_alt-2-055",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-full_alt-3-056",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-partial_facet-0-057",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 1
+        },
+        {
+          "episode_id": "correct-partial_facet-1-058",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "correct-partial_facet-2-059",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "episode_id": "correct-partial_facet-3-060",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "correct-irrelevant_facet-0-061",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-irrelevant_facet-1-062",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-irrelevant_facet-2-063",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        },
+        {
+          "episode_id": "correct-irrelevant_facet-3-064",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 3,
+          "tp": 0
+        }
+      ],
+      "replay_surface": 60,
+      "system": "OPENLINE_STANDING_PROPAGATION_V1",
+      "tn": 116,
+      "tp": 60,
+      "unaffected_state_preservation": 1.0
+    }
+  ]
+}
