@@ -1,0 +1,52 @@
+{
+  "accuracy_checks": {
+    "no_additional_false_reopenings": true,
+    "no_additional_missed_reopenings": true,
+    "openline_preservation": true,
+    "openline_recall": true
+  },
+  "best_accuracy_matching_baseline": "MEMOREPAIR_CONTRACT_PROPERTY_VALIDATION_EXTERNAL_V1",
+  "best_accuracy_matching_baseline_replay_surface": 120,
+  "claim_boundary": [
+    "This is not the DGRR paper's private 50-case LongMemEval-V2 adaptation.",
+    "This is not the full LongMemEval-V2 benchmark; it uses 5 pinned public sample trajectory excerpts, two state anchors per trajectory, expanded into 40 controlled lifecycle episodes.",
+    "The 40 lifecycle episodes are not 40 independent trajectories; they are repeated controlled interventions over 10 state anchors from 5 external trajectories.",
+    "The lifecycle events are synthetic and do not estimate natural revocation frequency.",
+    "DGRR and MemoRepair baselines are paper-contract adaptations, not author implementations.",
+    "A successful verdict does not establish broad agent reliability, truth discovery, or rollback of irreversible external effects."
+  ],
+  "event_distribution": {
+    "CORRECT": 10,
+    "EXPIRE": 10,
+    "REVOKE": 10,
+    "SUPERSEDE": 10
+  },
+  "experiment": "standing-recall-external-lifecycle-001",
+  "external_episode_count": 40,
+  "external_source_family": "LongMemEval-V2",
+  "falsifier_readout": "The strong MemoRepair contract adaptation matches OpenLine accuracy but requires a larger barrier-first repair surface. Therefore this run can support only a repair-surface/standing-lifecycle separation, not a claim that MemoRepair cannot express property-aware validation.",
+  "independent_support_cases": 40,
+  "openline": {
+    "affected_decision_recall": 1.0,
+    "fn": 0,
+    "fp": 0,
+    "replay_surface": 40,
+    "unaffected_state_preservation": 1.0
+  },
+  "policy_authority": "NONE",
+  "property_specific_downstream_cases": 40,
+  "replay_check": true,
+  "replay_surface_reduction_vs_best_accuracy_matching_baseline": 0.6666666666666666,
+  "schema": "openline.standing-recall-external-verdict.v1",
+  "status": "EXTERNAL_STANDING_SEPARATION_ADAPTED_LONGMEMEVAL_V2",
+  "strongest_accuracy_baseline": "MEMOREPAIR_CONTRACT_PROPERTY_VALIDATION_EXTERNAL_V1",
+  "structural_checks": {
+    "minimum_external_episodes": true,
+    "minimum_independent_support_cases": true,
+    "minimum_per_event_type": true,
+    "minimum_property_specific_downstream_cases": true
+  },
+  "unique_external_state_anchors": 10,
+  "unique_external_trajectories": 5,
+  "verdict": "EXTERNAL_STANDING_SEPARATION_ADAPTED_LONGMEMEVAL_V2"
+}

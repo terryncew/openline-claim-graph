@@ -8,6 +8,23 @@ The core job is deliberately narrow: given an accepted dependency graph, an exac
 
 **Latest stable release: `0.5.2`.** In a five-episode historical replication with 14 explicitly scored targets, frozen Evidence Recall caught **8/8 warranted reopenings** while reviewing **8 targets instead of 14** under Review-All Reachability: a **42.85% reduction in review load with zero additional misses**. Three trigger episodes are related Sato retractions evaluated through the same later Avenell audit, so this is a small historical replication, not broad-domain proof.
 
+## Experimental Standing Recall result
+
+The repository now also contains two frozen Standing Recall experiments asking a later question: **when evidence that once legitimately supported a finalized decision later loses standing, how little previously valid state must be reopened?**
+
+The result narrowed the claim rather than expanding it. A strong property-aware MemoRepair-style baseline matched OpenLine on scored correctness in both evaluations. The surviving distinction was repair selectivity.
+
+| Evaluation | OpenLine recall | OpenLine preservation | OpenLine replay surface | Accuracy-matching MemoRepair-style surface |
+|---|---:|---:|---:|---:|
+| SRE-001: external LongMemEval-V2 adaptation | 100% | 100% | 40 | 120 |
+| SRE-002: 8 natural public lifecycle events | 100% | 100% | 12 | 24 |
+
+SRE-001 therefore showed a **66.67%** smaller replay surface on its controlled lifecycle adaptation. SRE-002 showed a **50%** smaller replay surface across 24 target dispositions drawn from eight natural public-record events.
+
+The boundary is important. DGRR and MemoRepair comparisons are contract abstractions, not author implementations. SRE-001's lifecycle events are controlled adaptations. SRE-002's event occurrence and target dispositions are public-record anchored, but its dependency/facet mappings are retrospective human-authored representations. Standing Recall is **experimental** and has not been promoted into the stable production API.
+
+See [`docs/STANDING_RECALL.md`](docs/STANDING_RECALL.md) and the permanent evidence ledger under [`artifacts/standing-recall/`](artifacts/standing-recall/).
+
 ## What it does
 
 Evidence Recall answers a practical question: **if evidence changes, what downstream state must be reconsidered?**
@@ -38,7 +55,7 @@ These are constrained outputs, not an after-the-fact summary. `POINT` cannot cla
 
 The full contract is in [`HUMAN_CONTRACT.md`](HUMAN_CONTRACT.md). The 0.5.2 replication emits both a visible [`POINT_BECAUSE_BUT_SO.md`](artifacts/evidence-recall-temporal/replication-001-selectivity/POINT_BECAUSE_BUT_SO.md) card and a [`POINT_BECAUSE_BUT_SO.audit.json`](artifacts/evidence-recall-temporal/replication-001-selectivity/POINT_BECAUSE_BUT_SO.audit.json) sidecar that binds each line to the scored artifacts and fields that produced it. The independent verifier reconstructs the projection and fails if the card or trace bindings drift.
 
-## 0.5.2 result
+## Stable 0.5.2 result
 
 Version `0.5.2` changes the historical evaluation corpus, not the Evidence Recall inference semantics.
 
@@ -62,21 +79,17 @@ Gold is intentionally strict. A target is scored only when a later case-level re
 
 The result and its limits are in [`artifacts/evidence-recall-temporal/replication-001-selectivity/REPORT.md`](artifacts/evidence-recall-temporal/replication-001-selectivity/REPORT.md). The frozen release boundary is in [`CLAIM_BOUNDARY_TEMPORAL.md`](CLAIM_BOUNDARY_TEMPORAL.md).
 
-## Next experiment: prospective Decision Recall
+## Current research boundary: prospective Decision Recall
 
-The development line does not add another Evidence Recall rescue mechanism. It attacks the upstream assumption that 0.5.2 could not test: **can useful dependency state be captured cheaply when a decision is accepted, before anyone knows what will later break?**
+The prospective Decision Recall line attacks an upstream assumption that the historical Evidence Recall work could not test: **can useful dependency state be captured cheaply when a decision is accepted, before anyone knows what will later break?**
 
-`experiments/decision-recall-prospective-001/PROTOCOL.md` freezes the next empirical bar. Each accepted software decision gets a small receiver-confirmed dependency manifest. The benchmark separately seals the conventional full pre-trigger record and an independent eligible-basis catalog, then selects controlled revocations only after the stream is sealed. This matters because the challenge universe is **not limited to dependencies the manifest declared**; an omitted material dependency can become a real miss.
+`experiments/decision-recall-prospective-001/PROTOCOL.md` freezes the empirical bar. Each accepted software decision gets a small receiver-confirmed dependency manifest, while separate conventional records and role-separated gold preserve the possibility that the manifest omitted something material.
 
-Gold is produced from a prediction- and manifest-blind packet containing the conventional pre-trigger record plus the new revocation event. Full History and Flat Search are **human baselines, not the oracle**: their blinded reviewers return `REOPEN` / `SURVIVE` / `ESCALATE` outcomes that are scored against separate independent gold. The conformance scorer can therefore discover that Decision Recall caught a warranted reopening that a Full History reviewer missed.
+The first empirical stream is **Cohort 001: this repository's own natural development stream**. It admits only decisions that would have happened anyway, classifies every substantive post-activation commit as observed or explicitly excluded, and restarts if a frozen instrument file changes during accumulation. No prospective product promotion has been earned.
 
-The frozen protocol also requires the promotion policy to predate the first accepted decision, rejects duplicate/tampered score artifacts, requires manifest-blind catalog custody and role separation, binds baseline-review outcomes to exact review packets, separates baseline reviewers from the gold adjudicator, and requires mixed REOPEN/SURVIVE controlled events so an all-positive corpus cannot pass.
+Standing Recall does not replace this prospective line. SRE-001 and SRE-002 test what happens **after represented support changes standing**; Decision Recall tests whether the representation can be captured prospectively and cheaply enough to deserve reliance.
 
-The checked `artifacts/decision-recall-prospective/conformance/` corpus is intentionally hostile: it contains an omitted dependency that Decision Recall misses, proving the evaluator can expose the central failure mode. The eligible-basis challenge universe now carries explicit custody and must be enumerated from conventional records by a manifest-blind role separate from the manifest capture actors. System-specific review workloads are also content-addressed, so measured review time can be bound to exactly what Full History, Flat Search, or Decision Recall surfaced. A stdlib-only verifier runs under `python -I` and independently reproduces the fixture's content IDs, dispositions, blind packets, baseline-review outcomes, review packets, timing bindings, and score arithmetic without importing the product package. Its status is **`MECHANICS_ONLY_NOT_PRODUCT_EVIDENCE`**. No prospective product promotion has been earned.
-
-The frozen first-run bar is at least 30 real accepted decisions and 10 post-seal controlled revocations; policy frozen before capture; zero additional missed warranted reopenings versus the actual blinded Full History reviewer outcomes; at least 40% lower review load than Full History; at least 10% lower review load than Flat Search; median human capture under 60 seconds; no silent survival or forced reopening of gold-ambiguous cases; manifest-blind role-separated basis-catalog custody; bound human baseline outcomes; role-separated blinded gold; reproducible post-seal selection; independently replayed score bundles; and positive instrumented conditional attention savings on at least three revocations. Controlled revocations can estimate conditional attention payback, not natural revocation frequency or annual ROI.
-
-The first empirical stream is now designated as **Cohort 001: this repository's own natural development stream**. The install commit does not count. The cohort starts at zero after installation, admits only decisions that would have happened anyway, classifies every substantive post-activation commit as observed or explicitly excluded, and restarts if any frozen instrument file changes during accumulation. No empirical promotion is claimed until the existing gate fires. See [`experiments/decision-recall-prospective-001/cohort-001/COHORT.md`](experiments/decision-recall-prospective-001/cohort-001/COHORT.md).
+See [`experiments/decision-recall-prospective-001/cohort-001/COHORT.md`](experiments/decision-recall-prospective-001/cohort-001/COHORT.md).
 
 ## Trust boundary
 
@@ -114,40 +127,27 @@ python scripts/verify_plos_correction_impact.py \
   --artifact artifacts/plos-correction-impact
 ```
 
-Rebuild and independently verify the 0.5.2 temporal replication:
+Verify the permanent Standing Recall evidence ledger:
 
 ```bash
-PYTHONPATH=src python scripts/build_temporal_selectivity_replication_corpus.py \
-  --output artifacts/evidence-recall-temporal/replication-001-selectivity
-
-python scripts/verify_temporal_selectivity_replication_corpus.py \
-  --artifact artifacts/evidence-recall-temporal/replication-001-selectivity \
-  --output artifacts/evidence-recall-temporal/replication-001-selectivity/independent-verification.json
-
-PYTHONPATH=src python -m openline_claim_graph temporal-benchmark-validate \
-  --pack artifacts/evidence-recall-temporal/replication-001-selectivity/pack.json \
-  --authority artifacts/evidence-recall-temporal/replication-001-selectivity/authority.json \
-  --future-seal artifacts/evidence-recall-temporal/replication-001-selectivity/future-seal.private.json \
-  --gold artifacts/evidence-recall-temporal/replication-001-selectivity/gold.private.json \
-  --predictions artifacts/evidence-recall-temporal/replication-001-selectivity/predictions.json \
-  --score artifacts/evidence-recall-temporal/replication-001-selectivity/score.json
+python scripts/verify_standing_recall_evidence.py
 ```
-
-The historical protocol withholds the future record and gold from the prediction-visible pack. Because the cases are retrospective reconstructions, this establishes artifact separation and reproducibility; it does not prove the human constructor was psychologically blind to later history.
 
 ## Repository map
 
 - `src/openline_claim_graph/` — deterministic graph, verification, impact, and evaluation code.
 - `tests/` — unit, adversarial, custody, and regression tests.
 - `artifacts/` — checked outputs and independent-verification records.
+- `artifacts/standing-recall/` — frozen SRE-001/SRE-002 CI evidence ledger.
 - `experiments/` — benchmark protocols and historical evaluation material, including the frozen prospective Decision Recall protocol.
 - `docs/EVIDENCE_RECALL.md` — current Evidence Recall mechanism contract.
+- `docs/STANDING_RECALL.md` — experimental Standing Recall result and boundary.
 - `HUMAN_CONTRACT.md` — canonical human-facing projection contract.
 - `CLAIM_BOUNDARY.md` / `CLAIM_BOUNDARY_TEMPORAL.md` — explicit non-claims and evaluation boundaries.
 - `ASSESSMENT.md` — research assessment and older experimental context.
 - `CHANGELOG.md` — development history.
-- `RELEASE.md` — current release disposition.
-- `MANIFEST.json` / `EVIDENCE.json` — release closure and verification receipts.
+- `RELEASE.md` — current stable release disposition.
+- `MANIFEST.json` / `EVIDENCE.json` — stable-release closure and verification receipts.
 
 The README intentionally describes the current public surface rather than reproducing the full development archaeology. Older benchmark history and failed or below-threshold runs remain preserved in the assessment, changelog, experiment protocols, and checked artifacts.
 
@@ -159,11 +159,13 @@ See [`docs/FRAME_LEDGER.md`](docs/FRAME_LEDGER.md) and its checked artifact unde
 
 ## Scope
 
-OpenLine Claim Graph does not claim to determine truth, discover every hidden dependency, infer intent, replace domain review, or establish broad generality from 14 historical targets.
+OpenLine Claim Graph does not claim to determine truth, discover every hidden dependency, infer intent, replace domain review, or establish broad generality from the existing historical and Standing Recall corpora.
 
-The current supported claim is smaller: **in this frozen historical replication, typed receiver-owned dependency authority preserved all observed warranted reopenings while reducing review load relative to reviewing every reachable target.**
+The current stable product claim remains the 0.5.2 Evidence Recall result: **in its frozen historical replication, typed receiver-owned dependency authority preserved all observed warranted reopenings while reducing review load relative to reviewing every reachable target.**
 
-That claim is falsifiable. A broader corpus with new evidence families, prospective construction, or materially different graph structure can break it.
+The additional experimental Standing Recall result is narrower: **on two frozen evaluations, a strong property-aware repair baseline matched OpenLine on scored correctness, while OpenLine reduced the amount of previously valid state that had to be reopened.**
+
+Both claims are falsifiable. A broader corpus, prospective construction, third-party implementation, or materially different graph structure can break them.
 
 ## License
 

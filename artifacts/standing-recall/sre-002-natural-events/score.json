@@ -1,0 +1,594 @@
+{
+  "claim_boundary": [
+    "Gold is the frozen public-record disposition mapping, not the OpenLine evaluator's output.",
+    "DGRR and MemoRepair comparisons are contract abstractions, not author implementations.",
+    "The dependency/facet representation was authored retrospectively and can be incomplete or mistaken."
+  ],
+  "corpus_sha256": "a378c4da316fd5c00b7de7587d96ce11fa5578dc292c899a403c8e8ff558cb99",
+  "experiment": "standing-recall-natural-events-002",
+  "fixture_sha256": "3be193b818bf9c7cce96ce7d0cc71d597de6e0bb0c2896e75b8937b43449440b",
+  "policy_authority": "NONE",
+  "schema": "openline.standing-recall-natural-score.v1",
+  "systems": [
+    {
+      "affected_decision_recall": 0.9166666666666666,
+      "analysis_surface": 24,
+      "events": 8,
+      "fn": 1,
+      "fp": 1,
+      "per_episode": [
+        {
+          "event_id": "correct-bmj-hemkens-2018",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D1"
+          ],
+          "gold_survive": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D3"
+          ],
+          "tn": 1,
+          "tp": 1
+        },
+        {
+          "event_id": "correct-nejm-gm1-1991",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1"
+          ],
+          "gold_survive": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1"
+          ],
+          "replay": [
+            "D1"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "event_id": "revoke-diginotar-2011",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "gold_survive": [
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "event_id": "revoke-symantec-legacy-pki-2018",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1"
+          ],
+          "gold_survive": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1"
+          ],
+          "replay": [
+            "D1"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "event_id": "supersede-tls10-tls11-rfc8996",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "gold_survive": [
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "event_id": "supersede-nist-sha1-signature-generation",
+          "event_type": "SUPERSEDE",
+          "fn": 1,
+          "fp": 0,
+          "gold_reopen": [
+            "D1"
+          ],
+          "gold_survive": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [],
+          "replay": [],
+          "tn": 2,
+          "tp": 0
+        },
+        {
+          "event_id": "expire-dst-root-ca-x3-2021",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1"
+          ],
+          "gold_survive": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1"
+          ],
+          "replay": [
+            "D1"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "event_id": "expire-ericsson-o2-security-certificate-2018",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "gold_survive": [],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        }
+      ],
+      "replay_surface": 12,
+      "system": "DGRR_CONTRACT_NODE_SUPPORT_NATURAL_V1",
+      "targets": 24,
+      "tn": 11,
+      "tp": 11,
+      "unaffected_state_preservation": 0.9166666666666666
+    },
+    {
+      "affected_decision_recall": 1.0,
+      "analysis_surface": 24,
+      "events": 8,
+      "fn": 0,
+      "fp": 0,
+      "per_episode": [
+        {
+          "event_id": "correct-bmj-hemkens-2018",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1"
+          ],
+          "gold_survive": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "event_id": "correct-nejm-gm1-1991",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1"
+          ],
+          "gold_survive": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "event_id": "revoke-diginotar-2011",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "gold_survive": [
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "event_id": "revoke-symantec-legacy-pki-2018",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1"
+          ],
+          "gold_survive": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "event_id": "supersede-tls10-tls11-rfc8996",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "gold_survive": [
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "event_id": "supersede-nist-sha1-signature-generation",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1"
+          ],
+          "gold_survive": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "event_id": "expire-dst-root-ca-x3-2021",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1"
+          ],
+          "gold_survive": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "event_id": "expire-ericsson-o2-security-certificate-2018",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "gold_survive": [],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        }
+      ],
+      "replay_surface": 24,
+      "system": "MEMOREPAIR_CONTRACT_PROPERTY_VALIDATION_NATURAL_V1",
+      "targets": 24,
+      "tn": 12,
+      "tp": 12,
+      "unaffected_state_preservation": 1.0
+    },
+    {
+      "affected_decision_recall": 1.0,
+      "analysis_surface": 24,
+      "events": 8,
+      "fn": 0,
+      "fp": 0,
+      "per_episode": [
+        {
+          "event_id": "correct-bmj-hemkens-2018",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1"
+          ],
+          "gold_survive": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1"
+          ],
+          "replay": [
+            "D1"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "event_id": "correct-nejm-gm1-1991",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1"
+          ],
+          "gold_survive": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1"
+          ],
+          "replay": [
+            "D1"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "event_id": "revoke-diginotar-2011",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "gold_survive": [
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "event_id": "revoke-symantec-legacy-pki-2018",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1"
+          ],
+          "gold_survive": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1"
+          ],
+          "replay": [
+            "D1"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "event_id": "supersede-tls10-tls11-rfc8996",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2"
+          ],
+          "gold_survive": [
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1",
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2"
+          ],
+          "tn": 1,
+          "tp": 2
+        },
+        {
+          "event_id": "supersede-nist-sha1-signature-generation",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1"
+          ],
+          "gold_survive": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1"
+          ],
+          "replay": [
+            "D1"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "event_id": "expire-dst-root-ca-x3-2021",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1"
+          ],
+          "gold_survive": [
+            "D2",
+            "D3"
+          ],
+          "predicted_reopen": [
+            "D1"
+          ],
+          "replay": [
+            "D1"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "event_id": "expire-ericsson-o2-security-certificate-2018",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "gold_survive": [],
+          "predicted_reopen": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 0,
+          "tp": 3
+        }
+      ],
+      "replay_surface": 12,
+      "system": "OPENLINE_STANDING_PROPAGATION_NATURAL_V1",
+      "targets": 24,
+      "tn": 12,
+      "tp": 12,
+      "unaffected_state_preservation": 1.0
+    }
+  ]
+}

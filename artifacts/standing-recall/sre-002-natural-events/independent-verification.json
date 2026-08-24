@@ -1,0 +1,12 @@
+{
+  "corpus_sha256": "a378c4da316fd5c00b7de7587d96ce11fa5578dc292c899a403c8e8ff558cb99",
+  "experiment": "standing-recall-natural-events-002",
+  "fixture_sha256": "3be193b818bf9c7cce96ce7d0cc71d597de6e0bb0c2896e75b8937b43449440b",
+  "mismatch_count": 0,
+  "mismatches": [],
+  "policy_authority": "NONE",
+  "schema": "openline.standing-recall-natural-independent-verification.v1",
+  "score_sha256": "fe0dddec462f114b667a92c3f326818980bc59d0b789f2b5c36a18b82a71d8bd",
+  "verdict": "NATURAL_STANDING_SELECTIVITY",
+  "verified": true
+}

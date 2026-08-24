@@ -1,0 +1,11 @@
+{
+  "adaptation_sha256": "7ef735addae92b16b5098ee4b873061edfb29c7bf14bd597c9448c55e9d92c25",
+  "experiment": "standing-recall-external-lifecycle-001",
+  "mismatch_count": 0,
+  "mismatches": [],
+  "policy_authority": "NONE",
+  "schema": "openline.standing-recall-external-independent-verification.v1",
+  "source_file_sha256": "b38590fe4a36907f278fb3b540df948a25364fcdd7636c5101b4639ae4f75e7a",
+  "verdict": "EXTERNAL_STANDING_SEPARATION_ADAPTED_LONGMEMEVAL_V2",
+  "verified": true
+}

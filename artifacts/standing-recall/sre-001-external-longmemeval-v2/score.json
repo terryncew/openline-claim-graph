@@ -1,0 +1,2255 @@
+{
+  "adaptation_sha256": "7ef735addae92b16b5098ee4b873061edfb29c7bf14bd597c9448c55e9d92c25",
+  "claim_boundary": [
+    "The source records are external LongMemEval-V2 sample excerpts; lifecycle events are controlled synthetic injections.",
+    "DGRR and MemoRepair comparisons are paper-contract adaptations, not author implementations or reported benchmark numbers.",
+    "The MemoRepair contract baseline receives an exact property-aware validator and is intentionally strong."
+  ],
+  "experiment": "standing-recall-external-lifecycle-001",
+  "policy_authority": "NONE",
+  "schema": "openline.standing-recall-external-score.v1",
+  "systems": [
+    {
+      "affected_decision_recall": 1.0,
+      "analysis_surface": 120,
+      "episodes": 40,
+      "fn": 0,
+      "fp": 40,
+      "per_episode": [
+        {
+          "episode_id": "lmev2-1c29cf20-a0-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a0-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a0-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a0-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a1-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a1-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a1-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a1-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a0-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a0-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a0-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a0-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a1-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a1-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a1-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a1-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a0-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a0-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a0-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a0-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a1-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a1-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a1-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a1-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a0-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a0-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a0-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a0-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a1-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a1-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a1-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a1-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a0-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a0-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a0-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a0-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a1-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a1-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a1-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a1-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 1,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2",
+            "D3"
+          ],
+          "replay": [
+            "D2",
+            "D3"
+          ],
+          "tn": 2,
+          "tp": 1
+        }
+      ],
+      "replay_surface": 80,
+      "system": "DGRR_CONTRACT_NODE_SUPPORT_EXTERNAL_V1",
+      "tn": 80,
+      "tp": 40,
+      "unaffected_state_preservation": 0.6666666666666666
+    },
+    {
+      "affected_decision_recall": 1.0,
+      "analysis_surface": 120,
+      "episodes": 40,
+      "fn": 0,
+      "fp": 0,
+      "per_episode": [
+        {
+          "episode_id": "lmev2-1c29cf20-a0-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a0-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a0-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a0-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a1-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a1-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a1-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a1-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a0-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a0-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a0-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a0-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a1-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a1-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a1-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a1-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a0-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a0-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a0-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a0-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a1-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a1-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a1-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a1-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a0-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a0-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a0-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a0-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a1-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a1-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a1-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a1-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a0-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a0-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a0-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a0-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a1-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a1-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a1-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a1-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          "tn": 3,
+          "tp": 1
+        }
+      ],
+      "replay_surface": 120,
+      "system": "MEMOREPAIR_CONTRACT_PROPERTY_VALIDATION_EXTERNAL_V1",
+      "tn": 120,
+      "tp": 40,
+      "unaffected_state_preservation": 1.0
+    },
+    {
+      "affected_decision_recall": 1.0,
+      "analysis_surface": 120,
+      "episodes": 40,
+      "fn": 0,
+      "fp": 0,
+      "per_episode": [
+        {
+          "episode_id": "lmev2-1c29cf20-a0-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a0-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a0-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a0-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a1-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a1-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a1-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1c29cf20-a1-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a0-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a0-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a0-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a0-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a1-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a1-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a1-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-1f2793bd-a1-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a0-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a0-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a0-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a0-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a1-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a1-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a1-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-276f9dff-a1-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a0-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a0-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a0-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a0-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a1-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a1-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a1-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8a6653c8-a1-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a0-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a0-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a0-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a0-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a1-expire",
+          "event_type": "EXPIRE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a1-revoke",
+          "event_type": "REVOKE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a1-supersede",
+          "event_type": "SUPERSEDE",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        },
+        {
+          "episode_id": "lmev2-8b74ffaa-a1-correct",
+          "event_type": "CORRECT",
+          "fn": 0,
+          "fp": 0,
+          "gold_reopen": [
+            "D2"
+          ],
+          "predicted_reopen": [
+            "D2"
+          ],
+          "replay": [
+            "D2"
+          ],
+          "tn": 3,
+          "tp": 1
+        }
+      ],
+      "replay_surface": 40,
+      "system": "OPENLINE_STANDING_PROPAGATION_EXTERNAL_V1",
+      "tn": 120,
+      "tp": 40,
+      "unaffected_state_preservation": 1.0
+    }
+  ]
+}
