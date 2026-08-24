@@ -1,0 +1,9 @@
+{
+  "cohort_exclusion_id": "decision-recall-cohort-exclusion:sha256:4fac6489b59f218d73fb1c6e0e0174ae4e3d197c157cb9d93bb9a7a7d9043bdd",
+  "cohort_id": "decision-recall-cohort-001",
+  "detail": "SRE-001 adds an experiment-only standing-recall protocol, conformance fixture, verifier, and isolated CI workflow. It does not change the frozen Decision Recall instrument or accepted Decision Recall product state.",
+  "reason": "NO_ACCEPTED_STATE_CHANGE",
+  "recorded_at": "2026-08-24T19:02:00Z",
+  "schema": "openline.decision-recall-cohort-exclusion.v1",
+  "subject_change_set_sha256": "fb7b6071b219283e6730d30cb6077a8ac763348692d8adec7eb2d9e9d40a4541"
+}

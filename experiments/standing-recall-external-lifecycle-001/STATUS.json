@@ -1,0 +1,24 @@
+{
+  "claim_boundary": "Checked results are mechanics-only on a deterministic local fixture. No DGRR, MemoRepair, LongMemEval-V2, ToolBench, MemoryArena, or other external benchmark result is claimed.",
+  "conformance": {
+    "episodes": 64,
+    "event_distribution": {
+      "CORRECT": 16,
+      "EXPIRE": 16,
+      "REVOKE": 16,
+      "SUPERSEDE": 16
+    },
+    "fixture_sha256": "c2b010b115aa32dd011efdc232e85521a2c1732e53b515d3ec60185a8f7a7652",
+    "independent_verification_sha256": "44a4a65bca3b2351729acd2c00d49398f7840e93af064351706359cb39ebf7a9",
+    "independent_verified": true,
+    "openline_preservation": "1.0",
+    "openline_recall": "1.0",
+    "score_sha256": "b900b073c8a4638ec829597abf35c64f6f814dc124e89386266cf1544617a6ec"
+  },
+  "experiment": "standing-recall-external-lifecycle-001",
+  "external_benchmark_run": false,
+  "policy_authority": "NONE",
+  "production_semantics_changed": false,
+  "schema": "openline.standing-recall-external-lifecycle-status.v1",
+  "status": "FROZEN_PROTOCOL_CONFORMANCE_PASS_EXTERNAL_ADAPTATION_UNRUN"
+}

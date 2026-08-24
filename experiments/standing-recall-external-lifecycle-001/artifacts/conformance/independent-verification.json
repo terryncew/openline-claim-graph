@@ -1,0 +1,32 @@
+{
+  "claim_boundary": "Independent replay verifies only the checked conformance mechanics. It does not establish performance on DGRR, MemoRepair, LongMemEval-V2, ToolBench, MemoryArena, or any author-released benchmark.",
+  "errors": [],
+  "event_counts": {
+    "CORRECT": 16,
+    "EXPIRE": 16,
+    "REVOKE": 16,
+    "SUPERSEDE": 16
+  },
+  "mechanics_pressure_test_pass": true,
+  "policy_authority": "NONE",
+  "schema": "openline.standing-recall-external-lifecycle-independent-verification.v1",
+  "status": "MECHANICS_ONLY_EXTERNAL_BENCHMARK_UNRUN",
+  "systems": {
+    "DGRR_STYLE_NODE_SUPPORT_V1": {
+      "affected_decision_recall": 0.6666666666666666,
+      "replay_surface": 40,
+      "unaffected_state_preservation": 1.0
+    },
+    "MEMOREPAIR_STYLE_CASCADE_V1": {
+      "affected_decision_recall": 0.6666666666666666,
+      "replay_surface": 160,
+      "unaffected_state_preservation": 1.0
+    },
+    "OPENLINE_STANDING_PROPAGATION_V1": {
+      "affected_decision_recall": 1.0,
+      "replay_surface": 60,
+      "unaffected_state_preservation": 1.0
+    }
+  },
+  "verified": true
+}

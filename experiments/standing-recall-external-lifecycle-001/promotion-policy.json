@@ -1,0 +1,30 @@
+{
+  "experiment": "standing-recall-external-lifecycle-001",
+  "falsifier": "If a faithful unmodified DGRR or MemoRepair implementation matches the property-specific delayed-standing cases without adding receiver-owned property standing, no distinct OpenLine mechanism is promoted.",
+  "frozen_status": "EXTERNAL_ADAPTATION_UNRUN",
+  "minimum_external_episodes": 40,
+  "minimum_independent_support_cases": 10,
+  "minimum_per_event_type": 10,
+  "minimum_property_specific_downstream_cases": 10,
+  "policy_authority": "NONE",
+  "primary_metrics": [
+    "affected_decision_recall",
+    "unaffected_state_preservation",
+    "replay_surface"
+  ],
+  "promotion_requirements": {
+    "additional_false_reopenings_vs_strongest_baseline_maximum": 0,
+    "additional_missed_reopenings_vs_strongest_baseline_maximum": 0,
+    "independent_verification_mismatches_maximum": 0,
+    "openline_preservation_minimum": "0.95",
+    "openline_recall_minimum": "0.95",
+    "replay_surface_reduction_vs_best_accuracy_matching_baseline_minimum": "0.10"
+  },
+  "required_event_types": [
+    "EXPIRE",
+    "REVOKE",
+    "SUPERSEDE",
+    "CORRECT"
+  ],
+  "schema": "openline.standing-recall-external-lifecycle-promotion-policy.v1"
+}

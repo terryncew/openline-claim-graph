@@ -1,0 +1,64 @@
+name: SRE-001 Standing Recall External Lifecycle
+
+on:
+  push:
+    paths:
+      - "experiments/standing-recall-external-lifecycle-001/**"
+      - ".github/workflows/standing-recall-external-lifecycle-001.yml"
+  pull_request:
+    paths:
+      - "experiments/standing-recall-external-lifecycle-001/**"
+      - ".github/workflows/standing-recall-external-lifecycle-001.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  conformance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Unit and adversarial tests
+        run: |
+          python -m unittest discover \
+            -s experiments/standing-recall-external-lifecycle-001/tests \
+            -v
+
+      - name: Rebuild conformance fixture and score
+        run: |
+          mkdir -p "${{ runner.temp }}/sre001"
+          python experiments/standing-recall-external-lifecycle-001/scripts/build_fixture.py \
+            --output "${{ runner.temp }}/sre001/fixture.json"
+          python experiments/standing-recall-external-lifecycle-001/scripts/run_benchmark.py \
+            --fixture "${{ runner.temp }}/sre001/fixture.json" \
+            --output "${{ runner.temp }}/sre001/score.json"
+
+      - name: Independent replay
+        run: |
+          python -I experiments/standing-recall-external-lifecycle-001/scripts/verify_benchmark.py \
+            --fixture "${{ runner.temp }}/sre001/fixture.json" \
+            --score "${{ runner.temp }}/sre001/score.json" \
+            --output "${{ runner.temp }}/sre001/independent-verification.json"
+
+      - name: Enforce checked conformance closure
+        run: |
+          cmp "${{ runner.temp }}/sre001/fixture.json" \
+            experiments/standing-recall-external-lifecycle-001/artifacts/conformance/fixture.json
+          cmp "${{ runner.temp }}/sre001/score.json" \
+            experiments/standing-recall-external-lifecycle-001/artifacts/conformance/score.json
+          cmp "${{ runner.temp }}/sre001/independent-verification.json" \
+            experiments/standing-recall-external-lifecycle-001/artifacts/conformance/independent-verification.json
+          python experiments/standing-recall-external-lifecycle-001/scripts/verify_status.py
