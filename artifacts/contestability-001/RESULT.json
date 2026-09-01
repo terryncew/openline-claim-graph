@@ -1,0 +1,131 @@
+{
+  "arms": {
+    "alternate_profile": {
+      "decision_equal": true,
+      "neutral_semantics_equal": true,
+      "reopened_equal": true
+    },
+    "declared_effect_without_trigger": {
+      "decision": "NO_STANDING_CHANGE",
+      "reopened": [],
+      "stages": {
+        "authenticated_filing_trigger": {
+          "observed": false
+        },
+        "executor_acceptance": {
+          "observed": true
+        },
+        "foreign_application_claim": {
+          "observed": false
+        },
+        "issuer_declared_effect": {
+          "observed": true,
+          "value": "fence_after_execution"
+        },
+        "local_application": "NOT_APPLIED",
+        "receiver_acceptance": "REJECTED"
+      },
+      "state_unchanged": true
+    },
+    "filed_only": {
+      "reopened": [],
+      "stages": {
+        "authenticated_filing_trigger": {
+          "observed": true
+        },
+        "executor_acceptance": {
+          "observed": true
+        },
+        "foreign_application_claim": {
+          "observed": false
+        },
+        "issuer_declared_effect": {
+          "observed": true,
+          "value": "fence_after_execution"
+        },
+        "local_application": "NOT_APPLIED",
+        "receiver_acceptance": "NOT_EVALUATED"
+      },
+      "state_unchanged": true
+    },
+    "foreign_applied_but_locally_rejected": {
+      "decision": "NO_STANDING_CHANGE",
+      "reopened": [],
+      "stages": {
+        "authenticated_filing_trigger": {
+          "observed": true
+        },
+        "executor_acceptance": {
+          "observed": true
+        },
+        "foreign_application_claim": {
+          "observed": true
+        },
+        "issuer_declared_effect": {
+          "observed": true,
+          "value": "fence_after_execution"
+        },
+        "local_application": "NOT_APPLIED",
+        "receiver_acceptance": "REJECTED"
+      },
+      "state_unchanged": true
+    },
+    "valid_local_accept_apply": {
+      "action_history_preserved": true,
+      "application_id": "contestation-application:sha256:37bfb0b1c36709be57360526bf74fc2c8d614aad26fb5a01eb15c74836296a68",
+      "authorization_standing": "CONTESTED",
+      "decision": "ACCEPT_STANDING_CHANGE",
+      "decision_id": "contestation-standing-decision:sha256:ba16d05eb792ce89a610e9c700aae9716d7ebaae9d8d5f98c450eb15189c5361",
+      "event_id": "foreign-contestation-event:sha256:5439fbad5c0158582ea94b8b4ca763f22a355c57a9ce485dd141d8eba2a8d4b8",
+      "expected_reopen": [
+        "consequence-A-notice",
+        "consequence-A-settlement"
+      ],
+      "independent_consequence_preserved": true,
+      "reopened": [
+        "consequence-A-notice",
+        "consequence-A-settlement"
+      ],
+      "stages": {
+        "authenticated_filing_trigger": {
+          "observed": true
+        },
+        "executor_acceptance": {
+          "observed": true
+        },
+        "foreign_application_claim": {
+          "observed": false
+        },
+        "issuer_declared_effect": {
+          "observed": true,
+          "value": "fence_after_execution"
+        },
+        "local_application": "APPLIED",
+        "receiver_acceptance": "ACCEPTED"
+      }
+    }
+  },
+  "assertions": {
+    "action_history_preserved": true,
+    "adapter_profile_not_field_layout_hardcoded": true,
+    "declared_effect_does_not_self_apply": true,
+    "filing_alone_does_not_apply": true,
+    "filing_alone_does_not_reopen": true,
+    "foreign_application_claim_not_local_authority": true,
+    "local_application_is_distinct": true,
+    "receiver_acceptance_is_distinct": true,
+    "selective_reopen_exact": true,
+    "unrelated_consequence_preserved": true
+  },
+  "claim": "Foreign contestation evidence can cross into an OpenLine receiver without becoming authority: receiver policy separately decides standing and local application selectively reopens only dependent consequences.",
+  "claim_boundary": "The foreign cryptographic verifier is outside this experiment. The fixture is a diagnostic projection, not the draft wire encoding. PASS supports the receiver-side separation and selective-reopen mechanics only.",
+  "experiment": "CONTESTABILITY-001",
+  "production_core_files_changed": [],
+  "result_sha256": "460ae0c01766eb551543b1331a7c201dd16e7408012552f5d063a2f697dd4356",
+  "schema": "openline.contestability-001-result.v1",
+  "source": {
+    "draft": "draft-pinto-agent-authz-contestability-00",
+    "published": "2026-08-29"
+  },
+  "verdict": "PASS"
+}

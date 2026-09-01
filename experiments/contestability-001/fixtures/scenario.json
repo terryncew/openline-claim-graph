@@ -1,0 +1,73 @@
+{
+  "edges": [
+    {
+      "from": "auth-A",
+      "to": "action-A"
+    },
+    {
+      "from": "action-A",
+      "to": "consequence-A-settlement"
+    },
+    {
+      "from": "consequence-A-settlement",
+      "to": "consequence-A-notice"
+    },
+    {
+      "from": "auth-B",
+      "to": "action-B"
+    },
+    {
+      "from": "action-B",
+      "to": "consequence-B-benefit"
+    }
+  ],
+  "expected_reopen": [
+    "consequence-A-notice",
+    "consequence-A-settlement"
+  ],
+  "expected_unchanged": [
+    "action-A",
+    "auth-B",
+    "action-B",
+    "consequence-B-benefit"
+  ],
+  "nodes": [
+    {
+      "id": "auth-A",
+      "kind": "AUTHORIZATION",
+      "status": "VALID"
+    },
+    {
+      "id": "action-A",
+      "kind": "ACTION",
+      "status": "EXECUTED"
+    },
+    {
+      "id": "consequence-A-settlement",
+      "kind": "CONSEQUENCE",
+      "status": "CLOSED"
+    },
+    {
+      "id": "consequence-A-notice",
+      "kind": "CONSEQUENCE",
+      "status": "FINAL"
+    },
+    {
+      "id": "auth-B",
+      "kind": "AUTHORIZATION",
+      "status": "VALID"
+    },
+    {
+      "id": "action-B",
+      "kind": "ACTION",
+      "status": "EXECUTED"
+    },
+    {
+      "id": "consequence-B-benefit",
+      "kind": "CONSEQUENCE",
+      "status": "CLOSED"
+    }
+  ],
+  "scenario_id": "contestability-001-minimal",
+  "schema": "openline.contestability-scenario.v1"
+}

@@ -1,0 +1,9 @@
+{
+  "cohort_exclusion_id": "decision-recall-cohort-exclusion:sha256:b3a8afa9bb99bee81ff9e4acfa00c7e392491414c98ae925cdcb14a8728298bb",
+  "cohort_id": "decision-recall-cohort-001",
+  "detail": "CONTESTABILITY-001 adds an isolated foreign-contestation integration experiment and does not create or change an accepted Decision Recall Cohort 001 decision state.",
+  "reason": "NO_ACCEPTED_STATE_CHANGE",
+  "recorded_at": "2026-09-01T02:20:00Z",
+  "schema": "openline.decision-recall-cohort-exclusion.v1",
+  "subject_change_set_sha256": "44c41a0671ae86c9aa3b6535ef833b9ef639d3f20a3b9d4906de4dbc7bc34d57"
+}

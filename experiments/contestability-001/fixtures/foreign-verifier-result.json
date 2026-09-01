@@ -1,0 +1,35 @@
+{
+  "authorization": {
+    "id": "auth-A"
+  },
+  "contestability": {
+    "filer": {
+      "role": "AFFECTED_PARTY"
+    },
+    "forum": {
+      "id": "forum:appeals"
+    },
+    "standing_policy": "affected-party-v1",
+    "window_state": "OPEN"
+  },
+  "effect": {
+    "application_record": {
+      "valid": false
+    },
+    "authenticated_trigger": {
+      "valid": true
+    },
+    "executor_acceptance": {
+      "valid": true
+    },
+    "issuer_declared_policy": {
+      "mode": "fence_after_execution"
+    }
+  },
+  "schema": "foreign.contestability.verifier-result.example.v1",
+  "verification": {
+    "binding_valid": true,
+    "forum_acknowledged": true,
+    "signature_valid": true
+  }
+}

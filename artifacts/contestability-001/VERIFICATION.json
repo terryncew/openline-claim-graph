@@ -1,0 +1,8 @@
+{
+  "claim_boundary": "Recomputes the experiment from frozen local fixtures/profile/policy. It does not independently verify the IETF draft's COSE objects.",
+  "disposition": "ADMIT_MECHANICS_RESULT",
+  "expected_result_sha256": "460ae0c01766eb551543b1331a7c201dd16e7408012552f5d063a2f697dd4356",
+  "observed_result_sha256": "460ae0c01766eb551543b1331a7c201dd16e7408012552f5d063a2f697dd4356",
+  "schema": "openline.contestability-001-independent-verification.v1",
+  "valid": true
+}
