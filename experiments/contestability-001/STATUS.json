@@ -1,0 +1,14 @@
+{
+  "base_repo": "terryncew/openline-claim-graph",
+  "base_sha": "15b405580a5f8fe261dcca38cbcb11f169e671d0",
+  "claim_boundary": "Tests receiver-side foreign-evidence normalization, receiver-owned standing acceptance, and selective consequence reopen. Does not implement or certify the foreign draft's CBOR/COSE cryptographic verifier.",
+  "experiment": "CONTESTABILITY-001",
+  "external_substrate": {
+    "draft": "draft-pinto-agent-authz-contestability-00",
+    "published": "2026-08-29",
+    "status": "Internet-Draft / work in progress"
+  },
+  "production_core_files_changed": [],
+  "schema": "openline.contestability-001-status.v1",
+  "state": "IMPLEMENTED_LOCAL_MECHANICS_PENDING_GITHUB_CI"
+}

@@ -1,0 +1,23 @@
+{
+  "fields": {
+    "authorization_ref": "authorization.id",
+    "binding_valid": "verification.binding_valid",
+    "declared_effect": "effect.issuer_declared_policy.mode",
+    "executor_acceptance": "effect.executor_acceptance.valid",
+    "filer_role": "contestability.filer.role",
+    "filing_authenticated": "effect.authenticated_trigger.valid",
+    "foreign_application": "effect.application_record.valid",
+    "foreign_signature_valid": "verification.signature_valid",
+    "forum_acknowledged": "verification.forum_acknowledged",
+    "forum_ref": "contestability.forum.id",
+    "standing_policy_ref": "contestability.standing_policy",
+    "window_state": "contestability.window_state"
+  },
+  "profile_id": "ietf-draft-pinto-agent-authz-contestability-00/diagnostic-projection-v1",
+  "schema": "openline.foreign-contestation-adapter-profile.v1",
+  "source": {
+    "draft": "draft-pinto-agent-authz-contestability-00",
+    "published": "2026-08-29",
+    "url": "https://www.ietf.org/ietf-ftp/internet-drafts/draft-pinto-agent-authz-contestability-00.html"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "base_repo": "terryncew/openline-claim-graph",
+  "base_sha": "15b405580a5f8fe261dcca38cbcb11f169e671d0",
+  "branch": "feat/contestability-001",
+  "capability": "foreign contestation evidence -> receiver-owned standing decision -> selective reopen",
+  "claim_boundary": "No foreign artifact is self-authorizing. OpenLine locally decides standing and only a separate local application may reopen dependent consequences. Foreign cryptographic verification is delegated to the foreign verifier.",
+  "cohort_001": {
+    "classification": "NO_ACCEPTED_STATE_CHANGE",
+    "exclusion_reason": "experiment does not alter accepted Cohort 001 state"
+  },
+  "core_files_changed": [],
+  "external_substrate": {
+    "draft": "draft-pinto-agent-authz-contestability-00",
+    "published": "2026-08-29"
+  },
+  "handoff": "CONTESTABILITY-001",
+  "invariants": {
+    "adapter_profile_driven": true,
+    "declared_effect_auto_applies": false,
+    "filing_auto_revokes": false,
+    "foreign_application_auto_applies": false,
+    "local_application_separate": true,
+    "receiver_acceptance_separate": true,
+    "unrelated_consequences_reopen": false
+  },
+  "validation": {
+    "focused_tests": "9/9 PASS",
+    "full_repo_ci": "PENDING GitHub",
+    "independent_reproduction": "PASS",
+    "reference_result": "PASS"
+  }
+}

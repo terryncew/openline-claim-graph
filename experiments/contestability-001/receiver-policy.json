@@ -1,0 +1,68 @@
+{
+  "foreign_effect_fields_are_advisory": [
+    "declared_effect",
+    "executor_acceptance",
+    "foreign_application"
+  ],
+  "policy_id": "receiver-policy:contestability-001",
+  "reopen_from_statuses": [
+    "CLOSED",
+    "FINAL"
+  ],
+  "reopenable_kinds": [
+    "CONSEQUENCE"
+  ],
+  "requirements": [
+    {
+      "field": "foreign_signature_valid",
+      "op": "equals",
+      "value": true
+    },
+    {
+      "field": "binding_valid",
+      "op": "equals",
+      "value": true
+    },
+    {
+      "field": "forum_acknowledged",
+      "op": "equals",
+      "value": true
+    },
+    {
+      "field": "filing_authenticated",
+      "op": "equals",
+      "value": true
+    },
+    {
+      "field": "forum_ref",
+      "op": "in",
+      "value": [
+        "forum:appeals"
+      ]
+    },
+    {
+      "field": "standing_policy_ref",
+      "op": "in",
+      "value": [
+        "affected-party-v1"
+      ]
+    },
+    {
+      "field": "filer_role",
+      "op": "in",
+      "value": [
+        "AFFECTED_PARTY"
+      ]
+    },
+    {
+      "field": "window_state",
+      "op": "equals",
+      "value": "OPEN"
+    }
+  ],
+  "schema": "openline.contestation-receiver-policy.v1",
+  "transition": {
+    "from": "VALID",
+    "to": "CONTESTED"
+  }
+}
