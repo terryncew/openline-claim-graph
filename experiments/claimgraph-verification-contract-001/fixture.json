@@ -1,0 +1,185 @@
+{
+  "accepted_graph_anchor": {
+    "graph_state_root": "4486fb3f7333b9cc29003066be6aa4a0ee633e392529190527b21c96ef2f072c",
+    "receipt_path": "artifacts/plos-correction-impact/accepted.receipt.json"
+  },
+  "arms": [
+    {
+      "arm": "WITHIN_BUDGET_NO_RESULT",
+      "desired_target": "SURVIVE",
+      "evaluation_at": "2026-09-05T02:30:00Z",
+      "verification_result": null
+    },
+    {
+      "arm": "MISSED_DEADLINE_NO_RESULT",
+      "desired_target": "ESCALATE",
+      "evaluation_at": "2026-09-05T03:30:01Z",
+      "verification_result": null
+    },
+    {
+      "arm": "UNADMITTED_FRESH_FAILURE",
+      "desired_target": "ESCALATE",
+      "evaluation_at": "2026-09-05T02:30:00Z",
+      "verification_result": {
+        "admitted_at": "2026-09-05T02:20:05Z",
+        "contract_id": "verification-contract:planning-policy-registry:trd-non-mdd-cost-use",
+        "evidence_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+        "observed_at": "2026-09-05T02:20:00Z",
+        "observed_value": "WITHDRAWN",
+        "receiver_admitted": false,
+        "subject_id": "planning-policy-registry:trd-non-mdd-cost-use",
+        "verifier_id": "receiver:planning-policy-registry-verifier:v1"
+      }
+    },
+    {
+      "arm": "UNRECOGNIZED_VERIFIER_FAILURE",
+      "desired_target": "ESCALATE",
+      "evaluation_at": "2026-09-05T02:30:00Z",
+      "verification_result": {
+        "admitted_at": "2026-09-05T02:20:05Z",
+        "contract_id": "verification-contract:planning-policy-registry:trd-non-mdd-cost-use",
+        "evidence_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+        "observed_at": "2026-09-05T02:20:00Z",
+        "observed_value": "WITHDRAWN",
+        "receiver_admitted": true,
+        "subject_id": "planning-policy-registry:trd-non-mdd-cost-use",
+        "verifier_id": "foreign:untrusted-verifier:v1"
+      }
+    },
+    {
+      "arm": "STALE_ADMITTED_FAILURE",
+      "desired_target": "ESCALATE",
+      "evaluation_at": "2026-09-05T02:30:00Z",
+      "verification_result": {
+        "admitted_at": "2026-09-05T02:20:05Z",
+        "contract_id": "verification-contract:planning-policy-registry:trd-non-mdd-cost-use",
+        "evidence_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+        "observed_at": "2026-09-05T00:00:00Z",
+        "observed_value": "WITHDRAWN",
+        "receiver_admitted": true,
+        "subject_id": "planning-policy-registry:trd-non-mdd-cost-use",
+        "verifier_id": "receiver:planning-policy-registry-verifier:v1"
+      }
+    },
+    {
+      "arm": "FRESH_ADMITTED_PASS",
+      "desired_target": "SURVIVE",
+      "evaluation_at": "2026-09-05T02:30:00Z",
+      "verification_result": {
+        "admitted_at": "2026-09-05T02:20:05Z",
+        "contract_id": "verification-contract:planning-policy-registry:trd-non-mdd-cost-use",
+        "evidence_sha256": "4444444444444444444444444444444444444444444444444444444444444444",
+        "observed_at": "2026-09-05T02:20:00Z",
+        "observed_value": "ELIGIBLE",
+        "receiver_admitted": true,
+        "subject_id": "planning-policy-registry:trd-non-mdd-cost-use",
+        "verifier_id": "receiver:planning-policy-registry-verifier:v1"
+      }
+    },
+    {
+      "arm": "FRESH_ADMITTED_FAILURE",
+      "desired_target": "REOPEN",
+      "evaluation_at": "2026-09-05T02:30:00Z",
+      "verification_result": {
+        "admitted_at": "2026-09-05T02:20:05Z",
+        "contract_id": "verification-contract:planning-policy-registry:trd-non-mdd-cost-use",
+        "evidence_sha256": "5555555555555555555555555555555555555555555555555555555555555555",
+        "observed_at": "2026-09-05T02:20:00Z",
+        "observed_value": "WITHDRAWN",
+        "receiver_admitted": true,
+        "subject_id": "planning-policy-registry:trd-non-mdd-cost-use",
+        "verifier_id": "receiver:planning-policy-registry-verifier:v1"
+      }
+    }
+  ],
+  "decision_recall_blob_sha": "7c1ad6e23411364008a3abb41fa662e966880e89",
+  "decisions": [
+    {
+      "manifest": {
+        "accepted_at": "2026-09-05T02:00:00Z",
+        "alternative_support": [],
+        "assumptions": [],
+        "basis": [
+          {
+            "basis_id": "recorded:plos:trd-vs-non-mdd-adjusted-difference",
+            "kind": "RECORDED_EVIDENCE",
+            "role": "REQUIRED"
+          },
+          {
+            "basis_id": "verification-contract:planning-policy-registry:trd-non-mdd-cost-use",
+            "kind": "VERIFICATION_CONTRACT",
+            "role": "REQUIRED"
+          }
+        ],
+        "decision": "Use $3,675 as the adjusted TRD versus non-MDD cost difference in downstream planning.",
+        "decision_id": "claim:sha256:d14f3b5beeebd36bcc2e59b0860612455b6b018ec5bf52100d5ab3b0067d283c",
+        "invalidation_conditions": [
+          {
+            "condition_id": "loss-recorded-cost-basis",
+            "dependency_id": "recorded:plos:trd-vs-non-mdd-adjusted-difference",
+            "event_types": [
+              "LOSS_OF_STANDING"
+            ]
+          },
+          {
+            "condition_id": "verification-contract-failed",
+            "dependency_id": "verification-contract:planning-policy-registry:trd-non-mdd-cost-use",
+            "event_types": [
+              "LOSS_OF_STANDING"
+            ]
+          }
+        ],
+        "required_dependencies": [
+          "recorded:plos:trd-vs-non-mdd-adjusted-difference",
+          "verification-contract:planning-policy-registry:trd-non-mdd-cost-use"
+        ]
+      },
+      "role": "TARGET"
+    },
+    {
+      "manifest": {
+        "accepted_at": "2026-09-05T02:00:00Z",
+        "alternative_support": [],
+        "assumptions": [],
+        "basis": [
+          {
+            "basis_id": "recorded:plos:mdd-denominator",
+            "kind": "RECORDED_EVIDENCE",
+            "role": "REQUIRED"
+          }
+        ],
+        "decision": "Downstream rate calculations use 29,543 as the eligible MDD denominator.",
+        "decision_id": "claim:sha256:0056fca46714576870c52cae36ad84d394c6c0c3e93f4e03c3588158edacce53",
+        "invalidation_conditions": [
+          {
+            "condition_id": "loss-recorded-denominator",
+            "dependency_id": "recorded:plos:mdd-denominator",
+            "event_types": [
+              "LOSS_OF_STANDING"
+            ]
+          }
+        ],
+        "required_dependencies": [
+          "recorded:plos:mdd-denominator"
+        ]
+      },
+      "role": "UNRELATED_CONTROL"
+    }
+  ],
+  "experiment": "CLAIMGRAPH-VERIFICATION-CONTRACT-001",
+  "frozen_base_commit": "b238f6f1c0a9025cfdccc7367b3c256ab4d50792",
+  "schema": "openline.claimgraph-verification-contract-fixture.v1",
+  "verification_contract": {
+    "contract_id": "verification-contract:planning-policy-registry:trd-non-mdd-cost-use",
+    "current_external_state_embedded": false,
+    "declared_at_acceptance": true,
+    "dependency_id": "verification-contract:planning-policy-registry:trd-non-mdd-cost-use",
+    "freshness_seconds": 3600,
+    "materiality": "REQUIRED_FOR_CONTINUED_STANDING",
+    "predicate": "STATE_EQUALS",
+    "receiver_admission_required": true,
+    "recognized_verifier_id": "receiver:planning-policy-registry-verifier:v1",
+    "required_value": "ELIGIBLE",
+    "subject_id": "planning-policy-registry:trd-non-mdd-cost-use"
+  }
+}

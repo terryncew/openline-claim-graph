@@ -1,0 +1,9 @@
+{
+  "cohort_exclusion_id": "decision-recall-cohort-exclusion:sha256:828db9a0c57bc483d522df684a6578a180bbf922c2eb7a70fa928aa60adbc544",
+  "cohort_id": "decision-recall-cohort-001",
+  "detail": "CLAIMGRAPH-VERIFICATION-CONTRACT-001 is a bounded falsifier experiment and frozen receipt package. It adds no accepted Cohort 001 natural decision state and does not modify the frozen Decision Recall instrument or production semantics.",
+  "reason": "NO_ACCEPTED_STATE_CHANGE",
+  "recorded_at": "2026-09-05T02:52:00Z",
+  "schema": "openline.decision-recall-cohort-exclusion.v1",
+  "subject_change_set_sha256": "fdd0150e842b598050944805a3ad66ab3875e358eeda9ff8481dcef51342ced6"
+}
