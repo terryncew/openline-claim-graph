@@ -1,0 +1,63 @@
+{
+  "branch": "feat/claimgraph-unobserved-state-001",
+  "commit": "feat(claim-graph): add unobserved-state falsifier",
+  "decision_recall_blob_sha": "7c1ad6e23411364008a3abb41fa662e966880e89",
+  "experiment": "CLAIMGRAPH-UNOBSERVED-STATE-001",
+  "files": [
+    {
+      "bytes": 4788,
+      "path": "PROTOCOL.md",
+      "sha256": "0380ac22b7aef31a477bf1985d67192d26c2c7252ade5385bac9a37d6eccb6d9"
+    },
+    {
+      "bytes": 973,
+      "path": "README.md",
+      "sha256": "ba4738bd21662ceeadc3a9d714a521eb5fbbb3c1fb3c7bd506b5b9505bb01bd9"
+    },
+    {
+      "bytes": 1050,
+      "path": "SOURCES.md",
+      "sha256": "1dca5fbd0e057d29937a0f6ce65cc9f827b767508f4869a4bec03e6ca4c97074"
+    },
+    {
+      "bytes": 3060,
+      "path": "artifacts/RESULT.json",
+      "sha256": "997d07b1a6a7a12855310456b20bd0697f9c79fdb9c9ace075e233920a380f6c"
+    },
+    {
+      "bytes": 78,
+      "path": "artifacts/RESULT.sha256",
+      "sha256": "5859c8951f2e3522b74135d808818cceedcb2bec560f28cc1693d8b10d88ea87"
+    },
+    {
+      "bytes": 664,
+      "path": "artifacts/VERIFICATION.json",
+      "sha256": "5a9086c08331d5b2ad8faf0c3fc6fd6ecbde470d09f213a5a4b12b0ad2f2b5f9"
+    },
+    {
+      "bytes": 2466,
+      "path": "fixture.json",
+      "sha256": "4d12941595b0bbaa1812745f2253089f01203a7f81b4dd99308eb1c12e6be3af"
+    },
+    {
+      "bytes": 6732,
+      "path": "scripts/run_experiment.py",
+      "sha256": "b0b804f6416b914983cb763fd166c0125f93051d189aa36df0d7e473c70fe023"
+    },
+    {
+      "bytes": 2502,
+      "path": "scripts/verify_result.py",
+      "sha256": "8a5043e13a2f2a8f85198ada58ff3bf2f3be57a7ec518cbdb7138c47a142a539"
+    },
+    {
+      "bytes": 1785,
+      "path": "tests/test_claimgraph_unobserved_state_001.py",
+      "sha256": "fc3134682537568d3d0ef5dd825376071c8ed39344d35dc31813f8bf68862172"
+    }
+  ],
+  "frozen_base_commit": "e5b272bb048bd6b224eb430ebd9931713698cc13",
+  "manifest_self_hash_excluded": true,
+  "pr_title": "feat(claim-graph): add unobserved-state falsifier",
+  "production_files_modified": [],
+  "schema": "openline.mobile-root-ready-manifest.v1"
+}

@@ -1,0 +1,16 @@
+{
+  "checks": {
+    "fresh_verification_still_survives": true,
+    "manifests_unchanged": true,
+    "no_post_outcome_dependency_added": true,
+    "production_semantics_unchanged": true,
+    "result_reproduces": true,
+    "unrelated_control_never_reopened": true,
+    "verdict_is_falsifier": true
+  },
+  "experiment": "CLAIMGRAPH-UNOBSERVED-STATE-001",
+  "meaning": "PASS means the frozen falsifier result reproduced exactly; it does not mean the tested standing model passed the falsifier.",
+  "pass": true,
+  "result_sha256": "997d07b1a6a7a12855310456b20bd0697f9c79fdb9c9ace075e233920a380f6c",
+  "schema": "openline.claimgraph-unobserved-state-verification.v1"
+}

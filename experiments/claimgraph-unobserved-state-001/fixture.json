@@ -1,0 +1,73 @@
+{
+  "accepted_graph_anchor": {
+    "graph_state_root": "4486fb3f7333b9cc29003066be6aa4a0ee633e392529190527b21c96ef2f072c",
+    "receipt_path": "artifacts/plos-correction-impact/accepted.receipt.json"
+  },
+  "decision_recall_blob_sha": "7c1ad6e23411364008a3abb41fa662e966880e89",
+  "decisions": [
+    {
+      "manifest": {
+        "alternative_support": [],
+        "assumptions": [],
+        "basis": [
+          {
+            "basis_id": "recorded:plos:trd-vs-non-mdd-adjusted-difference",
+            "role": "REQUIRED"
+          }
+        ],
+        "decision": "Use $3,675 as the adjusted TRD versus non-MDD cost difference in downstream planning.",
+        "decision_id": "claim:sha256:d14f3b5beeebd36bcc2e59b0860612455b6b018ec5bf52100d5ab3b0067d283c",
+        "invalidation_conditions": [
+          {
+            "condition_id": "loss-recorded-cost-basis",
+            "dependency_id": "recorded:plos:trd-vs-non-mdd-adjusted-difference",
+            "event_types": [
+              "LOSS_OF_STANDING"
+            ]
+          }
+        ],
+        "required_dependencies": [
+          "recorded:plos:trd-vs-non-mdd-adjusted-difference"
+        ]
+      },
+      "role": "TARGET"
+    },
+    {
+      "manifest": {
+        "alternative_support": [],
+        "assumptions": [],
+        "basis": [
+          {
+            "basis_id": "recorded:plos:mdd-denominator",
+            "role": "REQUIRED"
+          }
+        ],
+        "decision": "Downstream rate calculations use 29,543 as the eligible MDD denominator.",
+        "decision_id": "claim:sha256:0056fca46714576870c52cae36ad84d394c6c0c3e93f4e03c3588158edacce53",
+        "invalidation_conditions": [
+          {
+            "condition_id": "loss-recorded-denominator",
+            "dependency_id": "recorded:plos:mdd-denominator",
+            "event_types": [
+              "LOSS_OF_STANDING"
+            ]
+          }
+        ],
+        "required_dependencies": [
+          "recorded:plos:mdd-denominator"
+        ]
+      },
+      "role": "UNRELATED_CONTROL"
+    }
+  ],
+  "experiment": "CLAIMGRAPH-UNOBSERVED-STATE-001",
+  "external_state": {
+    "after": "WITHDRAWN",
+    "basis_id": "external-state:planning-policy-registry:trd-non-mdd-cost-use",
+    "before": "ELIGIBLE",
+    "materiality": "REQUIRED_FOR_CONTINUED_STANDING",
+    "represented_in_frozen_manifest": false
+  },
+  "frozen_base_commit": "e5b272bb048bd6b224eb430ebd9931713698cc13",
+  "schema": "openline.claimgraph-unobserved-state-fixture.v1"
+}
