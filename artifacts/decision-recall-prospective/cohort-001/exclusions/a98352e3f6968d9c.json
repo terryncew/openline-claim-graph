@@ -1,0 +1,9 @@
+{
+  "cohort_exclusion_id": "decision-recall-cohort-exclusion:sha256:a98352e3f6968d9ce3772ac9fa82947378af7bbc19b4bcf05849f4f54474db5e",
+  "cohort_id": "decision-recall-cohort-001",
+  "detail": "VERIFICATION-CONTRACT-RUNTIME-001 adds the earned verification-contract runtime API, hostile tests, and an integration receipt. It does not admit a natural Cohort 001 decision observation and leaves the frozen Decision Recall instrument byte-identical.",
+  "reason": "NO_ACCEPTED_STATE_CHANGE",
+  "recorded_at": "2026-09-05T03:02:00Z",
+  "schema": "openline.decision-recall-cohort-exclusion.v1",
+  "subject_change_set_sha256": "150e6730f2e73b9bc8c98e034766597360d3656cb22ead1116c9a6d1e7793e39"
+}

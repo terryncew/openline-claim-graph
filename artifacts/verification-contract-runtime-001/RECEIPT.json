@@ -1,0 +1,47 @@
+{
+  "earned_from": {
+    "experiment": "CLAIMGRAPH-VERIFICATION-CONTRACT-001",
+    "result_sha256": "4eabc27b7a669113b8cfd1b0d70a075b34a025aef187e0bdbee04091286ab99b",
+    "verdict": "CLAIMGRAPH_VERIFICATION_CONTRACT_PASS"
+  },
+  "existing_production_files_modified": [],
+  "frozen_base_commit": "09f559468a1c776f05ab0267943d4c9426bcf360",
+  "frozen_decision_recall": {
+    "git_blob_sha": "7c1ad6e23411364008a3abb41fa662e966880e89",
+    "modified": false,
+    "path": "src/openline_claim_graph/decision_recall.py",
+    "sha256": "ceee646667b687f0cb5089fedd3312e5fc60dc15b6a83a1a2d298132ba3b6c74"
+  },
+  "integration_id": "VERIFICATION-CONTRACT-RUNTIME-001",
+  "local_verification": {
+    "execution_basis": "new runtime module plus current canonical behavior and current Decision Recall disposition logic reconstructed locally; GitHub CI exercises the actual repository package",
+    "module_sha256": "114279a6b0a3c295db44f72236e193f73559ccc60217841959bc7a052d94c73c",
+    "test_framework": "unittest",
+    "test_sha256": "847f7c8c82919bcb9e0889aef8daedbd1b24cefab764b5fec248b08e10d6bd33",
+    "tests_passed": 13,
+    "tests_run": 13
+  },
+  "production_files_added": [
+    "src/openline_claim_graph/verification_contract.py"
+  ],
+  "runtime_boundary": {
+    "discovers_hidden_dependencies": false,
+    "does_not_emit": [
+      "REOPEN",
+      "COMMIT",
+      "DENY"
+    ],
+    "emits": [
+      "SURVIVE",
+      "ESCALATE",
+      "LOSS_OF_STANDING event"
+    ],
+    "polls_external_systems": false,
+    "receiver_admission_is_separate_artifact": true,
+    "result_can_self_authorize": false
+  },
+  "schema": "openline.verification-contract-runtime-integration-receipt.v1",
+  "tests_added": [
+    "tests/test_verification_contract.py"
+  ]
+}
