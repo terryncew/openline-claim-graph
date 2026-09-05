@@ -1,0 +1,83 @@
+{
+  "accepted_graph_anchor": {
+    "graph_state_root": "4486fb3f7333b9cc29003066be6aa4a0ee633e392529190527b21c96ef2f072c",
+    "receipt_path": "artifacts/plos-correction-impact/accepted.receipt.json"
+  },
+  "arms": [
+    {
+      "arm": "GRAPH_ONLY",
+      "control": {
+        "disposition": "SURVIVE",
+        "reason": "no observed event affects the unrelated control",
+        "witness": []
+      },
+      "desired_target": "AFFECTED_UNRESOLVED",
+      "target": {
+        "disposition": "SURVIVE",
+        "reason": "external state is unobserved and absent from the frozen dependency record",
+        "witness": []
+      },
+      "target_hit": false,
+      "unrelated_preserved": true
+    },
+    {
+      "arm": "GRAPH_PLUS_DECLARED_REPLAY_STATE",
+      "control": {
+        "disposition": "SURVIVE",
+        "reason": "revoked basis is absent from the accepted dependency record",
+        "witness": []
+      },
+      "desired_target": "ESCALATE",
+      "target": {
+        "disposition": "SURVIVE",
+        "reason": "revoked basis is absent from the accepted dependency record",
+        "witness": []
+      },
+      "target_hit": false,
+      "unrelated_preserved": true
+    },
+    {
+      "arm": "GRAPH_PLUS_FRESH_VERIFICATION",
+      "control": {
+        "disposition": "SURVIVE",
+        "reason": "revoked basis is absent from the accepted dependency record",
+        "witness": []
+      },
+      "desired_target": "REOPEN",
+      "target": {
+        "disposition": "SURVIVE",
+        "reason": "revoked basis is absent from the accepted dependency record",
+        "witness": []
+      },
+      "target_hit": false,
+      "unrelated_preserved": true
+    }
+  ],
+  "claim_boundary": [
+    "This result tests current Decision Recall behavior when materially relevant external state was absent from the frozen accepted dependency record.",
+    "It does not claim automatic discovery of hidden dependencies or authority for arbitrary verifier output.",
+    "A falsifier trigger earns a contract-model gap, not a propagation patch."
+  ],
+  "decision_recall_blob_sha": "7c1ad6e23411364008a3abb41fa662e966880e89",
+  "earned_next_primitive": "PROSPECTIVE_VERIFICATION_DEPENDENCY_OR_REPLAY_CONTRACT",
+  "experiment": "CLAIMGRAPH-UNOBSERVED-STATE-001",
+  "external_state": {
+    "after": "WITHDRAWN",
+    "basis_id": "external-state:planning-policy-registry:trd-non-mdd-cost-use",
+    "before": "ELIGIBLE",
+    "materiality": "REQUIRED_FOR_CONTINUED_STANDING",
+    "represented_in_frozen_manifest": false
+  },
+  "fixture_sha256": "ecb31a21b9b5ce7286d012872eb38c8643a3f809f9f5ae1b685a6f0c742f1aca",
+  "frozen_base_commit": "e5b272bb048bd6b224eb430ebd9931713698cc13",
+  "metrics": {
+    "declared_replay_unresolved_recall": 0.0,
+    "fresh_verification_reopen_recall": 0.0,
+    "frozen_manifests_unchanged": true,
+    "post_outcome_dependency_edges_added": 0,
+    "unrelated_state_preservation": 1.0
+  },
+  "production_semantics_changed": false,
+  "schema": "openline.claimgraph-unobserved-state-result.v1",
+  "verdict": "CLAIMGRAPH_UNOBSERVED_STATE_FALSIFIED"
+}
