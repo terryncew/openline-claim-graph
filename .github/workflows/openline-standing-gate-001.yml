@@ -1,0 +1,75 @@
+name: OPENLINE-STANDING-GATE-001 — standing to consequence
+
+on:
+  pull_request:
+    paths:
+      - "experiments/openline-standing-gate-001/**"
+      - ".github/workflows/openline-standing-gate-001.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  standing-to-consequence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check out frozen Receipt Gate
+        env:
+          RECEIPT_GATE_SHA: 3ae2918d59125e13cf8f58147e482ebb940b6da6
+        run: |
+          GATE_DIR="$RUNNER_TEMP/openline-receipt-gate"
+          git clone --quiet https://github.com/terryncew/openline-receipt-gate.git "$GATE_DIR"
+          git -C "$GATE_DIR" checkout --quiet --detach "$RECEIPT_GATE_SHA"
+          test "$(git -C "$GATE_DIR" rev-parse HEAD)" = "$RECEIPT_GATE_SHA"
+
+      - name: Install frozen components
+        run: |
+          python -m pip install -e .
+          python -m pip install -e "$RUNNER_TEMP/openline-receipt-gate"
+
+      - name: Initialize evidence directory
+        run: |
+          mkdir -p "$RUNNER_TEMP/openline-standing-gate-001"
+          printf '%s\n' \
+            '{"schema":"openline.openline-standing-gate-001.workflow-start.v1","status":"STARTED"}' \
+            > "$RUNNER_TEMP/openline-standing-gate-001/workflow-start.json"
+
+      - name: Run frozen standing-to-consequence falsifier
+        run: |
+          python experiments/openline-standing-gate-001/run.py \
+            --repo "$GITHUB_WORKSPACE" \
+            --receipt-gate-repo "$RUNNER_TEMP/openline-receipt-gate" \
+            --out "$RUNNER_TEMP/openline-standing-gate-001"
+
+      - name: Show scientific verdict
+        if: success()
+        run: |
+          cat "$RUNNER_TEMP/openline-standing-gate-001/OPENLINE_STANDING_GATE_001_RESULT.json"
+          cat "$RUNNER_TEMP/openline-standing-gate-001/OPENLINE_STANDING_GATE_001_RESULT.sha256"
+
+      - name: Show infrastructure failure
+        if: failure()
+        run: |
+          test -f "$RUNNER_TEMP/openline-standing-gate-001/OPENLINE_STANDING_GATE_001_INFRA_FAILURE.json" \
+            && cat "$RUNNER_TEMP/openline-standing-gate-001/OPENLINE_STANDING_GATE_001_INFRA_FAILURE.json" \
+            || true
+
+      - name: Freeze OPENLINE-STANDING-GATE-001 evidence
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: openline-standing-gate-001
+          path: ${{ runner.temp }}/openline-standing-gate-001/
+          if-no-files-found: error
+          retention-days: 30
