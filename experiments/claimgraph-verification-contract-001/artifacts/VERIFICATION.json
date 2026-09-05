@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "fresh_admitted_failure_reopens": true,
+    "fresh_admitted_pass_survives": true,
+    "manifests_unchanged": true,
+    "no_post_outcome_dependency_added": true,
+    "overdue_missing_verification_escalates": true,
+    "production_semantics_unchanged": true,
+    "prospective_contract_present": true,
+    "result_reproduces": true,
+    "stale_result_does_not_reopen": true,
+    "unadmitted_result_does_not_reopen": true,
+    "unrecognized_verifier_does_not_reopen": true,
+    "unrelated_control_never_reopens": true,
+    "verdict_passed": true
+  },
+  "experiment": "CLAIMGRAPH-VERIFICATION-CONTRACT-001",
+  "meaning": "PASS means the frozen candidate primitive reproduced and survived every preregistered falsifier in this injected case.",
+  "pass": true,
+  "result_sha256": "4eabc27b7a669113b8cfd1b0d70a075b34a025aef187e0bdbee04091286ab99b",
+  "schema": "openline.claimgraph-verification-contract-verification.v1"
+}

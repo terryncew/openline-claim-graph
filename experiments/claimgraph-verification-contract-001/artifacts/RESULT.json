@@ -1,0 +1,206 @@
+{
+  "accepted_graph_anchor": {
+    "graph_state_root": "4486fb3f7333b9cc29003066be6aa4a0ee633e392529190527b21c96ef2f072c",
+    "receipt_path": "artifacts/plos-correction-impact/accepted.receipt.json"
+  },
+  "arms": [
+    {
+      "arm": "WITHIN_BUDGET_NO_RESULT",
+      "control": {
+        "disposition": "SURVIVE",
+        "reason": "unrelated control has no verification contract event",
+        "witness": []
+      },
+      "desired_target": "SURVIVE",
+      "target": {
+        "disposition": "SURVIVE",
+        "gate": {
+          "event": null,
+          "gate_disposition": "SURVIVE",
+          "reason": "verification budget remains open; no polling result is required yet"
+        },
+        "reason": "verification budget remains open; no polling result is required yet",
+        "witness": []
+      },
+      "target_hit": true,
+      "unrelated_preserved": true
+    },
+    {
+      "arm": "MISSED_DEADLINE_NO_RESULT",
+      "control": {
+        "disposition": "SURVIVE",
+        "reason": "unrelated control has no verification contract event",
+        "witness": []
+      },
+      "desired_target": "ESCALATE",
+      "target": {
+        "disposition": "ESCALATE",
+        "gate": {
+          "event": null,
+          "gate_disposition": "ESCALATE",
+          "reason": "verification freshness budget expired without admissible evidence"
+        },
+        "reason": "verification freshness budget expired without admissible evidence",
+        "witness": [
+          "verification-contract:planning-policy-registry:trd-non-mdd-cost-use"
+        ]
+      },
+      "target_hit": true,
+      "unrelated_preserved": true
+    },
+    {
+      "arm": "UNADMITTED_FRESH_FAILURE",
+      "control": {
+        "disposition": "SURVIVE",
+        "reason": "unrelated control has no verification contract event",
+        "witness": []
+      },
+      "desired_target": "ESCALATE",
+      "target": {
+        "disposition": "ESCALATE",
+        "gate": {
+          "event": null,
+          "gate_disposition": "ESCALATE",
+          "reason": "verification was not admitted by the receiver"
+        },
+        "reason": "verification was not admitted by the receiver",
+        "witness": [
+          "verification-contract:planning-policy-registry:trd-non-mdd-cost-use"
+        ]
+      },
+      "target_hit": true,
+      "unrelated_preserved": true
+    },
+    {
+      "arm": "UNRECOGNIZED_VERIFIER_FAILURE",
+      "control": {
+        "disposition": "SURVIVE",
+        "reason": "unrelated control has no verification contract event",
+        "witness": []
+      },
+      "desired_target": "ESCALATE",
+      "target": {
+        "disposition": "ESCALATE",
+        "gate": {
+          "event": null,
+          "gate_disposition": "ESCALATE",
+          "reason": "verifier is not receiver-recognized"
+        },
+        "reason": "verifier is not receiver-recognized",
+        "witness": [
+          "verification-contract:planning-policy-registry:trd-non-mdd-cost-use"
+        ]
+      },
+      "target_hit": true,
+      "unrelated_preserved": true
+    },
+    {
+      "arm": "STALE_ADMITTED_FAILURE",
+      "control": {
+        "disposition": "SURVIVE",
+        "reason": "unrelated control has no verification contract event",
+        "witness": []
+      },
+      "desired_target": "ESCALATE",
+      "target": {
+        "disposition": "ESCALATE",
+        "gate": {
+          "event": null,
+          "gate_disposition": "ESCALATE",
+          "reason": "verification result is stale at evaluation boundary"
+        },
+        "reason": "verification result is stale at evaluation boundary",
+        "witness": [
+          "verification-contract:planning-policy-registry:trd-non-mdd-cost-use"
+        ]
+      },
+      "target_hit": true,
+      "unrelated_preserved": true
+    },
+    {
+      "arm": "FRESH_ADMITTED_PASS",
+      "control": {
+        "disposition": "SURVIVE",
+        "reason": "unrelated control has no verification contract event",
+        "witness": []
+      },
+      "desired_target": "SURVIVE",
+      "target": {
+        "disposition": "SURVIVE",
+        "gate": {
+          "event": null,
+          "gate_disposition": "SURVIVE",
+          "reason": "fresh receiver-admitted verification satisfies the prospective predicate"
+        },
+        "reason": "fresh receiver-admitted verification satisfies the prospective predicate",
+        "witness": []
+      },
+      "target_hit": true,
+      "unrelated_preserved": true
+    },
+    {
+      "arm": "FRESH_ADMITTED_FAILURE",
+      "control": {
+        "disposition": "SURVIVE",
+        "reason": "revoked basis is absent from the accepted dependency record",
+        "witness": []
+      },
+      "desired_target": "REOPEN",
+      "target": {
+        "disposition": "REOPEN",
+        "gate": {
+          "event": {
+            "basis_id": "verification-contract:planning-policy-registry:trd-non-mdd-cost-use",
+            "event_type": "LOSS_OF_STANDING"
+          },
+          "gate_disposition": "EVENT",
+          "reason": "fresh receiver-admitted verification falsifies the prospective predicate"
+        },
+        "reason": "every predeclared sufficient support path depends on the basis that lost standing",
+        "witness": [
+          "recorded:plos:trd-vs-non-mdd-adjusted-difference",
+          "verification-contract:planning-policy-registry:trd-non-mdd-cost-use"
+        ]
+      },
+      "target_hit": true,
+      "unrelated_preserved": true
+    }
+  ],
+  "claim_boundary": [
+    "The pass, if earned, is limited to a prospectively declared verification obligation plus receiver-owned admission in this injected case.",
+    "The live external state remains outside the accepted Claim Graph.",
+    "No result self-authorizes; stale or inadmissible evidence escalates rather than reopening.",
+    "The experiment does not establish hidden-dependency discovery, verifier truth, or polling infrastructure."
+  ],
+  "decision_recall_blob_sha": "7c1ad6e23411364008a3abb41fa662e966880e89",
+  "earned_next_step": "PRODUCTION_INTEGRATION_CANDIDATE",
+  "experiment": "CLAIMGRAPH-VERIFICATION-CONTRACT-001",
+  "fixture_sha256": "d1e8fe905f4393b300578160b472d95c63e7d7d77fe9338d4770a72a5615f7ec",
+  "frozen_base_commit": "b238f6f1c0a9025cfdccc7367b3c256ab4d50792",
+  "metrics": {
+    "fresh_failure_reopen_recall": 1.0,
+    "fresh_pass_survival": 1.0,
+    "frozen_manifests_unchanged": true,
+    "invalid_verification_reopen_rate": 0.0,
+    "overdue_escalation_recall": 1.0,
+    "post_outcome_dependency_edges_added": 0,
+    "prospective_contract_present_at_acceptance": true,
+    "unrelated_state_preservation": 1.0
+  },
+  "production_semantics_changed": false,
+  "schema": "openline.claimgraph-verification-contract-result.v1",
+  "verdict": "CLAIMGRAPH_VERIFICATION_CONTRACT_PASS",
+  "verification_contract": {
+    "contract_id": "verification-contract:planning-policy-registry:trd-non-mdd-cost-use",
+    "current_external_state_embedded": false,
+    "declared_at_acceptance": true,
+    "dependency_id": "verification-contract:planning-policy-registry:trd-non-mdd-cost-use",
+    "freshness_seconds": 3600,
+    "materiality": "REQUIRED_FOR_CONTINUED_STANDING",
+    "predicate": "STATE_EQUALS",
+    "receiver_admission_required": true,
+    "recognized_verifier_id": "receiver:planning-policy-registry-verifier:v1",
+    "required_value": "ELIGIBLE",
+    "subject_id": "planning-policy-registry:trd-non-mdd-cost-use"
+  }
+}
