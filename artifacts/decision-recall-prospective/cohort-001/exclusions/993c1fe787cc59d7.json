@@ -1,0 +1,9 @@
+{
+  "cohort_exclusion_id": "decision-recall-cohort-exclusion:sha256:993c1fe787cc59d7653753b6c29c4a4bca0e117a22925dfc1f8af3f1f9d038e8",
+  "cohort_id": "decision-recall-cohort-001",
+  "detail": "CLAIMGRAPH-UNOBSERVED-STATE-001 is a frozen falsifier experiment and receipt commit. It adds protocol, documentation, fixture, runner, tests, result, and verification files under experiments/claimgraph-unobserved-state-001 only. It does not modify the frozen Decision Recall instrument, production semantics, or an accepted Cohort 001 natural decision state.",
+  "reason": "NO_ACCEPTED_STATE_CHANGE",
+  "recorded_at": "2026-09-05T02:35:28Z",
+  "schema": "openline.decision-recall-cohort-exclusion.v1",
+  "subject_change_set_sha256": "7752134c0a353f779e674bc057848760200bb2af42998d4fc52e3badff02d63b"
+}
