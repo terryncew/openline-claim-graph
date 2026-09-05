@@ -1,0 +1,9 @@
+{
+  "cohort_exclusion_id": "decision-recall-cohort-exclusion:sha256:391b13fd73b9676b9e49957f1d42e50609e9a97902401de5b4e157137f8a1a93",
+  "cohort_id": "decision-recall-cohort-001",
+  "detail": "OPENLINE-STANDING-GATE-001 is a synthetic integration-harness proof added after Cohort 001 activation. It exercises existing Claim Graph / Decision Recall outputs against an existing Receipt Gate standing seam, but it does not create or change an accepted Cohort 001 decision state, does not modify the frozen Decision Recall instrument, and is not a natural consequential repository decision eligible for the prospective cohort.",
+  "reason": "NO_ACCEPTED_STATE_CHANGE",
+  "recorded_at": "2026-09-05T16:29:00Z",
+  "schema": "openline.decision-recall-cohort-exclusion.v1",
+  "subject_change_set_sha256": "2474db686988e9b97544adee615433adb9bb46e29bdd45645bfb6cd7b6d6502d"
+}

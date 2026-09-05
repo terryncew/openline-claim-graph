@@ -1,0 +1,84 @@
+{
+  "after_pass": "Freeze the receipt, stop inventing internal primitives for this seam, and move the full-stack demonstration into market learning.",
+  "claim_boundary": [
+    "This proves one local cross-repo consequence path, not distributed propagation.",
+    "Claim Graph still does not COMMIT or DENY execution.",
+    "Receipt Gate still does not interpret external state.",
+    "Decision Recall semantics are reused unchanged.",
+    "No Wallet continuity claim is part of this experiment.",
+    "No automatic undo of the first historically valid effect is claimed.",
+    "A pass earns the full-stack standing-to-next-consequence bridge, not general world-state control."
+  ],
+  "claim_graph_base_sha": "e868fcfc1a392ec9d1e38edbd3629aea3ec576d6",
+  "claim_graph_src_tree": "7187fb74c57764a9ef1a3aad385dda7b00e4d57a",
+  "experiment": "OPENLINE-STANDING-GATE-001",
+  "fail": {
+    "conditions": [
+      "Target exact retry still executes after valid REOPEN-derived standing loss.",
+      "Target effect occurs before or despite Receipt Gate block.",
+      "Unrelated control is incorrectly stopped by target standing loss.",
+      "Bridge requires a manual target revocation not causally bound to Claim Graph EVENT plus REOPEN."
+    ],
+    "verdict": "STANDING_LOSS_DOES_NOT_STOP_CONSEQUENCE"
+  },
+  "fixed_sequence": [
+    "Create a prospective Claim Graph verification contract for external state VALID.",
+    "Accept a target Decision Recall manifest bound prospectively to that contract.",
+    "Accept an unrelated control Decision Recall manifest with a different required basis.",
+    "Observe VALID external state; create and separately receiver-admit the fresh verification result.",
+    "Claim Graph evaluation must SURVIVE.",
+    "Receiver admits ACTIVE Receipt Gate standing for target exact action and control exact action.",
+    "Execute target consequence once through the real Receipt Gate authorize/runtime path.",
+    "Execute unrelated control once through the real Receipt Gate authorize/runtime path.",
+    "Change the external state to WITHDRAWN and create a fresh verification result plus receiver admission.",
+    "Claim Graph evaluation must emit EVENT with LOSS_OF_STANDING for the target dependency.",
+    "Existing Decision Recall must return target REOPEN and control SURVIVE.",
+    "Only then may the experiment bridge issue a signed successor INACTIVE/REVOKE standing projection for the exact target support/action.",
+    "Retry the exact same target action.",
+    "Retry the unrelated control action."
+  ],
+  "fixture_validity": [
+    "Claim Graph production src tree remains byte-identical to the frozen base.",
+    "Receipt Gate checkout is exactly the frozen SHA and critical standing/tool-adapter blobs.",
+    "Initial fresh VALID verification evaluates SURVIVE.",
+    "Target and control both execute before external standing loss.",
+    "Fresh WITHDRAWN verification produces EVENT/LOSS_OF_STANDING.",
+    "Existing Decision Recall returns REOPEN for target and SURVIVE for control.",
+    "No Receipt Gate successor standing projection is issued before the Claim Graph event and REOPEN.",
+    "Control standing head is never changed by the bridge."
+  ],
+  "ownership": {
+    "bridge": "Harness-only receiver adapter. It has no independent reopen policy. Only an exact Claim Graph EVENT/LOSS_OF_STANDING plus Decision Recall REOPEN may cause a successor INACTIVE/REVOKE standing projection for the same support/action.",
+    "claim_graph": "Prospectively binds the external-state dependency, evaluates fresh receiver-admitted verification, and emits LOSS_OF_STANDING.",
+    "decision_recall": "Maps the exact matching LOSS_OF_STANDING event to REOPEN for the dependent decision while an unrelated control remains SURVIVE.",
+    "receipt_gate": "Independently admits the signed successor standing projection and remains the final authority at the execution boundary."
+  },
+  "pass": {
+    "requirements": [
+      "Target exact retry is blocked before effect after bridge admission.",
+      "Target effect count does not increase on blocked retry.",
+      "Block is caused by revoked decision_standing evidence at Receipt Gate.",
+      "Unrelated control exact retry still executes.",
+      "No manual X-to-target revocation bypasses Claim Graph/Decision Recall provenance.",
+      "No product semantic file is modified by the experiment."
+    ],
+    "verdict": "STANDING_LOSS_STOPS_CONSEQUENCE"
+  },
+  "product_change_constraints": {
+    "airlock_changes_forbidden": true,
+    "bridge_is_experiment_only": true,
+    "claim_graph_src_changes_forbidden": true,
+    "decision_recall_changes_forbidden": true,
+    "receipt_gate_changes_forbidden": true,
+    "wallet_changes_forbidden": true
+  },
+  "question": "Can the already-existing Claim Graph verification contract and Decision Recall disposition cause the already-existing Receipt Gate standing seam to stop an unchanged consequential action before its effect when a prospective external dependency loses standing?",
+  "receipt_gate_critical_blobs": {
+    "olp_gate/standing.py": "bb73267c9a67e26ee40f6914bc75e7c8f97532ed",
+    "olp_gate/tool_adapter.py": "8fc200e8ad44e461b50cef90426ad141bdb8238b"
+  },
+  "receipt_gate_sha": "3ae2918d59125e13cf8f58147e482ebb940b6da6",
+  "schema": "openline.openline-standing-gate-001.prereg.v1",
+  "status": "FROZEN_BEFORE_RUN",
+  "title": "When evidence loses standing, the next consequence loses authority"
+}
