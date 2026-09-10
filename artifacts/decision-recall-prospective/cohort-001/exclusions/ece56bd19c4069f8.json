@@ -1,0 +1,9 @@
+{
+  "cohort_exclusion_id": "decision-recall-cohort-exclusion:sha256:ece56bd19c4069f8eeabe2f84d57b93008473c44bb9e86e0cb61b59d8c19b683",
+  "cohort_id": "decision-recall-cohort-001",
+  "detail": "PARSER-PROVENANCE-COLD-001 freeze commit adds only the terminal experiment result and receipt metadata. It does not change the frozen Decision Recall instrument or record an accepted Decision Recall product state.",
+  "reason": "NO_ACCEPTED_STATE_CHANGE",
+  "recorded_at": "2026-09-10T22:28:57Z",
+  "schema": "openline.decision-recall-cohort-exclusion.v1",
+  "subject_change_set_sha256": "0dda47f1c997ea7d436f981285f9ee3d7a1f47b3c613d750d6cfc8afd901c1e2"
+}

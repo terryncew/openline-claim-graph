@@ -1,0 +1,65 @@
+{
+  "claim_scope": "Controlled synthetic cold probe only. It confirms exact source/quote integrity, explicit same-slot conflict handling, and receipt binding on this fixture. It does not establish semantic entity resolution, general answer correctness, or prevention of same-name errors.",
+  "earned_claim": "Current OpenLine preserves exact source/quote integrity and refuses a silent same-slot collapse across represented parallel findings; an explicit conflicting selection is bound into lineage and receipt state.",
+  "experiment_id": "PARSER-PROVENANCE-COLD-001",
+  "matrix": {
+    "3.11": {
+      "artifact_id": 10175972867,
+      "artifact_zip_sha256": "c7bea95012582b430b4e59a0c972deb605889019dc42213f3bf828b6fe612b58",
+      "conclusion": "success",
+      "job_id": 103072432861,
+      "verdict": "PROVENANCE_BARRIER_HELD_IDENTITY_SEMANTICS_UNEARNED"
+    },
+    "3.12": {
+      "artifact_id": 10175968955,
+      "artifact_zip_sha256": "4f130224be1c5c2e0d7ad82b0c40602a4620bfdd6fd4dcdb6cfdf7b12189fdfd",
+      "conclusion": "success",
+      "job_id": 103072433099,
+      "verdict": "PROVENANCE_BARRIER_HELD_IDENTITY_SEMANTICS_UNEARNED"
+    },
+    "3.13": {
+      "artifact_id": 10175970763,
+      "artifact_zip_sha256": "69d90984f22cb76434c489f4c2452305c10e66f5fb71abfd1748d06a59650154",
+      "conclusion": "success",
+      "job_id": 103072433138,
+      "verdict": "PROVENANCE_BARRIER_HELD_IDENTITY_SEMANTICS_UNEARNED"
+    }
+  },
+  "merge_sha": "71041c1686cbe85e776aa410ee268b505e7e9108",
+  "negative_result": "Current OpenLine does not mechanically establish that a QUOTE-backed slot/value identity mapping is semantically correct. A receiver can explicitly select and sign the wrong same-name mapping.",
+  "nonclaims": [
+    "not a reproduction of PARSER model accuracy",
+    "not a semantic entity-resolution benchmark",
+    "not proof that OpenLine chooses the correct answer",
+    "not proof that provenance alone prevents same-name mistakes",
+    "not a runtime feature or production identity resolver"
+  ],
+  "ordinary_ci_run_id": 34537506505,
+  "post_merge_workflows": {
+    "ci": {
+      "conclusion": "success",
+      "run_id": 34537506505
+    },
+    "parser_provenance_cold_001": {
+      "conclusion": "success",
+      "run_id": 34537506492
+    },
+    "sre_002_natural_standing_events": {
+      "conclusion": "success",
+      "run_id": 34537506473
+    },
+    "standing_recall_evidence_closure": {
+      "conclusion": "success",
+      "run_id": 34537506515
+    }
+  },
+  "result_manifest": {
+    "fixture.json": "04e8589f80eeae3cdabc6133cf6fc46ccb980185bbd7ccdd4656d4667a2892fd",
+    "result.json": "0e714e4ce117abc50f285d0fd55248b27d68b344e13c00548903f68ce3dd955d"
+  },
+  "result_sha256": "0e714e4ce117abc50f285d0fd55248b27d68b344e13c00548903f68ce3dd955d",
+  "schema": "openline.parser-provenance-cold-001.freeze-receipt.v1",
+  "status": "FROZEN",
+  "verdict": "PROVENANCE_BARRIER_HELD_IDENTITY_SEMANTICS_UNEARNED",
+  "workflow_run_id": 34537506492
+}
