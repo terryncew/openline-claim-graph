@@ -1,0 +1,27 @@
+{
+  "adaptation": "controlled_synthetic_not_paper_dataset",
+  "boundary_probe": "A source-exact QUOTE may still carry a semantically wrong slot/value identity mapping. If current OpenLine admits and signs that representation, provenance integrity has held but semantic identity adjudication remains unearned.",
+  "expected_values": {
+    "correct": "Prince Archil of Imereti",
+    "misleading_local": "Prince Nicholas of Greece and Denmark"
+  },
+  "experiment_id": "PARSER-PROVENANCE-COLD-001",
+  "external_trigger": {
+    "arxiv": "2609.06702v1",
+    "failure_shape": "A chunk-local same-name finding overrides contradictory identity-grounded evidence because the lead agent cannot inspect the subagent source reference.",
+    "paper": "PARSER: Read in Parallel, Reason in Depth for Long-Context LLM Agents",
+    "published": "2026-09-06"
+  },
+  "falsifiers": [
+    "tampered source bytes or quote span remain valid",
+    "two parent findings for the same represented slot merge without explicit conflict resolution",
+    "a merge-resolution mutation remains valid against the frozen state receipt"
+  ],
+  "schema": "openline.parser-provenance-cold-001.fixture.v1",
+  "sources": {
+    "correct": "Princess Elene of Georgia's husband was Prince Archil of Imereti.",
+    "identity": "Princess Elene of Georgia was the daughter of Heraclius II and the mother of Solomon II.",
+    "misleading": "Grand Duchess Elena Vladimirovna's husband was Prince Nicholas of Greece and Denmark."
+  },
+  "target_slot": "person:princess-elene-of-georgia:husband"
+}

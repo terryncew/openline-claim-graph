@@ -1,0 +1,59 @@
+name: PARSER-PROVENANCE-COLD-001
+
+on:
+  push:
+    branches:
+      - main
+      - "research/**"
+      - "proof/**"
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  parser-provenance-cold:
+    name: provenance (${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install Claim Graph
+        run: |
+          python -m pip install "setuptools>=68" wheel
+          python -m pip install --no-build-isolation .
+
+      - name: Classifier falsifier self-test
+        run: python experiments/parser-provenance-cold-001/run.py --self-test
+
+      - name: Reproduce cold provenance probe
+        run: |
+          rm -rf "${{ runner.temp }}/parser-provenance-cold-artifacts"
+          python experiments/parser-provenance-cold-001/run.py \
+            --output "${{ runner.temp }}/parser-provenance-cold-artifacts"
+
+      - name: Independently verify result
+        run: |
+          python experiments/parser-provenance-cold-001/verify.py \
+            "${{ runner.temp }}/parser-provenance-cold-artifacts"
+
+      - name: Upload diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: parser-provenance-cold-001-${{ matrix.python-version }}
+          path: ${{ runner.temp }}/parser-provenance-cold-artifacts/
+          if-no-files-found: warn
