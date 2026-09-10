@@ -1,0 +1,9 @@
+{
+  "cohort_exclusion_id": "decision-recall-cohort-exclusion:sha256:5144d191fd2580719fc3ca4a073a697079639d179484a3e72c89b5c40ae9a926",
+  "cohort_id": "decision-recall-cohort-001",
+  "detail": "PARSER-PROVENANCE-COLD-001 adds an experiment-only synthetic fixture, deterministic probe, verifier, documentation, and isolated CI workflow. It does not change the frozen Decision Recall instrument or record an accepted Decision Recall product state.",
+  "reason": "NO_ACCEPTED_STATE_CHANGE",
+  "recorded_at": "2026-09-10T22:11:32Z",
+  "schema": "openline.decision-recall-cohort-exclusion.v1",
+  "subject_change_set_sha256": "be245039be048a2527f0eee416871a51170ddccc8b3300e640fea1154e1d7609"
+}
