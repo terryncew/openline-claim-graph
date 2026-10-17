@@ -1,0 +1,1362 @@
+{
+  "activation_commit": "9c1405f62f01ae13052f4e186caa80437ed98b81",
+  "base_commit": "30a3ee1316d0b388fd4f20fa49e25556fef1985b",
+  "classification_ledger_updated": false,
+  "existing_empirical_records": {
+    "manifests": 0,
+    "observations": 0,
+    "pre-trigger-records": 0
+  },
+  "generation": 2,
+  "github_runs": [
+    {
+      "event": "push",
+      "jobs": [
+        {
+          "completed_at": "2026-09-13T21:01:58Z",
+          "conclusion": "failure",
+          "head_sha": "30a3ee1316d0b388fd4f20fa49e25556fef1985b",
+          "html_url": "https://github.com/terryncew/openline-claim-graph/actions/runs/34782542781/job/103792064101",
+          "id": 103792064101,
+          "name": "test (3.12)",
+          "started_at": "2026-09-13T21:01:34Z",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v7",
+              "number": 2
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v7",
+              "number": 3
+            },
+            {
+              "conclusion": "success",
+              "name": "Install build and runtime dependencies",
+              "number": 4
+            },
+            {
+              "conclusion": "success",
+              "name": "Unit and hostile tests",
+              "number": 5
+            },
+            {
+              "conclusion": "success",
+              "name": "Build controlled demo",
+              "number": 6
+            },
+            {
+              "conclusion": "success",
+              "name": "Build natural-material review",
+              "number": 7
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and independently verify evidence recall",
+              "number": 8
+            },
+            {
+              "conclusion": "success",
+              "name": "Run scaling probe",
+              "number": 9
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and validate automated receiver development pack",
+              "number": 10
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and independently verify Frame Ledger specimen",
+              "number": 11
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify Evidence Recall comparative benchmark pipeline",
+              "number": 12
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify Evidence Recall temporal holdout pipeline",
+              "number": 13
+            },
+            {
+              "conclusion": "failure",
+              "name": "Build and verify prospective Decision Recall mechanics",
+              "number": 14
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Build wheel",
+              "number": 15
+            },
+            {
+              "conclusion": "skipped",
+              "name": "CLI smoke",
+              "number": 16
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Post Run actions/setup-python@v7",
+              "number": 31
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v7",
+              "number": 32
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 33
+            }
+          ]
+        },
+        {
+          "completed_at": "2026-09-13T21:02:05Z",
+          "conclusion": "failure",
+          "head_sha": "30a3ee1316d0b388fd4f20fa49e25556fef1985b",
+          "html_url": "https://github.com/terryncew/openline-claim-graph/actions/runs/34782542781/job/103792064208",
+          "id": 103792064208,
+          "name": "test (3.13)",
+          "started_at": "2026-09-13T21:01:34Z",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v7",
+              "number": 2
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v7",
+              "number": 3
+            },
+            {
+              "conclusion": "success",
+              "name": "Install build and runtime dependencies",
+              "number": 4
+            },
+            {
+              "conclusion": "success",
+              "name": "Unit and hostile tests",
+              "number": 5
+            },
+            {
+              "conclusion": "success",
+              "name": "Build controlled demo",
+              "number": 6
+            },
+            {
+              "conclusion": "success",
+              "name": "Build natural-material review",
+              "number": 7
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and independently verify evidence recall",
+              "number": 8
+            },
+            {
+              "conclusion": "success",
+              "name": "Run scaling probe",
+              "number": 9
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and validate automated receiver development pack",
+              "number": 10
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and independently verify Frame Ledger specimen",
+              "number": 11
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify Evidence Recall comparative benchmark pipeline",
+              "number": 12
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify Evidence Recall temporal holdout pipeline",
+              "number": 13
+            },
+            {
+              "conclusion": "failure",
+              "name": "Build and verify prospective Decision Recall mechanics",
+              "number": 14
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Build wheel",
+              "number": 15
+            },
+            {
+              "conclusion": "skipped",
+              "name": "CLI smoke",
+              "number": 16
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Post Run actions/setup-python@v7",
+              "number": 31
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v7",
+              "number": 32
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 33
+            }
+          ]
+        },
+        {
+          "completed_at": "2026-09-13T21:01:59Z",
+          "conclusion": "failure",
+          "head_sha": "30a3ee1316d0b388fd4f20fa49e25556fef1985b",
+          "html_url": "https://github.com/terryncew/openline-claim-graph/actions/runs/34782542781/job/103792064263",
+          "id": 103792064263,
+          "name": "test (3.11)",
+          "started_at": "2026-09-13T21:01:34Z",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v7",
+              "number": 2
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v7",
+              "number": 3
+            },
+            {
+              "conclusion": "success",
+              "name": "Install build and runtime dependencies",
+              "number": 4
+            },
+            {
+              "conclusion": "success",
+              "name": "Unit and hostile tests",
+              "number": 5
+            },
+            {
+              "conclusion": "success",
+              "name": "Build controlled demo",
+              "number": 6
+            },
+            {
+              "conclusion": "success",
+              "name": "Build natural-material review",
+              "number": 7
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and independently verify evidence recall",
+              "number": 8
+            },
+            {
+              "conclusion": "success",
+              "name": "Run scaling probe",
+              "number": 9
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and validate automated receiver development pack",
+              "number": 10
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and independently verify Frame Ledger specimen",
+              "number": 11
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify Evidence Recall comparative benchmark pipeline",
+              "number": 12
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify Evidence Recall temporal holdout pipeline",
+              "number": 13
+            },
+            {
+              "conclusion": "failure",
+              "name": "Build and verify prospective Decision Recall mechanics",
+              "number": 14
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Build wheel",
+              "number": 15
+            },
+            {
+              "conclusion": "skipped",
+              "name": "CLI smoke",
+              "number": 16
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Post Run actions/setup-python@v7",
+              "number": 31
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v7",
+              "number": 32
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 33
+            }
+          ]
+        }
+      ],
+      "run_id": 34782542781,
+      "url": "https://github.com/terryncew/openline-claim-graph/actions/runs/34782542781"
+    },
+    {
+      "event": "push",
+      "jobs": [
+        {
+          "completed_at": "2026-10-17T20:36:24Z",
+          "conclusion": "failure",
+          "head_sha": "e1fe5678bbb11c90dbedd257996ddfe81ce0a9ca",
+          "html_url": "https://github.com/terryncew/openline-claim-graph/actions/runs/39067395980/job/117497783103",
+          "id": 117497783103,
+          "name": "test (3.11)",
+          "started_at": "2026-10-17T20:36:00Z",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v7",
+              "number": 2
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v7",
+              "number": 3
+            },
+            {
+              "conclusion": "success",
+              "name": "Install build and runtime dependencies",
+              "number": 4
+            },
+            {
+              "conclusion": "success",
+              "name": "Unit and hostile tests",
+              "number": 5
+            },
+            {
+              "conclusion": "success",
+              "name": "Build controlled demo",
+              "number": 6
+            },
+            {
+              "conclusion": "success",
+              "name": "Build natural-material review",
+              "number": 7
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and independently verify evidence recall",
+              "number": 8
+            },
+            {
+              "conclusion": "success",
+              "name": "Run scaling probe",
+              "number": 9
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and validate automated receiver development pack",
+              "number": 10
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and independently verify Frame Ledger specimen",
+              "number": 11
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify Evidence Recall comparative benchmark pipeline",
+              "number": 12
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify Evidence Recall temporal holdout pipeline",
+              "number": 13
+            },
+            {
+              "conclusion": "failure",
+              "name": "Build and verify prospective Decision Recall mechanics",
+              "number": 14
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Build wheel",
+              "number": 15
+            },
+            {
+              "conclusion": "skipped",
+              "name": "CLI smoke",
+              "number": 16
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Post Run actions/setup-python@v7",
+              "number": 31
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v7",
+              "number": 32
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 33
+            }
+          ]
+        },
+        {
+          "completed_at": "2026-10-17T20:36:28Z",
+          "conclusion": "failure",
+          "head_sha": "e1fe5678bbb11c90dbedd257996ddfe81ce0a9ca",
+          "html_url": "https://github.com/terryncew/openline-claim-graph/actions/runs/39067395980/job/117497783308",
+          "id": 117497783308,
+          "name": "test (3.13)",
+          "started_at": "2026-10-17T20:35:59Z",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v7",
+              "number": 2
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v7",
+              "number": 3
+            },
+            {
+              "conclusion": "success",
+              "name": "Install build and runtime dependencies",
+              "number": 4
+            },
+            {
+              "conclusion": "success",
+              "name": "Unit and hostile tests",
+              "number": 5
+            },
+            {
+              "conclusion": "success",
+              "name": "Build controlled demo",
+              "number": 6
+            },
+            {
+              "conclusion": "success",
+              "name": "Build natural-material review",
+              "number": 7
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and independently verify evidence recall",
+              "number": 8
+            },
+            {
+              "conclusion": "success",
+              "name": "Run scaling probe",
+              "number": 9
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and validate automated receiver development pack",
+              "number": 10
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and independently verify Frame Ledger specimen",
+              "number": 11
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify Evidence Recall comparative benchmark pipeline",
+              "number": 12
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify Evidence Recall temporal holdout pipeline",
+              "number": 13
+            },
+            {
+              "conclusion": "failure",
+              "name": "Build and verify prospective Decision Recall mechanics",
+              "number": 14
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Build wheel",
+              "number": 15
+            },
+            {
+              "conclusion": "skipped",
+              "name": "CLI smoke",
+              "number": 16
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Post Run actions/setup-python@v7",
+              "number": 31
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v7",
+              "number": 32
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 33
+            }
+          ]
+        },
+        {
+          "completed_at": "2026-10-17T20:36:27Z",
+          "conclusion": "failure",
+          "head_sha": "e1fe5678bbb11c90dbedd257996ddfe81ce0a9ca",
+          "html_url": "https://github.com/terryncew/openline-claim-graph/actions/runs/39067395980/job/117497783382",
+          "id": 117497783382,
+          "name": "test (3.12)",
+          "started_at": "2026-10-17T20:36:00Z",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v7",
+              "number": 2
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v7",
+              "number": 3
+            },
+            {
+              "conclusion": "success",
+              "name": "Install build and runtime dependencies",
+              "number": 4
+            },
+            {
+              "conclusion": "success",
+              "name": "Unit and hostile tests",
+              "number": 5
+            },
+            {
+              "conclusion": "success",
+              "name": "Build controlled demo",
+              "number": 6
+            },
+            {
+              "conclusion": "success",
+              "name": "Build natural-material review",
+              "number": 7
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and independently verify evidence recall",
+              "number": 8
+            },
+            {
+              "conclusion": "success",
+              "name": "Run scaling probe",
+              "number": 9
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and validate automated receiver development pack",
+              "number": 10
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and independently verify Frame Ledger specimen",
+              "number": 11
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify Evidence Recall comparative benchmark pipeline",
+              "number": 12
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify Evidence Recall temporal holdout pipeline",
+              "number": 13
+            },
+            {
+              "conclusion": "failure",
+              "name": "Build and verify prospective Decision Recall mechanics",
+              "number": 14
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Build wheel",
+              "number": 15
+            },
+            {
+              "conclusion": "skipped",
+              "name": "CLI smoke",
+              "number": 16
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Post Run actions/setup-python@v7",
+              "number": 31
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v7",
+              "number": 32
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 33
+            }
+          ]
+        }
+      ],
+      "run_id": 39067395980,
+      "url": "https://github.com/terryncew/openline-claim-graph/actions/runs/39067395980"
+    },
+    {
+      "event": "pull_request",
+      "jobs": [
+        {
+          "completed_at": "2026-10-17T20:40:55Z",
+          "conclusion": "success",
+          "head_sha": "e1fe5678bbb11c90dbedd257996ddfe81ce0a9ca",
+          "html_url": "https://github.com/terryncew/openline-claim-graph/actions/runs/39067704349/job/117498691341",
+          "id": 117498691341,
+          "name": "test (3.13)",
+          "started_at": "2026-10-17T20:40:26Z",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v7",
+              "number": 2
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v7",
+              "number": 3
+            },
+            {
+              "conclusion": "success",
+              "name": "Install build and runtime dependencies",
+              "number": 4
+            },
+            {
+              "conclusion": "success",
+              "name": "Unit and hostile tests",
+              "number": 5
+            },
+            {
+              "conclusion": "success",
+              "name": "Build controlled demo",
+              "number": 6
+            },
+            {
+              "conclusion": "success",
+              "name": "Build natural-material review",
+              "number": 7
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and independently verify evidence recall",
+              "number": 8
+            },
+            {
+              "conclusion": "success",
+              "name": "Run scaling probe",
+              "number": 9
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and validate automated receiver development pack",
+              "number": 10
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and independently verify Frame Ledger specimen",
+              "number": 11
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify Evidence Recall comparative benchmark pipeline",
+              "number": 12
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify Evidence Recall temporal holdout pipeline",
+              "number": 13
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify prospective Decision Recall mechanics",
+              "number": 14
+            },
+            {
+              "conclusion": "success",
+              "name": "Build wheel",
+              "number": 15
+            },
+            {
+              "conclusion": "success",
+              "name": "CLI smoke",
+              "number": 16
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v7",
+              "number": 31
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v7",
+              "number": 32
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 33
+            }
+          ]
+        },
+        {
+          "completed_at": "2026-10-17T20:40:58Z",
+          "conclusion": "success",
+          "head_sha": "e1fe5678bbb11c90dbedd257996ddfe81ce0a9ca",
+          "html_url": "https://github.com/terryncew/openline-claim-graph/actions/runs/39067704349/job/117498691470",
+          "id": 117498691470,
+          "name": "test (3.12)",
+          "started_at": "2026-10-17T20:40:26Z",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v7",
+              "number": 2
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v7",
+              "number": 3
+            },
+            {
+              "conclusion": "success",
+              "name": "Install build and runtime dependencies",
+              "number": 4
+            },
+            {
+              "conclusion": "success",
+              "name": "Unit and hostile tests",
+              "number": 5
+            },
+            {
+              "conclusion": "success",
+              "name": "Build controlled demo",
+              "number": 6
+            },
+            {
+              "conclusion": "success",
+              "name": "Build natural-material review",
+              "number": 7
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and independently verify evidence recall",
+              "number": 8
+            },
+            {
+              "conclusion": "success",
+              "name": "Run scaling probe",
+              "number": 9
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and validate automated receiver development pack",
+              "number": 10
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and independently verify Frame Ledger specimen",
+              "number": 11
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify Evidence Recall comparative benchmark pipeline",
+              "number": 12
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify Evidence Recall temporal holdout pipeline",
+              "number": 13
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify prospective Decision Recall mechanics",
+              "number": 14
+            },
+            {
+              "conclusion": "success",
+              "name": "Build wheel",
+              "number": 15
+            },
+            {
+              "conclusion": "success",
+              "name": "CLI smoke",
+              "number": 16
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v7",
+              "number": 31
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v7",
+              "number": 32
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 33
+            }
+          ]
+        },
+        {
+          "completed_at": "2026-10-17T20:40:51Z",
+          "conclusion": "success",
+          "head_sha": "e1fe5678bbb11c90dbedd257996ddfe81ce0a9ca",
+          "html_url": "https://github.com/terryncew/openline-claim-graph/actions/runs/39067704349/job/117498691554",
+          "id": 117498691554,
+          "name": "test (3.11)",
+          "started_at": "2026-10-17T20:40:26Z",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v7",
+              "number": 2
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v7",
+              "number": 3
+            },
+            {
+              "conclusion": "success",
+              "name": "Install build and runtime dependencies",
+              "number": 4
+            },
+            {
+              "conclusion": "success",
+              "name": "Unit and hostile tests",
+              "number": 5
+            },
+            {
+              "conclusion": "success",
+              "name": "Build controlled demo",
+              "number": 6
+            },
+            {
+              "conclusion": "success",
+              "name": "Build natural-material review",
+              "number": 7
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and independently verify evidence recall",
+              "number": 8
+            },
+            {
+              "conclusion": "success",
+              "name": "Run scaling probe",
+              "number": 9
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and validate automated receiver development pack",
+              "number": 10
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and independently verify Frame Ledger specimen",
+              "number": 11
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify Evidence Recall comparative benchmark pipeline",
+              "number": 12
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify Evidence Recall temporal holdout pipeline",
+              "number": 13
+            },
+            {
+              "conclusion": "success",
+              "name": "Build and verify prospective Decision Recall mechanics",
+              "number": 14
+            },
+            {
+              "conclusion": "success",
+              "name": "Build wheel",
+              "number": 15
+            },
+            {
+              "conclusion": "success",
+              "name": "CLI smoke",
+              "number": 16
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v7",
+              "number": 31
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v7",
+              "number": 32
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 33
+            }
+          ]
+        }
+      ],
+      "run_id": 39067704349,
+      "url": "https://github.com/terryncew/openline-claim-graph/actions/runs/39067704349"
+    }
+  ],
+  "hosted_log_body_access": "Blocked by log-storage egress; API jobs and exit-code annotations inspected, not full log text.",
+  "instrument_health": {
+    "mismatches": [],
+    "valid": true
+  },
+  "local_checks": [
+    {
+      "command": ".venv/bin/python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "tests_run": 162
+    },
+    {
+      "command": ".venv/bin/python -I scripts/verify_decision_recall_prospective_fixture.py --artifact /tmp/openline-ci-integrity-001/conformance --output /tmp/openline-ci-integrity-001/conformance-verification.json",
+      "exit_code": 0
+    },
+    {
+      "command": "unchanged CI guard, main head, GITHUB_EVENT_NAME=push",
+      "exit_code": 2
+    },
+    {
+      "command": "unchanged CI guard, assessment head, GITHUB_EVENT_NAME=push",
+      "exit_code": 2
+    },
+    {
+      "command": "unchanged CI guard, assessment head, GITHUB_EVENT_NAME=pull_request",
+      "exit_code": 0,
+      "history_guard_skipped": true
+    }
+  ],
+  "mission": "OPENLINE-CI-INTEGRITY-001",
+  "pr12": {
+    "base_sha": "30a3ee1316d0b388fd4f20fa49e25556fef1985b",
+    "draft": true,
+    "head_sha": "e1fe5678bbb11c90dbedd257996ddfe81ce0a9ca",
+    "html_url": "https://github.com/terryncew/openline-claim-graph/pull/12",
+    "number": 12,
+    "state": "open"
+  },
+  "recorded_at": "2026-10-17T20:46:15+00:00",
+  "subjects": [
+    {
+      "audit_disposition": "UNRESOLVED_HISTORICAL_CAPTURE_GAP",
+      "change_set": {
+        "change_set_sha256": "c716c7d78e777f8402b8bcf9edd03e7d1dbd07f90ad7cd3f6c4548bdf2d284b3",
+        "entries": [
+          {
+            "after_sha256": "e97d8b3b2219cdd563c4ae9c714f297ce01c0a01b85a2f36ec64b443acf1fb25",
+            "after_size_bytes": 937,
+            "before_sha256": "",
+            "path": "IDENTITY_BINDING_GATE_001.md",
+            "status": "A"
+          },
+          {
+            "after_sha256": "385aed6e617b8e8d22c73593d4c6806494e14762820ec9a6dd96fb4e305be53b",
+            "after_size_bytes": 2016,
+            "before_sha256": "",
+            "path": "experiments/identity-binding-gate-001/run.py",
+            "status": "A"
+          },
+          {
+            "after_sha256": "b3c4027b51c532bab744c1f89934492b438787606a98e3f2858921f34a0db5aa",
+            "after_size_bytes": 4966,
+            "before_sha256": "",
+            "path": "identity_binding_gate.py",
+            "status": "A"
+          },
+          {
+            "after_sha256": "95bade0b548f5e2c6cc693cde6c702902578ea6496b859e353bbf8c51cca8f15",
+            "after_size_bytes": 2162,
+            "before_sha256": "",
+            "path": "tests/test_identity_binding_gate.py",
+            "status": "A"
+          }
+        ],
+        "schema": "openline.cohort-change-set.v1"
+      },
+      "commit": "30a3ee1316d0b388fd4f20fa49e25556fef1985b",
+      "original_author_time": "2026-09-13T14:01:28-07:00",
+      "original_commit_time": "2026-09-13T14:01:28-07:00",
+      "subject": "openline-claim-graph     feat: add receiver-owned identity binding gate"
+    },
+    {
+      "audit_disposition": "UNRESOLVED_PENDING_DRAFT_CHANGE",
+      "change_set": {
+        "change_set_sha256": "ec60f31b3f99b21d9c5fdd8e32a99248e5afae4e4221646ab8c9da995875fbd0",
+        "entries": [
+          {
+            "after_sha256": "393fb827ae2a8ff67497d47bb66532bbf3e1c39dcac82f09324239da440dea34",
+            "after_size_bytes": 2774,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/COMPETITORS.md",
+            "status": "A"
+          },
+          {
+            "after_sha256": "6606d8d1d09c720f7747b76d0ee31ca5cf8e2153cac2f0dc236f367ee4c78ce8",
+            "after_size_bytes": 4542,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/README.md",
+            "status": "A"
+          },
+          {
+            "after_sha256": "b0151c3e5f1ddfb83954fb34fe8f8a7fb86cc9a37e9dcf0374b29667bb22620a",
+            "after_size_bytes": 4504,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/RESULTS.md",
+            "status": "A"
+          },
+          {
+            "after_sha256": "5b0c962c336ef65dcbe69a980d3c81535dbe8bcee7c92e92f79d02c153d23571",
+            "after_size_bytes": 1853,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/SOURCE_AUDIT.md",
+            "status": "A"
+          },
+          {
+            "after_sha256": "2c1dddadbb58eeafb51e5e402f6281e06871ac8f3249f4c8789d67dedcd672b8",
+            "after_size_bytes": 1011,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/baseline.py",
+            "status": "A"
+          },
+          {
+            "after_sha256": "631a026b0c417eaccf1f8e5ffde2e7f6d6a09071055cca4e32a23c992f420b84",
+            "after_size_bytes": 16689,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/demo.py",
+            "status": "A"
+          },
+          {
+            "after_sha256": "0646e0e24ba381d368de917c9b541fc536632313760615f09afc4f5ce33489eb",
+            "after_size_bytes": 2391,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/evidence/adversarial-tests.txt",
+            "status": "A"
+          },
+          {
+            "after_sha256": "7f59a9870463f9cc8f9f81970fff963f86b0b4ce5e799e60871e37fcea50b18c",
+            "after_size_bytes": 51536,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/evidence/bundle.json",
+            "status": "A"
+          },
+          {
+            "after_sha256": "e5c9253e4d478779882f39c1cb51b21bb1bfd7bb4bfeb3224520ccba7f39dd29",
+            "after_size_bytes": 87,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/evidence/checkpoint.json",
+            "status": "A"
+          },
+          {
+            "after_sha256": "de2562b9e110bc67f8ee4e6d0806654172c8854d2688b69d60d69af3663c176d",
+            "after_size_bytes": 3539,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/evidence/clean-install.txt",
+            "status": "A"
+          },
+          {
+            "after_sha256": "842b65138a56bfc6b1d924f48c70983d59c2329918f2667138abcd9ac82a3e6e",
+            "after_size_bytes": 2332,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/evidence/comparison.json",
+            "status": "A"
+          },
+          {
+            "after_sha256": "0c94af50d2b923af4f912c69f21312aed7d66eb9403fbde9b3bd21bcb18c4485",
+            "after_size_bytes": 1942,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/evidence/competitor-sources.json",
+            "status": "A"
+          },
+          {
+            "after_sha256": "a1e5e885b6284ca0ca4cc51a46b03d4af14f57503d5151adac7a12ce0435f862",
+            "after_size_bytes": 5175,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/evidence/conventional-signed.json",
+            "status": "A"
+          },
+          {
+            "after_sha256": "ee2a807461955860917b7fa30314bd87a1b42488ac34180e6f16cba9fa9126a2",
+            "after_size_bytes": 172,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/evidence/installed-versions.txt",
+            "status": "A"
+          },
+          {
+            "after_sha256": "178db987eb749e1a873942a94190e34de9a79dfa6a1504f944591364d96ea9a6",
+            "after_size_bytes": 25557,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/evidence/regression-tests.txt",
+            "status": "A"
+          },
+          {
+            "after_sha256": "0208389d4c8f534a422c4089eca64bf53ce00d6436d655d205802032fc17a043",
+            "after_size_bytes": 5428,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/evidence/review.html",
+            "status": "A"
+          },
+          {
+            "after_sha256": "5b695eda0b672cab3f17cce2bc1168f0a48089ed2870fd0f78f45b07ea8294bc",
+            "after_size_bytes": 130,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/evidence/verification.txt",
+            "status": "A"
+          },
+          {
+            "after_sha256": "c4b7cbbb287731ec637e42710cbaeb44c64a0a57f8fec222d8547251836b9539",
+            "after_size_bytes": 6632,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/test_demo.py",
+            "status": "A"
+          },
+          {
+            "after_sha256": "540894c16d1d9c5ada10b2b913659d0bb3f9f40f12c4d988921e410ddeaf15c7",
+            "after_size_bytes": 699,
+            "before_sha256": "",
+            "path": "examples/assessment_recall/verify.py",
+            "status": "A"
+          }
+        ],
+        "schema": "openline.cohort-change-set.v1"
+      },
+      "commit": "e1fe5678bbb11c90dbedd257996ddfe81ce0a9ca",
+      "original_author_time": "2026-10-17T20:35:43Z",
+      "original_commit_time": "2026-10-17T20:35:43Z",
+      "subject": "feat: add bounded assessment recall example and matched baseline"
+    },
+    {
+      "audit_disposition": "BEFORE_GENERATION_2",
+      "change_set": {
+        "change_set_sha256": "b3ae43c791e3caa52a2a13e761a665bf0b382e35f476dbd1a964386d9be6b9ea",
+        "entries": [
+          {
+            "after_sha256": "30e2ccd0e0f9e116e859864879380d44f129676ed0aa326bda28763791a577da",
+            "after_size_bytes": 817,
+            "before_sha256": "",
+            "path": "research/gain-trigger-probe/ADVERSARIAL_RESULT.json",
+            "status": "A"
+          },
+          {
+            "after_sha256": "fea8b2173c7b7b4a95c34af4f9bebfb6fc29717bae6a1c08f8552f60ab6b695c",
+            "after_size_bytes": 3772,
+            "before_sha256": "",
+            "path": "research/gain-trigger-probe/GAIN_TRIGGER_SPEC.md",
+            "status": "A"
+          },
+          {
+            "after_sha256": "30d56f74e45b867162af72722c9359671a8c238c43e3aecb81367dcee9498e5b",
+            "after_size_bytes": 2284,
+            "before_sha256": "",
+            "path": "research/gain-trigger-probe/PROTOCOL.md",
+            "status": "A"
+          },
+          {
+            "after_sha256": "b117419a594f0379e9d821106a208f972506bb8a84d1d4ff5f1a3c4b42387df0",
+            "after_size_bytes": 824,
+            "before_sha256": "",
+            "path": "research/gain-trigger-probe/RESULT.json",
+            "status": "A"
+          },
+          {
+            "after_sha256": "4ee06817941d459f785ce158bbe391d68f43c52b1fe6518e9570944e80fb5ff7",
+            "after_size_bytes": 572,
+            "before_sha256": "",
+            "path": "research/gain-trigger-probe/SHA256SUMS.txt",
+            "status": "A"
+          },
+          {
+            "after_sha256": "9e862d772c50d7e18d0fb349b8e9791ccf119ecb28f4804639ba3e63318a6f5c",
+            "after_size_bytes": 3230,
+            "before_sha256": "",
+            "path": "research/gain-trigger-probe/VERDICT.md",
+            "status": "A"
+          },
+          {
+            "after_sha256": "42ef5055b020be2b5cbe93265385af58737c3ad7ca662f9a33b6e4e5be609cdc",
+            "after_size_bytes": 3977,
+            "before_sha256": "",
+            "path": "research/gain-trigger-probe/adversarial_probe.py",
+            "status": "A"
+          },
+          {
+            "after_sha256": "434233542a84e00eb34809f6f5b2d0a5d4b7ce088e3ec0409a600be5c9c1eaeb",
+            "after_size_bytes": 2217,
+            "before_sha256": "",
+            "path": "research/gain-trigger-probe/probe.py",
+            "status": "A"
+          }
+        ],
+        "schema": "openline.cohort-change-set.v1"
+      },
+      "commit": "a2d5eb059ea8f3c09472b60c4917caba7c936b48",
+      "original_author_time": "2026-08-19T05:33:10-07:00",
+      "original_commit_time": "2026-08-19T05:33:10-07:00",
+      "subject": "Adds the pre-registered gain-trigger experiment for Decision Recall."
+    },
+    {
+      "audit_disposition": "GENERATION_2_INSTALL_NOT_ELIGIBLE",
+      "change_set": {
+        "change_set_sha256": "acef51fd5c0f79fd15b9de10002e458e0aed852a27bb808ec19f1aac92e810f9",
+        "entries": [
+          {
+            "after_sha256": "3890f8e1795b37fd1fcb929fc9c5460559f4d54d1e2fe0e91f1ded5512167c5f",
+            "after_size_bytes": 23890,
+            "before_sha256": "e760da2700e84e5e0f732290562488d50eed9494ecb79d65d3b7e9b46b5e42a3",
+            "path": "CHANGELOG.md",
+            "status": "M"
+          },
+          {
+            "after_sha256": "22a753f194f8b3958293279609ed19551730162e198654a80af93f3f4d4c1f92",
+            "after_size_bytes": 6428,
+            "before_sha256": "3982b4574cdd54b9f31efc93db4489874340b958e6267cbf1e3a609e62d3590f",
+            "path": "artifacts/evidence-recall-temporal/real-001-shah-iron/independent-verification.json",
+            "status": "M"
+          },
+          {
+            "after_sha256": "782f1f65d8b95c7d5e1f0749cacf931985a2ad7a3979c5aac9a652d5a19a1fa2",
+            "after_size_bytes": 3077,
+            "before_sha256": "9b46d17360cf243ea8cbbf265a05b62b165f0a979e25de032035816c18870c70",
+            "path": "experiments/decision-recall-prospective-001/cohort-001/DESIGNATION.json",
+            "status": "M"
+          },
+          {
+            "after_sha256": "3cdc35f9ecd08740f4bd56231534e8ed35c921a52d46fe46fedd315088378fd0",
+            "after_size_bytes": 610,
+            "before_sha256": "0e31e63860d04d5e11598ac8779dd0fe177c5702cee8d8a2562aaf4095bf96a8",
+            "path": "pyproject.toml",
+            "status": "M"
+          },
+          {
+            "after_sha256": "9faed0b9d975fed87079108a708a1288ac376d5b1e4f44b9f64dd2188bc74dbe",
+            "after_size_bytes": 20090,
+            "before_sha256": "2a59e3621e18f9945369e1caa2ee2948eb33ffd1d476b668d42351713464576a",
+            "path": "scripts/cohort001.py",
+            "status": "M"
+          },
+          {
+            "after_sha256": "ba5e31023ca2c675701a19fcdf1da9efe5ec20fc4a587687ba0cd934c94e61cc",
+            "after_size_bytes": 83891,
+            "before_sha256": "4dd3f319ef9af5a3af6c602b9a7e9b5ed408a71b120e2defa3c8c787f15f06c1",
+            "path": "scripts/release_check.py",
+            "status": "M"
+          },
+          {
+            "after_sha256": "b482cde9d0037e470fd6741ac60aa1abc3721ea3b72523924c67ca7915b15c8b",
+            "after_size_bytes": 6730,
+            "before_sha256": "6e9d598434ad7624215267553b0e8010919382e2a306b8613ccf0b5542fdb089",
+            "path": "scripts/verify_cohort001_instrument.py",
+            "status": "M"
+          },
+          {
+            "after_sha256": "ceee646667b687f0cb5089fedd3312e5fc60dc15b6a83a1a2d298132ba3b6c74",
+            "after_size_bytes": 88165,
+            "before_sha256": "a7da8755cce40d7f290090d4d08d34c5a05f4bec7e758fd1688a5a659e56740a",
+            "path": "src/openline_claim_graph/decision_recall.py",
+            "status": "M"
+          },
+          {
+            "after_sha256": "ac2da409f6ec0c7073476b03be7d3a1e01953349a4fe69f89a42650d1653942b",
+            "after_size_bytes": 3776,
+            "before_sha256": "",
+            "path": "tests/test_decision_recall_gain.py",
+            "status": "A"
+          }
+        ],
+        "schema": "openline.cohort-change-set.v1"
+      },
+      "commit": "9c1405f62f01ae13052f4e186caa80437ed98b81",
+      "original_author_time": "2026-08-19T06:30:53-07:00",
+      "original_commit_time": "2026-08-19T06:30:53-07:00",
+      "subject": "Add gain-of-standing Decision Recall and restart Cohort 001"
+    }
+  ],
+  "verdict": "BLOCKED"
+}

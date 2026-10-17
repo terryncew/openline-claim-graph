@@ -1,0 +1,11 @@
+{
+  "activation_commit": "9c1405f62f01ae13052f4e186caa80437ed98b81",
+  "generation": 2,
+  "unclassified_post_activation_commits": [
+    {
+      "change_set_sha256": "c716c7d78e777f8402b8bcf9edd03e7d1dbd07f90ad7cd3f6c4548bdf2d284b3",
+      "commit": "30a3ee1316d0b388fd4f20fa49e25556fef1985b",
+      "subject": "openline-claim-graph     feat: add receiver-owned identity binding gate"
+    }
+  ]
+}
