@@ -1,0 +1,98 @@
+{
+  "receipt": {
+    "canonicalization": "openline.restricted-canonical-json.v1",
+    "claim_boundary": "The signer commits to this graph state and its declared source anchors. The receipt does not certify truth, semantic fidelity, completeness, or signer identity.",
+    "claim_count": 1,
+    "delta_root": "cc8530fcdedd99648bf12ea7bc6370a027098e4aabf21d1ece62d3ab3d345d57",
+    "graph_content_root": "c4da199642d46f824de383736d72c2ee107e8e555b64e85767f8609a181a5d54",
+    "graph_state_root": "1323e1e9e8dfb51bda6a5033c68cf2fb9e8dee85202612efd43bea49612a8154",
+    "issued_at": "2026-10-17T00:00:00Z",
+    "issuer": "receiver",
+    "parent_state_roots": [],
+    "payload_hash": "d27786de433c8ddc30cb4bd847a17cb506475a87966cb35dff6a90f6caa0eb34",
+    "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+    "proof": {
+      "signature": "4790c73dd1ea6d4a1ad73170d896ffd235de70248d425d79914a302b4135b9f3cd31dc738b1ec422ce85abd55352d2512cf3d5ec6b2cbac4cb36f278bac6c60d"
+    },
+    "proof_options": {
+      "algorithm": "Ed25519",
+      "public_key": "17cb79fb2b4120f2b1ec65e4198d6e08b28e813feb01e4a400839b85e18080ce",
+      "trust": "receiver_must_pin_or_resolve_public_key"
+    },
+    "relation_count": 0,
+    "schema": "openline.claim-graph.receipt.v1",
+    "source_count": 1,
+    "source_manifest_root": "05604fd2fbf2250e523fba09d459564d91174e3104a94756e5d7ab67e953837c",
+    "validation_warning_categories": {},
+    "validation_warning_count": 0,
+    "validation_warning_root": "34916264c2a83347232569962b352f2623e3dcc7f93f930c3092f40ae592c0ff"
+  },
+  "record": {
+    "audit": [
+      "a08d297227095a1d3060cfbf9520df6308021abc5ba8bb48d8f6a1e4b20138a3",
+      "52c33fa6108674bf54e9ffd0cfe1b544b485dac2565006c6a4f62a298b0cbe1f",
+      "4d1ff20f6529b640c72991b595615abe87fb78f3aaa63534fcfc99e33528f6a5"
+    ],
+    "checkpoint": "7435950cb129540627b9e515625a627f2f3e18397a52d069ddcc60670bf368a9",
+    "dependency_rows_scanned": 3,
+    "kind": "review tickets; not new deployment authorization",
+    "next_authority": "enterprise:risk-owner",
+    "statuses": {
+      "offline-export": "APPROVED",
+      "payments": "REVIEW REQUIRED"
+    }
+  },
+  "snapshot": {
+    "claims": [
+      {
+        "asserted_by": "receiver",
+        "claim_id": "claim:sha256:627afac9b2e7edd3a2646a013e11778a84efd722462352b7261d771c87d9b44d",
+        "kind": "SOURCE_ASSERTION",
+        "provenance": [
+          {
+            "asserted_by": "receiver",
+            "mode": "QUOTE",
+            "quote_sha256": "e19a3e10abadccd224b2ff0033d2986d070bfcb1d1f75c056bd61d05d49b34d6",
+            "source_id": "source:sha256:e19a3e10abadccd224b2ff0033d2986d070bfcb1d1f75c056bd61d05d49b34d6",
+            "span": {
+              "end": 505,
+              "start": 0
+            }
+          }
+        ],
+        "schema": "openline.claim.v1",
+        "text": "{\"audit\": [\"a08d297227095a1d3060cfbf9520df6308021abc5ba8bb48d8f6a1e4b20138a3\", \"52c33fa6108674bf54e9ffd0cfe1b544b485dac2565006c6a4f62a298b0cbe1f\", \"4d1ff20f6529b640c72991b595615abe87fb78f3aaa63534fcfc99e33528f6a5\"], \"checkpoint\": \"7435950cb129540627b9e515625a627f2f3e18397a52d069ddcc60670bf368a9\", \"dependency_rows_scanned\": 3, \"kind\": \"review tickets; not new deployment authorization\", \"next_authority\": \"enterprise:risk-owner\", \"statuses\": {\"offline-export\": \"APPROVED\", \"payments\": \"REVIEW REQUIRED\"}}"
+      }
+    ],
+    "content_root": "c4da199642d46f824de383736d72c2ee107e8e555b64e85767f8609a181a5d54",
+    "delta": {
+      "added_claim_ids": [
+        "claim:sha256:627afac9b2e7edd3a2646a013e11778a84efd722462352b7261d771c87d9b44d"
+      ],
+      "added_relation_ids": [],
+      "basis": "genesis",
+      "removal_reasons": [],
+      "removed_claim_ids": [],
+      "removed_relation_ids": [],
+      "schema": "openline.claim-graph.delta.v1"
+    },
+    "delta_root": "cc8530fcdedd99648bf12ea7bc6370a027098e4aabf21d1ece62d3ab3d345d57",
+    "merge_resolutions": [],
+    "parent_state_roots": [],
+    "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+    "relations": [],
+    "schema": "openline.claim-graph.snapshot.v1",
+    "state_root": "1323e1e9e8dfb51bda6a5033c68cf2fb9e8dee85202612efd43bea49612a8154"
+  },
+  "sources": {
+    "source:sha256:e19a3e10abadccd224b2ff0033d2986d070bfcb1d1f75c056bd61d05d49b34d6": {
+      "byte_length": 505,
+      "content": "{\"audit\": [\"a08d297227095a1d3060cfbf9520df6308021abc5ba8bb48d8f6a1e4b20138a3\", \"52c33fa6108674bf54e9ffd0cfe1b544b485dac2565006c6a4f62a298b0cbe1f\", \"4d1ff20f6529b640c72991b595615abe87fb78f3aaa63534fcfc99e33528f6a5\"], \"checkpoint\": \"7435950cb129540627b9e515625a627f2f3e18397a52d069ddcc60670bf368a9\", \"dependency_rows_scanned\": 3, \"kind\": \"review tickets; not new deployment authorization\", \"next_authority\": \"enterprise:risk-owner\", \"statuses\": {\"offline-export\": \"APPROVED\", \"payments\": \"REVIEW REQUIRED\"}}",
+      "encoding": "utf-8",
+      "locator": "example:receiver",
+      "media_type": "text/plain",
+      "schema": "openline.source.v1",
+      "source_id": "source:sha256:e19a3e10abadccd224b2ff0033d2986d070bfcb1d1f75c056bd61d05d49b34d6"
+    }
+  }
+}

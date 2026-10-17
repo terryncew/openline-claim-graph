@@ -1,0 +1,60 @@
+{
+  "inspected_date": "2026-10-17",
+  "executed_competitor_tests": false,
+  "sources": [
+    {
+      "system": "APS",
+      "url": "https://raw.githubusercontent.com/agent-passport-system/agent-passport-system/main/README.md",
+      "sha256": "af6715dafc739aa7b921c1795869fff8d97e7f67d997f28c151175312ef434ad",
+      "bytes": 22163,
+      "status": 200
+    },
+    {
+      "system": "ModelOp",
+      "url": "https://github.com/modelop",
+      "sha256": "fc83a2fca43346ebf85587836c7d59c8776b73f2bb77ac4fc2bfd682e19718f6",
+      "bytes": 275068,
+      "status": 200
+    },
+    {
+      "system": "ModelOp example",
+      "url": "https://raw.githubusercontent.com/modelop/LLMSupportChatbot/master/README.md",
+      "sha256": "55add97d16a20396792780032809fdebcf9c2089aab6e1bcdfe890729c96abc7",
+      "bytes": 74,
+      "status": 200
+    },
+    {
+      "system": "Credo AI",
+      "url": "https://github.com/credo-ai",
+      "sha256": "db217fd498b34f0771e8d30dbc1e07025d5d4ebfc8c04f4eb2c27ec84f439c2a",
+      "bytes": 291575,
+      "status": 200
+    },
+    {
+      "system": "Credo Lens",
+      "url": "https://raw.githubusercontent.com/credo-ai/credoai_lens/main/README.md",
+      "sha256": "7b1f38e542c3dde65b26c95a7beff16e63136bf7b26283d02bb4de8295677b6f",
+      "bytes": 2938,
+      "status": 200
+    },
+    {
+      "system": "Doorstop",
+      "url": "https://raw.githubusercontent.com/doorstop-dev/doorstop/develop/README.md",
+      "sha256": "6a7e8e6e82f04910e3e1a7c789e7e1e485c7abc147d1c5b98da9092d90dadd20",
+      "bytes": 3912,
+      "status": 200
+    },
+    {
+      "url": "https://modelop.com/",
+      "status": "Tunnel connection failed: 403 Forbidden"
+    },
+    {
+      "url": "https://www.credo.ai/",
+      "status": "Tunnel connection failed: 403 Forbidden"
+    },
+    {
+      "url": "https://www.ibm.com/products/engineering-requirements-management-doors-next",
+      "status": "Tunnel connection failed: 403 Forbidden"
+    }
+  ]
+}

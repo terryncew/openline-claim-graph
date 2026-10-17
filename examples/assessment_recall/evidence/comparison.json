@@ -1,0 +1,93 @@
+{
+  "cases": {
+    "ambiguous": {
+      "conventional": {
+        "offline-export": "REVIEW REQUIRED",
+        "payments": "REVIEW REQUIRED"
+      },
+      "dependency_rows": 3,
+      "expected": {
+        "offline-export": "REVIEW REQUIRED",
+        "payments": "REVIEW REQUIRED"
+      },
+      "measurements": {
+        "baseline_ns": 1472,
+        "graph_build_sign_replay_ns": 2061160
+      },
+      "openline": {
+        "offline-export": "REVIEW REQUIRED",
+        "payments": "REVIEW REQUIRED"
+      }
+    },
+    "missing": {
+      "conventional": {
+        "offline-export": "APPROVED",
+        "payments": "REVIEW REQUIRED"
+      },
+      "dependency_rows": 2,
+      "expected": {
+        "offline-export": "APPROVED",
+        "payments": "REVIEW REQUIRED"
+      },
+      "measurements": {
+        "baseline_ns": 1883,
+        "graph_build_sign_replay_ns": 1954111
+      },
+      "openline": {
+        "offline-export": "APPROVED",
+        "payments": "REVIEW REQUIRED"
+      }
+    },
+    "relevant": {
+      "conventional": {
+        "offline-export": "APPROVED",
+        "payments": "REVIEW REQUIRED"
+      },
+      "dependency_rows": 3,
+      "expected": {
+        "offline-export": "APPROVED",
+        "payments": "REVIEW REQUIRED"
+      },
+      "measurements": {
+        "baseline_ns": 3315,
+        "graph_build_sign_replay_ns": 2271673
+      },
+      "openline": {
+        "offline-export": "APPROVED",
+        "payments": "REVIEW REQUIRED"
+      }
+    },
+    "unrelated": {
+      "conventional": {
+        "offline-export": "APPROVED",
+        "payments": "APPROVED"
+      },
+      "dependency_rows": 3,
+      "expected": {
+        "offline-export": "APPROVED",
+        "payments": "APPROVED"
+      },
+      "measurements": {
+        "baseline_ns": 2113,
+        "graph_build_sign_replay_ns": 609995
+      },
+      "openline": {
+        "offline-export": "APPROVED",
+        "payments": "APPROVED"
+      }
+    }
+  },
+  "human_capture_time": "NOT MEASURED",
+  "human_review_time": "NOT MEASURED",
+  "limitations": "Synthetic author-known labels, not independent gold; no productivity or distinctiveness claim.",
+  "missed_warranted_reviews": {
+    "conventional": 0,
+    "openline": 0
+  },
+  "scored_dispositions": 8,
+  "unnecessary_reviews": {
+    "conventional": 0,
+    "openline": 0
+  },
+  "verdict": "PARITY"
+}

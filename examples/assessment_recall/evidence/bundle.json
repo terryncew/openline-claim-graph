@@ -1,0 +1,992 @@
+{
+  "baseline": {
+    "audit": [
+      "a08d297227095a1d3060cfbf9520df6308021abc5ba8bb48d8f6a1e4b20138a3",
+      "52c33fa6108674bf54e9ffd0cfe1b544b485dac2565006c6a4f62a298b0cbe1f",
+      "4d1ff20f6529b640c72991b595615abe87fb78f3aaa63534fcfc99e33528f6a5",
+      "f7c40614dd0c35bdedfc3a89c2fe03512b1e0082fc13a4289eecb424a1cea757"
+    ],
+    "dependency_rows_scanned": 3,
+    "statuses": {
+      "offline-export": "APPROVED",
+      "payments": "REVIEW REQUIRED"
+    }
+  },
+  "current": {
+    "receipt": {
+      "canonicalization": "openline.restricted-canonical-json.v1",
+      "claim_boundary": "The signer commits to this graph state and its declared source anchors. The receipt does not certify truth, semantic fidelity, completeness, or signer identity.",
+      "claim_count": 1,
+      "delta_root": "7c71a09d3969ea74e84fa78046299b702e7929d6e615325cbeaa75a87968cb40",
+      "graph_content_root": "fafb64d3ba065cb4226baa86b349f985b810679bf0343adf60877578ce400d3e",
+      "graph_state_root": "949c2396efe99009ebd29290e8672af6f5029d1e28112c5eb4b576d55f067336",
+      "issued_at": "2026-10-17T00:00:00Z",
+      "issuer": "receiver",
+      "parent_state_roots": [],
+      "payload_hash": "30b8b52a4a19238432a40e9fc59a8f64bcda5fa1414cf17a346147a5283de158",
+      "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+      "proof": {
+        "signature": "87abc2c0d6bc7f18a923e7fc1669f134f44e5b8714720040a83212139cc1e212ca25bf8172d6c5fb568d5a36cfecd84e7eb6f09e4efc753f7ad07045eee13e06"
+      },
+      "proof_options": {
+        "algorithm": "Ed25519",
+        "public_key": "17cb79fb2b4120f2b1ec65e4198d6e08b28e813feb01e4a400839b85e18080ce",
+        "trust": "receiver_must_pin_or_resolve_public_key"
+      },
+      "relation_count": 0,
+      "schema": "openline.claim-graph.receipt.v1",
+      "source_count": 1,
+      "source_manifest_root": "d75a4b70cff2694bdfa1e4d62a9f67b21811f6b2010577c1c026b5fd965f79c2",
+      "validation_warning_categories": {},
+      "validation_warning_count": 0,
+      "validation_warning_root": "34916264c2a83347232569962b352f2623e3dcc7f93f930c3092f40ae592c0ff"
+    },
+    "record": {
+      "checkpoint": "7435950cb129540627b9e515625a627f2f3e18397a52d069ddcc60670bf368a9",
+      "event": "52c33fa6108674bf54e9ffd0cfe1b544b485dac2565006c6a4f62a298b0cbe1f",
+      "kind": "review-status; not new deployment authorization",
+      "next_authority": "enterprise:risk-owner",
+      "original_approval": "a08d297227095a1d3060cfbf9520df6308021abc5ba8bb48d8f6a1e4b20138a3",
+      "statuses": {
+        "offline-export": "APPROVED",
+        "payments": "REVIEW REQUIRED"
+      }
+    },
+    "snapshot": {
+      "claims": [
+        {
+          "asserted_by": "receiver",
+          "claim_id": "claim:sha256:b8cba7bcd1a84cb2598dc8309809e6b70abae45186f3a614dbc64e11620633db",
+          "kind": "SOURCE_ASSERTION",
+          "provenance": [
+            {
+              "asserted_by": "receiver",
+              "mode": "QUOTE",
+              "quote_sha256": "c2253a03d1f35869cb573f18320c90687b9c065633bf649e4d39dc5443868e10",
+              "source_id": "source:sha256:c2253a03d1f35869cb573f18320c90687b9c065633bf649e4d39dc5443868e10",
+              "span": {
+                "end": 425,
+                "start": 0
+              }
+            }
+          ],
+          "schema": "openline.claim.v1",
+          "text": "{\"checkpoint\": \"7435950cb129540627b9e515625a627f2f3e18397a52d069ddcc60670bf368a9\", \"event\": \"52c33fa6108674bf54e9ffd0cfe1b544b485dac2565006c6a4f62a298b0cbe1f\", \"kind\": \"review-status; not new deployment authorization\", \"next_authority\": \"enterprise:risk-owner\", \"original_approval\": \"a08d297227095a1d3060cfbf9520df6308021abc5ba8bb48d8f6a1e4b20138a3\", \"statuses\": {\"offline-export\": \"APPROVED\", \"payments\": \"REVIEW REQUIRED\"}}"
+        }
+      ],
+      "content_root": "fafb64d3ba065cb4226baa86b349f985b810679bf0343adf60877578ce400d3e",
+      "delta": {
+        "added_claim_ids": [
+          "claim:sha256:b8cba7bcd1a84cb2598dc8309809e6b70abae45186f3a614dbc64e11620633db"
+        ],
+        "added_relation_ids": [],
+        "basis": "genesis",
+        "removal_reasons": [],
+        "removed_claim_ids": [],
+        "removed_relation_ids": [],
+        "schema": "openline.claim-graph.delta.v1"
+      },
+      "delta_root": "7c71a09d3969ea74e84fa78046299b702e7929d6e615325cbeaa75a87968cb40",
+      "merge_resolutions": [],
+      "parent_state_roots": [],
+      "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+      "relations": [],
+      "schema": "openline.claim-graph.snapshot.v1",
+      "state_root": "949c2396efe99009ebd29290e8672af6f5029d1e28112c5eb4b576d55f067336"
+    },
+    "sources": {
+      "source:sha256:c2253a03d1f35869cb573f18320c90687b9c065633bf649e4d39dc5443868e10": {
+        "byte_length": 425,
+        "content": "{\"checkpoint\": \"7435950cb129540627b9e515625a627f2f3e18397a52d069ddcc60670bf368a9\", \"event\": \"52c33fa6108674bf54e9ffd0cfe1b544b485dac2565006c6a4f62a298b0cbe1f\", \"kind\": \"review-status; not new deployment authorization\", \"next_authority\": \"enterprise:risk-owner\", \"original_approval\": \"a08d297227095a1d3060cfbf9520df6308021abc5ba8bb48d8f6a1e4b20138a3\", \"statuses\": {\"offline-export\": \"APPROVED\", \"payments\": \"REVIEW REQUIRED\"}}",
+        "encoding": "utf-8",
+        "locator": "example:receiver",
+        "media_type": "text/plain",
+        "schema": "openline.source.v1",
+        "source_id": "source:sha256:c2253a03d1f35869cb573f18320c90687b9c065633bf649e4d39dc5443868e10"
+      }
+    }
+  },
+  "graph": {
+    "decision_ids": {
+      "offline-export": "claim:sha256:43e3aa89f7217e6fcf8d68a8afb9fe03b2d047f7002f1fd5f85c3b56633d59c1",
+      "payments": "claim:sha256:5d5569325d264995786299d4d9dc5016bf8e5519c9636b7ffbf5735840b74328"
+    },
+    "event": {
+      "affected": [
+        {
+          "source_id": "source:sha256:a50c0eb3212f5fa88d882024d60e59e5aefd32a432805006f37f5d45a75ee426"
+        }
+      ],
+      "asserted_by": "receiver",
+      "effective_at": "2026-10-17T00:00:00Z",
+      "event_id": "source-status-event:sha256:185a34497e5d240f7ebd249376a587923afb740d6e9e8fd42afe515dea361727",
+      "evidence": [
+        {
+          "asserted_by": "receiver",
+          "mode": "QUOTE",
+          "quote_sha256": "c788cc8617c7ee5289e2afad947402ead31ca8bb7f53d271d15227ed053e1d58",
+          "source_id": "source:sha256:c788cc8617c7ee5289e2afad947402ead31ca8bb7f53d271d15227ed053e1d58",
+          "span": {
+            "end": 242,
+            "start": 0
+          }
+        }
+      ],
+      "reason": "Receiver withdraws applicability of old assessment to changed configuration, not its historical finding.",
+      "schema": "openline.source-status-event.v1",
+      "status": "SUPERSEDED"
+    },
+    "policy": {
+      "accepted_state_root": "c1e51bb6100d6c2fd2151a13aa0519b210a508d06433d51baac3248c88673d66",
+      "advisory_relation_ids": [],
+      "decision_claim_ids": [
+        "claim:sha256:43e3aa89f7217e6fcf8d68a8afb9fe03b2d047f7002f1fd5f85c3b56633d59c1",
+        "claim:sha256:5d5569325d264995786299d4d9dc5016bf8e5519c9636b7ffbf5735840b74328"
+      ],
+      "hard_provenance_modes": [
+        "QUOTE"
+      ],
+      "hard_relation_ids": [
+        "relation:sha256:097573699584ef4b0c4e9891f7c49c3f0a5dc30d2e9b08b5e1e3e327f89c57cd",
+        "relation:sha256:6e62ac385b7cc861e4cf75a339d3a2b78b6e8388e4e2e37ef4fab13537398618",
+        "relation:sha256:9cf1286a2326001e6ae28f4cf15ace6205e29a5ffda24c50fa60f03008c9713b"
+      ],
+      "policy_id": "claim-impact-policy:sha256:3f7fc793bcf6bc8cad1810e8e52e2ef8c52055516c83b0a89af6be733bc27626",
+      "schema": "openline.claim-impact-policy.v1"
+    },
+    "receipt": {
+      "canonicalization": "openline.restricted-canonical-json.v1",
+      "claim_boundary": "The signer commits to this graph state and its declared source anchors. The receipt does not certify truth, semantic fidelity, completeness, or signer identity.",
+      "claim_count": 4,
+      "delta_root": "eeb10c6a2e0838e424e96030927f32147839de604f62086d5a506a05f6787530",
+      "graph_content_root": "55df56203d36fb8c839379901d7b7524fff5aa24f2c25c19f5d21dc58c556241",
+      "graph_state_root": "c1e51bb6100d6c2fd2151a13aa0519b210a508d06433d51baac3248c88673d66",
+      "issued_at": "2026-10-17T00:00:00Z",
+      "issuer": "receiver",
+      "parent_state_roots": [],
+      "payload_hash": "adca0f18d98e06e99ad9d191a84fe8ae2d2932ff43968c35c5bb55ffa212d050",
+      "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+      "proof": {
+        "signature": "ac00e4526ed65e11c29aabca5ee94af07a384079ef252266fbb87b94dc1c4e3fd74094aa0b0ef49dedeeb6100c92ca02b24c0bfda2cfdea6e6b43cf9b5b95c03"
+      },
+      "proof_options": {
+        "algorithm": "Ed25519",
+        "public_key": "17cb79fb2b4120f2b1ec65e4198d6e08b28e813feb01e4a400839b85e18080ce",
+        "trust": "receiver_must_pin_or_resolve_public_key"
+      },
+      "relation_count": 3,
+      "schema": "openline.claim-graph.receipt.v1",
+      "source_count": 2,
+      "source_manifest_root": "985b49fd59fd8e10d52d0bdaf41344c5390469c52b9ef754ebd67c138b472baa",
+      "validation_warning_categories": {
+        "claim_unanchored": 2,
+        "relation_unanchored": 3
+      },
+      "validation_warning_count": 5,
+      "validation_warning_root": "3e0af5413eb8bf984341f16c7b8fa89d6b1a8bf3f6f1a20920331c40c1b6991a"
+    },
+    "report": {
+      "accepted_state_root": "c1e51bb6100d6c2fd2151a13aa0519b210a508d06433d51baac3248c88673d66",
+      "claim_boundary": "Given this exact accepted graph, source-status event, and receiver-owned edge policy, these are the mechanically implied exposures. The report does not certify the semantic truth or completeness of any claim, edge, event scope, or source. It proposes review; it does not mutate the accepted graph.",
+      "classifications": {
+        "affected_unresolved": [],
+        "quarantine": [
+          {
+            "claim_id": "claim:sha256:5d5569325d264995786299d4d9dc5016bf8e5519c9636b7ffbf5735840b74328",
+            "classification": "QUARANTINE",
+            "kind": "ASSUMPTION",
+            "reason": "ALL_ADMITTED_SUPPORT_PATHS_LOST",
+            "text": "Enterprise approval: payments",
+            "witness_path": {
+              "origin_claim_id": "claim:sha256:f7ad8eea4013890e6cff38b7bceed3da72972595289d67b2bd1d13a39e4e6787",
+              "steps": [
+                {
+                  "from_claim_id": "claim:sha256:f7ad8eea4013890e6cff38b7bceed3da72972595289d67b2bd1d13a39e4e6787",
+                  "relation": "SUPPORTS",
+                  "relation_id": "relation:sha256:9cf1286a2326001e6ae28f4cf15ace6205e29a5ffda24c50fa60f03008c9713b",
+                  "to_claim_id": "claim:sha256:5d5569325d264995786299d4d9dc5016bf8e5519c9636b7ffbf5735840b74328"
+                }
+              ]
+            }
+          },
+          {
+            "claim_id": "claim:sha256:f7ad8eea4013890e6cff38b7bceed3da72972595289d67b2bd1d13a39e4e6787",
+            "classification": "QUARANTINE",
+            "kind": "SOURCE_ASSERTION",
+            "reason": "SOURCE_BASIS_LOST",
+            "text": "{\"configuration\": {\"conditions\": \"sandbox-only\", \"model\": \"synthetic-assistant-v1\", \"safeguard\": \"human-confirmation-required\", \"tool\": \"payments-v1\"}, \"configuration_hash\": \"8d7cba1ca4a8dabac5d4039b74eab4e6d2348e205ccdefb942b728e5f96ff8cf\", \"finding\": \"bounded test passed\", \"limitations\": \"No production or general safety conclusion\", \"scope\": \"payments confirmation in sandbox\"}",
+            "witness_path": {
+              "origin_claim_id": "claim:sha256:f7ad8eea4013890e6cff38b7bceed3da72972595289d67b2bd1d13a39e4e6787",
+              "steps": []
+            }
+          }
+        ],
+        "survives": [
+          {
+            "claim_id": "claim:sha256:43e3aa89f7217e6fcf8d68a8afb9fe03b2d047f7002f1fd5f85c3b56633d59c1",
+            "classification": "SURVIVES",
+            "kind": "ASSUMPTION",
+            "reason": "ADMITTED_ALTERNATIVE_BASIS_REMAINS",
+            "retained_source_ids": [],
+            "retained_support_claim_ids": [
+              "claim:sha256:59eda6e36e2f0e97fb1af390a9d8e51149aeecd68c1d06a10d8745006187d0e2"
+            ],
+            "text": "Enterprise approval: offline-export"
+          }
+        ],
+        "unaffected": [
+          {
+            "claim_id": "claim:sha256:59eda6e36e2f0e97fb1af390a9d8e51149aeecd68c1d06a10d8745006187d0e2",
+            "kind": "SOURCE_ASSERTION",
+            "text": "{\"configuration\": {\"model\": \"synthetic-assistant-v1\", \"tool\": \"disabled\"}, \"finding\": \"no tool invocation permitted\", \"scope\": \"offline export\"}"
+          }
+        ]
+      },
+      "decision_claim_ids_touched": [
+        "claim:sha256:43e3aa89f7217e6fcf8d68a8afb9fe03b2d047f7002f1fd5f85c3b56633d59c1",
+        "claim:sha256:5d5569325d264995786299d4d9dc5016bf8e5519c9636b7ffbf5735840b74328"
+      ],
+      "event_id": "source-status-event:sha256:185a34497e5d240f7ebd249376a587923afb740d6e9e8fd42afe515dea361727",
+      "ignored_relation_ids": [],
+      "policy_id": "claim-impact-policy:sha256:3f7fc793bcf6bc8cad1810e8e52e2ef8c52055516c83b0a89af6be733bc27626",
+      "report_id": "claim-impact-report:sha256:2464fbcdbde4d17f0fb01ca3eec0ecc5107d9c2e1e1a74c53d7ca3f254eb301b",
+      "schema": "openline.claim-impact-report.v1",
+      "source_exposed_claim_ids": [
+        "claim:sha256:f7ad8eea4013890e6cff38b7bceed3da72972595289d67b2bd1d13a39e4e6787"
+      ],
+      "status": "IMPACT_COMPUTED_CONDITIONALLY",
+      "summary": {
+        "affected_unresolved": 0,
+        "decisions_touched": 2,
+        "quarantine": 2,
+        "source_exposed": 1,
+        "survives": 1,
+        "unaffected": 1
+      },
+      "valid": true,
+      "warnings": [
+        "claim_unanchored:claim:sha256:43e3aa89f7217e6fcf8d68a8afb9fe03b2d047f7002f1fd5f85c3b56633d59c1",
+        "claim_unanchored:claim:sha256:5d5569325d264995786299d4d9dc5016bf8e5519c9636b7ffbf5735840b74328",
+        "event_scope_mapping_asserted_not_mechanically_adjudicated",
+        "relation_unanchored:relation:sha256:097573699584ef4b0c4e9891f7c49c3f0a5dc30d2e9b08b5e1e3e327f89c57cd",
+        "relation_unanchored:relation:sha256:6e62ac385b7cc861e4cf75a339d3a2b78b6e8388e4e2e37ef4fab13537398618",
+        "relation_unanchored:relation:sha256:9cf1286a2326001e6ae28f4cf15ace6205e29a5ffda24c50fa60f03008c9713b"
+      ]
+    },
+    "snapshot": {
+      "claims": [
+        {
+          "asserted_by": "receiver",
+          "claim_id": "claim:sha256:43e3aa89f7217e6fcf8d68a8afb9fe03b2d047f7002f1fd5f85c3b56633d59c1",
+          "kind": "ASSUMPTION",
+          "provenance": [],
+          "schema": "openline.claim.v1",
+          "text": "Enterprise approval: offline-export"
+        },
+        {
+          "asserted_by": "evaluator",
+          "claim_id": "claim:sha256:59eda6e36e2f0e97fb1af390a9d8e51149aeecd68c1d06a10d8745006187d0e2",
+          "kind": "SOURCE_ASSERTION",
+          "provenance": [
+            {
+              "asserted_by": "evaluator",
+              "mode": "QUOTE",
+              "quote_sha256": "be582d3dafde2a85160291364cb12ad96aaaf339f855d07c48d94dbc2683dbca",
+              "source_id": "source:sha256:be582d3dafde2a85160291364cb12ad96aaaf339f855d07c48d94dbc2683dbca",
+              "span": {
+                "end": 144,
+                "start": 0
+              }
+            }
+          ],
+          "schema": "openline.claim.v1",
+          "text": "{\"configuration\": {\"model\": \"synthetic-assistant-v1\", \"tool\": \"disabled\"}, \"finding\": \"no tool invocation permitted\", \"scope\": \"offline export\"}"
+        },
+        {
+          "asserted_by": "receiver",
+          "claim_id": "claim:sha256:5d5569325d264995786299d4d9dc5016bf8e5519c9636b7ffbf5735840b74328",
+          "kind": "ASSUMPTION",
+          "provenance": [],
+          "schema": "openline.claim.v1",
+          "text": "Enterprise approval: payments"
+        },
+        {
+          "asserted_by": "evaluator",
+          "claim_id": "claim:sha256:f7ad8eea4013890e6cff38b7bceed3da72972595289d67b2bd1d13a39e4e6787",
+          "kind": "SOURCE_ASSERTION",
+          "provenance": [
+            {
+              "asserted_by": "evaluator",
+              "mode": "QUOTE",
+              "quote_sha256": "a50c0eb3212f5fa88d882024d60e59e5aefd32a432805006f37f5d45a75ee426",
+              "source_id": "source:sha256:a50c0eb3212f5fa88d882024d60e59e5aefd32a432805006f37f5d45a75ee426",
+              "span": {
+                "end": 381,
+                "start": 0
+              }
+            }
+          ],
+          "schema": "openline.claim.v1",
+          "text": "{\"configuration\": {\"conditions\": \"sandbox-only\", \"model\": \"synthetic-assistant-v1\", \"safeguard\": \"human-confirmation-required\", \"tool\": \"payments-v1\"}, \"configuration_hash\": \"8d7cba1ca4a8dabac5d4039b74eab4e6d2348e205ccdefb942b728e5f96ff8cf\", \"finding\": \"bounded test passed\", \"limitations\": \"No production or general safety conclusion\", \"scope\": \"payments confirmation in sandbox\"}"
+        }
+      ],
+      "content_root": "55df56203d36fb8c839379901d7b7524fff5aa24f2c25c19f5d21dc58c556241",
+      "delta": {
+        "added_claim_ids": [
+          "claim:sha256:43e3aa89f7217e6fcf8d68a8afb9fe03b2d047f7002f1fd5f85c3b56633d59c1",
+          "claim:sha256:59eda6e36e2f0e97fb1af390a9d8e51149aeecd68c1d06a10d8745006187d0e2",
+          "claim:sha256:5d5569325d264995786299d4d9dc5016bf8e5519c9636b7ffbf5735840b74328",
+          "claim:sha256:f7ad8eea4013890e6cff38b7bceed3da72972595289d67b2bd1d13a39e4e6787"
+        ],
+        "added_relation_ids": [
+          "relation:sha256:097573699584ef4b0c4e9891f7c49c3f0a5dc30d2e9b08b5e1e3e327f89c57cd",
+          "relation:sha256:6e62ac385b7cc861e4cf75a339d3a2b78b6e8388e4e2e37ef4fab13537398618",
+          "relation:sha256:9cf1286a2326001e6ae28f4cf15ace6205e29a5ffda24c50fa60f03008c9713b"
+        ],
+        "basis": "genesis",
+        "removal_reasons": [],
+        "removed_claim_ids": [],
+        "removed_relation_ids": [],
+        "schema": "openline.claim-graph.delta.v1"
+      },
+      "delta_root": "eeb10c6a2e0838e424e96030927f32147839de604f62086d5a506a05f6787530",
+      "merge_resolutions": [],
+      "parent_state_roots": [],
+      "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+      "relations": [
+        {
+          "asserted_by": "receiver",
+          "provenance": [],
+          "relation": "SUPPORTS",
+          "relation_id": "relation:sha256:097573699584ef4b0c4e9891f7c49c3f0a5dc30d2e9b08b5e1e3e327f89c57cd",
+          "schema": "openline.claim-relation.v1",
+          "source_claim_id": "claim:sha256:f7ad8eea4013890e6cff38b7bceed3da72972595289d67b2bd1d13a39e4e6787",
+          "target_claim_id": "claim:sha256:43e3aa89f7217e6fcf8d68a8afb9fe03b2d047f7002f1fd5f85c3b56633d59c1"
+        },
+        {
+          "asserted_by": "receiver",
+          "provenance": [],
+          "relation": "SUPPORTS",
+          "relation_id": "relation:sha256:6e62ac385b7cc861e4cf75a339d3a2b78b6e8388e4e2e37ef4fab13537398618",
+          "schema": "openline.claim-relation.v1",
+          "source_claim_id": "claim:sha256:59eda6e36e2f0e97fb1af390a9d8e51149aeecd68c1d06a10d8745006187d0e2",
+          "target_claim_id": "claim:sha256:43e3aa89f7217e6fcf8d68a8afb9fe03b2d047f7002f1fd5f85c3b56633d59c1"
+        },
+        {
+          "asserted_by": "receiver",
+          "provenance": [],
+          "relation": "SUPPORTS",
+          "relation_id": "relation:sha256:9cf1286a2326001e6ae28f4cf15ace6205e29a5ffda24c50fa60f03008c9713b",
+          "schema": "openline.claim-relation.v1",
+          "source_claim_id": "claim:sha256:f7ad8eea4013890e6cff38b7bceed3da72972595289d67b2bd1d13a39e4e6787",
+          "target_claim_id": "claim:sha256:5d5569325d264995786299d4d9dc5016bf8e5519c9636b7ffbf5735840b74328"
+        }
+      ],
+      "schema": "openline.claim-graph.snapshot.v1",
+      "state_root": "c1e51bb6100d6c2fd2151a13aa0519b210a508d06433d51baac3248c88673d66"
+    },
+    "sources": {
+      "source:sha256:a50c0eb3212f5fa88d882024d60e59e5aefd32a432805006f37f5d45a75ee426": {
+        "byte_length": 381,
+        "content": "{\"configuration\": {\"conditions\": \"sandbox-only\", \"model\": \"synthetic-assistant-v1\", \"safeguard\": \"human-confirmation-required\", \"tool\": \"payments-v1\"}, \"configuration_hash\": \"8d7cba1ca4a8dabac5d4039b74eab4e6d2348e205ccdefb942b728e5f96ff8cf\", \"finding\": \"bounded test passed\", \"limitations\": \"No production or general safety conclusion\", \"scope\": \"payments confirmation in sandbox\"}",
+        "encoding": "utf-8",
+        "locator": "example:assessment",
+        "media_type": "text/plain",
+        "schema": "openline.source.v1",
+        "source_id": "source:sha256:a50c0eb3212f5fa88d882024d60e59e5aefd32a432805006f37f5d45a75ee426"
+      },
+      "source:sha256:be582d3dafde2a85160291364cb12ad96aaaf339f855d07c48d94dbc2683dbca": {
+        "byte_length": 144,
+        "content": "{\"configuration\": {\"model\": \"synthetic-assistant-v1\", \"tool\": \"disabled\"}, \"finding\": \"no tool invocation permitted\", \"scope\": \"offline export\"}",
+        "encoding": "utf-8",
+        "locator": "example:offline",
+        "media_type": "text/plain",
+        "schema": "openline.source.v1",
+        "source_id": "source:sha256:be582d3dafde2a85160291364cb12ad96aaaf339f855d07c48d94dbc2683dbca"
+      },
+      "source:sha256:c788cc8617c7ee5289e2afad947402ead31ca8bb7f53d271d15227ed053e1d58": {
+        "byte_length": 242,
+        "content": "{\"affected_basis\": [\"assessment\"], \"change_hash\": \"52c33fa6108674bf54e9ffd0cfe1b544b485dac2565006c6a4f62a298b0cbe1f\", \"meaning\": \"ADMITTED\", \"rationale\": \"Receiver judges scope against its accepted assumptions; developer cannot decide this.\"}",
+        "encoding": "utf-8",
+        "locator": "example:receiver-admission",
+        "media_type": "text/plain",
+        "schema": "openline.source.v1",
+        "source_id": "source:sha256:c788cc8617c7ee5289e2afad947402ead31ca8bb7f53d271d15227ed053e1d58"
+      }
+    }
+  },
+  "measurements": {
+    "baseline_ns": 2213,
+    "graph_build_sign_replay_ns": 1890657
+  },
+  "packets": {
+    "acceptance": {
+      "receipt": {
+        "canonicalization": "openline.restricted-canonical-json.v1",
+        "claim_boundary": "The signer commits to this graph state and its declared source anchors. The receipt does not certify truth, semantic fidelity, completeness, or signer identity.",
+        "claim_count": 1,
+        "delta_root": "3812b7feb89e447672ae4b0fb1cb9bee322fa1fd1a72d7138a53923004465d86",
+        "graph_content_root": "fd051303e11e06af3df38fdaa6d49cdde42f1d1ca51543fbac5cf29c86a7c631",
+        "graph_state_root": "4bb7ed35c30390251be13b65e88b289eb00c8e5878ee8e0a147312311fdaee74",
+        "issued_at": "2026-10-17T00:00:00Z",
+        "issuer": "receiver",
+        "parent_state_roots": [],
+        "payload_hash": "86bcf3b3655da751a6e72098e91adcc094f081a78a3124bced08bf8f95d44603",
+        "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+        "proof": {
+          "signature": "5c6600bcaf6f076f150d7633f95adaabfdf63f0db6d68ae9f181b478bbf60e787b833c1036f7145435f31a52ad0cba1621ac18cfbf2e3c9df9bd6b411bb9d40e"
+        },
+        "proof_options": {
+          "algorithm": "Ed25519",
+          "public_key": "17cb79fb2b4120f2b1ec65e4198d6e08b28e813feb01e4a400839b85e18080ce",
+          "trust": "receiver_must_pin_or_resolve_public_key"
+        },
+        "relation_count": 0,
+        "schema": "openline.claim-graph.receipt.v1",
+        "source_count": 1,
+        "source_manifest_root": "dcbe55e858cfbc8c63e0fd5c655387c5bfa0b33c24d96b7d783fb4cfd770b708",
+        "validation_warning_categories": {},
+        "validation_warning_count": 0,
+        "validation_warning_root": "34916264c2a83347232569962b352f2623e3dcc7f93f930c3092f40ae592c0ff"
+      },
+      "record": {
+        "approver": "enterprise:risk-owner",
+        "complete": {
+          "offline-export": true,
+          "payments": true
+        },
+        "dependencies": {
+          "offline-export": [
+            "assessment",
+            "offline"
+          ],
+          "payments": [
+            "assessment"
+          ]
+        },
+        "evidence": {
+          "assessment": "72281b249df0360d979378c76ff849261b8af866d2b87e280f7fb32ddaa66e2b",
+          "offline": "e8e9170d6bddb876cef249077e2407980e3c9a2048d42bb2cce09236722bbe41"
+        },
+        "rule": "each listed basis is independently sufficient for this decision",
+        "status": {
+          "offline-export": "APPROVED",
+          "payments": "APPROVED"
+        }
+      },
+      "snapshot": {
+        "claims": [
+          {
+            "asserted_by": "receiver",
+            "claim_id": "claim:sha256:9c12123a5d723d8840e3d37a163543c0dd9f632d29d4f8ad9d9257ceeb9e368f",
+            "kind": "SOURCE_ASSERTION",
+            "provenance": [
+              {
+                "asserted_by": "receiver",
+                "mode": "QUOTE",
+                "quote_sha256": "257a6d33ef067a9978ed403f70f2c5e0486690ebd411be6a0ac930c37d9a1e00",
+                "source_id": "source:sha256:257a6d33ef067a9978ed403f70f2c5e0486690ebd411be6a0ac930c37d9a1e00",
+                "span": {
+                  "end": 500,
+                  "start": 0
+                }
+              }
+            ],
+            "schema": "openline.claim.v1",
+            "text": "{\"approver\": \"enterprise:risk-owner\", \"complete\": {\"offline-export\": true, \"payments\": true}, \"dependencies\": {\"offline-export\": [\"assessment\", \"offline\"], \"payments\": [\"assessment\"]}, \"evidence\": {\"assessment\": \"72281b249df0360d979378c76ff849261b8af866d2b87e280f7fb32ddaa66e2b\", \"offline\": \"e8e9170d6bddb876cef249077e2407980e3c9a2048d42bb2cce09236722bbe41\"}, \"rule\": \"each listed basis is independently sufficient for this decision\", \"status\": {\"offline-export\": \"APPROVED\", \"payments\": \"APPROVED\"}}"
+          }
+        ],
+        "content_root": "fd051303e11e06af3df38fdaa6d49cdde42f1d1ca51543fbac5cf29c86a7c631",
+        "delta": {
+          "added_claim_ids": [
+            "claim:sha256:9c12123a5d723d8840e3d37a163543c0dd9f632d29d4f8ad9d9257ceeb9e368f"
+          ],
+          "added_relation_ids": [],
+          "basis": "genesis",
+          "removal_reasons": [],
+          "removed_claim_ids": [],
+          "removed_relation_ids": [],
+          "schema": "openline.claim-graph.delta.v1"
+        },
+        "delta_root": "3812b7feb89e447672ae4b0fb1cb9bee322fa1fd1a72d7138a53923004465d86",
+        "merge_resolutions": [],
+        "parent_state_roots": [],
+        "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+        "relations": [],
+        "schema": "openline.claim-graph.snapshot.v1",
+        "state_root": "4bb7ed35c30390251be13b65e88b289eb00c8e5878ee8e0a147312311fdaee74"
+      },
+      "sources": {
+        "source:sha256:257a6d33ef067a9978ed403f70f2c5e0486690ebd411be6a0ac930c37d9a1e00": {
+          "byte_length": 500,
+          "content": "{\"approver\": \"enterprise:risk-owner\", \"complete\": {\"offline-export\": true, \"payments\": true}, \"dependencies\": {\"offline-export\": [\"assessment\", \"offline\"], \"payments\": [\"assessment\"]}, \"evidence\": {\"assessment\": \"72281b249df0360d979378c76ff849261b8af866d2b87e280f7fb32ddaa66e2b\", \"offline\": \"e8e9170d6bddb876cef249077e2407980e3c9a2048d42bb2cce09236722bbe41\"}, \"rule\": \"each listed basis is independently sufficient for this decision\", \"status\": {\"offline-export\": \"APPROVED\", \"payments\": \"APPROVED\"}}",
+          "encoding": "utf-8",
+          "locator": "example:receiver",
+          "media_type": "text/plain",
+          "schema": "openline.source.v1",
+          "source_id": "source:sha256:257a6d33ef067a9978ed403f70f2c5e0486690ebd411be6a0ac930c37d9a1e00"
+        }
+      }
+    },
+    "admission": {
+      "receipt": {
+        "canonicalization": "openline.restricted-canonical-json.v1",
+        "claim_boundary": "The signer commits to this graph state and its declared source anchors. The receipt does not certify truth, semantic fidelity, completeness, or signer identity.",
+        "claim_count": 1,
+        "delta_root": "3cf57060c3e023a5e5dc80944172bf0868f67057c059b86e9abda1374db3a156",
+        "graph_content_root": "dd384c49b092207d9d81c676ba879a425e2a5649f8169bf9dd0f66fb3433ba13",
+        "graph_state_root": "e5d72d5d27cd07ec273b94eb357246bc878106c08aec9990b300adab7c3b293d",
+        "issued_at": "2026-10-17T00:00:00Z",
+        "issuer": "receiver",
+        "parent_state_roots": [],
+        "payload_hash": "e9884f8ee4819e37967cbbb119cf2352b3a655e6c0401ee6aa2b148db5fc0141",
+        "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+        "proof": {
+          "signature": "6800a6cd915a73348e4aebd6b3fa8e60c0c98c8945aa6622e99574348d11d1eb62a51e3f726baa4aa8778898ecf1db47b4d68693b38e5dc8bd44a9bfdacea706"
+        },
+        "proof_options": {
+          "algorithm": "Ed25519",
+          "public_key": "17cb79fb2b4120f2b1ec65e4198d6e08b28e813feb01e4a400839b85e18080ce",
+          "trust": "receiver_must_pin_or_resolve_public_key"
+        },
+        "relation_count": 0,
+        "schema": "openline.claim-graph.receipt.v1",
+        "source_count": 1,
+        "source_manifest_root": "37623daeee8495fcc179cbf2390f768591fe7542a1c83f39f87e350ad562bbe0",
+        "validation_warning_categories": {},
+        "validation_warning_count": 0,
+        "validation_warning_root": "34916264c2a83347232569962b352f2623e3dcc7f93f930c3092f40ae592c0ff"
+      },
+      "record": {
+        "affected_basis": [
+          "assessment"
+        ],
+        "change_hash": "52c33fa6108674bf54e9ffd0cfe1b544b485dac2565006c6a4f62a298b0cbe1f",
+        "meaning": "ADMITTED",
+        "rationale": "Receiver judges scope against its accepted assumptions; developer cannot decide this."
+      },
+      "snapshot": {
+        "claims": [
+          {
+            "asserted_by": "receiver",
+            "claim_id": "claim:sha256:74de0df81ac7d260f49978e7022f77e654f8188687a5bcae077a4652a69f7088",
+            "kind": "SOURCE_ASSERTION",
+            "provenance": [
+              {
+                "asserted_by": "receiver",
+                "mode": "QUOTE",
+                "quote_sha256": "c788cc8617c7ee5289e2afad947402ead31ca8bb7f53d271d15227ed053e1d58",
+                "source_id": "source:sha256:c788cc8617c7ee5289e2afad947402ead31ca8bb7f53d271d15227ed053e1d58",
+                "span": {
+                  "end": 242,
+                  "start": 0
+                }
+              }
+            ],
+            "schema": "openline.claim.v1",
+            "text": "{\"affected_basis\": [\"assessment\"], \"change_hash\": \"52c33fa6108674bf54e9ffd0cfe1b544b485dac2565006c6a4f62a298b0cbe1f\", \"meaning\": \"ADMITTED\", \"rationale\": \"Receiver judges scope against its accepted assumptions; developer cannot decide this.\"}"
+          }
+        ],
+        "content_root": "dd384c49b092207d9d81c676ba879a425e2a5649f8169bf9dd0f66fb3433ba13",
+        "delta": {
+          "added_claim_ids": [
+            "claim:sha256:74de0df81ac7d260f49978e7022f77e654f8188687a5bcae077a4652a69f7088"
+          ],
+          "added_relation_ids": [],
+          "basis": "genesis",
+          "removal_reasons": [],
+          "removed_claim_ids": [],
+          "removed_relation_ids": [],
+          "schema": "openline.claim-graph.delta.v1"
+        },
+        "delta_root": "3cf57060c3e023a5e5dc80944172bf0868f67057c059b86e9abda1374db3a156",
+        "merge_resolutions": [],
+        "parent_state_roots": [],
+        "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+        "relations": [],
+        "schema": "openline.claim-graph.snapshot.v1",
+        "state_root": "e5d72d5d27cd07ec273b94eb357246bc878106c08aec9990b300adab7c3b293d"
+      },
+      "sources": {
+        "source:sha256:c788cc8617c7ee5289e2afad947402ead31ca8bb7f53d271d15227ed053e1d58": {
+          "byte_length": 242,
+          "content": "{\"affected_basis\": [\"assessment\"], \"change_hash\": \"52c33fa6108674bf54e9ffd0cfe1b544b485dac2565006c6a4f62a298b0cbe1f\", \"meaning\": \"ADMITTED\", \"rationale\": \"Receiver judges scope against its accepted assumptions; developer cannot decide this.\"}",
+          "encoding": "utf-8",
+          "locator": "example:receiver",
+          "media_type": "text/plain",
+          "schema": "openline.source.v1",
+          "source_id": "source:sha256:c788cc8617c7ee5289e2afad947402ead31ca8bb7f53d271d15227ed053e1d58"
+        }
+      }
+    },
+    "assessment": {
+      "receipt": {
+        "canonicalization": "openline.restricted-canonical-json.v1",
+        "claim_boundary": "The signer commits to this graph state and its declared source anchors. The receipt does not certify truth, semantic fidelity, completeness, or signer identity.",
+        "claim_count": 1,
+        "delta_root": "622f4fc89d7dba976baf5eddc74079b3f0140df5a42d67e968895f3c7ac2ae35",
+        "graph_content_root": "cee9e522900092fe80fbaf79829ddcc92d7c6e4070e481fba24e421032f12f01",
+        "graph_state_root": "a239ad7d069ef19c2e5e923255dc6b873ac9356e9f3ced561fc4e97befb78006",
+        "issued_at": "2026-10-17T00:00:00Z",
+        "issuer": "evaluator",
+        "parent_state_roots": [],
+        "payload_hash": "1410870be75fe0ca543f643b9ea9f6d0307c6b3ee3347de60dac516645a54353",
+        "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+        "proof": {
+          "signature": "13cebb88bf82a18779c4e089e439fd1ff2aafaea36b42b40bc562c2c2dbbb5df29ccbdcb3926fdd14896bb2f23ec8287648506018f0e536b2f51a365633f2d05"
+        },
+        "proof_options": {
+          "algorithm": "Ed25519",
+          "public_key": "d04ab232742bb4ab3a1368bd4615e4e6d0224ab71a016baf8520a332c9778737",
+          "trust": "receiver_must_pin_or_resolve_public_key"
+        },
+        "relation_count": 0,
+        "schema": "openline.claim-graph.receipt.v1",
+        "source_count": 1,
+        "source_manifest_root": "cbf59e160662d01aca9819b8a2ee2459f50d25f8b7445d598f2f495db86723c4",
+        "validation_warning_categories": {},
+        "validation_warning_count": 0,
+        "validation_warning_root": "34916264c2a83347232569962b352f2623e3dcc7f93f930c3092f40ae592c0ff"
+      },
+      "record": {
+        "configuration": {
+          "conditions": "sandbox-only",
+          "model": "synthetic-assistant-v1",
+          "safeguard": "human-confirmation-required",
+          "tool": "payments-v1"
+        },
+        "configuration_hash": "8d7cba1ca4a8dabac5d4039b74eab4e6d2348e205ccdefb942b728e5f96ff8cf",
+        "finding": "bounded test passed",
+        "limitations": "No production or general safety conclusion",
+        "scope": "payments confirmation in sandbox"
+      },
+      "snapshot": {
+        "claims": [
+          {
+            "asserted_by": "evaluator",
+            "claim_id": "claim:sha256:f7ad8eea4013890e6cff38b7bceed3da72972595289d67b2bd1d13a39e4e6787",
+            "kind": "SOURCE_ASSERTION",
+            "provenance": [
+              {
+                "asserted_by": "evaluator",
+                "mode": "QUOTE",
+                "quote_sha256": "a50c0eb3212f5fa88d882024d60e59e5aefd32a432805006f37f5d45a75ee426",
+                "source_id": "source:sha256:a50c0eb3212f5fa88d882024d60e59e5aefd32a432805006f37f5d45a75ee426",
+                "span": {
+                  "end": 381,
+                  "start": 0
+                }
+              }
+            ],
+            "schema": "openline.claim.v1",
+            "text": "{\"configuration\": {\"conditions\": \"sandbox-only\", \"model\": \"synthetic-assistant-v1\", \"safeguard\": \"human-confirmation-required\", \"tool\": \"payments-v1\"}, \"configuration_hash\": \"8d7cba1ca4a8dabac5d4039b74eab4e6d2348e205ccdefb942b728e5f96ff8cf\", \"finding\": \"bounded test passed\", \"limitations\": \"No production or general safety conclusion\", \"scope\": \"payments confirmation in sandbox\"}"
+          }
+        ],
+        "content_root": "cee9e522900092fe80fbaf79829ddcc92d7c6e4070e481fba24e421032f12f01",
+        "delta": {
+          "added_claim_ids": [
+            "claim:sha256:f7ad8eea4013890e6cff38b7bceed3da72972595289d67b2bd1d13a39e4e6787"
+          ],
+          "added_relation_ids": [],
+          "basis": "genesis",
+          "removal_reasons": [],
+          "removed_claim_ids": [],
+          "removed_relation_ids": [],
+          "schema": "openline.claim-graph.delta.v1"
+        },
+        "delta_root": "622f4fc89d7dba976baf5eddc74079b3f0140df5a42d67e968895f3c7ac2ae35",
+        "merge_resolutions": [],
+        "parent_state_roots": [],
+        "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+        "relations": [],
+        "schema": "openline.claim-graph.snapshot.v1",
+        "state_root": "a239ad7d069ef19c2e5e923255dc6b873ac9356e9f3ced561fc4e97befb78006"
+      },
+      "sources": {
+        "source:sha256:a50c0eb3212f5fa88d882024d60e59e5aefd32a432805006f37f5d45a75ee426": {
+          "byte_length": 381,
+          "content": "{\"configuration\": {\"conditions\": \"sandbox-only\", \"model\": \"synthetic-assistant-v1\", \"safeguard\": \"human-confirmation-required\", \"tool\": \"payments-v1\"}, \"configuration_hash\": \"8d7cba1ca4a8dabac5d4039b74eab4e6d2348e205ccdefb942b728e5f96ff8cf\", \"finding\": \"bounded test passed\", \"limitations\": \"No production or general safety conclusion\", \"scope\": \"payments confirmation in sandbox\"}",
+          "encoding": "utf-8",
+          "locator": "example:evaluator",
+          "media_type": "text/plain",
+          "schema": "openline.source.v1",
+          "source_id": "source:sha256:a50c0eb3212f5fa88d882024d60e59e5aefd32a432805006f37f5d45a75ee426"
+        }
+      }
+    },
+    "change": {
+      "receipt": {
+        "canonicalization": "openline.restricted-canonical-json.v1",
+        "claim_boundary": "The signer commits to this graph state and its declared source anchors. The receipt does not certify truth, semantic fidelity, completeness, or signer identity.",
+        "claim_count": 1,
+        "delta_root": "e7b550e188f1f987c8a77f4c8f11545f77137fd41336f6c8a00c851192ca318c",
+        "graph_content_root": "e5e012054229f41393b9d8cd3cc087d92de52078bd21e4e056c8a8ecfa44991a",
+        "graph_state_root": "f9ae731d7891d8c4e1917de204b46bd64ba26e0e53f2273309b8be730c8121a5",
+        "issued_at": "2026-10-17T00:00:00Z",
+        "issuer": "developer",
+        "parent_state_roots": [],
+        "payload_hash": "2db052ef339893f2fc6abffd4fc05b45d5203192b9c699ad04b10756b82d3e5e",
+        "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+        "proof": {
+          "signature": "42205105ee6ed9b2b7cbc866072c6d21a448ac4bcf6a9758dd4457713f598c73d08b9d022c85c4bf3fce56b8c00760e095cebd9e84449bbd721ae244a684b109"
+        },
+        "proof_options": {
+          "algorithm": "Ed25519",
+          "public_key": "a09aa5f47a6759802ff955f8dc2d2a14a5c99d23be97f864127ff9383455a4f0",
+          "trust": "receiver_must_pin_or_resolve_public_key"
+        },
+        "relation_count": 0,
+        "schema": "openline.claim-graph.receipt.v1",
+        "source_count": 1,
+        "source_manifest_root": "1d9fb47668ed5e1d632e221be0d1c0131b7c64128248b0e7ee9b7ac9bf72933b",
+        "validation_warning_categories": {},
+        "validation_warning_count": 0,
+        "validation_warning_root": "34916264c2a83347232569962b352f2623e3dcc7f93f930c3092f40ae592c0ff"
+      },
+      "record": {
+        "changed_field": "safeguard",
+        "new_configuration": {
+          "conditions": "sandbox-only",
+          "model": "synthetic-assistant-v1",
+          "safeguard": "confirmation-removed",
+          "tool": "payments-v1"
+        },
+        "old_configuration_hash": "8d7cba1ca4a8dabac5d4039b74eab4e6d2348e205ccdefb942b728e5f96ff8cf",
+        "semantic_claim": "confirmation assumption no longer holds"
+      },
+      "snapshot": {
+        "claims": [
+          {
+            "asserted_by": "developer",
+            "claim_id": "claim:sha256:bc89b6bbf2cb248ff57748ffe780895a272c787249a1e71c396250f422abe3c8",
+            "kind": "SOURCE_ASSERTION",
+            "provenance": [
+              {
+                "asserted_by": "developer",
+                "mode": "QUOTE",
+                "quote_sha256": "94332d5d30ab14d8ea9d00c7a64f9a61d91448233ffbdbe8ae0e936889a7d061",
+                "source_id": "source:sha256:94332d5d30ab14d8ea9d00c7a64f9a61d91448233ffbdbe8ae0e936889a7d061",
+                "span": {
+                  "end": 333,
+                  "start": 0
+                }
+              }
+            ],
+            "schema": "openline.claim.v1",
+            "text": "{\"changed_field\": \"safeguard\", \"new_configuration\": {\"conditions\": \"sandbox-only\", \"model\": \"synthetic-assistant-v1\", \"safeguard\": \"confirmation-removed\", \"tool\": \"payments-v1\"}, \"old_configuration_hash\": \"8d7cba1ca4a8dabac5d4039b74eab4e6d2348e205ccdefb942b728e5f96ff8cf\", \"semantic_claim\": \"confirmation assumption no longer holds\"}"
+          }
+        ],
+        "content_root": "e5e012054229f41393b9d8cd3cc087d92de52078bd21e4e056c8a8ecfa44991a",
+        "delta": {
+          "added_claim_ids": [
+            "claim:sha256:bc89b6bbf2cb248ff57748ffe780895a272c787249a1e71c396250f422abe3c8"
+          ],
+          "added_relation_ids": [],
+          "basis": "genesis",
+          "removal_reasons": [],
+          "removed_claim_ids": [],
+          "removed_relation_ids": [],
+          "schema": "openline.claim-graph.delta.v1"
+        },
+        "delta_root": "e7b550e188f1f987c8a77f4c8f11545f77137fd41336f6c8a00c851192ca318c",
+        "merge_resolutions": [],
+        "parent_state_roots": [],
+        "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+        "relations": [],
+        "schema": "openline.claim-graph.snapshot.v1",
+        "state_root": "f9ae731d7891d8c4e1917de204b46bd64ba26e0e53f2273309b8be730c8121a5"
+      },
+      "sources": {
+        "source:sha256:94332d5d30ab14d8ea9d00c7a64f9a61d91448233ffbdbe8ae0e936889a7d061": {
+          "byte_length": 333,
+          "content": "{\"changed_field\": \"safeguard\", \"new_configuration\": {\"conditions\": \"sandbox-only\", \"model\": \"synthetic-assistant-v1\", \"safeguard\": \"confirmation-removed\", \"tool\": \"payments-v1\"}, \"old_configuration_hash\": \"8d7cba1ca4a8dabac5d4039b74eab4e6d2348e205ccdefb942b728e5f96ff8cf\", \"semantic_claim\": \"confirmation assumption no longer holds\"}",
+          "encoding": "utf-8",
+          "locator": "example:developer",
+          "media_type": "text/plain",
+          "schema": "openline.source.v1",
+          "source_id": "source:sha256:94332d5d30ab14d8ea9d00c7a64f9a61d91448233ffbdbe8ae0e936889a7d061"
+        }
+      }
+    },
+    "configuration": {
+      "receipt": {
+        "canonicalization": "openline.restricted-canonical-json.v1",
+        "claim_boundary": "The signer commits to this graph state and its declared source anchors. The receipt does not certify truth, semantic fidelity, completeness, or signer identity.",
+        "claim_count": 1,
+        "delta_root": "4c9f4864b8a2ae7a2723f724a33e06523ad06b4247f3623ee96bdcc2506f87c1",
+        "graph_content_root": "939f8058dbe9b06da4643efb4ccf9b1eb4cf54c02cf5163a53943d541609510f",
+        "graph_state_root": "8a18bb3a62e59ca6bede5d431ec7df77b62b138ae5c52d2cf5148db3c1808b05",
+        "issued_at": "2026-10-17T00:00:00Z",
+        "issuer": "developer",
+        "parent_state_roots": [],
+        "payload_hash": "59cadccff29e76c5b87d4257c787ac49bcdd828ea43c6b689c7af023336b9be3",
+        "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+        "proof": {
+          "signature": "8ad3751057252d763fd65472be51afda6e8543628aeaac7dd1175969fdb64435fe40a21b5c0cf8c679934ba0bda8dc51c198e73829b78bd781cbf503719fb002"
+        },
+        "proof_options": {
+          "algorithm": "Ed25519",
+          "public_key": "a09aa5f47a6759802ff955f8dc2d2a14a5c99d23be97f864127ff9383455a4f0",
+          "trust": "receiver_must_pin_or_resolve_public_key"
+        },
+        "relation_count": 0,
+        "schema": "openline.claim-graph.receipt.v1",
+        "source_count": 1,
+        "source_manifest_root": "1415716adce842142fd10c2eb0600ca902ac2ff34095b6007147170efc6cc669",
+        "validation_warning_categories": {},
+        "validation_warning_count": 0,
+        "validation_warning_root": "34916264c2a83347232569962b352f2623e3dcc7f93f930c3092f40ae592c0ff"
+      },
+      "record": {
+        "conditions": "sandbox-only",
+        "model": "synthetic-assistant-v1",
+        "safeguard": "human-confirmation-required",
+        "tool": "payments-v1"
+      },
+      "snapshot": {
+        "claims": [
+          {
+            "asserted_by": "developer",
+            "claim_id": "claim:sha256:21f8d80bc9bc2ca6b2e83274996018b92d381e8ace217c48069becd282eb68fa",
+            "kind": "SOURCE_ASSERTION",
+            "provenance": [
+              {
+                "asserted_by": "developer",
+                "mode": "QUOTE",
+                "quote_sha256": "72f6fba56b0d847ffb931a64ee035055cb66287f5ab66ae0dca452576556d14f",
+                "source_id": "source:sha256:72f6fba56b0d847ffb931a64ee035055cb66287f5ab66ae0dca452576556d14f",
+                "span": {
+                  "end": 132,
+                  "start": 0
+                }
+              }
+            ],
+            "schema": "openline.claim.v1",
+            "text": "{\"conditions\": \"sandbox-only\", \"model\": \"synthetic-assistant-v1\", \"safeguard\": \"human-confirmation-required\", \"tool\": \"payments-v1\"}"
+          }
+        ],
+        "content_root": "939f8058dbe9b06da4643efb4ccf9b1eb4cf54c02cf5163a53943d541609510f",
+        "delta": {
+          "added_claim_ids": [
+            "claim:sha256:21f8d80bc9bc2ca6b2e83274996018b92d381e8ace217c48069becd282eb68fa"
+          ],
+          "added_relation_ids": [],
+          "basis": "genesis",
+          "removal_reasons": [],
+          "removed_claim_ids": [],
+          "removed_relation_ids": [],
+          "schema": "openline.claim-graph.delta.v1"
+        },
+        "delta_root": "4c9f4864b8a2ae7a2723f724a33e06523ad06b4247f3623ee96bdcc2506f87c1",
+        "merge_resolutions": [],
+        "parent_state_roots": [],
+        "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+        "relations": [],
+        "schema": "openline.claim-graph.snapshot.v1",
+        "state_root": "8a18bb3a62e59ca6bede5d431ec7df77b62b138ae5c52d2cf5148db3c1808b05"
+      },
+      "sources": {
+        "source:sha256:72f6fba56b0d847ffb931a64ee035055cb66287f5ab66ae0dca452576556d14f": {
+          "byte_length": 132,
+          "content": "{\"conditions\": \"sandbox-only\", \"model\": \"synthetic-assistant-v1\", \"safeguard\": \"human-confirmation-required\", \"tool\": \"payments-v1\"}",
+          "encoding": "utf-8",
+          "locator": "example:developer",
+          "media_type": "text/plain",
+          "schema": "openline.source.v1",
+          "source_id": "source:sha256:72f6fba56b0d847ffb931a64ee035055cb66287f5ab66ae0dca452576556d14f"
+        }
+      }
+    },
+    "offline": {
+      "receipt": {
+        "canonicalization": "openline.restricted-canonical-json.v1",
+        "claim_boundary": "The signer commits to this graph state and its declared source anchors. The receipt does not certify truth, semantic fidelity, completeness, or signer identity.",
+        "claim_count": 1,
+        "delta_root": "638f4b1a20b619646f9b19039b8a9a0ff9fa89a2be9872d1d142b82f0fe30fb6",
+        "graph_content_root": "e53f8db5a69c08c943767e6d3021cc29830bb832bbf31d06e471e501a7c3abe2",
+        "graph_state_root": "b98eb10811b2961413c441338fffdb8c2bb32b8ab09e5d1b01e881490abf411d",
+        "issued_at": "2026-10-17T00:00:00Z",
+        "issuer": "evaluator",
+        "parent_state_roots": [],
+        "payload_hash": "b0afa15e857608a95db327213af18a51f18b09b6f31c362a55a940bf590752b2",
+        "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+        "proof": {
+          "signature": "bb0b0f7b993e044580dacef0888a176cf036153dc225be4310cd10b23d6fd0fcdfd3220d582b716e97acfb2c31c4230428e6d4cf87323c20a4e80b9675c3790d"
+        },
+        "proof_options": {
+          "algorithm": "Ed25519",
+          "public_key": "d04ab232742bb4ab3a1368bd4615e4e6d0224ab71a016baf8520a332c9778737",
+          "trust": "receiver_must_pin_or_resolve_public_key"
+        },
+        "relation_count": 0,
+        "schema": "openline.claim-graph.receipt.v1",
+        "source_count": 1,
+        "source_manifest_root": "f1e742c7d422efce95314fa3fb1c4cba351f2c0c8833518d966bd4874e712f4b",
+        "validation_warning_categories": {},
+        "validation_warning_count": 0,
+        "validation_warning_root": "34916264c2a83347232569962b352f2623e3dcc7f93f930c3092f40ae592c0ff"
+      },
+      "record": {
+        "configuration": {
+          "model": "synthetic-assistant-v1",
+          "tool": "disabled"
+        },
+        "finding": "no tool invocation permitted",
+        "scope": "offline export"
+      },
+      "snapshot": {
+        "claims": [
+          {
+            "asserted_by": "evaluator",
+            "claim_id": "claim:sha256:59eda6e36e2f0e97fb1af390a9d8e51149aeecd68c1d06a10d8745006187d0e2",
+            "kind": "SOURCE_ASSERTION",
+            "provenance": [
+              {
+                "asserted_by": "evaluator",
+                "mode": "QUOTE",
+                "quote_sha256": "be582d3dafde2a85160291364cb12ad96aaaf339f855d07c48d94dbc2683dbca",
+                "source_id": "source:sha256:be582d3dafde2a85160291364cb12ad96aaaf339f855d07c48d94dbc2683dbca",
+                "span": {
+                  "end": 144,
+                  "start": 0
+                }
+              }
+            ],
+            "schema": "openline.claim.v1",
+            "text": "{\"configuration\": {\"model\": \"synthetic-assistant-v1\", \"tool\": \"disabled\"}, \"finding\": \"no tool invocation permitted\", \"scope\": \"offline export\"}"
+          }
+        ],
+        "content_root": "e53f8db5a69c08c943767e6d3021cc29830bb832bbf31d06e471e501a7c3abe2",
+        "delta": {
+          "added_claim_ids": [
+            "claim:sha256:59eda6e36e2f0e97fb1af390a9d8e51149aeecd68c1d06a10d8745006187d0e2"
+          ],
+          "added_relation_ids": [],
+          "basis": "genesis",
+          "removal_reasons": [],
+          "removed_claim_ids": [],
+          "removed_relation_ids": [],
+          "schema": "openline.claim-graph.delta.v1"
+        },
+        "delta_root": "638f4b1a20b619646f9b19039b8a9a0ff9fa89a2be9872d1d142b82f0fe30fb6",
+        "merge_resolutions": [],
+        "parent_state_roots": [],
+        "profile_hash": "123b038f027677635b5b5cd84d279d08f09d5819f3a873b502d28a4dafb439c5",
+        "relations": [],
+        "schema": "openline.claim-graph.snapshot.v1",
+        "state_root": "b98eb10811b2961413c441338fffdb8c2bb32b8ab09e5d1b01e881490abf411d"
+      },
+      "sources": {
+        "source:sha256:be582d3dafde2a85160291364cb12ad96aaaf339f855d07c48d94dbc2683dbca": {
+          "byte_length": 144,
+          "content": "{\"configuration\": {\"model\": \"synthetic-assistant-v1\", \"tool\": \"disabled\"}, \"finding\": \"no tool invocation permitted\", \"scope\": \"offline export\"}",
+          "encoding": "utf-8",
+          "locator": "example:evaluator",
+          "media_type": "text/plain",
+          "schema": "openline.source.v1",
+          "source_id": "source:sha256:be582d3dafde2a85160291364cb12ad96aaaf339f855d07c48d94dbc2683dbca"
+        }
+      }
+    }
+  }
+}
