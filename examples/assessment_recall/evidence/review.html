@@ -1,0 +1,90 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Assessment Recall review</title>
+<style>body{font:18px system-ui;max-width:960px;margin:3rem auto;padding:1rem;line-height:1.5}pre{white-space:pre-wrap;background:#f3f5f7;padding:1rem}h2{margin-top:2rem}</style>
+<h1>Payments approval requires enterprise review</h1>
+<p>The accepted payments assessment applied to a sandbox configuration requiring human confirmation.
+The developer reports that safeguard was removed. The receiver admitted this change as relevant.
+The old assessment remains a valid historical record; its applicability to this changed deployment requires review.</p>
+<p><strong>This does not prove the system is unsafe.</strong> Operational impact is asserted, not independently tested here.
+Only <strong>enterprise:risk-owner</strong> can approve continued use after fresh review.</p>
+<p>The offline-export approval retains the separately accepted no-tool basis. That basis does not depend on the changed safeguard.
+Both approvals had sufficient support before the change.</p>
+<p>Missing dependencies or ambiguous meaning require review. Undeclared dependencies falsely marked complete remain undetectable.
+All identities and findings in this page are synthetic.</p>
+<p><a href="bundle.json">Evidence bundle</a> · <a href="checkpoint.json">Receiver checkpoint</a> · <a href="comparison.json">Comparison</a></p>
+<p>Verify: <code>python examples/assessment_recall/verify.py --output OUTPUT --checkpoint OUTPUT/checkpoint.json</code>.
+Obtain the current checkpoint separately from the enterprise; a bundled checkpoint alone cannot establish freshness.</p>
+<h2>Original bounded evaluation and exact configuration</h2><pre>{
+  &quot;configuration&quot;: {
+    &quot;conditions&quot;: &quot;sandbox-only&quot;,
+    &quot;model&quot;: &quot;synthetic-assistant-v1&quot;,
+    &quot;safeguard&quot;: &quot;human-confirmation-required&quot;,
+    &quot;tool&quot;: &quot;payments-v1&quot;
+  },
+  &quot;configuration_hash&quot;: &quot;8d7cba1ca4a8dabac5d4039b74eab4e6d2348e205ccdefb942b728e5f96ff8cf&quot;,
+  &quot;finding&quot;: &quot;bounded test passed&quot;,
+  &quot;limitations&quot;: &quot;No production or general safety conclusion&quot;,
+  &quot;scope&quot;: &quot;payments confirmation in sandbox&quot;
+}</pre><h2>Enterprise acceptance and independently sufficient bases</h2><pre>{
+  &quot;approver&quot;: &quot;enterprise:risk-owner&quot;,
+  &quot;complete&quot;: {
+    &quot;offline-export&quot;: true,
+    &quot;payments&quot;: true
+  },
+  &quot;dependencies&quot;: {
+    &quot;offline-export&quot;: [
+      &quot;assessment&quot;,
+      &quot;offline&quot;
+    ],
+    &quot;payments&quot;: [
+      &quot;assessment&quot;
+    ]
+  },
+  &quot;evidence&quot;: {
+    &quot;assessment&quot;: &quot;72281b249df0360d979378c76ff849261b8af866d2b87e280f7fb32ddaa66e2b&quot;,
+    &quot;offline&quot;: &quot;e8e9170d6bddb876cef249077e2407980e3c9a2048d42bb2cce09236722bbe41&quot;
+  },
+  &quot;rule&quot;: &quot;each listed basis is independently sufficient for this decision&quot;,
+  &quot;status&quot;: {
+    &quot;offline-export&quot;: &quot;APPROVED&quot;,
+    &quot;payments&quot;: &quot;APPROVED&quot;
+  }
+}</pre><h2>Authenticated developer change: recorded fact and semantic assertion</h2><pre>{
+  &quot;changed_field&quot;: &quot;safeguard&quot;,
+  &quot;new_configuration&quot;: {
+    &quot;conditions&quot;: &quot;sandbox-only&quot;,
+    &quot;model&quot;: &quot;synthetic-assistant-v1&quot;,
+    &quot;safeguard&quot;: &quot;confirmation-removed&quot;,
+    &quot;tool&quot;: &quot;payments-v1&quot;
+  },
+  &quot;old_configuration_hash&quot;: &quot;8d7cba1ca4a8dabac5d4039b74eab4e6d2348e205ccdefb942b728e5f96ff8cf&quot;,
+  &quot;semantic_claim&quot;: &quot;confirmation assumption no longer holds&quot;
+}</pre><h2>Receiver&#x27;s separate scope judgment</h2><pre>{
+  &quot;affected_basis&quot;: [
+    &quot;assessment&quot;
+  ],
+  &quot;change_hash&quot;: &quot;52c33fa6108674bf54e9ffd0cfe1b544b485dac2565006c6a4f62a298b0cbe1f&quot;,
+  &quot;meaning&quot;: &quot;ADMITTED&quot;,
+  &quot;rationale&quot;: &quot;Receiver judges scope against its accepted assumptions; developer cannot decide this.&quot;
+}</pre><h2>Current approval review record</h2><pre>{
+  &quot;checkpoint&quot;: &quot;7435950cb129540627b9e515625a627f2f3e18397a52d069ddcc60670bf368a9&quot;,
+  &quot;event&quot;: &quot;52c33fa6108674bf54e9ffd0cfe1b544b485dac2565006c6a4f62a298b0cbe1f&quot;,
+  &quot;kind&quot;: &quot;review-status; not new deployment authorization&quot;,
+  &quot;next_authority&quot;: &quot;enterprise:risk-owner&quot;,
+  &quot;original_approval&quot;: &quot;a08d297227095a1d3060cfbf9520df6308021abc5ba8bb48d8f6a1e4b20138a3&quot;,
+  &quot;statuses&quot;: {
+    &quot;offline-export&quot;: &quot;APPROVED&quot;,
+    &quot;payments&quot;: &quot;REVIEW REQUIRED&quot;
+  }
+}</pre><h2>Matched conventional result</h2><pre>{
+  &quot;audit&quot;: [
+    &quot;a08d297227095a1d3060cfbf9520df6308021abc5ba8bb48d8f6a1e4b20138a3&quot;,
+    &quot;52c33fa6108674bf54e9ffd0cfe1b544b485dac2565006c6a4f62a298b0cbe1f&quot;,
+    &quot;4d1ff20f6529b640c72991b595615abe87fb78f3aaa63534fcfc99e33528f6a5&quot;,
+    &quot;f7c40614dd0c35bdedfc3a89c2fe03512b1e0082fc13a4289eecb424a1cea757&quot;
+  ],
+  &quot;dependency_rows_scanned&quot;: 3,
+  &quot;statuses&quot;: {
+    &quot;offline-export&quot;: &quot;APPROVED&quot;,
+    &quot;payments&quot;: &quot;REVIEW REQUIRED&quot;
+  }
+}</pre></html>

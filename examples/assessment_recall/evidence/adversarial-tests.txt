@@ -1,0 +1,23 @@
+test_ambiguous_meaning_escalates_both_in_record (test_demo.AssessmentRecallTests.test_ambiguous_meaning_escalates_both_in_record) ... ok
+test_configuration_substitution_rejected (test_demo.AssessmentRecallTests.test_configuration_substitution_rejected) ... ok
+test_declared_capture_gap_is_real (test_demo.AssessmentRecallTests.test_declared_capture_gap_is_real) ... ok
+test_developer_cannot_alter_acceptance (test_demo.AssessmentRecallTests.test_developer_cannot_alter_acceptance) ... ok
+test_evaluation_not_enterprise_authorization (test_demo.AssessmentRecallTests.test_evaluation_not_enterprise_authorization) ... ok
+test_evaluator_cannot_alter_trust_policy (test_demo.AssessmentRecallTests.test_evaluator_cannot_alter_trust_policy) ... ok
+test_exported_verifier_rejects_tampered_html (test_demo.AssessmentRecallTests.test_exported_verifier_rejects_tampered_html) ... ok
+test_historical_assessment_rewrite_rejected_even_if_resigned (test_demo.AssessmentRecallTests.test_historical_assessment_rewrite_rejected_even_if_resigned) ... ok
+test_invalid_signature_rejected (test_demo.AssessmentRecallTests.test_invalid_signature_rejected) ... ok
+test_matched_comparator_all_cases (test_demo.AssessmentRecallTests.test_matched_comparator_all_cases) ... ok
+test_missing_dependency_escalates_in_record (test_demo.AssessmentRecallTests.test_missing_dependency_escalates_in_record) ... ok
+test_old_approval_cannot_authorize_after_change (test_demo.AssessmentRecallTests.test_old_approval_cannot_authorize_after_change) ... ok
+test_protected_output_tampering_rejected (test_demo.AssessmentRecallTests.test_protected_output_tampering_rejected) ... ok
+test_relevant_change_records_review_and_preserves_independent_basis (test_demo.AssessmentRecallTests.test_relevant_change_records_review_and_preserves_independent_basis) ... ok
+test_serialized_records_roundtrip (test_demo.AssessmentRecallTests.test_serialized_records_roundtrip) ... ok
+test_tampered_event_rejected (test_demo.AssessmentRecallTests.test_tampered_event_rejected) ... ok
+test_unrelated_change_preserves_both_recorded_approvals (test_demo.AssessmentRecallTests.test_unrelated_change_preserves_both_recorded_approvals) ... ok
+test_untrusted_event_signer_rejected (test_demo.AssessmentRecallTests.test_untrusted_event_signer_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.394s
+
+OK
